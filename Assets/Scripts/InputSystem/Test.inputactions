@@ -6,13 +6,13 @@
             "id": "f10d1530-5e68-4e22-aea1-6805ce7b221d",
             "actions": [
                 {
-                    "name": "Test",
-                    "type": "Button",
+                    "name": "TouchPress",
+                    "type": "Value",
                     "id": "2225f7a6-2d55-42d2-a556-4f4ea1fc7988",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Test",
+                    "action": "TouchPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -8,7 +8,7 @@ public class GrabTest : MonoBehaviour, IGrabbable
     {
         while (true)
         {
-            transform.position = pos;
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward * 10f;
             yield return null;
         }
     }
