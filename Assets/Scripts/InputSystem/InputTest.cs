@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,35 +17,39 @@ public class InputTest : MonoBehaviour
     // Start is called before the first frame update
 
 
-    void Enable()
+    void OnEnable()
     {
-        _inputaction.actions["Test"].performed += c =>Pressed();
-        _inputaction.actions["Test"].canceled += c => UnPresse();
+        _inputaction.actions["TouchPress"].performed += Pressed;
+        _inputaction.actions["TouchPress"].canceled += UnPresse;
     }
 
-    void Disable()
+    void OnDisable()
     {
-        _inputaction.actions["Test"].performed -= c => Pressed();
-        _inputaction.actions["Test"].canceled -= c => UnPresse();
+        _inputaction.actions["TouchPress"].performed -= Pressed;
+        _inputaction.actions["TouchPress"].canceled -= UnPresse;
     }
 
-    public void Pressed()
+    public void Pressed(InputAction.CallbackContext context)
     {
-        Debug.Log("Test");
-        Collider2D coll = Physics2D.OverlapCircle(Input.mousePosition, 10f);
-        IGrabbable grab = coll.gameObject?.GetComponent<IGrabbable>();
-        if (grab != null && _coroutine == null)
+        Collider2D coll = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 1f);
+        IGrabbable grab = coll?.GetComponent<IGrabbable>();
+        Debug.Log(grab);
+        if(grab != null) 
         {
-            _coroutine = StartCoroutine(grab.Grab(Input.mousePosition));
+            StartCoroutine(grab.Grab(Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward * 10f));
+        }
+        if (_coroutine == null)
+        {
+            //_coroutine = StartCoroutine();
         }
     }
 
-    public void UnPresse()
+    public void UnPresse(InputAction.CallbackContext context)
     {
-        StopCoroutine(_coroutine);
-        _coroutine = null;
+        if(_coroutine != null ) 
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
     }
-
-
-
 }
