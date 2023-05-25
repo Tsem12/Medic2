@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         _refs.inputManager = this;
+        Application.targetFrameRate = 300;
     }
 
     private void OnEnable()
@@ -29,14 +30,17 @@ public class InputManager : MonoBehaviour
 
     IEnumerator GetObject()
     {
-        if(Input.touches.Length > 0 && CastObject())
+        if(CastObject())
         {
             if (_getObj.CompareTag("Grabbable"))
             {
                 //_getObj.Activate();
                 while (true)
                 {
-                    _getObj.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
+                    if(Input.touches.Length > 0)
+                    {
+                        _getObj.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
+                    }
                     yield return null;
                 }
             }
@@ -63,7 +67,11 @@ public class InputManager : MonoBehaviour
 
     bool CastObject()
     {
-        Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f, 1f);
+        Collider2D col = null;
+        if (Input.touches.Length > 0)
+        {
+            col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f, 1f);
+        }
         if (col != null)
         {
             _getObj = col.gameObject;
