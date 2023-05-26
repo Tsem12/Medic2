@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PartyMember1
   m_EditorClassIdentifier: 
   speed: 10
+  agroValue: 100
