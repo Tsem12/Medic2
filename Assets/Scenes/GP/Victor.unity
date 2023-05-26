@@ -501,7 +501,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carBase: {fileID: 11400000, guid: 45beee6df6416e04cbcdfaf7dd553fbe, type: 2}
   wasPlayed: 0
-  handlerObject: {fileID: 0}
+  handlerObject: {fileID: 11400000, guid: c8ed50634ba3e3a4297e68e090e6cfa2, type: 2}
+  col: {fileID: 0}
+  rend: {fileID: 0}
 --- !u!1 &448468002
 GameObject:
   m_ObjectHideFlags: 0
