@@ -12,14 +12,14 @@ public class ManaBar : MonoBehaviour
 
 
     //Definitive Vars
-    [SerializeField] int maxMana = 10;
     [SerializeField] Slider manaSlider;
     [SerializeField] Slider preManaSlider;
+    [SerializeField] int maxMana = 10;
     [SerializeField] float manaRecuperationCooldown = 2;
+
+
     private int minMana = 0;
     private int currentMana;
-
-
     private int currentPreMana;
     private int maxPreMana;
     private int minPreMana;
@@ -36,26 +36,7 @@ public class ManaBar : MonoBehaviour
 
     private void Update()
     {
-        
-
-        //visual values
-        manaSlider.maxValue = maxMana;
-        manaSlider.minValue = minMana;
-        manaSlider.value = currentMana;
-
-        preManaSlider.maxValue = maxPreMana;
-        preManaSlider.minValue = minPreMana;
-        preManaSlider.value = currentPreMana;
-
-
-        if (currentMana < minMana)
-        {currentMana = minMana;}
-        if (currentMana > maxMana)
-        {currentMana = maxMana;}
-
-        if (currentPreMana > maxPreMana)
-        { currentPreMana = maxPreMana; }
-
+        CheckSliderVakues();
     }
 
 
@@ -108,6 +89,27 @@ public class ManaBar : MonoBehaviour
         {
             maxMana = newMax;
         }
+    }
+
+    void CheckSliderVakues()
+    {
+        //visual values
+        manaSlider.maxValue = maxMana;
+        manaSlider.minValue = minMana;
+        manaSlider.value = currentMana;
+
+        preManaSlider.maxValue = maxPreMana;
+        preManaSlider.minValue = minPreMana;
+        preManaSlider.value = currentPreMana;
+
+
+        if (currentMana < minMana)
+        { currentMana = minMana; }
+        if (currentMana > maxMana)
+        { currentMana = maxMana; }
+
+        if (currentPreMana > maxPreMana)
+        { currentPreMana = maxPreMana; }
     }
 
     IEnumerator ManaRefill()
