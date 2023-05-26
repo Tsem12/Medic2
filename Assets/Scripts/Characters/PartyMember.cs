@@ -10,4 +10,8 @@ public class PartyMember : Character
         return _partyMemberObj.speed;
     }
 
+    public PartyMemberObjets GetPartyMemberObj() 
+    {
+        return _partyMemberObj;
+    }
 }
