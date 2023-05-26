@@ -34,7 +34,6 @@ public class InputManager : MonoBehaviour
         {
             if (_getObj.CompareTag("Grabbable"))
             {
-                //_getObj.Activate();
                 while (true)
                 {
                     if(Input.touches.Length > 0)
@@ -43,6 +42,7 @@ public class InputManager : MonoBehaviour
                     }
                     yield return null;
                 }
+                
             }
         }
     }
@@ -60,6 +60,7 @@ public class InputManager : MonoBehaviour
         if(_coroutine != null)
         {
             StopCoroutine(_coroutine);
+            _getObj?.GetComponent<Card>().ApplyEffect();
             _getObj = null;
             _coroutine = null;
         }

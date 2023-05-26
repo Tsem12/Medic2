@@ -10,4 +10,9 @@ public class PartyMember : MonoBehaviour, ICharacter
     {
         return _partyMemberObj.speed;
     }
+
+    public PartyMemberObjets GetPartyMemberObj() 
+    {
+        return _partyMemberObj;
+    }
 }

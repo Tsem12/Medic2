@@ -8,6 +8,7 @@ public class CardBase : ScriptableObject
 {
     public string cardName;
     public int manaCost;
+    public CardBehaviour cardBehaviour;
 
     public enum CardBehaviour
     {
@@ -30,9 +31,7 @@ public class CardBase : ScriptableObject
         fortifyMana
     }
 
-    public CardBehaviour cardBehaviour;
-
-    public void EffectOfTheCard(CardBehaviour cardBehaviour)
+    public void ApplyEffectOfTheCard(PartyMemberObjets partyMember)
     {
         switch (cardBehaviour)
         {
