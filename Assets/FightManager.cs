@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class FightManager : MonoBehaviour
 {
@@ -11,18 +12,37 @@ public class FightManager : MonoBehaviour
     [SerializeField] private float _playerTimeToPlay;
     private float _currentPlayerTimeToPlay;
 
+    private int _globalAgro;
+
     private Coroutine _playerTurnRoutine;
     private Coroutine _partymembersTurnRoutine;
 
     private Queue<ICharacter> _characterQueue = new Queue<ICharacter>();
+    private List<ICharacter> characterList = new List<ICharacter>();
+
+    public Enemie Enemie { get => _enemie; set => _enemie = value; }
+    public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
+    public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
 
     private void Start()
     {
         _currentPlayerTimeToPlay = _playerTimeToPlay;
+
+        characterList.Add(Enemie.GetComponent<ICharacter>());
+
+        foreach (ICharacter character in PartyMembers)
+        {
+            characterList.Add(character);
+        }
         StartFight();
     }
     private void StartFight()
     {
+        SetGlobalAgroValue();
+        foreach (ICharacter character in characterList)
+        {
+            character.SetTarget();
+        }
         OrderCharacters();
         _playerTurnRoutine = StartCoroutine(PlayerTurn());
     }
@@ -32,25 +52,26 @@ public class FightManager : MonoBehaviour
         _partymembersTurnRoutine = StartCoroutine(PartyMembersTurnRoutine());
     }
 
+    private void SetGlobalAgroValue()
+    {
+        int agroValue = 0;
+        foreach(PartyMember partyMember in PartyMembers)
+        {
+            agroValue += partyMember.GetComponent<ICharacter>().GetAgro();
+        }
+        GlobalAgro = agroValue;
+        //Debug.Log($"agrovalue: {agroValue}");
+    }
+
     private void OrderCharacters()
     {
-        List<ICharacter> characterList = new List<ICharacter>();
-        characterList.Add(_enemie.GetComponent<ICharacter>());
-
-        foreach(ICharacter character in _partyMembers)
-        {
-            characterList.Add(character);
-        }
-
         characterList.Sort(Compare);
-        Debug.Log(characterList.Count);
 
         foreach(ICharacter character in characterList)
         {
             _characterQueue.Enqueue(character);
         }
     }
-
 
     private IEnumerator PlayerTurn()
     {

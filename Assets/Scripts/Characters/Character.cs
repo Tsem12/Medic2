@@ -4,10 +4,17 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour, ICharacter
 {
+    [SerializeField] protected AllReferences _refs;
     private bool _isPlaying;
 
     private Coroutine _attackRoutine;
 
+    #region Abstarct methods
+    protected abstract void Attack();
+    public abstract int GetSpeed();
+    public abstract int GetAgro();
+    public abstract void SetTarget();
+    #endregion
     public virtual void StartTurn()
     {
         _isPlaying = true;
@@ -19,8 +26,6 @@ public abstract class Character : MonoBehaviour, ICharacter
         Debug.Log($"{gameObject.name} finished his turn");
     }
 
-    public abstract int GetSpeed();
-    public abstract int GetAgro();
 
     public virtual bool IsPlaying()
     {
@@ -29,9 +34,14 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     private IEnumerator AttackRoutine()
     {
+        Attack();
         yield return new WaitForSeconds(0.5f);
         _isPlaying = false;
         _attackRoutine = null;
     }
 
+    public string GetName()
+    {
+        return gameObject.name;
+    }
 }

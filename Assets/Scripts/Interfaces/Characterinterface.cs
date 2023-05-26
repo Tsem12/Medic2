@@ -5,5 +5,8 @@ public interface ICharacter
     public void StartTurn();
     public bool IsPlaying();
     public void EndTurn();
+    public void SetTarget();
+    public string GetName();
+    //public void SetTarget(ICharacter target);
 }
 
