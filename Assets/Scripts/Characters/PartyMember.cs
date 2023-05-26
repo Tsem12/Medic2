@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PartyMember : MonoBehaviour, ICharacter
+public class PartyMember : Character
 {
     [SerializeField] private PartyMemberObjets _partyMemberObj;
-
-    public int GetSpeed()
+    public override int GetSpeed()
     {
         return _partyMemberObj.speed;
     }
+
 }

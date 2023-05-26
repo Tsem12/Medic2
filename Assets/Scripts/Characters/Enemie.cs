@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemie : MonoBehaviour, ICharacter
+public class Enemie : Character
 {
     [SerializeField] private EnemiesObjects _enemieObj;
-    public int GetSpeed()
+    public override int GetSpeed()
     {
         return _enemieObj.speed;
     }
-
 }

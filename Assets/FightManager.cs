@@ -8,11 +8,26 @@ public class FightManager : MonoBehaviour
     [SerializeField] private Enemie _enemie;
     [SerializeField] private PartyMember[] _partyMembers;
 
+    [SerializeField] private float _playerTimeToPlay;
+    private float _currentPlayerTimeToPlay;
+
+    private Coroutine _playerTurnRoutine;
+
     private Queue<ICharacter> characterQueue = new Queue<ICharacter>();
 
     private void Start()
     {
+        _currentPlayerTimeToPlay = _playerTimeToPlay;
+    }
+    private void StartFight()
+    {
         OrderCharacters();
+        _playerTurnRoutine = StartCoroutine(PlayerTurn());
+    }
+
+    private void PartyMemberTurn()
+    {
+
     }
 
     private void OrderCharacters()
@@ -37,6 +52,26 @@ public class FightManager : MonoBehaviour
         }
     }
 
+
+    private IEnumerator PlayerTurn()
+    {
+        while (true)
+        {
+
+            // player turn logic
+
+            _currentPlayerTimeToPlay -= Time.deltaTime;
+            if(_currentPlayerTimeToPlay <= 0)
+            {
+                _currentPlayerTimeToPlay = _playerTimeToPlay;
+                PartyMemberTurn();
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    #region sort
     private int Compare(ICharacter x, ICharacter y)
     {
         if(x.GetSpeed() == y.GetSpeed()) return 0;
@@ -45,4 +80,5 @@ public class FightManager : MonoBehaviour
 
         return y.GetSpeed() - x.GetSpeed();
     }
+    #endregion
 }
