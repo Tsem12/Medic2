@@ -37,6 +37,7 @@ public class CardBase : ScriptableObject
         {
             case CardBehaviour.heal:
                 Debug.Log("la carte heal");
+                partyMember.Test();
                 break;
 
             case CardBehaviour.unstableHeal:

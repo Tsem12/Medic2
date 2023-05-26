@@ -53,6 +53,7 @@ public class InputManager : MonoBehaviour
         {
             _coroutine = StartCoroutine(GetObject());
         }
+        Debug.Log("Press");
     }
 
     void UnPress(InputAction.CallbackContext ctx)
@@ -60,10 +61,14 @@ public class InputManager : MonoBehaviour
         if(_coroutine != null)
         {
             StopCoroutine(_coroutine);
-            _getObj?.GetComponent<Card>().ApplyEffect();
+            if(_getObj.GetComponent<Card>() != null && !_getObj.GetComponent<Card>().ApplyEffect())
+            {
+                _getObj.GetComponent<Card>().PosReset();
+            }
             _getObj = null;
             _coroutine = null;
         }
+        Debug.Log("Unpress");
     }
 
     bool CastObject()
@@ -71,7 +76,7 @@ public class InputManager : MonoBehaviour
         Collider2D col = null;
         if (Input.touches.Length > 0)
         {
-            col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f, 1f);
+            col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f, 0.2f);
         }
         if (col != null)
         {

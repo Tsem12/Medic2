@@ -5,6 +5,7 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     [SerializeField] CardBase carBase;
+
     public bool ApplyEffect()
     {
         Collider2D col = Physics2D.OverlapCircle(transform.position, 1f);
@@ -14,5 +15,10 @@ public class Card : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void PosReset()
+    {
+        transform.position = Vector3.zero;
     }
 }

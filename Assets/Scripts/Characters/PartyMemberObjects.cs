@@ -5,4 +5,9 @@ using UnityEngine;
 public class PartyMemberObjets : ScriptableObject
 {
     public int speed;
+
+    public void Test()
+    {
+        Debug.Log("Heal");
+    }
 }
