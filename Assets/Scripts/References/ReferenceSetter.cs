@@ -11,7 +11,9 @@ public class ReferenceSetter : MonoBehaviour
         None,
         Camera,
         Player,
-        InputManager
+        InputManager,
+        GameManager,
+        FightManager
     }
 
     [SerializeField] private AllReferences references;
@@ -47,9 +49,31 @@ public class ReferenceSetter : MonoBehaviour
                 return;
             case ReferencesType.Camera:
                 references.camera = GetComponent<Camera>();
+                if(references.camera == null)
+                {
+                    Debug.LogError($"{gameObject.name} n'a pas récupérer: {item}");
+                }
                 return;
             case ReferencesType.InputManager:
                 references.inputManager = GetComponent<InputManager>();
+                if (references.inputManager == null)
+                {
+                    Debug.LogError($"{gameObject.name} n'a pas récupérer: {item}");
+                }
+                return;
+            case ReferencesType.GameManager:
+                references.gameManager = GetComponent<GameManager>();
+                if (references.gameManager == null)
+                {
+                    Debug.LogError($"{gameObject.name} n'a pas récupérer: {item}");
+                }
+                return;
+            case ReferencesType.FightManager:
+                references.fightManager = GetComponent<FightManager>();
+                if (references.fightManager == null)
+                {
+                    Debug.LogError($"{gameObject.name} n'a pas récupérer: {item}");
+                }
                 return;
             default:
                 return;

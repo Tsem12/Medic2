@@ -11,5 +11,7 @@ public class AllReferences : ScriptableObject
     public Camera camera;
     public GameObject player;
     public InputManager inputManager;
+    public GameManager gameManager;
+    public FightManager fightManager;
 
 }
