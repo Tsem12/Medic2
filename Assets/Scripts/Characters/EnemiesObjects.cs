@@ -6,5 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemiesObjects", menuName = "Characters/Enemies")]
 public class EnemiesObjects : ScriptableObject
 {
-    public int speed;
+    public int baseSpeed;
+    public int baseDamage;
+    public int baseHealth;
 }

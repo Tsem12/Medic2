@@ -5,8 +5,26 @@ using UnityEngine;
 public class Enemie : Character
 {
     [SerializeField] private EnemiesObjects _enemieObj;
-    private ICharacter _target;
 
+    private ICharacter _target;
+    [Header("Stats")]
+    private int _maxHealth;
+    private int _currentHealth;
+    private int _damage;
+    private int _speed;
+
+    private void Start()
+    {
+        AssignValues();
+        _currentHealth = _maxHealth;
+
+    }
+    private void AssignValues()
+    {
+        _maxHealth = _enemieObj.baseHealth;
+        _damage = _enemieObj.baseDamage;
+        _speed = _enemieObj.baseSpeed;
+    }
     public override int GetAgro()
     {
         Debug.LogError("Boss have no agro value");
@@ -15,7 +33,7 @@ public class Enemie : Character
 
     public override int GetSpeed()
     {
-        return _enemieObj.speed;
+        return _speed;
     }
 
     public override void SetTarget()
