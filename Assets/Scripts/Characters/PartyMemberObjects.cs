@@ -5,4 +5,5 @@ using UnityEngine;
 public class PartyMemberObjets : ScriptableObject
 {
     public int speed;
+    public int agroValue;
 }

@@ -6,19 +6,32 @@ public abstract class Character : MonoBehaviour, ICharacter
 {
     private bool _isPlaying;
 
+    private Coroutine _attackRoutine;
+
     public virtual void StartTurn()
     {
         _isPlaying = true;
+        Debug.Log($"{gameObject.name} is attacking");
+        _attackRoutine = StartCoroutine(AttackRoutine());
     }
     public virtual void EndTurn()
     {
-        _isPlaying = false;
+        Debug.Log($"{gameObject.name} finished his turn");
     }
 
     public abstract int GetSpeed();
+    public abstract int GetAgro();
 
     public virtual bool IsPlaying()
     {
         return _isPlaying;
     }
+
+    private IEnumerator AttackRoutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _isPlaying = false;
+        _attackRoutine = null;
+    }
+
 }

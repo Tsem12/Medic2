@@ -12,12 +12,14 @@ public class FightManager : MonoBehaviour
     private float _currentPlayerTimeToPlay;
 
     private Coroutine _playerTurnRoutine;
+    private Coroutine _partymembersTurnRoutine;
 
-    private Queue<ICharacter> characterQueue = new Queue<ICharacter>();
+    private Queue<ICharacter> _characterQueue = new Queue<ICharacter>();
 
     private void Start()
     {
         _currentPlayerTimeToPlay = _playerTimeToPlay;
+        StartFight();
     }
     private void StartFight()
     {
@@ -27,34 +29,32 @@ public class FightManager : MonoBehaviour
 
     private void PartyMemberTurn()
     {
-
+        _partymembersTurnRoutine = StartCoroutine(PartyMembersTurnRoutine());
     }
 
     private void OrderCharacters()
     {
         List<ICharacter> characterList = new List<ICharacter>();
         characterList.Add(_enemie.GetComponent<ICharacter>());
+
         foreach(ICharacter character in _partyMembers)
         {
             characterList.Add(character);
         }
+
         characterList.Sort(Compare);
         Debug.Log(characterList.Count);
+
         foreach(ICharacter character in characterList)
         {
-            characterQueue.Enqueue(character);
-        }
-
-        for (int i = 0; i < characterList.Count; i++)
-        {
-            ICharacter chara = characterQueue.Dequeue();
-            Debug.Log(chara.GetSpeed());
+            _characterQueue.Enqueue(character);
         }
     }
 
 
     private IEnumerator PlayerTurn()
     {
+        Debug.Log("Player turn start");
         while (true)
         {
 
@@ -64,11 +64,24 @@ public class FightManager : MonoBehaviour
             if(_currentPlayerTimeToPlay <= 0)
             {
                 _currentPlayerTimeToPlay = _playerTimeToPlay;
+                Debug.Log("Player time is over");
                 PartyMemberTurn();
                 yield break;
             }
             yield return null;
         }
+    }
+
+    private IEnumerator PartyMembersTurnRoutine()
+    {
+        while(_characterQueue.Count != 0)
+        {
+            ICharacter chara =  _characterQueue.Dequeue();
+            chara.StartTurn();
+            yield return new WaitUntil( () => !chara.IsPlaying());
+            chara.EndTurn();
+        }
+        Debug.Log("End of turn");
     }
 
     #region sort
