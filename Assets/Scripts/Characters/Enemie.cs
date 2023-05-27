@@ -7,9 +7,8 @@ public class Enemie : Character
     [SerializeField] private EnemiesObjects _enemieObj;
 
     private ICharacter _target;
+
     [Header("Stats")]
-    private int _maxHealth;
-    private int _currentHealth;
     private int _damage;
     private int _speed;
 
@@ -19,11 +18,14 @@ public class Enemie : Character
         _currentHealth = _maxHealth;
 
     }
-    private void AssignValues()
+    public override void AssignValues()
     {
-        _maxHealth = _enemieObj.baseHealth;
-        _damage = _enemieObj.baseDamage;
-        _speed = _enemieObj.baseSpeed;
+        if(_enemieObj != null)
+        {
+            _maxHealth = _enemieObj.baseHealth;
+            _damage = _enemieObj.baseDamage;
+            _speed = _enemieObj.baseSpeed;
+        }
     }
     public override int GetAgro()
     {

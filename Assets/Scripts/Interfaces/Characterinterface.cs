@@ -1,5 +1,7 @@
 public interface ICharacter
 {
+    public int GetMaxHealth();
+    public int GetCurrentHealth();
     public int GetSpeed();
     public int GetAgro();
     public void StartTurn();
