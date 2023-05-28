@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
     [Header("layout group")]
     [SerializeField] private GameObject _healthPoint;
     [SerializeField] private HorizontalLayoutGroup _layerGroup;
-    [SerializeField] private List<GameObject> _healthPoints = new List<GameObject>();
+    [SerializeField] private List<HealtPoint> _healthPoints = new List<HealtPoint>();
 
 
     private void Start()
@@ -32,18 +32,39 @@ public class Health : MonoBehaviour
         for (int i = 0; i < _character.GetMaxHealth(); i++)
         {
             GameObject obj = Instantiate(_healthPoint, _layerGroup.transform);
-            _healthPoints.Add(obj);
+            HealtPoint hp = obj.GetComponent<HealtPoint>();
+            _healthPoints.Add(hp);
         }
 
         if( _healthPoints.Count > 1)
         {
-            _layerGroup.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroup.spacing * _healthPoints.Count)) / 2;
+            _layerGroup.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroup.spacing * _healthPoints.Count - 1)) / 2;
         }
     }
 
-    private void DestroyElem(GameObject element)
+    public void TakeDamage(int value)
     {
-        DestroyImmediate(element);
+        int newHealth = _character.GetCurrentHealth() - value;
+        Debug.Log(newHealth);
+        if(newHealth <= 0)
+        {
+            Debug.Log("Dead");
+            foreach(HealtPoint hp in _healthPoints)
+            {
+                hp.ValidHp.SetActive(false);
+                hp.InvalidHp.SetActive(true);
+            }
+            _character.SetCurrentHealth(0);
+            return;
+        }
+
+        for(int i = newHealth; i < newHealth + value; i++)
+        {
+            Debug.Log("Loose");
+            _healthPoints[i].ValidHp.SetActive(false);
+            _healthPoints[i].InvalidHp.SetActive(true);
+        }
+        _character.SetCurrentHealth(newHealth);
     }
 
     //private void OnValidate()

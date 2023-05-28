@@ -16,6 +16,7 @@ public class PartyMember : Character
     private void Start()
     {
         AssignValues();
+        _currentHealth = _maxHealth;
     }
     public override void AssignValues()
     {
@@ -44,6 +45,7 @@ public class PartyMember : Character
     protected override void Attack()
     {
         Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
+        _target.TakeDamage(_partyMemberObj.baseDamage);
     }
 
     public override void SetTarget()
@@ -51,4 +53,8 @@ public class PartyMember : Character
         _target = _refs.fightManager.Enemie.GetComponent<ICharacter>();
     }
 
+    public override void SetCurrentHealth(int newValue)
+    {
+        _currentHealth = newValue;
+    }
 }

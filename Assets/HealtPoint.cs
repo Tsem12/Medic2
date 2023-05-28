@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class HealtPoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject _validHp;
+    [SerializeField] private GameObject _invalidHp;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject ValidHp { get => _validHp; set => _validHp = value; }
+    public GameObject InvalidHp { get => _invalidHp; set => _invalidHp = value; }
 }

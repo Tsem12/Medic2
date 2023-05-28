@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour, ICharacter
 {
     [SerializeField] protected AllReferences _refs;
+    [SerializeField] private Health _health;
 
     [SerializeField] protected int _maxHealth;
     protected int _currentHealth;
@@ -14,13 +15,13 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     private Coroutine _attackRoutine;
 
-
     private void OnValidate()
     {
         AssignValues();
     }
 
     #region Abstarct methods
+    public abstract void SetCurrentHealth(int newValue);
     protected abstract void Attack();
     public abstract int GetSpeed();
     public abstract int GetAgro();
@@ -66,4 +67,14 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         return _currentHealth;
     }
+
+    public void TakeDamage(int damage)
+    {
+        if (damage < 0)
+            return;
+
+        _health.TakeDamage(damage);
+    }
+
+
 }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PartyMember1
   m_EditorClassIdentifier: 
   maxHealth: 2
-  baseDamage: 0
-  baseSpeed: 0
+  baseDamage: 1
+  baseSpeed: 15
   baseAgroValue: 100

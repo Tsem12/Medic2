@@ -73,6 +73,7 @@ public class Enemie : Character
     protected override void Attack()
     {
         Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
+        _target.TakeDamage(_enemieObj.baseDamage);
     }
 
     private int Compare(ICharacter x, ICharacter y)
@@ -82,5 +83,10 @@ public class Enemie : Character
         if (x.GetAgro() == 0) return +1;
 
         return y.GetAgro() - x.GetAgro();
+    }
+
+    public override void SetCurrentHealth(int newValue)
+    {
+        _currentHealth = newValue;
     }
 }

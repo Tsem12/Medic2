@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  _health: {fileID: 2384422494978341929}
   _maxHealth: 0
   _partyMemberObj: {fileID: 0}
 --- !u!114 &2384422494978341929

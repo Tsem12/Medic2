@@ -49,7 +49,7 @@ public class FightManager : MonoBehaviour
 
     private void PartyMemberTurn()
     {
-        _partymembersTurnRoutine = StartCoroutine(PartyMembersTurnRoutine());
+        _partymembersTurnRoutine = StartCoroutine(IATurnRoutine());
     }
 
     private void SetGlobalAgroValue()
@@ -93,7 +93,7 @@ public class FightManager : MonoBehaviour
         }
     }
 
-    private IEnumerator PartyMembersTurnRoutine()
+    private IEnumerator IATurnRoutine()
     {
         while(_characterQueue.Count != 0)
         {
