@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d18dae1da5e1154696c1d767c63feeb, type: 3}
   m_Name: EnemiTest
   m_EditorClassIdentifier: 
-  speed: 20
+  baseSpeed: 20
+  baseDamage: 1
+  baseHealth: 10

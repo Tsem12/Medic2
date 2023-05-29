@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: PartyMember1
   m_EditorClassIdentifier: 
-  speed: 10
+  maxHealth: 2
+  baseDamage: 1
+  baseSpeed: 15
+  baseAgroValue: 100

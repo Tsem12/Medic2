@@ -2,41 +2,110 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class FightManager : MonoBehaviour
 {
     [SerializeField] private Enemie _enemie;
     [SerializeField] private PartyMember[] _partyMembers;
 
-    private Queue<ICharacter> characterQueue = new Queue<ICharacter>();
+    [SerializeField] private float _playerTimeToPlay;
+    private float _currentPlayerTimeToPlay;
+
+    private int _globalAgro;
+
+    private Coroutine _playerTurnRoutine;
+    private Coroutine _partymembersTurnRoutine;
+
+    private Queue<ICharacter> _characterQueue = new Queue<ICharacter>();
+    private List<ICharacter> characterList = new List<ICharacter>();
+
+    public Enemie Enemie { get => _enemie; set => _enemie = value; }
+    public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
+    public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
 
     private void Start()
     {
+        _currentPlayerTimeToPlay = _playerTimeToPlay;
+
+        characterList.Add(Enemie.GetComponent<ICharacter>());
+
+        foreach (ICharacter character in PartyMembers)
+        {
+            characterList.Add(character);
+        }
+        StartFight();
+    }
+    private void StartFight()
+    {
+        SetGlobalAgroValue();
+        foreach (ICharacter character in characterList)
+        {
+            character.SetTarget();
+        }
         OrderCharacters();
+        _playerTurnRoutine = StartCoroutine(PlayerTurn());
+    }
+
+    private void PartyMemberTurn()
+    {
+        _partymembersTurnRoutine = StartCoroutine(IATurnRoutine());
+    }
+
+    private void SetGlobalAgroValue()
+    {
+        int agroValue = 0;
+        foreach(PartyMember partyMember in PartyMembers)
+        {
+            agroValue += partyMember.GetComponent<ICharacter>().GetAgro();
+        }
+        GlobalAgro = agroValue;
+        //Debug.Log($"agrovalue: {agroValue}");
     }
 
     private void OrderCharacters()
     {
-        List<ICharacter> characterList = new List<ICharacter>();
-        characterList.Add(_enemie.GetComponent<ICharacter>());
-        foreach(ICharacter character in _partyMembers)
-        {
-            characterList.Add(character);
-        }
         characterList.Sort(Compare);
-        Debug.Log(characterList.Count);
+
         foreach(ICharacter character in characterList)
         {
-            characterQueue.Enqueue(character);
-        }
-
-        for (int i = 0; i < characterList.Count; i++)
-        {
-            ICharacter chara = characterQueue.Dequeue();
-            Debug.Log(chara.GetSpeed());
+            _characterQueue.Enqueue(character);
         }
     }
 
+    private IEnumerator PlayerTurn()
+    {
+        Debug.Log("Player turn start");
+        while (true)
+        {
+
+            // player turn logic
+
+            _currentPlayerTimeToPlay -= Time.deltaTime;
+            if(_currentPlayerTimeToPlay <= 0)
+            {
+                _currentPlayerTimeToPlay = _playerTimeToPlay;
+                Debug.Log("Player time is over");
+                PartyMemberTurn();
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    private IEnumerator IATurnRoutine()
+    {
+        while(_characterQueue.Count != 0)
+        {
+            ICharacter chara =  _characterQueue.Dequeue();
+            chara.StartTurn();
+            yield return new WaitUntil( () => !chara.IsPlaying());
+            chara.EndTurn();
+        }
+        Debug.Log("End of turn");
+    }
+
+    #region sort
     private int Compare(ICharacter x, ICharacter y)
     {
         if(x.GetSpeed() == y.GetSpeed()) return 0;
@@ -45,4 +114,5 @@ public class FightManager : MonoBehaviour
 
         return y.GetSpeed() - x.GetSpeed();
     }
+    #endregion
 }
