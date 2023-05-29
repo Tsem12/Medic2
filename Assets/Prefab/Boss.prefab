@@ -71,7 +71,7 @@ Transform:
   m_Children:
   - {fileID: 8405566153389370331}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7057517109315984578
 SpriteRenderer:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
-  _health: {fileID: 0}
+  _health: {fileID: 5684671865312236434}
   _maxHealth: 10
   _enemieObj: {fileID: 11400000, guid: 487619de7a0e0bb49975440b29d64489, type: 2}
 --- !u!114 &5684671865312236434
@@ -188,8 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425116be4ae1b254d86d70abc63caef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 0}
-  _sliderImage: {fileID: 0}
+  _slider: {fileID: 6011381571543658203}
+  _sliderImage: {fileID: 5983114770515695226}
   _hearthSizeWithSpace: 0
   _heartSize: 0
   _bottomBaseValue: 0

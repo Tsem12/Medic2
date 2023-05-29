@@ -8,11 +8,11 @@ public class Card : MonoBehaviour,IInteractable
     [HideInInspector] public bool wasPlayed = false;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
-    [SerializeField] SpriteRenderer rend;
+    [SerializeField] SpriteRenderer renderer;
+    [SerializeField] SpriteRenderer usedRenderer;
 
     public bool ApplyEffect()
     {
-        Debug.Log("Test");
         Collider2D col = Physics2D.OverlapCircle(transform.position, 1f);
         if (col != null && col.gameObject.CompareTag("PartyMember"))
         {
@@ -33,8 +33,10 @@ public class Card : MonoBehaviour,IInteractable
         {
             if(ApplyEffect())
             {
+                Debug.Log("Test");
                 col.enabled = false;
-                rend.enabled = false;
+                renderer.enabled = false;
+                usedRenderer.enabled = true;
                 wasPlayed = true;
             }
             ResetPos();

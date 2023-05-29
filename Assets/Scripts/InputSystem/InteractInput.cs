@@ -29,9 +29,10 @@ public class InteractInput : MonoBehaviour
     {
         if(Input.touchCount > 0)
         {
-            _getObject = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.touches[0].position), 0.2f).gameObject;
-            if (_getObject != null)
+            Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.touches[0].position), 0.2f);
+            if (col != null)
             {
+                _getObject = col.gameObject;
                 if (_getObject.CompareTag("Grabbable"))//Drag if Grabbable
                 {
                     _dragCoroutine = StartCoroutine(Drag());
