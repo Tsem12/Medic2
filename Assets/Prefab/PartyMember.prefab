@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425116be4ae1b254d86d70abc63caef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
   _slider: {fileID: 5861494981951501814}
   _sliderImage: {fileID: 1849424467116976936}
   _hearthSizeWithSpace: 1.546

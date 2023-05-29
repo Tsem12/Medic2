@@ -44,7 +44,8 @@ public class PartyMember : Character
 
     protected override void Attack()
     {
-        Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
         _target.TakeDamage(_partyMemberObj.baseDamage);
     }
 

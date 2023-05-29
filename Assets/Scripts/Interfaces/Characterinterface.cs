@@ -7,10 +7,11 @@ public interface ICharacter
     public int GetAgro();
     public void StartTurn();
     public bool IsPlaying();
+    public bool IsDead();
+    public void Kill();
     public void EndTurn();
     public void SetTarget();
     public string GetName();
     public void TakeDamage(int damage);
-    //public void SetTarget(ICharacter target);
 }
 

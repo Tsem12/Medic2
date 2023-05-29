@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] private AllReferences _refs;
+
+    private ICharacter _character;
+
     [Header("Slider refs")]
     [SerializeField] private Slider _slider;
     [SerializeField] private Image _sliderImage;
@@ -18,7 +22,7 @@ public class Health : MonoBehaviour
 
     private RectTransform _sliderRectTransform;
 
-    private ICharacter _character;
+
     [Header("layout group")]
     [SerializeField] private GameObject _healthPoint;
     [SerializeField] private HorizontalLayoutGroup _layerGroup;
@@ -45,22 +49,23 @@ public class Health : MonoBehaviour
     public void TakeDamage(int value)
     {
         int newHealth = _character.GetCurrentHealth() - value;
-        Debug.Log(newHealth);
         if(newHealth <= 0)
         {
-            Debug.Log("Dead");
+            if (_refs.fightManager.EnableDebug)
+                Debug.Log($"{gameObject.name} have been killed");
+
             foreach(HealtPoint hp in _healthPoints)
             {
                 hp.ValidHp.SetActive(false);
                 hp.InvalidHp.SetActive(true);
             }
             _character.SetCurrentHealth(0);
+            _character.Kill();
             return;
         }
 
         for(int i = newHealth; i < newHealth + value; i++)
         {
-            Debug.Log("Loose");
             _healthPoints[i].ValidHp.SetActive(false);
             _healthPoints[i].InvalidHp.SetActive(true);
         }

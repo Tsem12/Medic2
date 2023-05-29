@@ -45,7 +45,10 @@ public class Enemie : Character
 
         foreach(ICharacter c in _refs.fightManager.PartyMembers)
         {
-            chara.Add(c);
+            if (!c.IsDead())
+            {
+                chara.Add(c);
+            }
         }
 
         chara.Sort(Compare);
@@ -55,7 +58,7 @@ public class Enemie : Character
         foreach(ICharacter c in chara)
         {
             float percentage = ((float)c.GetAgro() / (float)_refs.fightManager.GlobalAgro) *100;
-            Debug.Log($"{percentage + others}, random {random} ");
+            //Debug.Log($"{percentage + others}, random {random} ");
             if(percentage + others >= random)
             {
                 target = c;
@@ -72,7 +75,8 @@ public class Enemie : Character
     }
     protected override void Attack()
     {
-        Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
         _target.TakeDamage(_enemieObj.baseDamage);
     }
 

@@ -10,6 +10,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     [SerializeField] protected int _maxHealth;
     protected int _currentHealth;
+    protected bool _isDead;
 
     private bool _isPlaying;
 
@@ -31,12 +32,14 @@ public abstract class Character : MonoBehaviour, ICharacter
     public virtual void StartTurn()
     {
         _isPlaying = true;
-        Debug.Log($"{gameObject.name} is attacking");
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} turn started");
         _attackRoutine = StartCoroutine(AttackRoutine());
     }
     public virtual void EndTurn()
     {
-        Debug.Log($"{gameObject.name} finished his turn");
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} finished his turn");
     }
 
 
@@ -76,5 +79,14 @@ public abstract class Character : MonoBehaviour, ICharacter
         _health.TakeDamage(damage);
     }
 
+    public bool IsDead()
+    {
+        return _isDead;
+    }
 
+    public void Kill()
+    {
+        _isDead = true;
+        GetComponent<SpriteRenderer>().color = Color.red;
+    }
 }
