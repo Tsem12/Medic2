@@ -68,4 +68,9 @@ public class PartyMember : Character, IHealable
     {
         return _partyMemberObj.icon;
     }
+
+    public override int GetMaxHealthBar()
+    {
+        return 1;
+    }
 }

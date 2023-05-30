@@ -6,6 +6,7 @@ public interface ICharacter
     public int GetCurrentHealth();
     public int GetSpeed();
     public int GetAgro();
+    public int GetMaxHealthBar();
     public string GetName();
     public Sprite GetIcone();
     public bool IsPlaying();

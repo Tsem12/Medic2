@@ -101,4 +101,9 @@ public class Enemie : Character
     {
         return _enemieObj.icon;
     }
+
+    public override int GetMaxHealthBar()
+    {
+        return _enemieObj.numberOfHealthBar;
+    }
 }

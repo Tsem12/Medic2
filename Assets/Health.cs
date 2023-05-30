@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     [SerializeField] private AllReferences _refs;
 
     private ICharacter _character;
+    private int _currentHealthBarAmount;
 
     [Header("layout group")]
     [SerializeField] private GameObject _healthPoint;
@@ -22,6 +23,9 @@ public class Health : MonoBehaviour
     {
         _healthPoints.Clear();
         _character = GetComponent<Character>();
+
+        _currentHealthBarAmount = _character.GetMaxHealthBar();
+
         for (int i = 0; i < _character.GetMaxHealth(); i++)
         {
             GameObject obj = Instantiate(_healthPoint, _layerGroup.transform);
