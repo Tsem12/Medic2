@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PartyMember : Character
+public class PartyMember : Character, IHealable
 {
     [SerializeField] private PartyMemberObjets _partyMemberObj;
 
@@ -57,5 +57,10 @@ public class PartyMember : Character
     public override void SetCurrentHealth(int newValue)
     {
         _currentHealth = newValue;
+    }
+
+    public void Heal(int value)
+    {
+        _health.Heal(value);
     }
 }
