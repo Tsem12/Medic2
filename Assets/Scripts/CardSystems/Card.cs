@@ -13,10 +13,13 @@ public class Card : MonoBehaviour,IInteractable
 
     public bool ApplyEffect()
     {
-        Collider2D col = Physics2D.OverlapCircle(transform.position, 1f);
-        if (col != null && col.gameObject.CompareTag("PartyMember"))
+        col.enabled = false;
+        Collider2D collision = Physics2D.OverlapCircle(transform.position, 1f);
+        col.enabled = true;
+        if (collision != null && collision.gameObject.CompareTag("PartyMember"))
         {
-            carBase.ApplyEffectOfTheCard(col.GetComponent<PartyMember>().GetPartyMemberObj());
+            carBase.ApplyEffectOfTheCard(collision.GetComponent<PartyMember>().GetPartyMemberObj());
+            Debug.Log("EffectApplied");
             return true;
         }
         return false;
@@ -29,7 +32,7 @@ public class Card : MonoBehaviour,IInteractable
 
     public void Interact()
     {
-        if(!handlerObject.isChaningCards)
+        if(!handlerObject.isChaningCards && !wasPlayed)
         {
             if(ApplyEffect())
             {

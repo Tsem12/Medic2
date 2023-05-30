@@ -31,11 +31,11 @@ public class InputManager : MonoBehaviour
 
     void Press(InputAction.CallbackContext ctx)
     {
-        inputHandlerObj.PressEvent();
+        inputHandlerObj?.PressEvent();
     }
 
     void UnPress(InputAction.CallbackContext ctx)
     {
-        inputHandlerObj.UnPressEvent();
+        inputHandlerObj?.UnPressEvent();
     }
 }
