@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour, ICharacter
 {
     [SerializeField] protected AllReferences _refs;
-    [SerializeField] private Health _health;
+    [SerializeField] protected Health _health;
 
     [SerializeField] protected int _maxHealth;
     protected int _currentHealth;
