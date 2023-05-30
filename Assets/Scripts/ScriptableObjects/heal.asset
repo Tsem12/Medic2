@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: 
   manaCost: 0
+  cardBehaviour: 0
