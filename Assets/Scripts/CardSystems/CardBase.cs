@@ -6,9 +6,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardBase", menuName = "ScriptableObjects/CardBase")]
 public class CardBase : ScriptableObject
 {
+    public CardBehaviour cardBehaviour;
+    public bool isEnableInGame = true;
     public string cardName;
     public int manaCost;
-    public CardBehaviour cardBehaviour;
+    public int healthHealed;
+    public float posionChance;
+
+
+    
 
     public enum CardBehaviour
     {
