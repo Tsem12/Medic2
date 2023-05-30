@@ -31,12 +31,14 @@ public class CardBase : ScriptableObject
         fortifyMana
     }
 
-    public void ApplyEffectOfTheCard(PartyMemberObjets partyMember)
+    public void ApplyEffectOfTheCard(IHealable partyMember)
     {
         switch (cardBehaviour)
         {
             case CardBehaviour.heal:
-                Debug.Log("la carte heal");
+                Debug.Log("InSwitch");
+                partyMember.Heal(2);
+                
                 break;
 
             case CardBehaviour.unstableHeal:
