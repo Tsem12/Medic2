@@ -102,7 +102,10 @@ public class FightManager : MonoBehaviour
             // player turn logic
 
             _currentPlayerTimeToPlay -= Time.deltaTime;
-            _playerSlider.value = _currentPlayerTimeToPlay / _playerTimeToPlay;
+            if(_playerSlider != null)
+            {
+                _playerSlider.value = _currentPlayerTimeToPlay / _playerTimeToPlay;
+            }
             if (_currentPlayerTimeToPlay <= 0)
             {
                 _currentPlayerTimeToPlay = _playerTimeToPlay;
