@@ -28,6 +28,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public abstract int GetAgro();
     public abstract void SetTarget();
     public abstract void AssignValues();
+    public abstract Sprite GetIcone();
     #endregion
     public virtual void StartTurn()
     {
@@ -89,4 +90,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         _isDead = true;
         GetComponent<SpriteRenderer>().color = Color.red;
     }
+
+
+
 }

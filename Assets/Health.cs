@@ -12,19 +12,6 @@ public class Health : MonoBehaviour
 
     private ICharacter _character;
 
-    [Header("Slider refs")]
-    [SerializeField] private Slider _slider;
-    [SerializeField] private Image _sliderImage;
-
-    [SerializeField] private float _hearthSizeWithSpace;
-    [SerializeField] private float _heartSize;
-
-    [SerializeField] private float _bottomBaseValue;
-    [SerializeField] private float _bottomScaleValue;
-
-    private RectTransform _sliderRectTransform;
-
-
     [Header("layout group")]
     [SerializeField] private GameObject _healthPoint;
     [SerializeField] private HorizontalLayoutGroup _layerGroup;
@@ -77,6 +64,7 @@ public class Health : MonoBehaviour
     public void TestHeal() => Heal(2);
     internal void Heal(int value)
     {
+        Debug.Log("Tryheal");
         if (_character.IsDead())
         {
             Debug.LogError($"{gameObject.name} is dead he cannot be healed");

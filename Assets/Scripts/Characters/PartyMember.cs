@@ -63,4 +63,9 @@ public class PartyMember : Character, IHealable
     {
         _health.Heal(value);
     }
+
+    public override Sprite GetIcone()
+    {
+        return _partyMemberObj.icon;
+    }
 }

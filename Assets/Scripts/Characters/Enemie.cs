@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemie : Character
 {
     [SerializeField] private EnemiesObjects _enemieObj;
+    [SerializeField] private Image _targetIcon;
 
     private ICharacter _target;
 
@@ -72,6 +74,7 @@ public class Enemie : Character
         }
 
         _target = target;
+        _targetIcon.sprite = target.GetIcone();
     }
     protected override void Attack()
     {
@@ -92,5 +95,10 @@ public class Enemie : Character
     public override void SetCurrentHealth(int newValue)
     {
         _currentHealth = newValue;
+    }
+
+    public override Sprite GetIcone()
+    {
+        return _enemieObj.icon;
     }
 }

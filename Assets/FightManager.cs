@@ -4,9 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using NaughtyAttributes;
 
 public class FightManager : MonoBehaviour
 {
+    public enum FightState
+    {
+        PlayerTurn,
+        IATurn,
+        None
+    }
+
+    private FightState _state = FightState.None;
+
     [SerializeField] private bool _enableDebug;
 
     [SerializeField] private Enemie _enemie;
@@ -29,6 +39,7 @@ public class FightManager : MonoBehaviour
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
     public bool EnableDebug { get; private set; }
+    public FightState State { get; private set; }
 
     private void Start()
     {
@@ -94,6 +105,7 @@ public class FightManager : MonoBehaviour
 
     private IEnumerator PlayerTurn()
     {
+        _state = FightState.PlayerTurn;
         if (_enableDebug)
             Debug.Log("Player turn start");
         while (true)
@@ -122,7 +134,8 @@ public class FightManager : MonoBehaviour
 
     private IEnumerator IATurnRoutine()
     {
-        while(_characterQueue.Count != 0)
+        _state = FightState.IATurn;
+        while (_characterQueue.Count != 0)
         {
             ICharacter chara =  _characterQueue.Dequeue();
 
@@ -142,6 +155,8 @@ public class FightManager : MonoBehaviour
                 {
                     if (_enableDebug)
                         Debug.Log("GAME OVER");
+
+                    _state = FightState.None;
                     yield break;
                 }
                 continue;
@@ -154,6 +169,7 @@ public class FightManager : MonoBehaviour
 
 
         }
+        _state = FightState.None;
         if(ArePartyStillAlive())
         {
             StartFight();

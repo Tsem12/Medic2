@@ -1,17 +1,20 @@
+using UnityEngine;
+
 public interface ICharacter
 {
     public int GetMaxHealth();
     public int GetCurrentHealth();
-    public void SetCurrentHealth(int newValue);
     public int GetSpeed();
     public int GetAgro();
-    public void StartTurn();
+    public string GetName();
+    public Sprite GetIcone();
     public bool IsPlaying();
     public bool IsDead();
     public void Kill();
+    public void StartTurn();
     public void EndTurn();
-    public void SetTarget();
-    public string GetName();
     public void TakeDamage(int damage);
+    public void SetTarget();
+    public void SetCurrentHealth(int newValue);
 }
 

@@ -16,4 +16,6 @@ public class PartyMemberObjets : ScriptableObject
     public int baseSpeed;
     public int baseAgroValue;
 
+    public Sprite icon;
+
 }

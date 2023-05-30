@@ -9,4 +9,6 @@ public class EnemiesObjects : ScriptableObject
     public int baseSpeed;
     public int baseDamage;
     public int baseHealth;
+
+    public Sprite icon;
 }
