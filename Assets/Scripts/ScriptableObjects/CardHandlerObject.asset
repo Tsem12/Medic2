@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d18dae1da5e1154696c1d767c63feeb, type: 3}
-  m_Name: EnemiTest
+  m_Script: {fileID: 11500000, guid: 099fd23dc122dc741b34492211bdfee9, type: 3}
+  m_Name: CardHandlerObject
   m_EditorClassIdentifier: 
-  baseSpeed: 20
-  baseDamage: 1
-  baseHealth: 10
+  isChaningCards: 0
+  cardsPrefab: []

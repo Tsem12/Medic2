@@ -5,8 +5,28 @@ using UnityEngine;
 public class Enemie : Character
 {
     [SerializeField] private EnemiesObjects _enemieObj;
+
     private ICharacter _target;
 
+    [Header("Stats")]
+    private int _damage;
+    private int _speed;
+
+    private void Start()
+    {
+        AssignValues();
+        _currentHealth = _maxHealth;
+
+    }
+    public override void AssignValues()
+    {
+        if(_enemieObj != null)
+        {
+            _maxHealth = _enemieObj.baseHealth;
+            _damage = _enemieObj.baseDamage;
+            _speed = _enemieObj.baseSpeed;
+        }
+    }
     public override int GetAgro()
     {
         Debug.LogError("Boss have no agro value");
@@ -15,7 +35,7 @@ public class Enemie : Character
 
     public override int GetSpeed()
     {
-        return _enemieObj.speed;
+        return _speed;
     }
 
     public override void SetTarget()
@@ -25,7 +45,10 @@ public class Enemie : Character
 
         foreach(ICharacter c in _refs.fightManager.PartyMembers)
         {
-            chara.Add(c);
+            if (!c.IsDead())
+            {
+                chara.Add(c);
+            }
         }
 
         chara.Sort(Compare);
@@ -35,7 +58,7 @@ public class Enemie : Character
         foreach(ICharacter c in chara)
         {
             float percentage = ((float)c.GetAgro() / (float)_refs.fightManager.GlobalAgro) *100;
-            Debug.Log($"{percentage + others}, random {random} ");
+            //Debug.Log($"{percentage + others}, random {random} ");
             if(percentage + others >= random)
             {
                 target = c;
@@ -52,7 +75,9 @@ public class Enemie : Character
     }
     protected override void Attack()
     {
-        Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
+        _target.TakeDamage(_enemieObj.baseDamage);
     }
 
     private int Compare(ICharacter x, ICharacter y)
@@ -62,5 +87,10 @@ public class Enemie : Character
         if (x.GetAgro() == 0) return +1;
 
         return y.GetAgro() - x.GetAgro();
+    }
+
+    public override void SetCurrentHealth(int newValue)
+    {
+        _currentHealth = newValue;
     }
 }

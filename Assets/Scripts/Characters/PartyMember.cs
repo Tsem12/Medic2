@@ -5,14 +5,36 @@ using UnityEngine;
 public class PartyMember : Character
 {
     [SerializeField] private PartyMemberObjets _partyMemberObj;
+
+    [Header("Stats")]
+    private int _damage;
+    private int _speed;
+    private int _agroValue;
+
     private ICharacter _target;
+
+    private void Start()
+    {
+        AssignValues();
+        _currentHealth = _maxHealth;
+    }
+    public override void AssignValues()
+    {
+        if( _partyMemberObj != null)
+        {
+            _maxHealth = _partyMemberObj.maxHealth;
+            _damage = _partyMemberObj.baseDamage;
+            _speed = _partyMemberObj.baseSpeed;
+            _agroValue = _partyMemberObj.baseAgroValue;
+        }
+    }
     public override int GetSpeed()
     {
-        return _partyMemberObj.speed;
+        return _speed;
     }
     public override int GetAgro()
     {
-        return _partyMemberObj.agroValue;
+        return _agroValue;
     }
 
     public PartyMemberObjets GetPartyMemberObj() 
@@ -22,7 +44,9 @@ public class PartyMember : Character
 
     protected override void Attack()
     {
-        Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
+        _target.TakeDamage(_partyMemberObj.baseDamage);
     }
 
     public override void SetTarget()
@@ -30,4 +54,8 @@ public class PartyMember : Character
         _target = _refs.fightManager.Enemie.GetComponent<ICharacter>();
     }
 
+    public override void SetCurrentHealth(int newValue)
+    {
+        _currentHealth = newValue;
+    }
 }

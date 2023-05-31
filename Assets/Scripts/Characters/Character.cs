@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,25 +6,40 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour, ICharacter
 {
     [SerializeField] protected AllReferences _refs;
+    [SerializeField] private Health _health;
+
+    [SerializeField] protected int _maxHealth;
+    protected int _currentHealth;
+    protected bool _isDead;
+
     private bool _isPlaying;
 
     private Coroutine _attackRoutine;
 
+    private void OnValidate()
+    {
+        AssignValues();
+    }
+
     #region Abstarct methods
+    public abstract void SetCurrentHealth(int newValue);
     protected abstract void Attack();
     public abstract int GetSpeed();
     public abstract int GetAgro();
     public abstract void SetTarget();
+    public abstract void AssignValues();
     #endregion
     public virtual void StartTurn()
     {
         _isPlaying = true;
-        Debug.Log($"{gameObject.name} is attacking");
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} turn started");
         _attackRoutine = StartCoroutine(AttackRoutine());
     }
     public virtual void EndTurn()
     {
-        Debug.Log($"{gameObject.name} finished his turn");
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} finished his turn");
     }
 
 
@@ -43,5 +59,34 @@ public abstract class Character : MonoBehaviour, ICharacter
     public string GetName()
     {
         return gameObject.name;
+    }
+
+    public int GetMaxHealth()
+    {
+        return _maxHealth;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (damage < 0)
+            return;
+
+        _health.TakeDamage(damage);
+    }
+
+    public bool IsDead()
+    {
+        return _isDead;
+    }
+
+    public void Kill()
+    {
+        _isDead = true;
+        GetComponent<SpriteRenderer>().color = Color.red;
     }
 }
