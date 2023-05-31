@@ -16,8 +16,6 @@ public class ManaBar : MonoBehaviour
     [SerializeField] Slider preManaSlider;
     [SerializeField] float maxMana = 10;
     [SerializeField] float manaRecuperationCooldown = 2;
-    [SerializeField] float smoothnessFactor = 5f;
-
 
 
     private float minMana = 0;
@@ -28,7 +26,7 @@ public class ManaBar : MonoBehaviour
 
     private void Awake()
     {
-        
+
         currentMana = minMana;
         maxPreMana = maxMana * 10;
         minPreMana = minMana;
@@ -40,10 +38,10 @@ public class ManaBar : MonoBehaviour
     {
         CheckSliderValues();
 
-        if(currentMana ==7)
+        if (currentMana == 10)
         {
-           
-            RemoveMana(7);
+
+            RemoveMana(9);
         }
 
         Debug.Log(currentMana);
@@ -53,15 +51,15 @@ public class ManaBar : MonoBehaviour
 
     void AddMana(float manaAmount)
     {
-        if ((manaAmount<=0)||(manaAmount>maxMana)||(notDefinitiveIsPlayerDead))
+        if ((manaAmount <= 0) || (manaAmount > maxMana) || (notDefinitiveIsPlayerDead))
         {
             Debug.LogWarning("Impossible to Add Mana you made a mistake");
         }
         else
         {
             float newMana = currentMana + manaAmount;
-            StartCoroutine(IncreaseManaSmoothly(newMana));
-        } 
+            currentMana = Mathf.Min(newMana, maxMana);
+        }
     }
 
     void PreAddMana(int manaAmount)
@@ -79,7 +77,7 @@ public class ManaBar : MonoBehaviour
 
     void RemoveMana(int manaAmount)
     {
-        if ((manaAmount <= 0)||(manaAmount > maxMana) || (notDefinitiveIsPlayerDead))
+        if ((manaAmount <= 0) || (manaAmount > maxMana) || (notDefinitiveIsPlayerDead))
         {
             Debug.LogWarning("Impossible to Remove Mana you made a mistake");
         }
@@ -108,10 +106,13 @@ public class ManaBar : MonoBehaviour
         //visual values
         manaSlider.maxValue = maxMana;
         manaSlider.minValue = minMana;
+        //
+        currentMana = currentMana;
         manaSlider.value = currentMana;
 
         preManaSlider.maxValue = maxPreMana;
         preManaSlider.minValue = minPreMana;
+        //
         preManaSlider.value = currentPreMana;
 
 
@@ -135,7 +136,7 @@ public class ManaBar : MonoBehaviour
     IEnumerator PreManaRefill()
     {
         PreAddMana(1);
-        yield return new WaitForSeconds(manaRecuperationCooldown/10);
+        yield return new WaitForSeconds(manaRecuperationCooldown / 10);
         StartCoroutine(PreManaRefill());
     }
 
@@ -145,15 +146,4 @@ public class ManaBar : MonoBehaviour
         yield return new WaitForSeconds(manaRecuperationCooldown);
         StartCoroutine(ManaRefill());
     }
-
-    IEnumerator IncreaseManaSmoothly(float targetMana)
-    {
-        while ((currentMana < targetMana))
-        {
-            currentMana = Mathf.MoveTowards(currentMana, targetMana, Time.deltaTime * smoothnessFactor);
-            yield return null;
-        }
-        currentMana = Mathf.Min(currentMana, maxMana);
-    }
 }
-
