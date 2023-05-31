@@ -24,15 +24,15 @@ public class ManaBar : MonoBehaviour
 
     private void OnEnable()
     {
-        manaEventHandler.updateStart += UpdateMana;
+        manaEventHandler.manaStart += StartUpdate;
     }
 
     private void OnDisable()
     {
-        manaEventHandler.updateStart -= UpdateMana;
+        manaEventHandler.manaStart -= StartUpdate;
     }
 
-    IEnumerator UpdateManaRoutine()
+    IEnumerator UpdateMana()
     {
         
         if(mana <= manaEventHandler.currentMana)
@@ -62,11 +62,11 @@ public class ManaBar : MonoBehaviour
         updateRoutine = null;
     }
 
-    void UpdateMana()
+    void StartUpdate()
     {
         if(updateRoutine == null)
         {
-            updateRoutine = StartCoroutine(UpdateManaRoutine());
+            updateRoutine = StartCoroutine(UpdateMana());
         }
     }
 }
