@@ -9,9 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d18dae1da5e1154696c1d767c63feeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: EnemiTest
   m_EditorClassIdentifier: 
-  baseSpeed: 20
+  maxHealth: 10
+  numberOfHealthBar: 1
   baseDamage: 1
-  baseHealth: 10
+  baseSpeed: 20
+  baseAgroValue: 0
+  icon: {fileID: 0}
+  baseAttack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+  specialAttacks:
+  - {fileID: 11400000, guid: ff5bc03619f50f24289b2a58072b6d20, type: 2}
+  - {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
+  specialAttacksTrigerMode: 0
+  chanceToSpecialAttack: 50
+  maxHpToSpecialAttacks: 0
+  minHpToSpecialAttacks: 0
+  testHp: 0

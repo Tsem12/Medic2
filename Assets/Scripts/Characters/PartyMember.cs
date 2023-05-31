@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PartyMember : Character, IHealable
 {
-    [SerializeField] private PartyMemberObjets _partyMemberObj;
+    [SerializeField] private CharacterObjets _partyMemberObj;
 
     [Header("Stats")]
     private int _damage;
@@ -37,7 +37,7 @@ public class PartyMember : Character, IHealable
         return _agroValue;
     }
 
-    public PartyMemberObjets GetPartyMemberObj() 
+    public CharacterObjets GetPartyMemberObj() 
     {
         return _partyMemberObj;
     }

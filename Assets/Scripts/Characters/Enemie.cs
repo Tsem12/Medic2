@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Enemie : Character
 {
-    [SerializeField] private EnemiesObjects _enemieObj;
+    [SerializeField] private CharacterObjets _enemieObj;
     [SerializeField] private Image _targetIcon;
 
     private ICharacter _target;
@@ -24,7 +24,7 @@ public class Enemie : Character
     {
         if(_enemieObj != null)
         {
-            _maxHealth = _enemieObj.baseHealth;
+            _maxHealth = _enemieObj.maxHealth;
             _damage = _enemieObj.baseDamage;
             _speed = _enemieObj.baseSpeed;
         }
