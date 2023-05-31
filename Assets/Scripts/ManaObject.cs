@@ -10,7 +10,7 @@ public class ManaObject : ScriptableObject
     public float currentMana;
     public float maxMana = 10f;
 
-    public event Action manaStart;
+    public event Action updateStart;
 
     public void AddMana(int amount)
     {
@@ -18,7 +18,7 @@ public class ManaObject : ScriptableObject
         {
             currentMana += amount;
             if (currentMana >= maxMana) currentMana = maxMana;
-            manaStart?.Invoke();
+            updateStart?.Invoke();
         }
     }
 
@@ -28,7 +28,7 @@ public class ManaObject : ScriptableObject
         {
             currentMana -= amount;
             if (currentMana <= 0f) currentMana = 0f;
-            manaStart?.Invoke();
+            updateStart?.Invoke();
         }
     }
 
