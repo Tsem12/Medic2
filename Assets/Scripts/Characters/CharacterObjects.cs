@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using NaughtyAttributes;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PartyMemberObjects", menuName = "Characters/PartyMembers")]
+[CreateAssetMenu(fileName = "CharacterObjects", menuName = "Characters/CharacterObjects")]
 public class CharacterObjets : ScriptableObject
 {
     [System.Serializable]
@@ -28,10 +28,10 @@ public class CharacterObjets : ScriptableObject
     public int baseAgroValue;
     public Sprite icon;
 
-    [Header("Spécial Attacks")]
+    [Header("Attacks paterns")]
     [Space]
 
-    public AttacksPatern[] specialAttacks;
+    public AttacksPatern[] attacksPatern;
 
     public SpecialAttacksTrigerMode specialAttacksTrigerMode;
 
