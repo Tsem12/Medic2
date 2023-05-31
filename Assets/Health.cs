@@ -1,3 +1,5 @@
+using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -69,6 +71,39 @@ public class Health : MonoBehaviour
             _healthPoints[i].ValidHp.SetActive(false);
             _healthPoints[i].InvalidHp.SetActive(true);
         }
+        _character.SetCurrentHealth(newHealth);
+    }
+    [Button]
+    public void TestHeal() => Heal(2);
+    internal void Heal(int value)
+    {
+        if (_character.IsDead())
+        {
+            Debug.LogError($"{gameObject.name} is dead he cannot be healed");
+            return;
+        }
+
+        int newHealth = _character.GetCurrentHealth() + value;
+        if (newHealth > _character.GetMaxHealth())
+        {
+            newHealth = _character.GetMaxHealth();
+
+            foreach (HealtPoint hp in _healthPoints)
+            {
+                hp.ValidHp.SetActive(true);
+                hp.InvalidHp.SetActive(false);
+            }
+            _character.SetCurrentHealth(_character.GetMaxHealth());
+            return;
+        }
+
+        for (int i = _character.GetCurrentHealth(); i < newHealth; i++)
+        {
+            _healthPoints[i].ValidHp.SetActive(true);
+            _healthPoints[i].InvalidHp.SetActive(false);
+        }
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} have been healed");
         _character.SetCurrentHealth(newHealth);
     }
 

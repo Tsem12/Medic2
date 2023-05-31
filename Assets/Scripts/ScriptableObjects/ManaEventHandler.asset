@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b66fa7e0793d6445a89a7d021e4ec51, type: 3}
-  m_Name: heal
+  m_Script: {fileID: 11500000, guid: e70c8fb676d0b3a4691d7ee328e31746, type: 3}
+  m_Name: ManaEventHandler
   m_EditorClassIdentifier: 
-  cardName: 
-  manaCost: 0
-  cardBehaviour: 0
+  currentMana: 0
+  maxMana: 10

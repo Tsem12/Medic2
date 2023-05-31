@@ -8,15 +8,18 @@ public class Card : MonoBehaviour,IInteractable
     [HideInInspector] public bool wasPlayed = false;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
-    [SerializeField] SpriteRenderer renderer;
+    [SerializeField] SpriteRenderer myRender;
     [SerializeField] SpriteRenderer usedRenderer;
+    [SerializeField] float size = 0.5f;
 
     public bool ApplyEffect()
     {
-        Collider2D col = Physics2D.OverlapCircle(transform.position, 1f);
-        if (col != null && col.gameObject.CompareTag("PartyMember"))
+        col.enabled = false;
+        Collider2D collision = Physics2D.OverlapCircle(transform.position, size);
+        col.enabled = true;
+        if (collision != null && collision.gameObject.CompareTag("PartyMember"))
         {
-            carBase.ApplyEffectOfTheCard(col.GetComponent<PartyMember>().GetPartyMemberObj());
+            carBase.ApplyEffectOfTheCard(collision.GetComponent<IHealable>());
             return true;
         }
         return false;
@@ -29,13 +32,13 @@ public class Card : MonoBehaviour,IInteractable
 
     public void Interact()
     {
-        if(!handlerObject.isChaningCards)
+        if(!handlerObject.isChaningCards && !wasPlayed)
         {
             if(ApplyEffect())
             {
                 Debug.Log("Test");
                 col.enabled = false;
-                renderer.enabled = false;
+                myRender.enabled = false;
                 usedRenderer.enabled = true;
                 wasPlayed = true;
             }
@@ -45,5 +48,11 @@ public class Card : MonoBehaviour,IInteractable
         {
 
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, size);
     }
 }

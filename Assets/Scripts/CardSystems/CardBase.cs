@@ -6,9 +6,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardBase", menuName = "ScriptableObjects/CardBase")]
 public class CardBase : ScriptableObject
 {
+    public CardBehaviour cardBehaviour;
+    public bool isEnableInGame = true;
     public string cardName;
     public int manaCost;
-    public CardBehaviour cardBehaviour;
+    public int healthHealed;
+    public float posionChance;
+
+
+    
 
     public enum CardBehaviour
     {
@@ -31,12 +37,14 @@ public class CardBase : ScriptableObject
         fortifyMana
     }
 
-    public void ApplyEffectOfTheCard(PartyMemberObjets partyMember)
+    public void ApplyEffectOfTheCard(IHealable partyMember)
     {
         switch (cardBehaviour)
         {
             case CardBehaviour.heal:
-                Debug.Log("la carte heal");
+                Debug.Log("InSwitch");
+                partyMember.Heal(2);
+                
                 break;
 
             case CardBehaviour.unstableHeal:

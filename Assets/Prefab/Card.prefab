@@ -232,5 +232,6 @@ MonoBehaviour:
   wasPlayed: 0
   handlerObject: {fileID: 11400000, guid: c8ed50634ba3e3a4297e68e090e6cfa2, type: 2}
   col: {fileID: 6714790924635855949}
-  renderer: {fileID: 5112930366879408500}
+  myRender: {fileID: 5112930366879408500}
   usedRenderer: {fileID: 4886648995312855033}
+  size: 0.2
