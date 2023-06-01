@@ -10,13 +10,17 @@ public class CardBase : ScriptableObject
     public bool isEnableInGame = true;
     public string cardName;
     public int manaCost;
-    public int healthHealed;
-    public float posionChance;
+    public ApplyTo applyTo;
 
+    bool doHeal
+    {
+        get
+        {
+            return cardBehaviour == CardBehaviour.heal || cardBehaviour == CardBehaviour.regeneration || cardBehaviour == CardBehaviour.unNaturalRegeneration || cardBehaviour == CardBehaviour.massHeal || cardBehaviour == CardBehaviour.antidote;
+        }
+    }
 
-    
-
-    public enum CardBehaviour
+    bool isTurnDependant
     {
         heal,
         unstableHeal,
