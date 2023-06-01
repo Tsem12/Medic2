@@ -4,14 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using NaughtyAttributes;
 
 public class FightManager : MonoBehaviour
 {
+    public enum FightState
+    {
+        PlayerTurn,
+        IATurn,
+        None
+    }
+
+    private FightState _state = FightState.None;
+
     [SerializeField] private bool _enableDebug;
 
     [SerializeField] private Enemie _enemie;
     [SerializeField] private PartyMember[] _partyMembers;
-    [SerializeField] private Slider _playerSlider;
+    [SerializeField] private Image _playerSlider;
+    [SerializeField] private GameObject _endTurnButton;
 
     [SerializeField] private float _playerTimeToPlay;
     private float _currentPlayerTimeToPlay;
@@ -25,10 +36,13 @@ public class FightManager : MonoBehaviour
     private List<ICharacter> _characterList = new List<ICharacter>();
     private List<ICharacter> _partyMembersList = new List<ICharacter>();
 
+    private bool _endTurn;
+
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
     public bool EnableDebug { get; private set; }
+    public FightState State { get; private set; }
 
     private void Start()
     {
@@ -92,8 +106,18 @@ public class FightManager : MonoBehaviour
         return false;
     }
 
+    public void FinishTurn()
+    {
+        if(_state == FightState.PlayerTurn)
+        {
+            _endTurn = true;
+        }
+    }
+
     private IEnumerator PlayerTurn()
     {
+        _state = FightState.PlayerTurn;
+        _endTurnButton.SetActive(true);
         if (_enableDebug)
             Debug.Log("Player turn start");
         while (true)
@@ -104,15 +128,18 @@ public class FightManager : MonoBehaviour
             _currentPlayerTimeToPlay -= Time.deltaTime;
             if(_playerSlider != null)
             {
-                _playerSlider.value = _currentPlayerTimeToPlay / _playerTimeToPlay;
+                _playerSlider.fillAmount = _currentPlayerTimeToPlay / _playerTimeToPlay;
             }
-            if (_currentPlayerTimeToPlay <= 0)
+            if (_currentPlayerTimeToPlay <= 0 || _endTurn)
             {
+                _endTurn = false;
                 _currentPlayerTimeToPlay = _playerTimeToPlay;
+                _playerSlider.fillAmount = 0;
 
                 if(_enableDebug)
-                    Debug.Log("Player time is over");
+                    Debug.Log("Player turn is over");
 
+                _endTurnButton.SetActive(false);
                 PartyMemberTurn();
                 yield break;
             }
@@ -122,7 +149,8 @@ public class FightManager : MonoBehaviour
 
     private IEnumerator IATurnRoutine()
     {
-        while(_characterQueue.Count != 0)
+        _state = FightState.IATurn;
+        while (_characterQueue.Count != 0)
         {
             ICharacter chara =  _characterQueue.Dequeue();
 
@@ -142,6 +170,8 @@ public class FightManager : MonoBehaviour
                 {
                     if (_enableDebug)
                         Debug.Log("GAME OVER");
+
+                    _state = FightState.None;
                     yield break;
                 }
                 continue;
@@ -154,7 +184,16 @@ public class FightManager : MonoBehaviour
 
 
         }
-        if(ArePartyStillAlive())
+        _state = FightState.None;
+
+        if (_enemie.GetComponent<ICharacter>().IsDead())
+        {
+            if (_enableDebug)
+                Debug.Log("Boss defeated");
+            yield break;
+        }
+
+        if (ArePartyStillAlive())
         {
             StartFight();
         }

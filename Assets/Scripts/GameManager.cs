@@ -10,11 +10,21 @@ public class GameManager : MonoBehaviour
 
     public GAMESTATE GameState { get => _gameState; set => _gameState = value; }
 
+    public GameData gameData;
+
     public enum GAMESTATE
     {
         Menu,
         Playing,
         Paused
     }
+
+
+    private void Awake()
+    {
+        gameData = SaveSysteme.Load();
+    }
+
+
 
 }
