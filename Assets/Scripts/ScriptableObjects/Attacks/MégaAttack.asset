@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40f8d1e8efc19604aa27eb5c17f73c56, type: 3}
-  m_Name: "Sp\xE9cial Attack1"
+  m_Name: "M\xE9gaAttack"
   m_EditorClassIdentifier: 
-  attackName: "atk sp\xE91"
+  attackName: "M\xE9gaAttack"
   description: 
-  attackSprite: {fileID: 21300000, guid: 50d3cd2f336704fcf9cf5b293c10ba9c, type: 3}
-  atkDamage: 1
+  attackSprite: {fileID: 0}
+  atkDamage: 10
   attackEffects: 0
-  effectTurnDuration: 4
-  dotAttacks: 1
+  effectTurnDuration: 0
+  dotAttacks: 0
   buff: 0
   deBuff: 0
-  chanceToApplyEffect: 50
+  chanceToApplyEffect: 0

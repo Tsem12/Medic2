@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68a28e4f26891647a1d68fd3ee570d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enableDebug: 1
+  _enableDebug: 0
   _enemie: {fileID: 663189919}
   _partyMembers:
   - {fileID: 796448157}

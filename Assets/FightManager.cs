@@ -39,7 +39,8 @@ public class FightManager : MonoBehaviour
 
     private bool _endTurn;
 
-    public Action OnTurnBegin;
+    public event Action OnTurnBegin;
+
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
@@ -61,6 +62,14 @@ public class FightManager : MonoBehaviour
             _partyMembersList.Add(character);
         }
         StartTurn();
+    }
+
+    public void TriggerEvent(AttackEvent.SpecialAttacksTrigerMode triger)
+    {
+        foreach(ICharacter chara in _characterList)
+        {
+            chara.TrackSpecialAtkEvents(triger);
+        }
     }
     private void StartTurn()
     {

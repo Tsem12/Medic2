@@ -17,5 +17,6 @@ public interface ICharacter
     public void TakeDamage(AttacksObject attack);
     public void SetTarget();
     public void SetCurrentHealth(int newValue);
+    public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode);
 }
 

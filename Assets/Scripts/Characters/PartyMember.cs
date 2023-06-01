@@ -18,6 +18,7 @@ public class PartyMember : Character, IHealable
         AssignValues();
         _currentHealth = _maxHealth;
     }
+
     public override void AssignValues()
     {
         if( _characterObj != null)
