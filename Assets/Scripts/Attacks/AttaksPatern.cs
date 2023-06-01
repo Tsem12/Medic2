@@ -23,7 +23,14 @@ public class AttackClass
 [System.Serializable]
 public class AttacksPatern
 {
+    public enum PaternInteruptMode
+    {
+        Interupt,
+        DontInterupt
+    }
+
     public string paternName;
+    public PaternInteruptMode interuptMode;
     public AttackClass[] attacks;
 
     public Queue<AttackClass> attackQueue = new Queue<AttackClass>();
@@ -44,9 +51,10 @@ public class AttackEvent
     public enum SpecialAttacksTrigerMode
     {
         LooseHealthBar,
-        AllieBuffed
+        AllieBuffed,
+        TurnPassed
     }
-    public AttacksObject attack;
+    public AttackClass attack;
     public SpecialAttacksTrigerMode trigerMode;
 
 }

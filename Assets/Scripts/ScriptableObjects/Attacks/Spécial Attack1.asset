@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: "atk sp\xE91"
   description: 
   attackSprite: {fileID: 21300000, guid: 50d3cd2f336704fcf9cf5b293c10ba9c, type: 3}
-  atkDamage: 0
+  atkDamage: 2
   attackEffects: 0
   effectTurnDuration: 4
   dotAttacks: 1

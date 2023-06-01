@@ -27,6 +27,7 @@ public class PartyMember : Character, IHealable
             _speed = _characterObj.baseSpeed;
             _agroValue = _characterObj.baseAgroValue;
         }
+        CheckObjectRefs();
     }
     public override int GetSpeed()
     {
@@ -48,7 +49,7 @@ public class PartyMember : Character, IHealable
             Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
 
         AttacksObject atk = GetAttack();
-        Debug.Log($"Attack with {atk.attackName}");
+        //Debug.Log($"Attack with {atk.attackName}");
         _target.TakeDamage(atk);
     }
 

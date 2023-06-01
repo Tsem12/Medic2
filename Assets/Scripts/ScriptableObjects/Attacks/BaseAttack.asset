@@ -15,10 +15,10 @@ MonoBehaviour:
   attackName: base attack
   description: 
   attackSprite: {fileID: 21300000, guid: 50d3cd2f336704fcf9cf5b293c10ba9c, type: 3}
-  atkDamage: 0
-  attackEffects: 1
-  effectTurnDuration: 6
+  atkDamage: 1
+  attackEffects: 0
+  effectTurnDuration: 5
   dotAttacks: 0
   buff: 0
   deBuff: 0
-  chanceToApplyEffect: 46.2
+  chanceToApplyEffect: 27.1

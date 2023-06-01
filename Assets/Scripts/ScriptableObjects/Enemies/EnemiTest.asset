@@ -19,7 +19,8 @@ MonoBehaviour:
   baseAgroValue: 0
   icon: {fileID: 0}
   attacksPatern:
-  - paternName: Patern1
+  - paternName: 
+    interuptMode: 0
     attacks:
     - attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
       condition: 0
@@ -29,8 +30,9 @@ MonoBehaviour:
       percentageValue: 0
     - attack: {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
       condition: 1
-      percentageValue: 50
-  - paternName: Patern 2
+      percentageValue: 100
+  - paternName: 
+    interuptMode: 0
     attacks:
     - attack: {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
       condition: 0
@@ -41,4 +43,9 @@ MonoBehaviour:
     - attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
       condition: 2
       percentageValue: 50
-  attacksEvent: []
+  attacksEvent:
+  - attack:
+      attack: {fileID: 0}
+      condition: 0
+      percentageValue: 0
+    trigerMode: 0
