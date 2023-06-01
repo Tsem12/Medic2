@@ -77,6 +77,8 @@ public class Enemie : Character
     }
     protected override void Attack()
     {
+       
+
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
 

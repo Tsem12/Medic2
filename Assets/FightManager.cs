@@ -43,9 +43,9 @@ public class FightManager : MonoBehaviour
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
-    public bool EnableDebug { get; private set; }
+    public bool EnableDebug { get => _enableDebug; }
     public FightState State { get; private set; }
-    public int CurrentTurn { get; private set; }
+    public int CurrentTurn { get => _currentTurn; }
 
     private void Start()
     {
@@ -64,6 +64,7 @@ public class FightManager : MonoBehaviour
     }
     private void StartTurn()
     {
+        ReferenceSettersManager.ReconnectAll();
         _currentTurn++;
         OnTurnBegin?.Invoke();
 
