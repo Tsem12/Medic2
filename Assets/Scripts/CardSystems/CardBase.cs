@@ -1,10 +1,43 @@
 using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+public enum CardBehaviour
+{
+    heal,
+    unNaturalRegeneration,
+    massHeal,
+    regeneration,
+    resurection,
+    antidote,
+    spiritShield,
+    spiritBarrier,
+    resonanceShield,
+    blessingOfMars,
+    blessingOfJupiter,
+    manaBoost,
+    manaRestauration,
+    speedBoost
+}
+
+public enum ApplyTo
+{
+    All,
+    Target
+}
+
+[CreateAssetMenu(fileName = "CardBase", menuName = "ScriptableObjects/CardBase")]
 public class CardBase : ScriptableObject
 {
-    CardBehaviour cardBehaviour;
+    [Header("If your not a GP don't touch!")]
+    [SerializeField] ManaObject manaObject;
+
+    [Space(30)]
+
+    public CardBehaviour cardBehaviour;
     public bool isEnableInGame = true;
     public string cardName;
     public int manaCost;
@@ -53,6 +86,7 @@ public class CardBase : ScriptableObject
 
     public void ApplyEffectOfTheCard(IHealable partyMember)
     {
+        manaObject.ReduceMana(manaCost);
         switch (cardBehaviour)
         {
 
@@ -61,26 +95,3 @@ public class CardBase : ScriptableObject
     }    
 }
 
-public enum CardBehaviour
-{
-    heal,
-    unNaturalRegeneration,
-    massHeal,
-    regeneration,
-    resurection,
-    antidote,
-    spiritShield,
-    spiritBarrier,
-    resonanceShield,
-    blessingOfMars,
-    blessingOfJupiter,
-    manaBoost,
-    manaRestauration,
-    speedBoost
-}
-
-public enum ApplyTo
-{
-    All,
-    Target
-}

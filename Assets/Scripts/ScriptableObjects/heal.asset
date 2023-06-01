@@ -10,8 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b66fa7e0793d6445a89a7d021e4ec51, type: 3}
-  m_Name: heal
+  m_Name: Heal
   m_EditorClassIdentifier: 
+  manaObject: {fileID: 0}
+  isEnableInGame: 1
   cardName: 
   manaCost: 0
-  cardBehaviour: 0
+  applyTo: 0
+  healthHealed: 0
+  turnActive: 0
+  revive: 0
+  addedMana: 0
+  poisonChance: 0
+  shieldBreakAfter: 0
+  damageMultiplier: 0
+  damageAdded: 0
