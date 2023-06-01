@@ -15,6 +15,7 @@ public class ManaUpdater : MonoBehaviour
 
     private void Start()
     {
+        manaObejct.currentMana = manaObejct.maxMana;
         manaObejct.manaBoost += OnManaBoost;
         manaObejct.manaRestauration += OnManaRestauration;
         refs.fightManager.OnTurnBegin += TurnMana;

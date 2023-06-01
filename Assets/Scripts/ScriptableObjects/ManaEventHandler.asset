@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70c8fb676d0b3a4691d7ee328e31746, type: 3}
   m_Name: ManaEventHandler
   m_EditorClassIdentifier: 
-  currentMana: 0
+  currentMana: 10
   maxMana: 10
+  increaseManaTurn: 2
+  increasedMana: 0
+  turnsNumber: 0
+  newSpellCost: 0

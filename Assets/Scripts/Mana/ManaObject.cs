@@ -14,7 +14,9 @@ public class ManaObject : ScriptableObject
 
     [HideInInspector]
     public int increasedMana;
+    [HideInInspector]
     public int turnsNumber;
+    [HideInInspector]
     public int newSpellCost;
 
     public event Action manaStart;
