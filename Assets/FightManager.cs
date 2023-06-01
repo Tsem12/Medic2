@@ -28,6 +28,7 @@ public class FightManager : MonoBehaviour
     private float _currentPlayerTimeToPlay;
 
     private int _globalAgro;
+    private int _currentTurn;
 
     private Coroutine _playerTurnRoutine;
     private Coroutine _partymembersTurnRoutine;
@@ -38,11 +39,13 @@ public class FightManager : MonoBehaviour
 
     private bool _endTurn;
 
+    public Action OnTurnBegin;
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
     public bool EnableDebug { get; private set; }
     public FightState State { get; private set; }
+    public int CurrentTurn { get; private set; }
 
     private void Start()
     {
@@ -57,10 +60,13 @@ public class FightManager : MonoBehaviour
             _characterList.Add(character);
             _partyMembersList.Add(character);
         }
-        StartFight();
+        StartTurn();
     }
-    private void StartFight()
+    private void StartTurn()
     {
+        _currentTurn++;
+        OnTurnBegin?.Invoke();
+
         SetGlobalAgroValue();
         foreach (ICharacter character in _characterList)
         {
@@ -195,7 +201,7 @@ public class FightManager : MonoBehaviour
 
         if (ArePartyStillAlive())
         {
-            StartFight();
+            StartTurn();
         }
         else
         {
