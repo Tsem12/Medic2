@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PartyMember : Character, IHealable
 {
-    [SerializeField] private CharacterObjets _partyMemberObj;
+    
 
     [Header("Stats")]
     private int _damage;
@@ -20,12 +20,12 @@ public class PartyMember : Character, IHealable
     }
     public override void AssignValues()
     {
-        if( _partyMemberObj != null)
+        if( _characterObj != null)
         {
-            _maxHealth = _partyMemberObj.maxHealth;
-            _damage = _partyMemberObj.baseDamage;
-            _speed = _partyMemberObj.baseSpeed;
-            _agroValue = _partyMemberObj.baseAgroValue;
+            _maxHealth = _characterObj.maxHealth;
+            _damage = _characterObj.baseDamage;
+            _speed = _characterObj.baseSpeed;
+            _agroValue = _characterObj.baseAgroValue;
         }
     }
     public override int GetSpeed()
@@ -39,14 +39,17 @@ public class PartyMember : Character, IHealable
 
     public CharacterObjets GetPartyMemberObj() 
     {
-        return _partyMemberObj;
+        return _characterObj;
     }
 
     protected override void Attack()
     {
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
-        _target.TakeDamage(_partyMemberObj.baseDamage);
+
+        AttacksObject atk = GetAttack();
+        Debug.Log($"Attack with {atk.attackName}");
+        _target.TakeDamage(atk);
     }
 
     public override void SetTarget()
@@ -66,7 +69,7 @@ public class PartyMember : Character, IHealable
 
     public override Sprite GetIcone()
     {
-        return _partyMemberObj.icon;
+        return _characterObj.icon;
     }
 
     public override int GetMaxHealthBar()

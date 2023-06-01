@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Enemie : Character
 {
-    [SerializeField] private CharacterObjets _enemieObj;
     [SerializeField] private Image _targetIcon;
 
     private ICharacter _target;
@@ -22,11 +21,11 @@ public class Enemie : Character
     }
     public override void AssignValues()
     {
-        if(_enemieObj != null)
+        if(_characterObj != null)
         {
-            _maxHealth = _enemieObj.maxHealth;
-            _damage = _enemieObj.baseDamage;
-            _speed = _enemieObj.baseSpeed;
+            _maxHealth = _characterObj.maxHealth;
+            _damage = _characterObj.baseDamage;
+            _speed = _characterObj.baseSpeed;
         }
     }
     public override int GetAgro()
@@ -80,7 +79,10 @@ public class Enemie : Character
     {
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
-        _target.TakeDamage(_enemieObj.baseDamage);
+
+        AttacksObject atk =  GetAttack();
+        Debug.Log($"Attack with {atk.attackName}");
+        _target.TakeDamage(atk);
     }
 
     private int Compare(ICharacter x, ICharacter y)
@@ -99,11 +101,11 @@ public class Enemie : Character
 
     public override Sprite GetIcone()
     {
-        return _enemieObj.icon;
+        return _characterObj.icon;
     }
 
     public override int GetMaxHealthBar()
     {
-        return _enemieObj.numberOfHealthBar;
+        return _characterObj.numberOfHealthBar;
     }
 }
