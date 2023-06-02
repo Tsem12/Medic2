@@ -20,7 +20,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   attacksPatern:
   - paternName: 
-    interuptMode: 1
+    interuptMode: 2
     attacks:
     - attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
       condition: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
       condition: 1
       percentageValue: 100
   - paternName: 
-    interuptMode: 1
+    interuptMode: 2
     attacks:
     - attack: {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
       condition: 0

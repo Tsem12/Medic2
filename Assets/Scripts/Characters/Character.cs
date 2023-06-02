@@ -188,33 +188,46 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if (_latetsAttackEvent != null)
         {
-
-            if(_actualPatern.interuptMode == AttacksPatern.PaternInteruptMode.Interupt)
+            switch (_actualPatern.interuptMode)
             {
-                _actualPatern = null;
-                _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
-                _actualPatern.FillQueue();
+                case AttacksPatern.PaternInteruptMode.Interupt:
 
-                AttacksObject result = _latetsAttackEvent.attack.attack;
-                _latetsAttackEvent = null;
-                return result;
+                    _actualPatern = null;
+                    _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
+                    _actualPatern.FillQueue();
+
+                    AttacksObject result = _latetsAttackEvent.attack.attack;
+                    _latetsAttackEvent = null;
+                    return result;
+
+                case AttacksPatern.PaternInteruptMode.DontInteruptLastInQueue:
+                    _actualPatern.attackQueue.Enqueue(_latetsAttackEvent.attack);
+                    break;
+
+                case AttacksPatern.PaternInteruptMode.DontInteruptFirstInQueue:
+                    AttacksObject result2 = _latetsAttackEvent.attack.attack;
+                    _latetsAttackEvent = null;
+                    return result2;
             }
-            else if((_actualPatern.interuptMode == AttacksPatern.PaternInteruptMode.DontInterupt))
-            {
-                _actualPatern.attackQueue.Enqueue(_latetsAttackEvent.attack);
-            }
+
             _latetsAttackEvent = null;
         }
 
-        AttackClass atk = _actualPatern.attackQueue.Dequeue(); 
+        AttackClass atk = _actualPatern.attackQueue.Dequeue();
+        int nbrLoop = 0;
         while(!DoesFulFillCondition(atk))
         {
+            if(nbrLoop > _characterObj.attacksPatern.Length)
+            {
+                throw new Exception("COMMENT TA REUSSI A FAIRE UNE INFINITE LOOP SALE MERDE");
+            }
 
             if(_actualPatern.attackQueue.Count() <= 0)
             {
                 _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
                 _actualPatern.FillQueue();
                 atk = _actualPatern.attackQueue.Dequeue();
+                nbrLoop++;
             }
             else
             {
