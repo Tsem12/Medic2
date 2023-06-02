@@ -25,6 +25,6 @@ public class GameManager : MonoBehaviour
         gameData = SaveSysteme.Load();
     }
 
-
+   
 
 }

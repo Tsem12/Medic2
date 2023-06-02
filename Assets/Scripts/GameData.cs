@@ -11,7 +11,9 @@ public class GameData
     public bool[] spellUnlocked;
 
     public int difficulty;
-    public int soundVolume;
+    public float musicVolume;
+    public float sfxVolume;
+
 
 
     public GameData(){
@@ -24,7 +26,8 @@ public class GameData
         spellUnlocked[2] = true;
         spellUnlocked[3] = true;
         difficulty = 0;
-        soundVolume = 100;
+        musicVolume = 1;
+        sfxVolume = 1;
     }
     
     
