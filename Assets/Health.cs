@@ -128,7 +128,6 @@ public class Health : MonoBehaviour
                 {
                     hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
                 }
-                return;
             }
             _character.SetCurrentHealth(_character.GetMaxHealth());
             return;

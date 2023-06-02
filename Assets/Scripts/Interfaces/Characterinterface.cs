@@ -14,9 +14,10 @@ public interface ICharacter
     public void Kill();
     public void StartTurn();
     public void EndTurn();
-    public void TakeDamage(AttacksObject attack);
+    public void TakeDamage(AttacksObject attack, int additionalDamage = 0);
     public void SetTarget();
     public void SetCurrentHealth(int newValue);
     public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode);
+    public Status GetStatus(Status.StatusEnum status);
 }
 

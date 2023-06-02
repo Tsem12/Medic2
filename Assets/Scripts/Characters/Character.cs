@@ -23,6 +23,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     private AttacksPatern _actualPatern;
     protected AttackEvent _latetsAttackEvent;
 
+    public List<Status> _status = new List<Status>();
     private void OnValidate()
     {
         AssignValues();
@@ -52,14 +53,48 @@ public abstract class Character : MonoBehaviour, ICharacter
     }
     public virtual void EndTurn()
     {
+        foreach (Status status in _status.ToList())
+        {
+            ApplyEndTurnStatut(status);
+            status.remainTurn--;
+            if(status.remainTurn <= 0)
+            {
+                _status.Remove(status);
+            }
+        }
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} finished his turn");
+    }
+
+    private void ApplyEndTurnStatut(Status statut)
+    {
+        switch (statut.status)
+        {
+            case Status.StatusEnum.Poisoned:
+                _health.TakeDamage(statut.value);
+                break;
+            case Status.StatusEnum.Regenerating:
+                _health.Heal(statut.value);
+                break;
+        }
     }
 
 
     public virtual bool IsPlaying()
     {
         return _isPlaying;
+    }
+
+    public Status GetStatus(Status.StatusEnum status)
+    {
+        foreach(Status s in _status.ToList())
+        {
+            if(s.status == status)
+            {
+                return s;
+            }
+        }
+        return null;
     }
 
     private IEnumerator AttackRoutine()
@@ -85,12 +120,20 @@ public abstract class Character : MonoBehaviour, ICharacter
         return _currentHealth;
     }
 
-    public void TakeDamage(AttacksObject attack)
+    public void TakeDamage(AttacksObject attack, int additionalDamage = 0)
     {
         if (attack.atkDamage < 0)
             return;
 
-        _health.TakeDamage(attack.atkDamage);
+        Status stun = GetStatus(Status.StatusEnum.Shielded);
+        if (stun != null)
+        {
+            _status.Remove(stun);
+            Debug.Log("AttackBloked");
+            return;
+        }
+
+        _health.TakeDamage(attack.atkDamage + additionalDamage);
     }
 
     public bool IsDead()
@@ -102,6 +145,13 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _isDead = true;
         GetComponent<SpriteRenderer>().color = Color.red;
+    }
+
+    public void Revive(int heal)
+    {
+        _isDead = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
+        _health.Heal(heal);
     }
 
     public bool DoesFulFillCondition(AttackClass atk)
@@ -237,4 +287,31 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         return atk.attack;
     }
+
+    public void AddStatus(Status status)
+    {
+        Status s = GetStatus(status.status);
+        if(s != null)
+        {
+            s.ResetStatus();
+            return;
+        }
+        _status.Add(status);
+    }
+
+    [Button]
+    public void TestShield() => AddStatus(new Status(Status.StatusEnum.Shielded, 1));
+    [Button]
+    public void TestStrenght() => AddStatus(new Status(Status.StatusEnum.Strengthened, 2));
+    [Button]
+    public void TestInitive()
+    {
+        AddStatus(new Status(Status.StatusEnum.Initiative, 2));
+        _refs.fightManager.OrderCharacters();
+    }
+    [Button]
+    public void TestPoisson() => AddStatus(new Status(Status.StatusEnum.Poisoned, 2, 1));
+    [Button]
+    public void TestHeal() => AddStatus(new Status(Status.StatusEnum.Regenerating, 2, 1));
+
 }

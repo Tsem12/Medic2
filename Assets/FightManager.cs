@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using NaughtyAttributes;
+using System.Linq;
 
 public class FightManager : MonoBehaviour
 {
@@ -102,14 +103,28 @@ public class FightManager : MonoBehaviour
         //Debug.Log($"agrovalue: {agroValue}");
     }
 
-    private void OrderCharacters()
+    public void OrderCharacters()
     {
+        _characterQueue.Clear();
         _characterList.Sort(Compare);
 
-        foreach(ICharacter character in _characterList)
+        foreach(ICharacter character in _characterList.ToList())
         {
-            _characterQueue.Enqueue(character);
+            Status status = character.GetStatus(Status.StatusEnum.Initiative);
+            if (status != null)
+            {
+                _characterQueue.Enqueue(character);
+            }
         }
+
+        foreach (ICharacter character in _characterList.ToList())
+        {
+            if (!_characterQueue.Contains(character))
+            {
+                _characterQueue.Enqueue(character);
+            }
+        }
+
     }
 
     private bool ArePartyStillAlive()

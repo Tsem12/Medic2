@@ -85,7 +85,15 @@ public class Enemie : Character
 
         AttacksObject atk =  GetAttack();
         Debug.Log($"Attack with {atk.attackName}");
-        _target.TakeDamage(atk);
+        Status status = GetStatus(Status.StatusEnum.Strengthened);
+        if (status != null)
+        {
+            _target.TakeDamage(atk, status.value);
+        }
+        else
+        {
+            _target.TakeDamage(atk);
+        }
     }
 
     private int Compare(ICharacter x, ICharacter y)

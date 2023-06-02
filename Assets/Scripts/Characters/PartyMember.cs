@@ -46,12 +46,20 @@ public class PartyMember : Character, IHealable
 
     protected override void Attack()
     {
-        if (_refs.fightManager.EnableDebug)
+        //if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
 
         AttacksObject atk = GetAttack();
-        //Debug.Log($"Attack with {atk.attackName}");
-        _target.TakeDamage(atk);
+
+        Status status = GetStatus(Status.StatusEnum.Strengthened);
+        if(status != null)
+        {
+            _target.TakeDamage(atk , status.value);
+        }
+        else
+        {
+            _target.TakeDamage(atk);
+        }
     }
 
     public override void SetTarget()
