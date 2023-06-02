@@ -41,6 +41,15 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int value)
     {
+
+        Status status = _character.GetStatus(Status.StatusEnum.Sleeped);
+        if(status != null)
+        {
+            _character.TryRemoveStatus(Status.StatusEnum.Sleeped);
+            _character.AddStatus(new Status(Status.StatusEnum.Stunned, 2));
+            Status d = _character.GetStatus(Status.StatusEnum.Stunned);
+        }
+
         int newHealth = _character.GetCurrentHealth() - value;
         if(newHealth <= 0)
         {

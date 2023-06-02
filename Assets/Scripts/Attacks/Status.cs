@@ -18,6 +18,7 @@ public class Status
     }
 
     public StatusEnum status;
+    public bool isInfinite;
     public int turnDuration;
     public int remainTurn;
 
@@ -35,16 +36,20 @@ public class Status
         this.status = status;
         this.turnDuration = turnDuration;
         this.value = value;
+        ResetStatus();
+    }
 
-
-
-
+    public Status(StatusEnum status, bool isInfinite = false, int value = 0)
+    {
+        this.status = status;
+        this.isInfinite = isInfinite;
+        this.value = value;
         ResetStatus();
     }
 
     public void ResetStatus()
     {
-        turnDuration = remainTurn;
+        remainTurn = turnDuration;
     }
 
 }

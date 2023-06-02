@@ -48,6 +48,7 @@ public class FightManager : MonoBehaviour
     public bool EnableDebug { get => _enableDebug; }
     public FightState State { get; private set; }
     public int CurrentTurn { get => _currentTurn; }
+    public List<ICharacter> PartyMembersList { get => _partyMembersList; set => _partyMembersList = value; }
 
     private void Start()
     {
@@ -60,7 +61,7 @@ public class FightManager : MonoBehaviour
         foreach (ICharacter character in PartyMembers)
         {
             _characterList.Add(character);
-            _partyMembersList.Add(character);
+            PartyMembersList.Add(character);
         }
         StartTurn();
     }
@@ -129,7 +130,7 @@ public class FightManager : MonoBehaviour
 
     private bool ArePartyStillAlive()
     {
-        foreach(ICharacter chara in _partyMembersList)
+        foreach(ICharacter chara in PartyMembersList)
         {
             if(!chara.IsDead())
                 return true;
@@ -193,11 +194,14 @@ public class FightManager : MonoBehaviour
                 yield break;
             }
 
-            if(chara.IsDead())
+
+            if (chara.IsDead())
             {
-                _partyMembersList.Remove(chara);
+                PartyMembersList.Remove(chara);
+
                 if (_enableDebug)
                     Debug.Log($"{chara.GetName()} is dead he cannot attack");
+
                 if(!ArePartyStillAlive())
                 {
                     if (_enableDebug)

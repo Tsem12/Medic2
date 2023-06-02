@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -46,6 +47,16 @@ public abstract class Character : MonoBehaviour, ICharacter
     }
     public virtual void StartTurn()
     {
+        Status stunned = GetStatus(Status.StatusEnum.Stunned);
+        Status restrained = GetStatus(Status.StatusEnum.Restrained);
+        Status sleep = GetStatus(Status.StatusEnum.Sleeped);
+
+        if (stunned != null || restrained != null || sleep != null)
+        {
+            Debug.Log($"{gameObject.name} can't attack");
+            return;
+        }
+
         _isPlaying = true;
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} turn started");
@@ -56,10 +67,14 @@ public abstract class Character : MonoBehaviour, ICharacter
         foreach (Status status in _status.ToList())
         {
             ApplyEndTurnStatut(status);
-            status.remainTurn--;
-            if(status.remainTurn <= 0)
+            if (!status.isInfinite)
             {
-                _status.Remove(status);
+                status.remainTurn--;
+                if(status.remainTurn <= 0)
+                {
+                    Debug.Log($"Remove {status.status} from {gameObject.name}, {status.remainTurn}");
+                    _status.Remove(status);
+                }
             }
         }
         if (_refs.fightManager.EnableDebug)
@@ -71,6 +86,9 @@ public abstract class Character : MonoBehaviour, ICharacter
         switch (statut.status)
         {
             case Status.StatusEnum.Poisoned:
+                _health.TakeDamage(statut.value);
+                break;
+            case Status.StatusEnum.Restrained:
                 _health.TakeDamage(statut.value);
                 break;
             case Status.StatusEnum.Regenerating:
@@ -133,7 +151,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             return;
         }
 
-        _health.TakeDamage(attack.atkDamage + additionalDamage);
+        _health.TakeDamage(Mathf.Max(attack.atkDamage + additionalDamage, 0));
     }
 
     public bool IsDead()
@@ -151,6 +169,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _isDead = false;
         GetComponent<SpriteRenderer>().color = Color.white;
+        _refs.fightManager.PartyMembersList.Add(GetComponent<ICharacter>());
         _health.Heal(heal);
     }
 
@@ -288,12 +307,40 @@ public abstract class Character : MonoBehaviour, ICharacter
         return atk.attack;
     }
 
+    public void TryRemoveStatus(Status.StatusEnum status)
+    {
+        Status statu = GetStatus(status);
+        if(statu != null)
+        {
+            _status.Remove(statu);
+            return;
+        }
+
+    }
+
     public void AddStatus(Status status)
     {
         Status s = GetStatus(status.status);
         if(s != null)
         {
-            s.ResetStatus();
+            switch (s.status)
+            {
+                case Status.StatusEnum.Fatigue:
+
+                    _status.Add(new Status(Status.StatusEnum.Sleeped, true));
+                    TryRemoveStatus(Status.StatusEnum.Fatigue);
+                    TryRemoveStatus(Status.StatusEnum.Stunned);
+                    break;
+
+                case Status.StatusEnum.Stunned:
+                    TryRemoveStatus(Status.StatusEnum.Sleeped);
+                    break;
+
+                default:
+                    s.ResetStatus();
+                    break;
+            }
+
             return;
         }
         _status.Add(status);
@@ -313,5 +360,21 @@ public abstract class Character : MonoBehaviour, ICharacter
     public void TestPoisson() => AddStatus(new Status(Status.StatusEnum.Poisoned, 2, 1));
     [Button]
     public void TestHeal() => AddStatus(new Status(Status.StatusEnum.Regenerating, 2, 1));
+    [Button]
+    public void TestStun() => AddStatus(new Status(Status.StatusEnum.Stunned, 2));
+    [Button]
+    public void TestSleep() => AddStatus(new Status(Status.StatusEnum.Sleeped, true));
+    [Button]
+    public void TestFatigue() => AddStatus(new Status(Status.StatusEnum.Fatigue, 2));
+    [Button]
+    public void TestRestrained() => AddStatus(new Status(Status.StatusEnum.Restrained, 2, 1));
+    [Button]
+    public void GetAllStatus()
+    {
+        foreach(Status s in _status)
+        {
+            Debug.Log(s.status);
+        }
+    }
 
 }

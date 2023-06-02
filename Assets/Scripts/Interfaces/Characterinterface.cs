@@ -19,5 +19,8 @@ public interface ICharacter
     public void SetCurrentHealth(int newValue);
     public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode);
     public Status GetStatus(Status.StatusEnum status);
+    public void AddStatus(Status status);
+    public void TryRemoveStatus(Status.StatusEnum status);
+    public void GetAllStatus();
 }
 
