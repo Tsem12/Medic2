@@ -8,7 +8,6 @@ public class InputHandlerObject : ScriptableObject
 {
     public event Action pressedEvent;
     public event Action unPressedEvent;
-    public event Action cancelPressEvent;
     public bool wasCanceled = false;
 
     public void PressEvent()
@@ -23,11 +22,5 @@ public class InputHandlerObject : ScriptableObject
             unPressedEvent?.Invoke();
         }
         wasCanceled = false;
-    }
-
-    public void CancelPress()
-    {
-        cancelPressEvent?.Invoke();
-        wasCanceled = true;
     }
 }

@@ -90,7 +90,9 @@ public class FightManager : MonoBehaviour
 
     private void PartyMemberTurn()
     {
+        OnTurnEnd?.Invoke();
         _partymembersTurnRoutine = StartCoroutine(IATurnRoutine());
+        OnTurnEnd?.Invoke();
     }
 
     private void SetGlobalAgroValue()
@@ -143,7 +145,6 @@ public class FightManager : MonoBehaviour
         if(_state == FightState.PlayerTurn)
         {
             _endTurn = true;
-            OnTurnEnd?.Invoke();
         }
     }
 
