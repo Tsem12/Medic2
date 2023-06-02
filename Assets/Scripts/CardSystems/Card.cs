@@ -12,6 +12,12 @@ public class Card : MonoBehaviour,IInteractable
     [SerializeField] SpriteRenderer usedRenderer;
     [SerializeField] float size = 0.5f;
 
+    private void Start()
+    {
+        carBase.manaObject.manaAddTurn += CheckIfInteractable;
+        CheckIfInteractable();
+    }
+
     public bool ApplyEffect()
     {
         col.enabled = false;
@@ -19,7 +25,7 @@ public class Card : MonoBehaviour,IInteractable
         col.enabled = true;
         if (collision != null && collision.gameObject.CompareTag("PartyMember"))
         {
-            carBase.ApplyEffectOfTheCard(collision.GetComponent<IHealable>());
+            carBase.ApplyEffectOfTheCard(collision.GetComponent<IHealable>());  
             return true;
         }
         return false;
@@ -53,5 +59,17 @@ public class Card : MonoBehaviour,IInteractable
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, size);
+    }
+
+    void CheckIfInteractable()
+    {
+        if(carBase.manaCost <= carBase.manaObject.currentMana)
+        {
+            transform.tag = "Grabbable";
+        }
+        else
+        {
+            transform.tag = "Untagged";
+        }
     }
 }

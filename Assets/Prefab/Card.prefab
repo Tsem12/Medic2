@@ -235,3 +235,4 @@ MonoBehaviour:
   myRender: {fileID: 5112930366879408500}
   usedRenderer: {fileID: 4886648995312855033}
   size: 0.2
+  manaObject: {fileID: 11400000, guid: b09daaed8bc84614c9000d7999050bca, type: 2}
