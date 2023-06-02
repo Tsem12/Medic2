@@ -11,19 +11,7 @@ public class Health : MonoBehaviour
     [SerializeField] private AllReferences _refs;
 
     private ICharacter _character;
-
-    [Header("Slider refs")]
-    [SerializeField] private Slider _slider;
-    [SerializeField] private Image _sliderImage;
-
-    [SerializeField] private float _hearthSizeWithSpace;
-    [SerializeField] private float _heartSize;
-
-    [SerializeField] private float _bottomBaseValue;
-    [SerializeField] private float _bottomScaleValue;
-
-    private RectTransform _sliderRectTransform;
-
+    private int _currentHealthBarAmount;
 
     [Header("layout group")]
     [SerializeField] private GameObject _healthPoint;
@@ -35,6 +23,9 @@ public class Health : MonoBehaviour
     {
         _healthPoints.Clear();
         _character = GetComponent<Character>();
+
+        _currentHealthBarAmount = _character.GetMaxHealthBar();
+
         for (int i = 0; i < _character.GetMaxHealth(); i++)
         {
             GameObject obj = Instantiate(_healthPoint, _layerGroup.transform);
@@ -53,23 +44,56 @@ public class Health : MonoBehaviour
         int newHealth = _character.GetCurrentHealth() - value;
         if(newHealth <= 0)
         {
-            if (_refs.fightManager.EnableDebug)
-                Debug.Log($"{gameObject.name} have been killed");
-
-            foreach(HealtPoint hp in _healthPoints)
+            _currentHealthBarAmount -= 1;
+            if(_currentHealthBarAmount <= 0)
             {
-                hp.ValidHp.SetActive(false);
-                hp.InvalidHp.SetActive(true);
+                if (_refs.fightManager.EnableDebug)
+                    Debug.Log($"{gameObject.name} have been killed");
+
+                foreach(HealtPoint hp in _healthPoints)
+                {
+                    hp.ValidHp.sprite = hp.Colors[hp.Colors.Length - 1];
+                }
+                _character.SetCurrentHealth(0);
+                _character.Kill();
+                return;
             }
-            _character.SetCurrentHealth(0);
-            _character.Kill();
-            return;
+            else
+            {
+                _character.SetCurrentHealth(_character.GetMaxHealth() + newHealth);
+                foreach (HealtPoint hp in _healthPoints)
+                {
+                    if(_currentHealthBarAmount <= 1)
+                    {
+                        hp.ValidHp.sprite = hp.Colors[hp.Colors.Length - 1];
+                    }
+                    else
+                    {
+                        hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount + 1];
+                    }
+                }
+                for(int i = 0; i < _character.GetCurrentHealth(); i++)
+                {
+
+                    _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+
+                }
+                return;
+            }
         }
 
         for(int i = newHealth; i < newHealth + value; i++)
         {
-            _healthPoints[i].ValidHp.SetActive(false);
-            _healthPoints[i].InvalidHp.SetActive(true);
+
+            if (_currentHealthBarAmount <= 1)
+            {
+                _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_healthPoints[i].Colors.Length - 1];
+            }
+            else
+            {
+                _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount + 1];
+            }
+
         }
         _character.SetCurrentHealth(newHealth);
     }
@@ -77,6 +101,7 @@ public class Health : MonoBehaviour
     public void TestHeal() => Heal(2);
     internal void Heal(int value)
     {
+        Debug.Log("Tryheal");
         if (_character.IsDead())
         {
             Debug.LogError($"{gameObject.name} is dead he cannot be healed");
@@ -87,11 +112,22 @@ public class Health : MonoBehaviour
         if (newHealth > _character.GetMaxHealth())
         {
             newHealth = _character.GetMaxHealth();
-
-            foreach (HealtPoint hp in _healthPoints)
+            if(_currentHealthBarAmount < _character.GetMaxHealthBar())
             {
-                hp.ValidHp.SetActive(true);
-                hp.InvalidHp.SetActive(false);
+                _currentHealthBarAmount += 1;
+                for(int i = 0; i < value ; i++)
+                {
+                    _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+                }
+
+            }
+            else
+            {
+                foreach(HealtPoint hp in _healthPoints)
+                {
+                    hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+                }
+                return;
             }
             _character.SetCurrentHealth(_character.GetMaxHealth());
             return;
@@ -99,8 +135,7 @@ public class Health : MonoBehaviour
 
         for (int i = _character.GetCurrentHealth(); i < newHealth; i++)
         {
-            _healthPoints[i].ValidHp.SetActive(true);
-            _healthPoints[i].InvalidHp.SetActive(false);
+            _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
         }
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} have been healed");

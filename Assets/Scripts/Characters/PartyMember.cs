@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PartyMember : Character, IHealable
 {
-    [SerializeField] private PartyMemberObjets _partyMemberObj;
+    [SerializeField] private CharacterObjets _partyMemberObj;
 
     [Header("Stats")]
     private int _damage;
@@ -37,7 +37,7 @@ public class PartyMember : Character, IHealable
         return _agroValue;
     }
 
-    public PartyMemberObjets GetPartyMemberObj() 
+    public CharacterObjets GetPartyMemberObj() 
     {
         return _partyMemberObj;
     }
@@ -62,5 +62,15 @@ public class PartyMember : Character, IHealable
     public void Heal(int value)
     {
         _health.Heal(value);
+    }
+
+    public override Sprite GetIcone()
+    {
+        return _partyMemberObj.icon;
+    }
+
+    public override int GetMaxHealthBar()
+    {
+        return 1;
     }
 }
