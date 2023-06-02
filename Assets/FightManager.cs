@@ -40,6 +40,7 @@ public class FightManager : MonoBehaviour
     private bool _endTurn;
 
     public event Action OnTurnBegin;
+    public event Action OnTurnEnd;
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
@@ -117,6 +118,7 @@ public class FightManager : MonoBehaviour
         if(_state == FightState.PlayerTurn)
         {
             _endTurn = true;
+            OnTurnEnd?.Invoke();
         }
     }
 

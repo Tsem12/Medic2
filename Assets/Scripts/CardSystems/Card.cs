@@ -16,6 +16,7 @@ public class Card : MonoBehaviour,IInteractable
     private void Start()
     {
         carBase.manaObject.manaAddTurn += CheckIfInteractable;
+        refs.fightManager.OnTurnEnd += EndInteractable;
         CheckIfInteractable();
     }
 
@@ -78,4 +79,10 @@ public class Card : MonoBehaviour,IInteractable
     {
         transform.tag = "Untagged";
     }
+
+    public void Cancel()
+    {
+        ResetPos();
+    }
+
 }

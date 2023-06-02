@@ -229,10 +229,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carBase: {fileID: 11400000, guid: 4ab618e4e950bb7448005603ddd3272b, type: 2}
+  refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
   wasPlayed: 0
   handlerObject: {fileID: 11400000, guid: c8ed50634ba3e3a4297e68e090e6cfa2, type: 2}
   col: {fileID: 6714790924635855949}
   myRender: {fileID: 5112930366879408500}
   usedRenderer: {fileID: 4886648995312855033}
   size: 0.2
-  manaObject: {fileID: 11400000, guid: b09daaed8bc84614c9000d7999050bca, type: 2}
