@@ -5,6 +5,7 @@ using UnityEngine;
 public class Card : MonoBehaviour,IInteractable
 {
     [SerializeField] CardBase carBase;
+    [SerializeField] AllReferences refs;
     [HideInInspector] public bool wasPlayed = false;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
@@ -71,5 +72,10 @@ public class Card : MonoBehaviour,IInteractable
         {
             transform.tag = "Untagged";
         }
+    }
+
+    void EndInteractable()
+    {
+        transform.tag = "Untagged";
     }
 }
