@@ -22,6 +22,7 @@ public class ManaObject : ScriptableObject
     public event Action manaStart;
     public event Action manaBoost;
     public event Action manaRestauration;
+    public event Action manaAddTurn;
 
     public void AddMana(int amount)
     {
@@ -54,6 +55,11 @@ public class ManaObject : ScriptableObject
     {
         newSpellCost = cost;
         manaRestauration?.Invoke();
+    }
+
+    public void ManaAddTurn()
+    {
+        manaAddTurn?.Invoke();
     }
 
 

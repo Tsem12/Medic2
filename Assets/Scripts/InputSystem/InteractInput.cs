@@ -5,12 +5,14 @@ using UnityEngine;
 interface IInteractable
 {
     public void Interact();
+    public void Cancel();
 }
 
 
 public class InteractInput : MonoBehaviour
 {
     [SerializeField] InputHandlerObject _inputs;
+    [SerializeField] AllReferences refs;
     Coroutine _dragCoroutine = null;
     GameObject _getObject;
 
@@ -18,11 +20,15 @@ public class InteractInput : MonoBehaviour
     {
         _inputs.pressedEvent += Interact;
         _inputs.unPressedEvent += Drop;
+        _inputs.cancelPressEvent += CanceledDrop;
+        refs.fightManager.OnTurnBegin += CanceledDrop;
     }
     private void OnDisable()
     {
         _inputs.pressedEvent -= Interact;
         _inputs.unPressedEvent -= Drop;
+        _inputs.cancelPressEvent -= CanceledDrop;
+        refs.fightManager.OnTurnBegin -= CanceledDrop;
     }
 
     void Interact()
@@ -64,6 +70,23 @@ public class InteractInput : MonoBehaviour
         {
             _getObject.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
             yield return null;
+        }
+    }
+
+    void CanceledDrop()
+    {
+        if (_getObject != null) // Check if we got object to interact with
+        {
+            if (_getObject.GetComponent<IInteractable>() != null)
+            {
+                _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
+            }
+            if (_dragCoroutine != null)
+            {
+                StopCoroutine(_dragCoroutine);
+                _dragCoroutine = null;
+            }
+            _getObject = null;
         }
     }
 }
