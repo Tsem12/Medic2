@@ -77,5 +77,6 @@ public class ManaUpdater : MonoBehaviour
     void TurnMana()
     {
         manaObejct.AddMana(manaObejct.increaseManaTurn);
+        manaObejct.ManaAddTurn();
     }
 }
