@@ -21,14 +21,12 @@ public class InteractInput : MonoBehaviour
         _inputs.pressedEvent += Interact;
         _inputs.unPressedEvent += Drop;
         _inputs.cancelPressEvent += CanceledDrop;
-        refs.fightManager.OnTurnBegin += CanceledDrop;
     }
     private void OnDisable()
     {
         _inputs.pressedEvent -= Interact;
         _inputs.unPressedEvent -= Drop;
         _inputs.cancelPressEvent -= CanceledDrop;
-        refs.fightManager.OnTurnBegin -= CanceledDrop;
     }
 
     void Interact()
@@ -75,6 +73,7 @@ public class InteractInput : MonoBehaviour
 
     void CanceledDrop()
     {
+        
         if (_getObject != null) // Check if we got object to interact with
         {
             if (_getObject.GetComponent<IInteractable>() != null)
