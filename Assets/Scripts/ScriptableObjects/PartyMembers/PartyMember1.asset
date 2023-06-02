@@ -20,6 +20,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 50d3cd2f336704fcf9cf5b293c10ba9c, type: 3}
   attacksPatern:
   - paternName: patern 1
+    interuptMode: 0
     attacks:
     - attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
       condition: 0

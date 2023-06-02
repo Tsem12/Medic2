@@ -26,7 +26,8 @@ public class AttacksPatern
     public enum PaternInteruptMode
     {
         Interupt,
-        DontInterupt
+        DontInteruptLastInQueue,
+        DontInteruptFirstInQueue
     }
 
     public string paternName;

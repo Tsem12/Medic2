@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   player: {fileID: 0}
+  inputManager: {fileID: 0}
+  gameManager: {fileID: 0}
+  fightManager: {fileID: 0}

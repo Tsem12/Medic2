@@ -61,6 +61,7 @@ public class Health : MonoBehaviour
             else
             {
                 _character.SetCurrentHealth(_character.GetMaxHealth() + newHealth);
+                _refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar);
                 foreach (HealtPoint hp in _healthPoints)
                 {
                     if(_currentHealthBarAmount <= 1)

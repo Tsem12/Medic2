@@ -17,6 +17,7 @@ public class Enemie : Character
     {
         AssignValues();
         _currentHealth = _maxHealth;
+        _refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.AllieBuffed);
 
     }
     public override void AssignValues()
@@ -77,6 +78,8 @@ public class Enemie : Character
     }
     protected override void Attack()
     {
+       
+
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
 
