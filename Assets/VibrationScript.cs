@@ -17,6 +17,7 @@ public static class VibrationScript
     {
         if (isAndroid())
         {
+            
             vibrator.Call("vibrate", milliseconds);
         }
         else
@@ -33,7 +34,7 @@ public static class VibrationScript
 
     public static bool isAndroid()
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID && !UNITY_EDITOR
         return true;
 #else
         return false;
