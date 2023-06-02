@@ -90,6 +90,10 @@ public class CardBase : ScriptableObject
         switch (cardBehaviour)
         {
 
+            case CardBehaviour.heal:
+                partyMember.Heal(healthHealed);
+                break;
+
 
         }
     }    

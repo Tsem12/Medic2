@@ -40,7 +40,6 @@ public class FightManager : MonoBehaviour
     private bool _endTurn;
 
     public event Action OnTurnBegin;
-
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }

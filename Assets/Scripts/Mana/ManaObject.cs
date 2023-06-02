@@ -10,11 +10,14 @@ public class ManaObject : ScriptableObject
 {
     public float currentMana;
     public float maxMana = 10f;
+    public int increaseManaTurn;
 
     [HideInInspector]
-    public float increasedMana;
-    public float turnsNumber;
-    public float newSpellCost;
+    public int increasedMana;
+    [HideInInspector]
+    public int turnsNumber;
+    [HideInInspector]
+    public int newSpellCost;
 
     public event Action manaStart;
     public event Action manaBoost;

@@ -7,10 +7,8 @@ using UnityEngine.UI;
 
 public class ManaBar : MonoBehaviour
 {
-    //Definitive Vars
     [SerializeField] ManaObject manaEventHandler;
     [SerializeField] Slider manaSlider;
-    [SerializeField] Slider preManaSlider;
     [SerializeField] float manaPerSeconds = 2;
     [SerializeField] AnimationCurve curve;
     Coroutine updateRoutine;
@@ -18,7 +16,6 @@ public class ManaBar : MonoBehaviour
 
     private void Start()
     {
-        manaEventHandler.currentMana = 0f;
         mana = manaEventHandler.currentMana;
     }
 
