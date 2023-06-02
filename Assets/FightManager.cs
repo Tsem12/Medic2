@@ -80,6 +80,7 @@ public class FightManager : MonoBehaviour
     private void PartyMemberTurn()
     {
         _partymembersTurnRoutine = StartCoroutine(IATurnRoutine());
+        OnTurnEnd?.Invoke();
     }
 
     private void SetGlobalAgroValue()

@@ -16,19 +16,12 @@ public class InteractInput : MonoBehaviour
     Coroutine _dragCoroutine = null;
     GameObject _getObject;
 
-    private void OnEnable()
+    private void Start()
     {
         _inputs.pressedEvent += Interact;
         _inputs.unPressedEvent += Drop;
-        _inputs.cancelPressEvent += CanceledDrop;
+        refs.fightManager.OnTurnEnd += CanceledDrop;
     }
-    private void OnDisable()
-    {
-        _inputs.pressedEvent -= Interact;
-        _inputs.unPressedEvent -= Drop;
-        _inputs.cancelPressEvent -= CanceledDrop;
-    }
-
     void Interact()
     {
         if(Input.touchCount > 0)
@@ -73,19 +66,19 @@ public class InteractInput : MonoBehaviour
 
     void CanceledDrop()
     {
-        
-        if (_getObject != null) // Check if we got object to interact with
+        Debug.Log("TryCancel");
+        if(_dragCoroutine != null)
         {
-            if (_getObject.GetComponent<IInteractable>() != null)
+            if (_getObject != null) // Check if we got object to interact with
             {
-                _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
-            }
-            if (_dragCoroutine != null)
-            {
+                if (_getObject.GetComponent<IInteractable>() != null)
+                {
+                    _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
+                }
                 StopCoroutine(_dragCoroutine);
                 _dragCoroutine = null;
+                _getObject = null;
             }
-            _getObject = null;
         }
     }
 }
