@@ -36,7 +36,6 @@ public class Card : MonoBehaviour,IInteractable
         {
             if(ApplyEffect())
             {
-                Debug.Log("Test");
                 col.enabled = false;
                 myRender.enabled = false;
                 usedRenderer.enabled = true;

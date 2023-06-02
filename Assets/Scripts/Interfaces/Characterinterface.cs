@@ -14,7 +14,7 @@ public interface ICharacter
     public void Kill();
     public void StartTurn();
     public void EndTurn();
-    public void TakeDamage(int damage);
+    public void TakeDamage(AttacksObject attack);
     public void SetTarget();
     public void SetCurrentHealth(int newValue);
 }
