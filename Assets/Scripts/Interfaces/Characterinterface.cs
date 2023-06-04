@@ -9,6 +9,8 @@ public interface ICharacter
     public int GetMaxHealthBar();
     public string GetName();
     public Sprite GetIcone();
+
+    public void SetAttack();
     public bool IsPlaying();
     public bool IsDead();
     public void Kill();
@@ -22,5 +24,8 @@ public interface ICharacter
     public void AddStatus(Status status);
     public void TryRemoveStatus(Status.StatusEnum status);
     public void GetAllStatus();
+    public void SetBossAttackPreview(Sprite sprite);
+    public void SetPartyMemberAttackPreview(Sprite sprite);
+    public Sprite GetNextAttackSprite();
 }
 

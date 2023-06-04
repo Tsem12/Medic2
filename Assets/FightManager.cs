@@ -42,6 +42,39 @@ public class FightManager : MonoBehaviour
 
     public event Action OnTurnBegin;
     public event Action OnTurnEnd;
+
+    #region statusSprites
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite baseAttack;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite strengthened;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite initiative;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite regenerating;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite shielded;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite fatigue;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite poisoned;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite sleeped;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite restrained;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite stunned;
+    public Sprite BaseAttack { get => baseAttack; }
+    public Sprite Strengthened { get => strengthened; }
+    public Sprite Initiative { get => initiative; }
+    public Sprite Regenerating { get => regenerating; }
+    public Sprite Shielded { get => shielded; }
+    public Sprite Fatigue { get => fatigue; }
+    public Sprite Poisoned { get => poisoned; }
+    public Sprite Sleeped { get => sleeped; }
+    public Sprite Restrained { get => restrained; }
+    public Sprite Stunned { get => stunned; }
+    #endregion
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
@@ -75,14 +108,16 @@ public class FightManager : MonoBehaviour
     }
     private void StartTurn()
     {
-        ReferenceSettersManager.ReconnectAll();
+        //ReferenceSettersManager.ReconnectAll();
         _currentTurn++;
         OnTurnBegin?.Invoke();
 
         SetGlobalAgroValue();
         foreach (ICharacter character in _characterList)
         {
+            character.SetAttack();
             character.SetTarget();
+            character.SetPartyMemberAttackPreview(character.GetNextAttackSprite());
         }
         OrderCharacters();
         _playerTurnRoutine = StartCoroutine(PlayerTurn());

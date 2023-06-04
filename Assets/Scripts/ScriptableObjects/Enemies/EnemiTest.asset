@@ -31,18 +31,6 @@ MonoBehaviour:
     - attack: {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
       condition: 1
       percentageValue: 100
-  - paternName: 
-    interuptMode: 2
-    attacks:
-    - attack: {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
-      condition: 0
-      percentageValue: 0
-    - attack: {fileID: 11400000, guid: ff5bc03619f50f24289b2a58072b6d20, type: 2}
-      condition: 0
-      percentageValue: 0
-    - attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
-      condition: 2
-      percentageValue: 50
   attacksEvent:
   - attack:
       attack: {fileID: 11400000, guid: d5150c5283177cc4ebaa8633c6334866, type: 2}

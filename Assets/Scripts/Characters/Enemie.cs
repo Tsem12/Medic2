@@ -7,7 +7,6 @@ public class Enemie : Character
 {
     [SerializeField] private Image _targetIcon;
 
-    private ICharacter _target;
 
     [Header("Stats")]
     private int _damage;
@@ -43,6 +42,7 @@ public class Enemie : Character
     public override void SetTarget()
     {
         List<ICharacter> chara =  new List<ICharacter>();
+        _targets.Clear();
         ICharacter target = null;
 
         foreach(ICharacter c in _refs.fightManager.PartyMembers)
@@ -54,46 +54,34 @@ public class Enemie : Character
         }
 
         chara.Sort(Compare);
+        int tempGlobalAgro = _refs.fightManager.GlobalAgro;
 
-        int random = Random.Range(0, 101);
-        float others = 0f;
-        foreach(ICharacter c in chara)
+        for (int i = 0 ; i < _nextAttack.nbrOfTargets ; i++)
         {
-            float percentage = ((float)c.GetAgro() / (float)_refs.fightManager.GlobalAgro) *100;
-            //Debug.Log($"{percentage + others}, random {random} ");
-            if(percentage + others >= random)
+            int random = Random.Range(0, 101);
+            float others = 0f;
+            foreach(ICharacter c in chara)
             {
-                target = c;
-                break;
+                float percentage = ((float)c.GetAgro() / (float)tempGlobalAgro) *100;
+                //Debug.Log($"{percentage + others}, random {random} ");
+                if(percentage + others >= random)
+                {
+                    target = c;
+                    break;
+                }
+                else
+                {
+                    target = c;
+                    others += percentage;
+                }
             }
-            else
-            {
-                target = c;
-                others += percentage;
-            }
+
+            tempGlobalAgro -= target.GetAgro();
+            target.SetBossAttackPreview(_nextAttack.GetAttackSprite(_refs.fightManager));
+            _targets.Add(target);
+            chara.Remove(target);
         }
 
-        _target = target;
-        _targetIcon.sprite = target.GetIcone();
-    }
-    protected override void Attack()
-    {
-       
-
-        if (_refs.fightManager.EnableDebug)
-            Debug.Log($"{gameObject.name} is attacking {_target.GetName()}");
-
-        AttacksObject atk =  GetAttack();
-        Debug.Log($"Attack with {atk.attackName}");
-        Status status = GetStatus(Status.StatusEnum.Strengthened);
-        if (status != null)
-        {
-            _target.TakeDamage(atk, status.value);
-        }
-        else
-        {
-            _target.TakeDamage(atk);
-        }
     }
 
     private int Compare(ICharacter x, ICharacter y)

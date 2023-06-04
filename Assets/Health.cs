@@ -15,8 +15,11 @@ public class Health : MonoBehaviour
 
     [Header("layout group")]
     [SerializeField] private GameObject _healthPoint;
-    [SerializeField] private HorizontalLayoutGroup _layerGroup;
+    [SerializeField] private GameObject _healthBarCount;
+    [SerializeField] private HorizontalLayoutGroup _layerGroupHealthpoint;
+    [SerializeField] private HorizontalLayoutGroup _layerGroupHealthBar;
     [SerializeField] private List<HealtPoint> _healthPoints = new List<HealtPoint>();
+    [SerializeField] private List<GameObject> _healthBars = new List<GameObject>();
 
 
     private void Start()
@@ -28,15 +31,33 @@ public class Health : MonoBehaviour
 
         for (int i = 0; i < _character.GetMaxHealth(); i++)
         {
-            GameObject obj = Instantiate(_healthPoint, _layerGroup.transform);
+            GameObject obj = Instantiate(_healthPoint, _layerGroupHealthpoint.transform);
             HealtPoint hp = obj.GetComponent<HealtPoint>();
             _healthPoints.Add(hp);
         }
-
         if( _healthPoints.Count > 1)
         {
-            _layerGroup.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroup.spacing * _healthPoints.Count - 1)) / 2;
+            _layerGroupHealthpoint.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroupHealthpoint.spacing * _healthPoints.Count - 1)) / 2;
         }
+
+        if(_layerGroupHealthBar != null)
+        {
+            for (int i = 0; i < _character.GetMaxHealthBar(); i++)
+            {
+                GameObject obj = Instantiate(_healthBarCount, _layerGroupHealthBar.transform);
+                _healthBars.Add(obj);
+            }
+
+            Invoke("SetPos", 0.05f);
+        }
+
+        
+    }
+
+    private void SetPos()
+    {
+        //_layerGroupHealthBar.GetComponent<RectTransform>().Translate(_healthPoints[0].GetComponent<RectTransform>().localPosition);
+        _layerGroupHealthBar.GetComponent<RectTransform>().localPosition +=  new Vector3(_healthPoints[0].GetComponent<RectTransform>().localPosition.x + 50, 0, 0) * 2 ;
     }
 
     public void TakeDamage(int value)
@@ -54,7 +75,7 @@ public class Health : MonoBehaviour
         if(newHealth <= 0)
         {
             _currentHealthBarAmount -= 1;
-            if(_currentHealthBarAmount <= 0)
+            if (_currentHealthBarAmount <= 0)
             {
                 if (_refs.fightManager.EnableDebug)
                     Debug.Log($"{gameObject.name} have been killed");
@@ -69,6 +90,7 @@ public class Health : MonoBehaviour
             }
             else
             {
+                _healthBars[_currentHealthBarAmount].SetActive(false);
                 _character.SetCurrentHealth(_character.GetMaxHealth() + newHealth);
                 _refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar);
                 foreach (HealtPoint hp in _healthPoints)
@@ -109,7 +131,7 @@ public class Health : MonoBehaviour
     }
     [Button]
     public void TestHeal() => Heal(2);
-    internal void Heal(int value)
+    internal void Heal(int value, bool IsPartyMember = false)
     {
         Debug.Log("Tryheal");
         if (_character.IsDead())
@@ -144,7 +166,14 @@ public class Health : MonoBehaviour
 
         for (int i = _character.GetCurrentHealth(); i < newHealth; i++)
         {
-            _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+            if (IsPartyMember)
+            {
+                _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[0];
+            }
+            else
+            {
+                _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+            }
         }
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} have been healed");

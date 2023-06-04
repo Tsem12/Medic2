@@ -23,6 +23,9 @@ public abstract class Character : MonoBehaviour, ICharacter
     private Coroutine _attackRoutine;
     private AttacksPatern _actualPatern;
     protected AttackEvent _latetsAttackEvent;
+    protected AttacksObject _nextAttack;
+
+    protected List<ICharacter> _targets =  new List<ICharacter>();
 
     public List<Status> _status = new List<Status>();
     private void OnValidate()
@@ -32,13 +35,16 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     #region Abstarct methods
     public abstract void SetCurrentHealth(int newValue);
-    protected abstract void Attack();
     public abstract int GetSpeed();
     public abstract int GetAgro();
     public abstract void SetTarget();
     public abstract void AssignValues();
     public abstract Sprite GetIcone();
     public abstract int GetMaxHealthBar();
+    public virtual void SetBossAttackPreview(Sprite sprite) { }
+    public virtual void SetPartyMemberAttackPreview(Sprite sprite) { }
+    public virtual Sprite GetNextAttackSprite() { return null; }
+
     #endregion
     public void CheckObjectRefs()
     {
@@ -53,7 +59,8 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if (stunned != null || restrained != null || sleep != null)
         {
-            Debug.Log($"{gameObject.name} can't attack");
+            if (_refs.fightManager.EnableDebug)
+                Debug.Log($"{gameObject.name} can't attack");
             return;
         }
 
@@ -62,6 +69,12 @@ public abstract class Character : MonoBehaviour, ICharacter
             Debug.Log($"{gameObject.name} turn started");
         _attackRoutine = StartCoroutine(AttackRoutine());
     }
+
+    public void SetAttack()
+    {
+        _nextAttack = GetAttack();
+    }
+
     public virtual void EndTurn()
     {
         foreach (Status status in _status.ToList())
@@ -72,8 +85,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 status.remainTurn--;
                 if(status.remainTurn <= 0)
                 {
-                    Debug.Log($"Remove {status.status} from {gameObject.name}, {status.remainTurn}");
-                    _status.Remove(status);
+                    TryRemoveStatus(status.status);
                 }
             }
         }
@@ -86,13 +98,14 @@ public abstract class Character : MonoBehaviour, ICharacter
         switch (statut.status)
         {
             case Status.StatusEnum.Poisoned:
+                Debug.Log("sqssqfqsf");
                 _health.TakeDamage(statut.value);
                 break;
             case Status.StatusEnum.Restrained:
                 _health.TakeDamage(statut.value);
                 break;
             case Status.StatusEnum.Regenerating:
-                _health.Heal(statut.value);
+                _health.Heal(statut.value, true);
                 break;
         }
     }
@@ -113,6 +126,40 @@ public abstract class Character : MonoBehaviour, ICharacter
             }
         }
         return null;
+    }
+
+    protected void Attack()
+    {
+        if (_refs.fightManager.EnableDebug)
+        {
+            if(_targets.Count == 1)
+                Debug.Log($"{gameObject.name} is attacking {_targets[0].GetName()}");
+            else if(_targets.Count == 2)
+                Debug.Log($"{gameObject.name} is attacking {_targets[0].GetName()} and {_targets[1].GetName()}");
+            else
+                Debug.Log($"{gameObject.name} is attacking {_targets[0].GetName()},  {_targets[1].GetName()} and {_targets[2].GetName()}");
+        }
+
+        int additionalDamage = 0;
+
+        Status strengthned = GetStatus(Status.StatusEnum.Strengthened);
+        Status fatigue = GetStatus(Status.StatusEnum.Fatigue);
+
+        if (strengthned != null)
+        {
+            additionalDamage += strengthned.value;
+        }
+        if (fatigue != null)
+        {
+            additionalDamage -= fatigue.value;
+        }
+
+        foreach(ICharacter target in _targets)
+        {
+            target.AddStatus(_nextAttack.GetStatus());
+            target.TakeDamage(_nextAttack, additionalDamage);
+        }
+
     }
 
     private IEnumerator AttackRoutine()
@@ -161,16 +208,20 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public void Kill()
     {
+        _status.Clear();
         _isDead = true;
         GetComponent<SpriteRenderer>().color = Color.red;
     }
 
     public void Revive(int heal)
     {
+        if (!_isDead)
+            return;
+
         _isDead = false;
         GetComponent<SpriteRenderer>().color = Color.white;
         _refs.fightManager.PartyMembersList.Add(GetComponent<ICharacter>());
-        _health.Heal(heal);
+        _health.Heal(heal, true);
     }
 
     public bool DoesFulFillCondition(AttackClass atk)
@@ -183,7 +234,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             case AttackClass.AttackConditions.HpLowerThan:
                 if ((float)_currentHealth / (float)_maxHealth <= (float)atk.percentageValue / 100f)
                 {
-                    Debug.Log($"{(float)_currentHealth / (float)_maxHealth} <= {(float)atk.percentageValue / 100f}");
+                    //Debug.Log($"{(float)_currentHealth / (float)_maxHealth} <= {(float)atk.percentageValue / 100f}");
                     return true;
                 }
                 else
@@ -312,6 +363,8 @@ public abstract class Character : MonoBehaviour, ICharacter
         Status statu = GetStatus(status);
         if(statu != null)
         {
+            if (_refs.fightManager.EnableDebug)
+                Debug.Log($"The status {status} has been removed from {gameObject.name}");
             _status.Remove(statu);
             return;
         }
@@ -320,6 +373,9 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public void AddStatus(Status status)
     {
+        if (status == null)
+            return;
+
         Status s = GetStatus(status.status);
         if(s != null)
         {
@@ -327,29 +383,36 @@ public abstract class Character : MonoBehaviour, ICharacter
             {
                 case Status.StatusEnum.Fatigue:
 
+                    if (_refs.fightManager.EnableDebug)
+                        Debug.Log($"the status {status.status} of {gameObject.name} has been applied twice it has turned into {Status.StatusEnum.Sleeped}");
                     _status.Add(new Status(Status.StatusEnum.Sleeped, true));
                     TryRemoveStatus(Status.StatusEnum.Fatigue);
                     TryRemoveStatus(Status.StatusEnum.Stunned);
                     break;
 
                 case Status.StatusEnum.Stunned:
+                    if (_refs.fightManager.EnableDebug)
+                        Debug.Log($"{gameObject.name} already got the status: {status.status} it has been reseted");
                     TryRemoveStatus(Status.StatusEnum.Sleeped);
                     break;
 
                 default:
+                    if (_refs.fightManager.EnableDebug)
+                        Debug.Log($"{gameObject.name} already got the status: {status.status} it has been reseted");
                     s.ResetStatus();
                     break;
             }
-
             return;
         }
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} get the status: {status.status}");
         _status.Add(status);
     }
 
     [Button]
     public void TestShield() => AddStatus(new Status(Status.StatusEnum.Shielded, 1));
     [Button]
-    public void TestStrenght() => AddStatus(new Status(Status.StatusEnum.Strengthened, 2));
+    public void TestStrenght() => AddStatus(new Status(Status.StatusEnum.Strengthened, 2, 1));
     [Button]
     public void TestInitive()
     {
@@ -365,7 +428,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [Button]
     public void TestSleep() => AddStatus(new Status(Status.StatusEnum.Sleeped, true));
     [Button]
-    public void TestFatigue() => AddStatus(new Status(Status.StatusEnum.Fatigue, 2));
+    public void TestFatigue() => AddStatus(new Status(Status.StatusEnum.Fatigue, 2, 1));
     [Button]
     public void TestRestrained() => AddStatus(new Status(Status.StatusEnum.Restrained, 2, 1));
     [Button]
@@ -376,5 +439,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             Debug.Log(s.status);
         }
     }
+    [Button]
+    public void TestRevive() => Revive(GetMaxHealth()/2);
 
 }

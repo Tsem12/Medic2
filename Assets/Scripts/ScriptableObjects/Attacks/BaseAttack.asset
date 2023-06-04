@@ -16,9 +16,13 @@ MonoBehaviour:
   description: 
   attackSprite: {fileID: 21300000, guid: 50d3cd2f336704fcf9cf5b293c10ba9c, type: 3}
   atkDamage: 1
+  nbrOfTargets: 2
   attackEffects: 0
-  effectTurnDuration: 5
   dotAttacks: 0
-  buff: 0
+  buff: 3
   deBuff: 0
-  chanceToApplyEffect: 27.1
+  dotValuePerTurn: 1
+  effectTurnDuration: 1
+  buffValue: 1
+  deBuffValue: 0
+  chanceToApplyEffect: 100

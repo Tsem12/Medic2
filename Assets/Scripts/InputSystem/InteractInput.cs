@@ -66,7 +66,7 @@ public class InteractInput : MonoBehaviour
 
     void CanceledDrop()
     {
-        Debug.Log("TryCancel");
+        //Debug.Log("TryCancel");
         if(_dragCoroutine != null)
         {
             if (_getObject != null) // Check if we got object to interact with
