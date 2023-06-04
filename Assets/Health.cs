@@ -1,3 +1,4 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using System;
 using System.Collections;
@@ -5,6 +6,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Sequence = DG.Tweening.Sequence;
 
 public class Health : MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class Health : MonoBehaviour
     [SerializeField] private HorizontalLayoutGroup _layerGroupHealthBar;
     [SerializeField] private List<HealtPoint> _healthPoints = new List<HealtPoint>();
     [SerializeField] private List<GameObject> _healthBars = new List<GameObject>();
-
+    [SerializeField] private List<RectTransform> _hpRect = new List<RectTransform>();
 
     private void Start()
     {
@@ -33,6 +35,7 @@ public class Health : MonoBehaviour
         {
             GameObject obj = Instantiate(_healthPoint, _layerGroupHealthpoint.transform);
             HealtPoint hp = obj.GetComponent<HealtPoint>();
+            _hpRect.Add(hp.GetComponent<RectTransform>());
             _healthPoints.Add(hp);
         }
         if( _healthPoints.Count > 1)
@@ -106,9 +109,7 @@ public class Health : MonoBehaviour
                 }
                 for(int i = 0; i < _character.GetCurrentHealth(); i++)
                 {
-
                     _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
-
                 }
                 return;
             }
@@ -116,7 +117,7 @@ public class Health : MonoBehaviour
 
         for(int i = newHealth; i < newHealth + value; i++)
         {
-
+            TakeDamageTweener(i);
             if (_currentHealthBarAmount <= 1)
             {
                 _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_healthPoints[i].Colors.Length - 1];
@@ -129,6 +130,15 @@ public class Health : MonoBehaviour
         }
         _character.SetCurrentHealth(newHealth);
     }
+
+    private void TakeDamageTweener(int i)
+    {
+        Tweener scale = _hpRect[i].DOScale(Vector3.one * 1.5f, 0.25f);
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(_hpRect[i].DOShakeAnchorPos(0.5f, 25f, 10, 90).SetEase(Ease.OutFlash));
+        sequence.Join(scale.OnComplete(() => _hpRect[i].DOScale(Vector3.one, 0.25f)));
+    }
+
     [Button]
     public void TestHeal() => Heal(2);
     internal void Heal(int value, bool IsPartyMember = false)
@@ -163,9 +173,10 @@ public class Health : MonoBehaviour
             _character.SetCurrentHealth(_character.GetMaxHealth());
             return;
         }
-
+        List <RectTransform> list = new List<RectTransform>();
         for (int i = _character.GetCurrentHealth(); i < newHealth; i++)
         {
+            list.Add(_hpRect[i]);
             if (IsPartyMember)
             {
                 _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[0];
@@ -175,10 +186,18 @@ public class Health : MonoBehaviour
                 _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
             }
         }
+        Sequence sequence = DOTween.Sequence();
+        foreach(RectTransform rect in list)
+        {
+            sequence.Append(rect.DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+        }
+
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} have been healed");
+
         _character.SetCurrentHealth(newHealth);
     }
+
 
     //private void OnValidate()
     //{
