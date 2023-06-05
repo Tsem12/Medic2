@@ -19,7 +19,6 @@ public enum CardBehaviour
     resonanceShield,
     blessingOfMars,
     blessingOfJupiter,
-    manaBoost,
     manaRestauration,
     speedBoost
 }
@@ -45,7 +44,7 @@ public class CardBase : ScriptableObject
     {
         get
         {
-            return cardBehaviour == CardBehaviour.heal || cardBehaviour == CardBehaviour.regeneration || cardBehaviour == CardBehaviour.unNaturalRegeneration || cardBehaviour == CardBehaviour.massHeal || cardBehaviour == CardBehaviour.antidote;
+            return cardBehaviour == CardBehaviour.heal || cardBehaviour == CardBehaviour.regeneration  || cardBehaviour == CardBehaviour.massHeal || cardBehaviour == CardBehaviour.antidote;
         }
     }
 
@@ -53,7 +52,7 @@ public class CardBase : ScriptableObject
     {
         get
         {
-            return cardBehaviour == CardBehaviour.regeneration || cardBehaviour == CardBehaviour.resonanceShield || cardBehaviour == CardBehaviour.blessingOfMars || cardBehaviour == CardBehaviour.blessingOfJupiter || cardBehaviour == CardBehaviour.manaBoost || cardBehaviour == CardBehaviour.speedBoost;
+            return cardBehaviour == CardBehaviour.regeneration || cardBehaviour == CardBehaviour.resonanceShield || cardBehaviour == CardBehaviour.blessingOfMars || cardBehaviour == CardBehaviour.blessingOfJupiter || cardBehaviour == CardBehaviour.speedBoost;
         }
     }
 
@@ -65,9 +64,6 @@ public class CardBase : ScriptableObject
 
     [ShowIf("cardBehaviour", CardBehaviour.resurection)]
     public float healthPercentage;
-
-    [ShowIf("cardBehaviour", CardBehaviour.manaBoost)]
-    public bool addedMana;
 
     [ShowIf("cardBehaviour", CardBehaviour.unNaturalRegeneration)]
     public float poisonChance;
@@ -84,12 +80,11 @@ public class CardBase : ScriptableObject
     public void ApplyEffectOfTheCard(Character partyMember)
     {
         manaObject.ReduceMana(manaCost);
-        if(manaObject.manaRestauration)
+        if (manaObject.manaRestauration)
         {
             manaObject.AddMana(manaCost);
             manaObject.manaRestauration = false;
         }
-
 
         switch (cardBehaviour)
         {
@@ -97,41 +92,30 @@ public class CardBase : ScriptableObject
             case CardBehaviour.heal:
                 partyMember.GetComponent<IHealable>().Heal(healthHealed);
                 break;
-
-            case CardBehaviour.unNaturalRegeneration:
-                partyMember.GetComponent<IHealable>().Heal(healthHealed);
-                if (UnityEngine.Random.Range(0f,1f) <= poisonChance/100f)
-                {
-                    partyMember.AddStatus(new Status(Status.StatusEnum.Poisoned, turnActive));
-                }
-                else
-                {
-                    Debug.Log("Poison missed");
-                }
-                break;
-
             case CardBehaviour.resurection:
-                if(partyMember.GetCurrentHealth() > 0)
-                {
-                    input.Cancel();
-                }
-                else
-                {
-                    partyMember.Revive(healthPercentage);
-                }
+                partyMember.Revive(healthPercentage);
                 break;
 
             case CardBehaviour.manaRestauration:
                 manaObject.manaRestauration = true;
                 break;
-            case CardBehaviour.manaBoost:
-                
-                break;
+
             case CardBehaviour.massHeal:
                 foreach (var item in refs.fightManager.PartyMembers)
                 {
                     item.GetComponent<IHealable>().Heal(healthHealed);
                 }
+                break;
+            case CardBehaviour.antidote:
+                foreach (var item in partyMember._status)
+                {
+                    partyMember.TryRemoveStatus(item.status);
+                }
+                partyMember.GetComponent<IHealable>().Heal(healthHealed);
+                break;
+
+            case CardBehaviour.spiritShield:
+                partyMember.AddStatus(new Status(Status.StatusEnum.Shielded));
                 break;
 
 

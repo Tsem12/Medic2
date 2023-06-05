@@ -18,12 +18,11 @@ MonoBehaviour:
   cardBehaviour: 1
   isEnableInGame: 1
   cardName: 
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: 3dc16554fc278d744988b7ffdca1b10d, type: 3}
   manaCost: 6
   healthHealed: 4
   turnActive: 0
   healthPercentage: 0
-  addedMana: 0
   poisonChance: 25
   shieldBreakAfter: 0
   damageMultiplier: 0

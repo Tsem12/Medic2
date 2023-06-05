@@ -42,13 +42,12 @@ public class ManaObject : ScriptableObject
         }
     }
 
-    public void ManaBoost(int turns, int amount)
-    {
-
-    }
-
     public void ManaAddTurn()
     {
+        if(manaRestauration)
+        {
+            manaRestauration = false;
+        }
         manaAddTurn?.Invoke();
     }
 

@@ -72,7 +72,7 @@ public class InteractInput : MonoBehaviour
         {
             if (_getObject != null) // Check if we got object to interact with
             {
-                if (_getObject.GetComponent<IInteractable>() != null)
+                if(_getObject.GetComponent<IInteractable>() != null)
                 {
                     _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
                 }
