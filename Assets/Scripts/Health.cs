@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
     [SerializeField] private List<GameObject> _healthBars = new List<GameObject>();
     [SerializeField] private List<RectTransform> _hpRect = new List<RectTransform>();
 
+    public int CurrentHealthBarAmount { get => _currentHealthBarAmount; }
+
     private void Start()
     {
         _healthPoints.Clear();

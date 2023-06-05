@@ -250,6 +250,17 @@ public abstract class Character : MonoBehaviour, ICharacter
                 {
                     return false;
                 }
+
+            case AttackClass.AttackConditions.HpBarLost:
+                Debug.Log(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value);
+                if(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
         }
         throw new System.Exception("On dois pas arriver là");
     }
@@ -335,25 +346,41 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         AttackClass atk = _actualPatern.attackQueue.Dequeue();
         int nbrLoop = 0;
-        while(!DoesFulFillCondition(atk))
-        {
-            if(nbrLoop > _characterObj.attacksPatern.Length)
-            {
-                throw new Exception("COMMENT TA REUSSI A FAIRE UNE INFINITE LOOP SALE MERDE");
-            }
 
-            if(_actualPatern.attackQueue.Count() <= 0)
+        if(atk.attackConditionsMode == AttackClass.ConditionMode.DontAttackWithoutCondition)
+        {
+            while(!DoesFulFillCondition(atk))
             {
-                _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
-                _actualPatern.FillQueue();
-                atk = _actualPatern.attackQueue.Dequeue();
-                nbrLoop++;
+                if(nbrLoop > _characterObj.attacksPatern.Length)
+                {
+                    throw new Exception("COMMENT TA REUSSI A FAIRE UNE INFINITE LOOP SALE MERDE");
+                }
+
+                if(_actualPatern.attackQueue.Count() <= 0)
+                {
+                    _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
+                    _actualPatern.FillQueue();
+                    atk = _actualPatern.attackQueue.Dequeue();
+                    nbrLoop++;
+                }
+                else
+                {
+                    atk = _actualPatern.attackQueue.Dequeue();
+                }
+            }
+        }
+        else if (atk.attackConditionsMode == AttackClass.ConditionMode.UseBaseAttackWithoutCondition)
+        {
+            if (DoesFulFillCondition(atk))
+            {
+                return atk.ConditionalAttack;
             }
             else
             {
-                atk = _actualPatern.attackQueue.Dequeue();
+                return atk.attack;
             }
         }
+
 
         return atk.attack;
     }
