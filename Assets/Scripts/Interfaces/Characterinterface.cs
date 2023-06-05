@@ -8,8 +8,6 @@ public interface ICharacter
     public int GetAgro();
     public int GetMaxHealthBar();
     public string GetName();
-    public Sprite GetIcone();
-
     public void SetAttack();
     public bool IsPlaying();
     public bool IsDead();
@@ -27,5 +25,6 @@ public interface ICharacter
     public void SetBossAttackPreview(Sprite sprite);
     public void SetPartyMemberAttackPreview(Sprite sprite);
     public Sprite GetNextAttackSprite();
+    public void CheckStatus();
 }
 

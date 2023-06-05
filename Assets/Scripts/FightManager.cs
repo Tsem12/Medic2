@@ -258,6 +258,11 @@ public class FightManager : MonoBehaviour
         }
         _state = FightState.None;
 
+        foreach(ICharacter c in _characterList)
+        {
+            c.CheckStatus();
+        }
+
         if (_enemie.GetComponent<ICharacter>().IsDead())
         {
             if (_enableDebug)

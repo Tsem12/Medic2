@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class PartyMember : Character, IHealable
 {
-    
-
     [Header("Stats")]
     private int _damage;
     private int _speed;
@@ -35,7 +33,6 @@ public class PartyMember : Character, IHealable
         if( _characterObj != null)
         {
             _maxHealth = _characterObj.maxHealth;
-            _damage = _characterObj.baseDamage;
             _speed = _characterObj.baseSpeed;
             _agroValue = _characterObj.baseAgroValue;
         }
@@ -100,10 +97,6 @@ public class PartyMember : Character, IHealable
         _health.Heal(value, true);
     }
 
-    public override Sprite GetIcone()
-    {
-        return _characterObj.icon;
-    }
 
     public override int GetMaxHealthBar()
     {

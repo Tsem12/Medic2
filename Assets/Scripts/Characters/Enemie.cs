@@ -24,7 +24,6 @@ public class Enemie : Character
         if(_characterObj != null)
         {
             _maxHealth = _characterObj.maxHealth;
-            _damage = _characterObj.baseDamage;
             _speed = _characterObj.baseSpeed;
         }
     }
@@ -96,11 +95,6 @@ public class Enemie : Character
     public override void SetCurrentHealth(int newValue)
     {
         _currentHealth = newValue;
-    }
-
-    public override Sprite GetIcone()
-    {
-        return _characterObj.icon;
     }
 
     public override int GetMaxHealthBar()

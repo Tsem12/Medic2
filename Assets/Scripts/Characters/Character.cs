@@ -9,6 +9,14 @@ using Random = UnityEngine.Random;
 
 public abstract class Character : MonoBehaviour, ICharacter
 {
+    public enum PartyMemberEnum
+    {
+        Boss,
+        Berserker,
+        Paladin,
+        Archer
+    }
+    [SerializeField] private PartyMemberEnum charaType;
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
 
@@ -39,7 +47,6 @@ public abstract class Character : MonoBehaviour, ICharacter
     public abstract int GetAgro();
     public abstract void SetTarget();
     public abstract void AssignValues();
-    public abstract Sprite GetIcone();
     public abstract int GetMaxHealthBar();
     public virtual void SetBossAttackPreview(Sprite sprite) { }
     public virtual void SetPartyMemberAttackPreview(Sprite sprite) { }
@@ -77,20 +84,24 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public virtual void EndTurn()
     {
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} finished his turn");
+    }
+
+    public void CheckStatus()
+    {
         foreach (Status status in _status.ToList())
         {
             ApplyEndTurnStatut(status);
             if (!status.isInfinite)
             {
                 status.remainTurn--;
-                if(status.remainTurn <= 0)
+                if (status.remainTurn <= 0)
                 {
                     TryRemoveStatus(status.status);
                 }
             }
         }
-        if (_refs.fightManager.EnableDebug)
-            Debug.Log($"{gameObject.name} finished his turn");
     }
 
     private void ApplyEndTurnStatut(Status statut)
@@ -144,6 +155,11 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         Status strengthned = GetStatus(Status.StatusEnum.Strengthened);
         Status fatigue = GetStatus(Status.StatusEnum.Fatigue);
+
+        if(charaType == PartyMemberEnum.Berserker)
+        {
+            additionalDamage += _maxHealth - _currentHealth;
+        }
 
         if (strengthned != null)
         {
@@ -274,7 +290,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                 foreach(AttackEvent atk in _characterObj.attacksEvent)
                 {
-                    if(atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar)
+                    if(atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar && DoesFulFillCondition(atk.attack))
                     {
                         _latetsAttackEvent = atk;
                     }
@@ -284,7 +300,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                 foreach (AttackEvent atk in _characterObj.attacksEvent)
                 {
-                    if (atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.AllieBuffed)
+                    if (atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.AllieBuffed && DoesFulFillCondition(atk.attack))
                     {
                         _latetsAttackEvent = atk;
                     }
@@ -369,7 +385,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 }
             }
         }
-        else if (atk.attackConditionsMode == AttackClass.ConditionMode.UseBaseAttackWithoutCondition)
+        else if (atk.attackConditionsMode == AttackClass.ConditionMode.UseBaseAttackWithoutCondition && atk.condition != AttackClass.AttackConditions.None)
         {
             if (DoesFulFillCondition(atk))
             {

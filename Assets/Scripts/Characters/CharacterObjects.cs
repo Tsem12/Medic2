@@ -11,12 +11,10 @@ public class CharacterObjets : ScriptableObject
     [Space]
 
     public int maxHealth;
-    [Range(1, 3)]
+    [Range(1, 5)]
     public int numberOfHealthBar = 1;
-    public int baseDamage;
     public int baseSpeed;
     public int baseAgroValue;
-    public Sprite icon;
 
     [Header("Attacks paterns")]
     [Space]
