@@ -238,10 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d80bdf9978ecba4dad01b335bb993be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  _refs: {fileID: 0}
   _health: {fileID: 2384422494978341929}
+  _characterObj: {fileID: 0}
   _maxHealth: 0
-  _partyMemberObj: {fileID: 0}
 --- !u!114 &2384422494978341929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425116be4ae1b254d86d70abc63caef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  _refs: {fileID: 0}
   _healthPoint: {fileID: 1122682150967232914, guid: ad4fce3355b501545a66ecfe75b3fcdf, type: 3}
   _layerGroup: {fileID: 4450482822233661519}
   _healthPoints: []

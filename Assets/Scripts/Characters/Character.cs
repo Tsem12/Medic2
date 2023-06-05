@@ -21,7 +21,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     private Coroutine _attackRoutine;
     private AttacksPatern _actualPatern;
-    private AttackEvent _latetsAttackEvent;
+    protected AttackEvent _latetsAttackEvent;
 
     private void OnValidate()
     {
@@ -38,7 +38,6 @@ public abstract class Character : MonoBehaviour, ICharacter
     public abstract Sprite GetIcone();
     public abstract int GetMaxHealthBar();
     #endregion
-
     public void CheckObjectRefs()
     {
         //Debug.Log(_characterObj);
@@ -137,6 +136,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode)
     {
+                         
         switch (trigerMode)
         {
             case AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar:
@@ -184,35 +184,50 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
             _actualPatern.FillQueue();
-            //Debug.Log($"Patern {_actualPatern.paternName} loaded");
         }
 
-        if(_latetsAttackEvent != null)
+        if (_latetsAttackEvent != null)
         {
-            _latetsAttackEvent = null;
+            switch (_actualPatern.interuptMode)
+            {
+                case AttacksPatern.PaternInteruptMode.Interupt:
 
-            if(_actualPatern.interuptMode == AttacksPatern.PaternInteruptMode.Interupt)
-            {
-                _actualPatern = null;
-                return _latetsAttackEvent.attack.attack;
+                    _actualPatern = null;
+                    _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
+                    _actualPatern.FillQueue();
+
+                    AttacksObject result = _latetsAttackEvent.attack.attack;
+                    _latetsAttackEvent = null;
+                    return result;
+
+                case AttacksPatern.PaternInteruptMode.DontInteruptLastInQueue:
+                    _actualPatern.attackQueue.Enqueue(_latetsAttackEvent.attack);
+                    break;
+
+                case AttacksPatern.PaternInteruptMode.DontInteruptFirstInQueue:
+                    AttacksObject result2 = _latetsAttackEvent.attack.attack;
+                    _latetsAttackEvent = null;
+                    return result2;
             }
-            else if((_actualPatern.interuptMode == AttacksPatern.PaternInteruptMode.DontInterupt))
-            {
-                _actualPatern.attackQueue.Enqueue(_latetsAttackEvent.attack);
-            }
+
+            _latetsAttackEvent = null;
         }
 
-        AttackClass atk = _actualPatern.attackQueue.Dequeue(); 
+        AttackClass atk = _actualPatern.attackQueue.Dequeue();
+        int nbrLoop = 0;
         while(!DoesFulFillCondition(atk))
         {
+            if(nbrLoop > _characterObj.attacksPatern.Length)
+            {
+                throw new Exception("COMMENT TA REUSSI A FAIRE UNE INFINITE LOOP SALE MERDE");
+            }
 
             if(_actualPatern.attackQueue.Count() <= 0)
             {
                 _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
                 _actualPatern.FillQueue();
                 atk = _actualPatern.attackQueue.Dequeue();
-                //Debug.Log($"Patern {_actualPatern.paternName} loaded");
-
+                nbrLoop++;
             }
             else
             {
@@ -221,6 +236,5 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
 
         return atk.attack;
-
     }
 }

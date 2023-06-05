@@ -40,12 +40,13 @@ public class FightManager : MonoBehaviour
     private bool _endTurn;
 
     public event Action OnTurnBegin;
+    public event Action OnTurnEnd;
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
-    public bool EnableDebug { get; private set; }
+    public bool EnableDebug { get => _enableDebug; }
     public FightState State { get; private set; }
-    public int CurrentTurn { get; private set; }
+    public int CurrentTurn { get => _currentTurn; }
 
     private void Start()
     {
@@ -62,8 +63,17 @@ public class FightManager : MonoBehaviour
         }
         StartTurn();
     }
+
+    public void TriggerEvent(AttackEvent.SpecialAttacksTrigerMode triger)
+    {
+        foreach(ICharacter chara in _characterList)
+        {
+            chara.TrackSpecialAtkEvents(triger);
+        }
+    }
     private void StartTurn()
     {
+        ReferenceSettersManager.ReconnectAll();
         _currentTurn++;
         OnTurnBegin?.Invoke();
 
@@ -78,7 +88,9 @@ public class FightManager : MonoBehaviour
 
     private void PartyMemberTurn()
     {
+        OnTurnEnd?.Invoke();
         _partymembersTurnRoutine = StartCoroutine(IATurnRoutine());
+        OnTurnEnd?.Invoke();
     }
 
     private void SetGlobalAgroValue()

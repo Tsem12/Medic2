@@ -135,10 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69420e87d8c39fb4b95f4be284c9a3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  _refs: {fileID: 0}
   _health: {fileID: 5684671865312236434}
+  _characterObj: {fileID: 0}
   _maxHealth: 10
-  _enemieObj: {fileID: 11400000, guid: 487619de7a0e0bb49975440b29d64489, type: 2}
   _targetIcon: {fileID: 7607545231192094929}
 --- !u!114 &5684671865312236434
 MonoBehaviour:
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425116be4ae1b254d86d70abc63caef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  _refs: {fileID: 0}
   _healthPoint: {fileID: 1122682150967232914, guid: ad4fce3355b501545a66ecfe75b3fcdf, type: 3}
   _layerGroup: {fileID: 3460308540364798539}
   _healthPoints: []

@@ -33,7 +33,7 @@ public enum ApplyTo
 public class CardBase : ScriptableObject
 {
     [Header("If your not a GP don't touch!")]
-    [SerializeField] ManaObject manaObject;
+    public ManaObject manaObject;
 
     [Space(30)]
 

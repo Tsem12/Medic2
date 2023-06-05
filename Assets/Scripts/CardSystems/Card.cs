@@ -5,12 +5,20 @@ using UnityEngine;
 public class Card : MonoBehaviour,IInteractable
 {
     [SerializeField] CardBase carBase;
+    [SerializeField] AllReferences refs;
     [HideInInspector] public bool wasPlayed = false;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
     [SerializeField] SpriteRenderer myRender;
     [SerializeField] SpriteRenderer usedRenderer;
     [SerializeField] float size = 0.5f;
+
+    private void Start()
+    {
+        carBase.manaObject.manaAddTurn += CheckIfInteractable;
+        refs.fightManager.OnTurnEnd += EndInteractable;
+        CheckIfInteractable();
+    }
 
     public bool ApplyEffect()
     {
@@ -19,7 +27,7 @@ public class Card : MonoBehaviour,IInteractable
         col.enabled = true;
         if (collision != null && collision.gameObject.CompareTag("PartyMember"))
         {
-            carBase.ApplyEffectOfTheCard(collision.GetComponent<IHealable>());
+            carBase.ApplyEffectOfTheCard(collision.GetComponent<IHealable>());  
             return true;
         }
         return false;
@@ -54,4 +62,27 @@ public class Card : MonoBehaviour,IInteractable
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, size);
     }
+
+    void CheckIfInteractable()
+    {
+        if(carBase.manaCost <= carBase.manaObject.currentMana)
+        {
+            transform.tag = "Grabbable";
+        }
+        else
+        {
+            transform.tag = "Untagged";
+        }
+    }
+
+    void EndInteractable()
+    {
+        transform.tag = "Untagged";
+    }
+
+    public void Cancel()
+    {
+        ResetPos();
+    }
+
 }
