@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PartyMember : Character, IHealable
 {
@@ -11,12 +12,22 @@ public class PartyMember : Character, IHealable
     private int _speed;
     private int _agroValue;
 
-    private ICharacter _target;
+    [SerializeField] private Image _bossAttackImage;
+    [SerializeField] private Image _nextAttackImage;
+
 
     private void Start()
     {
         AssignValues();
         _currentHealth = _maxHealth;
+        _refs.fightManager.OnTurnEnd += () => _bossAttackImage.gameObject.SetActive(false);
+        _refs.fightManager.OnTurnEnd += () => _nextAttackImage.gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        _refs.fightManager.OnTurnEnd -= () => _bossAttackImage.gameObject.SetActive(false);
+        _refs.fightManager.OnTurnEnd -= () => _nextAttackImage.gameObject.SetActive(false);
     }
 
     public override void AssignValues()
@@ -29,6 +40,35 @@ public class PartyMember : Character, IHealable
             _agroValue = _characterObj.baseAgroValue;
         }
         CheckObjectRefs();
+    }
+
+    public override Sprite GetNextAttackSprite()
+    {
+         return _nextAttack.GetAttackSprite(_refs.fightManager);
+    }
+
+    public override void SetBossAttackPreview(Sprite sprite)
+    {
+        _bossAttackImage.gameObject.SetActive(true);
+        _bossAttackImage.sprite = sprite;
+    }
+
+    public override void SetPartyMemberAttackPreview(Sprite sprite)
+    {
+        Status stunned = GetStatus(Status.StatusEnum.Stunned);
+        Status restrained = GetStatus(Status.StatusEnum.Restrained);
+        Status sleep = GetStatus(Status.StatusEnum.Sleeped);
+
+        if (stunned != null || restrained != null || sleep != null || IsDead())
+            return;
+
+        _nextAttackImage.gameObject.SetActive(true);
+        _nextAttackImage.sprite = sprite;
+    }
+
+    public override void EndTurn()
+    {
+        base.EndTurn();
     }
     public override int GetSpeed()
     {
@@ -44,19 +84,10 @@ public class PartyMember : Character, IHealable
         return _characterObj;
     }
 
-    protected override void Attack()
-    {
-        if (_refs.fightManager.EnableDebug)
-            Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
-
-        AttacksObject atk = GetAttack();
-        //Debug.Log($"Attack with {atk.attackName}");
-        _target.TakeDamage(atk);
-    }
-
     public override void SetTarget()
     {
-        _target = _refs.fightManager.Enemie.GetComponent<ICharacter>();
+        _targets.Clear();
+        _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
     }
 
     public override void SetCurrentHealth(int newValue)
@@ -66,7 +97,7 @@ public class PartyMember : Character, IHealable
 
     public void Heal(int value)
     {
-        _health.Heal(value);
+        _health.Heal(value, true);
     }
 
     public override Sprite GetIcone()

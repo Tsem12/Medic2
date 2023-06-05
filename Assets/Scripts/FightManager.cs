@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using NaughtyAttributes;
+using System.Linq;
 
 public class FightManager : MonoBehaviour
 {
@@ -41,12 +42,46 @@ public class FightManager : MonoBehaviour
 
     public event Action OnTurnBegin;
     public event Action OnTurnEnd;
+
+    #region statusSprites
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite baseAttack;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite strengthened;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite initiative;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite regenerating;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite shielded;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite fatigue;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite poisoned;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite sleeped;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite restrained;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite stunned;
+    public Sprite BaseAttack { get => baseAttack; }
+    public Sprite Strengthened { get => strengthened; }
+    public Sprite Initiative { get => initiative; }
+    public Sprite Regenerating { get => regenerating; }
+    public Sprite Shielded { get => shielded; }
+    public Sprite Fatigue { get => fatigue; }
+    public Sprite Poisoned { get => poisoned; }
+    public Sprite Sleeped { get => sleeped; }
+    public Sprite Restrained { get => restrained; }
+    public Sprite Stunned { get => stunned; }
+    #endregion
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
     public int GlobalAgro { get => _globalAgro; set => _globalAgro = value; }
     public bool EnableDebug { get => _enableDebug; }
     public FightState State { get; private set; }
     public int CurrentTurn { get => _currentTurn; }
+    public List<ICharacter> PartyMembersList { get => _partyMembersList; set => _partyMembersList = value; }
 
     private void Start()
     {
@@ -59,7 +94,7 @@ public class FightManager : MonoBehaviour
         foreach (ICharacter character in PartyMembers)
         {
             _characterList.Add(character);
-            _partyMembersList.Add(character);
+            PartyMembersList.Add(character);
         }
         StartTurn();
     }
@@ -73,14 +108,16 @@ public class FightManager : MonoBehaviour
     }
     private void StartTurn()
     {
-        ReferenceSettersManager.ReconnectAll();
+        //ReferenceSettersManager.ReconnectAll();
         _currentTurn++;
         OnTurnBegin?.Invoke();
 
         SetGlobalAgroValue();
         foreach (ICharacter character in _characterList)
         {
+            character.SetAttack();
             character.SetTarget();
+            character.SetPartyMemberAttackPreview(character.GetNextAttackSprite());
         }
         OrderCharacters();
         _playerTurnRoutine = StartCoroutine(PlayerTurn());
@@ -104,19 +141,33 @@ public class FightManager : MonoBehaviour
         //Debug.Log($"agrovalue: {agroValue}");
     }
 
-    private void OrderCharacters()
+    public void OrderCharacters()
     {
+        _characterQueue.Clear();
         _characterList.Sort(Compare);
 
-        foreach(ICharacter character in _characterList)
+        foreach(ICharacter character in _characterList.ToList())
         {
-            _characterQueue.Enqueue(character);
+            Status status = character.GetStatus(Status.StatusEnum.Initiative);
+            if (status != null)
+            {
+                _characterQueue.Enqueue(character);
+            }
         }
+
+        foreach (ICharacter character in _characterList.ToList())
+        {
+            if (!_characterQueue.Contains(character))
+            {
+                _characterQueue.Enqueue(character);
+            }
+        }
+
     }
 
     private bool ArePartyStillAlive()
     {
-        foreach(ICharacter chara in _partyMembersList)
+        foreach(ICharacter chara in PartyMembersList)
         {
             if(!chara.IsDead())
                 return true;
@@ -179,11 +230,14 @@ public class FightManager : MonoBehaviour
                 yield break;
             }
 
-            if(chara.IsDead())
+
+            if (chara.IsDead())
             {
-                _partyMembersList.Remove(chara);
+                PartyMembersList.Remove(chara);
+
                 if (_enableDebug)
                     Debug.Log($"{chara.GetName()} is dead he cannot attack");
+
                 if(!ArePartyStillAlive())
                 {
                     if (_enableDebug)
