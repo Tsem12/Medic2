@@ -84,7 +84,8 @@ public class PartyMember : Character, IHealable
     public override void SetTarget()
     {
         _targets.Clear();
-        _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
+        if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(Status.StatusEnum.Disapeared) == null)
+            _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
     }
 
     public override void SetCurrentHealth(int newValue)

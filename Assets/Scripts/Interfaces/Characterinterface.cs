@@ -8,6 +8,7 @@ public interface ICharacter
     public int GetAgro();
     public int GetMaxHealthBar();
     public string GetName();
+    public AttacksObject GetNextAttack();
     public void SetAttack();
     public bool IsPlaying();
     public bool IsDead();

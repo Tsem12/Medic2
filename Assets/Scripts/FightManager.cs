@@ -82,6 +82,7 @@ public class FightManager : MonoBehaviour
     public FightState State { get; private set; }
     public int CurrentTurn { get => _currentTurn; }
     public List<ICharacter> PartyMembersList { get => _partyMembersList; set => _partyMembersList = value; }
+    public List<ICharacter> CharacterList { get => _characterList; set => _characterList = value; }
 
     private void Start()
     {
@@ -89,11 +90,11 @@ public class FightManager : MonoBehaviour
 
         ICharacter _enemie = Enemie.GetComponent<ICharacter>();
 
-        _characterList.Add(Enemie.GetComponent<ICharacter>());
+        CharacterList.Add(Enemie.GetComponent<ICharacter>());
 
         foreach (ICharacter character in PartyMembers)
         {
-            _characterList.Add(character);
+            CharacterList.Add(character);
             PartyMembersList.Add(character);
         }
         StartTurn();
@@ -101,7 +102,7 @@ public class FightManager : MonoBehaviour
 
     public void TriggerEvent(AttackEvent.SpecialAttacksTrigerMode triger)
     {
-        foreach(ICharacter chara in _characterList)
+        foreach(ICharacter chara in CharacterList)
         {
             chara.TrackSpecialAtkEvents(triger);
         }
@@ -113,7 +114,7 @@ public class FightManager : MonoBehaviour
         OnTurnBegin?.Invoke();
 
         SetGlobalAgroValue();
-        foreach (ICharacter character in _characterList)
+        foreach (ICharacter character in CharacterList)
         {
             character.SetAttack();
             character.SetTarget();
@@ -144,9 +145,9 @@ public class FightManager : MonoBehaviour
     public void OrderCharacters()
     {
         _characterQueue.Clear();
-        _characterList.Sort(Compare);
+        CharacterList.Sort(Compare);
 
-        foreach(ICharacter character in _characterList.ToList())
+        foreach(ICharacter character in CharacterList.ToList())
         {
             Status status = character.GetStatus(Status.StatusEnum.Initiative);
             if (status != null)
@@ -155,7 +156,7 @@ public class FightManager : MonoBehaviour
             }
         }
 
-        foreach (ICharacter character in _characterList.ToList())
+        foreach (ICharacter character in CharacterList.ToList())
         {
             if (!_characterQueue.Contains(character))
             {
@@ -258,7 +259,8 @@ public class FightManager : MonoBehaviour
         }
         _state = FightState.None;
 
-        foreach(ICharacter c in _characterList)
+        _enemie.CheckStatus();
+        foreach(ICharacter c in _partyMembers)
         {
             c.CheckStatus();
         }

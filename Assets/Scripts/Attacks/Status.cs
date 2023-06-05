@@ -12,9 +12,13 @@ public class Status
         Shielded,
         Fatigue,
         Poisoned,
+        Fired,
         Sleeped,
         Restrained,
-        Stunned
+        Stunned,
+        Disapeared,
+        ShieldedWithReflect,
+        Taunting
     }
 
     public StatusEnum status;

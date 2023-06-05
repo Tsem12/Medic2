@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 
   attackSprite: {fileID: 21300000, guid: 50d3cd2f336704fcf9cf5b293c10ba9c, type: 3}
   atkDamage: 2
-  nbrOfTargets: 3
+  nbrOfTargets: 1
   attackEffects: 0
   dotAttacks: 0
   buff: 0

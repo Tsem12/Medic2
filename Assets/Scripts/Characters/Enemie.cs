@@ -46,13 +46,30 @@ public class Enemie : Character
 
         foreach(ICharacter c in _refs.fightManager.PartyMembers)
         {
-            if (!c.IsDead())
+            if (!c.IsDead() && c.GetStatus(Status.StatusEnum.Disapeared) == null)
             {
                 chara.Add(c);
             }
         }
 
+        if (chara.Count <= 0)
+            return;
+
         chara.Sort(Compare);
+
+        foreach(ICharacter c in chara)
+        {
+            Status status = c.GetStatus(Status.StatusEnum.Taunting);
+            if(status != null)
+            {
+                for(int i = 0; i < _nextAttack.nbrOfTargets; i++)
+                {
+                    _targets.Add(c);
+                }
+                break;
+            }
+        }
+
         int tempGlobalAgro = _refs.fightManager.GlobalAgro;
 
         for (int i = 0 ; i < _nextAttack.nbrOfTargets ; i++)

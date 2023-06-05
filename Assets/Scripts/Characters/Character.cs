@@ -1,3 +1,4 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using System;
 using System.Collections;
@@ -63,8 +64,9 @@ public abstract class Character : MonoBehaviour, ICharacter
         Status stunned = GetStatus(Status.StatusEnum.Stunned);
         Status restrained = GetStatus(Status.StatusEnum.Restrained);
         Status sleep = GetStatus(Status.StatusEnum.Sleeped);
+        Status disapear = GetStatus(Status.StatusEnum.Disapeared);
 
-        if (stunned != null || restrained != null || sleep != null)
+        if (stunned != null || restrained != null || sleep != null || disapear != null)
         {
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} can't attack");
@@ -109,7 +111,9 @@ public abstract class Character : MonoBehaviour, ICharacter
         switch (statut.status)
         {
             case Status.StatusEnum.Poisoned:
-                Debug.Log("sqssqfqsf");
+                _health.TakeDamage(statut.value);
+                break;
+            case Status.StatusEnum.Fired:
                 _health.TakeDamage(statut.value);
                 break;
             case Status.StatusEnum.Restrained:
@@ -151,6 +155,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 Debug.Log($"{gameObject.name} is attacking {_targets[0].GetName()},  {_targets[1].GetName()} and {_targets[2].GetName()}");
         }
 
+
         int additionalDamage = 0;
 
         Status strengthned = GetStatus(Status.StatusEnum.Strengthened);
@@ -172,8 +177,19 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         foreach(ICharacter target in _targets)
         {
-            target.AddStatus(_nextAttack.GetStatus());
-            target.TakeDamage(_nextAttack, additionalDamage);
+
+            Status s = target.GetStatus(Status.StatusEnum.ShieldedWithReflect);
+            if (s != null)
+            {
+                AddStatus(_nextAttack.GetStatus());
+                TakeDamage(_nextAttack, additionalDamage);
+            }
+            else
+            {
+                target.AddStatus(_nextAttack.GetStatus());
+                target.TakeDamage(_nextAttack, additionalDamage);
+            }
+
         }
 
     }
@@ -220,6 +236,11 @@ public abstract class Character : MonoBehaviour, ICharacter
     public bool IsDead()
     {
         return _isDead;
+    }
+
+    public AttacksObject GetNextAttack()
+    {
+        return _nextAttack;
     }
 
     public void Kill()
@@ -408,6 +429,14 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"The status {status} has been removed from {gameObject.name}");
+
+            if(status == Status.StatusEnum.Disapeared)
+            {
+                _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
+
+                transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => GetComponent<SpriteRenderer>().enabled = true);
+            }
+
             _status.Remove(statu);
             return;
         }
@@ -449,6 +478,13 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} get the status: {status.status}");
+
+        if(status.status == Status.StatusEnum.Disapeared)
+        {
+            _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
+            transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => GetComponent<SpriteRenderer>().enabled = false);
+        }
+
         _status.Add(status);
     }
 
@@ -474,6 +510,17 @@ public abstract class Character : MonoBehaviour, ICharacter
     public void TestFatigue() => AddStatus(new Status(Status.StatusEnum.Fatigue, 2, 1));
     [Button]
     public void TestRestrained() => AddStatus(new Status(Status.StatusEnum.Restrained, 2, 1));
+    [Button]
+    public void TestFired() => AddStatus(new Status(Status.StatusEnum.Fired, 2, 2));
+    [Button]
+    public void TestTaunt() 
+    {
+        AddStatus(new Status(Status.StatusEnum.Taunting, 2));
+    } 
+    [Button]
+    public void TestReflectShield() => AddStatus(new Status(Status.StatusEnum.ShieldedWithReflect, 2));
+    [Button]
+    public void TestDisapear() => AddStatus(new Status(Status.StatusEnum.Disapeared, 2));
     [Button]
     public void GetAllStatus()
     {
