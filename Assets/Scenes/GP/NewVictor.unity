@@ -966,6 +966,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1360925920}
     m_Modifications:
+    - target: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+      propertyPath: carBase
+      value: 
+      objectReference: {fileID: 11400000, guid: 7de51fe14ed700e4aaa7f4cfa7a7df6f, type: 2}
     - target: {fileID: 5785123301150961509, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1117,6 +1121,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 368197396}
     m_Modifications:
+    - target: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+      propertyPath: carBase
+      value: 
+      objectReference: {fileID: 11400000, guid: 7543cb9c7dad2de4987f3cbf260427d8, type: 2}
     - target: {fileID: 5785123301150961509, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2744,6 +2752,16 @@ MonoBehaviour:
   _playerSlider: {fileID: 1350223876}
   _endTurnButton: {fileID: 82337921}
   _playerTimeToPlay: 10
+  baseAttack: {fileID: 0}
+  strengthened: {fileID: 0}
+  initiative: {fileID: 0}
+  regenerating: {fileID: 0}
+  shielded: {fileID: 0}
+  fatigue: {fileID: 0}
+  poisoned: {fileID: 0}
+  sleeped: {fileID: 0}
+  restrained: {fileID: 0}
+  stunned: {fileID: 0}
 --- !u!114 &2079773012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2982,6 +3000,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 860874704}
     m_Modifications:
+    - target: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+      propertyPath: carBase
+      value: 
+      objectReference: {fileID: 11400000, guid: 61b587279f3b46940a3ce666ce301e17, type: 2}
     - target: {fileID: 5785123301150961509, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: m_RootOrder
       value: -1

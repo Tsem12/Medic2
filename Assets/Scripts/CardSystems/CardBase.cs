@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 
@@ -23,17 +24,14 @@ public enum CardBehaviour
     speedBoost
 }
 
-public enum ApplyTo
-{
-    All,
-    Target
-}
 
 [CreateAssetMenu(fileName = "CardBase", menuName = "ScriptableObjects/CardBase")]
 public class CardBase : ScriptableObject
 {
     [Header("If your not a GP don't touch!")]
     public ManaObject manaObject;
+    public InputHandlerObject input;
+    public AllReferences refs;
 
     [Space(30)]
 
@@ -42,8 +40,6 @@ public class CardBase : ScriptableObject
     public string cardName;
     public Sprite cardSprite;
     public int manaCost;
-
-    public ApplyTo applyTo;
 
     bool doHeal
     {
@@ -68,7 +64,7 @@ public class CardBase : ScriptableObject
     public int turnActive;
 
     [ShowIf("cardBehaviour", CardBehaviour.resurection)]
-    public bool revive;
+    public float healthPercentage;
 
     [ShowIf("cardBehaviour", CardBehaviour.manaBoost)]
     public bool addedMana;
@@ -85,18 +81,61 @@ public class CardBase : ScriptableObject
     [ShowIf("cardBehaviour", CardBehaviour.blessingOfJupiter)]
     public int damageAdded;
 
-    public void ApplyEffectOfTheCard(IHealable partyMember)
+    public void ApplyEffectOfTheCard(Character partyMember)
     {
         manaObject.ReduceMana(manaCost);
+        if(manaObject.manaRestauration)
+        {
+            manaObject.AddMana(manaCost);
+            manaObject.manaRestauration = false;
+        }
+
+
         switch (cardBehaviour)
         {
 
             case CardBehaviour.heal:
-                partyMember.Heal(healthHealed);
+                partyMember.GetComponent<IHealable>().Heal(healthHealed);
+                break;
+
+            case CardBehaviour.unNaturalRegeneration:
+                partyMember.GetComponent<IHealable>().Heal(healthHealed);
+                if (UnityEngine.Random.Range(0f,1f) <= poisonChance/100f)
+                {
+                    partyMember.AddStatus(new Status(Status.StatusEnum.Poisoned, turnActive));
+                }
+                else
+                {
+                    Debug.Log("Poison missed");
+                }
+                break;
+
+            case CardBehaviour.resurection:
+                if(partyMember.GetCurrentHealth() > 0)
+                {
+                    input.Cancel();
+                }
+                else
+                {
+                    partyMember.Revive(healthPercentage);
+                }
+                break;
+
+            case CardBehaviour.manaRestauration:
+                manaObject.manaRestauration = true;
+                break;
+            case CardBehaviour.manaBoost:
+                
+                break;
+            case CardBehaviour.massHeal:
+                foreach (var item in refs.fightManager.PartyMembers)
+                {
+                    item.GetComponent<IHealable>().Heal(healthHealed);
+                }
                 break;
 
 
         }
-    }    
+    }
 }
 

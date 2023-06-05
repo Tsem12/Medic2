@@ -13,15 +13,13 @@ public class ManaObject : ScriptableObject
     public int increaseManaTurn;
 
     [HideInInspector]
-    public int increasedMana;
-    [HideInInspector]
     public int turnsNumber;
     [HideInInspector]
-    public int newSpellCost;
+    public bool manaRestauration;
+    [HideInInspector]
+    public bool isManaBoost;
 
-    public event Action manaStart;
-    public event Action manaBoost;
-    public event Action manaRestauration;
+    public event Action manaUpdate;
     public event Action manaAddTurn;
 
     public void AddMana(int amount)
@@ -30,7 +28,7 @@ public class ManaObject : ScriptableObject
         {
             currentMana += amount;
             if (currentMana >= maxMana) currentMana = maxMana;
-            manaStart?.Invoke();
+            manaUpdate?.Invoke();
         }
     }
 
@@ -40,21 +38,13 @@ public class ManaObject : ScriptableObject
         {
             currentMana -= amount;
             if (currentMana <= 0f) currentMana = 0f;
-            manaStart?.Invoke();
+            manaUpdate?.Invoke();
         }
     }
 
     public void ManaBoost(int turns, int amount)
     {
-        turnsNumber = turns;
-        increasedMana = amount;
-        manaBoost?.Invoke();
-    }
 
-    public void ManaRestauration(int cost)
-    {
-        newSpellCost = cost;
-        manaRestauration?.Invoke();
     }
 
     public void ManaAddTurn()

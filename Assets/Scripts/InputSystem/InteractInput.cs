@@ -21,6 +21,7 @@ public class InteractInput : MonoBehaviour
         _inputs.pressedEvent += Interact;
         _inputs.unPressedEvent += Drop;
         refs.fightManager.OnTurnEnd += CanceledDrop;
+        _inputs.cancel += CanceledDrop;
     }
     void Interact()
     {

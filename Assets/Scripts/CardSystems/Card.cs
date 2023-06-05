@@ -27,7 +27,7 @@ public class Card : MonoBehaviour,IInteractable
         col.enabled = true;
         if (collision != null && collision.gameObject.CompareTag("PartyMember"))
         {
-            carBase.ApplyEffectOfTheCard(collision.GetComponent<IHealable>());  
+            carBase.ApplyEffectOfTheCard(collision.GetComponent<Character>());  
             return true;
         }
         return false;
