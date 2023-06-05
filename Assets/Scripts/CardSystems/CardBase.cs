@@ -40,6 +40,7 @@ public class CardBase : ScriptableObject
     public CardBehaviour cardBehaviour;
     public bool isEnableInGame = true;
     public string cardName;
+    public Sprite cardSprite;
     public int manaCost;
 
     public ApplyTo applyTo;
