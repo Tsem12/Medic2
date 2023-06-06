@@ -10,7 +10,6 @@ public class ManaUpdater : MonoBehaviour
 
     private void Start()
     {
-        manaObejct.currentMana = manaObejct.maxMana;
         refs.fightManager.OnTurnBegin += TurnMana;
     }
 

@@ -14,7 +14,7 @@ public class VolumeSettings : MonoBehaviour
 
     private void Awake()
     {
-        gameData = SaveSysteme.Load();
+        gameData = SaveSystem.Load();
         musicSlider.value = gameData.musicVolume;
         sfxSlider.value = gameData.sfxVolume;
     }
@@ -29,7 +29,7 @@ public class VolumeSettings : MonoBehaviour
         float volume = musicSlider.value;
         myMixer.SetFloat("Music", Mathf.Log10(volume)*20);
         gameData.musicVolume = volume;
-        SaveSysteme.save(gameData);
+        SaveSystem.save(gameData);
     }
 
 
@@ -38,6 +38,6 @@ public class VolumeSettings : MonoBehaviour
         float volume = sfxSlider.value;
         myMixer.SetFloat("Sfx", Mathf.Log10(volume) * 20);
         gameData.sfxVolume = volume;
-        SaveSysteme.save(gameData);
+        SaveSystem.save(gameData);
     }
 }

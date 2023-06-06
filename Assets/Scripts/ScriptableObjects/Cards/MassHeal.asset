@@ -15,10 +15,10 @@ MonoBehaviour:
   manaObject: {fileID: 11400000, guid: b09daaed8bc84614c9000d7999050bca, type: 2}
   input: {fileID: 11400000, guid: 8e559ff9f04731d49bbc52aabad3f4a7, type: 2}
   refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  isUnlocked: 0
   cardBehaviour: 1
-  isEnableInGame: 1
   cardName: 
-  cardSprite: {fileID: 21300000, guid: 3dc16554fc278d744988b7ffdca1b10d, type: 3}
+  cardSprite: {fileID: 21300000, guid: dd6713d820fc1554896818edfbb7583f, type: 3}
   manaCost: 2
   healthHealed: 1
   turnActive: 0

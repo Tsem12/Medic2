@@ -31,6 +31,7 @@ public class CardBase : ScriptableObject
 
     [Space(30)]
 
+    public bool isUnlocked;
     public CardBehaviour cardBehaviour;
     public string cardName;
     public Sprite cardSprite;
