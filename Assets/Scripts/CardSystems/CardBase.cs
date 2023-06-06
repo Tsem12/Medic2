@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 
 public enum CardBehaviour
@@ -69,7 +70,7 @@ public class CardBase : ScriptableObject
     public int damageAdded;
 
 
-    public void ApplyEffectOfTheCard(Character partyMember)
+    public bool ApplyEffectOfTheCard(Character partyMember)
     {
         manaObject.ReduceMana(manaCost);
         if (manaObject.manaRestauration)
@@ -82,9 +83,17 @@ public class CardBase : ScriptableObject
         {
 
             case CardBehaviour.heal:
+                if(partyMember.GetCurrentHealth() == partyMember.GetMaxHealth())
+                {
+                    return false;
+                }
                 partyMember.GetComponent<IHealable>().Heal(healthHealed);
                 break;
             case CardBehaviour.resurection:
+                if(!partyMember.IsDead())
+                {
+                    return false;
+                }
                 partyMember.Revive(healthPercentage);
                 break;
 
@@ -93,9 +102,21 @@ public class CardBase : ScriptableObject
                 break;
 
             case CardBehaviour.massHeal:
+                int i = 0;
                 foreach (var item in refs.fightManager.PartyMembers)
                 {
-                    item.GetComponent<IHealable>().Heal(healthHealed);
+                    if (partyMember.GetCurrentHealth() > partyMember.GetMaxHealth())
+                    {
+                        item.GetComponent<IHealable>().Heal(healthHealed);
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }
+                if(i == refs.fightManager.PartyMembers.Length)
+                {
+                    return false;
                 }
                 break;
             case CardBehaviour.panacea:
@@ -103,7 +124,10 @@ public class CardBase : ScriptableObject
                 {
                     partyMember.TryRemoveStatus(item.status);
                 }
-                partyMember.GetComponent<IHealable>().Heal(healthHealed);
+                if (partyMember.GetCurrentHealth() > partyMember.GetMaxHealth())
+                {
+                    partyMember.GetComponent<IHealable>().Heal(healthHealed);
+                }
                 break;
 
             case CardBehaviour.spiritShield:
@@ -125,9 +149,9 @@ public class CardBase : ScriptableObject
             case CardBehaviour.blessingOfStrength:
                 partyMember.AddStatus(new Status(Status.StatusEnum.Strengthened,1,damageAdded));
                 break;
-
-
         }
+
+        return true;
     }
 }
 
