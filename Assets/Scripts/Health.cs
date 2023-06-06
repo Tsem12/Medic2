@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
     [SerializeField] private List<GameObject> _healthBars = new List<GameObject>();
     [SerializeField] private List<RectTransform> _hpRect = new List<RectTransform>();
 
+    public int CurrentHealthBarAmount { get => _currentHealthBarAmount; }
+
     private void Start()
     {
         _healthPoints.Clear();
@@ -154,10 +156,10 @@ public class Health : MonoBehaviour
         if (newHealth > _character.GetMaxHealth())
         {
             newHealth = _character.GetMaxHealth();
-            if(_currentHealthBarAmount < _character.GetMaxHealthBar())
+            if (_currentHealthBarAmount < _character.GetMaxHealthBar())
             {
                 _currentHealthBarAmount += 1;
-                for(int i = 0; i < value ; i++)
+                for (int i = 0; i < value; i++)
                 {
                     _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
                 }
@@ -165,7 +167,7 @@ public class Health : MonoBehaviour
             }
             else
             {
-                foreach(HealtPoint hp in _healthPoints)
+                foreach (HealtPoint hp in _healthPoints)
                 {
                     hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
                 }
@@ -173,7 +175,7 @@ public class Health : MonoBehaviour
             _character.SetCurrentHealth(_character.GetMaxHealth());
             return;
         }
-        List <RectTransform> list = new List<RectTransform>();
+        List<RectTransform> list = new List<RectTransform>();
         for (int i = _character.GetCurrentHealth(); i < newHealth; i++)
         {
             list.Add(_hpRect[i]);
@@ -187,49 +189,49 @@ public class Health : MonoBehaviour
             }
         }
         Sequence sequence = DOTween.Sequence();
-        foreach(RectTransform rect in list)
+        foreach (RectTransform rect in list)
         {
             sequence.Append(rect.DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+
+            if (_refs.fightManager.EnableDebug)
+                Debug.Log($"{gameObject.name} have been healed");
+
+            _character.SetCurrentHealth(newHealth);
         }
 
-        if (_refs.fightManager.EnableDebug)
-            Debug.Log($"{gameObject.name} have been healed");
 
-        _character.SetCurrentHealth(newHealth);
+        //private void OnValidate()
+        //{
+        //    _character = GetComponent<ICharacter>();
+        //    _sliderRectTransform = _sliderImage.rectTransform;
+
+
+        //    if( _character == null )
+        //        return;
+
+        //    int health = _character.GetMaxHealth();
+
+        //    _sliderImage.pixelsPerUnitMultiplier = _heartSize + (_hearthSizeWithSpace * Mathf.Max(health - 1, 0));
+
+        //    if (health == 2)
+        //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue);
+        //    else if (health == 3)
+        //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue + _bottomScaleValue);
+        //    else if (health > 3)
+        //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue + _bottomScaleValue + GetScaledBotValue(health));
+
+        //}
+
+        //private float GetScaledBotValue(int HearthsCount)
+        //{
+        //    float value = _bottomScaleValue;
+        //    float result = 0;
+        //    for(int i = 0; i < HearthsCount - 3; i++)
+        //    {
+        //        result += value /= 2;
+        //    }
+
+        //    return result;
+        //}
     }
-
-
-    //private void OnValidate()
-    //{
-    //    _character = GetComponent<ICharacter>();
-    //    _sliderRectTransform = _sliderImage.rectTransform;
-
-
-    //    if( _character == null )
-    //        return;
-
-    //    int health = _character.GetMaxHealth();
-
-    //    _sliderImage.pixelsPerUnitMultiplier = _heartSize + (_hearthSizeWithSpace * Mathf.Max(health - 1, 0));
-
-    //    if (health == 2)
-    //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue);
-    //    else if (health == 3)
-    //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue + _bottomScaleValue);
-    //    else if (health > 3)
-    //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue + _bottomScaleValue + GetScaledBotValue(health));
-
-    //}
-
-    //private float GetScaledBotValue(int HearthsCount)
-    //{
-    //    float value = _bottomScaleValue;
-    //    float result = 0;
-    //    for(int i = 0; i < HearthsCount - 3; i++)
-    //    {
-    //        result += value /= 2;
-    //    }
-
-    //    return result;
-    //}
 }

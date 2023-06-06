@@ -17,8 +17,8 @@ MonoBehaviour:
   attackSprite: {fileID: 0}
   atkDamage: 10
   nbrOfTargets: 1
-  attackEffects: 0
-  dotAttacks: 0
+  attackEffects: 1
+  dotAttacks: 1
   buff: 0
   deBuff: 0
   dotValuePerTurn: 1

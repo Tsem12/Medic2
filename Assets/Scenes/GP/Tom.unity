@@ -598,6 +598,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
     - target: {fileID: 4110371021571469088, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
+      propertyPath: charaType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110371021571469088, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: _maxHealth
       value: 5
       objectReference: {fileID: 0}
@@ -1364,6 +1368,10 @@ PrefabInstance:
       propertyPath: _refs
       value: 
       objectReference: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+    - target: {fileID: 4110371021571469088, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
+      propertyPath: charaType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4110371021571469088, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: _maxHealth
       value: 2
@@ -2779,6 +2787,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
     - target: {fileID: 4110371021571469088, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
+      propertyPath: charaType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110371021571469088, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: _maxHealth
       value: 7
       objectReference: {fileID: 0}
@@ -3326,6 +3338,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1646397339}
     m_Modifications:
+    - target: {fileID: 32037840979608822, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
+      propertyPath: referencesTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 32037840979608822, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
+      propertyPath: referencesTypes.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2026722758819759754, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3408,7 +3428,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: eee10a9c49cdd7a45b1021099299316f, type: 3}
     - target: {fileID: 3043898100064445761, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: _enableDebug
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3043898100064445761, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: regenerating

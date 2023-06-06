@@ -1,3 +1,4 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using System;
 using System.Collections;
@@ -9,6 +10,14 @@ using Random = UnityEngine.Random;
 
 public abstract class Character : MonoBehaviour, ICharacter
 {
+    public enum PartyMemberEnum
+    {
+        Boss,
+        Berserker,
+        Paladin,
+        Archer
+    }
+    [SerializeField] private PartyMemberEnum charaType;
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
 
@@ -39,7 +48,6 @@ public abstract class Character : MonoBehaviour, ICharacter
     public abstract int GetAgro();
     public abstract void SetTarget();
     public abstract void AssignValues();
-    public abstract Sprite GetIcone();
     public abstract int GetMaxHealthBar();
     public virtual void SetBossAttackPreview(Sprite sprite) { }
     public virtual void SetPartyMemberAttackPreview(Sprite sprite) { }
@@ -56,8 +64,9 @@ public abstract class Character : MonoBehaviour, ICharacter
         Status stunned = GetStatus(Status.StatusEnum.Stunned);
         Status restrained = GetStatus(Status.StatusEnum.Restrained);
         Status sleep = GetStatus(Status.StatusEnum.Sleeped);
+        Status disapear = GetStatus(Status.StatusEnum.Disapeared);
 
-        if (stunned != null || restrained != null || sleep != null)
+        if (stunned != null || restrained != null || sleep != null || disapear != null)
         {
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} can't attack");
@@ -77,20 +86,24 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public virtual void EndTurn()
     {
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} finished his turn");
+    }
+
+    public void CheckStatus()
+    {
         foreach (Status status in _status.ToList())
         {
             ApplyEndTurnStatut(status);
             if (!status.isInfinite)
             {
                 status.remainTurn--;
-                if(status.remainTurn <= 0)
+                if (status.remainTurn <= 0)
                 {
                     TryRemoveStatus(status.status);
                 }
             }
         }
-        if (_refs.fightManager.EnableDebug)
-            Debug.Log($"{gameObject.name} finished his turn");
     }
 
     private void ApplyEndTurnStatut(Status statut)
@@ -98,7 +111,9 @@ public abstract class Character : MonoBehaviour, ICharacter
         switch (statut.status)
         {
             case Status.StatusEnum.Poisoned:
-                Debug.Log("sqssqfqsf");
+                _health.TakeDamage(statut.value);
+                break;
+            case Status.StatusEnum.Fired:
                 _health.TakeDamage(statut.value);
                 break;
             case Status.StatusEnum.Restrained:
@@ -140,10 +155,16 @@ public abstract class Character : MonoBehaviour, ICharacter
                 Debug.Log($"{gameObject.name} is attacking {_targets[0].GetName()},  {_targets[1].GetName()} and {_targets[2].GetName()}");
         }
 
+
         int additionalDamage = 0;
 
         Status strengthned = GetStatus(Status.StatusEnum.Strengthened);
         Status fatigue = GetStatus(Status.StatusEnum.Fatigue);
+
+        if(charaType == PartyMemberEnum.Berserker)
+        {
+            additionalDamage += _maxHealth - _currentHealth;
+        }
 
         if (strengthned != null)
         {
@@ -156,8 +177,19 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         foreach(ICharacter target in _targets)
         {
-            target.AddStatus(_nextAttack.GetStatus());
-            target.TakeDamage(_nextAttack, additionalDamage);
+
+            Status s = target.GetStatus(Status.StatusEnum.ShieldedWithReflect);
+            if (s != null)
+            {
+                AddStatus(_nextAttack.GetStatus());
+                TakeDamage(_nextAttack, additionalDamage);
+            }
+            else
+            {
+                target.AddStatus(_nextAttack.GetStatus());
+                target.TakeDamage(_nextAttack, additionalDamage);
+            }
+
         }
 
     }
@@ -206,6 +238,11 @@ public abstract class Character : MonoBehaviour, ICharacter
         return _isDead;
     }
 
+    public AttacksObject GetNextAttack()
+    {
+        return _nextAttack;
+    }
+
     public void Kill()
     {
         _status.Clear();
@@ -250,6 +287,17 @@ public abstract class Character : MonoBehaviour, ICharacter
                 {
                     return false;
                 }
+
+            case AttackClass.AttackConditions.HpBarLost:
+                Debug.Log(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value);
+                if(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
         }
         throw new System.Exception("On dois pas arriver là");
     }
@@ -263,7 +311,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                 foreach(AttackEvent atk in _characterObj.attacksEvent)
                 {
-                    if(atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar)
+                    if(atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar && DoesFulFillCondition(atk.attack))
                     {
                         _latetsAttackEvent = atk;
                     }
@@ -273,7 +321,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                 foreach (AttackEvent atk in _characterObj.attacksEvent)
                 {
-                    if (atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.AllieBuffed)
+                    if (atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.AllieBuffed && DoesFulFillCondition(atk.attack))
                     {
                         _latetsAttackEvent = atk;
                     }
@@ -335,25 +383,41 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         AttackClass atk = _actualPatern.attackQueue.Dequeue();
         int nbrLoop = 0;
-        while(!DoesFulFillCondition(atk))
-        {
-            if(nbrLoop > _characterObj.attacksPatern.Length)
-            {
-                throw new Exception("COMMENT TA REUSSI A FAIRE UNE INFINITE LOOP SALE MERDE");
-            }
 
-            if(_actualPatern.attackQueue.Count() <= 0)
+        if(atk.attackConditionsMode == AttackClass.ConditionMode.DontAttackWithoutCondition)
+        {
+            while(!DoesFulFillCondition(atk))
             {
-                _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
-                _actualPatern.FillQueue();
-                atk = _actualPatern.attackQueue.Dequeue();
-                nbrLoop++;
+                if(nbrLoop > _characterObj.attacksPatern.Length)
+                {
+                    throw new Exception("COMMENT TA REUSSI A FAIRE UNE INFINITE LOOP SALE MERDE");
+                }
+
+                if(_actualPatern.attackQueue.Count() <= 0)
+                {
+                    _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
+                    _actualPatern.FillQueue();
+                    atk = _actualPatern.attackQueue.Dequeue();
+                    nbrLoop++;
+                }
+                else
+                {
+                    atk = _actualPatern.attackQueue.Dequeue();
+                }
+            }
+        }
+        else if (atk.attackConditionsMode == AttackClass.ConditionMode.UseBaseAttackWithoutCondition && atk.condition != AttackClass.AttackConditions.None)
+        {
+            if (DoesFulFillCondition(atk))
+            {
+                return atk.ConditionalAttack;
             }
             else
             {
-                atk = _actualPatern.attackQueue.Dequeue();
+                return atk.attack;
             }
         }
+
 
         return atk.attack;
     }
@@ -365,6 +429,14 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"The status {status} has been removed from {gameObject.name}");
+
+            if(status == Status.StatusEnum.Disapeared)
+            {
+                _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
+
+                transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => GetComponent<SpriteRenderer>().enabled = true);
+            }
+
             _status.Remove(statu);
             return;
         }
@@ -406,6 +478,13 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} get the status: {status.status}");
+
+        if(status.status == Status.StatusEnum.Disapeared)
+        {
+            _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
+            transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => GetComponent<SpriteRenderer>().enabled = false);
+        }
+
         _status.Add(status);
     }
 
@@ -431,6 +510,17 @@ public abstract class Character : MonoBehaviour, ICharacter
     public void TestFatigue() => AddStatus(new Status(Status.StatusEnum.Fatigue, 2, 1));
     [Button]
     public void TestRestrained() => AddStatus(new Status(Status.StatusEnum.Restrained, 2, 1));
+    [Button]
+    public void TestFired() => AddStatus(new Status(Status.StatusEnum.Fired, 2, 2));
+    [Button]
+    public void TestTaunt() 
+    {
+        AddStatus(new Status(Status.StatusEnum.Taunting, 2));
+    } 
+    [Button]
+    public void TestReflectShield() => AddStatus(new Status(Status.StatusEnum.ShieldedWithReflect, 2));
+    [Button]
+    public void TestDisapear() => AddStatus(new Status(Status.StatusEnum.Disapeared, 2));
     [Button]
     public void GetAllStatus()
     {

@@ -10,6 +10,7 @@ public class AttacksObject : ScriptableObject
     public enum DotAttacks
     {
         Poison,
+        Fire,
         Restrain
     }
 
@@ -18,14 +19,17 @@ public class AttacksObject : ScriptableObject
         Strength,
         Initiative,
         Regenerating,
-        Shield
+        Shield,
+        ReflectShield,
+        Taunt
     }
 
     public enum DeBuff
     {
         Stun,
         Fatigue,
-        Sleeped
+        Sleeped,
+        Disapearance
     }
     public enum AttackEffects
     {
@@ -131,6 +135,8 @@ public class AttacksObject : ScriptableObject
                         return new Status(Status.StatusEnum.Poisoned, effectTurnDuration, dotValuePerTurn);
                     case DotAttacks.Restrain:
                         return new Status(Status.StatusEnum.Restrained, effectTurnDuration, dotValuePerTurn);
+                    case DotAttacks.Fire:
+                        return new Status(Status.StatusEnum.Fired, effectTurnDuration, dotValuePerTurn);
                 }
                 break;
             case AttackEffects.Buff:
@@ -145,6 +151,10 @@ public class AttacksObject : ScriptableObject
                         return new Status(Status.StatusEnum.Regenerating, effectTurnDuration, buffValue);
                     case Buff.Shield:
                         return new Status(Status.StatusEnum.Shielded, effectTurnDuration);
+                    case Buff.ReflectShield:
+                        return new Status(Status.StatusEnum.ShieldedWithReflect, effectTurnDuration);
+                    case Buff.Taunt:
+                        return new Status(Status.StatusEnum.Taunting, effectTurnDuration);
                 }
                 break;
             case AttackEffects.DeBuff:
@@ -157,6 +167,8 @@ public class AttacksObject : ScriptableObject
                         return new Status(Status.StatusEnum.Fatigue, effectTurnDuration, deBuffValue);
                     case DeBuff.Sleeped:
                         return new Status(Status.StatusEnum.Sleeped, true);
+                    case DeBuff.Disapearance:
+                        return new Status(Status.StatusEnum.Disapeared, effectTurnDuration);
                 }
                 break;
         }

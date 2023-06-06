@@ -54,6 +54,16 @@ MonoBehaviour:
   _playerSlider: {fileID: 0}
   _endTurnButton: {fileID: 0}
   _playerTimeToPlay: 10
+  baseAttack: {fileID: 21300000, guid: 3d451b09e5e5a5b48a3d9682b56b9afb, type: 3}
+  strengthened: {fileID: 21300000, guid: 3de993469a222c54aa789398fb9aaecf, type: 3}
+  initiative: {fileID: 21300000, guid: 90427689cf2908e4ead087e102a8df8c, type: 3}
+  regenerating: {fileID: 21300000, guid: c1a6b251db6bb3a4ab60819227fe0add, type: 3}
+  shielded: {fileID: 21300000, guid: 5d1969f69a0ea164c8e10970c8107f4a, type: 3}
+  fatigue: {fileID: 21300000, guid: a94307f4106c43546b52573298868491, type: 3}
+  poisoned: {fileID: 21300000, guid: 61ccf2b73278e854db14a481c5368419, type: 3}
+  sleeped: {fileID: 21300000, guid: eeda6826202380d44b0a223761f340f5, type: 3}
+  restrained: {fileID: 21300000, guid: eee10a9c49cdd7a45b1021099299316f, type: 3}
+  stunned: {fileID: 21300000, guid: 5dee5c038399d9d46bbb7feadf2678d2, type: 3}
 --- !u!114 &32037840979608822
 MonoBehaviour:
   m_ObjectHideFlags: 0

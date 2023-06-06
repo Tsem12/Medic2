@@ -7,17 +7,29 @@ using UnityEngine;
 [System.Serializable]
 public class AttackClass
 {
+
+    public enum ConditionMode
+    {
+        DontAttackWithoutCondition,
+        UseBaseAttackWithoutCondition
+    }
     public enum AttackConditions
     {
         None,
         HpLowerThan,
-        HpHiggerThan
+        HpHiggerThan,
+        HpBarLost
     }
 
+    public ConditionMode attackConditionsMode;
     public AttacksObject attack;
     public AttackConditions condition;
+    public AttacksObject ConditionalAttack;
     [Range(0f, 100f)]
+    [Tooltip("for HpLowerThan & HpHiggerThan value = percentage of health")]
     public int percentageValue;
+    [Tooltip("for HpBarLost value = number of bar lost")]
+    public int value;
 
 }
 [System.Serializable]
