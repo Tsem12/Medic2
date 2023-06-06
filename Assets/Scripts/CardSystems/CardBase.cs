@@ -120,6 +120,7 @@ public class CardBase : ScriptableObject
 
             case CardBehaviour.initiative:
                 partyMember.AddStatus(new Status(Status.StatusEnum.Initiative, 1));
+                refs.fightManager.OrderCharacters();
                 break;
 
             case CardBehaviour.blessingOfStrength:

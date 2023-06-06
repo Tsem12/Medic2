@@ -24,4 +24,4 @@ MonoBehaviour:
   turnActive: 0
   healthPercentage: 0
   shieldBreakAfter: 0
-  damageAdded: 15
+  damageAdded: 2

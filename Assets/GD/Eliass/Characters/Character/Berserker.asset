@@ -10,30 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
-  m_Name: BossEliass
+  m_Name: Berserker
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  numberOfHealthBar: 3
-  baseDamage: 0
-  baseSpeed: 0
-  baseAgroValue: 0
-  icon: {fileID: 0}
+  maxHealth: 4
+  numberOfHealthBar: 1
+  baseSpeed: 50
+  baseAgroValue: 50
   attacksPatern:
-  - paternName: 
+  - paternName: Attack
     interuptMode: 0
     attacks:
-    - attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: 494a67d1806a2e8438aa1c600a9e63bb, type: 2}
-      condition: 3
-      ConditionalAttack: {fileID: 11400000, guid: d5150c5283177cc4ebaa8633c6334866, type: 2}
-      percentageValue: 100
-      value: 1
-  attacksEvent:
-  - attack:
+    - nrbOfTargets: 0
       attackConditionsMode: 0
       attack: {fileID: 0}
       condition: 0
       ConditionalAttack: {fileID: 0}
       percentageValue: 0
       value: 0
-    trigerMode: 0
+  attacksEvent: []

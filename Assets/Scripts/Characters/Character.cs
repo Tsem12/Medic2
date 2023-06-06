@@ -306,7 +306,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 }
 
             case AttackClass.AttackConditions.HpBarLost:
-                Debug.Log(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value);
+                //Debug.Log($"{_health.CurrentHealthBarAmount} >= {atk.value}");
                 if(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
                 {
                     return true;
