@@ -11,14 +11,14 @@ public class LanguageButton : MonoBehaviour
 
     public void Awake()
     {
-        gameData = SaveSysteme.Load();
+        gameData = SaveSystem.Load();
     }
 
     public void ChangeLanguage(string Language)
     {
         gameData.Language = Language;
         LocalizationManager.Language = gameData.Language;
-        SaveSysteme.save(gameData);
+        SaveSystem.save(gameData);
         Debug.Log("language changed");
     }
 }
