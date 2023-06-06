@@ -21,6 +21,7 @@ public class InteractInput : MonoBehaviour
         _inputs.pressedEvent += Interact;
         _inputs.unPressedEvent += Drop;
         refs.fightManager.OnTurnEnd += CanceledDrop;
+        _inputs.cancel += CanceledDrop;
     }
     void Interact()
     {
@@ -66,12 +67,12 @@ public class InteractInput : MonoBehaviour
 
     void CanceledDrop()
     {
-        Debug.Log("TryCancel");
+        //Debug.Log("TryCancel");
         if(_dragCoroutine != null)
         {
             if (_getObject != null) // Check if we got object to interact with
             {
-                if (_getObject.GetComponent<IInteractable>() != null)
+                if(_getObject.GetComponent<IInteractable>() != null)
                 {
                     _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
                 }

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8738665550594490518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2026722758819759754}
+  - component: {fileID: 3043898100064445761}
+  - component: {fileID: 32037840979608822}
+  m_Layer: 0
+  m_Name: FightManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2026722758819759754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738665550594490518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3043898100064445761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738665550594490518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68a28e4f26891647a1d68fd3ee570d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enableDebug: 0
+  _enemie: {fileID: 0}
+  _partyMembers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _playerSlider: {fileID: 0}
+  _endTurnButton: {fileID: 0}
+  _playerTimeToPlay: 10
+  baseAttack: {fileID: 21300000, guid: 3d451b09e5e5a5b48a3d9682b56b9afb, type: 3}
+  strengthened: {fileID: 21300000, guid: 3de993469a222c54aa789398fb9aaecf, type: 3}
+  initiative: {fileID: 21300000, guid: 90427689cf2908e4ead087e102a8df8c, type: 3}
+  regenerating: {fileID: 21300000, guid: c1a6b251db6bb3a4ab60819227fe0add, type: 3}
+  shielded: {fileID: 21300000, guid: 5d1969f69a0ea164c8e10970c8107f4a, type: 3}
+  fatigue: {fileID: 21300000, guid: a94307f4106c43546b52573298868491, type: 3}
+  poisoned: {fileID: 21300000, guid: 61ccf2b73278e854db14a481c5368419, type: 3}
+  sleeped: {fileID: 21300000, guid: eeda6826202380d44b0a223761f340f5, type: 3}
+  restrained: {fileID: 21300000, guid: eee10a9c49cdd7a45b1021099299316f, type: 3}
+  stunned: {fileID: 21300000, guid: 5dee5c038399d9d46bbb7feadf2678d2, type: 3}
+--- !u!114 &32037840979608822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738665550594490518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384d42653ab0f646b2d1dffc7349ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  references: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  referencesTypes: 05000000

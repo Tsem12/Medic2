@@ -8,15 +8,24 @@ public interface ICharacter
     public int GetAgro();
     public int GetMaxHealthBar();
     public string GetName();
-    public Sprite GetIcone();
+    public AttacksObject GetNextAttack();
+    public void SetAttack();
     public bool IsPlaying();
     public bool IsDead();
     public void Kill();
     public void StartTurn();
     public void EndTurn();
-    public void TakeDamage(AttacksObject attack);
+    public void TakeDamage(AttacksObject attack, int additionalDamage = 0);
     public void SetTarget();
     public void SetCurrentHealth(int newValue);
     public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode);
+    public Status GetStatus(Status.StatusEnum status);
+    public void AddStatus(Status status);
+    public void TryRemoveStatus(Status.StatusEnum status);
+    public void GetAllStatus();
+    public void SetBossAttackPreview(Sprite sprite);
+    public void SetPartyMemberAttackPreview(Sprite sprite);
+    public Sprite GetNextAttackSprite();
+    public void CheckStatus();
 }
 

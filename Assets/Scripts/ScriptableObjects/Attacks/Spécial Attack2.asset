@@ -15,10 +15,14 @@ MonoBehaviour:
   attackName: "atk sp\xE92"
   description: 
   attackSprite: {fileID: 21300000, guid: 50d3cd2f336704fcf9cf5b293c10ba9c, type: 3}
-  atkDamage: 1
+  atkDamage: 2
+  nbrOfTargets: 1
   attackEffects: 0
-  effectTurnDuration: 4
-  dotAttacks: 1
+  dotAttacks: 0
   buff: 0
   deBuff: 0
-  chanceToApplyEffect: 50
+  dotValuePerTurn: 1
+  effectTurnDuration: 2
+  buffValue: 1
+  deBuffValue: 1
+  chanceToApplyEffect: 100

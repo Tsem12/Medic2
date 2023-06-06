@@ -1,23 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Card : MonoBehaviour,IInteractable
 {
-    [SerializeField] CardBase carBase;
+    public CardBase carBase;
     [SerializeField] AllReferences refs;
+    [SerializeField] InputHandlerObject inputObject;
     [HideInInspector] public bool wasPlayed = false;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
     [SerializeField] SpriteRenderer myRender;
     [SerializeField] SpriteRenderer usedRenderer;
     [SerializeField] float size = 0.5f;
+    [SerializeField] TextMeshProUGUI tmpro;
 
     private void Start()
     {
         carBase.manaObject.manaAddTurn += CheckIfInteractable;
         refs.fightManager.OnTurnEnd += EndInteractable;
+        refs.fightManager.OnTurnBegin += EnableTurn;
         CheckIfInteractable();
+        myRender.sprite = carBase.cardSprite;
+        myRender.color = Color.white;
+        usedRenderer.sprite = carBase.cardSprite;
+        usedRenderer.color = Color.grey;
+        tmpro.text = carBase.manaCost.ToString();
     }
 
     public bool ApplyEffect()
@@ -27,7 +36,11 @@ public class Card : MonoBehaviour,IInteractable
         col.enabled = true;
         if (collision != null && collision.gameObject.CompareTag("PartyMember"))
         {
-            carBase.ApplyEffectOfTheCard(collision.GetComponent<IHealable>());  
+            if(!collision.gameObject.GetComponent<PartyMember>().IsDead() && carBase.cardBehaviour == CardBehaviour.resurection)
+            {
+                return false;
+            }
+            carBase.ApplyEffectOfTheCard(collision.GetComponent<Character>());
             return true;
         }
         return false;
@@ -50,10 +63,6 @@ public class Card : MonoBehaviour,IInteractable
                 wasPlayed = true;
             }
             ResetPos();
-        }
-        else
-        {
-
         }
     }
 
@@ -85,4 +94,14 @@ public class Card : MonoBehaviour,IInteractable
         ResetPos();
     }
 
+    void EnableTurn()
+    {
+        if(wasPlayed)
+        {
+            col.enabled = true;
+            myRender.enabled = true;
+            usedRenderer.enabled = false;
+            wasPlayed = false;
+        }
+    }
 }
