@@ -13,6 +13,7 @@ public class GameData
     public int difficulty;
     public float musicVolume;
     public float sfxVolume;
+    public string Language;
 
 
 
@@ -28,6 +29,7 @@ public class GameData
         difficulty = 0;
         musicVolume = 1;
         sfxVolume = 1;
+        Language = "Français";
     }
     
     
