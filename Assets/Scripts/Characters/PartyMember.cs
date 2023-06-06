@@ -12,19 +12,20 @@ public class PartyMember : Character, IHealable
 
     [SerializeField] private Image _bossAttackImage;
     [SerializeField] private Image _nextAttackImage;
+    [SerializeField] private BossAttacksIndicator _bossIndicator;
 
 
     private void Start()
     {
         AssignValues();
         _currentHealth = _maxHealth;
-        _refs.fightManager.OnTurnEnd += () => _bossAttackImage.gameObject.SetActive(false);
+        _refs.fightManager.OnTurnEnd += () => _bossIndicator.Clear();
         _refs.fightManager.OnTurnEnd += () => _nextAttackImage.gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
-        _refs.fightManager.OnTurnEnd -= () => _bossAttackImage.gameObject.SetActive(false);
+        _refs.fightManager.OnTurnEnd -= () => _bossIndicator.Clear();
         _refs.fightManager.OnTurnEnd -= () => _nextAttackImage.gameObject.SetActive(false);
     }
 
@@ -38,11 +39,14 @@ public class PartyMember : Character, IHealable
         }
         CheckObjectRefs();
     }
-    public override void SetIncommingAttack(AttacksObject atk)
+    public override void ClearIncomingAttacks()
+    {
+        _bossIndicator.Clear();
+    }
+    public override void SetIncommingAttack(AttacksObject atk, int index = 0)
     {
         base.SetIncommingAttack(atk);
-        _bossAttackImage.gameObject.SetActive(true);
-        _bossAttackImage.sprite = atk.GetAttackSprite(_refs.fightManager);
+        _bossIndicator.SetSprite(atk.GetAttackSprite(_refs.fightManager), index);
 
     }
     public override Sprite GetNextAttackSprite()

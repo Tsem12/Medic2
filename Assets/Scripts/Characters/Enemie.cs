@@ -49,6 +49,7 @@ public class Enemie : Character
             if (!c.IsDead() && c.GetStatus(Status.StatusEnum.Disapeared) == null)
             {
                 chara.Add(c);
+                c.ClearIncomingAttacks();
             }
         }
 
@@ -66,7 +67,7 @@ public class Enemie : Character
                 for(int i = 0; i < _currentAtkClass.nrbOfTargets; i++)
                 {
                     _targets.Add(c);
-                    c.SetIncommingAttack(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
+                    c.SetIncommingAttack(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)], i);
                 }
                 return;
             }

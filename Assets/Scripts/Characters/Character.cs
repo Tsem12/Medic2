@@ -51,6 +51,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public abstract int GetAgro();
     public abstract void SetTarget();
     public abstract void AssignValues();
+    public virtual void ClearIncomingAttacks() { }
     public abstract int GetMaxHealthBar();
     public virtual void SetBossAttackPreview(Sprite sprite) { }
     public virtual void SetPartyMemberAttackPreview(Sprite sprite) { }
@@ -198,7 +199,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     }
 
-    public virtual void SetIncommingAttack(AttacksObject atk)
+    public virtual void SetIncommingAttack(AttacksObject atk, int index = 0)
     {
         _incomingAttacks.Add(atk);
     }

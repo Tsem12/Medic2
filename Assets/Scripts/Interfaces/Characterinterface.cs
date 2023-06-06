@@ -25,9 +25,10 @@ public interface ICharacter
     public void GetAllStatus();
     public void SetBossAttackPreview(Sprite sprite);
     public void SetPartyMemberAttackPreview(Sprite sprite);
-    public void SetIncommingAttack(AttacksObject atk);
+    public void SetIncommingAttack(AttacksObject atk, int index = 0);
     public void ClearIncommingAttack();
     public Sprite GetNextAttackSprite();
     public void CheckStatus();
+    public void ClearIncomingAttacks();
 }
 
