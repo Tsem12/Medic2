@@ -38,16 +38,21 @@ public class PartyMember : Character, IHealable
         }
         CheckObjectRefs();
     }
+    public override void SetIncommingAttack(AttacksObject atk)
+    {
+        base.SetIncommingAttack(atk);
+        _bossAttackImage.gameObject.SetActive(true);
+        _bossAttackImage.sprite = atk.GetAttackSprite(_refs.fightManager);
 
+    }
     public override Sprite GetNextAttackSprite()
     {
-         return _nextAttack.GetAttackSprite(_refs.fightManager);
+         return _nextPossibleAttacks[0].GetAttackSprite(_refs.fightManager);
     }
 
     public override void SetBossAttackPreview(Sprite sprite)
     {
-        _bossAttackImage.gameObject.SetActive(true);
-        _bossAttackImage.sprite = sprite;
+
     }
 
     public override void SetPartyMemberAttackPreview(Sprite sprite)

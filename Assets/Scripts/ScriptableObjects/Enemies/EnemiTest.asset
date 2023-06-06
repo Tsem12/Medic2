@@ -20,16 +20,11 @@ MonoBehaviour:
   - paternName: 
     interuptMode: 2
     attacks:
-    - attackConditionsMode: 0
+    - nrbOfTargets: 1
+      attackConditionsMode: 0
       attack: {fileID: 11400000, guid: ff5bc03619f50f24289b2a58072b6d20, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
       percentageValue: 0
-      value: 0
-    - attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
-      condition: 0
-      ConditionalAttack: {fileID: 11400000, guid: d5150c5283177cc4ebaa8633c6334866, type: 2}
-      percentageValue: 100
       value: 0
   attacksEvent: []
