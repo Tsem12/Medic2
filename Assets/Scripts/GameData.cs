@@ -20,7 +20,7 @@ public class GameData
         levelProgression = 0;
         levelUnlocked = new bool[4];
         levelUnlocked[0] = true;
-        spellUnlocked = new bool[13];
+        spellUnlocked = new bool[10];
         spellUnlocked[0] = true;
         spellUnlocked[1] = true;
         spellUnlocked[2] = true;

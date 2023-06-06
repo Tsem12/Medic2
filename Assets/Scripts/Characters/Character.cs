@@ -268,7 +268,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         GetComponent<SpriteRenderer>().color = Color.red;
     }
 
-    public void Revive(int heal)
+    public void Revive(float heal)
     {
         if (!_isDead)
             return;
@@ -276,7 +276,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         _isDead = false;
         GetComponent<SpriteRenderer>().color = Color.white;
         _refs.fightManager.PartyMembersList.Add(GetComponent<ICharacter>());
-        _health.Heal(heal, true);
+        _health.Heal((int) (heal / 100f * _maxHealth), true);
     }
 
     public bool DoesFulFillCondition(AttackClass atk)

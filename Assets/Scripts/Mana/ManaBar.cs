@@ -16,17 +16,19 @@ public class ManaBar : MonoBehaviour
 
     private void Start()
     {
+        manaEventHandler.currentMana = 0f;
         mana = manaEventHandler.currentMana;
+        StartUpdate();
     }
 
     private void OnEnable()
     {
-        manaEventHandler.manaStart += StartUpdate;
+        manaEventHandler.manaUpdate += StartUpdate;
     }
 
     private void OnDisable()
     {
-        manaEventHandler.manaStart -= StartUpdate;
+        manaEventHandler.manaUpdate -= StartUpdate;
     }
 
     IEnumerator UpdateMana()
