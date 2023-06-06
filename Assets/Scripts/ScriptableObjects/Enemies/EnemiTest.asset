@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   numberOfHealthBar: 3
-  baseDamage: 1
   baseSpeed: 20
   baseAgroValue: 0
-  icon: {fileID: 0}
   attacksPatern:
   - paternName: 
     interuptMode: 2
@@ -30,8 +28,8 @@ MonoBehaviour:
       value: 0
     - attackConditionsMode: 1
       attack: {fileID: 11400000, guid: b05f3f81e3a23af43acdfaa922f7ee70, type: 2}
-      condition: 3
+      condition: 0
       ConditionalAttack: {fileID: 11400000, guid: d5150c5283177cc4ebaa8633c6334866, type: 2}
       percentageValue: 100
-      value: 1
+      value: 0
   attacksEvent: []

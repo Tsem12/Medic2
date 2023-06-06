@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b66fa7e0793d6445a89a7d021e4ec51, type: 3}
-  m_Name: heal
+  m_Name: ManaProfusion
   m_EditorClassIdentifier: 
   manaObject: {fileID: 11400000, guid: b09daaed8bc84614c9000d7999050bca, type: 2}
-  cardBehaviour: 0
-  isEnableInGame: 1
+  input: {fileID: 11400000, guid: 8e559ff9f04731d49bbc52aabad3f4a7, type: 2}
+  refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  isUnlocked: 0
+  cardBehaviour: 8
   cardName: 
-  manaCost: 3
-  applyTo: 0
-  healthHealed: 2
+  cardSprite: {fileID: 21300000, guid: 0cf1661d521f8e445b6d8392f5c5a033, type: 3}
+  manaCost: 4
+  healthHealed: 0
   turnActive: 0
-  revive: 0
-  addedMana: 0
-  poisonChance: 0
+  healthPercentage: 0
   shieldBreakAfter: 0
-  damageMultiplier: 0
   damageAdded: 0

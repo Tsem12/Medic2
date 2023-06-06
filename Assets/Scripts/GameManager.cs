@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        gameData = SaveSysteme.Load();
+        gameData = SaveSystem.Load();
     }
 
    
