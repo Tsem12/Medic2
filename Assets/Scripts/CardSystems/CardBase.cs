@@ -19,7 +19,7 @@ public enum CardBehaviour
     resonanceShield,
     blessingOfMars,
     blessingOfJupiter,
-    manaRestauration,
+    manaProfusion,
     speedBoost
 }
 
@@ -96,7 +96,7 @@ public class CardBase : ScriptableObject
                 partyMember.Revive(healthPercentage);
                 break;
 
-            case CardBehaviour.manaRestauration:
+            case CardBehaviour.manaProfusion:
                 manaObject.manaRestauration = true;
                 break;
 

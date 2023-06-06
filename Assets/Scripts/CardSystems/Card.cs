@@ -7,6 +7,7 @@ public class Card : MonoBehaviour,IInteractable
 {
     [SerializeField] CardBase carBase;
     [SerializeField] AllReferences refs;
+    [SerializeField] InputHandlerObject inputObject;
     [HideInInspector] public bool wasPlayed = false;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
@@ -103,5 +104,4 @@ public class Card : MonoBehaviour,IInteractable
             wasPlayed = false;
         }
     }
-
 }
