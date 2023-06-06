@@ -16,7 +16,9 @@ public class ManaBar : MonoBehaviour
 
     private void Start()
     {
+        manaEventHandler.currentMana = 0f;
         mana = manaEventHandler.currentMana;
+        StartUpdate();
     }
 
     private void OnEnable()

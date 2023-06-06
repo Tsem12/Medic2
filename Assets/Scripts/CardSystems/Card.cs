@@ -8,7 +8,6 @@ public class Card : MonoBehaviour,IInteractable
     public CardBase carBase;
     [SerializeField] AllReferences refs;
     [SerializeField] InputHandlerObject inputObject;
-    [HideInInspector] public bool wasPlayed = false;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
     [SerializeField] SpriteRenderer myRender;
@@ -36,11 +35,12 @@ public class Card : MonoBehaviour,IInteractable
         col.enabled = true;
         if (collision != null && collision.gameObject.CompareTag("PartyMember"))
         {
-            if(!collision.gameObject.GetComponent<PartyMember>().IsDead() && carBase.cardBehaviour == CardBehaviour.resurection)
+            if (!collision.gameObject.GetComponent<PartyMember>().IsDead() && carBase.cardBehaviour == CardBehaviour.resurection)
             {
                 return false;
             }
-            carBase.ApplyEffectOfTheCard(collision.GetComponent<Character>());
+            Debug.Log("PlayCard");
+            carBase.ApplyEffectOfTheCard(collision.gameObject.GetComponent<Character>());
             return true;
         }
         return false;
@@ -53,14 +53,13 @@ public class Card : MonoBehaviour,IInteractable
 
     public void Interact()
     {
-        if(!handlerObject.isChaningCards && !wasPlayed)
+        if(!handlerObject.isChaningCards)
         {
             if(ApplyEffect())
             {
                 col.enabled = false;
                 myRender.enabled = false;
                 usedRenderer.enabled = true;
-                wasPlayed = true;
             }
             ResetPos();
         }
@@ -96,12 +95,8 @@ public class Card : MonoBehaviour,IInteractable
 
     void EnableTurn()
     {
-        if(wasPlayed)
-        {
-            col.enabled = true;
-            myRender.enabled = true;
-            usedRenderer.enabled = false;
-            wasPlayed = false;
-        }
+        col.enabled = true;
+        myRender.enabled = true;
+        usedRenderer.enabled = false;
     }
 }

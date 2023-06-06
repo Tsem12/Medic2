@@ -316,12 +316,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carBase: {fileID: 11400000, guid: 4ab618e4e950bb7448005603ddd3272b, type: 2}
   refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
+  inputObject: {fileID: 11400000, guid: 8e559ff9f04731d49bbc52aabad3f4a7, type: 2}
   wasPlayed: 0
   handlerObject: {fileID: 11400000, guid: c8ed50634ba3e3a4297e68e090e6cfa2, type: 2}
   col: {fileID: 6714790924635855949}
   myRender: {fileID: 6966130238249465044}
   usedRenderer: {fileID: 4886648995312855033}
-  size: 0.2
+  size: 0.4
   tmpro: {fileID: 7380537543455301672}
 --- !u!1 &8802608739589585325
 GameObject:
