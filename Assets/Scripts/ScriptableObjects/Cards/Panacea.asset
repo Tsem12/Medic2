@@ -10,8 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b66fa7e0793d6445a89a7d021e4ec51, type: 3}
-  m_Name: CardBase
+  m_Name: Panacea
   m_EditorClassIdentifier: 
+  manaObject: {fileID: 0}
+  input: {fileID: 0}
+  refs: {fileID: 0}
+  cardBehaviour: 4
+  isEnableInGame: 1
   cardName: 
-  manaCost: 0
-  cardBehaviour: 0
+  cardSprite: {fileID: 0}
+  manaCost: 4
+  healthHealed: 0
+  turnActive: 0
+  healthPercentage: 0
+  shieldBreakAfter: 0
+  damageAdded: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Card : MonoBehaviour,IInteractable
 {
-    [SerializeField] CardBase carBase;
+    public CardBase carBase;
     [SerializeField] AllReferences refs;
     [SerializeField] InputHandlerObject inputObject;
     [HideInInspector] public bool wasPlayed = false;

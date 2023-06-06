@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Deck", menuName = "ScriptableObjects/Deck")]
 public class CardDeckBuilder : ScriptableObject
 {
-    List<CardBase> deck = new List<CardBase>();
+    public List<CardBase> deck = new List<CardBase>();
 
-    public void AddCard(CardBase card)
+    public void AddOrRemoveCard(CardBase card)
     {
-        if(deck.Count < 4)
+        if (deck.Contains(card))
         {
-            deck.Add(card);
+            deck.Remove(card);
+        }
+        else
+        {
+            if (deck.Count < 4)
+            {
+                deck.Add(card);
+            }
         }
     }
 
@@ -21,13 +29,5 @@ public class CardDeckBuilder : ScriptableObject
         {
             Debug.Log("Can't save without enough card");
         }        
-    }
-
-    public void RemoveFromDeck(CardBase card) 
-    { 
-        if(deck.Contains(card))
-        {
-            deck.Remove(card);
-        }
     }
 }

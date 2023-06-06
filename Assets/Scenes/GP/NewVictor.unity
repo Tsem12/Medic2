@@ -866,6 +866,7 @@ GameObject:
   - component: {fileID: 982742465}
   - component: {fileID: 982742464}
   - component: {fileID: 982742463}
+  - component: {fileID: 982742467}
   m_Layer: 5
   m_Name: ---Canvas---
   m_TagString: Untagged
@@ -902,12 +903,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.07
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -964,6 +965,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &982742467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982742462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652ea4c0283ad8c49a071cdb32bea12f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
+  cards:
+  - {fileID: 2138404451}
+  - {fileID: 2102017059}
+  - {fileID: 1961259153}
+  - {fileID: 1257146059}
 --- !u!1001 &1004523406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1189,6 +1208,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5785123301150961509, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
   m_PrefabInstance: {fileID: 1076305932}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1257146059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+  m_PrefabInstance: {fileID: 1004523406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b7e93d2b3e47947a2264d8d18b6f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1350223875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,6 +2396,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5785123301150961509, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
   m_PrefabInstance: {fileID: 1961259151}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1961259153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+  m_PrefabInstance: {fileID: 1961259151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b7e93d2b3e47947a2264d8d18b6f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2055779297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2836,6 +2877,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100693099}
   m_CullTransparentMesh: 1
+--- !u!114 &2102017059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+  m_PrefabInstance: {fileID: 1076305932}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b7e93d2b3e47947a2264d8d18b6f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2110399743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,3 +3024,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5785123301150961509, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
   m_PrefabInstance: {fileID: 2138404449}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2138404451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+  m_PrefabInstance: {fileID: 2138404449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b7e93d2b3e47947a2264d8d18b6f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
