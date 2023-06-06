@@ -80,8 +80,6 @@ public class AttacksObject : ScriptableObject
 
     [Range(0, 10)]
     public int atkDamage;
-    [Range(1, 3)]
-    public int nbrOfTargets;
     public AttackEffects attackEffects;
 
 
