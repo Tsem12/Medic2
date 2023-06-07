@@ -26,9 +26,9 @@ public abstract class Character : MonoBehaviour, ICharacter
     [SerializeField] protected int _maxHealth;
     protected int _currentHealth;
     protected bool _isDead;
+    private Status.StatusEnum _statusToApply;
 
     private bool _isPlaying;
-    private Status.StatusEnum _statusToAply;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
 
     private Coroutine _attackRoutine;
@@ -153,7 +153,13 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
         return null;
     }
-
+    public void ClearAllStatus()
+    {
+        foreach(Status status in _status.ToList())
+        {
+            TryRemoveStatus(status.status);
+        }
+    }
     protected virtual void Attack()
     {
         if (_refs.fightManager.EnableDebug)
@@ -186,16 +192,21 @@ public abstract class Character : MonoBehaviour, ICharacter
             additionalDamage -= fatigue.value;
         }
 
-        if(_statusToAply != Status.StatusEnum.None)
+        if(_currentAtkClass.selfStatus != Status.StatusEnum.None)
         {
-            AddStatus(_nextAttack.GetStatus(_statusToAply, 1, 1, 1, 1));
+            AddStatus(GetStatus(_currentAtkClass.selfStatus, 2, 1, 1, 1));
         }
 
         foreach(ICharacter target in _targets)
         {
 
+            Status disapear = target.GetStatus(Status.StatusEnum.Disapeared);
             Status s = target.GetStatus(Status.StatusEnum.ShieldedWithReflect);
             AttacksObject atk = _nextPossibleAttacks[Random.Range(0,_nextPossibleAttacks.Count)];
+            if(disapear != null)
+            {
+                return;
+            }
             if (s != null)
             {
                 AddStatus(atk.GetStatus());
@@ -328,7 +339,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                     return false;
                 }
         }
-        throw new System.Exception("On dois pas arriver lï¿½");
+        throw new System.Exception("On dois pas arriver là");
     }
 
     public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode)
@@ -395,8 +406,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                     List<AttacksObject> result = new List<AttacksObject>();
                     result.Add(_latetsAttackEvent.attack.attack);
-                    AttacksObject result = _latetsAttackEvent.attack.attack;
-                    _statusToAply = _latetsAttackEvent.attack.applyStatusToSelf;
+                    _statusToApply = _latetsAttackEvent.attack.selfStatus;
                     _latetsAttackEvent = null;
                     return result;
 
@@ -406,9 +416,8 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                 case AttacksPatern.PaternInteruptMode.DontInteruptFirstInQueue:
                     List<AttacksObject> result2 = new List<AttacksObject>();
+                    _statusToApply = _latetsAttackEvent.attack.selfStatus;
                     result2.Add(_latetsAttackEvent.attack.attack);
-                    AttacksObject result2 = _latetsAttackEvent.attack.attack;
-                    _statusToAply = _latetsAttackEvent.attack.applyStatusToSelf;
                     _latetsAttackEvent = null;
                     return result2;
             }
@@ -433,13 +442,13 @@ public abstract class Character : MonoBehaviour, ICharacter
                 {
                     _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
                     _actualPatern.FillQueue();
-                    _statusToAply = atk.applyStatusToSelf;
+                    _statusToApply = atk.selfStatus;
                     atk = _actualPatern.attackQueue.Dequeue();
                     nbrLoop++;
                 }
                 else
                 {
-                    _statusToAply = atk.applyStatusToSelf;
+                    _statusToApply = atk.selfStatus;
                     atk = _actualPatern.attackQueue.Dequeue();
                 }
             }
@@ -451,20 +460,22 @@ public abstract class Character : MonoBehaviour, ICharacter
                 _currentAtkClass = atk;
                 result3.Add(atk.attack);
                 result3.Add(atk.ConditionalAttack);
+                _statusToApply = atk.selfStatus;
                 return result3;
             }
 
-            _statusToAply = atk.applyStatusToSelf;
             if (DoesFulFillCondition(atk))
             {
                 _currentAtkClass = atk;
                 result3.Add(atk.ConditionalAttack);
+                _statusToApply = atk.selfStatus;
                 return result3;
             }
             else
             {
                 _currentAtkClass = atk;
                 result3.Add(atk.attack);
+                _statusToApply = atk.selfStatus;
                 return result3;
             }
         }
@@ -486,7 +497,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             {
                 _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
 
-                transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => GetComponent<SpriteRenderer>().enabled = true);
+                transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => _spriteRenderer.enabled = true);
             }
 
             _status.Remove(statu);
@@ -534,7 +545,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         if(status.status == Status.StatusEnum.Disapeared)
         {
             _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
-            transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => GetComponent<SpriteRenderer>().enabled = false);
+            transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() =>_spriteRenderer.enabled = false);
         }
         _status.Add(status);
         if (status.status == Status.StatusEnum.Taunting)
@@ -586,5 +597,43 @@ public abstract class Character : MonoBehaviour, ICharacter
     }
     [Button]
     public void TestRevive() => Revive(GetMaxHealth()/2);
+
+    public Status GetStatus(Status.StatusEnum statu, int effectTurnDuration, int dotValuePerTurn, int buffValue, int deBuffValue)
+    {
+        switch (statu)
+        {
+            case Status.StatusEnum.Poisoned:
+                return new Status(Status.StatusEnum.Poisoned, effectTurnDuration, dotValuePerTurn);
+            case Status.StatusEnum.Restrained:
+                return new Status(Status.StatusEnum.Restrained, effectTurnDuration, dotValuePerTurn);
+            case Status.StatusEnum.Fired:
+                return new Status(Status.StatusEnum.Fired, effectTurnDuration, dotValuePerTurn);
+
+            case Status.StatusEnum.Strengthened:
+                return new Status(Status.StatusEnum.Strengthened, effectTurnDuration, buffValue);
+            case Status.StatusEnum.Initiative:
+                return new Status(Status.StatusEnum.Initiative, effectTurnDuration);
+            case Status.StatusEnum.Regenerating:
+                return new Status(Status.StatusEnum.Regenerating, effectTurnDuration, buffValue);
+            case Status.StatusEnum.Shielded:
+                return new Status(Status.StatusEnum.Shielded, effectTurnDuration);
+            case Status.StatusEnum.ShieldedWithReflect:
+                return new Status(Status.StatusEnum.ShieldedWithReflect, effectTurnDuration);
+            case Status.StatusEnum.Taunting:
+                return new Status(Status.StatusEnum.Taunting, effectTurnDuration);
+
+            case Status.StatusEnum.Stunned:
+                return new Status(Status.StatusEnum.Stunned, effectTurnDuration);
+            case Status.StatusEnum.Fatigue:
+                return new Status(Status.StatusEnum.Fatigue, effectTurnDuration, deBuffValue);
+            case Status.StatusEnum.Sleeped:
+                return new Status(Status.StatusEnum.Sleeped, true);
+            case Status.StatusEnum.Disapeared:
+                return new Status(Status.StatusEnum.Disapeared, effectTurnDuration);
+
+        }
+
+        return null;
+    }
 
 }

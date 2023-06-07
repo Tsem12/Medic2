@@ -26,7 +26,7 @@ public class AttackClass
     public int nrbOfTargets;
 
     public ConditionMode attackConditionsMode;
-    public Status.StatusEnum applyStatusToSelf;
+    public Status.StatusEnum selfStatus;
     public AttacksObject attack;
     public AttackConditions condition;
     public AttacksObject ConditionalAttack;
