@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -120,5 +121,16 @@ public class Enemie : Character
     public override int GetMaxHealthBar()
     {
         return _characterObj.numberOfHealthBar;
+    }
+
+    public override void ClearIncomingAttacks()
+    {
+        base.ClearIncomingAttacks();
+    }
+
+    protected override void Attack()
+    {
+        base.Attack();
+        _sp.transform.DOScale(Vector3.one * 1.5f, 0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
     }
 }

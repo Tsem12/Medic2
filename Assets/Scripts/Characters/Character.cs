@@ -28,6 +28,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     protected bool _isDead;
 
     private bool _isPlaying;
+    protected SpriteRenderer _sp;
 
     private Coroutine _attackRoutine;
     private AttacksPatern _actualPatern;
@@ -40,6 +41,11 @@ public abstract class Character : MonoBehaviour, ICharacter
     protected List<ICharacter> _targets =  new List<ICharacter>();
 
     public List<Status> _status = new List<Status>();
+
+    private void Awake()
+    {
+        _sp = GetComponentInChildren<SpriteRenderer>();
+    }
     private void OnValidate()
     {
         AssignValues();
@@ -147,7 +153,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         return null;
     }
 
-    protected void Attack()
+    protected virtual void Attack()
     {
         if (_refs.fightManager.EnableDebug)
         {
@@ -264,7 +270,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _status.Clear();
         _isDead = true;
-        GetComponentInChildren<SpriteRenderer>().color = Color.red;
+         _sp.color = Color.red;
     }
 
     public void Revive(float heal)
@@ -273,7 +279,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             return;
 
         _isDead = false;
-        GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        _sp.color = Color.white;
         _refs.fightManager.PartyMembersList.Add(GetComponent<ICharacter>());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
     }

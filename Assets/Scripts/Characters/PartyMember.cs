@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -111,5 +112,11 @@ public class PartyMember : Character, IHealable
     public override int GetMaxHealthBar()
     {
         return 1;
+    }
+
+    protected override void Attack()
+    {
+        base.Attack();
+        _sp.transform.DOScale(Vector3.one * .5f,0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
     }
 }
