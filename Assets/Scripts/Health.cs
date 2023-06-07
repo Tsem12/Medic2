@@ -184,11 +184,16 @@ public class Health : MonoBehaviour
             else
             {
                 Sequence sequence1 = DOTween.Sequence();
-                foreach (HealtPoint hp in _healthPoints)
+                for(int i = _character.GetCurrentHealth(); i < _character.GetMaxHealth(); i++)
                 {
-                    sequence1.Append(hp.GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
-                    hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+                    sequence1.Append(_healthPoints[i].GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+                    _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
                 }
+                //foreach (HealtPoint hp in _healthPoints)
+                //{
+                //    sequence1.Append(hp.GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+                //    hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+                //}
             }
             _character.SetCurrentHealth(_character.GetMaxHealth());
             return;
