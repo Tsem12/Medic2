@@ -13,8 +13,10 @@ public class Health : MonoBehaviour
     [SerializeField] private AllReferences _refs;
 
     private ICharacter _character;
+    private Tweener _tweener;
     private int _currentHealthBarAmount;
 
+    [SerializeField] private Transform _gfx;
     [Header("layout group")]
     [SerializeField] private GameObject _healthPoint;
     [SerializeField] private GameObject _healthBarCount;
@@ -69,15 +71,17 @@ public class Health : MonoBehaviour
     {
 
         Status status = _character.GetStatus(Status.StatusEnum.Sleeped);
-        if(status != null)
+        if (status != null)
         {
             _character.TryRemoveStatus(Status.StatusEnum.Sleeped);
             _character.AddStatus(new Status(Status.StatusEnum.Stunned, 2));
             Status d = _character.GetStatus(Status.StatusEnum.Stunned);
         }
 
+        TweenTakeDamage(0.1f);
+
         int newHealth = _character.GetCurrentHealth() - value;
-        if(newHealth <= 0)
+        if (newHealth <= 0)
         {
             _currentHealthBarAmount -= 1;
             if (_currentHealthBarAmount <= 0)
@@ -85,7 +89,7 @@ public class Health : MonoBehaviour
                 if (_refs.fightManager.EnableDebug)
                     Debug.Log($"{gameObject.name} have been killed");
 
-                foreach(HealtPoint hp in _healthPoints)
+                foreach (HealtPoint hp in _healthPoints)
                 {
                     hp.ValidHp.sprite = hp.Colors[hp.Colors.Length - 1];
                 }
@@ -100,7 +104,7 @@ public class Health : MonoBehaviour
                 _refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar);
                 foreach (HealtPoint hp in _healthPoints)
                 {
-                    if(_currentHealthBarAmount <= 1)
+                    if (_currentHealthBarAmount <= 1)
                     {
                         hp.ValidHp.sprite = hp.Colors[hp.Colors.Length - 1];
                     }
@@ -109,7 +113,7 @@ public class Health : MonoBehaviour
                         hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount + 1];
                     }
                 }
-                for(int i = 0; i < _character.GetCurrentHealth(); i++)
+                for (int i = 0; i < _character.GetCurrentHealth(); i++)
                 {
                     _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
                 }
@@ -117,7 +121,7 @@ public class Health : MonoBehaviour
             }
         }
 
-        for(int i = newHealth; i < newHealth + value; i++)
+        for (int i = newHealth; i < newHealth + value; i++)
         {
             TakeDamageTweener(i);
             if (_currentHealthBarAmount <= 1)
@@ -131,6 +135,14 @@ public class Health : MonoBehaviour
 
         }
         _character.SetCurrentHealth(newHealth);
+    }
+
+    private void TweenTakeDamage(float value)
+    {
+        if (_tweener == null)
+        {
+            _tweener = _gfx.DOShakePosition(0.5f, value).SetEase(Ease.InCubic).OnComplete(() => _tweener = null);
+        }
     }
 
     private void TakeDamageTweener(int i)
