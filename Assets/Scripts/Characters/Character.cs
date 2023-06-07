@@ -28,7 +28,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     protected bool _isDead;
 
     private bool _isPlaying;
-    protected SpriteRenderer _sp;
+    [SerializeField] protected SpriteRenderer _spriteRenderer;
 
     private Coroutine _attackRoutine;
     private AttacksPatern _actualPatern;
@@ -44,7 +44,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     private void Awake()
     {
-        _sp = GetComponentInChildren<SpriteRenderer>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     private void OnValidate()
     {
@@ -270,7 +270,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _status.Clear();
         _isDead = true;
-         _sp.color = Color.red;
+         _spriteRenderer.color = Color.red;
     }
 
     public void Revive(float heal)
@@ -279,7 +279,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             return;
 
         _isDead = false;
-        _sp.color = Color.white;
+        _spriteRenderer.color = Color.white;
         _refs.fightManager.PartyMembersList.Add(GetComponent<ICharacter>());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
     }

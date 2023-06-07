@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: EnemiTest
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 10
   numberOfHealthBar: 3
   baseSpeed: 20
   baseAgroValue: 0
@@ -20,7 +20,7 @@ MonoBehaviour:
   - paternName: 
     interuptMode: 2
     attacks:
-    - nrbOfTargets: 1
+    - nrbOfTargets: 3
       attackConditionsMode: 0
       attack: {fileID: 11400000, guid: ff5bc03619f50f24289b2a58072b6d20, type: 2}
       condition: 0
