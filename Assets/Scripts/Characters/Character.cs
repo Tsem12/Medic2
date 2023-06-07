@@ -240,10 +240,9 @@ public abstract class Character : MonoBehaviour, ICharacter
         if (attack.atkDamage < 0)
             return;
 
-        Status stun = GetStatus(Status.StatusEnum.Shielded);
-        if (stun != null)
+        Status shield = GetStatus(Status.StatusEnum.Shielded);
+        if (shield != null)
         {
-            _status.Remove(stun);
             Debug.Log("AttackBloked");
             return;
         }
@@ -265,7 +264,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _status.Clear();
         _isDead = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        GetComponentInChildren<SpriteRenderer>().color = Color.red;
     }
 
     public void Revive(float heal)
@@ -274,7 +273,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             return;
 
         _isDead = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
         _refs.fightManager.PartyMembersList.Add(GetComponent<ICharacter>());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
     }
