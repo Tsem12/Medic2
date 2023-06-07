@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: 
   description: 
   attackSprite: {fileID: 0}
-  atkDamage: 2
+  atkDamage: 4
   attackEffects: 0
   dotAttacks: 0
   buff: 0
