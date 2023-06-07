@@ -40,12 +40,12 @@ public class Health : MonoBehaviour
             _hpRect.Add(hp.GetComponent<RectTransform>());
             _healthPoints.Add(hp);
         }
-        if( _healthPoints.Count > 1)
-        {
-            _layerGroupHealthpoint.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroupHealthpoint.spacing * _healthPoints.Count - 1)) / 2;
-        }
+        //if( _healthPoints.Count > 1)
+        //{
+        //    _layerGroupHealthpoint.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroupHealthpoint.spacing * _healthPoints.Count - 1)) / 2;
+        //}
 
-        if(_layerGroupHealthBar != null)
+        if (_layerGroupHealthBar != null)
         {
             for (int i = 0; i < _character.GetMaxHealthBar(); i++)
             {
@@ -53,17 +53,17 @@ public class Health : MonoBehaviour
                 _healthBars.Add(obj);
             }
 
-            Invoke("SetPos", 0.05f);
+            //    Invoke("SetPos", 0.05f);
         }
 
-        
+
     }
 
-    private void SetPos()
-    {
-        //_layerGroupHealthBar.GetComponent<RectTransform>().Translate(_healthPoints[0].GetComponent<RectTransform>().localPosition);
-        _layerGroupHealthBar.GetComponent<RectTransform>().localPosition +=  new Vector3(_healthPoints[0].GetComponent<RectTransform>().localPosition.x + 50, 0, 0) * 2 ;
-    }
+    //private void SetPos()
+    //{
+    //    //_layerGroupHealthBar.GetComponent<RectTransform>().Translate(_healthPoints[0].GetComponent<RectTransform>().localPosition);
+    //    _layerGroupHealthBar.GetComponent<RectTransform>().localPosition +=  new Vector3(_healthPoints[0].GetComponent<RectTransform>().localPosition.x + 50, 0, 0) * 2 ;
+    //}
 
     public void TakeDamage(int value)
     {

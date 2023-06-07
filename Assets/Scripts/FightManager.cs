@@ -124,6 +124,15 @@ public class FightManager : MonoBehaviour
         _playerTurnRoutine = StartCoroutine(PlayerTurn());
     }
 
+    public void ResetTargets()
+    {
+        foreach (ICharacter character in CharacterList)
+        {
+            character.SetTarget();
+            character.SetPartyMemberAttackPreview(character.GetNextAttackSprite());
+        }
+    }
+
     private void PartyMemberTurn()
     {
         OnTurnEnd?.Invoke();
