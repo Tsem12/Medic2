@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMana: 10
   maxMana: 10
-  increaseManaTurn: 2
-  increasedMana: 0
+  increaseManaTurn: 4
   turnsNumber: 0
-  newSpellCost: 0
+  manaRestauration: 0
+  isManaBoost: 0

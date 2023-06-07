@@ -26,15 +26,6 @@ public class SetInputField : MonoBehaviour
 
     public void EnableSwitch()
     {
-        cardBase.isEnableInGame = !cardBase.isEnableInGame;
 
-        if(cardBase.isEnableInGame)
-        {
-            textButton.text = "X";
-        }
-        else
-        {
-            textButton.text = "";
-        }
     }
 }

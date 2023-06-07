@@ -1,22 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PartyMember : Character, IHealable
 {
-    
-
     [Header("Stats")]
     private int _damage;
     private int _speed;
     private int _agroValue;
 
-    private ICharacter _target;
+    [SerializeField] private Image _bossAttackImage;
+    [SerializeField] private Image _nextAttackImage;
+    [SerializeField] private BossAttacksIndicator _bossIndicator;
+
 
     private void Start()
     {
         AssignValues();
         _currentHealth = _maxHealth;
+        _refs.fightManager.OnTurnEnd += () => _bossIndicator.Clear();
+        _refs.fightManager.OnTurnEnd += () => _nextAttackImage.gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        _refs.fightManager.OnTurnEnd -= () => _bossIndicator.Clear();
+        _refs.fightManager.OnTurnEnd -= () => _nextAttackImage.gameObject.SetActive(false);
     }
 
     public override void AssignValues()
@@ -24,11 +34,47 @@ public class PartyMember : Character, IHealable
         if( _characterObj != null)
         {
             _maxHealth = _characterObj.maxHealth;
-            _damage = _characterObj.baseDamage;
             _speed = _characterObj.baseSpeed;
             _agroValue = _characterObj.baseAgroValue;
         }
         CheckObjectRefs();
+    }
+    public override void ClearIncomingAttacks()
+    {
+        _bossIndicator.Clear();
+    }
+    public override void SetIncommingAttack(AttacksObject atk, int index = 0)
+    {
+        base.SetIncommingAttack(atk);
+        _bossIndicator.SetSprite(atk.GetAttackSprite(_refs.fightManager), index);
+
+    }
+    public override Sprite GetNextAttackSprite()
+    {
+         return _nextPossibleAttacks[0].GetAttackSprite(_refs.fightManager);
+    }
+
+    public override void SetBossAttackPreview(Sprite sprite)
+    {
+
+    }
+
+    public override void SetPartyMemberAttackPreview(Sprite sprite)
+    {
+        Status stunned = GetStatus(Status.StatusEnum.Stunned);
+        Status restrained = GetStatus(Status.StatusEnum.Restrained);
+        Status sleep = GetStatus(Status.StatusEnum.Sleeped);
+
+        if (stunned != null || restrained != null || sleep != null || IsDead())
+            return;
+
+        _nextAttackImage.gameObject.SetActive(true);
+        _nextAttackImage.sprite = sprite;
+    }
+
+    public override void EndTurn()
+    {
+        base.EndTurn();
     }
     public override int GetSpeed()
     {
@@ -44,19 +90,11 @@ public class PartyMember : Character, IHealable
         return _characterObj;
     }
 
-    protected override void Attack()
-    {
-        if (_refs.fightManager.EnableDebug)
-            Debug.Log($"{gameObject.name} is attacking {_refs.fightManager.Enemie.gameObject.name}");
-
-        AttacksObject atk = GetAttack();
-        //Debug.Log($"Attack with {atk.attackName}");
-        _target.TakeDamage(atk);
-    }
-
     public override void SetTarget()
     {
-        _target = _refs.fightManager.Enemie.GetComponent<ICharacter>();
+        _targets.Clear();
+        if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(Status.StatusEnum.Disapeared) == null)
+            _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
     }
 
     public override void SetCurrentHealth(int newValue)
@@ -66,13 +104,9 @@ public class PartyMember : Character, IHealable
 
     public void Heal(int value)
     {
-        _health.Heal(value);
+        _health.Heal(value, true);
     }
 
-    public override Sprite GetIcone()
-    {
-        return _characterObj.icon;
-    }
 
     public override int GetMaxHealthBar()
     {
