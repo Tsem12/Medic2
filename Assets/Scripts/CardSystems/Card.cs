@@ -8,15 +8,19 @@ public class Card : MonoBehaviour,IInteractable
     public CardBase carBase;
     [SerializeField] AllReferences refs;
     [SerializeField] InputHandlerObject inputObject;
+    [SerializeField] CardDeckBuilder deckBuilder;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
     [SerializeField] SpriteRenderer myRender;
     [SerializeField] SpriteRenderer usedRenderer;
     [SerializeField] float size = 0.5f;
     [SerializeField] TextMeshProUGUI tmpro;
+    [SerializeField] int index;
+    [SerializeField] ManaObject manaObject;
 
     private void Start()
     {
+        carBase = deckBuilder.deck[index];
         carBase.manaObject.manaAddTurn += CheckIfInteractable;
         refs.fightManager.OnTurnEnd += EndInteractable;
         refs.fightManager.OnTurnBegin += EnableTurn;
@@ -26,6 +30,7 @@ public class Card : MonoBehaviour,IInteractable
         usedRenderer.sprite = carBase.cardSprite;
         usedRenderer.color = Color.grey;
         tmpro.text = carBase.manaCost.ToString();
+        carBase.manaObject.manaUpdate += CheckIfInteractable;
     }
 
     public bool ApplyEffect()

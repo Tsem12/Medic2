@@ -60,7 +60,10 @@ public class InteractInput : MonoBehaviour
     {
         while (true)
         {
-            _getObject.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
+            if(Input.touches.Length > 0)
+            {
+                _getObject.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
+            }
             yield return null;
         }
     }
