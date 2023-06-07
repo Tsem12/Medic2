@@ -11,7 +11,7 @@ public class MultiLanguage : MonoBehaviour
         gameData = SaveSystem.Load();
         LocalizationManager.Read();
         Debug.Log("langage is : " + gameData.Language);
-        LocalizationManager.Language = "Français";
+        LocalizationManager.Language = gameData.Language;
         SaveSystem.save(gameData);
     }
 }

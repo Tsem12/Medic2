@@ -12,6 +12,8 @@ public class LanguageButton : MonoBehaviour
     public void Awake()
     {
         gameData = SaveSystem.Load();
+        Debug.Log(gameData.Language);
+        LocalizationManager.Language = gameData.Language;
     }
 
     public void ChangeLanguage(string Language)
