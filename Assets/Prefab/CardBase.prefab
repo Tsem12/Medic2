@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b7e93d2b3e47947a2264d8d18b6f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carBase: {fileID: 11400000, guid: 4ab618e4e950bb7448005603ddd3272b, type: 2}
+  carBase: {fileID: 0}
   refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
   inputObject: {fileID: 11400000, guid: 8e559ff9f04731d49bbc52aabad3f4a7, type: 2}
   deckBuilder: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
@@ -428,6 +428,7 @@ MonoBehaviour:
   size: 0.4
   tmpro: {fileID: 7380537543455301672}
   index: 0
+  manaObject: {fileID: 11400000, guid: b09daaed8bc84614c9000d7999050bca, type: 2}
 --- !u!1 &8802608739589585325
 GameObject:
   m_ObjectHideFlags: 0

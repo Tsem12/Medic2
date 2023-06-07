@@ -8,7 +8,6 @@ interface IInteractable
     public void Cancel();
 }
 
-
 public class InteractInput : MonoBehaviour
 {
     [SerializeField] InputHandlerObject _inputs;
@@ -70,7 +69,6 @@ public class InteractInput : MonoBehaviour
 
     void CanceledDrop()
     {
-        //Debug.Log("TryCancel");
         if(_dragCoroutine != null)
         {
             if (_getObject != null) // Check if we got object to interact with
@@ -79,10 +77,10 @@ public class InteractInput : MonoBehaviour
                 {
                     _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
                 }
-                StopCoroutine(_dragCoroutine);
-                _dragCoroutine = null;
                 _getObject = null;
             }
+            StopCoroutine(_dragCoroutine);
+            _dragCoroutine = null;
         }
     }
 }
