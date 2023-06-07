@@ -174,6 +174,51 @@ public class AttacksObject : ScriptableObject
         return null;
     }
 
+    public Status GetStatus(Status.StatusEnum status, int effectTurnDuration, int dotValuePerTurn, int buffValue, int deBuffValue)
+    {
+        float random = Random.Range(0f, 100f);
+
+        if (attackEffects == AttackEffects.BaseAttack || random > chanceToApplyEffect)
+            return null;
+
+
+        switch (status)
+        {
+
+            case Status.StatusEnum.Poisoned:
+                return new Status(Status.StatusEnum.Poisoned, effectTurnDuration, dotValuePerTurn);
+            case Status.StatusEnum.Restrained:
+                return new Status(Status.StatusEnum.Restrained, effectTurnDuration, dotValuePerTurn);
+            case Status.StatusEnum.Fired:
+                return new Status(Status.StatusEnum.Fired, effectTurnDuration, dotValuePerTurn);
+
+            case Status.StatusEnum.Strengthened:
+                return new Status(Status.StatusEnum.Strengthened, effectTurnDuration, buffValue);
+            case Status.StatusEnum.Initiative:
+                return new Status(Status.StatusEnum.Initiative, effectTurnDuration);
+            case Status.StatusEnum.Regenerating:
+                return new Status(Status.StatusEnum.Regenerating, effectTurnDuration, buffValue);
+            case Status.StatusEnum.Shielded:
+                return new Status(Status.StatusEnum.Shielded, effectTurnDuration);
+            case Status.StatusEnum.ShieldedWithReflect:
+                return new Status(Status.StatusEnum.ShieldedWithReflect, effectTurnDuration);
+            case Status.StatusEnum.Taunting:
+                return new Status(Status.StatusEnum.Taunting, effectTurnDuration);
+
+            case Status.StatusEnum.Stunned:
+                return new Status(Status.StatusEnum.Stunned, effectTurnDuration);
+            case Status.StatusEnum.Fatigue:
+                return new Status(Status.StatusEnum.Fatigue, effectTurnDuration, deBuffValue);
+            case Status.StatusEnum.Sleeped:
+                return new Status(Status.StatusEnum.Sleeped, true);
+            case Status.StatusEnum.Disapeared:
+                return new Status(Status.StatusEnum.Disapeared, effectTurnDuration);
+
+        }
+
+        return null;
+    }
+
     public Sprite GetAttackSprite(FightManager fm)
     {
         switch (attackEffects)

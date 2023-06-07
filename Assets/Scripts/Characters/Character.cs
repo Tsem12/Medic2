@@ -28,6 +28,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     protected bool _isDead;
 
     private bool _isPlaying;
+    private Status.StatusEnum _statusToAply;
 
     private Coroutine _attackRoutine;
     private AttacksPatern _actualPatern;
@@ -179,6 +180,11 @@ public abstract class Character : MonoBehaviour, ICharacter
             additionalDamage -= fatigue.value;
         }
 
+        if(_statusToAply != Status.StatusEnum.None)
+        {
+            AddStatus(_nextAttack.GetStatus(_statusToAply, 1, 1, 1, 1));
+        }
+
         foreach(ICharacter target in _targets)
         {
 
@@ -316,7 +322,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                     return false;
                 }
         }
-        throw new System.Exception("On dois pas arriver là");
+        throw new System.Exception("On dois pas arriver lï¿½");
     }
 
     public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode)
@@ -383,6 +389,8 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                     List<AttacksObject> result = new List<AttacksObject>();
                     result.Add(_latetsAttackEvent.attack.attack);
+                    AttacksObject result = _latetsAttackEvent.attack.attack;
+                    _statusToAply = _latetsAttackEvent.attack.applyStatusToSelf;
                     _latetsAttackEvent = null;
                     return result;
 
@@ -393,6 +401,8 @@ public abstract class Character : MonoBehaviour, ICharacter
                 case AttacksPatern.PaternInteruptMode.DontInteruptFirstInQueue:
                     List<AttacksObject> result2 = new List<AttacksObject>();
                     result2.Add(_latetsAttackEvent.attack.attack);
+                    AttacksObject result2 = _latetsAttackEvent.attack.attack;
+                    _statusToAply = _latetsAttackEvent.attack.applyStatusToSelf;
                     _latetsAttackEvent = null;
                     return result2;
             }
@@ -417,11 +427,13 @@ public abstract class Character : MonoBehaviour, ICharacter
                 {
                     _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
                     _actualPatern.FillQueue();
+                    _statusToAply = atk.applyStatusToSelf;
                     atk = _actualPatern.attackQueue.Dequeue();
                     nbrLoop++;
                 }
                 else
                 {
+                    _statusToAply = atk.applyStatusToSelf;
                     atk = _actualPatern.attackQueue.Dequeue();
                 }
             }
@@ -436,6 +448,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 return result3;
             }
 
+            _statusToAply = atk.applyStatusToSelf;
             if (DoesFulFillCondition(atk))
             {
                 _currentAtkClass = atk;
