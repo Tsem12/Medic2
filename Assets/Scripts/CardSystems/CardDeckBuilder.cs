@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Deck", menuName = "ScriptableObjects/Deck")]
 public class CardDeckBuilder : ScriptableObject
@@ -23,11 +25,11 @@ public class CardDeckBuilder : ScriptableObject
     }
 
 
-    public void SaveDeck()
+    public void SaveDeck(string sceneName)
     {
-        if(deck.Count < 4)
+        if(deck.Count == 4)
         {
-            Debug.Log("Can't save without enough card");
+            SceneManager.LoadScene(sceneName);
         }        
     }
 }

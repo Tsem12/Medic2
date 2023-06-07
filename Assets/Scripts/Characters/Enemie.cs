@@ -49,6 +49,7 @@ public class Enemie : Character
             if (!c.IsDead() && c.GetStatus(Status.StatusEnum.Disapeared) == null)
             {
                 chara.Add(c);
+                c.ClearIncomingAttacks();
             }
         }
 
@@ -59,20 +60,22 @@ public class Enemie : Character
 
         foreach(ICharacter c in chara)
         {
+            c.ClearIncommingAttack();
             Status status = c.GetStatus(Status.StatusEnum.Taunting);
             if(status != null)
             {
-                for(int i = 0; i < _nextAttack.nbrOfTargets; i++)
+                for(int i = 0; i < _currentAtkClass.nrbOfTargets; i++)
                 {
                     _targets.Add(c);
+                    c.SetIncommingAttack(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)], i);
                 }
-                break;
+                return;
             }
         }
 
         int tempGlobalAgro = _refs.fightManager.GlobalAgro;
 
-        for (int i = 0 ; i < _nextAttack.nbrOfTargets ; i++)
+        for (int i = 0 ; i < _currentAtkClass.nrbOfTargets; i++)
         {
             int random = Random.Range(0, 101);
             float others = 0f;
@@ -93,8 +96,8 @@ public class Enemie : Character
             }
 
             tempGlobalAgro -= target.GetAgro();
-            target.SetBossAttackPreview(_nextAttack.GetAttackSprite(_refs.fightManager));
             _targets.Add(target);
+            target.SetIncommingAttack(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
             chara.Remove(target);
         }
 

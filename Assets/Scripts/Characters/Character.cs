@@ -32,7 +32,10 @@ public abstract class Character : MonoBehaviour, ICharacter
     private Coroutine _attackRoutine;
     private AttacksPatern _actualPatern;
     protected AttackEvent _latetsAttackEvent;
+    protected List<AttacksObject> _nextPossibleAttacks;
     protected AttacksObject _nextAttack;
+    protected List<AttacksObject> _incomingAttacks = new List<AttacksObject>();
+    protected AttackClass _currentAtkClass;
 
     protected List<ICharacter> _targets =  new List<ICharacter>();
 
@@ -48,6 +51,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public abstract int GetAgro();
     public abstract void SetTarget();
     public abstract void AssignValues();
+    public virtual void ClearIncomingAttacks() { }
     public abstract int GetMaxHealthBar();
     public virtual void SetBossAttackPreview(Sprite sprite) { }
     public virtual void SetPartyMemberAttackPreview(Sprite sprite) { }
@@ -81,7 +85,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public void SetAttack()
     {
-        _nextAttack = GetAttack();
+        _nextPossibleAttacks = GetAttack();
     }
 
     public virtual void EndTurn()
@@ -179,19 +183,33 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
 
             Status s = target.GetStatus(Status.StatusEnum.ShieldedWithReflect);
+            AttacksObject atk = _nextPossibleAttacks[Random.Range(0,_nextPossibleAttacks.Count)];
             if (s != null)
             {
-                AddStatus(_nextAttack.GetStatus());
-                TakeDamage(_nextAttack, additionalDamage);
+                AddStatus(atk.GetStatus());
+                TakeDamage(atk, additionalDamage);
             }
             else
             {
-                target.AddStatus(_nextAttack.GetStatus());
-                target.TakeDamage(_nextAttack, additionalDamage);
+                target.AddStatus(atk.GetStatus());
+                target.TakeDamage(atk, additionalDamage);
             }
 
         }
 
+    }
+
+    public virtual void SetIncommingAttack(AttacksObject atk, int index = 0)
+    {
+        _incomingAttacks.Add(atk);
+    }
+
+    public void ClearIncommingAttack()
+    {
+        if(_incomingAttacks != null)
+        {
+            _incomingAttacks.Clear();
+        }
     }
 
     private IEnumerator AttackRoutine()
@@ -222,10 +240,9 @@ public abstract class Character : MonoBehaviour, ICharacter
         if (attack.atkDamage < 0)
             return;
 
-        Status stun = GetStatus(Status.StatusEnum.Shielded);
-        if (stun != null)
+        Status shield = GetStatus(Status.StatusEnum.Shielded);
+        if (shield != null)
         {
-            _status.Remove(stun);
             Debug.Log("AttackBloked");
             return;
         }
@@ -247,7 +264,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _status.Clear();
         _isDead = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        GetComponentInChildren<SpriteRenderer>().color = Color.red;
     }
 
     public void Revive(float heal)
@@ -256,7 +273,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             return;
 
         _isDead = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
         _refs.fightManager.PartyMembersList.Add(GetComponent<ICharacter>());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
     }
@@ -329,7 +346,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 break;
         }
     }
-    public AttacksObject GetAttack()
+    public List<AttacksObject> GetAttack()
     {
         foreach (AttacksPatern patern in _characterObj.attacksPatern)
         {
@@ -364,7 +381,8 @@ public abstract class Character : MonoBehaviour, ICharacter
                     _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
                     _actualPatern.FillQueue();
 
-                    AttacksObject result = _latetsAttackEvent.attack.attack;
+                    List<AttacksObject> result = new List<AttacksObject>();
+                    result.Add(_latetsAttackEvent.attack.attack);
                     _latetsAttackEvent = null;
                     return result;
 
@@ -373,7 +391,8 @@ public abstract class Character : MonoBehaviour, ICharacter
                     break;
 
                 case AttacksPatern.PaternInteruptMode.DontInteruptFirstInQueue:
-                    AttacksObject result2 = _latetsAttackEvent.attack.attack;
+                    List<AttacksObject> result2 = new List<AttacksObject>();
+                    result2.Add(_latetsAttackEvent.attack.attack);
                     _latetsAttackEvent = null;
                     return result2;
             }
@@ -381,6 +400,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             _latetsAttackEvent = null;
         }
 
+        List<AttacksObject> result3 = new List<AttacksObject>();
         AttackClass atk = _actualPatern.attackQueue.Dequeue();
         int nbrLoop = 0;
 
@@ -408,18 +428,31 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
         else if (atk.attackConditionsMode == AttackClass.ConditionMode.UseBaseAttackWithoutCondition && atk.condition != AttackClass.AttackConditions.None)
         {
+            if (atk.condition == AttackClass.AttackConditions.Random)
+            {
+                _currentAtkClass = atk;
+                result3.Add(atk.attack);
+                result3.Add(atk.ConditionalAttack);
+                return result3;
+            }
+
             if (DoesFulFillCondition(atk))
             {
-                return atk.ConditionalAttack;
+                _currentAtkClass = atk;
+                result3.Add(atk.ConditionalAttack);
+                return result3;
             }
             else
             {
-                return atk.attack;
+                _currentAtkClass = atk;
+                result3.Add(atk.attack);
+                return result3;
             }
         }
 
-
-        return atk.attack;
+        _currentAtkClass = atk;
+        result3.Add(atk.attack);
+        return result3;
     }
 
     public void TryRemoveStatus(Status.StatusEnum status)
@@ -484,8 +517,11 @@ public abstract class Character : MonoBehaviour, ICharacter
             _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
             transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => GetComponent<SpriteRenderer>().enabled = false);
         }
-
         _status.Add(status);
+        if (status.status == Status.StatusEnum.Taunting)
+        {
+            _refs.fightManager.ResetTargets();
+        }
     }
 
     [Button]

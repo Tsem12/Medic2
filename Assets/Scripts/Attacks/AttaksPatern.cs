@@ -18,8 +18,12 @@ public class AttackClass
         None,
         HpLowerThan,
         HpHiggerThan,
-        HpBarLost
+        HpBarLost,
+        Random
     }
+
+    [Range(1, 3)]
+    public int nrbOfTargets;
 
     public ConditionMode attackConditionsMode;
     public AttacksObject attack;

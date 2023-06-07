@@ -6,7 +6,8 @@ public class CardSeter : MonoBehaviour
 {
     [SerializeField] CardDeckBuilder deck;
     [SerializeField] Card[] cards;
-    void Start()
+
+    private void OnValidate()
     {
         cards[0].carBase = deck.deck[0];
         cards[1].carBase = deck.deck[1];
