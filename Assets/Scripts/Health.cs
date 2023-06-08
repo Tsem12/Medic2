@@ -28,12 +28,17 @@ public class Health : MonoBehaviour
 
     public int CurrentHealthBarAmount { get => _currentHealthBarAmount; }
 
-    private void Start()
+    private void Awake()
     {
         _healthPoints.Clear();
         _character = GetComponent<Character>();
-
         _currentHealthBarAmount = _character.GetMaxHealthBar();
+        
+    }
+    private void Start()
+    {
+
+
 
         for (int i = 0; i < _character.GetMaxHealth(); i++)
         {

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
+  m_Name: BOSS_Orc
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  numberOfHealthBar: 3
+  baseSpeed: 100
+  baseAgroValue: 0
+  attacksPatern:
+  - paternName: BasicATK
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 1
+      attackConditionsMode: 1
+      attack: {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
+      condition: 3
+      ConditionalAttack: {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
+      percentageValue: 0
+      value: 1
+  - paternName: Stun
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 1
+      attackConditionsMode: 1
+      attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+      condition: 3
+      ConditionalAttack: {fileID: 11400000, guid: 1ee55a77b4a67564a914f6db6e290cb6, type: 2}
+      percentageValue: 0
+      value: 1
+  attacksEvent: []
