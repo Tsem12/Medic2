@@ -40,7 +40,10 @@ public class Card : MonoBehaviour,IInteractable
                 return false;
             }
             Debug.Log("PlayCard");
-            carBase.ApplyEffectOfTheCard(collision.gameObject.GetComponent<Character>());
+            if(!carBase.ApplyEffectOfTheCard(collision.gameObject.GetComponent<Character>()))
+            {
+                return false;
+            }
             return true;
         }
         return false;

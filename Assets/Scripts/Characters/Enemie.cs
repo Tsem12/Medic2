@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,6 +50,7 @@ public class Enemie : Character
             if (!c.IsDead() && c.GetStatus(Status.StatusEnum.Disapeared) == null)
             {
                 chara.Add(c);
+                c.ClearIncomingAttacks();
             }
         }
 
@@ -63,10 +65,10 @@ public class Enemie : Character
             Status status = c.GetStatus(Status.StatusEnum.Taunting);
             if(status != null)
             {
-                for(int i = 0; i < _currentAtkClass.nrbOfTargets; i++)
+                for(int i = 0; i < Mathf.Min(_currentAtkClass.nrbOfTargets, _refs.fightManager.PartyMembersList.Count); i++)
                 {
                     _targets.Add(c);
-                    c.SetIncommingAttack(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
+                    c.SetIncommingAttack(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)], i);
                 }
                 return;
             }
@@ -74,7 +76,7 @@ public class Enemie : Character
 
         int tempGlobalAgro = _refs.fightManager.GlobalAgro;
 
-        for (int i = 0 ; i < _currentAtkClass.nrbOfTargets; i++)
+        for (int i = 0 ; i < Mathf.Min(_currentAtkClass.nrbOfTargets, _refs.fightManager.PartyMembersList.Count); i++)
         {
             int random = Random.Range(0, 101);
             float others = 0f;
@@ -119,5 +121,16 @@ public class Enemie : Character
     public override int GetMaxHealthBar()
     {
         return _characterObj.numberOfHealthBar;
+    }
+
+    public override void ClearIncomingAttacks()
+    {
+        base.ClearIncomingAttacks();
+    }
+
+    protected override void Attack()
+    {
+        base.Attack();
+        _spriteRenderer.transform.DOScale(Vector3.one * 1.5f, 0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
     }
 }

@@ -13,8 +13,10 @@ public class Health : MonoBehaviour
     [SerializeField] private AllReferences _refs;
 
     private ICharacter _character;
+    private Tweener _tweener;
     private int _currentHealthBarAmount;
 
+    [SerializeField] private Transform _gfx;
     [Header("layout group")]
     [SerializeField] private GameObject _healthPoint;
     [SerializeField] private GameObject _healthBarCount;
@@ -45,12 +47,12 @@ public class Health : MonoBehaviour
             _hpRect.Add(hp.GetComponent<RectTransform>());
             _healthPoints.Add(hp);
         }
-        if( _healthPoints.Count > 1)
-        {
-            _layerGroupHealthpoint.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroupHealthpoint.spacing * _healthPoints.Count - 1)) / 2;
-        }
+        //if( _healthPoints.Count > 1)
+        //{
+        //    _layerGroupHealthpoint.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroupHealthpoint.spacing * _healthPoints.Count - 1)) / 2;
+        //}
 
-        if(_layerGroupHealthBar != null)
+        if (_layerGroupHealthBar != null)
         {
             for (int i = 0; i < _character.GetMaxHealthBar(); i++)
             {
@@ -58,31 +60,33 @@ public class Health : MonoBehaviour
                 _healthBars.Add(obj);
             }
 
-            Invoke("SetPos", 0.05f);
+            //    Invoke("SetPos", 0.05f);
         }
 
-        
+
     }
 
-    private void SetPos()
-    {
-        //_layerGroupHealthBar.GetComponent<RectTransform>().Translate(_healthPoints[0].GetComponent<RectTransform>().localPosition);
-        _layerGroupHealthBar.GetComponent<RectTransform>().localPosition +=  new Vector3(_healthPoints[0].GetComponent<RectTransform>().localPosition.x + 50, 0, 0) * 2 ;
-    }
+    //private void SetPos()
+    //{
+    //    //_layerGroupHealthBar.GetComponent<RectTransform>().Translate(_healthPoints[0].GetComponent<RectTransform>().localPosition);
+    //    _layerGroupHealthBar.GetComponent<RectTransform>().localPosition +=  new Vector3(_healthPoints[0].GetComponent<RectTransform>().localPosition.x + 50, 0, 0) * 2 ;
+    //}
 
     public void TakeDamage(int value)
     {
 
         Status status = _character.GetStatus(Status.StatusEnum.Sleeped);
-        if(status != null)
+        if (status != null)
         {
             _character.TryRemoveStatus(Status.StatusEnum.Sleeped);
             _character.AddStatus(new Status(Status.StatusEnum.Stunned, 2));
             Status d = _character.GetStatus(Status.StatusEnum.Stunned);
         }
 
+        TweenTakeDamage(0.1f);
+
         int newHealth = _character.GetCurrentHealth() - value;
-        if(newHealth <= 0)
+        if (newHealth <= 0)
         {
             _currentHealthBarAmount -= 1;
             if (_currentHealthBarAmount <= 0)
@@ -90,7 +94,7 @@ public class Health : MonoBehaviour
                 if (_refs.fightManager.EnableDebug)
                     Debug.Log($"{gameObject.name} have been killed");
 
-                foreach(HealtPoint hp in _healthPoints)
+                foreach (HealtPoint hp in _healthPoints)
                 {
                     hp.ValidHp.sprite = hp.Colors[hp.Colors.Length - 1];
                 }
@@ -105,7 +109,7 @@ public class Health : MonoBehaviour
                 _refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar);
                 foreach (HealtPoint hp in _healthPoints)
                 {
-                    if(_currentHealthBarAmount <= 1)
+                    if (_currentHealthBarAmount <= 1)
                     {
                         hp.ValidHp.sprite = hp.Colors[hp.Colors.Length - 1];
                     }
@@ -114,17 +118,21 @@ public class Health : MonoBehaviour
                         hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount + 1];
                     }
                 }
-                for(int i = 0; i < _character.GetCurrentHealth(); i++)
+                for (int i = 0; i < _character.GetCurrentHealth(); i++)
                 {
                     _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+                }
+                for(int i = _character.GetCurrentHealth(); i < _character.GetMaxHealth(); i++)
+                {
+                    TakeHealthBarDamageTweener(i);
                 }
                 return;
             }
         }
 
-        for(int i = newHealth; i < newHealth + value; i++)
+        for (int i = newHealth; i < newHealth + value; i++)
         {
-            TakeDamageTweener(i);
+            TakeHealthBarDamageTweener(i);
             if (_currentHealthBarAmount <= 1)
             {
                 _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_healthPoints[i].Colors.Length - 1];
@@ -138,7 +146,15 @@ public class Health : MonoBehaviour
         _character.SetCurrentHealth(newHealth);
     }
 
-    private void TakeDamageTweener(int i)
+    private void TweenTakeDamage(float value)
+    {
+        if (_tweener == null)
+        {
+            _tweener = _gfx.DOShakePosition(0.5f, value).SetEase(Ease.InFlash).OnComplete(() => _tweener = null);
+        }
+    }
+
+    private void TakeHealthBarDamageTweener(int i)
     {
         Tweener scale = _hpRect[i].DOScale(Vector3.one * 1.5f, 0.25f);
         Sequence sequence = DOTween.Sequence();
@@ -172,10 +188,17 @@ public class Health : MonoBehaviour
             }
             else
             {
-                foreach (HealtPoint hp in _healthPoints)
+                Sequence sequence1 = DOTween.Sequence();
+                for(int i = _character.GetCurrentHealth(); i < _character.GetMaxHealth(); i++)
                 {
-                    hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+                    sequence1.Append(_healthPoints[i].GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+                    _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
                 }
+                //foreach (HealtPoint hp in _healthPoints)
+                //{
+                //    sequence1.Append(hp.GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+                //    hp.ValidHp.sprite = hp.Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+                //}
             }
             _character.SetCurrentHealth(_character.GetMaxHealth());
             return;

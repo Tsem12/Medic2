@@ -174,6 +174,7 @@ public class AttacksObject : ScriptableObject
         return null;
     }
 
+
     public Sprite GetAttackSprite(FightManager fm)
     {
         switch (attackEffects)

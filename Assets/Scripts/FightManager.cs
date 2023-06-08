@@ -252,7 +252,7 @@ public class FightManager : MonoBehaviour
                 {
                     if (_enableDebug)
                         Debug.Log("GAME OVER");
-
+                    _enemie.ClearAllStatus();
                     _state = FightState.None;
                     yield break;
                 }
@@ -288,6 +288,7 @@ public class FightManager : MonoBehaviour
         else
         {
             Debug.Log("GAMEOVER");
+            _enemie.ClearAllStatus();
         }
     }
 
