@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private AllReferences _refs;
 
-    private ICharacter _character;
+    private Character _character;
     private Tweener _tweener;
     private int _currentHealthBarAmount;
 
@@ -219,7 +219,7 @@ public class Health : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         foreach (RectTransform rect in list)
         {
-            sequence.Append(rect.DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+            sequence.Append(rect.DOMoveY(1.5f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
 
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} have been healed");
