@@ -22,20 +22,23 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+      selfStatus: 0
+      attack: {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+      selfStatus: 0
+      attack: {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
       attackConditionsMode: 0
+      selfStatus: 0
       attack: {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
@@ -46,20 +49,23 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+      selfStatus: 0
+      attack: {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+      selfStatus: 0
+      attack: {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
       attackConditionsMode: 1
+      selfStatus: 0
       attack: {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
@@ -70,7 +76,8 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+      selfStatus: 0
+      attack: {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
       percentageValue: 0
@@ -80,6 +87,7 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
+      selfStatus: 0
       attack: {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
@@ -90,6 +98,7 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
+      selfStatus: 0
       attack: {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
       condition: 0
       ConditionalAttack: {fileID: 0}
