@@ -6,6 +6,7 @@ public class Status
 {
     public enum StatusEnum
     {
+        None,
         Strengthened,
         Initiative,
         Regenerating,

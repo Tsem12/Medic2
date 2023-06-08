@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PartyMember : Character, IHealable
     [SerializeField] private Image _bossAttackImage;
     [SerializeField] private Image _nextAttackImage;
     [SerializeField] private BossAttacksIndicator _bossIndicator;
+    [SerializeField] private RectTransform _arrowForBoss;
 
 
     private void Start()
@@ -20,13 +22,18 @@ public class PartyMember : Character, IHealable
         AssignValues();
         _currentHealth = _maxHealth;
         _refs.fightManager.OnTurnEnd += () => _bossIndicator.Clear();
-        _refs.fightManager.OnTurnEnd += () => _nextAttackImage.gameObject.SetActive(false);
+        _refs.fightManager.OnTurnEnd += () => _arrowForBoss.gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
         _refs.fightManager.OnTurnEnd -= () => _bossIndicator.Clear();
-        _refs.fightManager.OnTurnEnd -= () => _nextAttackImage.gameObject.SetActive(false);
+        _refs.fightManager.OnTurnEnd -= () => _arrowForBoss.gameObject.SetActive(false);
+    }
+
+    private void Awake()
+    {
+        _arrowForBoss.DOLocalMoveY(0.05f, 0.25f).SetEase(Ease.InOutBounce).SetLoops(-1, LoopType.Yoyo);
     }
 
     public override void AssignValues()
@@ -68,7 +75,7 @@ public class PartyMember : Character, IHealable
         if (stunned != null || restrained != null || sleep != null || IsDead())
             return;
 
-        _nextAttackImage.gameObject.SetActive(true);
+        _arrowForBoss.gameObject.SetActive(true);
         _nextAttackImage.sprite = sprite;
     }
 
@@ -111,5 +118,11 @@ public class PartyMember : Character, IHealable
     public override int GetMaxHealthBar()
     {
         return 1;
+    }
+
+    protected override void Attack()
+    {
+        base.Attack();
+        _spriteRenderer.transform.DOScale(Vector3.one * .5f,0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
     }
 }
