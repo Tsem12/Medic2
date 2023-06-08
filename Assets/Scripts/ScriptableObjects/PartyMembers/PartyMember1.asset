@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: PartyMember1
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 4
   numberOfHealthBar: 1
   baseSpeed: 15
   baseAgroValue: 100
@@ -20,10 +20,14 @@ MonoBehaviour:
   - paternName: patern 1
     interuptMode: 0
     attacks:
-    - attackConditionsMode: 0
-      attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+    - nrbOfTargets: 1
+      attackConditionsMode: 0
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 1ee55a77b4a67564a914f6db6e290cb6, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack:
+      - {fileID: 0}
       percentageValue: 0
       value: 0
   attacksEvent: []

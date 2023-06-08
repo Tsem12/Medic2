@@ -42,9 +42,12 @@ public class StatusBarManager : MonoBehaviour
             else
             {
                 _statusTimerImages[index].sprite = GetTimerSprite(status.remainTurn);
+                TimerTween(index);
             }
             index++;
         }
+
+
 
         //foreach(Image img in _statusImages)
         //{
@@ -61,6 +64,13 @@ public class StatusBarManager : MonoBehaviour
                 RemoveTween(_statusImages[i].rectTransform);
             }
         }
+    }
+
+    private void TimerTween(int index)
+    {
+        Sequence timerSequence = DOTween.Sequence();
+        timerSequence.Append(_statusTimerImages[index].rectTransform.DOShakeRotation(0.5f).SetEase(Ease.OutBounce));
+        timerSequence.Join(_statusTimerImages[index].rectTransform.DOScale(1.5f, 0.5f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo));
     }
 
     private void RemoveTween(RectTransform rect)

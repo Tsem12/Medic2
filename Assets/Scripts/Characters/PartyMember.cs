@@ -58,7 +58,7 @@ public class PartyMember : Character, IHealable
     }
     public override Sprite GetNextAttackSprite()
     {
-         return _nextPossibleAttacks[0].GetAttackSprite(_refs.fightManager);
+         return _targetsAttacks[0].GetAttackSprite(_refs.fightManager);
     }
 
     public override void SetBossAttackPreview(Sprite sprite)
@@ -100,8 +100,12 @@ public class PartyMember : Character, IHealable
     public override void SetTarget()
     {
         _targets.Clear();
+        _targetsAttacks.Clear();
         if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(global::Status.StatusEnum.Disapeared) == null)
+        {
             _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
+            _targetsAttacks.Add(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
+        }
     }
 
     public override void SetCurrentHealth(int newValue)

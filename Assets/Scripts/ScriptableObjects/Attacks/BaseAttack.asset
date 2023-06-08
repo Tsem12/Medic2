@@ -15,8 +15,8 @@ MonoBehaviour:
   attackName: base attack
   description: 
   attackSpriteOverRide: {fileID: 0}
-  isLifeSteal: 1
-  atkDamage: 3
+  isLifeSteal: 0
+  atkDamage: 1
   attackEffects: 0
   dotAttacks: 0
   buff: 3
