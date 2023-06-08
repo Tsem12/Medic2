@@ -120,7 +120,7 @@ public class CardBase : ScriptableObject
                 }
                 break;
             case CardBehaviour.panacea:
-                foreach (var item in partyMember._status)
+                foreach (var item in partyMember.Status)
                 {
                     partyMember.TryRemoveStatus(item.status);
                 }

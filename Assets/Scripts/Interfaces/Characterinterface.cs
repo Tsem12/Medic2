@@ -31,5 +31,6 @@ public interface ICharacter
     public void CheckStatus();
     public void ClearIncomingAttacks();
     public void ClearAllStatus();
+    public void UpdateBar();
 }
 

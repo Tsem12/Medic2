@@ -68,9 +68,9 @@ public class PartyMember : Character, IHealable
 
     public override void SetPartyMemberAttackPreview(Sprite sprite)
     {
-        Status stunned = GetStatus(Status.StatusEnum.Stunned);
-        Status restrained = GetStatus(Status.StatusEnum.Restrained);
-        Status sleep = GetStatus(Status.StatusEnum.Sleeped);
+        Status stunned = GetStatus(global::Status.StatusEnum.Stunned);
+        Status restrained = GetStatus(global::Status.StatusEnum.Restrained);
+        Status sleep = GetStatus(global::Status.StatusEnum.Sleeped);
 
         if (stunned != null || restrained != null || sleep != null || IsDead())
             return;
@@ -100,7 +100,7 @@ public class PartyMember : Character, IHealable
     public override void SetTarget()
     {
         _targets.Clear();
-        if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(Status.StatusEnum.Disapeared) == null)
+        if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(global::Status.StatusEnum.Disapeared) == null)
             _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
     }
 

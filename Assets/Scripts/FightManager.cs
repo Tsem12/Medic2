@@ -177,9 +177,9 @@ public class FightManager : MonoBehaviour
 
     private bool ArePartyStillAlive()
     {
-        foreach(ICharacter chara in PartyMembersList)
+        foreach (ICharacter chara in PartyMembersList)
         {
-            if(!chara.IsDead())
+            if(CharacterList.Contains(chara))
                 return true;
         }
         return false;
