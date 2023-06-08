@@ -8,7 +8,6 @@ public class Card : MonoBehaviour, IInteractable
     public CardBase carBase;
     [SerializeField] AllReferences refs;
     [SerializeField] InputHandlerObject inputObject;
-    [SerializeField] CardDeckBuilder deckBuilder;
     [SerializeField] CardHandlerObject handlerObject;
     [SerializeField] BoxCollider2D col;
     [SerializeField] SpriteRenderer myRender;
@@ -19,23 +18,15 @@ public class Card : MonoBehaviour, IInteractable
     [SerializeField] ManaObject manaObject;
     bool effectWasApplied = false;
 
-    private void Start()
+    public void Init()
     {
-        if(index == -1) 
-        { 
-            
-        }
-        else
-        {
-            carBase = deckBuilder.deck[index];
-            carBase.manaObject.manaAddTurn += CheckIfInteractable;
-            refs.fightManager.OnTurnEnd += EndInteractable;
-            refs.fightManager.OnTurnBegin += EnableTurn;
-            CheckIfInteractable();
-            UpdateCard();
-            carBase.manaObject.manaUpdate += CheckIfInteractable;
-            handlerObject.switchCard += SwitchUpdate;
-        }
+        CheckIfInteractable();
+        UpdateCard();
+        carBase.manaObject.manaAddTurn += CheckIfInteractable;
+        refs.fightManager.OnTurnEnd += EndInteractable;
+        refs.fightManager.OnTurnBegin += EnableTurn;
+        carBase.manaObject.manaUpdate += CheckIfInteractable;
+        handlerObject.switchCard += SwitchUpdate;
     }
 
     public bool ApplyEffect()
@@ -133,6 +124,7 @@ public class Card : MonoBehaviour, IInteractable
             {
                 ExChangeCard(other);
                 other.HideCard();
+                HideCard();
             }
         }
     }

@@ -6,32 +6,21 @@ using UnityEngine;
 public class SwitchCardButton : MonoBehaviour
 {
     [SerializeField] CardHandlerObject cardHandler;
-    [SerializeField] CardDeckBuilder deck;
     [SerializeField] AllReferences refs;
     [SerializeField] Collider2D[] colToHide;
-    [SerializeField] List<GameObject> cardsToHide;
-    [SerializeField] List<CardBase> everyBase;
+    [SerializeField] GameObject cardsToHide;
+    bool wasHit = false;
 
     private void Awake()
     {
         cardHandler.isChaningCards = false;
     }
+
     private void Start()
     {
-        foreach (var item in everyBase)
-        {
-            if(deck.deck.Contains(item))
-            {
-                everyBase.Remove(item);
-            }
-        }
-        for (int i = 0; i < everyBase.Count; i++)
-        {
-            cardsToHide[i].GetComponent<Card>().carBase = everyBase[i];
-        }
-
-        cardHandler.SwitchUpdate();
         refs.fightManager.OnTurnEnd += Hide;
+        refs.fightManager.OnTurnBegin += ShowButton;
+        refs.fightManager.OnTurnEnd += HideButton;
     }
 
     public void Show()
@@ -40,26 +29,49 @@ public class SwitchCardButton : MonoBehaviour
         {
             item.enabled = false;
         }
-        foreach (var item in cardsToHide)
-        {
-            item.SetActive(true);
-        }
-        
+        cardsToHide.SetActive(true);
+
+
         cardHandler.isChaningCards = true;
         cardHandler.SwitchUpdate();
     }
 
     public void Hide()
     {
+        if(wasHit)
+        {
+            wasHit = false;
+        }
         foreach (var item in colToHide)
         {
             item.enabled = true;
         }
-        foreach (var item in cardsToHide)
-        {
-            item.SetActive(false);
-        }
+        cardsToHide.SetActive(false);
         cardHandler.isChaningCards = false;
         cardHandler.SwitchUpdate();
+    }
+
+    public void OnClick()
+    {
+        wasHit = !wasHit;
+
+        if(wasHit)
+        {
+            Show();
+        }
+        else
+        {
+            Hide();
+        }
+    }
+
+    void HideButton()
+    {
+        transform.gameObject.SetActive(false);
+    }
+
+    void ShowButton()
+    {
+        transform.gameObject.SetActive(true);
     }
 }
