@@ -19,6 +19,7 @@ public class AttackClass
         HpLowerThan,
         HpHiggerThan,
         HpBarLost,
+        HpBarNotLost,
         Random
     }
 

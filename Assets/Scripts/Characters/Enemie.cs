@@ -47,7 +47,7 @@ public class Enemie : Character
 
         foreach(ICharacter c in _refs.fightManager.PartyMembers)
         {
-            if (!c.IsDead() && c.GetStatus(Status.StatusEnum.Disapeared) == null)
+            if (!c.IsDead() && c.GetStatus(global::Status.StatusEnum.Disapeared) == null)
             {
                 chara.Add(c);
                 c.ClearIncomingAttacks();
@@ -62,7 +62,7 @@ public class Enemie : Character
         foreach(ICharacter c in chara)
         {
             c.ClearIncommingAttack();
-            Status status = c.GetStatus(Status.StatusEnum.Taunting);
+            Status status = c.GetStatus(global::Status.StatusEnum.Taunting);
             if(status != null)
             {
                 for(int i = 0; i < Mathf.Min(_currentAtkClass.nrbOfTargets, _refs.fightManager.PartyMembersList.Count); i++)
