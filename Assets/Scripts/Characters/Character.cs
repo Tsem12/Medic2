@@ -204,10 +204,12 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
 
             Status disapear = target.GetStatus(global::Status.StatusEnum.Disapeared);
+            Status shield = target.GetStatus(global::Status.StatusEnum.Shielded);
             Status s = target.GetStatus(global::Status.StatusEnum.ShieldedWithReflect);
             AttacksObject atk = _nextPossibleAttacks[Random.Range(0,_nextPossibleAttacks.Count)];
-            if(disapear != null)
+            if(disapear != null || shield != null)
             {
+                Debug.Log("AttackBloked");
                 return;
             }
             if (s != null)
@@ -219,6 +221,10 @@ public abstract class Character : MonoBehaviour, ICharacter
             {
                 target.AddStatus(atk.GetStatus());
                 target.TakeDamage(atk, additionalDamage);
+                if(atk.isLifeSteal)
+                {
+                    _health.Heal(Mathf.Max(atk.atkDamage + additionalDamage, 0), charaType != PartyMemberEnum.Boss);
+                }
             }
 
         }
@@ -265,13 +271,6 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         if (attack.atkDamage < 0)
             return;
-
-        Status shield = GetStatus(global::Status.StatusEnum.Shielded);
-        if (shield != null)
-        {
-            Debug.Log("AttackBloked");
-            return;
-        }
 
         _health.TakeDamage(Mathf.Max(attack.atkDamage + additionalDamage, 0));
     }
