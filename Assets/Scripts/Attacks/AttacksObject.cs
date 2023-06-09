@@ -200,6 +200,8 @@ public class AttacksObject : ScriptableObject
                         return fm.Poisoned;
                     case DotAttacks.Restrain:
                         return fm.Restrained;
+                    case DotAttacks.Fire:
+                        return fm.Fire;
                 }
                 break;
             case AttackEffects.Buff:
@@ -214,6 +216,10 @@ public class AttacksObject : ScriptableObject
                         return fm.Regenerating;
                     case Buff.Shield:
                         return fm.Shielded;
+                    case Buff.ReflectShield:
+                        return fm.ReflectShield;
+                    case Buff.Taunt:
+                        return fm.Taunt;
                 }
                 break;
             case AttackEffects.DeBuff:
@@ -226,6 +232,8 @@ public class AttacksObject : ScriptableObject
                         return fm.Fatigue;
                     case DeBuff.Sleeped:
                         return fm.Sleeped;
+                    case DeBuff.Disapearance:
+                        return fm.Disapear;
                 }
                 break;
         }

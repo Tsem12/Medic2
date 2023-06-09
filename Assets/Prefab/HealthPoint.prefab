@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _validHp: {fileID: 497919077187085983}
+  _InValidHp: {fileID: 3794630426658893501}
   _colors:
   - {fileID: 21300000, guid: b50cc8ee762a83441b8247d279bd62c9, type: 3}
   - {fileID: 21300000, guid: 95fa394616c877642b6d8b65098f5d97, type: 3}

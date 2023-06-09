@@ -20,7 +20,7 @@ MonoBehaviour:
   - paternName: 
     interuptMode: 2
     attacks:
-    - nrbOfTargets: 3
+    - nrbOfTargets: 1
       attackConditionsMode: 0
       selfStatus: 0
       attack:
