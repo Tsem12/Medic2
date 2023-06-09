@@ -10,44 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
-  m_Name: Archer
+  m_Name: PARTYPaladin
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 6
   numberOfHealthBar: 1
-  baseSpeed: 75
-  baseAgroValue: 40
+  baseSpeed: 25
+  baseAgroValue: 100
   attacksPatern:
-  - paternName: Basic + Fatigue
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 0
-      attack:
-      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
-      condition: 0
-      ConditionalAttack: []
-      percentageValue: 0
-      value: 0
-    - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 0
-      attack:
-      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
-      condition: 0
-      ConditionalAttack: []
-      percentageValue: 0
-      value: 0
-    - nrbOfTargets: 1
-      attackConditionsMode: 0
-      selfStatus: 0
-      attack:
-      - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
-      condition: 0
-      ConditionalAttack: []
-      percentageValue: 0
-      value: 0
-  - paternName: Basic + Poison
+  - paternName: Basic + Stun
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
@@ -72,7 +42,61 @@ MonoBehaviour:
       attackConditionsMode: 1
       selfStatus: 0
       attack:
-      - {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
+      - {fileID: 11400000, guid: bee4728cdfb11b8408e3285a8867f704, type: 2}
+      condition: 0
+      ConditionalAttack: []
+      percentageValue: 0
+      value: 0
+  - paternName: Basic + Taunt
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 1
+      attackConditionsMode: 1
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
+      condition: 0
+      ConditionalAttack: []
+      percentageValue: 0
+      value: 0
+    - nrbOfTargets: 1
+      attackConditionsMode: 1
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
+      condition: 0
+      ConditionalAttack: []
+      percentageValue: 0
+      value: 0
+    - nrbOfTargets: 1
+      attackConditionsMode: 1
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 0f62e0ca7efb2574f90016fc94a59714, type: 2}
+      condition: 0
+      ConditionalAttack: []
+      percentageValue: 0
+      value: 0
+  - paternName: Taunt
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 1
+      attackConditionsMode: 1
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 0f62e0ca7efb2574f90016fc94a59714, type: 2}
+      condition: 0
+      ConditionalAttack: []
+      percentageValue: 0
+      value: 0
+  - paternName: Stun
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 1
+      attackConditionsMode: 1
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: bee4728cdfb11b8408e3285a8867f704, type: 2}
       condition: 0
       ConditionalAttack: []
       percentageValue: 0
@@ -85,31 +109,6 @@ MonoBehaviour:
       selfStatus: 0
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
-      condition: 0
-      ConditionalAttack:
-      - {fileID: 0}
-      percentageValue: 0
-      value: 0
-  - paternName: Poison
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 0
-      attack:
-      - {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
-      condition: 0
-      ConditionalAttack: []
-      percentageValue: 0
-      value: 0
-  - paternName: Fatigue
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 0
-      attack:
-      - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
       condition: 0
       ConditionalAttack: []
       percentageValue: 0

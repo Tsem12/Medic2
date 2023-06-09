@@ -345,7 +345,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 }
             case AttackClass.AttackConditions.HpBarNotLost:
                 //Debug.Log(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value);
-                if (_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
+                if (_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount > atk.value)
                 {
                     return false;
                 }
@@ -455,7 +455,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             while(!DoesFulFillCondition(atk))
             {
-                if(nbrLoop > _characterObj.attacksPatern.Length)
+                if(nbrLoop > 10000)
                 {
                     throw new Exception("COMMENT TA REUSSI A FAIRE UNE INFINITE LOOP SALE MERDE");
                 }
@@ -474,6 +474,14 @@ public abstract class Character : MonoBehaviour, ICharacter
                     atk = _actualPatern.attackQueue.Dequeue();
                 }
             }
+
+            _currentAtkClass = atk;
+            foreach (AttacksObject atc in atk.ConditionalAttack)
+            {
+                result3.Add(atc);
+            }
+            _statusToApply = atk.selfStatus;
+            return result3;
         }
         else if (atk.attackConditionsMode == AttackClass.ConditionMode.UseBaseAttackWithoutCondition && atk.condition != AttackClass.AttackConditions.None)
         {
