@@ -395,9 +395,12 @@ public abstract class Character : MonoBehaviour, ICharacter
 
             foreach (AttackClass attack in patern.attacks)
             {
-                if (attack.attack == null)
+                foreach(AttacksObject atkObj in attack.attack)
                 {
-                    throw new System.Exception("Attacks in paterns cannot be empty YOU FUCKING NOOB GD SKQCUQVYSCK");
+                    if (attack.attack == null)
+                    { 
+                        throw new System.Exception("Y'a une couille dans le paté (ou une gd issue) mais y'a un élément vide dans la lisye d'attaque");
+                    }
                 }
             }
         }
