@@ -671,7 +671,6 @@ MonoBehaviour:
   _layerGroupHealthBar: {fileID: 0}
   _healthPoints: []
   _healthBars: []
-  _hpRect: []
 --- !u!1 &5299988829032740515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,10 +1019,10 @@ MonoBehaviour:
   - {fileID: 3591950280448915589}
   _timerImages:
   - {fileID: 21300000, guid: bb8172092f1c6624a9ba1571980d6d77, type: 3}
-  - {fileID: 21300000, guid: 0adf002bda490694f93079eeea3a0499, type: 3}
-  - {fileID: 21300000, guid: 0ff3b1c7be9ab6a4b864065e4657e66d, type: 3}
-  - {fileID: 21300000, guid: dfd0421eb031f6a4d819cb5a0b1b8f2e, type: 3}
-  - {fileID: 21300000, guid: fa9cafa44736d40448f8a6425e51e9c1, type: 3}
+  - {fileID: 21300000, guid: 3fc6dcbfc494e854f985fa973dab6e97, type: 3}
+  - {fileID: 21300000, guid: 76444c82f15847a4981d11124990bd91, type: 3}
+  - {fileID: 21300000, guid: 8c283123be0093e4f8731cfbc3d13d19, type: 3}
+  - {fileID: 21300000, guid: ab5855611d4e50243a80728f78db2966, type: 3}
   _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
   _chara: {fileID: 4110371021571469088}
 --- !u!1 &7891377947592855313
