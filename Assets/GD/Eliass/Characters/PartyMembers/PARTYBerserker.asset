@@ -26,7 +26,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
   attacksEvent: []

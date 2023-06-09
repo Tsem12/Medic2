@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f8d1e8efc19604aa27eb5c17f73c56, type: 3}
   m_Name: CATEvent1
   m_EditorClassIdentifier: 
-  attackName: Event1
+  attackName: CatEvent1
   description: 
-  attackSprite: {fileID: 0}
+  attackSpriteOverRide: {fileID: 0}
+  isLifeSteal: 0
   atkDamage: 1
   attackEffects: 3
   dotAttacks: 0

@@ -29,7 +29,7 @@ public class Status
 
     public int value;
 
-    public Status(StatusEnum status, int turnDuration)
+    public Status( StatusEnum status, int turnDuration)
     {
         this.status = status;
         this.turnDuration = turnDuration;
