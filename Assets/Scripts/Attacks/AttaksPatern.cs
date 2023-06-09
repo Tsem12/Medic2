@@ -28,9 +28,9 @@ public class AttackClass
 
     public ConditionMode attackConditionsMode;
     public Status.StatusEnum selfStatus;
-    public AttacksObject attack;
+    public AttacksObject[] attack;
     public AttackConditions condition;
-    public AttacksObject ConditionalAttack;
+    public AttacksObject[] ConditionalAttack;
     [Range(0f, 100f)]
     [Tooltip("for HpLowerThan & HpHiggerThan value = percentage of health")]
     public int percentageValue;

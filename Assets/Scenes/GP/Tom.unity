@@ -1048,19 +1048,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2323402816894447828, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2036309
+      value: 1.6603855
       objectReference: {fileID: 0}
     - target: {fileID: 2323402816894447828, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.2926304
+      value: 3.1626394
       objectReference: {fileID: 0}
     - target: {fileID: 2323402816894447828, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.2926304
+      value: 3.1626394
       objectReference: {fileID: 0}
     - target: {fileID: 2323402816894447828, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -470
+      value: -438
       objectReference: {fileID: 0}
     - target: {fileID: 2323402816894447828, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1652,7 +1652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4110371021571469088, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: _maxHealth
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4110371021571469088, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: _arrowForBoss
@@ -5792,7 +5792,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326709405}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7460db8e3ac19434b80c5769127cd5ef, type: 3}
@@ -8615,6 +8615,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7658557950020520040, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
       propertyPath: _statusImages.Array.data[12]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658557950020520040, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
+      propertyPath: _statusTimerImages.Array.data[12]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7702374685880572316, guid: d6beb6669f6831943ae17dba36dde9f9, type: 3}
