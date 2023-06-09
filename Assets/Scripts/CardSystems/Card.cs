@@ -13,7 +13,7 @@ public class Card : MonoBehaviour, IInteractable
     [SerializeField] SpriteRenderer myRender;
     [SerializeField] SpriteRenderer usedRenderer;
     [SerializeField] float size = 0.5f;
-    [SerializeField] TextMeshProUGUI tmpro;
+    [SerializeField] TextMeshPro tmpro;
     [SerializeField] int index;
     [SerializeField] ManaObject manaObject;
     bool effectWasApplied = false;
@@ -160,7 +160,7 @@ public class Card : MonoBehaviour, IInteractable
         myRender.color = Color.white;
         usedRenderer.sprite = carBase.cardSprite;
         usedRenderer.color = Color.grey;
-        tmpro.text = carBase.manaCost.ToString();
+        tmpro.SetText(carBase.manaCost.ToString());
     }
 
     public void HideCard()
