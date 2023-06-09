@@ -24,7 +24,6 @@ public class Health : MonoBehaviour
     [SerializeField] private HorizontalLayoutGroup _layerGroupHealthBar;
     [SerializeField] private List<HealtPoint> _healthPoints = new List<HealtPoint>();
     [SerializeField] private List<GameObject> _healthBars = new List<GameObject>();
-    [SerializeField] private List<RectTransform> _hpRect = new List<RectTransform>();
 
     public int CurrentHealthBarAmount { get => _currentHealthBarAmount; }
 
@@ -44,7 +43,6 @@ public class Health : MonoBehaviour
         {
             GameObject obj = Instantiate(_healthPoint, _layerGroupHealthpoint.transform);
             HealtPoint hp = obj.GetComponent<HealtPoint>();
-            _hpRect.Add(hp.GetComponent<RectTransform>());
             _healthPoints.Add(hp);
         }
         //if( _healthPoints.Count > 1)
@@ -156,10 +154,10 @@ public class Health : MonoBehaviour
 
     private void TakeHealthBarDamageTweener(int i)
     {
-        Tweener scale = _hpRect[i].DOScale(Vector3.one * 1.5f, 0.25f);
+        Tweener scale = _healthPoints[i].ValidHp.rectTransform.DOScale(Vector3.one * 1.5f, 0.25f);
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(_hpRect[i].DOShakeAnchorPos(0.5f, 25f, 10, 90).SetEase(Ease.OutFlash));
-        sequence.Join(scale.OnComplete(() => _hpRect[i].DOScale(Vector3.one, 0.25f)));
+        sequence.Append(_healthPoints[i].ValidHp.rectTransform.DOShakeAnchorPos(0.5f, 25f, 10, 90).SetEase(Ease.OutFlash));
+        sequence.Join(scale.OnComplete(() => _healthPoints[i].ValidHp.rectTransform.DOScale(Vector3.one, 0.25f)));
     }
 
     [Button]
@@ -203,10 +201,10 @@ public class Health : MonoBehaviour
             _character.SetCurrentHealth(_character.GetMaxHealth());
             return;
         }
-        List<RectTransform> list = new List<RectTransform>();
+        List<HealtPoint> list = new List<HealtPoint>();
         for (int i = _character.GetCurrentHealth(); i < newHealth; i++)
         {
-            list.Add(_hpRect[i]);
+            list.Add(_healthPoints[i]);
             if (IsPartyMember)
             {
                 _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[0];
@@ -217,9 +215,10 @@ public class Health : MonoBehaviour
             }
         }
         Sequence sequence = DOTween.Sequence();
-        foreach (RectTransform rect in list)
+        foreach (HealtPoint hp in list)
         {
-            sequence.Append(rect.DOMoveY(5f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+            sequence.Append(hp.ValidHp.GetComponent<Image>().DOColor(Color.green, 0.25f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo).OnComplete(() => Debug.Log("sqdqsd")));
+            sequence.Append(hp.ValidHp.rectTransform.DOMoveY(4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
 
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} have been healed");
