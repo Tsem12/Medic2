@@ -202,7 +202,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
 
         int index = 0;
-        foreach(ICharacter target in _targets)
+        foreach(ICharacter target in _targets.ToList())
         {
 
             Status disapear = target.GetStatus(global::Status.StatusEnum.Disapeared);

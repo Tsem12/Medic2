@@ -22,23 +22,29 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: bee4728cdfb11b8408e3285a8867f704, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: bee4728cdfb11b8408e3285a8867f704, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
   - paternName: Basic + Taunt
@@ -46,23 +52,29 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: 0f62e0ca7efb2574f90016fc94a59714, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 0f62e0ca7efb2574f90016fc94a59714, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
   - paternName: Taunt
@@ -70,9 +82,11 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: 0f62e0ca7efb2574f90016fc94a59714, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 0f62e0ca7efb2574f90016fc94a59714, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
   - paternName: Stun
@@ -80,9 +94,11 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: bee4728cdfb11b8408e3285a8867f704, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: bee4728cdfb11b8408e3285a8867f704, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
   - paternName: Basic
@@ -90,9 +106,11 @@ MonoBehaviour:
     attacks:
     - nrbOfTargets: 1
       attackConditionsMode: 1
-      attack: {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: {fileID: 0}
+      ConditionalAttack: []
       percentageValue: 0
       value: 0
   attacksEvent: []
