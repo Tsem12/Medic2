@@ -119,7 +119,7 @@ public class CardBase : ScriptableObject
                 }
                 break;
             case CardBehaviour.panacea:
-                foreach (var item in partyMember._status)
+                foreach (var item in partyMember.Status)
                 {
                     partyMember.TryRemoveStatus(item.status);
                 }
@@ -143,6 +143,7 @@ public class CardBase : ScriptableObject
 
             case CardBehaviour.initiative:
                 partyMember.AddStatus(new Status(Status.StatusEnum.Initiative, 1));
+                refs.fightManager.OrderCharacters();
                 break;
 
             case CardBehaviour.blessingOfStrength:

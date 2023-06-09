@@ -30,5 +30,7 @@ public interface ICharacter
     public Sprite GetNextAttackSprite();
     public void CheckStatus();
     public void ClearIncomingAttacks();
+    public void ClearAllStatus();
+    public void UpdateBar();
 }
 

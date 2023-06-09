@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PartyMember : Character, IHealable
     [SerializeField] private Image _bossAttackImage;
     [SerializeField] private Image _nextAttackImage;
     [SerializeField] private BossAttacksIndicator _bossIndicator;
+    [SerializeField] private RectTransform _arrowForBoss;
 
 
     private void Start()
@@ -20,13 +22,18 @@ public class PartyMember : Character, IHealable
         AssignValues();
         _currentHealth = _maxHealth;
         _refs.fightManager.OnTurnEnd += () => _bossIndicator.Clear();
-        _refs.fightManager.OnTurnEnd += () => _nextAttackImage.gameObject.SetActive(false);
+        _refs.fightManager.OnTurnEnd += () => _arrowForBoss.gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
         _refs.fightManager.OnTurnEnd -= () => _bossIndicator.Clear();
-        _refs.fightManager.OnTurnEnd -= () => _nextAttackImage.gameObject.SetActive(false);
+        _refs.fightManager.OnTurnEnd -= () => _arrowForBoss.gameObject.SetActive(false);
+    }
+
+    private void Awake()
+    {
+        _arrowForBoss.DOLocalMoveY(0.05f, 0.25f).SetEase(Ease.InOutBounce).SetLoops(-1, LoopType.Yoyo);
     }
 
     public override void AssignValues()
@@ -51,7 +58,7 @@ public class PartyMember : Character, IHealable
     }
     public override Sprite GetNextAttackSprite()
     {
-         return _nextPossibleAttacks[0].GetAttackSprite(_refs.fightManager);
+         return _targetsAttacks[0].GetAttackSprite(_refs.fightManager);
     }
 
     public override void SetBossAttackPreview(Sprite sprite)
@@ -61,14 +68,14 @@ public class PartyMember : Character, IHealable
 
     public override void SetPartyMemberAttackPreview(Sprite sprite)
     {
-        Status stunned = GetStatus(Status.StatusEnum.Stunned);
-        Status restrained = GetStatus(Status.StatusEnum.Restrained);
-        Status sleep = GetStatus(Status.StatusEnum.Sleeped);
+        Status stunned = GetStatus(global::Status.StatusEnum.Stunned);
+        Status restrained = GetStatus(global::Status.StatusEnum.Restrained);
+        Status sleep = GetStatus(global::Status.StatusEnum.Sleeped);
 
         if (stunned != null || restrained != null || sleep != null || IsDead())
             return;
 
-        _nextAttackImage.gameObject.SetActive(true);
+        _arrowForBoss.gameObject.SetActive(true);
         _nextAttackImage.sprite = sprite;
     }
 
@@ -93,8 +100,12 @@ public class PartyMember : Character, IHealable
     public override void SetTarget()
     {
         _targets.Clear();
-        if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(Status.StatusEnum.Disapeared) == null)
+        _targetsAttacks.Clear();
+        if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(global::Status.StatusEnum.Disapeared) == null)
+        {
             _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
+            _targetsAttacks.Add(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
+        }
     }
 
     public override void SetCurrentHealth(int newValue)
@@ -111,5 +122,11 @@ public class PartyMember : Character, IHealable
     public override int GetMaxHealthBar()
     {
         return 1;
+    }
+
+    protected override void Attack()
+    {
+        base.Attack();
+        _spriteRenderer.transform.DOScale(Vector3.one * .5f,0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
     }
 }

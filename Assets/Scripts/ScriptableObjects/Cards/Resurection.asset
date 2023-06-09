@@ -22,6 +22,6 @@ MonoBehaviour:
   manaCost: 10
   healthHealed: 0
   turnActive: 0
-  healthPercentage: 100
+  healthPercentage: 50
   shieldBreakAfter: 0
   damageAdded: 0

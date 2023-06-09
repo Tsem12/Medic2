@@ -1,9 +1,10 @@
-Key,English,Français
-MainMenu.Button.level1,Level 1,Niveau 1
-MainMenu.Button.level2,Level 2,Niveau 2
-MainMenu.Button.level3,Level 3,Niveau 3
-MainMenu.Button.level4,Level 4,Niveau 4
-MainMenu.Button.level5,Level 5,Niveau 5
-OptionMenu.Button.Sfx,Sfx,Effets Sonores
-OptionMenu.Button.Music,Music,Musique
-Hud.Button.EndTurn,End Turn,Fin de Tour
+Key,English,Français,Allemand,Espagnol,Chinois,Japonais,Portuguais,Russe
+MainMenu.Button.level1,Level 1,Niveau 1,Level 1,Nivel 1,1級,レベル1,Nível 1,1-й уровень
+MainMenu.Button.level2,Level 2,Niveau 2,Level 2,Nivel 2,2級,レベル2,Nível 2,Уровень 2
+MainMenu.Button.level3,Level 3,Niveau 3,Level 3,Nivel 3,3級,レベル3,Nível 3,Уровень 3
+MainMenu.Button.level4,Level 4,Niveau 4,Level 4,Nivel 4,4級,レベル4,Nível 4,Уровень 4
+MainMenu.Button.level5,Level 5,Niveau 5,Level 5,Nivel 5,5級,レベル5,Nível 5,Уровень 5
+OptionMenu.Button.Sfx,Sfx,Effets Sonores,Soundeffekte,Efectos de sonido,聲音特效,音響効果,Efeitos sonoros,Звуковые эффекты
+OptionMenu.Button.Music,Music,Musique,Musik,Música,音樂,音楽,Música,Музыка
+OptionMenu.Button.Pause,Pause,Pause,Brechen,Romper,休息,壊す,Quebrar,Переры
+Hud.Button.EndTurn,End Turn,Fin de Tour,"Ende der Runde","fin de turno",回合結束,ターン終了時,Fim do turno,Конец хода

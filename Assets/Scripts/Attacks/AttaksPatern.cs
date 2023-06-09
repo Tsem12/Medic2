@@ -19,6 +19,7 @@ public class AttackClass
         HpLowerThan,
         HpHiggerThan,
         HpBarLost,
+        HpBarNotLost,
         Random
     }
 
@@ -26,9 +27,10 @@ public class AttackClass
     public int nrbOfTargets;
 
     public ConditionMode attackConditionsMode;
-    public AttacksObject attack;
+    public Status.StatusEnum selfStatus;
+    public AttacksObject[] attack;
     public AttackConditions condition;
-    public AttacksObject ConditionalAttack;
+    public AttacksObject[] ConditionalAttack;
     [Range(0f, 100f)]
     [Tooltip("for HpLowerThan & HpHiggerThan value = percentage of health")]
     public int percentageValue;

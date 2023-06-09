@@ -177,9 +177,9 @@ public class FightManager : MonoBehaviour
 
     private bool ArePartyStillAlive()
     {
-        foreach(ICharacter chara in PartyMembersList)
+        foreach (ICharacter chara in PartyMembersList)
         {
-            if(!chara.IsDead())
+            if(CharacterList.Contains(chara))
                 return true;
         }
         return false;
@@ -252,7 +252,7 @@ public class FightManager : MonoBehaviour
                 {
                     if (_enableDebug)
                         Debug.Log("GAME OVER");
-
+                    _enemie.ClearAllStatus();
                     _state = FightState.None;
                     yield break;
                 }
@@ -268,10 +268,10 @@ public class FightManager : MonoBehaviour
         }
         _state = FightState.None;
 
-        _enemie.CheckStatus();
-        foreach(ICharacter c in _partyMembers)
+        foreach(ICharacter c in CharacterList)
         {
             c.CheckStatus();
+            c.UpdateBar();
         }
 
         if (_enemie.GetComponent<ICharacter>().IsDead())
@@ -288,6 +288,7 @@ public class FightManager : MonoBehaviour
         else
         {
             Debug.Log("GAMEOVER");
+            _enemie.ClearAllStatus();
         }
     }
 
