@@ -581,6 +581,7 @@ MonoBehaviour:
     difficulty: 0
     musicVolume: 1
     sfxVolume: 1
+    Language: "Fran\xE7ais"
 --- !u!1 &368381343
 GameObject:
   m_ObjectHideFlags: 0
