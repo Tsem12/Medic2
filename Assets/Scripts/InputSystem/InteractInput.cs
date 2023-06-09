@@ -8,7 +8,6 @@ interface IInteractable
     public void Cancel();
 }
 
-
 public class InteractInput : MonoBehaviour
 {
     [SerializeField] InputHandlerObject _inputs;
@@ -60,14 +59,16 @@ public class InteractInput : MonoBehaviour
     {
         while (true)
         {
-            _getObject.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
+            if(Input.touches.Length > 0)
+            {
+                _getObject.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
+            }
             yield return null;
         }
     }
 
     void CanceledDrop()
     {
-        //Debug.Log("TryCancel");
         if(_dragCoroutine != null)
         {
             if (_getObject != null) // Check if we got object to interact with
@@ -76,10 +77,10 @@ public class InteractInput : MonoBehaviour
                 {
                     _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
                 }
-                StopCoroutine(_dragCoroutine);
-                _dragCoroutine = null;
                 _getObject = null;
             }
+            StopCoroutine(_dragCoroutine);
+            _dragCoroutine = null;
         }
     }
 }

@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 
 public enum CardBehaviour
@@ -42,7 +41,7 @@ public class CardBase : ScriptableObject
     {
         get
         {
-            return cardBehaviour == CardBehaviour.heal || cardBehaviour == CardBehaviour.regeneration  || cardBehaviour == CardBehaviour.massHeal;
+            return cardBehaviour == CardBehaviour.heal || cardBehaviour == CardBehaviour.regeneration  || cardBehaviour == CardBehaviour.massHeal || cardBehaviour == CardBehaviour.panacea;
         }
     }
 
@@ -105,7 +104,7 @@ public class CardBase : ScriptableObject
                 int i = 0;
                 foreach (var item in refs.fightManager.PartyMembers)
                 {
-                    if (partyMember.GetCurrentHealth() > partyMember.GetMaxHealth())
+                    if (item.GetCurrentHealth() < item.GetMaxHealth() && !item.IsDead())
                     {
                         item.GetComponent<IHealable>().Heal(healthHealed);
                     }
@@ -114,7 +113,7 @@ public class CardBase : ScriptableObject
                         i++;
                     }
                 }
-                if(i == refs.fightManager.PartyMembers.Length)
+                if (i == refs.fightManager.PartyMembers.Length)
                 {
                     return false;
                 }
@@ -124,7 +123,7 @@ public class CardBase : ScriptableObject
                 {
                     partyMember.TryRemoveStatus(item.status);
                 }
-                if (partyMember.GetCurrentHealth() > partyMember.GetMaxHealth())
+                if (partyMember.GetCurrentHealth() < partyMember.GetMaxHealth() && !partyMember.IsDead())
                 {
                     partyMember.GetComponent<IHealable>().Heal(healthHealed);
                 }
