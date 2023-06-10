@@ -4832,7 +4832,7 @@ PrefabInstance:
     - target: {fileID: 328218438012091953, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: _characterObj
       value: 
-      objectReference: {fileID: 11400000, guid: d408365338653b94087e0636c9e162c2, type: 2}
+      objectReference: {fileID: 11400000, guid: 7a2cb830e498c5545879276bb5318b55, type: 2}
     - target: {fileID: 376838954093031558, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9744,7 +9744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.78341544, y: 0.16013582}
   m_AnchorMax: {x: 0.9708309, y: 0.21872836}
-  m_AnchoredPosition: {x: -3, y: 1187.0002}
+  m_AnchoredPosition: {x: -3, y: 1187.0004}
   m_SizeDelta: {x: 5, y: 5.483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1354745016

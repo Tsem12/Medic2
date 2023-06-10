@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: PARTYPaladin
   m_EditorClassIdentifier: 
-  maxHealth: 6
+  maxHealth: 10
   numberOfHealthBar: 1
   baseSpeed: 25
   baseAgroValue: 100
