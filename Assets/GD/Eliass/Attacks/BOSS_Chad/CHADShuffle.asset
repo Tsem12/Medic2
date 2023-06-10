@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f8d1e8efc19604aa27eb5c17f73c56, type: 3}
+  m_Name: CHADShuffle
+  m_EditorClassIdentifier: 
+  attackName: 
+  description: 
+  attackSpriteOverRide: {fileID: 0}
+  isLifeSteal: 0
+  atkDamage: 0
+  attackEffects: 0
+  dotAttacks: 0
+  buff: 0
+  deBuff: 0
+  dotValuePerTurn: 0
+  effectTurnDuration: 0
+  buffValue: 0
+  deBuffValue: 0
+  chanceToApplyEffect: 100
