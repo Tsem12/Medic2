@@ -12,9 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: BOSS_Kraqueen
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  numberOfHealthBar: 1
-  baseSpeed: 0
+  maxHealth: 30
+  numberOfHealthBar: 3
+  baseSpeed: 100
   baseAgroValue: 0
-  attacksPatern: []
+  attacksPatern:
+  - paternName: Part1
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 2
+      attackConditionsMode: 1
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
+      - {fileID: 11400000, guid: 6d7e4c20bd663664ca192d42919b9cbe, type: 2}
+      condition: 3
+      ConditionalAttack:
+      - {fileID: 11400000, guid: 174b760500d020f43aba6ae0f1a7f0d4, type: 2}
+      - {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
+      - {fileID: 11400000, guid: 6d7e4c20bd663664ca192d42919b9cbe, type: 2}
+      percentageValue: 0
+      value: 1
+  - paternName: Part2
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 3
+      attackConditionsMode: 0
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
+      condition: 3
+      ConditionalAttack:
+      - {fileID: 11400000, guid: 174b760500d020f43aba6ae0f1a7f0d4, type: 2}
+      - {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
+      - {fileID: 11400000, guid: 6d7e4c20bd663664ca192d42919b9cbe, type: 2}
+      percentageValue: 0
+      value: 2
   attacksEvent: []
