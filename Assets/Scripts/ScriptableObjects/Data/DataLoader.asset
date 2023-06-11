@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571e733676e0f4944b34098753abc2d8, type: 3}
   m_Name: DataLoader
   m_EditorClassIdentifier: 
-  levels: []
+  levels:
+  - levelName: Level1
+    boss: {fileID: 11400000, guid: aa7a173770016eb4ba53dde125494bc4, type: 2}
+    animator: {fileID: 0}
+    background: {fileID: 21300000, guid: 3bd1b385a0fcc1445b472e10fe5997bc, type: 3}
+  - levelName: Level2
+    boss: {fileID: 11400000, guid: d408365338653b94087e0636c9e162c2, type: 2}
+    animator: {fileID: 0}
+    background: {fileID: 21300000, guid: f0388859244ac5746bfc7581046328f4, type: 3}
+  - levelName: Level3
+    boss: {fileID: 11400000, guid: 7a2cb830e498c5545879276bb5318b55, type: 2}
+    animator: {fileID: 0}
+    background: {fileID: 21300000, guid: 1b35e7cf8d0b95a4ebd81f7578488665, type: 3}
+  - levelName: Level4
+    boss: {fileID: 11400000, guid: d408365338653b94087e0636c9e162c2, type: 2}
+    animator: {fileID: 0}
+    background: {fileID: 21300000, guid: c7d8f4b3be22f1d4e9ffb1f9d21817ea, type: 3}
