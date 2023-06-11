@@ -17,35 +17,40 @@ public abstract class Character : MonoBehaviour, ICharacter
         Paladin,
         Archer
     }
-    [SerializeField] private PartyMemberEnum charaType;
+    [Header("Refs")]
+    [SerializeField] private CharacterObjets characterObj;
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
     [SerializeField] protected StatusBarManager _statusBar;
+    [SerializeField] protected SpriteRenderer _spriteRenderer;
+    [SerializeField] private PartyMemberEnum charaType;
 
-    [SerializeField] protected CharacterObjets _characterObj;
-
-    [SerializeField] protected int _maxHealth;
+    [Header("Health")]
+    protected int _maxHealth;
     protected int _currentHealth;
     protected bool _isDead;
-    private Status.StatusEnum _statusToApply;
 
-    private bool _isPlaying;
-    [SerializeField] protected SpriteRenderer _spriteRenderer;
-
+    [Header("Attacks")]
     private Coroutine _attackRoutine;
     private AttacksPatern _actualPatern;
     protected AttackEvent _latetsAttackEvent;
     protected List<AttacksObject> _nextPossibleAttacks;
-    protected AttacksObject _nextAttack;
     protected List<AttacksObject> _incomingAttacks = new List<AttacksObject>();
+    protected List<AttacksObject> _targetsAttacks =  new List<AttacksObject>();
+    protected AttacksObject _nextAttack;
     protected AttackClass _currentAtkClass;
 
-    protected List<ICharacter> _targets =  new List<ICharacter>();
-    protected List<AttacksObject> _targetsAttacks =  new List<AttacksObject>();
+    [Header("Status")]
+    private Status.StatusEnum _statusToApply;
+    public List<Status> Status { get => status; set => status = value; }
+    public CharacterObjets CharacterObj { get => characterObj; set => characterObj = value; }
 
     private List<Status> status = new List<Status>();
 
-    public List<Status> Status { get => status; set => status = value; }
+
+    private bool _isPlaying;
+    protected List<ICharacter> _targets =  new List<ICharacter>();
+
 
     private void Awake()
     {
@@ -335,7 +340,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
             case AttackClass.AttackConditions.HpBarLost:
                 //Debug.Log($"{_health.CurrentHealthBarAmount} >= {atk.value}");
-                if(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
+                if(CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
                 {
                     return true;
                 }
@@ -345,7 +350,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 }
             case AttackClass.AttackConditions.HpBarNotLost:
                 //Debug.Log(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value);
-                if (_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount > atk.value)
+                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount > atk.value)
                 {
                     return false;
                 }
@@ -364,7 +369,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             case AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar:
 
-                foreach(AttackEvent atk in _characterObj.attacksEvent)
+                foreach(AttackEvent atk in CharacterObj.attacksEvent)
                 {
                     if(atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar && DoesFulFillCondition(atk.attack))
                     {
@@ -374,7 +379,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 break;
             case AttackEvent.SpecialAttacksTrigerMode.AllieBuffed:
 
-                foreach (AttackEvent atk in _characterObj.attacksEvent)
+                foreach (AttackEvent atk in CharacterObj.attacksEvent)
                 {
                     if (atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.AllieBuffed && DoesFulFillCondition(atk.attack))
                     {
@@ -386,7 +391,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     }
     public List<AttacksObject> GetAttack()
     {
-        foreach (AttacksPatern patern in _characterObj.attacksPatern)
+        foreach (AttacksPatern patern in CharacterObj.attacksPatern)
         {
             if (patern.attacks.Length <= 0)
             {
@@ -408,7 +413,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if (_actualPatern == null || _actualPatern.attackQueue.Count <= 0)
         {
-            _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
+            _actualPatern = CharacterObj.attacksPatern[Random.Range(0, CharacterObj.attacksPatern.Count())];
             _actualPatern.FillQueue();
         }
 
@@ -419,7 +424,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 case AttacksPatern.PaternInteruptMode.Interupt:
 
                     _actualPatern = null;
-                    _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
+                    _actualPatern = CharacterObj.attacksPatern[Random.Range(0, CharacterObj.attacksPatern.Count())];
                     _actualPatern.FillQueue();
 
                     List<AttacksObject> result = new List<AttacksObject>();
@@ -465,7 +470,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                 if(_actualPatern.attackQueue.Count() <= 0)
                 {
-                    _actualPatern = _characterObj.attacksPatern[Random.Range(0, _characterObj.attacksPatern.Count())];
+                    _actualPatern = CharacterObj.attacksPatern[Random.Range(0, CharacterObj.attacksPatern.Count())];
                     _actualPatern.FillQueue();
                     _statusToApply = atk.selfStatus;
                     atk = _actualPatern.attackQueue.Dequeue();

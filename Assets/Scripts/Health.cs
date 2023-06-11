@@ -34,10 +34,10 @@ public class Health : MonoBehaviour
         _currentHealthBarAmount = _character.GetMaxHealthBar();
         
     }
-    private void Start()
+    private IEnumerator Start()
     {
 
-
+        yield return new WaitForEndOfFrame();
 
         for (int i = 0; i < _character.GetMaxHealth(); i++)
         {
