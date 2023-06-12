@@ -1,6 +1,11 @@
+using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class CardManager : MonoBehaviour
 {
@@ -11,49 +16,86 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        List<CardBase> tempCardsBases = cardsBases;
-        foreach (CardBase item in deckBuilder.deck)
+        List<CardBase> removeLocked = new List<CardBase>();
+        foreach (var item in cardsBases)
         {
-            if(cardsBases.Contains(item))
+            if(item.isUnlocked)
             {
-                tempCardsBases.Remove(item);
+                removeLocked.Add(item);
             }
         }
 
-        foreach (CardBase item in tempCardsBases)
+        List<CardBase> removeDeck = new List<CardBase>();
+        foreach (var item in removeLocked)
         {
-            AddToHidden(item);
+            if(!deckBuilder.deck.Contains(item))
+            {
+                removeDeck.Add(item);
+            }
         }
 
-        foreach (CardBase item in deckBuilder.deck)
+        for (int i = 0; i < cardsHiden.Count; i++)
         {
-            AddToPlayingCard(item);
+            if(i > removeDeck.Count - 1)
+            {
+                cardsHiden[i].NotInit();
+            }
+            else
+            {
+                cardsHiden[i].carBase = removeDeck[i];
+                cardsHiden[i].Init();
+            }
         }
+
+        for (int i = 0; i < cardsGame.Count; i++)
+        {
+            cardsGame[i].carBase = deckBuilder.deck[i];
+            cardsGame[i].Init();
+        }
+
+
     }
 
-    void AddToHidden(CardBase cardBase)
+    [Button("TestShuffle")]
+    public void ShuffleObject()
     {
-        foreach (Card item in cardsHiden)
+        List<CardBase> current = new List<CardBase>();
+
+        foreach (var item in cardsHiden)
         {
-            if(item.carBase == null)
+            if(item.gameObject.activeSelf)
             {
-                item.carBase = cardBase;
-                item.Init();
-                return;
+                current.Add(item.carBase);
             }
         }
-    }
 
-    void AddToPlayingCard(CardBase cardBase)
-    {
-        foreach (Card item in cardsGame)
+        foreach (var item in cardsGame)
         {
-            if (item.carBase == null)
+           current.Add(item.carBase);
+        }
+
+        System.Random rand = new System.Random();
+        var shuffled = current.OrderBy(_ => rand.Next()).ToList();
+
+        Stack<CardBase> temp = new Stack<CardBase>();
+        foreach (var item in shuffled)
+        {
+            temp.Push(item);
+        }
+
+        foreach (var item in cardsHiden)
+        {
+            if (item.gameObject.activeSelf)
             {
-                item.carBase = cardBase;
-                item.Init();
-                return;
+                item.carBase = temp.Pop();
+                item.UpdateCard();
             }
+        }
+
+        foreach (var item in cardsGame)
+        {
+            item.carBase = temp.Pop();
+            item.UpdateCard();
         }
     }
 }
