@@ -224,9 +224,13 @@ public abstract class Character : MonoBehaviour, ICharacter
             {
                 target.AddStatus(_targetsAttacks[index].GetStatus());
                 target.TakeDamage(_targetsAttacks[index], additionalDamage);
-                if(_targetsAttacks[index].isLifeSteal)
+                if (_targetsAttacks[index].isLifeSteal)
                 {
                     _health.Heal(Mathf.Max(_targetsAttacks[index].atkDamage + additionalDamage, 0), charaType != PartyMemberEnum.Boss);
+                }
+                if (_targetsAttacks[index].isShuffle)
+                {
+                    _refs.cardManager.ShuffleObject();
                 }
             }
             index++;

@@ -14419,7 +14419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaEventHandler: {fileID: 11400000, guid: b09daaed8bc84614c9000d7999050bca, type: 2}
-  manaSlider: {fileID: 1852701506}
+  manaSlider: {fileID: 0}
   manaPerSeconds: 0.1
   curve:
     serializedVersion: 2
