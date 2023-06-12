@@ -20,6 +20,7 @@ public class AttackClass
         HpHiggerThan,
         HpBarLost,
         HpBarNotLost,
+        HpBarBetween,
         Random
     }
 
@@ -36,6 +37,7 @@ public class AttackClass
     public int percentageValue;
     [Tooltip("for HpBarLost value = number of bar lost")]
     public int value;
+    public int value2;
 
 }
 [System.Serializable]

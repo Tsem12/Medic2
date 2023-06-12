@@ -337,7 +337,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
             case AttackClass.AttackConditions.HpBarLost:
                 //Debug.Log($"{_health.CurrentHealthBarAmount} >= {atk.value}");
-                if(CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
+                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
                 {
                     return true;
                 }
@@ -355,6 +355,17 @@ public abstract class Character : MonoBehaviour, ICharacter
                 {
                     return true;
                 }
+
+            case AttackClass.AttackConditions.HpBarBetween:
+                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount > atk.value2 && CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount < atk.value)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
         }
         throw new System.Exception("On dois pas arriver là");
     }
