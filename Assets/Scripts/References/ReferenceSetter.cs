@@ -13,7 +13,8 @@ public class ReferenceSetter : MonoBehaviour
         Player,
         InputManager,
         GameManager,
-        FightManager
+        FightManager,
+        CardManager
     }
 
     [SerializeField] private AllReferences references;
@@ -81,6 +82,13 @@ public class ReferenceSetter : MonoBehaviour
             case ReferencesType.FightManager:
                 references.fightManager = GetComponent<FightManager>();
                 if (references.fightManager == null)
+                {
+                    Debug.LogError($"{gameObject.name} n'a pas récupérer: {item}");
+                }
+                return;
+            case ReferencesType.CardManager:
+                references.cardManager = GetComponent<CardManager>();
+                if (references.cardManager == null)
                 {
                     Debug.LogError($"{gameObject.name} n'a pas récupérer: {item}");
                 }
