@@ -19,16 +19,6 @@ public class ReferenceSetter : MonoBehaviour
     [SerializeField] private AllReferences references;
     [SerializeField] private ReferencesType[] referencesTypes;
 
-
-    private void OnEnable()
-    {
-        ReferenceSettersManager.refs.Add(this);
-    }
-
-    private void OnDisable()
-    {
-        ReferenceSettersManager.refs.Remove(this);
-    }
     private void Awake()
     {
         foreach (ReferencesType item in referencesTypes)

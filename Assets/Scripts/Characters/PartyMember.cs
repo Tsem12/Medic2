@@ -38,11 +38,11 @@ public class PartyMember : Character, IHealable
 
     public override void AssignValues()
     {
-        if( _characterObj != null)
+        if( CharacterObj != null)
         {
-            _maxHealth = _characterObj.maxHealth;
-            _speed = _characterObj.baseSpeed;
-            _agroValue = _characterObj.baseAgroValue;
+            _maxHealth = CharacterObj.maxHealth;
+            _speed = CharacterObj.baseSpeed;
+            _agroValue = CharacterObj.baseAgroValue;
         }
         CheckObjectRefs();
     }
@@ -94,7 +94,7 @@ public class PartyMember : Character, IHealable
 
     public CharacterObjets GetPartyMemberObj() 
     {
-        return _characterObj;
+        return CharacterObj;
     }
 
     public override void SetTarget()
