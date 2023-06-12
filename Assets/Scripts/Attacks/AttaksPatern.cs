@@ -79,7 +79,7 @@ public class AttackEvent
         TriggerOnce,
         AlwaysTrigger
     }
-    public AttackClass attack;
+    public AttacksPatern attack;
     public SpecialAttacksTrigerMode trigerMode;
     public HealthBarOccurMode HpOccurMode;
     public int numberHealthBarLeft;

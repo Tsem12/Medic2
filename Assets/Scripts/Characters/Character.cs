@@ -203,13 +203,14 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if(_currentAtkClass.selfStatus != global::Status.StatusEnum.None)
         {
-            AddStatus(GetStatus(_currentAtkClass.selfStatus, 2, 1, 1, 1));
+            AddStatus(GetStatus(_currentAtkClass.selfStatus, 1, 1, 1, 1));
         }
 
         int index = 0;
         foreach(ICharacter target in _targets.ToList())
         {
 
+            Debug.Log($" attack : {_targetsAttacks[index]} ");
             Status disapear = target.GetStatus(global::Status.StatusEnum.Disapeared);
             Status shield = target.GetStatus(global::Status.StatusEnum.Shielded);
             Status s = target.GetStatus(global::Status.StatusEnum.ShieldedWithReflect);
@@ -371,7 +372,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                 foreach(AttackEvent atk in CharacterObj.attacksEvent)
                 {
-                    if(atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar && DoesFulFillCondition(atk.attack))
+                    if(atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar) //&& DoesFulFillCondition(atk.attack)
                     {
                         if(atk.HpOccurMode == AttackEvent.HealthBarOccurMode.AlwaysTrigger)
                         {
@@ -388,7 +389,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                 foreach (AttackEvent atk in CharacterObj.attacksEvent)
                 {
-                    if (atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.AllieBuffed && DoesFulFillCondition(atk.attack))
+                    if (atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.AllieBuffed) //&& DoesFulFillCondition(atk.attack)
                     {
                         _latetsAttackEvent = atk;
                     }
@@ -411,7 +412,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 {
                     if (attack.attack == null)
                     { 
-                        throw new System.Exception("Y'a une couille dans le paté (ou une gd issue) mais y'a un élément vide dans la lisye d'attaque");
+                        throw new System.Exception("Y'a une couille dans le paté (ou une gd issue) mais y'a un élément vide dans la liste d'attaque");
                     }
                 }
             }
@@ -431,30 +432,53 @@ public abstract class Character : MonoBehaviour, ICharacter
                 case AttacksPatern.PaternInteruptMode.Interupt:
 
                     _actualPatern = null;
-                    _actualPatern = CharacterObj.attacksPatern[Random.Range(0, CharacterObj.attacksPatern.Count())];
+                    _actualPatern = _latetsAttackEvent.attack;
                     _actualPatern.FillQueue();
-
+                    AttackClass atcClass = _actualPatern.attackQueue.Dequeue();
                     List<AttacksObject> result = new List<AttacksObject>();
-                    foreach(AttacksObject atc in _latetsAttackEvent.attack.attack)
+                    foreach (AttacksObject atc in atcClass.attack)
                     {
                         result.Add(atc);
                     }
-
-                    _statusToApply = _latetsAttackEvent.attack.selfStatus;
+                    //List<AttacksObject> result = new List<AttacksObject>();
+                    //foreach(AttacksObject atc in _latetsAttackEvent.attack.attack)
+                    //{
+                    //    result.Add(atc);
+                    //}
+                    _currentAtkClass = atcClass;
+                    _statusToApply = atcClass.selfStatus;
                     _latetsAttackEvent = null;
                     return result;
-
                 case AttacksPatern.PaternInteruptMode.DontInteruptLastInQueue:
-                    _actualPatern.attackQueue.Enqueue(_latetsAttackEvent.attack);
+                    foreach(AttackClass atckObj in _latetsAttackEvent.attack.attacks)
+                    {
+                        _actualPatern.attackQueue.Enqueue(atckObj);
+                    }
                     break;
 
                 case AttacksPatern.PaternInteruptMode.DontInteruptFirstInQueue:
+                    List<AttackClass> copyQueue = new List<AttackClass>();
                     List<AttacksObject> result2 = new List<AttacksObject>();
-                    _statusToApply = _latetsAttackEvent.attack.selfStatus;
-                    foreach (AttacksObject atc in _latetsAttackEvent.attack.attack)
+                    while(_actualPatern.attackQueue.Count <= 0)
+                    {
+                        copyQueue.Add(_actualPatern.attackQueue.Dequeue());
+                    }
+
+                    foreach(AttackClass atkClass in _latetsAttackEvent.attack.attacks)
+                    {
+                        _actualPatern.attackQueue.Enqueue(atkClass);
+                    }
+                    foreach(AttackClass lastQueue in copyQueue)
+                    {
+                        _actualPatern.attackQueue.Enqueue(lastQueue);
+                    }
+                    AttackClass attack = _actualPatern.attackQueue.Dequeue();
+                    foreach (AttacksObject atc in attack.attack)
                     {
                         result2.Add(atc);
                     }
+                    _statusToApply = attack.selfStatus;
+                    _currentAtkClass = attack;
                     _latetsAttackEvent = null;
                     return result2;
             }
@@ -464,6 +488,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         List<AttacksObject> result3 = new List<AttacksObject>();
         AttackClass atk = _actualPatern.attackQueue.Dequeue();
+        Debug.Log(atk.nrbOfTargets);
         int nbrLoop = 0;
 
         if(atk.attackConditionsMode == AttackClass.ConditionMode.DontAttackWithoutCondition)

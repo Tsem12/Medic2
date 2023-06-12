@@ -280,8 +280,9 @@ public class FightManager : MonoBehaviour
 
         }
         _state = FightState.None;
-
-        foreach(ICharacter c in CharacterList.ToList())
+        _enemie.CheckStatus();
+        _enemie.UpdateBar();
+        foreach (ICharacter c in _partyMembersList.ToList())
         {
             c.CheckStatus();
             c.UpdateBar();

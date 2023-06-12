@@ -217,7 +217,7 @@ public class Health : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         foreach (HealtPoint hp in list)
         {
-            sequence.Append(hp.ValidHp.GetComponent<Image>().DOColor(Color.green, 0.25f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo).OnComplete(() => Debug.Log("sqdqsd")));
+            sequence.Append(hp.ValidHp.GetComponent<Image>().DOColor(Color.green, 0.25f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo));
             sequence.Append(hp.ValidHp.rectTransform.DOMoveY(4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
 
             if (_refs.fightManager.EnableDebug)

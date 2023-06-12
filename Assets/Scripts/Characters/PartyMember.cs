@@ -101,11 +101,9 @@ public class PartyMember : Character, IHealable
     {
         _targets.Clear();
         _targetsAttacks.Clear();
-        if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(global::Status.StatusEnum.Disapeared) == null)
-        {
-            _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
-            _targetsAttacks.Add(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
-        }
+        _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
+        _targetsAttacks.Add(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
+
     }
 
     public override void SetCurrentHealth(int newValue)
