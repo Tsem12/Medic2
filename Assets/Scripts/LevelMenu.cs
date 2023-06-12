@@ -16,9 +16,9 @@ public class LevelMenu : MonoBehaviour
         gameData.isHardDifficulty = false;
         SwitchDifficulty();
     }
-    public void OpenLevel(int levelId)
+    public void OpenLevel()
     {
-        string levelName = "Level "+levelId;
+        string levelName = "Game";
         SceneManager.LoadScene(levelName);
     }
 

@@ -4822,6 +4822,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 391394243}
     m_Modifications:
     - target: {fileID: 328218438012091953, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: _gfx
+      value: 
+      objectReference: {fileID: 1687649702}
+    - target: {fileID: 328218438012091953, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: _refs
       value: 
       objectReference: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
@@ -4836,7 +4840,7 @@ PrefabInstance:
     - target: {fileID: 328218438012091953, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: characterObj
       value: 
-      objectReference: {fileID: 11400000, guid: 2392d0d853b76a449a2a62a45808f172, type: 2}
+      objectReference: {fileID: 11400000, guid: 7a2cb830e498c5545879276bb5318b55, type: 2}
     - target: {fileID: 328218438012091953, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: _characterObj
       value: 
@@ -6450,7 +6454,7 @@ MonoBehaviour:
     levelProgression: 0
     levelUnlocked: 01000000
     spellUnlocked: 01010101000000000000000000
-    difficulty: 0
+    isHardDifficulty: 0
     musicVolume: 1
     sfxVolume: 1
     Language: "Fran\xE7ais"
@@ -10406,6 +10410,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b7e93d2b3e47947a2264d8d18b6f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1687649702 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 106301014644803865, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+  m_PrefabInstance: {fileID: 926080844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1699039431
 GameObject:
   m_ObjectHideFlags: 0
