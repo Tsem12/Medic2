@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Sleep
   description: 
-  attackSprite: {fileID: 0}
+  attackSpriteOverRide: {fileID: 21300000, guid: c0830ce7681641040a3bae819ba82821, type: 3}
+  isLifeSteal: 0
   atkDamage: 1
   attackEffects: 3
   dotAttacks: 0

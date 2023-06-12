@@ -18,7 +18,7 @@ public interface ICharacter
     public void TakeDamage(AttacksObject attack, int additionalDamage = 0);
     public void SetTarget();
     public void SetCurrentHealth(int newValue);
-    public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode);
+    public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode, int value);
     public Status GetStatus(Status.StatusEnum status);
     public void AddStatus(Status status);
     public void TryRemoveStatus(Status.StatusEnum status);

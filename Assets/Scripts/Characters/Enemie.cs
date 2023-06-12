@@ -17,15 +17,15 @@ public class Enemie : Character
     {
         AssignValues();
         _currentHealth = _maxHealth;
-        _refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.AllieBuffed);
+        //_refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.AllieBuffed);
 
     }
     public override void AssignValues()
     {
-        if(_characterObj != null)
+        if(CharacterObj != null)
         {
-            _maxHealth = _characterObj.maxHealth;
-            _speed = _characterObj.baseSpeed;
+            _maxHealth = CharacterObj.maxHealth;
+            _speed = CharacterObj.baseSpeed;
         }
     }
     public override int GetAgro()
@@ -134,7 +134,7 @@ public class Enemie : Character
 
     public override int GetMaxHealthBar()
     {
-        return _characterObj.numberOfHealthBar;
+        return CharacterObj.numberOfHealthBar;
     }
 
     public override void ClearIncomingAttacks()
@@ -145,6 +145,6 @@ public class Enemie : Character
     protected override void Attack()
     {
         base.Attack();
-        _spriteRenderer.transform.DOScale(Vector3.one * 1.5f, 0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
+        _gfx.transform.DOScale(Vector3.one * 1.5f, 0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
     }
 }

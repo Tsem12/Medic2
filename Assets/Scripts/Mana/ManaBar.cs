@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ManaBar : MonoBehaviour
 {
     [SerializeField] ManaObject manaEventHandler;
-    [SerializeField] Slider manaSlider;
+    [SerializeField] Image manaSlider;
     [SerializeField] float manaPerSeconds = 2;
     [SerializeField] AnimationCurve curve;
     Coroutine updateRoutine;
@@ -41,7 +41,7 @@ public class ManaBar : MonoBehaviour
             {
                 mana += curve.Evaluate(i) * manaPerSeconds;
                 i += Time.deltaTime;
-                manaSlider.value = mana / manaEventHandler.maxMana;
+                manaSlider.fillAmount = mana / manaEventHandler.maxMana;
                 yield return null;
             }
         }
@@ -52,12 +52,12 @@ public class ManaBar : MonoBehaviour
             {
                 mana -= curve.Evaluate(i) * manaPerSeconds;
                 i += Time.deltaTime;
-                manaSlider.value = mana / manaEventHandler.maxMana;
+                manaSlider.fillAmount = mana / manaEventHandler.maxMana;
                 yield return null;
             }
         }
         
-        manaSlider.value = manaEventHandler.currentMana / manaEventHandler.maxMana;
+        manaSlider.fillAmount = manaEventHandler.currentMana / manaEventHandler.maxMana;
         updateRoutine = null;
     }
 

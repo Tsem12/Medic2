@@ -20,6 +20,7 @@ public class AttackClass
         HpHiggerThan,
         HpBarLost,
         HpBarNotLost,
+        HpBarEqual,
         Random
     }
 
@@ -36,6 +37,7 @@ public class AttackClass
     public int percentageValue;
     [Tooltip("for HpBarLost value = number of bar lost")]
     public int value;
+
 
 }
 [System.Serializable]
@@ -73,8 +75,16 @@ public class AttackEvent
         AllieBuffed,
         TurnPassed
     }
+
+    public enum HealthBarOccurMode
+    {
+        TriggerOnce,
+        AlwaysTrigger
+    }
     public AttacksPatern attack;
     public SpecialAttacksTrigerMode trigerMode;
+    public HealthBarOccurMode HpOccurMode;
+    public int numberHealthBarLeft;
 
 }
 #endregion

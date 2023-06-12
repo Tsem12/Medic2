@@ -34,10 +34,10 @@ public class Health : MonoBehaviour
         _currentHealthBarAmount = _character.GetMaxHealthBar();
         
     }
-    private void Start()
+    private IEnumerator Start()
     {
 
-
+        yield return new WaitForEndOfFrame();
 
         for (int i = 0; i < _character.GetMaxHealth(); i++)
         {
@@ -104,7 +104,7 @@ public class Health : MonoBehaviour
             {
                 _healthBars[_currentHealthBarAmount].SetActive(false);
                 _character.SetCurrentHealth(_character.GetMaxHealth() + newHealth);
-                _refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar);
+                _refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar, _currentHealthBarAmount);
                 foreach (HealtPoint hp in _healthPoints)
                 {
                     if (_currentHealthBarAmount <= 1)
@@ -226,39 +226,5 @@ public class Health : MonoBehaviour
             _character.SetCurrentHealth(newHealth);
         }
 
-
-        //private void OnValidate()
-        //{
-        //    _character = GetComponent<ICharacter>();
-        //    _sliderRectTransform = _sliderImage.rectTransform;
-
-
-        //    if( _character == null )
-        //        return;
-
-        //    int health = _character.GetMaxHealth();
-
-        //    _sliderImage.pixelsPerUnitMultiplier = _heartSize + (_hearthSizeWithSpace * Mathf.Max(health - 1, 0));
-
-        //    if (health == 2)
-        //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue);
-        //    else if (health == 3)
-        //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue + _bottomScaleValue);
-        //    else if (health > 3)
-        //        _sliderRectTransform.offsetMin = new Vector2(0, _bottomBaseValue + _bottomScaleValue + GetScaledBotValue(health));
-
-        //}
-
-        //private float GetScaledBotValue(int HearthsCount)
-        //{
-        //    float value = _bottomScaleValue;
-        //    float result = 0;
-        //    for(int i = 0; i < HearthsCount - 3; i++)
-        //    {
-        //        result += value /= 2;
-        //    }
-
-        //    return result;
-        //}
     }
 }
