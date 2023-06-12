@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Poison Arrow
   description: 
-  attackSprite: {fileID: 0}
+  attackSpriteOverRide: {fileID: 21300000, guid: 46417a25ef02ec149aa68ba60b8178a9, type: 3}
+  isLifeSteal: 0
   atkDamage: 1
   attackEffects: 1
   dotAttacks: 0

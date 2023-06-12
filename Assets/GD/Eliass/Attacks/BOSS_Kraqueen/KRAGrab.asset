@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Grab
   description: 
-  attackSpriteOverRide: {fileID: 0}
+  attackSpriteOverRide: {fileID: 21300000, guid: 523cb0219a878c0458f9eebb4fcc92ea, type: 3}
   isLifeSteal: 0
   atkDamage: 0
   attackEffects: 1
