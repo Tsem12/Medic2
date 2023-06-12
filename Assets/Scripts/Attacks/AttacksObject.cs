@@ -84,6 +84,7 @@ public class AttacksObject : ScriptableObject
 
     [Header("Stats")]
 
+    public bool isShuffle;
     public bool isLifeSteal;
     [Range(0, 10)]
     public int atkDamage;
