@@ -94,7 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7008575852917194905}
   - component: {fileID: 1380658970338116804}
-  - component: {fileID: 8847132462489593742}
+  - component: {fileID: 3462301805933540913}
+  - component: {fileID: 6621370300726845188}
   m_Layer: 0
   m_Name: Corps 1
   m_TagString: Untagged
@@ -177,7 +178,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8847132462489593742
+--- !u!95 &3462301805933540913
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -198,6 +199,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6621370300726845188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799308877302018994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a5c6f35cc59134ba7cf4fb397f4666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &811379882133092749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1259,7 @@ Transform:
   m_Children:
   - {fileID: 7008575852917194905}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5231242847414466100
 GameObject:

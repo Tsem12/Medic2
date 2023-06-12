@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: 3152170949020920230}
   - component: {fileID: 617828837711056880}
   - component: {fileID: 4190939547744531010}
+  - component: {fileID: 6985970914436515873}
   m_Layer: 0
   m_Name: Boss_Kraqueen
   m_TagString: Untagged
@@ -930,6 +931,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6985970914436515873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775711755308144160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a5c6f35cc59134ba7cf4fb397f4666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5050684342500055373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,7 +1363,7 @@ Transform:
   m_Children:
   - {fileID: 7824006200631726798}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8523189419640971523
 GameObject:

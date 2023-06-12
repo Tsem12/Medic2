@@ -24,6 +24,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [SerializeField] protected StatusBarManager _statusBar;
     [SerializeField] protected Transform _gfx;
     [SerializeField] private PartyMemberEnum charaType;
+    [SerializeField] private Animator _animator;
 
     [Header("Health")]
     protected int _maxHealth;
@@ -44,6 +45,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     private Status.StatusEnum _statusToApply;
     public List<Status> Status { get => status; set => status = value; }
     public CharacterObjets CharacterObj { get => characterObj; set => characterObj = value; }
+    public Animator Animator { get => _animator; set => _animator = value; }
 
     private List<Status> status = new List<Status>();
 
@@ -199,10 +201,12 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if(_currentAtkClass.selfStatus != global::Status.StatusEnum.None)
         {
-            AddStatus(GetStatus(_currentAtkClass.selfStatus, 1, 1, 1, 1));
+            AddStatus(GetStatus(_currentAtkClass.selfStatus, 2, 1, 1, 1));
         }
 
         int index = 0;
+        _animator?.SetInteger("AttackIndex", _targetsAttacks[index].attackAnimIndex);
+        _animator?.SetTrigger("TriggerAtk");
         foreach(ICharacter target in _targets.ToList())
         {
 

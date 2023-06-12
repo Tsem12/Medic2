@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Attacks", menuName = "Characters/Attacks")]
@@ -49,6 +50,7 @@ public class AttacksObject : ScriptableObject
     public string description;
 
     public Sprite attackSpriteOverRide;
+    public int attackAnimIndex;
 
 
     private bool NoTurnDuration

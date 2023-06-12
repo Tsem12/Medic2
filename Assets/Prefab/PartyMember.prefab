@@ -799,6 +799,7 @@ MonoBehaviour:
   _statusBar: {fileID: 7658557950020520040}
   _gfx: {fileID: 6044247325318838696}
   charaType: 0
+  _animator: {fileID: 412969797683762509}
   _bossAttackImage: {fileID: 0}
   _nextAttackImage: {fileID: 2730934128576624725}
   _bossIndicator: {fileID: 2251589450943912330}
@@ -1068,7 +1069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5435460709640426601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1512,7 +1513,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566527343
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f0388859244ac5746bfc7581046328f4, type: 3}
   m_Color: {r: 0.6862745, g: 0.6862745, b: 0.6862745, a: 1}
