@@ -41,7 +41,7 @@ MonoBehaviour:
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
-      attackConditionsMode: 0
+      attackConditionsMode: 1
       selfStatus: 0
       attack:
       - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
