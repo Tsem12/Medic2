@@ -1,0 +1,761 @@
+fileFormatVersion: 2
+guid: 470c6ec19e1d61247b307aa76aeb414d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MainG2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2068
+        width: 333
+        height: 290
+      alignment: 9
+      pivot: {x: 0.76489276, y: 0.2201635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5c6ec4d4632d74da380c0dac569bf0
+      internalID: 260315113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_1
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 2170
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25c0aaca425a1c4cb6c843224222f66
+      internalID: 848818007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OreilleG
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1979
+        width: 224
+        height: 336
+      alignment: 9
+      pivot: {x: 0.6890196, y: 0.18496668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f352d04a954a8da419ae51be44477b65
+      internalID: 542246931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xEAte"
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1829
+        width: 742
+        height: 550
+      alignment: 9
+      pivot: {x: 0.4904897, y: 0.121501684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fdc2f236d590e84caee9db221c07d37
+      internalID: 1231610243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_4
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 2125
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d73ce038e8fea146b4b101128a44912
+      internalID: -2054899361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainD1
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 1872
+        width: 244
+        height: 281
+      alignment: 9
+      pivot: {x: 0.35539472, y: 0.23631379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670014809b261504d9b7468e0050b7c8
+      internalID: 896795086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_6
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 1402
+        width: 334
+        height: 483
+      alignment: 9
+      pivot: {x: 0.6056398, y: 0.12013387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b444d43bcea5c354194572b895b9e25a
+      internalID: 1882534919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corps
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 700
+        width: 955
+        height: 1056
+      alignment: 9
+      pivot: {x: 0.5036947, y: 0.20596914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf77d9dd2ced12743a9a9ed958708be5
+      internalID: 1985440055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_8
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 1259
+        width: 248
+        height: 455
+      alignment: 9
+      pivot: {x: 0.42886353, y: 0.28286937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f03031a83039b489af6731ba54ec92
+      internalID: -514428709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queue4
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 1581
+        width: 385
+        height: 237
+      alignment: 9
+      pivot: {x: 0.21589768, y: 0.27668497}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746cde0a20825d240a99f57d3f7788d9
+      internalID: 1114178642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_10
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 920
+        width: 301
+        height: 483
+      alignment: 9
+      pivot: {x: 0.2890014, y: 0.19318512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c25da92ee6ca1545bedf4687d6922a9
+      internalID: -573181067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queue3
+      rect:
+        serializedVersion: 2
+        x: 2478
+        y: 1154
+        width: 409
+        height: 401
+      alignment: 9
+      pivot: {x: 0.2843295, y: 0.15684178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fdc25164d993404088c9f7699f8d4fc
+      internalID: -1004537016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nul
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 351
+        width: 380
+        height: 347
+      alignment: 9
+      pivot: {x: 0.89926285, y: 0.26613113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0747ff18a42b9419594f723883d9b0
+      internalID: 1912990763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainG1
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 690
+        width: 272
+        height: 323
+      alignment: 9
+      pivot: {x: 0.78538287, y: 0.15043995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c661484187d41b24d8fe8123030f41a3
+      internalID: -2063115307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_14
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 695
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf8ce208ed30fd4cb6a777414f197c9
+      internalID: 1584455611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 546
+        width: 284
+        height: 445
+      alignment: 9
+      pivot: {x: 0.8354432, y: 0.31763464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99daf80d0740a4043b8222ce86ec20d4
+      internalID: 941024242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queue2
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 607
+        width: 278
+        height: 416
+      alignment: 9
+      pivot: {x: 0.6903796, y: 0.18617909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c0077970c8f22419109909ec058d82
+      internalID: 682528411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_17
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 681
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dfa0222bff41d6428d9faaa3b0e805e
+      internalID: 1975155987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_18
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 349
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ab59a14dbb7e64fb1df28e7f6690dc
+      internalID: 105217098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JambeG
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 222
+        width: 324
+        height: 436
+      alignment: 9
+      pivot: {x: 0.5653404, y: 0.82370317}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e89aa2a4dfe2f429d1a0c559cea968
+      internalID: -442040623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainD2
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 325
+        width: 267
+        height: 304
+      alignment: 9
+      pivot: {x: 0.24891783, y: 0.41875428}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c58040faa7fc92419c8b94c5e6d8d9d
+      internalID: -653137337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JambeD
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 328
+        width: 253
+        height: 305
+      alignment: 9
+      pivot: {x: 0.4442158, y: 0.81234694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6e99aba09c41c4ca964a5ec695a9bc
+      internalID: 10608403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_22
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 284
+        width: 226
+        height: 235
+      alignment: 9
+      pivot: {x: 0.7029597, y: 0.27478418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08567ddabae9334abc88875dd0a07ad
+      internalID: 250958004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queue1
+      rect:
+        serializedVersion: 2
+        x: 2588
+        y: 317
+        width: 249
+        height: 234
+      alignment: 9
+      pivot: {x: 0.78340316, y: 0.33413565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5d70ef1e5ebe44283353637557811e
+      internalID: 1250772726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiedG
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 73
+        width: 254
+        height: 184
+      alignment: 9
+      pivot: {x: 0.5972387, y: 0.71093404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8480158891cff40a7426785d20dcd1
+      internalID: -1723278151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OreilleD
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 29
+        width: 232
+        height: 251
+      alignment: 9
+      pivot: {x: 0.45437464, y: 0.2610267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046c4758ad9f8c94cbd0b6cd1fcbc96c
+      internalID: 446821735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_26
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 211
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1d26ba7d3b33b4687fc64a8296bf2a
+      internalID: 1794451757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiedD
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 81
+        width: 244
+        height: 167
+      alignment: 9
+      pivot: {x: 0.5289212, y: 0.7535353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76725898592d26c43910510ae321ef5a
+      internalID: -1165437505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El-Gatito (2)_28
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 197
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c119020d2c06f34d94a38e6ad1821fd
+      internalID: -943548997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      B: 941024242
+      Corps: 1985440055
+      El-Gatito (2)_1: 848818007
+      El-Gatito (2)_10: -573181067
+      El-Gatito (2)_14: 1584455611
+      El-Gatito (2)_17: 1975155987
+      El-Gatito (2)_18: 105217098
+      El-Gatito (2)_22: 250958004
+      El-Gatito (2)_26: 1794451757
+      El-Gatito (2)_28: -943548997
+      El-Gatito (2)_4: -2054899361
+      El-Gatito (2)_6: 1882534919
+      El-Gatito (2)_8: -514428709
+      JambeD: 10608403
+      JambeG: -442040623
+      MainD1: 896795086
+      MainD2: -653137337
+      MainG1: -2063115307
+      MainG2: 260315113
+      OreilleD: 446821735
+      OreilleG: 542246931
+      PiedD: -1165437505
+      PiedG: -1723278151
+      Queue1: 1250772726
+      Queue2: 682528411
+      Queue3: -1004537016
+      Queue4: 1114178642
+      "T\xEAte": 1231610243
+      nul: 1912990763
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static ReferenceSetter;
 
 public class DataSetter : MonoBehaviour
@@ -35,7 +36,7 @@ public class DataSetter : MonoBehaviour
                 GetComponent<GfxGenerator>().GenerateGfx(_levelData.levels[_levelData.currentSceneIndex].animator);
                 break;
             case DataType.Background:
-                GetComponent<SpriteRenderer>().sprite = _levelData.levels[_levelData.currentSceneIndex].background;
+                GetComponent<Image>().sprite = _levelData.levels[_levelData.currentSceneIndex].background;
                 break;
         }
     }
