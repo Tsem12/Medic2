@@ -96,7 +96,7 @@ public class StatusBarManager : MonoBehaviour
                 return _timerImages[4];
 
         }
-        return null;
+        return _timerImages[0];
     }
     public Sprite GetAttackSprite(FightManager fm, Status.StatusEnum status)
     {
