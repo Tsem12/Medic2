@@ -32,7 +32,7 @@ public class DataSetter : MonoBehaviour
                 GetComponent<Character>().CharacterObj = _levelData.levels[_levelData.currentSceneIndex].boss;
                 break;
             case DataType.BossAnimator:
-                GetComponent<Animator>().runtimeAnimatorController = _levelData.levels[_levelData.currentSceneIndex].animator;
+                GetComponent<GfxGenerator>().GenerateGfx(_levelData.levels[_levelData.currentSceneIndex].animator);
                 break;
             case DataType.Background:
                 GetComponent<SpriteRenderer>().sprite = _levelData.levels[_levelData.currentSceneIndex].background;
