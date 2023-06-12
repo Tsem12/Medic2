@@ -407,7 +407,7 @@ MonoBehaviour:
     levelProgression: 0
     levelUnlocked: 01000000
     spellUnlocked: 01010101000000000000000000
-    difficulty: 0
+    isHardDifficulty: 0
     musicVolume: 1
     sfxVolume: 1
     Language: "Fran\xE7ais"
@@ -3819,25 +3819,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b7e93d2b3e47947a2264d8d18b6f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &998899828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 740218764924760659, guid: 62ec1a5a49e3c34488f529b2a8e2e046, type: 3}
-  m_PrefabInstance: {fileID: 4819851086181612383}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &998899832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998899828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e384d42653ab0f646b2d1dffc7349ba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  references: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
-  referencesTypes: 06000000
 --- !u!1001 &1009995529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9428,8 +9409,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 740218764924760659, guid: 62ec1a5a49e3c34488f529b2a8e2e046, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 998899832}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62ec1a5a49e3c34488f529b2a8e2e046, type: 3}

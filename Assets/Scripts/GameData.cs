@@ -22,10 +22,6 @@ public class GameData
         levelUnlocked = new bool[4];
         levelUnlocked[0] = true;
         spellUnlocked = new bool[10];
-        spellUnlocked[0] = true;
-        spellUnlocked[1] = true;
-        spellUnlocked[2] = true;
-        spellUnlocked[3] = true;
         isHardDifficulty = false;
         musicVolume = 1;
         sfxVolume = 1;
