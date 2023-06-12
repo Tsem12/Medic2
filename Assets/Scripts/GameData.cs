@@ -10,11 +10,11 @@ public class GameData
     public bool[] levelUnlocked;
     public bool[] spellUnlocked;
 
-    public int difficulty;
+    public bool isHardDifficulty;
     public float musicVolume;
     public float sfxVolume;
     public string Language;
-
+    
 
 
     public GameData(){
@@ -26,7 +26,7 @@ public class GameData
         spellUnlocked[1] = true;
         spellUnlocked[2] = true;
         spellUnlocked[3] = true;
-        difficulty = 0;
+        isHardDifficulty = false;
         musicVolume = 1;
         sfxVolume = 1;
         Language = "Français";
