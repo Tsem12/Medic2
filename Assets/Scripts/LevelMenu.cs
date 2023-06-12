@@ -32,7 +32,6 @@ public class LevelMenu : MonoBehaviour
             easyPannel.SetActive(true);
             hardButton.SetActive(false);
             easyButton.SetActive(true);
-            Debug.Log("azaz");
         }
         else
         {
@@ -40,7 +39,6 @@ public class LevelMenu : MonoBehaviour
             hardPannel.SetActive(true);
             easyButton.SetActive(false);
             hardButton.SetActive(true);
-            Debug.Log("azaz");
         }
         gameData.isHardDifficulty = !gameData.isHardDifficulty;
         SaveSystem.save(gameData);

@@ -9,4 +9,8 @@ MainMenu.Button.easyMode,Easy Mode,Mode Facile,Einfacher Modus,"Modo Fácil",�
 OptionMenu.Button.Sfx,Sfx,Effets Sonores,Soundeffekte,Efectos de sonido,聲音特效,音響効果,Efeitos sonoros,Звуковые эффекты
 OptionMenu.Button.Music,Music,Musique,Musik,Música,音樂,音楽,Música,Музыка
 OptionMenu.Button.Pause,Pause,Pause,Brechen,Romper,休息,壊す,Quebrar,Переры
+OptionMenu.Button.Account,Account,Compte,Konto,Cuenta,账户 ,アカウント ,Conta,Счет
+OptionMenu.Button.HowToPlay,How to Play,Coment Jouer,Wie spielt man,Cómo jugar,如何玩,遊び方 ,Como Jogar, Как играть
+OptionMenu.Button.LeaderBoard,LeaderBoard,LeaderBoard,Bestenliste,Tabla de líderes,排行榜 ,リーダーボード,Tabela de líderes,Таблица лидеров
+OptionMenu.Button.Credits,Credits,Crédits,Credits,Créditos,积分 ,クレジット ,Créditos,Кредиты 
 Hud.Button.EndTurn,End Turn,Fin de Tour,"Ende der Runde","fin de turno",回合結束,ターン終了時,Fim do turno,Конец хода
