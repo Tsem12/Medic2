@@ -10,23 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
-  m_Name: Berserker
+  m_Name: BOSS_Chad'O'Wizard
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 0
   numberOfHealthBar: 1
-  baseSpeed: 50
-  baseAgroValue: 60
-  attacksPatern:
-  - paternName: Attack
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 0
-      attack:
-      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
-      condition: 0
-      ConditionalAttack: []
-      percentageValue: 0
-      value: 0
+  baseSpeed: 0
+  baseAgroValue: 0
+  attacksPatern: []
   attacksEvent: []

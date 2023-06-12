@@ -73,7 +73,7 @@ public class AttackEvent
         AllieBuffed,
         TurnPassed
     }
-    public AttackClass attack;
+    public AttacksPatern attack;
     public SpecialAttacksTrigerMode trigerMode;
 
 }

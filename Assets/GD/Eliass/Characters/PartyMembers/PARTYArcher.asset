@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
-  m_Name: Archer
+  m_Name: PARTYArcher
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 10
   numberOfHealthBar: 1
   baseSpeed: 75
   baseAgroValue: 40
@@ -26,7 +26,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
@@ -35,7 +36,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
@@ -44,7 +46,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
   - paternName: Basic + Poison
@@ -56,7 +59,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
@@ -65,7 +69,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
     - nrbOfTargets: 1
@@ -74,7 +79,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
   - paternName: Basic
@@ -87,7 +93,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
       condition: 0
       ConditionalAttack:
-      - {fileID: 0}
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
   - paternName: Poison
@@ -99,7 +105,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
   - paternName: Fatigue
@@ -111,7 +118,8 @@ MonoBehaviour:
       attack:
       - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
       condition: 0
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
   attacksEvent: []

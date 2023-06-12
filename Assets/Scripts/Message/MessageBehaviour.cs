@@ -1,18 +1,26 @@
+using DG.Tweening;
+using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MessageBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private RectTransform rect;
+    Vector3 initScale;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        rect = GetComponent<RectTransform>();
+        initScale = Vector3.zero;
+    }
+    //public void Appear()
+    //{
+    //    rect.DOScale()
+    //}
+
+    public void Disapear()
+    {
+
     }
 }
