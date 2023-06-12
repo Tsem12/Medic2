@@ -21,7 +21,7 @@ MonoBehaviour:
   cardSprite: {fileID: 21300000, guid: d231bac533f024d4e87f15b8cef0384c, type: 3}
   manaCost: 8
   healthHealed: 0
-  turnActive: 2
+  turnActive: 1
   healthPercentage: 0
   shieldBreakAfter: 0
   damageAdded: 0

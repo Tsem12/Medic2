@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using NaughtyAttributes;
 using System.Linq;
+using static UnityEngine.Rendering.DebugUI;
 
 public class FightManager : MonoBehaviour
 {
@@ -64,6 +65,14 @@ public class FightManager : MonoBehaviour
     [SerializeField] private Sprite restrained;
     [Foldout("StatusSprites")]
     [SerializeField] private Sprite stunned;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite taunt;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite reflectShield;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite fire;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite disapear;
     public Sprite BaseAttack { get => baseAttack; }
     public Sprite Strengthened { get => strengthened; }
     public Sprite Initiative { get => initiative; }
@@ -74,6 +83,10 @@ public class FightManager : MonoBehaviour
     public Sprite Sleeped { get => sleeped; }
     public Sprite Restrained { get => restrained; }
     public Sprite Stunned { get => stunned; }
+    public Sprite Taunt { get => taunt; set => taunt = value; }
+    public Sprite ReflectShield { get => reflectShield; set => reflectShield = value; }
+    public Sprite Fire { get => fire; set => fire = value; }
+    public Sprite Disapear { get => disapear; set => disapear = value; }
     #endregion
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
@@ -100,11 +113,11 @@ public class FightManager : MonoBehaviour
         StartTurn();
     }
 
-    public void TriggerEvent(AttackEvent.SpecialAttacksTrigerMode triger)
+    public void TriggerEvent(AttackEvent.SpecialAttacksTrigerMode triger, int value)
     {
         foreach(ICharacter chara in CharacterList)
         {
-            chara.TrackSpecialAtkEvents(triger);
+            chara.TrackSpecialAtkEvents(triger, value);
         }
     }
     private void StartTurn()
@@ -267,8 +280,9 @@ public class FightManager : MonoBehaviour
 
         }
         _state = FightState.None;
-
-        foreach(ICharacter c in CharacterList)
+        _enemie.CheckStatus();
+        _enemie.UpdateBar();
+        foreach (ICharacter c in _partyMembersList.ToList())
         {
             c.CheckStatus();
             c.UpdateBar();

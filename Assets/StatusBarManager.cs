@@ -96,7 +96,7 @@ public class StatusBarManager : MonoBehaviour
                 return _timerImages[4];
 
         }
-        return null;
+        return _timerImages[0];
     }
     public Sprite GetAttackSprite(FightManager fm, Status.StatusEnum status)
     {
@@ -115,7 +115,7 @@ public class StatusBarManager : MonoBehaviour
             case Status.StatusEnum.Poisoned:
                 return fm.Poisoned;
             case Status.StatusEnum.Fired:
-                return null;
+                return fm.Fire;
             case Status.StatusEnum.Sleeped:
                 return fm.Sleeped;
             case Status.StatusEnum.Restrained:
@@ -123,11 +123,11 @@ public class StatusBarManager : MonoBehaviour
             case Status.StatusEnum.Stunned:
                 return fm.Stunned;
             case Status.StatusEnum.Disapeared:
-                return null;
+                return fm.Disapear;
             case Status.StatusEnum.ShieldedWithReflect:
-                return null;
+                return fm.ReflectShield;
             case Status.StatusEnum.Taunting:
-                return null;
+                return fm.Taunt;
         }
         return null;
     }

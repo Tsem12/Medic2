@@ -38,11 +38,11 @@ public class PartyMember : Character, IHealable
 
     public override void AssignValues()
     {
-        if( _characterObj != null)
+        if( CharacterObj != null)
         {
-            _maxHealth = _characterObj.maxHealth;
-            _speed = _characterObj.baseSpeed;
-            _agroValue = _characterObj.baseAgroValue;
+            _maxHealth = CharacterObj.maxHealth;
+            _speed = CharacterObj.baseSpeed;
+            _agroValue = CharacterObj.baseAgroValue;
         }
         CheckObjectRefs();
     }
@@ -94,18 +94,16 @@ public class PartyMember : Character, IHealable
 
     public CharacterObjets GetPartyMemberObj() 
     {
-        return _characterObj;
+        return CharacterObj;
     }
 
     public override void SetTarget()
     {
         _targets.Clear();
         _targetsAttacks.Clear();
-        if(_refs.fightManager.Enemie.GetComponent<ICharacter>().GetStatus(global::Status.StatusEnum.Disapeared) == null)
-        {
-            _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
-            _targetsAttacks.Add(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
-        }
+        _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
+        _targetsAttacks.Add(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
+
     }
 
     public override void SetCurrentHealth(int newValue)

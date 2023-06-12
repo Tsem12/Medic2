@@ -17,70 +17,68 @@ MonoBehaviour:
   baseSpeed: 100
   baseAgroValue: 0
   attacksPatern:
-  - paternName: Event 1
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 11
-      attack: []
-      condition: 3
-      ConditionalAttack: []
-      percentageValue: 60
-      value: 1
   - paternName: Punch
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
-      attackConditionsMode: 1
+      attackConditionsMode: 0
       selfStatus: 0
-      attack: []
-      condition: 0
-      ConditionalAttack: []
+      attack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
+      condition: 4
+      ConditionalAttack:
+      - {fileID: 11400000, guid: 4fa52fa191aa3534ba6225587b5e7f4f, type: 2}
       percentageValue: 21
-      value: 0
+      value: 1
   - paternName: Fatigue
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 0
-      attack: []
-      condition: 0
-      ConditionalAttack: []
-      percentageValue: 0
-      value: 21
-  - paternName: Event2
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
       attackConditionsMode: 0
       selfStatus: 0
-      attack: []
+      attack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
+      condition: 4
+      ConditionalAttack:
+      - {fileID: 11400000, guid: 061ab2ccf91a98748a7e611f8f2ab8be, type: 2}
+      percentageValue: 0
+      value: 1
+  - paternName: ATKPhase2
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 2
+      attackConditionsMode: 0
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       condition: 3
-      ConditionalAttack: []
-      percentageValue: 11
-      value: 2
-  - paternName: Punch2
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 2
-      attackConditionsMode: 0
-      selfStatus: 0
-      attack: []
-      condition: 4
-      ConditionalAttack: []
+      ConditionalAttack:
+      - {fileID: 11400000, guid: 061ab2ccf91a98748a7e611f8f2ab8be, type: 2}
+      - {fileID: 11400000, guid: 4fa52fa191aa3534ba6225587b5e7f4f, type: 2}
       percentageValue: 0
       value: 2
-  - paternName: Fatigue2
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 2
-      attackConditionsMode: 0
-      selfStatus: 0
-      attack: []
-      condition: 4
-      ConditionalAttack: []
-      percentageValue: 0
-      value: 2
-  attacksEvent: []
+  attacksEvent:
+  - attack:
+      paternName: 
+      interuptMode: 0
+      attacks:
+      - nrbOfTargets: 3
+        attackConditionsMode: 0
+        selfStatus: 11
+        attack:
+        - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
+        condition: 0
+        ConditionalAttack: []
+        percentageValue: 0
+        value: 0
+      - nrbOfTargets: 3
+        attackConditionsMode: 0
+        selfStatus: 0
+        attack:
+        - {fileID: 11400000, guid: 905ffbb2a1462a24ca93034ecae63679, type: 2}
+        condition: 0
+        ConditionalAttack:
+        - {fileID: 11400000, guid: 905ffbb2a1462a24ca93034ecae63679, type: 2}
+        percentageValue: 0
+        value: 0
+    trigerMode: 0
