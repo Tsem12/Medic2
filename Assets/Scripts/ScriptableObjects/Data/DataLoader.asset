@@ -19,13 +19,13 @@ MonoBehaviour:
     background: {fileID: 21300000, guid: b744b11ae36fa5c43a6e06822fdff2cf, type: 3}
   - levelName: Level2
     boss: {fileID: 11400000, guid: d408365338653b94087e0636c9e162c2, type: 2}
-    animator: {fileID: 5017959104393658558, guid: 2bfda16f5c58d8647a0d373de82b9eb8, type: 3}
+    animator: {fileID: 1941353078200257622, guid: a336e388066586746913c12d64743664, type: 3}
     background: {fileID: 21300000, guid: 8d7d06b84eb618c4898f5e701500c62a, type: 3}
   - levelName: Level3
     boss: {fileID: 11400000, guid: 7a2cb830e498c5545879276bb5318b55, type: 2}
-    animator: {fileID: 0}
+    animator: {fileID: 8314150670030599856, guid: 136d31fa24d95cb409eb0450a245c73e, type: 3}
     background: {fileID: 21300000, guid: e0c229a9897477b4b9a5a18ff33d9f22, type: 3}
   - levelName: Level4
     boss: {fileID: 11400000, guid: d408365338653b94087e0636c9e162c2, type: 2}
-    animator: {fileID: 0}
+    animator: {fileID: 3752890148674454670, guid: 1c74cdc3ea0c36e4ab938423fa2757aa, type: 3}
     background: {fileID: 21300000, guid: d01aeafe04d36414396e492c98540041, type: 3}
