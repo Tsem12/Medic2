@@ -213,7 +213,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             if(disapear != null || shield != null)
             {
                 Debug.Log("AttackBloked");
-                return;
+                continue;
             }
             if (s != null)
             {

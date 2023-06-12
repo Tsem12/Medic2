@@ -16,16 +16,16 @@ MonoBehaviour:
   - levelName: Level1
     boss: {fileID: 11400000, guid: aa7a173770016eb4ba53dde125494bc4, type: 2}
     animator: {fileID: 8466049844776891583, guid: ba9500dcdf4dbff4bac41b3133f5cd64, type: 3}
-    background: {fileID: 21300000, guid: 789e5089ba59db344bb7370bc6f01cf0, type: 3}
+    background: {fileID: 21300000, guid: b744b11ae36fa5c43a6e06822fdff2cf, type: 3}
   - levelName: Level2
     boss: {fileID: 11400000, guid: d408365338653b94087e0636c9e162c2, type: 2}
     animator: {fileID: 5017959104393658558, guid: 2bfda16f5c58d8647a0d373de82b9eb8, type: 3}
-    background: {fileID: 21300000, guid: 5159e453d9f180447ad16c5b8a9cc2d8, type: 3}
+    background: {fileID: 21300000, guid: 8d7d06b84eb618c4898f5e701500c62a, type: 3}
   - levelName: Level3
     boss: {fileID: 11400000, guid: 7a2cb830e498c5545879276bb5318b55, type: 2}
     animator: {fileID: 0}
-    background: {fileID: 21300000, guid: 004058118d2d8fc409aa07a581bbff85, type: 3}
+    background: {fileID: 21300000, guid: e0c229a9897477b4b9a5a18ff33d9f22, type: 3}
   - levelName: Level4
     boss: {fileID: 11400000, guid: d408365338653b94087e0636c9e162c2, type: 2}
     animator: {fileID: 0}
-    background: {fileID: 21300000, guid: 9fa6e70bfa3789147b11144bd24e621a, type: 3}
+    background: {fileID: 21300000, guid: d01aeafe04d36414396e492c98540041, type: 3}
