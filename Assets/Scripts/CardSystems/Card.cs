@@ -39,7 +39,11 @@ public class Card : MonoBehaviour, IInteractable
             usedRenderer.color = Color.white;
             tmpro.SetText("");
         }
+    }
 
+    public void NotInit()
+    {
+        gameObject.SetActive(false);
     }
 
     public bool ApplyEffect()

@@ -13,103 +13,89 @@ public class CardManager : MonoBehaviour
     [SerializeField] List<CardBase> cardsBases;
     [SerializeField] List<Card> cardsHiden;
     [SerializeField] List<Card> cardsGame;
-    int indexGame = 0;
-    int indexHidden = 0;
 
     private void Start()
     {
-        List<CardBase> tempCardsBases = new List<CardBase>();
+        List<CardBase> removeLocked = new List<CardBase>();
         foreach (var item in cardsBases)
         {
-            tempCardsBases.Add(item);
-        }
-
-        foreach (CardBase item in deckBuilder.deck)
-        {
-            if(cardsBases.Contains(item))
+            if(item.isUnlocked)
             {
-                tempCardsBases.Remove(item);
+                removeLocked.Add(item);
             }
         }
 
-        foreach (CardBase item in tempCardsBases)
+        List<CardBase> removeDeck = new List<CardBase>();
+        foreach (var item in removeLocked)
         {
-            AddToHidden(item);
-        }
-
-        foreach (CardBase item in deckBuilder.deck)
-        {
-            AddToPlayingCard(item);
-        }
-    }
-
-    void AddToHidden(CardBase cardBase)
-    {
-        if (cardsHiden[indexHidden] != null)
-        {
-            if (cardsHiden[indexHidden].carBase == null)
+            if(!deckBuilder.deck.Contains(item))
             {
-                if (cardBase.isUnlocked)
-                {
-                    cardsHiden[indexHidden].carBase = cardBase;
-                }
-                cardsHiden[indexHidden].Init();
+                removeDeck.Add(item);
+            }
+        }
+
+        for (int i = 0; i < cardsHiden.Count; i++)
+        {
+            if(i > removeDeck.Count - 1)
+            {
+                cardsHiden[i].NotInit();
             }
             else
             {
-                if (cardBase.isUnlocked)
-                {
-                    cardsGame[indexGame].carBase = cardBase;
-                }
-                cardsHiden[indexHidden].UpdateCard();
+                cardsHiden[i].carBase = removeDeck[i];
+                cardsHiden[i].Init();
             }
         }
-        indexHidden++;
-    }
 
-    void AddToPlayingCard(CardBase cardBase)
-    {
-        if (cardsGame[indexGame] != null)
+        for (int i = 0; i < cardsGame.Count; i++)
         {
-            if (cardsGame[indexGame].carBase == null)
-            {
-                if (cardBase.isUnlocked)
-                {
-                    cardsGame[indexGame].carBase = cardBase;
-                }
-                cardsGame[indexGame].Init();
-            }
-            else
-            {
-                if (cardBase.isUnlocked)
-                {
-                    cardsGame[indexGame].carBase = cardBase;
-                }
-                cardsGame[indexGame].UpdateCard();
-            }
+            cardsGame[i].carBase = deckBuilder.deck[i];
+            cardsGame[i].Init();
         }
-        indexGame++;
+
+
     }
 
     [Button("TestShuffle")]
     public void ShuffleObject()
     {
-        indexGame = 0;
-        indexHidden = 0;
+        List<CardBase> current = new List<CardBase>();
+
+        foreach (var item in cardsHiden)
+        {
+            if(item.gameObject.activeSelf)
+            {
+                current.Add(item.carBase);
+            }
+        }
+
+        foreach (var item in cardsGame)
+        {
+           current.Add(item.carBase);
+        }
 
         System.Random rand = new System.Random();
-        var shuffled = cardsBases.OrderBy(_ => rand.Next()).ToList();
+        var shuffled = current.OrderBy(_ => rand.Next()).ToList();
 
-        foreach (CardBase item in shuffled)
+        Stack<CardBase> temp = new Stack<CardBase>();
+        foreach (var item in shuffled)
         {
-            if(item.isUnlocked && indexGame < cardsGame.Count)
+            temp.Push(item);
+        }
+
+        foreach (var item in cardsHiden)
+        {
+            if (item.gameObject.activeSelf)
             {
-                AddToPlayingCard(item);
+                item.carBase = temp.Pop();
+                item.UpdateCard();
             }
-            else if(indexHidden < cardsHiden.Count)
-            {
-                AddToHidden(item);
-            }
+        }
+
+        foreach (var item in cardsGame)
+        {
+            item.carBase = temp.Pop();
+            item.UpdateCard();
         }
     }
 }
