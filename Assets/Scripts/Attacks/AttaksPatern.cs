@@ -73,8 +73,16 @@ public class AttackEvent
         AllieBuffed,
         TurnPassed
     }
+
+    public enum HealthBarOccurMode
+    {
+        TriggerOnce,
+        AlwaysTrigger
+    }
     public AttackClass attack;
     public SpecialAttacksTrigerMode trigerMode;
+    public HealthBarOccurMode HpOccurMode;
+    public int numberHealthBarLeft;
 
 }
 #endregion

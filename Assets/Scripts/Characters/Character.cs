@@ -362,7 +362,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         throw new System.Exception("On dois pas arriver là");
     }
 
-    public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode)
+    public void TrackSpecialAtkEvents(AttackEvent.SpecialAttacksTrigerMode trigerMode, int value)
     {
                          
         switch (trigerMode)
@@ -373,7 +373,14 @@ public abstract class Character : MonoBehaviour, ICharacter
                 {
                     if(atk.trigerMode == AttackEvent.SpecialAttacksTrigerMode.LooseHealthBar && DoesFulFillCondition(atk.attack))
                     {
-                        _latetsAttackEvent = atk;
+                        if(atk.HpOccurMode == AttackEvent.HealthBarOccurMode.AlwaysTrigger)
+                        {
+                            _latetsAttackEvent = atk;
+                        }
+                        else if(atk.HpOccurMode == AttackEvent.HealthBarOccurMode.TriggerOnce && value == atk.numberHealthBarLeft)
+                        {
+                            _latetsAttackEvent = atk;
+                        }
                     }
                 }
                 break;

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using NaughtyAttributes;
 using System.Linq;
+using static UnityEngine.Rendering.DebugUI;
 
 public class FightManager : MonoBehaviour
 {
@@ -112,11 +113,11 @@ public class FightManager : MonoBehaviour
         StartTurn();
     }
 
-    public void TriggerEvent(AttackEvent.SpecialAttacksTrigerMode triger)
+    public void TriggerEvent(AttackEvent.SpecialAttacksTrigerMode triger, int value)
     {
         foreach(ICharacter chara in CharacterList)
         {
-            chara.TrackSpecialAtkEvents(triger);
+            chara.TrackSpecialAtkEvents(triger, value);
         }
     }
     private void StartTurn()
