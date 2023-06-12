@@ -21,7 +21,7 @@ MonoBehaviour:
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
-      attackConditionsMode: 1
+      attackConditionsMode: 0
       selfStatus: 0
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
@@ -54,7 +54,7 @@ MonoBehaviour:
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
-      attackConditionsMode: 1
+      attackConditionsMode: 0
       selfStatus: 0
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
@@ -87,7 +87,7 @@ MonoBehaviour:
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
-      attackConditionsMode: 1
+      attackConditionsMode: 0
       selfStatus: 0
       attack:
       - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
@@ -100,7 +100,7 @@ MonoBehaviour:
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
-      attackConditionsMode: 1
+      attackConditionsMode: 0
       selfStatus: 0
       attack:
       - {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
@@ -113,7 +113,7 @@ MonoBehaviour:
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
-      attackConditionsMode: 1
+      attackConditionsMode: 0
       selfStatus: 0
       attack:
       - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}

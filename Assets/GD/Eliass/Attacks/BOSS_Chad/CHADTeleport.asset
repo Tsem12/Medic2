@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f8d1e8efc19604aa27eb5c17f73c56, type: 3}
   m_Name: CHADTeleport
   m_EditorClassIdentifier: 
-  attackName: 
+  attackName: Teleport
   description: 
   attackSpriteOverRide: {fileID: 0}
   isLifeSteal: 0
   atkDamage: 0
-  attackEffects: 0
+  attackEffects: 3
   dotAttacks: 0
   buff: 0
-  deBuff: 0
+  deBuff: 3
   dotValuePerTurn: 0
-  effectTurnDuration: 0
+  effectTurnDuration: 3
   buffValue: 0
   deBuffValue: 0
   chanceToApplyEffect: 100
