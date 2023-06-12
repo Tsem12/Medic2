@@ -19,7 +19,7 @@ MonoBehaviour:
   cardBehaviour: 1
   cardName: 
   cardSprite: {fileID: 21300000, guid: 4ba936b16c8156440b9880db904d55d8, type: 3}
-  manaCost: 2
+  manaCost: 5
   healthHealed: 1
   turnActive: 0
   healthPercentage: 0

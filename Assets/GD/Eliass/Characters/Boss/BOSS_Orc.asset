@@ -24,10 +24,10 @@ MonoBehaviour:
       attackConditionsMode: 1
       selfStatus: 0
       attack:
-      - {fileID: 11400000, guid: 6af4e21aac196b6498c2ffdc351bc242, type: 2}
+      - {fileID: 11400000, guid: beeaa69d59b5f8043aba56e0f71d80ed, type: 2}
       condition: 3
       ConditionalAttack:
-      - {fileID: 11400000, guid: c4b62cf0bcb2e95499e165066ddc16d8, type: 2}
+      - {fileID: 11400000, guid: 794d2d8b540bcd54c9d6d4b9e4e11901, type: 2}
       - {fileID: 11400000, guid: 1ee55a77b4a67564a914f6db6e290cb6, type: 2}
       percentageValue: 0
       value: 1
