@@ -125,6 +125,6 @@ public class PartyMember : Character, IHealable
     protected override void Attack()
     {
         base.Attack();
-        _spriteRenderer.transform.DOScale(Vector3.one * .5f,0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
+        _gfx.transform.DOScale(Vector3.one * .5f,0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
     }
 }

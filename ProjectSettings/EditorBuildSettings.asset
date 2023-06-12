@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GP/Tom.unity
     guid: f0d77eb15ebc96f46b2b1a90a012b716
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: b5a6449b4c984ce4ab26831efd88cbee
   m_configObjects: {}
