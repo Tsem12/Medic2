@@ -15,7 +15,7 @@ MonoBehaviour:
   levels:
   - levelName: Level1
     boss: {fileID: 11400000, guid: aa7a173770016eb4ba53dde125494bc4, type: 2}
-    animator: {fileID: 8466049844776891583, guid: ba9500dcdf4dbff4bac41b3133f5cd64, type: 3}
+    animator: {fileID: 4702537099969628613, guid: acf9ffe58c821264a8d3b991c88b7779, type: 3}
     background: {fileID: 21300000, guid: b744b11ae36fa5c43a6e06822fdff2cf, type: 3}
   - levelName: Level2
     boss: {fileID: 11400000, guid: d408365338653b94087e0636c9e162c2, type: 2}

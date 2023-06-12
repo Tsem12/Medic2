@@ -1538,7 +1538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8207824005827856318}
   m_Layer: 0
-  m_Name: Sub_1
+  m_Name: Paladin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

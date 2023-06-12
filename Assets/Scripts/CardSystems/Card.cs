@@ -14,19 +14,36 @@ public class Card : MonoBehaviour, IInteractable
     [SerializeField] SpriteRenderer usedRenderer;
     [SerializeField] float size = 0.5f;
     [SerializeField] TextMeshPro tmpro;
-    [SerializeField] int index;
     [SerializeField] ManaObject manaObject;
+    [SerializeField] Sprite lockedSprite;
     bool effectWasApplied = false;
 
     public void Init()
     {
-        CheckIfInteractable();
-        UpdateCard();
-        carBase.manaObject.manaAddTurn += CheckIfInteractable;
-        refs.fightManager.OnTurnEnd += EndInteractable;
-        refs.fightManager.OnTurnBegin += EnableTurn;
-        carBase.manaObject.manaUpdate += CheckIfInteractable;
-        handlerObject.switchCard += SwitchUpdate;
+        if(carBase != null)
+        {
+            CheckIfInteractable();
+            UpdateCard();
+            carBase.manaObject.manaAddTurn += CheckIfInteractable;
+            refs.fightManager.OnTurnEnd += EndInteractable;
+            refs.fightManager.OnTurnBegin += EnableTurn;
+            carBase.manaObject.manaUpdate += CheckIfInteractable;
+            handlerObject.switchCard += SwitchUpdate;
+        }
+        else
+        {
+            EndInteractable();
+            myRender.sprite = lockedSprite;
+            myRender.color = Color.white;
+            usedRenderer.sprite = lockedSprite;
+            usedRenderer.color = Color.white;
+            tmpro.SetText("");
+        }
+    }
+
+    public void NotInit()
+    {
+        gameObject.SetActive(false);
     }
 
     public bool ApplyEffect()
@@ -156,11 +173,23 @@ public class Card : MonoBehaviour, IInteractable
 
     public void UpdateCard()
     {
-        myRender.sprite = carBase.cardSprite;
-        myRender.color = Color.white;
-        usedRenderer.sprite = carBase.cardSprite;
-        usedRenderer.color = Color.grey;
-        tmpro.SetText(carBase.manaCost.ToString());
+        if(carBase != null)
+        {
+            myRender.sprite = carBase.cardSprite;
+            myRender.color = Color.white;
+            usedRenderer.sprite = carBase.cardSprite;
+            usedRenderer.color = Color.grey;
+            tmpro.SetText(carBase.manaCost.ToString());
+        }
+        else
+        {
+            EndInteractable();
+            myRender.sprite = lockedSprite;
+            myRender.color = Color.white;
+            usedRenderer.sprite = lockedSprite;
+            usedRenderer.color = Color.white;
+            tmpro.SetText("");
+        }
     }
 
     public void HideCard()
