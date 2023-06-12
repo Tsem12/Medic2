@@ -13,6 +13,7 @@ public class LevelMenu : MonoBehaviour
     private void Awake()
     {
         gameData = SaveSystem.Load();
+        gameData.isHardDifficulty = false;
         SwitchDifficulty();
     }
     public void OpenLevel(int levelId)
@@ -23,7 +24,7 @@ public class LevelMenu : MonoBehaviour
 
     public void SwitchDifficulty()
     {
-        if (gameData.isHardDifficulty)
+        if (!gameData.isHardDifficulty)
         {
             hardPannel.SetActive(false);
             easyPannel.SetActive(true);
@@ -35,6 +36,7 @@ public class LevelMenu : MonoBehaviour
         }
         gameData.isHardDifficulty = !gameData.isHardDifficulty;
         SaveSystem.save(gameData);
+        
     }
     
 }
