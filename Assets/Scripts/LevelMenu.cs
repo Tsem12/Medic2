@@ -8,6 +8,8 @@ public class LevelMenu : MonoBehaviour
 {
     [SerializeField] GameObject easyPannel;
     [SerializeField] GameObject hardPannel;
+    [SerializeField] GameObject hardButton;
+    [SerializeField] GameObject easyButton;
     public Button[] Buttons;
     public GameData gameData;
     private void Awake()
@@ -28,11 +30,17 @@ public class LevelMenu : MonoBehaviour
         {
             hardPannel.SetActive(false);
             easyPannel.SetActive(true);
+            hardButton.SetActive(false);
+            easyButton.SetActive(true);
+            Debug.Log("azaz");
         }
         else
         {
             easyPannel.SetActive(false);
             hardPannel.SetActive(true);
+            easyButton.SetActive(false);
+            hardButton.SetActive(true);
+            Debug.Log("azaz");
         }
         gameData.isHardDifficulty = !gameData.isHardDifficulty;
         SaveSystem.save(gameData);

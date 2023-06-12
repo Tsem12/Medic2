@@ -5,6 +5,7 @@ MainMenu.Button.level3,Level 3,Niveau 3,Level 3,Nivel 3,3級,レベル3,Nível 3
 MainMenu.Button.level4,Level 4,Niveau 4,Level 4,Nivel 4,4級,レベル4,Nível 4,Уровень 4
 MainMenu.Button.level5,Infinite Level,Niveau Infini,Unendliches Level,Nivel Infinito, 无限水平,無限レベル ,Nível Infinito,Бесконечный уровень
 MainMenu.Button.hardMode,Hard Mode,Mode Difficile,Schwieriger Modus,Modo Difícil, 困难模式 ,ハードモード,Modo Difícil,Режим Сложности
+MainMenu.Button.easyMode,Easy Mode,Mode Facile,Einfacher Modus,"Modo Fácil",简单模式,イージーモード,Modo Fácil,Легкий режим
 OptionMenu.Button.Sfx,Sfx,Effets Sonores,Soundeffekte,Efectos de sonido,聲音特效,音響効果,Efeitos sonoros,Звуковые эффекты
 OptionMenu.Button.Music,Music,Musique,Musik,Música,音樂,音楽,Música,Музыка
 OptionMenu.Button.Pause,Pause,Pause,Brechen,Romper,休息,壊す,Quebrar,Переры
