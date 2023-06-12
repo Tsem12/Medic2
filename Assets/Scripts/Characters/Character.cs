@@ -356,14 +356,14 @@ public abstract class Character : MonoBehaviour, ICharacter
                     return true;
                 }
 
-            case AttackClass.AttackConditions.HpBarBetween:
-                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount > atk.value2 && CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount < atk.value)
+            case AttackClass.AttackConditions.HpBarEqual:
+                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount  == atk.value)
                 {
-                    return false;
+                    return true;
                 }
                 else
                 {
-                    return true;
+                    return false;
                 }
 
         }
