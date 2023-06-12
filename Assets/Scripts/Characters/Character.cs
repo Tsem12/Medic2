@@ -357,7 +357,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 }
 
             case AttackClass.AttackConditions.HpBarEqual:
-                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount  == atk.value)
+                if (_health.CurrentHealthBarAmount  == atk.value)
                 {
                     return true;
                 }
