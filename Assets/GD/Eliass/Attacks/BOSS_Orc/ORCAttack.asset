@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40f8d1e8efc19604aa27eb5c17f73c56, type: 3}
-  m_Name: ARCHFatigueArrow
+  m_Name: ORCAttack
   m_EditorClassIdentifier: 
-  attackName: Fatigue Arrow
+  attackName: 
   description: 
-  attackSprite: {fileID: 0}
+  attackSpriteOverRide: {fileID: 21300000, guid: e079b6ceed58dc1428074bfa7a17a2fc, type: 3}
+  isLifeSteal: 0
   atkDamage: 1
-  attackEffects: 3
+  attackEffects: 0
   dotAttacks: 0
   buff: 0
-  deBuff: 1
+  deBuff: 0
   dotValuePerTurn: 0
-  effectTurnDuration: 1
+  effectTurnDuration: 0
   buffValue: 0
-  deBuffValue: 1
+  deBuffValue: 0
   chanceToApplyEffect: 100
