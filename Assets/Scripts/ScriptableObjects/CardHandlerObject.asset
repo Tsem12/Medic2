@@ -13,4 +13,3 @@ MonoBehaviour:
   m_Name: CardHandlerObject
   m_EditorClassIdentifier: 
   isChaningCards: 0
-  cardsPrefab: []

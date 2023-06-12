@@ -41,13 +41,23 @@ public class Enemie : Character
 
     public override void SetTarget()
     {
+        Status stun = GetStatus(global::Status.StatusEnum.Stunned);
+        Status restrain = GetStatus(global::Status.StatusEnum.Restrained);
+        Status disapear = GetStatus(global::Status.StatusEnum.Disapeared);
+        Status sleep = GetStatus(global::Status.StatusEnum.Sleeped);
+
+        if(stun != null || restrain != null || disapear != null || sleep != null)
+            return;
+
         List<ICharacter> chara =  new List<ICharacter>();
         _targets.Clear();
+        _targetsAttacks.Clear();
         ICharacter target = null;
+        AttacksObject atkobj = null;
 
         foreach(ICharacter c in _refs.fightManager.PartyMembers)
         {
-            if (!c.IsDead() && c.GetStatus(Status.StatusEnum.Disapeared) == null)
+            if (!c.IsDead() && c.GetStatus(global::Status.StatusEnum.Disapeared) == null)
             {
                 chara.Add(c);
                 c.ClearIncomingAttacks();
@@ -62,13 +72,15 @@ public class Enemie : Character
         foreach(ICharacter c in chara)
         {
             c.ClearIncommingAttack();
-            Status status = c.GetStatus(Status.StatusEnum.Taunting);
+            Status status = c.GetStatus(global::Status.StatusEnum.Taunting);
             if(status != null)
             {
                 for(int i = 0; i < Mathf.Min(_currentAtkClass.nrbOfTargets, _refs.fightManager.PartyMembersList.Count); i++)
                 {
                     _targets.Add(c);
-                    c.SetIncommingAttack(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)], i);
+                    atkobj = _nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)];
+                    _targetsAttacks.Add(atkobj);
+                    c.SetIncommingAttack(atkobj, i);
                 }
                 return;
             }
@@ -98,7 +110,9 @@ public class Enemie : Character
 
             tempGlobalAgro -= target.GetAgro();
             _targets.Add(target);
-            target.SetIncommingAttack(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
+            atkobj = _nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)];
+            _targetsAttacks.Add(atkobj);
+            target.SetIncommingAttack(atkobj);
             chara.Remove(target);
         }
 

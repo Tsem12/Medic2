@@ -18,7 +18,7 @@ MonoBehaviour:
   isUnlocked: 0
   cardBehaviour: 2
   cardName: 
-  cardSprite: {fileID: 21300000, guid: 7fd327592f579d64b8ddfb1f8b15aafb, type: 3}
+  cardSprite: {fileID: 21300000, guid: 04177e3042490124c86b6819ab0bb2fc, type: 3}
   manaCost: 4
   healthHealed: 3
   turnActive: 3

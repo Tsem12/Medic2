@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SimpleLocalization.meta
 guid: 8a53052d4f9752a4bb2e351d7c5835fe
+========
+guid: d771876a788e9594eac727e8f7cfaae4
+>>>>>>>> origin/DEV:Assets/SimpleLocalization/Resources.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

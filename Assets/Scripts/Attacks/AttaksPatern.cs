@@ -19,6 +19,7 @@ public class AttackClass
         HpLowerThan,
         HpHiggerThan,
         HpBarLost,
+        HpBarNotLost,
         Random
     }
 
@@ -27,9 +28,9 @@ public class AttackClass
 
     public ConditionMode attackConditionsMode;
     public Status.StatusEnum selfStatus;
-    public AttacksObject attack;
+    public AttacksObject[] attack;
     public AttackConditions condition;
-    public AttacksObject ConditionalAttack;
+    public AttacksObject[] ConditionalAttack;
     [Range(0f, 100f)]
     [Tooltip("for HpLowerThan & HpHiggerThan value = percentage of health")]
     public int percentageValue;
@@ -72,7 +73,7 @@ public class AttackEvent
         AllieBuffed,
         TurnPassed
     }
-    public AttackClass attack;
+    public AttacksPatern attack;
     public SpecialAttacksTrigerMode trigerMode;
 
 }

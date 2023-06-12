@@ -48,7 +48,7 @@ public class AttacksObject : ScriptableObject
     [TextArea]
     public string description;
 
-    public Sprite attackSprite;
+    public Sprite attackSpriteOverRide;
 
 
     private bool NoTurnDuration
@@ -63,7 +63,7 @@ public class AttacksObject : ScriptableObject
     {
         get
         {
-            return attackEffects == AttackEffects.Buff && buff == Buff.Strength || buff == Buff.Regenerating;
+            return attackEffects == AttackEffects.Buff && buff == Buff.Strength || buff == Buff.Regenerating && attackEffects != AttackEffects.BaseAttack;
         }
     }
 
@@ -74,10 +74,17 @@ public class AttacksObject : ScriptableObject
             return attackEffects == AttackEffects.DeBuff && deBuff == DeBuff.Fatigue;
         }
     }
+    private bool IsbaseAtk
+    {
+        get
+        {
+            return attackEffects == AttackEffects.BaseAttack;
+        }
+    }
 
     [Header("Stats")]
 
-
+    public bool isLifeSteal;
     [Range(0, 10)]
     public int atkDamage;
     public AttackEffects attackEffects;
@@ -110,7 +117,7 @@ public class AttacksObject : ScriptableObject
     [Tooltip("deBuffValue = atk lower for fatigue")]
     public int deBuffValue;
 
-    [HideIf("attackEffects", AttackEffects.BaseAttack)]
+    [HideIf("IsbaseAtk")]
     [Range(0f, 100f)]
     public float chanceToApplyEffect = 100f;
 
@@ -177,6 +184,9 @@ public class AttacksObject : ScriptableObject
 
     public Sprite GetAttackSprite(FightManager fm)
     {
+        if (attackSpriteOverRide != null)
+            return attackSpriteOverRide;
+
         switch (attackEffects)
         {
             case AttackEffects.BaseAttack:
@@ -190,6 +200,8 @@ public class AttacksObject : ScriptableObject
                         return fm.Poisoned;
                     case DotAttacks.Restrain:
                         return fm.Restrained;
+                    case DotAttacks.Fire:
+                        return fm.Fire;
                 }
                 break;
             case AttackEffects.Buff:
@@ -204,6 +216,10 @@ public class AttacksObject : ScriptableObject
                         return fm.Regenerating;
                     case Buff.Shield:
                         return fm.Shielded;
+                    case Buff.ReflectShield:
+                        return fm.ReflectShield;
+                    case Buff.Taunt:
+                        return fm.Taunt;
                 }
                 break;
             case AttackEffects.DeBuff:
@@ -216,6 +232,8 @@ public class AttacksObject : ScriptableObject
                         return fm.Fatigue;
                     case DeBuff.Sleeped:
                         return fm.Sleeped;
+                    case DeBuff.Disapearance:
+                        return fm.Disapear;
                 }
                 break;
         }

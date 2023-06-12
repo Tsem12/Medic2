@@ -64,6 +64,14 @@ public class FightManager : MonoBehaviour
     [SerializeField] private Sprite restrained;
     [Foldout("StatusSprites")]
     [SerializeField] private Sprite stunned;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite taunt;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite reflectShield;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite fire;
+    [Foldout("StatusSprites")]
+    [SerializeField] private Sprite disapear;
     public Sprite BaseAttack { get => baseAttack; }
     public Sprite Strengthened { get => strengthened; }
     public Sprite Initiative { get => initiative; }
@@ -74,6 +82,10 @@ public class FightManager : MonoBehaviour
     public Sprite Sleeped { get => sleeped; }
     public Sprite Restrained { get => restrained; }
     public Sprite Stunned { get => stunned; }
+    public Sprite Taunt { get => taunt; set => taunt = value; }
+    public Sprite ReflectShield { get => reflectShield; set => reflectShield = value; }
+    public Sprite Fire { get => fire; set => fire = value; }
+    public Sprite Disapear { get => disapear; set => disapear = value; }
     #endregion
     public Enemie Enemie { get => _enemie; set => _enemie = value; }
     public PartyMember[] PartyMembers { get => _partyMembers; set => _partyMembers = value; }
@@ -177,9 +189,9 @@ public class FightManager : MonoBehaviour
 
     private bool ArePartyStillAlive()
     {
-        foreach(ICharacter chara in PartyMembersList)
+        foreach (ICharacter chara in PartyMembersList)
         {
-            if(!chara.IsDead())
+            if(CharacterList.Contains(chara))
                 return true;
         }
         return false;
@@ -267,11 +279,12 @@ public class FightManager : MonoBehaviour
 
         }
         _state = FightState.None;
-
         _enemie.CheckStatus();
-        foreach(ICharacter c in _partyMembers)
+        _enemie.UpdateBar();
+        foreach (ICharacter c in _partyMembersList.ToList())
         {
             c.CheckStatus();
+            c.UpdateBar();
         }
 
         if (_enemie.GetComponent<ICharacter>().IsDead())
