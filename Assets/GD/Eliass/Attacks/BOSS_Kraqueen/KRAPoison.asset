@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Poison
   description: 
-  attackSpriteOverRide: {fileID: 0}
+  attackSpriteOverRide: {fileID: 21300000, guid: 5acc57a7065dcfd4eb5526c9589ac603, type: 3}
   isLifeSteal: 0
   atkDamage: 0
   attackEffects: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: 
   description: 
-  attackSpriteOverRide: {fileID: 0}
+  attackSpriteOverRide: {fileID: 21300000, guid: ef0f03917c833c2429ca4866821aefd3, type: 3}
   isLifeSteal: 0
   atkDamage: 2
   attackEffects: 0
