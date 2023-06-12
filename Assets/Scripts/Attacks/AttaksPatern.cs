@@ -20,6 +20,7 @@ public class AttackClass
         HpHiggerThan,
         HpBarLost,
         HpBarNotLost,
+        HpBarBetween,
         Random
     }
 
@@ -34,8 +35,10 @@ public class AttackClass
     [Range(0f, 100f)]
     [Tooltip("for HpLowerThan & HpHiggerThan value = percentage of health")]
     public int percentageValue;
-    [Tooltip("for HpBarLost value = number of bar lost")]
+    [Tooltip("for HpBarLost value = number of bar lost && mix value for between condition")]
     public int value;
+    [Tooltip("mix value for between condition")]
+    public int value2;
 
 }
 [System.Serializable]

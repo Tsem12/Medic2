@@ -10,7 +10,7 @@ public class LevelDataObject : ScriptableObject
     {
         public string levelName;
         public CharacterObjets boss;
-        public RuntimeAnimatorController animator;
+        public GameObject animator;
         public Sprite background;
     }
     public int currentSceneIndex { get; private set; }

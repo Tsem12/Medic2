@@ -22,7 +22,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
     [SerializeField] protected StatusBarManager _statusBar;
-    [SerializeField] protected SpriteRenderer _spriteRenderer;
+    [SerializeField] protected Transform _gfx;
     [SerializeField] private PartyMemberEnum charaType;
 
     [Header("Health")]
@@ -52,10 +52,6 @@ public abstract class Character : MonoBehaviour, ICharacter
     protected List<ICharacter> _targets =  new List<ICharacter>();
 
 
-    private void Awake()
-    {
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-    }
     private void OnValidate()
     {
         AssignValues();
@@ -210,7 +206,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         foreach(ICharacter target in _targets.ToList())
         {
 
-            Debug.Log($" attack : {_targetsAttacks[index]} ");
+            Debug.Log($" attack : {_targetsAttacks[index]}, patern {_actualPatern.paternName}");
             Status disapear = target.GetStatus(global::Status.StatusEnum.Disapeared);
             Status shield = target.GetStatus(global::Status.StatusEnum.Shielded);
             Status s = target.GetStatus(global::Status.StatusEnum.ShieldedWithReflect);
@@ -298,7 +294,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         status.Clear();
         _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
         _isDead = true;
-         _spriteRenderer.color = Color.red;
+        //_spriteRenderer.color = Color.red;
     }
 
     public void Revive(float heal)
@@ -307,7 +303,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             return;
 
         _isDead = false;
-        _spriteRenderer.color = Color.white;
+        //_spriteRenderer.color = Color.white;
         _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
     }
@@ -341,7 +337,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
             case AttackClass.AttackConditions.HpBarLost:
                 //Debug.Log($"{_health.CurrentHealthBarAmount} >= {atk.value}");
-                if(CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
+                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
                 {
                     return true;
                 }
@@ -359,6 +355,17 @@ public abstract class Character : MonoBehaviour, ICharacter
                 {
                     return true;
                 }
+
+            case AttackClass.AttackConditions.HpBarBetween:
+                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount > atk.value2 && CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount < atk.value)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
         }
         throw new System.Exception("On dois pas arriver là");
     }
@@ -488,7 +495,6 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         List<AttacksObject> result3 = new List<AttacksObject>();
         AttackClass atk = _actualPatern.attackQueue.Dequeue();
-        Debug.Log(atk.nrbOfTargets);
         int nbrLoop = 0;
 
         if(atk.attackConditionsMode == AttackClass.ConditionMode.DontAttackWithoutCondition)
@@ -583,7 +589,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             {
                 _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
 
-                transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => _spriteRenderer.enabled = true);
+                transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => _gfx.gameObject.SetActive(true));
             }
             if (status == global::Status.StatusEnum.Taunting)
             {
@@ -636,7 +642,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         if(status.status == global::Status.StatusEnum.Disapeared)
         {
             _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
-            transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => _spriteRenderer.enabled = false);
+            transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => _gfx.gameObject.SetActive(false));
         }
         Status.Add(status);
         _statusBar.UpdateBar();

@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: 788811c780285be4da985be3a919b4cb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Elf_atlas_1
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 2439
+        width: 539
+        height: 511
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12a581c85174d4d4baeff789be7c44dd
+      internalID: -70078532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_2
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 1805
+        width: 1181
+        height: 1067
+      alignment: 9
+      pivot: {x: 0.6475308, y: 0.94382274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6096d2ede4a276543aa21e8c45eeda6e
+      internalID: -366404461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_3
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 2270
+        width: 238
+        height: 364
+      alignment: 9
+      pivot: {x: 0.8003384, y: 0.87434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f48d7f22b349c449832d003c47ed4a7
+      internalID: 2054157991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1888
+        width: 443
+        height: 622
+      alignment: 9
+      pivot: {x: 0.4747882, y: 0.514365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ab2cd83467cb343928fc829fa47a93
+      internalID: -151360922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_7
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1960
+        width: 370
+        height: 434
+      alignment: 9
+      pivot: {x: 0.54829764, y: 0.10883272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798ed78da73b13f42ac1ef324892daac
+      internalID: 894654007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_9
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1198
+        width: 226
+        height: 531
+      alignment: 9
+      pivot: {x: 0.44069624, y: 0.85336435}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f699f60505a434c8e2706710c961c3
+      internalID: 62949658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_11
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1401
+        width: 375
+        height: 277
+      alignment: 9
+      pivot: {x: 0.52978355, y: 0.79837334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b57a6f9ecbe8d4390e23b5c56047a4
+      internalID: 1807937130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_12
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 985
+        width: 392
+        height: 700
+      alignment: 9
+      pivot: {x: 0.63106304, y: 0.75528777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d588ee1cc1cd141b9cb92e160ae8ff
+      internalID: -1904124807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_13
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1395
+        width: 213
+        height: 140
+      alignment: 9
+      pivot: {x: 0.2168463, y: 0.65955377}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cea368d9defb1646969f77cc9d2e29a
+      internalID: -1638730655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_14
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 580
+        width: 275
+        height: 593
+      alignment: 9
+      pivot: {x: 0.5162458, y: 0.76368237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd6355572556c9478e6b4188f2ef8db
+      internalID: 125271310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_15
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 986
+        width: 494
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7c4696cd2341749bc8def8d24d17e0
+      internalID: -1381384650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_17
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 371
+        width: 295
+        height: 507
+      alignment: 9
+      pivot: {x: 0.4545675, y: 0.81281567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbeece7ac49aec479964218eb8a3702
+      internalID: 1634653844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_20
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 495
+        width: 207
+        height: 179
+      alignment: 9
+      pivot: {x: 0.6294936, y: 0.8119783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32db4e6933ccf6b4ab1c50ab86433e8f
+      internalID: -821738322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_atlas_21
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 128
+        width: 251
+        height: 498
+      alignment: 9
+      pivot: {x: 0.35760814, y: 0.90369314}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfffde025140044ca08b871e59eb015
+      internalID: -1190143806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Elf_atlas_0: -519893251
+      Elf_atlas_1: -70078532
+      Elf_atlas_10: -1709515099
+      Elf_atlas_11: 1807937130
+      Elf_atlas_12: -1904124807
+      Elf_atlas_13: -1638730655
+      Elf_atlas_14: 125271310
+      Elf_atlas_15: -1381384650
+      Elf_atlas_16: 1383199552
+      Elf_atlas_17: 1634653844
+      Elf_atlas_18: 1664097574
+      Elf_atlas_19: 122618396
+      Elf_atlas_2: -366404461
+      Elf_atlas_20: -821738322
+      Elf_atlas_21: -1190143806
+      Elf_atlas_22: 1446941363
+      Elf_atlas_23: 2125553030
+      Elf_atlas_24: 566222030
+      Elf_atlas_25: 2971632
+      Elf_atlas_3: 2054157991
+      Elf_atlas_4: -1763745651
+      Elf_atlas_5: -151360922
+      Elf_atlas_6: -2120313219
+      Elf_atlas_7: 894654007
+      Elf_atlas_8: -241818630
+      Elf_atlas_9: 62949658
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
