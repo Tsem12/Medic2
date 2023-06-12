@@ -12,9 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: BOSS_Chad'O'Wizard
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  numberOfHealthBar: 1
-  baseSpeed: 0
+  maxHealth: 10
+  numberOfHealthBar: 3
+  baseSpeed: 100
   baseAgroValue: 0
-  attacksPatern: []
-  attacksEvent: []
+  attacksPatern:
+  - paternName: Part1
+    interuptMode: 0
+    attacks:
+    - nrbOfTargets: 2
+      attackConditionsMode: 1
+      selfStatus: 0
+      attack:
+      - {fileID: 11400000, guid: 807a926a78b77c54e9f09c7316c60734, type: 2}
+      - {fileID: 11400000, guid: d43d7fba2e1e0b14398f1e7e29252edf, type: 2}
+      condition: 0
+      ConditionalAttack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
+      percentageValue: 0
+      value: 0
+  attacksEvent:
+  - attack:
+      paternName: TP
+      interuptMode: 0
+      attacks:
+      - nrbOfTargets: 1
+        attackConditionsMode: 1
+        selfStatus: 0
+        attack:
+        - {fileID: 11400000, guid: 59bc4be9c6852d74181a4324de6efba9, type: 2}
+        condition: 0
+        ConditionalAttack: []
+        percentageValue: 0
+        value: 0
+    trigerMode: 0
+    HpOccurMode: 0
+    numberHealthBarLeft: 1
+  - attack:
+      paternName: Shuffle
+      interuptMode: 0
+      attacks:
+      - nrbOfTargets: 1
+        attackConditionsMode: 1
+        selfStatus: 0
+        attack:
+        - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
+        condition: 0
+        ConditionalAttack: []
+        percentageValue: 0
+        value: 0
+    trigerMode: 0
+    HpOccurMode: 0
+    numberHealthBarLeft: 2
