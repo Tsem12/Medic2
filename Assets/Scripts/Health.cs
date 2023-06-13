@@ -45,10 +45,6 @@ public class Health : MonoBehaviour
             HealtPoint hp = obj.GetComponent<HealtPoint>();
             _healthPoints.Add(hp);
         }
-        //if( _healthPoints.Count > 1)
-        //{
-        //    _layerGroupHealthpoint.padding.left += -(((int)_healthPoints[0].GetComponent<RectTransform>().rect.width * _healthPoints.Count) + ((int)_layerGroupHealthpoint.spacing * _healthPoints.Count - 1)) / 2;
-        //}
 
         if (_layerGroupHealthBar != null)
         {
@@ -58,17 +54,11 @@ public class Health : MonoBehaviour
                 _healthBars.Add(obj);
             }
 
-            //    Invoke("SetPos", 0.05f);
         }
 
 
     }
 
-    //private void SetPos()
-    //{
-    //    //_layerGroupHealthBar.GetComponent<RectTransform>().Translate(_healthPoints[0].GetComponent<RectTransform>().localPosition);
-    //    _layerGroupHealthBar.GetComponent<RectTransform>().localPosition +=  new Vector3(_healthPoints[0].GetComponent<RectTransform>().localPosition.x + 50, 0, 0) * 2 ;
-    //}
 
     public void TakeDamage(int value)
     {
@@ -164,7 +154,6 @@ public class Health : MonoBehaviour
     public void TestHeal() => Heal(2);
     internal void Heal(int value, bool IsPartyMember = false)
     {
-        Debug.Log("Tryheal");
         if (_character.IsDead())
         {
             Debug.LogError($"{gameObject.name} is dead he cannot be healed");
@@ -189,7 +178,7 @@ public class Health : MonoBehaviour
                 Sequence sequence1 = DOTween.Sequence();
                 for(int i = _character.GetCurrentHealth(); i < _character.GetMaxHealth(); i++)
                 {
-                    //sequence1.Append(_healthPoints[i].GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+                    _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
                     sequence1.Append(_healthPoints[i].ValidHp.rectTransform.DOAnchorPosY(_healthPoints[i].ValidHp.rectTransform.localPosition.y + 300, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
                 }
                 //foreach (HealtPoint hp in _healthPoints)

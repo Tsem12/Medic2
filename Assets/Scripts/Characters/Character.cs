@@ -84,10 +84,17 @@ public abstract class Character : MonoBehaviour, ICharacter
         Status sleep = GetStatus(global::Status.StatusEnum.Sleeped);
         Status disapear = GetStatus(global::Status.StatusEnum.Disapeared);
 
+        if(disapear != null && disapear.remainTurn <= 1)
+        {
+            TryRemoveStatus(global::Status.StatusEnum.Disapeared);
+            disapear = null;
+        }
+
         if (stunned != null || restrained != null || sleep != null || disapear != null)
         {
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} can't attack");
+            EndTurn();
             return;
         }
 
@@ -106,6 +113,8 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} finished his turn");
+        CheckStatus();
+        UpdateBar();
     }
 
     public void CheckStatus()
@@ -201,7 +210,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if(_currentAtkClass.selfStatus != global::Status.StatusEnum.None)
         {
-            AddStatus(GetStatus(_currentAtkClass.selfStatus, 2, 1, 1, 1));
+            AddStatus(GetStatus(_currentAtkClass.selfStatus, _currentAtkClass.selfStatusDuration, 1, 1, 1));
         }
 
         int index = 0;
@@ -259,7 +268,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     private IEnumerator AttackRoutine()
     {
         Attack();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2.5f);
         _isPlaying = false;
         _attackRoutine = null;
     }
@@ -365,7 +374,22 @@ public abstract class Character : MonoBehaviour, ICharacter
                 }
 
             case AttackClass.AttackConditions.HpBarEqual:
-                if (_health.CurrentHealthBarAmount  == atk.value)
+                if (_health.CurrentHealthBarAmount == atk.value)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            case AttackClass.AttackConditions.CanAttack:
+                Status stunned = GetStatus(global::Status.StatusEnum.Stunned);
+                Status restrained = GetStatus(global::Status.StatusEnum.Restrained);
+                Status sleep = GetStatus(global::Status.StatusEnum.Sleeped);
+                Status disapear = GetStatus(global::Status.StatusEnum.Disapeared);
+
+                if (stunned != null || restrained != null || sleep != null || disapear != null)
                 {
                     return true;
                 }
@@ -595,9 +619,8 @@ public abstract class Character : MonoBehaviour, ICharacter
 
             if (status == global::Status.StatusEnum.Disapeared && !IsDead())
             {
-                _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
-
-                transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => _gfx.gameObject.SetActive(true));
+                //_gfx.gameObject.SetActive(true);
+                //transform.DOShakeScale(2).SetEase(Ease.InOutFlash);
             }
             if (status == global::Status.StatusEnum.Taunting)
             {
@@ -649,8 +672,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if(status.status == global::Status.StatusEnum.Disapeared)
         {
-            _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
-            transform.DOShakeScale(0.25f).SetEase(Ease.InOutFlash).OnComplete(() => _gfx.gameObject.SetActive(false));
+            //transform.DOShakeScale(2f).SetEase(Ease.InOutFlash).OnComplete(() => _gfx.gameObject.SetActive(false));
         }
         Status.Add(status);
         _statusBar.UpdateBar();
@@ -684,7 +706,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [Button]
     public void TestSleep() => AddStatus(new Status(global::Status.StatusEnum.Sleeped, true));
     [Button]
-    public void TestFatigue() => AddStatus(new Status(global::Status.StatusEnum.Fatigue, 2, 1));
+    public void TestFatigue() => AddStatus(new Status(global::Status.StatusEnum.Fatigue, true, 1));
     [Button]
     public void TestRestrained() => AddStatus(new Status(global::Status.StatusEnum.Restrained, 2, 1));
     [Button]
@@ -741,7 +763,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             case global::Status.StatusEnum.Stunned:
                 return new Status(global::Status.StatusEnum.Stunned, effectTurnDuration);
             case global::Status.StatusEnum.Fatigue:
-                return new Status(global::Status.StatusEnum.Fatigue, effectTurnDuration, deBuffValue);
+                return new Status(global::Status.StatusEnum.Fatigue, true, deBuffValue);
             case global::Status.StatusEnum.Sleeped:
                 return new Status(global::Status.StatusEnum.Sleeped, true);
             case global::Status.StatusEnum.Disapeared:
