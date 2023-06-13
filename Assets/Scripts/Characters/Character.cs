@@ -210,7 +210,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         foreach(ICharacter target in _targets.ToList())
         {
 
-            Debug.Log($" attack : {_targetsAttacks[index]}, patern {_actualPatern.paternName}");
+            //Debug.Log($" attack : {_targetsAttacks[index]}, patern {_actualPatern.paternName}");
             Status disapear = target.GetStatus(global::Status.StatusEnum.Disapeared);
             Status shield = target.GetStatus(global::Status.StatusEnum.Shielded);
             Status s = target.GetStatus(global::Status.StatusEnum.ShieldedWithReflect);

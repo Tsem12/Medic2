@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,21 @@ public class GameManager : MonoBehaviour
         Paused
     }
 
+
+    private void OnEnable()
+    {
+        SceneManager.sceneUnloaded += SceneManagerOnSceneUnloaded;
+    }
+
+    private static void SceneManagerOnSceneUnloaded(Scene scene)
+    {
+    }
+
+    private void OnDisable()
+    {
+        DOTween.KillAll();
+        SceneManager.sceneUnloaded -= SceneManagerOnSceneUnloaded;
+    }
 
     private void Awake()
     {

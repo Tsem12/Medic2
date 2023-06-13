@@ -217,7 +217,7 @@ RectTransform:
   m_GameObject: {fileID: 877897825120480380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5628314, y: 7.1285534, z: 3.701643}
+  m_LocalScale: {x: 3.5628314, y: 7.1285524, z: 3.701643}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2113850550299633616}
@@ -225,7 +225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.44467154, y: 0.89745384}
   m_AnchorMax: {x: 0.44467154, y: 0.89745384}
-  m_AnchoredPosition: {x: 11, y: 499}
+  m_AnchoredPosition: {x: 10.999878, y: 499.0003}
   m_SizeDelta: {x: 99.067566, y: 91.66569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8991239961378839027
@@ -477,18 +477,18 @@ RectTransform:
   m_GameObject: {fileID: 2834085316451457832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9104, y: 1.9104, z: 1.9104}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3005242415334763703}
   - {fileID: 4644515563711138346}
   - {fileID: 716697522447153659}
-  m_Father: {fileID: 184824414227899196}
+  m_Father: {fileID: 689944521542040064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -452.00003, y: 653.99854}
+  m_AnchoredPosition: {x: 411.2, y: 8040.001}
   m_SizeDelta: {x: 350.6, y: 695.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3026924229069296858
@@ -625,6 +625,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1742846122320612730}
   - {fileID: 184824414227899196}
   m_Father: {fileID: 4496213201563799262}
   m_RootOrder: -1
@@ -1005,8 +1006,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1742846122320612730}
+  m_Children: []
   m_Father: {fileID: 689944521542040064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1357,6 +1357,7 @@ MonoBehaviour:
   - {fileID: 4656734066165863988}
   - {fileID: 7417770203457526124}
   - {fileID: 3591950280448915589}
+  _statusTimerImagesStatus: 
   _timerImages:
   - {fileID: 21300000, guid: bb8172092f1c6624a9ba1571980d6d77, type: 3}
   - {fileID: 21300000, guid: 3fc6dcbfc494e854f985fa973dab6e97, type: 3}

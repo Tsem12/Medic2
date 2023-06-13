@@ -41,6 +41,15 @@ public class Card : MonoBehaviour, IInteractable
         }
     }
 
+    private void OnDestroy()
+    {
+        carBase.manaObject.manaAddTurn -= CheckIfInteractable;
+        refs.fightManager.OnTurnEnd -= EndInteractable;
+        refs.fightManager.OnTurnBegin -= EnableTurn;
+        carBase.manaObject.manaUpdate -= CheckIfInteractable;
+        handlerObject.switchCard -= SwitchUpdate;
+    }
+
     public void NotInit()
     {
         gameObject.SetActive(false);

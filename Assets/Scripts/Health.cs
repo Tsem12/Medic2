@@ -189,8 +189,8 @@ public class Health : MonoBehaviour
                 Sequence sequence1 = DOTween.Sequence();
                 for(int i = _character.GetCurrentHealth(); i < _character.GetMaxHealth(); i++)
                 {
-                    sequence1.Append(_healthPoints[i].GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
-                    _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+                    //sequence1.Append(_healthPoints[i].GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+                    sequence1.Append(_healthPoints[i].ValidHp.rectTransform.DOAnchorPosY(_healthPoints[i].ValidHp.rectTransform.localPosition.y + 300, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
                 }
                 //foreach (HealtPoint hp in _healthPoints)
                 //{
@@ -217,14 +217,13 @@ public class Health : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         foreach (HealtPoint hp in list)
         {
-            sequence.Append(hp.ValidHp.GetComponent<Image>().DOColor(Color.green, 0.25f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo));
-            sequence.Append(hp.ValidHp.rectTransform.DOMoveY(4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+            sequence.Append(hp.ValidHp.rectTransform.DOAnchorPosY(hp.ValidHp.rectTransform.localPosition.y + 300, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
 
-            if (_refs.fightManager.EnableDebug)
-                Debug.Log($"{gameObject.name} have been healed");
-
-            _character.SetCurrentHealth(newHealth);
         }
+        if (_refs.fightManager.EnableDebug)
+            Debug.Log($"{gameObject.name} have been healed");
+
+        _character.SetCurrentHealth(newHealth);
 
     }
 }
