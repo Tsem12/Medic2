@@ -43,12 +43,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("quit");
+        Home();
     }
 
     public void Retry()
     {
-        Debug.Log("retry");
+        SceneManager.LoadScene("Game");
     }
 
     public void NextLevel()
