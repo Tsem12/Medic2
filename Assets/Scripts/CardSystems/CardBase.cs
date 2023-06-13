@@ -32,7 +32,7 @@ public class CardBase : ScriptableObject
     [Space(30)]
 
     public bool isUnlocked;
-    public int dateIndex;
+    public int dataIndex;
     public CardBehaviour cardBehaviour;
     public string cardName;
     public Sprite cardSprite;
@@ -160,7 +160,7 @@ public class CardBase : ScriptableObject
     {
         GameData gameData = new GameData();
         gameData = SaveSystem.Load();
-        gameData.spellUnlocked[dateIndex] = isUnlocked;
+        gameData.spellUnlocked[dataIndex] = isUnlocked;
         SaveSystem.save(gameData);
     }
 
@@ -169,7 +169,7 @@ public class CardBase : ScriptableObject
     {
         GameData gameData = new GameData();
         gameData = SaveSystem.Load();
-        isUnlocked = gameData.spellUnlocked[dateIndex];
+        isUnlocked = gameData.spellUnlocked[dataIndex];
     }
 }
 
