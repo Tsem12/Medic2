@@ -11,8 +11,8 @@ public class GameData
     public bool[] spellUnlocked;
 
     public bool isHardDifficulty;
-    public float musicVolume;
-    public float sfxVolume;
+    public bool musicVolume;
+    public bool sfxVolume;
     public string Language;
     
 
@@ -23,8 +23,8 @@ public class GameData
         levelUnlocked[0] = true;
         spellUnlocked = new bool[10];
         isHardDifficulty = false;
-        musicVolume = 1;
-        sfxVolume = 1;
+        musicVolume = true;
+        sfxVolume = true;
         Language = "Français";
     }
     
