@@ -71,8 +71,6 @@ public class Health : MonoBehaviour
             Status d = _character.GetStatus(Status.StatusEnum.Stunned);
         }
 
-        TweenTakeDamage(0.1f);
-
         int newHealth = _character.GetCurrentHealth() - value;
         if (newHealth <= 0)
         {
@@ -120,34 +118,41 @@ public class Health : MonoBehaviour
 
         for (int i = newHealth; i < newHealth + value; i++)
         {
-            TakeHealthBarDamageTweener(i);
             if (_currentHealthBarAmount <= 1)
             {
                 _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_healthPoints[i].Colors.Length - 1];
+                TakeLastBarHealthBarDamageTweener(i);
             }
             else
             {
                 _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount + 1];
+                TakeHealthBarDamageTweener(i);
             }
 
         }
         _character.SetCurrentHealth(newHealth);
     }
 
-    private void TweenTakeDamage(float value)
-    {
-        if (_tweener == null)
-        {
-            _tweener = _gfx.DOShakePosition(0.5f, value).SetEase(Ease.InFlash).OnComplete(() => _tweener = null);
-        }
-    }
+
 
     private void TakeHealthBarDamageTweener(int i)
     {
+        Image img = _healthPoints[i].ValidHp.GetComponent<Image>();
+        Color baseColor = img.color;
         Tweener scale = _healthPoints[i].ValidHp.rectTransform.DOScale(Vector3.one * 1.5f, 0.25f);
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(_healthPoints[i].ValidHp.rectTransform.DOShakeAnchorPos(0.5f, 25f, 10, 90).SetEase(Ease.OutFlash));
+        sequence.Append(img.DOColor(Color.red, 0.25f));
+        sequence.Join(_healthPoints[i].ValidHp.rectTransform.DOShakeAnchorPos(0.5f, 25f, 10, 90).SetEase(Ease.OutFlash));
         sequence.Join(scale.OnComplete(() => _healthPoints[i].ValidHp.rectTransform.DOScale(Vector3.one, 0.25f)));
+        sequence.Append(img.DOColor(baseColor, 0.25f));
+    }
+
+    private void TakeLastBarHealthBarDamageTweener(int i)
+    {
+        Tweener scale = _healthPoints[i].InValidHp.rectTransform.DOScale(Vector3.one * 1.5f, 0.25f);
+        Sequence sequence = DOTween.Sequence();
+        sequence.Join(_healthPoints[i].InValidHp.rectTransform.DOShakeAnchorPos(0.5f, 25f, 10, 90).SetEase(Ease.OutFlash));
+        sequence.Join(scale.OnComplete(() => _healthPoints[i].InValidHp.rectTransform.DOScale(Vector3.one, 0.25f)));
     }
 
     [Button]
