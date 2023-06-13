@@ -16,7 +16,7 @@ MonoBehaviour:
   input: {fileID: 11400000, guid: 8e559ff9f04731d49bbc52aabad3f4a7, type: 2}
   refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
   isUnlocked: 1
-  dateIndex: 1
+  dataIndex: 1
   cardBehaviour: 0
   cardName: 
   cardSprite: {fileID: 21300000, guid: 8da42721155ec0e45af30bc3b9001b74, type: 3}
