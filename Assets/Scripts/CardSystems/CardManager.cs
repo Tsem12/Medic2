@@ -17,7 +17,7 @@ public class CardManager : MonoBehaviour
     {
         foreach (var item in cardsBases)
         {
-            item.Load();
+           // item.Load();
         }
 
         List<CardBase> removeLocked = new List<CardBase>();
