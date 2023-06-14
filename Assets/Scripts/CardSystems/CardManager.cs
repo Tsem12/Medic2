@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class CardManager : MonoBehaviour
 {
@@ -16,6 +15,11 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
+        foreach (var item in cardsBases)
+        {
+           // item.Load();
+        }
+
         List<CardBase> removeLocked = new List<CardBase>();
         foreach (var item in cardsBases)
         {
@@ -52,8 +56,6 @@ public class CardManager : MonoBehaviour
             cardsGame[i].carBase = deckBuilder.deck[i];
             cardsGame[i].Init();
         }
-
-
     }
 
     [Button("TestShuffle")]
@@ -96,6 +98,14 @@ public class CardManager : MonoBehaviour
         {
             item.carBase = temp.Pop();
             item.UpdateCard();
+        }
+    }
+
+    public void SaveCards()
+    {
+        foreach (var item in cardsBases)
+        {
+            item.Save();
         }
     }
 }

@@ -7,37 +7,56 @@ using UnityEngine.UI;
 public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer myMixer;
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private GameObject SfxButton;
+    [SerializeField] private GameObject MusicButton;
 
     public GameData gameData;
+
+    private Color Greycolor = Color.grey;
+    private Color Whitecolor = Color.white;
+
 
     private void Awake()
     {
         gameData = SaveSystem.Load();
-        musicSlider.value = gameData.musicVolume;
-        sfxSlider.value = gameData.sfxVolume;
+
     }
 
     private void Start()
     {
         SetMusicVolume();
+
     }
 
-    public void SetMusicVolume()
-    {
-        float volume = musicSlider.value;
-        myMixer.SetFloat("Music", Mathf.Log10(volume)*20);
-        gameData.musicVolume = volume;
+    public void SetMusicVolume() { 
+    
+        gameData.musicVolume = !gameData.musicVolume;
+        if (gameData.musicVolume)
+        {
+            myMixer.SetFloat("Music", 80f);
+
+        }
+        else
+        {
+            myMixer.SetFloat("Music", -80f);
+        }
         SaveSystem.save(gameData);
     }
 
 
     public void SetSfxVolume()
     {
-        float volume = sfxSlider.value;
-        myMixer.SetFloat("Sfx", Mathf.Log10(volume) * 20);
-        gameData.sfxVolume = volume;
-        SaveSystem.save(gameData);
+
+        gameData.musicVolume = !gameData.musicVolume;
+        if (gameData.musicVolume)
+        {
+            myMixer.SetFloat("Sfx", 80f);
+
+        }
+        else
+        {
+            myMixer.SetFloat("Sfx", -80f);
+
+        }
     }
 }

@@ -1,0 +1,751 @@
+fileFormatVersion: 2
+guid: 427e1064f79dc8a498b5a251e90f4b8c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rien
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1945
+        width: 309
+        height: 740
+      alignment: 9
+      pivot: {x: 0.6059101, y: 0.1720007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1893c47ce93d7499136d89553ec350
+      internalID: -1764050259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EPauleG2
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 2091
+        width: 346
+        height: 534
+      alignment: 9
+      pivot: {x: 0.4290618, y: 0.7144981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d223e0bff98a19c47bd6a014994ac211
+      internalID: 1147901644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xEAte"
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 2458
+        width: 355
+        height: 366
+      alignment: 9
+      pivot: {x: 0.48463598, y: 0.17959344}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059af54a6f220ed4cb7cfd237739abe3
+      internalID: -57953123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuisseG
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 2365
+        width: 290
+        height: 409
+      alignment: 9
+      pivot: {x: 0.8103356, y: 0.8467334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c46c974da3f014c87f8bdeeec6de22
+      internalID: 2050849330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Massue
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 2072
+        width: 656
+        height: 768
+      alignment: 9
+      pivot: {x: 0.2713489, y: 0.25853062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49ab1e0f9022474cb9078159686631a
+      internalID: 98918997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corps
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 1602
+        width: 542
+        height: 818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c96c1d7fa100e4986350cf11159ebd
+      internalID: 480466195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EpauleD
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 1930
+        width: 236
+        height: 237
+      alignment: 9
+      pivot: {x: 0.31510693, y: 0.54602927}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7fc8863d0a9d9498c67891af2b1c36
+      internalID: 344786507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrasG2
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 1882
+        width: 312
+        height: 179
+      alignment: 9
+      pivot: {x: 0.7447478, y: 0.69806486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7007c8f19bb29ad47a34f1ed3ddfc305
+      internalID: 346498794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuisseD
+      rect:
+        serializedVersion: 2
+        x: 2733
+        y: 1584
+        width: 265
+        height: 376
+      alignment: 9
+      pivot: {x: 0.33895287, y: 0.77524257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7510228492a6f44b8dde34579f1090
+      internalID: 348657072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainG2
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 1631
+        width: 192
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7840821, y: 0.66528505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf750518e1cc574090fa23dabf958df
+      internalID: 1709303991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrasD
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 1471
+        width: 267
+        height: 312
+      alignment: 9
+      pivot: {x: 0.74514097, y: 0.63111526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7c0db164661c940a7af2c491a34e95
+      internalID: 1641858983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrasD2
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1439
+        width: 311
+        height: 233
+      alignment: 9
+      pivot: {x: 0.27200386, y: 0.769208}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530440b591c4c044a93a4676d5edd857
+      internalID: -637959369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolletD
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 921
+        width: 302
+        height: 542
+      alignment: 9
+      pivot: {x: 0.5993369, y: 0.8217677}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1643e93d844fd242a3c719e848c9ca2
+      internalID: -1624723253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainD2
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1231
+        width: 181
+        height: 186
+      alignment: 9
+      pivot: {x: 0.40959632, y: 0.30939114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7b2a008bb42954984f2ae2bac1c6c3
+      internalID: 1453953322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Illustration-sans-titre (13)_23
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 855
+        width: 328
+        height: 539
+      alignment: 9
+      pivot: {x: 0.6272989, y: 0.693664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c075f36f7d3e3364e9771bbfd964c078
+      internalID: 1466215296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Habit
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 772
+        width: 544
+        height: 556
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d11460fd5901b459fb77a4631666ed
+      internalID: 1080417843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EpauleD3
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 893
+        width: 219
+        height: 329
+      alignment: 9
+      pivot: {x: 0.4003769, y: 0.89788765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8bf842c2739c80438c214a7248bce42
+      internalID: -1964979376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainG3
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 798
+        width: 258
+        height: 207
+      alignment: 9
+      pivot: {x: 0.88053787, y: 0.6185736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca03d7070532b5d4d886a63c2442f7a1
+      internalID: 72492415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrasD3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 440
+        width: 359
+        height: 271
+      alignment: 9
+      pivot: {x: 0.21132854, y: 0.8421565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4166127b89b4bf418288be7d507061a
+      internalID: -1873320404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Illustration-sans-titre (13)_31
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 675
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873e3c7d5d8f1ee49bfc26937597bcf2
+      internalID: 1740766279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EpauleG3
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 346
+        width: 350
+        height: 445
+      alignment: 9
+      pivot: {x: 0.21802507, y: 0.708983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dd1ddd89529cb245a43014bde12b3a2
+      internalID: 121442042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiedG
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 473
+        width: 302
+        height: 206
+      alignment: 9
+      pivot: {x: 0.75137836, y: 0.85009944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f91157a96ab454f94e597aa3e662b8
+      internalID: 871422028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainD1
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 580
+        width: 229
+        height: 197
+      alignment: 9
+      pivot: {x: 0.17845507, y: 0.45846975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e533ef7dcb593142a69356cf46e5b02
+      internalID: 194625312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiedD
+      rect:
+        serializedVersion: 2
+        x: 2805
+        y: 524
+        width: 287
+        height: 206
+      alignment: 9
+      pivot: {x: 0.25293905, y: 0.75153685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4c1af36140e8f4bbe983fb120038f5
+      internalID: 1283623920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainD3
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 241
+        width: 262
+        height: 235
+      alignment: 9
+      pivot: {x: 0.1981362, y: 0.488395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed977224c1dfd9547af71c10a2b9630a
+      internalID: 725036315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrasG3
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 75
+        width: 390
+        height: 230
+      alignment: 9
+      pivot: {x: 0.8006902, y: 0.8320055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443a60a3b29bf8546b59ebde901a1deb
+      internalID: -273777368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EPauleD1
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 162
+        width: 315
+        height: 485
+      alignment: 9
+      pivot: {x: 0.5000008, y: 0.6950346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444c50b7b758a94419233e8f5aa616be
+      internalID: -25578481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrasD1
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 134
+        width: 430
+        height: 196
+      alignment: 9
+      pivot: {x: 0.19557084, y: 0.70871395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4265900928309184cabd156df3b7ae5a
+      internalID: 1866822773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BrasD: 1641858983
+      BrasD1: 1866822773
+      BrasD2: -637959369
+      BrasD3: -1873320404
+      BrasG2: 346498794
+      BrasG3: -273777368
+      Corps: 480466195
+      CuisseD: 348657072
+      CuisseG: 2050849330
+      EPauleD1: -25578481
+      EPauleG2: 1147901644
+      EpauleD: 344786507
+      EpauleD3: -1964979376
+      EpauleG3: 121442042
+      Habit: 1080417843
+      Illustration-sans-titre (13)_10: -1549093802
+      Illustration-sans-titre (13)_11: -1549063234
+      Illustration-sans-titre (13)_15: -802142081
+      Illustration-sans-titre (13)_16: -2020172962
+      Illustration-sans-titre (13)_18: -975205920
+      Illustration-sans-titre (13)_19: -526514886
+      Illustration-sans-titre (13)_20: 1673544278
+      Illustration-sans-titre (13)_23: 1466215296
+      Illustration-sans-titre (13)_26: 1940921840
+      Illustration-sans-titre (13)_28: 175943313
+      Illustration-sans-titre (13)_29: -1916961978
+      Illustration-sans-titre (13)_31: 1740766279
+      Illustration-sans-titre (13)_6: -863503062
+      Illustration-sans-titre (13)_7: 2088685321
+      MainD1: 194625312
+      MainD2: 1453953322
+      MainD3: 725036315
+      MainG2: 1709303991
+      MainG3: 72492415
+      Massue: 98918997
+      MolletD: -1624723253
+      PiedD: 1283623920
+      PiedG: 871422028
+      Rien: -1764050259
+      "T\xEAte": -57953123
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

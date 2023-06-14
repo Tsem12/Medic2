@@ -32,6 +32,7 @@ public class CardBase : ScriptableObject
     [Space(30)]
 
     public bool isUnlocked;
+    public int dataIndex;
     public CardBehaviour cardBehaviour;
     public string cardName;
     public Sprite cardSprite;
@@ -152,6 +153,23 @@ public class CardBase : ScriptableObject
         }
 
         return true;
+    }
+
+    [Button("TestSave")]
+    public void Save()
+    {
+        GameData gameData;
+        gameData = SaveSystem.Load();
+        gameData.spellUnlocked[dataIndex] = isUnlocked;
+        SaveSystem.save(gameData);
+    }
+
+    [Button("TestLoad")]
+    public void Load()
+    {
+        GameData gameData;
+        gameData = SaveSystem.Load();
+        isUnlocked = gameData.spellUnlocked[dataIndex];
     }
 }
 

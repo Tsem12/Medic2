@@ -13,5 +13,6 @@ public class GfxGenerator : MonoBehaviour
     {
         Instantiate(go, transform);
         gfx = go;
+        GetComponentInParent<Character>().Animator = go.GetComponentInChildren<Animator>();
     }
 }
