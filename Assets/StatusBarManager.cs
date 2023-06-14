@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,12 @@ public class StatusBarManager : MonoBehaviour
 {
     [SerializeField] private Image[] _statusImages;
     [SerializeField] private Image[] _statusTimerImages;
+    [SerializeField] private bool[] _statusTimerImagesStatus;
     [SerializeField] private Sprite[] _timerImages;
     [SerializeField] private AllReferences _refs;
     [SerializeField] private Character _chara;
+
+    private RectTransform _timerInitTransform;
 
     private Vector3 _initSize;
     private Dictionary<Status.StatusEnum, int> _statusDictionary = new Dictionary<Status.StatusEnum, int>();
@@ -19,6 +23,8 @@ public class StatusBarManager : MonoBehaviour
     private void Start()
     {
         _initSize = _statusImages[0].rectTransform.localScale;
+        _timerInitTransform = _statusTimerImages[0].rectTransform;
+        _statusTimerImagesStatus = new bool[_statusTimerImages.Length];
     }
     public void UpdateBar()
     {
@@ -68,14 +74,29 @@ public class StatusBarManager : MonoBehaviour
 
     private void TimerTween(int index)
     {
-        Sequence timerSequence = DOTween.Sequence();
-        timerSequence.Append(_statusTimerImages[index].rectTransform.DOShakeRotation(0.5f).SetEase(Ease.OutBounce));
-        timerSequence.Join(_statusTimerImages[index].rectTransform.DOScale(1.5f, 0.5f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo));
+        if (!_statusTimerImagesStatus[index])
+        {
+            StartCoroutine(TweenTimerRoutine(index));
+        }
     }
 
     private void RemoveTween(RectTransform rect)
     {
         rect.DOScale(0.1f, 0.25f).SetEase(Ease.InBounce).OnComplete(() => rect.gameObject.SetActive(false));
+    }
+
+
+    private IEnumerator TweenTimerRoutine(int index)
+    {
+        _statusTimerImagesStatus[index] = true;
+        Sequence timerSequence = DOTween.Sequence();
+        timerSequence.Append(_statusTimerImages[index].rectTransform.DOShakeRotation(0.5f).SetEase(Ease.OutBounce));
+        timerSequence.Join(_statusTimerImages[index].rectTransform.DOScale(1.5f, 0.5f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo));
+        yield return new WaitUntil(() => !timerSequence.IsActive());
+        _statusTimerImages[index].rectTransform.position = _timerInitTransform.position;
+        _statusTimerImages[index].rectTransform.rotation = _timerInitTransform.rotation;
+        _statusTimerImages[index].rectTransform.localScale = _timerInitTransform.localScale;
+        _statusTimerImagesStatus[index] = false;
     }
 
     public Sprite GetTimerSprite(int num, bool isInfitite = false)
@@ -131,4 +152,6 @@ public class StatusBarManager : MonoBehaviour
         }
         return null;
     }
+
+
 }

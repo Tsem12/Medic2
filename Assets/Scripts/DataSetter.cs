@@ -34,7 +34,7 @@ public class DataSetter : MonoBehaviour
                 break;
             case DataType.BossAnimator:
                 GetComponent<GfxGenerator>().GenerateGfx(_levelData.levels[_levelData.currentSceneIndex].animator);
-                break;
+              break;
             case DataType.Background:
                 GetComponent<Image>().sprite = _levelData.levels[_levelData.currentSceneIndex].background;
                 break;

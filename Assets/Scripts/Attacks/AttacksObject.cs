@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Attacks", menuName = "Characters/Attacks")]
@@ -49,6 +50,7 @@ public class AttacksObject : ScriptableObject
     public string description;
 
     public Sprite attackSpriteOverRide;
+    public int attackAnimIndex;
 
 
     private bool NoTurnDuration
@@ -170,7 +172,7 @@ public class AttacksObject : ScriptableObject
                     case DeBuff.Stun:
                         return new Status(Status.StatusEnum.Stunned, effectTurnDuration);
                     case DeBuff.Fatigue:
-                        return new Status(Status.StatusEnum.Fatigue, effectTurnDuration, deBuffValue);
+                        return new Status(Status.StatusEnum.Fatigue, true, deBuffValue);
                     case DeBuff.Sleeped:
                         return new Status(Status.StatusEnum.Sleeped, true);
                     case DeBuff.Disapearance:

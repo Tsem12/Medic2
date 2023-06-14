@@ -280,13 +280,6 @@ public class FightManager : MonoBehaviour
 
         }
         _state = FightState.None;
-        _enemie.CheckStatus();
-        _enemie.UpdateBar();
-        foreach (ICharacter c in _partyMembersList.ToList())
-        {
-            c.CheckStatus();
-            c.UpdateBar();
-        }
 
         if (_enemie.GetComponent<ICharacter>().IsDead())
         {

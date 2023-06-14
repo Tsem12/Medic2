@@ -431,7 +431,6 @@ MonoBehaviour:
   m_Bounds:
     m_Center: {x: 1.2479095, y: 3.4623408, z: 0}
     m_Extent: {x: 8.395914, y: 7.9568014, z: 0}
-  m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
 --- !u!95 &2531610370781100663
