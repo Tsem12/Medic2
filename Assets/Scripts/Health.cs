@@ -70,7 +70,7 @@ public class Health : MonoBehaviour
             _character.AddStatus(new Status(Status.StatusEnum.Stunned, 2));
             Status d = _character.GetStatus(Status.StatusEnum.Stunned);
         }
-
+        TweenTakeDamage(0.1f);
         int newHealth = _character.GetCurrentHealth() - value;
         if (newHealth <= 0)
         {
@@ -133,7 +133,13 @@ public class Health : MonoBehaviour
         _character.SetCurrentHealth(newHealth);
     }
 
-
+    private void TweenTakeDamage(float value)
+    {
+        if (_tweener == null)
+        {
+            _tweener = _gfx.DOShakePosition(0.5f, value).SetEase(Ease.InFlash).OnComplete(() => _tweener = null);
+        }
+    }
 
     private void TakeHealthBarDamageTweener(int i)
     {
