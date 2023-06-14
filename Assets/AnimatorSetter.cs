@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class AnimatorSetter : MonoBehaviour
 {
+    Character chara;
+    private void Awake()
+    {
+        chara = GetComponentInParent<Character>();
+    }
     private void Start()
     {
-        GetComponentInParent<Character>().Animator = GetComponent<Animator>();
+        chara.Animator = GetComponent<Animator>();
+    }
+
+    public void Attack()
+    {
+        chara.Attack();
     }
 }

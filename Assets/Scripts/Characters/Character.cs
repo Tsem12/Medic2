@@ -176,7 +176,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             TryRemoveStatus(status.status);
         }
     }
-    protected virtual void Attack()
+    public virtual void Attack()
     {
         if (_refs.fightManager.EnableDebug)
         {
@@ -214,8 +214,6 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
 
         int index = 0;
-        _animator?.SetInteger("AttackIndex", _targetsAttacks[index].attackAnimIndex);
-        _animator?.SetTrigger("TriggerAtk");
         foreach(ICharacter target in _targets.ToList())
         {
 
@@ -267,8 +265,10 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     private IEnumerator AttackRoutine()
     {
-        Attack();
-        yield return new WaitForSeconds(2.5f);
+        _animator?.SetInteger("AttackIndex", _targetsAttacks[0].attackAnimIndex);
+        _animator?.SetTrigger("TriggerAtk");
+        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_animator.GetCurrentAnimatorClipInfo(0).Length);
         _isPlaying = false;
         _attackRoutine = null;
     }
