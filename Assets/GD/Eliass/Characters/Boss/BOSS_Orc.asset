@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: BOSS_Orc
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 15
   numberOfHealthBar: 3
   baseSpeed: 100
   baseAgroValue: 0
@@ -20,12 +20,13 @@ MonoBehaviour:
   - paternName: BasicATK
     interuptMode: 0
     attacks:
-    - nrbOfTargets: 1
+    - nrbOfTargets: 2
       attackConditionsMode: 1
       selfStatus: 0
       selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: beeaa69d59b5f8043aba56e0f71d80ed, type: 2}
+      - {fileID: 11400000, guid: 1ee55a77b4a67564a914f6db6e290cb6, type: 2}
       condition: 3
       ConditionalAttack:
       - {fileID: 11400000, guid: 794d2d8b540bcd54c9d6d4b9e4e11901, type: 2}
