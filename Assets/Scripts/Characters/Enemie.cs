@@ -46,7 +46,10 @@ public class Enemie : Character
         Status disapear = GetStatus(global::Status.StatusEnum.Disapeared);
         Status sleep = GetStatus(global::Status.StatusEnum.Sleeped);
 
-        if(stun != null || restrain != null || disapear != null || sleep != null)
+        if(stun != null || restrain != null || sleep != null)
+            return;
+
+        if (disapear != null && disapear.remainTurn > 1)
             return;
 
         List<ICharacter> chara =  new List<ICharacter>();

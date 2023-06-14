@@ -21,6 +21,7 @@ public class AttackClass
         HpBarLost,
         HpBarNotLost,
         HpBarEqual,
+        CanAttack,
         Random
     }
 
@@ -29,6 +30,8 @@ public class AttackClass
 
     public ConditionMode attackConditionsMode;
     public Status.StatusEnum selfStatus;
+    [Range(1, 10)]
+    public int selfStatusDuration;
     public AttacksObject[] attack;
     public AttackConditions condition;
     public AttacksObject[] ConditionalAttack;
