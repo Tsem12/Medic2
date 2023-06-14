@@ -9,7 +9,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject optionMenu;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject accountWindow;
+    [SerializeField] GameObject HowToPlayWindow;
     private bool isPaused = false;
+    private bool isHowToPlayToggled = false;
 
     public void Pause()
     {
@@ -54,5 +56,22 @@ public class PauseMenu : MonoBehaviour
     public void NextLevel()
     {
         Debug.Log("next level");
+    }
+
+    public void ToggleHowToPlay()
+    {
+        if (isHowToPlayToggled)
+        {
+            HowToPlayWindow.SetActive(false);
+            Time.timeScale = 1f;
+            isHowToPlayToggled = false;
+        }
+        else
+        {
+            HowToPlayWindow.SetActive(true);
+            Time.timeScale = 0f;
+            isHowToPlayToggled = true;
+
+        }
     }
 }

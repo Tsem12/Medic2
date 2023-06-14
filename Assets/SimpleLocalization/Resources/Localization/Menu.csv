@@ -13,4 +13,89 @@ OptionMenu.Button.Account,Account,Compte,Konto,Cuenta,账户 ,アカウント ,C
 OptionMenu.Button.HowToPlay,How to Play,Coment Jouer,Wie spielt man,Cómo jugar,如何玩,遊び方 ,Como Jogar, Как играть
 OptionMenu.Button.LeaderBoard,LeaderBoard,LeaderBoard,Bestenliste,Tabla de líderes,排行榜 ,リーダーボード,Tabela de líderes,Таблица лидеров
 OptionMenu.Button.Credits,Credits,Crédits,Credits,Créditos,积分 ,クレジット ,Créditos,Кредиты 
+PauseMenu.EndGame.text,Finish,Fini,,,,,,
 Hud.Button.EndTurn,End Turn,Fin de Tour,"Ende der Runde","fin de turno",回合結束,ターン終了時,Fim do turno,Конец хода
+HowToPlayMenu.Window1,"First, the round begin with playing your turn. After you’ve casted your spells and pressed the “End Turn” button, the boss will attack first (unless you’ve casted the “initiative” spell). Then your allies will attack.
+","Tout d'abord, le tour commence en jouant votre tour. Après avoir lancé vos sorts et appuyé sur le bouton ""Terminer le tour"", le boss attaquera en premier (à moins que vous n'ayez lancé le sort ""initiative""). Ensuite, vos alliés attaqueront.","Zuerst beginnt die Runde mit deinem Zug. Nachdem du deine Zauber gewirkt und den ""Zug beenden""-Button gedrückt hast, wird der Boss als Erstes angreifen (es sei denn, du hast den Zauber ""Initiative"" gewirkt). Dann werden deine Verbündeten angreifen.","Primero, la ronda comienza jugando tu turno. Después de haber lanzado tus hechizos y presionado el botón ""Terminar turno"", el jefe atacará primero (a menos que hayas lanzado el hechizo de ""iniciativa""). Luego, tus aliados atacarán.",首先，回合开始时轮到你行动。在你施放了法术并按下“结束回合”按钮后，首先是boss会进行攻击（除非你施放了“先发制人”法术）。然后你的盟友会进行攻击。,"最初に、ラウンドが始まります。あなたのターンで呪文を唱え、""ターン終了""ボタンを押した後、ボスが最初に攻撃します（ただし、""先制""呪文を唱えた場合を除く）。その後、仲間が攻撃します。","Primeiro, a rodada começa com o seu turno. Depois de lançar seus feitiços e pressionar o botão ""Fim de Turno"", o chefe atacará primeiro (a menos que você tenha lançado o feitiço de ""iniciativa""). Em seguida, seus aliados atacarão.","Сначала раунд начинается с вашего хода. После того, как вы произнесли свои заклинания и нажали кнопку ""Конец хода"", босс атакует первым (если вы не произнесли заклинание ""инициатива""). Затем атакуют ваши союзники."
+HowToPlayMenu.Window2,"Your spells are located at the bottom of your screen. Drag and drop your spell on the targeted ally to apply the spell’s effect on him.
+",Vos sorts se trouvent en bas de votre écran. Faites glisser et déposez votre sort sur l'allié ciblé pour lui appliquer l'effet du sort.,"Deine Zauber befinden sich am unteren Rand deines Bildschirms. Ziehe deinen Zauber auf den ausgewählten Verbündeten, um den Effekt des Zaubers auf ihn anzuwenden.",Tus hechizos se encuentran en la parte inferior de tu pantalla. Arrastra y suelta tu hechizo sobre el aliado objetivo para aplicar el efecto del hechizo sobre él.,你的法术位于屏幕底部。将法术拖放到目标盟友身上，以施放法术效果。,あなたの呪文は画面の下部にあります。対象の仲間に呪文をドラッグ＆ドロップして、呪文の効果を彼に適用します。,Seus feitiços estão localizados na parte inferior da tela. Arraste e solte seu feitiço no aliado alvo para aplicar o efeito do feitiço nele.," Ваши заклинания расположены внизу экрана. Перетащите ваше заклинание на выбранного союзника, чтобы применить его эффект."
+HowToPlayMenu.Window2.Title,"How to use spells ?
+",Comment utiliser les sorts ?,"Wie benutzt man Zauber?",¿Cómo utilizar hechizos?,如何使用法术？,呪文の使い方は？,Como usar feitiços?,Как использовать заклинания? 
+HowToPlayMenu.Window3,"You can open your spellbook by pressing the book button on the upper right corner of the screen. After this, drag and drop the spells you want in your spell bar to replace another spell.
+","Vous pouvez ouvrir votre grimoire en appuyant sur le bouton livre dans le coin supérieur droit de l'écran. Ensuite, faites glisser et déposez les sorts que vous souhaitez dans votre barre de sorts pour remplacer un autre sort.","Du kannst dein Zauberbuch öffnen, indem du den Buch-Button in der oberen rechten Ecke des Bildschirms drückst. Ziehe danach die gewünschten Zauber in deine Zauberleiste und ersetze damit einen anderen Zauber.","Puedes abrir tu libro de hechizos presionando el botón del libro en la esquina superior derecha de la pantalla. Después de esto, arrastra y suelta los hechizos que desees en tu barra de hechizos para reemplazar otro hechizo.",您可以通过点击屏幕右上角的书本按钮来打开您的法术书。然后，将您想要的法术拖放到法术栏中，以替换其他法术。,画面の右上隅にある本のボタンを押すと、呪文書を開くことができます。その後、別の呪文と入れ替えるために、スペルバーに追加したい呪文をドラッグアンドドロップしてください。," Você pode abrir seu grimório pressionando o botão do livro no canto superior direito da tela. Em seguida, arraste e solte os feitiços que você deseja na sua barra de feitiços para substituir outro feitiço.","Вы можете открыть свою книгу заклинаний, нажав кнопку книги в верхнем правом углу экрана. После этого перетащите и бросьте заклинания, которые вы хотите поместить на панель заклинаний, чтобы заменить другое заклинание."
+HowToPlayMenu.Window3.Title,"Swapping spells
+", Échange de sorts,Zauber austauschen,Intercambio de hechizos,交换法术,呪文の入れ替え,Troca de feitiços,Обмен заклинаниями
+HowToPlayMenu.Window4,"-Heal (2) : Heal target for 2 HP
+-Mass Heal (5) : Heal all allies for 2 HP
+-Regeneration (3) : heal 1 HP/turn for 3 turns
+-Resurrection (10) : Revives the target if dead.
+-Antidote (4) : Removes all effects of target 
+(positive and negative)
+-Spirit Shield (4) : Shield target of all damage from the next attack they receive (breaks afterwards.)
+-Resonance Shield (8) : Sends back damage done to the target to the attacker (lasts 2 turn)
+-Blessing of Strength (6): Target’s next attack does +2 damage
+-Mana Profusion (4) : Cost of the next spell casted is refunded next turn
+-Initiative (3) : Makes the target take their turn first, before the monster","Heal (2) : Soigne la cible de 2 PV.
+Mass Heal (5) : Soigne tous les alliés de 2 PV.
+Regeneration (3) : Soigne 1 PV par tour pendant 3 tours.
+Resurrection (10) : Ressuscite la cible si elle est morte.
+Antidote (4) : Supprime tous les effets de la cible (positifs et négatifs).
+Spirit Shield (4) : Protège la cible de tous les dégâts de la prochaine attaque qu'elle reçoit (se brise ensuite).
+Resonance Shield (8) : Renvoie les dégâts infligés à la cible à l'attaquant (dure 2 tours).
+Blessing of Strength (6) : La prochaine attaque de la cible inflige +2 dégâts.
+Mana Profusion (4) : Le coût du prochain sort lancé est remboursé au tour suivant.
+Initiative (3) : Fait prendre son tour en premier à la cible, avant le monstre.","Heal (2) : Heilt das Ziel um 2 TP.
+Mass Heal (5) : Heilt alle Verbündeten um 2 TP.
+Regeneration (3) : Heilt 1 TP pro Runde für 3 Runden.
+Resurrection (10) : Belebt das Ziel wieder, falls tot.
+Antidote (4) : Entfernt alle Effekte des Ziels (positiv und negativ).
+Spirit Shield (4) : Schützt das Ziel vor jeglichem Schaden des nächsten Angriffs, den es erleidet (bricht danach).
+Resonance Shield (8) : Schickt den erlittenen Schaden zurück zum Angreifer (hält 2 Runden an).
+Blessing of Strength (6) : Der nächste Angriff des Ziels verursacht +2 Schaden.
+Mana Profusion (4) : Die Kosten des nächsten gewirkten Zaubers werden im nächsten Zug zurückerstattet.
+Initiative (3) : Das Ziel ist zuerst am Zug, vor dem Monster.","Heal (2) : Cura al objetivo en 2 PS.
+Mass Heal (5) : Cura a todos los aliados en 2 PS.
+Regeneration (3) : Cura 1 PS por turno durante 3 turnos.
+Resurrection (10) : Revive al objetivo si está muerto.
+Antidote (4) : Elimina todos los efectos del objetivo (positivos y negativos).
+Spirit Shield (4) : Protege al objetivo de todo el daño del próximo ataque que reciba (se rompe después).
+Resonance Shield (8) : Devuelve el daño infligido al objetivo al atacante (dura 2 turnos).
+Blessing of Strength (6) : El siguiente ataque del objetivo hace +2 de daño.
+Mana Profusion (4) : El costo del próximo hechizo lanzado se devuelve en el siguiente turno.
+Initiative (3) : Hace que el objetivo tome su turno primero, antes del monstruo.","Heal (2) : 为目标恢复 2 点生命值。
+Mass Heal (5) : 为所有盟友恢复 2 点生命值。
+Regeneration (3) : 每回合为目标恢复 1 点生命值，持续 3 回合。
+Resurrection (10) : 如果目标已死亡，则使其复活。
+Antidote (4) : 移除目标的所有效果（正面和负面）。
+Spirit Shield (4) : 保护目标免受下次攻击造成的所有伤害（之后会破裂）。
+Resonance Shield (8) : 将对目标造成的伤害反弹给攻击者（持续 2 回合）。
+Blessing of Strength (6) : 目标的下次攻击增加 2 点伤害。
+Mana Profusion (4) : 下一个施放的法术的法力消耗将在下一回合退还。","Heal (2) : 対象を2ポイント回復する。
+Mass Heal (5) : 全ての味方を2ポイント回復する。
+Regeneration (3) : 3ターンの間、1ターンにつき対象を1ポイント回復する。
+Resurrection (10) : 対象を蘇生させる（死んでいる場合）。
+Antidote (4) : 対象のすべての効果（ポジティブおよびネガティブ）を取り除く。
+Spirit Shield (4) : 対象を次に受ける攻撃からすべてのダメージを防ぐ盾で守る（その後破壊される）。
+Resonance Shield (8) : 対象に対して与えられたダメージを攻撃者に返す（2ターン持続）。
+Blessing of Strength (6) : 対象の次の攻撃に+2のダメージを与える。
+Mana Profusion (4) : 次に行われる呪文のコストが次のターンで返金される。
+Initiative (3) : 対象に先制権を与え、モンスターよりも先に行動させる。","Heal (2) : Cura o alvo em 2 pontos de vida (PV).
+Mass Heal (5) : Cura todos os aliados em 2 pontos de vida (PV).
+Regeneration (3) : Cura 1 ponto de vida (PV) por turno durante 3 turnos.
+Resurrection (10) : Revive o alvo, caso esteja morto.
+Antidote (4) : Remove todos os efeitos do alvo (positivos e negativos).
+Spirit Shield (4) : Protege o alvo de todo o dano do próximo ataque que ele receber (quebra depois).
+Resonance Shield (8) : Devolve o dano causado ao alvo de volta ao atacante (dura 2 turnos).
+Blessing of Strength (6) : O próximo ataque do alvo causa +2 de dano.
+Mana Profusion (4) : O custo do próximo feitiço lançado é reembolsado no próximo turno.
+Initiative (3) : Faz com que o alvo tome seu turno primeiro, antes do monstro.","Heal (2) : Исцеляет цель на 2 ед. здоровья.
+Mass Heal (5) : Исцеляет всех союзников на 2 ед. здоровья.
+Regeneration (3) : Исцеляет 1 ед. здоровья каждый ход в течение 3 ходов.
+Resurrection (10) : Воскрешает цель, если она мертва.
+Antidote (4) : Удаляет все эффекты с цели (положительные и отрицательные).
+Spirit Shield (4) : Защищает цель от всего урона от следующей атаки, которую она получит (потом разрушается).
+Resonance Shield (8) : Возвращает урон, нанесенный цели, обратно атакующему (длится 2 хода).
+Blessing of Strength (6) : Следующая атака цели наносит дополнительно +2 урона.
+Mana Profusion (4) : Стоимость следующего произнесенного заклинания возвращается в следующем ходу.
+Initiative (3) : Позволяет цели ходить первой, перед монстром."
+HowToPlayMenu.Window4.Title,Spell List,Liste des sorts,Zauberliste,"Lista de hechizos",法术列表,呪文リスト,Lista de feitiços, Список заклинаний
