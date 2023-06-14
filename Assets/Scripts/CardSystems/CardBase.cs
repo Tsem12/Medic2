@@ -158,7 +158,7 @@ public class CardBase : ScriptableObject
     [Button("TestSave")]
     public void Save()
     {
-        GameData gameData = new GameData();
+        GameData gameData;
         gameData = SaveSystem.Load();
         gameData.spellUnlocked[dataIndex] = isUnlocked;
         SaveSystem.save(gameData);
@@ -167,7 +167,7 @@ public class CardBase : ScriptableObject
     [Button("TestLoad")]
     public void Load()
     {
-        GameData gameData = new GameData();
+        GameData gameData;
         gameData = SaveSystem.Load();
         isUnlocked = gameData.spellUnlocked[dataIndex];
     }

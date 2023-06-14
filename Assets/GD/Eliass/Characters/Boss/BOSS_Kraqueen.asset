@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: BOSS_Kraqueen
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   numberOfHealthBar: 3
   baseSpeed: 100
   baseAgroValue: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
     - nrbOfTargets: 2
       attackConditionsMode: 0
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       condition: 5
@@ -37,6 +38,7 @@ MonoBehaviour:
     - nrbOfTargets: 2
       attackConditionsMode: 0
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       condition: 5
@@ -52,6 +54,7 @@ MonoBehaviour:
     - nrbOfTargets: 3
       attackConditionsMode: 0
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       condition: 5

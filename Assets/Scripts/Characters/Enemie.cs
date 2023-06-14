@@ -145,7 +145,7 @@ public class Enemie : Character
         base.ClearIncomingAttacks();
     }
 
-    protected override void Attack()
+    public override void Attack()
     {
         base.Attack();
         _gfx.transform.DOScale(Vector3.one * 1.5f, 0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
