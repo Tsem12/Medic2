@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class CardManager : MonoBehaviour
 {
@@ -18,7 +17,7 @@ public class CardManager : MonoBehaviour
     {
         foreach (var item in cardsBases)
         {
-            item.Load();
+           // item.Load();
         }
 
         List<CardBase> removeLocked = new List<CardBase>();
