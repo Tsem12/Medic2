@@ -11,10 +11,18 @@ public class CardManager : MonoBehaviour
     [SerializeField] CardDeckBuilder deckBuilder;
     [SerializeField] List<CardBase> cardsBases;
     [SerializeField] List<Card> cardsHiden;
-    [SerializeField] List<Card> cardsGame;
+    List<Card> cardsGame = new List<Card>();
+    [SerializeField] GameObject cardDeck;
 
     private void Start()
     {
+        foreach (var item in cardDeck.GetComponentsInChildren<Card>())
+        {
+            cardsGame.Add(item);
+        }
+
+
+
         foreach (var item in cardsBases)
         {
            // item.Load();
