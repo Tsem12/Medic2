@@ -228,13 +228,13 @@ public abstract class Character : MonoBehaviour, ICharacter
             }
             if (s != null)
             {
-                AddStatus(_targetsAttacks[index].GetStatus());
                 TakeDamage(_targetsAttacks[index], additionalDamage);
+                AddStatus(_targetsAttacks[index].GetStatus());
             }
             else
             {
-                target.AddStatus(_targetsAttacks[index].GetStatus());
                 target.TakeDamage(_targetsAttacks[index], additionalDamage);
+                target.AddStatus(_targetsAttacks[index].GetStatus());
                 if (_targetsAttacks[index].isLifeSteal)
                 {
                     _health.Heal(Mathf.Max(_targetsAttacks[index].atkDamage + additionalDamage, 0), charaType != PartyMemberEnum.Boss);
@@ -267,7 +267,10 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _animator?.SetInteger("AttackIndex", _targetsAttacks[0].attackAnimIndex);
         _animator?.SetTrigger("TriggerAtk");
-        yield return new WaitForSeconds(1f);
+        if(charaType == PartyMemberEnum.Boss)
+        {
+            yield return new WaitForSeconds(1f);
+        }
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorClipInfo(0).Length);
         _isPlaying = false;
         _attackRoutine = null;
@@ -311,7 +314,11 @@ public abstract class Character : MonoBehaviour, ICharacter
         status.Clear();
         _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
         _isDead = true;
-        //_spriteRenderer.color = Color.red;
+        SpriteRenderer[] sp = GetComponentsInChildren<SpriteRenderer>();
+        foreach(SpriteRenderer sp2 in sp)
+        {
+            sp2.color = Color.red;
+        }
     }
 
     public void Revive(float heal)
@@ -319,10 +326,19 @@ public abstract class Character : MonoBehaviour, ICharacter
         if (!_isDead)
             return;
 
+        if(charaType != PartyMemberEnum.Boss)
+        {
+            _refs.fightManager.PartyMembersList.Add(GetComponent<ICharacter>());
+        }
+
         _isDead = false;
-        //_spriteRenderer.color = Color.white;
         _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
+        SpriteRenderer[] sp = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sp2 in sp)
+        {
+            sp2.color = Color.white;
+        }
     }
 
     public bool DoesFulFillCondition(AttackClass atk)
@@ -619,8 +635,11 @@ public abstract class Character : MonoBehaviour, ICharacter
 
             if (status == global::Status.StatusEnum.Disapeared && !IsDead())
             {
-                //_gfx.gameObject.SetActive(true);
-                //transform.DOShakeScale(2).SetEase(Ease.InOutFlash);
+                if(charaType != PartyMemberEnum.Boss)
+                {
+                    _gfx.gameObject.SetActive(true);
+                    transform.DOShakeScale(2).SetEase(Ease.InOutFlash);
+                }
             }
             if (status == global::Status.StatusEnum.Taunting)
             {
@@ -672,7 +691,10 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if(status.status == global::Status.StatusEnum.Disapeared)
         {
-            //transform.DOShakeScale(2f).SetEase(Ease.InOutFlash).OnComplete(() => _gfx.gameObject.SetActive(false));
+            if(charaType != PartyMemberEnum.Boss)
+            {
+                transform.DOShakeScale(2f).SetEase(Ease.InOutFlash).OnComplete(() => _gfx.gameObject.SetActive(false));
+            }
         }
         Status.Add(status);
         _statusBar.UpdateBar();

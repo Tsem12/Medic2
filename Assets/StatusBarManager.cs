@@ -93,9 +93,6 @@ public class StatusBarManager : MonoBehaviour
         timerSequence.Append(_statusTimerImages[index].rectTransform.DOShakeRotation(0.5f).SetEase(Ease.OutBounce));
         timerSequence.Join(_statusTimerImages[index].rectTransform.DOScale(1.5f, 0.5f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo));
         yield return new WaitUntil(() => !timerSequence.IsActive());
-        _statusTimerImages[index].rectTransform.position = _timerInitTransform.position;
-        _statusTimerImages[index].rectTransform.rotation = _timerInitTransform.rotation;
-        _statusTimerImages[index].rectTransform.localScale = _timerInitTransform.localScale;
         _statusTimerImagesStatus[index] = false;
     }
 

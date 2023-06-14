@@ -63,9 +63,11 @@ MonoBehaviour:
   _validHp: {fileID: 497919077187085983}
   _InValidHp: {fileID: 3794630426658893501}
   _colors:
+  - {fileID: 21300000, guid: a5753984408681f4e9d8edfa94bda1a3, type: 3}
   - {fileID: 21300000, guid: 4aedc3b9d8e5fc3419058a12f9ad3d22, type: 3}
-  - {fileID: 21300000, guid: 95fa394616c877642b6d8b65098f5d97, type: 3}
-  - {fileID: 21300000, guid: d0fa588262cc5bd4cb87537134d03cee, type: 3}
+  - {fileID: 21300000, guid: 3de57bace9e260140b64566b573dfd35, type: 3}
+  - {fileID: 21300000, guid: 4ac36ce62005b8c4d8d7759c8194c75b, type: 3}
+  - {fileID: 21300000, guid: a6f011bacc8fc2d43b1bd8513d124d3d, type: 3}
   - {fileID: 21300000, guid: bb8172092f1c6624a9ba1571980d6d77, type: 3}
 --- !u!1 &1769151683064956719
 GameObject:
@@ -133,8 +135,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4aedc3b9d8e5fc3419058a12f9ad3d22, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a5753984408681f4e9d8edfa94bda1a3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
