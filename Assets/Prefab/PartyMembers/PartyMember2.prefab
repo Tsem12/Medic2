@@ -357,7 +357,7 @@ Transform:
   - {fileID: 3999110895793236873}
   - {fileID: 7966201670557369395}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &8171220922341917843
 CapsuleCollider2D:
@@ -2331,7 +2331,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalaNewGfx
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5333548256083156577, guid: ba9500dcdf4dbff4bac41b3133f5cd64, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
