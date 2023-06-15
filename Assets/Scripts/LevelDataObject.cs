@@ -13,12 +13,37 @@ public class LevelDataObject : ScriptableObject
         public GameObject animator;
         public Sprite background;
     }
+
+    public enum Difficulty
+    {
+        Easy,
+        Hard,
+        EndLess
+    }
+
     public int currentSceneIndex { get; private set; }
     public LevelData[] levels;
+    public Difficulty difficulty;
 
     public void ChooseScene(int index)
     {
         currentSceneIndex = index;
+    }
+
+    public void ChooseDifficulty(int difficultyIndex)
+    {
+        switch (difficultyIndex)
+        {
+            case 0:
+                difficulty = Difficulty.Easy;
+                break;
+            case 1:
+                difficulty = Difficulty.Hard;
+                break;
+            case 2:
+                difficulty = Difficulty.EndLess;
+                break;
+        }
     }
 
 }
