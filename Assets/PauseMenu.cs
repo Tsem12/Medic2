@@ -94,7 +94,6 @@ public class PauseMenu : MonoBehaviour
             LevelMenu.SetActive(true);
             MainMenu.SetActive(false);
             isLevelMenuToggled = true;
-            Debug.Log("a");
         }
     }
 }
