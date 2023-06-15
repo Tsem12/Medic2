@@ -14,5 +14,6 @@ public class AllReferences : ScriptableObject
     public GameManager gameManager;
     public FightManager fightManager;
     public CardManager cardManager;
+    public AudioManager audioManager;
 
 }

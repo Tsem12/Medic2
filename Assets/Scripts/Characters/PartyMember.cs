@@ -29,6 +29,7 @@ public class PartyMember : Character, IHealable
     {
         _refs.fightManager.OnTurnEnd -= () => _bossIndicator.Clear();
         _refs.fightManager.OnTurnEnd -= () => _arrowForBoss.gameObject.SetActive(false);
+        DOTween.KillAll();
     }
 
     private void Awake()
@@ -125,6 +126,19 @@ public class PartyMember : Character, IHealable
     public override void Attack()
     {
         base.Attack();
-        _gfx.transform.DOScale(Vector3.one * .5f,0.5f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
+        switch (charaType)
+        {
+            case PartyMemberEnum.Berserker:
+                Sequence sequence = DOTween.Sequence().SetLoops(2, LoopType.Yoyo);
+                sequence.Append(_gfx.transform.DOScale(Vector3.one * .75f, 0.2f).SetEase(Ease.Flash));
+                sequence.Join(_gfx.transform.DOMoveX(transform.position.x + 1.25f, 0.2f).SetEase(Ease.Flash));
+                break;
+            case PartyMemberEnum.Paladin:
+                _gfx.transform.DOScale(Vector3.one * .75f, 0.2f).SetEase(Ease.Flash).SetLoops(2, LoopType.Yoyo);
+                break;
+            case PartyMemberEnum.Archer:
+                _gfx.transform.DOScale(Vector3.one * 1.75f, 0.2f).SetEase(Ease.InBounce).SetLoops(2, LoopType.Yoyo);
+                break;
+        }
     }
 }

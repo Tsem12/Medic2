@@ -16,18 +16,19 @@ public class BossAttacksIndicator : MonoBehaviour
     [SerializeField] private RectTransform _arrow;
     private void Awake()
     {
-        _transform = GetComponent<RectTransform>();
         _group = GetComponent<HorizontalLayoutGroup>();
+        _transform = GetComponent<RectTransform>();
         initPos = _transform.localPosition;
         _initArrowPos = _arrow.localPosition;
         Sequence sequence = DOTween.Sequence().SetLoops(-1, LoopType.Yoyo);
         sequence.Append(_arrow.DOAnchorPosY(7000f, 0.5f).SetEase(Ease.OutFlash));
-        sequence.Join(_arrow.DOScale(Vector3.one *1.2f, 0.1f).SetEase(Ease.OutBounce));
+        sequence.Join(_arrow.DOScale(Vector3.one *1.1f, 0.15f).SetEase(Ease.OutBounce));
 
     }
 
     public void ResetPos()
     {
+        Debug.Log(_transform);
         _transform.localPosition = initPos;
     }
 
