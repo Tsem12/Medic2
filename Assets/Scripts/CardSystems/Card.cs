@@ -108,10 +108,12 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     {
         if(cardBase.manaCost <= cardBase.manaObject.currentMana)
         {
+            //myRender.enabled = true;
             transform.tag = "Grabbable";
         }
         else
         {
+            //myRender.enabled = false;
             transform.tag = "ToolTip";
         }
     }
