@@ -114,7 +114,7 @@ public class CardBase : ScriptableObject
                     if (item.GetCurrentHealth() < item.GetMaxHealth() && !item.IsDead())
                     {
                         item.GetComponent<IHealable>().Heal(healthHealed);
-                        partyMember.GetParticulHandeler().ActiveEffect(ParticulesHandeler.CardEffect.Heal);
+                        item.GetParticulHandeler().ActiveEffect(ParticulesHandeler.CardEffect.Heal);
                     }
                     else
                     {

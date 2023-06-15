@@ -31,7 +31,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
             refs.fightManager.OnTurnBegin += EnableTurn;
             cardBase.manaObject.manaUpdate += CheckIfInteractable;
             cardBase.manaObject.manaUpdate += EnableTurn;
-            handlerObject.switchCard += SwitchUpdate;
+            //handlerObject.switchCard += SwitchUpdate;
         }
         else
         {
@@ -51,7 +51,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         refs.fightManager.OnTurnBegin -= EnableTurn;
         cardBase.manaObject.manaUpdate -= CheckIfInteractable;
         cardBase.manaObject.manaUpdate -= EnableTurn;
-        handlerObject.switchCard -= SwitchUpdate;
+        //handlerObject.switchCard -= SwitchUpdate;
     }
 
 
@@ -111,6 +111,9 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     void CheckIfInteractable()
     {
+
+            Debug.Log("qsfihjklugyqzasdfik");
+
         if(cardBase.manaCost <= cardBase.manaObject.currentMana)
         {
             transform.tag = "Grabbable";
