@@ -21,18 +21,18 @@ MonoBehaviour:
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
-      attackConditionsMode: 1
+      attackConditionsMode: 0
       selfStatus: 0
       selfStatusDuration: 0
       attack:
+      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
+      condition: 5
+      ConditionalAttack:
+      - {fileID: 11400000, guid: beeaa69d59b5f8043aba56e0f71d80ed, type: 2}
       - {fileID: 11400000, guid: beeaa69d59b5f8043aba56e0f71d80ed, type: 2}
       - {fileID: 11400000, guid: 1ee55a77b4a67564a914f6db6e290cb6, type: 2}
-      - {fileID: 11400000, guid: beeaa69d59b5f8043aba56e0f71d80ed, type: 2}
-      condition: 0
-      ConditionalAttack:
-      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
-      value: 1
+      value: 3
   - paternName: ATKT2
     interuptMode: 0
     attacks:
@@ -42,13 +42,13 @@ MonoBehaviour:
       selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
-      condition: 3
+      condition: 5
       ConditionalAttack:
       - {fileID: 11400000, guid: beeaa69d59b5f8043aba56e0f71d80ed, type: 2}
       - {fileID: 11400000, guid: beeaa69d59b5f8043aba56e0f71d80ed, type: 2}
       - {fileID: 11400000, guid: 1ee55a77b4a67564a914f6db6e290cb6, type: 2}
       percentageValue: 0
-      value: 1
+      value: 2
   - paternName: ATKT3
     interuptMode: 0
     attacks:
@@ -58,11 +58,11 @@ MonoBehaviour:
       selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
-      condition: 3
+      condition: 5
       ConditionalAttack:
       - {fileID: 11400000, guid: 794d2d8b540bcd54c9d6d4b9e4e11901, type: 2}
       - {fileID: 11400000, guid: 794d2d8b540bcd54c9d6d4b9e4e11901, type: 2}
       - {fileID: 11400000, guid: 1ee55a77b4a67564a914f6db6e290cb6, type: 2}
       percentageValue: 0
-      value: 2
+      value: 1
   attacksEvent: []
