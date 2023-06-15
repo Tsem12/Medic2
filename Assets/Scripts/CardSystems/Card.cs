@@ -18,12 +18,13 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     [SerializeField] Sprite lockedSprite;
     bool effectWasApplied = false;
 
+
     public void Init()
     {
         if(cardBase != null)
         {
-            CheckIfInteractable();
             UpdateCard();
+            CheckIfInteractable();
             cardBase.manaObject.manaAddTurn += CheckIfInteractable;
             refs.fightManager.OnTurnEnd += EndInteractable;
             refs.fightManager.OnTurnBegin += EnableTurn;
@@ -108,13 +109,19 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     {
         if(cardBase.manaCost <= cardBase.manaObject.currentMana)
         {
-            //myRender.enabled = true;
             transform.tag = "Grabbable";
+            col.enabled = true;
+            myRender.enabled = true;
+            usedRenderer.enabled = false;
+            effectWasApplied = false;
         }
         else
         {
-            //myRender.enabled = false;
             transform.tag = "ToolTip";
+            col.enabled = false;
+            myRender.enabled = false;
+            usedRenderer.enabled = true;
+            effectWasApplied = false;
         }
     }
 
@@ -130,10 +137,20 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     void EnableTurn()
     {
-        col.enabled = true;
-        myRender.enabled = true;
-        usedRenderer.enabled = false;
-        effectWasApplied = false;
+        if (cardBase.manaCost <= cardBase.manaObject.currentMana)
+        {
+            col.enabled = true;
+            myRender.enabled = true;
+            usedRenderer.enabled = false;
+            effectWasApplied = false;
+        }
+        else
+        {
+            col.enabled = false;
+            myRender.enabled = false;
+            usedRenderer.enabled = true;
+            effectWasApplied = false;
+        }
     }
 
     void SwitchCard()
