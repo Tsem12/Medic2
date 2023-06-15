@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] GameObject MainMenu;
     [SerializeField] GameObject optionMenu;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject LevelMenu;
     [SerializeField] GameObject accountWindow;
+    [SerializeField] GameObject HowToPlayWindow;
     private bool isPaused = false;
+    private bool isHowToPlayToggled = false;
+    private bool isLevelMenuToggled = false;
 
     public void Pause()
     {
@@ -54,5 +59,41 @@ public class PauseMenu : MonoBehaviour
     public void NextLevel()
     {
         Debug.Log("next level");
+    }
+
+    public void ToggleHowToPlay()
+    {
+        if (isHowToPlayToggled)
+        {
+            HowToPlayWindow.SetActive(false);
+            Time.timeScale = 1f;
+            isHowToPlayToggled = false;
+        }
+        else
+        {
+            HowToPlayWindow.SetActive(true);
+            Time.timeScale = 0f;
+            isHowToPlayToggled = true;
+
+        }
+    }
+
+
+
+
+    public void ToggleLevelMenu()
+    {
+        if (isLevelMenuToggled)
+        {
+            LevelMenu.SetActive(false);
+            MainMenu.SetActive(true);
+            isLevelMenuToggled = false;
+        }
+        else
+        {
+            LevelMenu.SetActive(true);
+            MainMenu.SetActive(false);
+            isLevelMenuToggled = true;
+        }
     }
 }

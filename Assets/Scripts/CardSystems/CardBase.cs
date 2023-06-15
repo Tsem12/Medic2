@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -121,7 +122,7 @@ public class CardBase : ScriptableObject
                 }
                 break;
             case CardBehaviour.panacea:
-                foreach (var item in partyMember.Status)
+                foreach (var item in partyMember.Status.ToList())
                 {
                     partyMember.TryRemoveStatus(item.status);
                 }
