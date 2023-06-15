@@ -1,45 +1,67 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using GooglePlayGames;
-using UnityEngine.SocialPlatforms;
-using GooglePlayGames.BasicApi;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using GooglePlayGames;
+//using UnityEngine.SocialPlatforms;
+//using GooglePlayGames.BasicApi;
 
-public class Achievement : ScriptableObject
-{
-    public void Login()
-    {
+//[CreateAssetMenu(fileName = "Achievement", menuName = "ScriptableObjects/Achievement")]
+//public class Achievement : ScriptableObject
+//{
+//    [SerializeField] LevelDataObject levelData;
+//    public string Token;
+//    public string Error;
 
-    }
+//    public void Init()
+//    {
+//        PlayGamesPlatform.Activate();
+//        LoginGooglePlayGames();
+//    }
 
-    internal void ProcessAuthentication(SignInStatus status)
-    {
-        if (status == SignInStatus.Success)
-        {
-            // Continue with Play Games Services
-        }
-        else
-        {
-            // Disable your integration with Play Games Services or show a login button
-            // to ask users to sign-in. Clicking it should call
-            // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
-        }
-    }
+//    public void LoginGooglePlayGames()
+//    {
+//        PlayGamesPlatform.Instance.Authenticate((success) =>
+//        {
+//            if (success == SignInStatus.Success)
+//            {
+//                Debug.Log("Login with Google Play games successful.");
+
+//                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
+//                {
+//                    Debug.Log("Authorization code: " + code);
+//                    Token = code;
+//                });
+//            }
+//            else
+//            {
+//                Error = "Failed to retrieve Google play games authorization code";
+//                Debug.Log("Login Unsuccessful");
+//            }
+//        });
+//    }
 
 
-    public void Init() // Use at every level load
-    {
+//    public void Check()
+//    {
 
-    }
+//    }
 
-    public void Check()
-    {
-        
-    }
-
-    public void FinishFirstLevel()
-    {
-        Social.ReportProgress("Cfjewijawiu_QA", 100.0f, (bool _) => {  });
-
-    }
-}
+//    public void FinishLevel()
+//    {
+//        switch (levelData.currentSceneIndex)
+//        {
+//            case 0:
+//                Social.ReportProgress("CgklzPjh_7UCEAIQAA", 100.0f, null);
+//                break;
+//            case 1:
+//                Social.ReportProgress("CgklzPjh_7UCEAIQAQ", 100.0f, null);
+//                break;
+//            case 2:
+//                Social.ReportProgress("CgklzPjh_7UCEAIQAg", 100.0f, null);
+//                break;
+//            case 3:
+//                Social.ReportProgress("CgklzPjh_7UCEAIQAw", 100.0f, null);
+//                break;
+//        }
+//    }
+//}

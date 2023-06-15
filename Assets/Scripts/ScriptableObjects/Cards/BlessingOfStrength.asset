@@ -18,8 +18,8 @@ MonoBehaviour:
   isUnlocked: 1
   dataIndex: 0
   cardBehaviour: 7
-  cardName: 
-  description: 
+  cardName: 'Blessing of Strength : '
+  description: "Target\u2019s next attack does +1 damage."
   cardSprite: {fileID: 21300000, guid: 5b88fcb2eff99f840bff3f8beab193ca, type: 3}
   cardSpriteGrey: {fileID: 21300000, guid: 82947766fef77134faf9e5a289e73fc4, type: 3}
   manaCost: 3

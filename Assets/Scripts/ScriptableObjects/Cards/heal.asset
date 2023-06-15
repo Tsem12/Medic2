@@ -18,8 +18,8 @@ MonoBehaviour:
   isUnlocked: 1
   dataIndex: 1
   cardBehaviour: 0
-  cardName: 
-  description: 
+  cardName: 'Heal : '
+  description: Heal target for 2 HP.
   cardSprite: {fileID: 21300000, guid: 8da42721155ec0e45af30bc3b9001b74, type: 3}
   cardSpriteGrey: {fileID: 21300000, guid: adf3c719ca4ffe041b7010438f19a71d, type: 3}
   manaCost: 3

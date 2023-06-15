@@ -25,7 +25,7 @@ MonoBehaviour:
   buff: 0
   deBuff: 1
   dotValuePerTurn: 2
-  effectTurnDuration: 1
+  effectTurnDuration: 2
   buffValue: 0
   deBuffValue: 1
   chanceToApplyEffect: 100
