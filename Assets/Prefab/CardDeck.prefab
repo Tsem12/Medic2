@@ -1195,6 +1195,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7372551230327216537}
     m_Modifications:
+    - target: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+      propertyPath: isPlayingCard
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4886648995312855033, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -1276,6 +1280,10 @@ PrefabInstance:
     - target: {fileID: 3964311560443466950, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+      propertyPath: isPlayingCard
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4886648995312855033, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: m_SortingLayer
@@ -1363,6 +1371,10 @@ PrefabInstance:
       propertyPath: index
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+      propertyPath: isPlayingCard
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4886648995312855033, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -1448,6 +1460,10 @@ PrefabInstance:
     - target: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: index
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082512377279538278, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
+      propertyPath: isPlayingCard
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4886648995312855033, guid: de6e69377e766634cac950cc59ae44bb, type: 3}
       propertyPath: m_SortingLayer
