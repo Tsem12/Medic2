@@ -30,6 +30,7 @@ MonoBehaviour:
       ConditionalAttack:
       - {fileID: 11400000, guid: 4906e5f268894bc41a04d4a9fa5cda6f, type: 2}
       - {fileID: 11400000, guid: 6d7e4c20bd663664ca192d42919b9cbe, type: 2}
+      - {fileID: 11400000, guid: 4906e5f268894bc41a04d4a9fa5cda6f, type: 2}
       percentageValue: 40
       value: 3
   - paternName: Part1.5
@@ -44,6 +45,8 @@ MonoBehaviour:
       condition: 5
       ConditionalAttack:
       - {fileID: 11400000, guid: 174b760500d020f43aba6ae0f1a7f0d4, type: 2}
+      - {fileID: 11400000, guid: 4906e5f268894bc41a04d4a9fa5cda6f, type: 2}
+      - {fileID: 11400000, guid: 6d7e4c20bd663664ca192d42919b9cbe, type: 2}
       - {fileID: 11400000, guid: 4906e5f268894bc41a04d4a9fa5cda6f, type: 2}
       - {fileID: 11400000, guid: 6d7e4c20bd663664ca192d42919b9cbe, type: 2}
       percentageValue: 70
@@ -62,6 +65,8 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 174b760500d020f43aba6ae0f1a7f0d4, type: 2}
       - {fileID: 11400000, guid: 4906e5f268894bc41a04d4a9fa5cda6f, type: 2}
       - {fileID: 11400000, guid: 6d7e4c20bd663664ca192d42919b9cbe, type: 2}
+      - {fileID: 11400000, guid: 6d7e4c20bd663664ca192d42919b9cbe, type: 2}
+      - {fileID: 11400000, guid: 4906e5f268894bc41a04d4a9fa5cda6f, type: 2}
       percentageValue: 0
       value: 1
   attacksEvent: []
