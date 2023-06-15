@@ -99,3 +99,143 @@ Blessing of Strength (6) : Следующая атака цели наносит
 Mana Profusion (4) : Стоимость следующего произнесенного заклинания возвращается в следующем ходу.
 Initiative (3) : Позволяет цели ходить первой, перед монстром."
 HowToPlayMenu.Window4.Title,Spell List,Liste des sorts,Zauberliste,"Lista de hechizos",法术列表,呪文リスト,Lista de feitiços, Список заклинаний
+HowToPlayMenu.Window5,"1 : Berserker
+
+Your primary damage dealer. Has 4 health points.
+Does a single damage per attack, but each missing health point will provide one additional damage.
+
+2 : Paladin
+
+Your tank. Has 6 health points, and does a single damage per attack.
+Has the ability to stun for a single turn, or provoke the enemy, preventing them from attacking anyone else for the duration.
+
+3 : Archer
+
+Your secondary damage dealer. Has 3 health points does 2 damage per attack.
+Can also send a poisoned arrow, doing a single damage but poisoning the target for two turns.
+","1 : Berserker : Votre principal dégât. Possède 4 points de vie. Inflige un seul point de dégât par attaque, mais chaque point de vie manquant lui confère un dégât supplémentaire.
+2 : Paladin : Votre tank. Possède 6 points de vie et inflige un seul point de dégât par attaque. Possède la capacité d'étourdir l'ennemi pendant un tour ou de provoquer l'ennemi, l'empêchant d'attaquer quelqu'un d'autre pendant la durée.
+3 : Archer : Votre second dégât. Possède 3 points de vie et inflige 2 points de dégât par attaque. Peut également envoyer une flèche empoisonnée, infligeant un seul point de dégât mais empoisonnant la cible pendant deux tours.","1 : Berserker : Dein Hauptangreifer. Hat 4 Lebenspunkte. Fügt mit jedem Angriff einen Schaden zu, aber für jeden fehlenden Lebenspunkt wird ein zusätzlicher Schaden verursacht.
+2 : Paladin : Dein Tank. Hat 6 Lebenspunkte und fügt mit jedem Angriff einen Schaden zu. Hat die Fähigkeit, den Gegner für einen einzelnen Zug zu betäuben oder ihn zu provozieren, sodass er während der Dauer niemand anderen angreifen kann.
+3 : Bogenschütze : Dein sekundärer Angreifer. Hat 3 Lebenspunkte und fügt mit jedem Angriff 2 Schaden zu. Kann auch einen vergifteten Pfeil abschießen, der einen einzelnen Schaden verursacht, aber das Ziel für zwei Züge vergiftet.","1 : Berserker : Tu principal cazador de daño. Tiene 4 puntos de salud. Inflige un solo punto de daño por ataque, pero cada punto de salud que le falte proporcionará un daño adicional.
+2 : Paladín : Tu tanque. Tiene 6 puntos de salud e inflige un solo punto de daño por ataque. Tiene la habilidad de aturdir al enemigo durante un turno o provocar al enemigo, impidiendo que ataque a cualquier otra persona durante la duración.
+3 : Arquero : Tu cazador de daño secundario. Tiene 3 puntos de salud e inflige 2 puntos de daño por ataque. También puede disparar una flecha envenenada, infligiendo un solo punto de daño pero envenenando al objetivo durante dos turnos.","1 : Berserker (狂战士) : 你的主要伤害输出者。拥有 4 点生命值。每次攻击只造成一点伤害，但每缺失一点生命值，就会额外造成一点伤害。
+2 : Paladin (圣骑士) : 你的坦克。拥有 6 点生命值，每次攻击只造成一点伤害。具有使敌人眩晕一回合或挑衅敌人、在持续时间内阻止其攻击其他人的能力。
+3 : Archer (弓箭手) : 你的次要伤害输出者。拥有 3 点生命值，每次攻击造成 2 点伤害。还可以发射一支毒箭，造成一点伤害，但中毒目标持续两回合。","1 : Berserker (バーサーカー) : プライマリーのダメージディーラー。体力は4ポイントです。攻撃ごとに1ポイントのダメージを与えますが、体力が不足している場合は追加のダメージが与えられます。
+2 : Paladin (パラディン) : タンク役。体力は6ポイントで、攻撃ごとに1ポイントのダメージを与えます。敵を1ターンの間スタンさせるか、敵を挑発して他の誰にも攻撃させないようにする能力を持っています。
+3 : Archer (アーチャー) : セカンダリーのダメージディーラー。体力は3ポイントで、攻撃ごとに2ポイントのダメージを与えます。また、毒矢を放つこともでき、単体に1ポイントのダメージを与え、2ターンの間その対象を毒にすることができます。","1 : Berserker : Seu principal causador de dano. Possui 4 pontos de vida. Causa um único ponto de dano por ataque, mas cada ponto de vida faltante fornecerá um dano adicional.
+2 : Paladin : Seu tanque. Possui 6 pontos de vida e causa um único ponto de dano por ataque. Tem a habilidade de atordoar o inimigo por um único turno ou provocar o inimigo, impedindo-o de atacar qualquer outra pessoa durante a duração.
+3 : Arqueiro : Seu causador de dano secundário. Possui 3 pontos de vida e causa 2 pontos de dano por ataque. Também pode disparar uma flecha envenenada, causando um único ponto de dano, mas envenenando o alvo por dois turnos.","1 : Berserker (Берсерк) : Ваш основной наносящий урон персонаж. Имеет 4 очка здоровья. Наносит одно повреждение за атаку, но каждое отсутствующее очко здоровья добавляет дополнительное повреждение.
+2 : Paladin (Паладин) : Ваш танк. Имеет 6 очков здоровья и наносит одно повреждение за атаку. Обладает способностью оглушить противника на один ход или провоцировать противника, препятствуя ему атаковать кого-либо еще в течение определенного времени.
+3 : Archer (Лучник) : Ваш вторичный наносящий урон персонаж. Имеет 3 очка здоровья и наносит 2 очка повреждения за атаку. Может также выпустить отравленную стрелу, наносящую одно повреждение, но отравляющую цель на два хода.
+
+
+
+"
+HowToPlayMenu.Window5.Title,What Each Character does ?,Que fait chaque personnage ?,Was macht jeder Charakter?,¿Qué hace cada personaje?,每个角色做什么？,各キャラクターは何をするのですか？,O que cada personagem faz?,Что делает каждый персонаж?
+HowToPlayMenu.Window6,"Shielded : Prevents all? (or 1? 2?) damage and effects from the next attack. Breaks afterward.
+
+Strengthened : Increases damage for the duration.
+
+Regenerating : Targets heals 1hp/turn for the duration. 
+
+Initiative : Target acts first (before both allies and the boss) for the duration. If multiple allies have it, use base speed to determine who goes first.
+
+Provoking : Character must be the target of the enemy’s next attacks
+
+Poisoned : Targets suffers 1D/turn for the duration.
+
+Burning : Target suffers 2D/turn for the duration.
+
+Restrained : Prevents target from taking any action until freed. Targets suffers 1D/turn.
+
+Disappeared : Target is absent from the fight for the duration. Cannot take actions or be targeted.
+
+Stunned : Prevents target from taking any action for the duration. Removes sleep.
+
+Unconscious : Prevents target from taking any action until it takes damage. Then, gets stunned for a turn.
+Removes stun and fatigue.
+
+Fatigue : Reduces attack damage for the duration. If applied twice, transforms into sleep.
+
+
+
+","Shielded : Empêche tous (ou 1, 2 ?) les dégâts et effets de la prochaine attaque. Se brise ensuite.
+Renforcé : Augmente les dégâts pendant la durée.
+Régénération : La cible récupère 1 PV par tour pendant la durée.
+Initiative : La cible agit en premier (avant les alliés et le boss) pendant la durée. Si plusieurs alliés l'ont, la vitesse de base est utilisée pour déterminer qui agit en premier.
+Provocation : Le personnage doit être la cible des prochaines attaques de l'ennemi.
+Empoisonné : La cible subit 1 point de dégât par tour pendant la durée.
+Brûlure : La cible subit 2 points de dégât par tour pendant la durée.
+Immobilisé : Empêche la cible de prendre toute action jusqu'à sa libération. La cible subit 1 point de dégât par tour.
+Disparu : La cible est absente du combat pendant la durée. Elle ne peut pas prendre d'action ni être ciblée.
+Étourdi : Empêche la cible de prendre toute action pendant la durée. Supprime le sommeil.
+Inconscient : Empêche la cible de prendre toute action jusqu'à ce qu'elle subisse des dégâts. Ensuite, elle est étourdie pendant un tour. Supprime l'étourdissement et la fatigue.
+Fatigue : Réduit les dégâts d'attaque pendant la durée. S'il est appliqué deux fois, se transforme en sommeil.","Geschützt : Verhindert alle (oder 1, 2?) Schäden und Effekte des nächsten Angriffs. Bricht danach.
+Gestärkt : Erhöht den Schaden für die Dauer.
+Regeneration : Das Ziel heilt 1 TP pro Runde für die Dauer.
+Initiative : Das Ziel handelt zuerst (vor Verbündeten und dem Boss) für die Dauer. Wenn mehrere Verbündete dies haben, wird die Grundgeschwindigkeit verwendet, um zu bestimmen, wer zuerst handelt.
+Provokation : Charakter muss das Ziel der nächsten Angriffe des Feindes sein.
+Vergiftet : Das Ziel erleidet 1 Punkt Schaden pro Runde für die Dauer.
+Brennen : Das Ziel erleidet 2 Punkte Schaden pro Runde für die Dauer.
+Eingeschränkt : Verhindert, dass das Ziel bis zur Befreiung handelt. Das Ziel erleidet 1 Punkt Schaden pro Runde.
+Verschwunden : Das Ziel ist während der Dauer vom Kampf abwesend. Kann keine Aktionen durchführen oder zum Ziel werden.
+Betäubt : Verhindert, dass das Ziel während der Dauer handelt. Entfernt Schlaf.
+Bewusstlos : Verhindert, dass das Ziel handelt, bis es Schaden erleidet. Wird dann für einen Zug betäubt. Entfernt Betäubung und Erschöpfung.
+Erschöpfung : Reduziert den Angriffsschaden für die Dauer. Wenn zweimal angewendet, wird es in Schlaf umgewandelt.","Protegido : Evita todo (o 1, 2?) daño y efectos del próximo ataque. Se rompe después.
+Fortalecido : Aumenta el daño durante la duración.
+Regeneración : El objetivo se cura 1 PS por turno durante la duración.
+Iniciativa : El objetivo actúa primero (antes que los aliados y el jefe) durante la duración. Si varios aliados lo tienen, se utiliza la velocidad base para determinar quién actúa primero.
+Provocación : El personaje debe ser el objetivo de los próximos ataques del enemigo.
+Envenenado : El objetivo sufre 1 punto de daño por turno durante la duración.
+Quemadura : El objetivo sufre 2 puntos de daño por turno durante la duración.
+Restringido : Impide que el objetivo realice cualquier acción hasta ser liberado. El objetivo sufre 1 punto de daño por turno.
+Desaparecido : El objetivo está ausente de la pelea durante la duración. No puede realizar acciones ni ser objetivo.
+Aturdido : Impide que el objetivo realice cualquier acción durante la duración. Elimina el sueño.
+Inconsciente : Impide que el objetivo realice cualquier acción hasta que reciba daño. Luego, queda aturdido durante un turno. Elimina el aturdimiento y la fatiga.
+Fatiga : Reduce el daño de ataque durante la duración. Si se aplica dos veces, se transforma en sueño.","护盾 : 阻止下一次攻击的所有（或1个、2个）伤害和效果。之后破裂。
+强化 : 在持续时间内增加伤害。
+恢复 : 目标在持续时间内每回合恢复1点生命值。
+先发制人 : 目标在持续时间内先行动（在盟友和boss之前）。如果有多个盟友具有此状态，使用基础速度确定谁先行动。
+挑衅 : 角色必须成为敌人的下次攻击目标。
+中毒 : 目标在持续时间内每回合受到1点伤害。
+灼伤 : 目标在持续时间内每回合受到2点伤害。
+束缚 : 阻止目标采取任何行动，直到被解救。目标在持续时间内每回合受到1点伤害。
+消失 : 目标在持续时间内缺席战斗。无法执行动作或成为目标。
+眩晕 : 目标在持续时间内无法采取任何行动。移除睡眠状态。
+失去意识 : 目标在没有受到伤害之前无法采取任何行动。然后，进入眩晕状态一回合。移除眩晕和疲劳。
+疲劳 : 在持续时间内减少攻击伤害。如果应用两次，转化为睡眠状态。","シールド : 次の攻撃からの全て（または1つ、2つ）のダメージと効果を防ぐ。その後、破壊される。
+強化 : 持続時間中にダメージを増加させる。
+回復 : 対象は持続時間中に1HP/ターン回復する。
+イニシアチブ : 対象は持続時間中に最初に行動する（仲間やボスより前）。複数の仲間がこの効果を持っている場合、基本速度で最初に行動する者が決定される。
+挑発 : キャラクターは次の攻撃の対象になる必要がある。
+毒 : 対象は持続時間中に1D/ターンのダメージを受ける。
+燃焼 : 対象は持続時間中に2D/ターンのダメージを受ける。
+制約 : 対象は解放されるまで何も行動できない。対象は持続時間中に1D/ターンのダメージを受ける。
+消失 : 対象は持続時間中戦闘から消える。行動を起こせず、対象にされない。
+スタン : 対象は持続時間中何も行動できない。睡眠状態を解除する。
+無意識 : 対象はダメージを受けるまで何も行動できない。その後、1ターンのスタン状態になる。スタンと疲労を解除する。
+疲労 : 持続時間中に攻撃ダメージを減少させる。2回適用されると、睡眠に変わる。","Protegido : Impede todo (ou 1, 2?) dano e efeitos do próximo ataque. Quebra depois.
+Fortalecido : Aumenta o dano durante a duração.
+Regeneração : O alvo se cura em 1 PV por turno durante a duração.
+Iniciativa : O alvo age primeiro (antes dos aliados e do chefe) durante a duração. Se vários aliados possuírem, a velocidade base é usada para determinar quem age primeiro.
+Provocação : O personagem deve ser o alvo dos próximos ataques do inimigo.
+Envenenado : O alvo sofre 1 ponto de dano por turno durante a duração.
+Queimando : O alvo sofre 2 pontos de dano por turno durante a duração.
+Restrito : Impede que o alvo tome qualquer ação até ser liberado. O alvo sofre 1 ponto de dano por turno.
+Desaparecido : O alvo está ausente da luta durante a duração. Não pode realizar ações nem ser alvo.
+Atordoado : Impede que o alvo tome qualquer ação durante a duração. Remove o sono.
+Inconsciente : Impede que o alvo tome qualquer ação até sofrer dano. Em seguida, fica atordoado por um turno. Remove o atordoamento e a fadiga.
+Fadiga : Reduz o dano de ataque durante a duração. Se aplicado duas vezes, transforma-se em sono.","Защищен : Предотвращает весь (или 1, 2?) урон и эффекты следующей атаки. Затем разрушается.
+Укреплен : Увеличивает урон на протяжении действия.
+Регенерация : Цель восстанавливает 1 ОЗ за ход на протяжении действия.
+Инициатива : Цель действует первой (перед союзниками и боссом) на протяжении действия. Если несколько союзников имеют это, используется базовая скорость для определения, кто действует первым.
+Провокация : Персонаж должен стать целью следующих атак противника.
+Отравление : Цель получает 1 очко урона за ход на протяжении действия.
+Горение : Цель получает 2 очка урона за ход на протяжении действия.
+Ограничение : Предотвращает действия цели до освобождения. Цель получает 1 очко урона за ход на протяжении действия.
+Исчезновение : Цель отсутствует в бою на протяжении действия. Не может выполнять действия или быть целью.
+Оглушение : Предотвращает действия цели на протяжении действия. Удаляет сон.
+Без сознания : Предотвращает действия цели до получения урона. Затем оглушается на один ход. Удаляет оглушение и усталость.
+Усталость : Уменьшает урон атаки на протяжении действия. При двукратном применении прев"
+HowToPlayMenu.Window6.Title,Status Effects List : ,Liste des effets de statut : ,Status-Effekte-Liste :,Lista de efectos de estado :,状态效果列表：,ステータス効果リスト：, Lista de efeitos de status :,Список эффектов статуса :
