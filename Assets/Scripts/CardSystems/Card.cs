@@ -16,6 +16,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     [SerializeField] TextMeshPro tmpro;
     [SerializeField] ManaObject manaObject;
     [SerializeField] Sprite lockedSprite;
+    [SerializeField] bool isPlayingCard;
     bool effectWasApplied = false;
 
 
@@ -23,12 +24,13 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     {
         if(cardBase != null)
         {
-            UpdateCard();
             CheckIfInteractable();
+            UpdateCard();
             cardBase.manaObject.manaAddTurn += CheckIfInteractable;
             refs.fightManager.OnTurnEnd += EndInteractable;
             refs.fightManager.OnTurnBegin += EnableTurn;
             cardBase.manaObject.manaUpdate += CheckIfInteractable;
+            cardBase.manaObject.manaUpdate += EnableTurn;
             handlerObject.switchCard += SwitchUpdate;
         }
         else
@@ -48,8 +50,10 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         refs.fightManager.OnTurnEnd -= EndInteractable;
         refs.fightManager.OnTurnBegin -= EnableTurn;
         cardBase.manaObject.manaUpdate -= CheckIfInteractable;
+        cardBase.manaObject.manaUpdate -= EnableTurn;
         handlerObject.switchCard -= SwitchUpdate;
     }
+
 
     public void NotInit()
     {
@@ -110,18 +114,10 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         if(cardBase.manaCost <= cardBase.manaObject.currentMana)
         {
             transform.tag = "Grabbable";
-            col.enabled = true;
-            myRender.enabled = true;
-            usedRenderer.enabled = false;
-            effectWasApplied = false;
         }
         else
         {
             transform.tag = "ToolTip";
-            col.enabled = false;
-            myRender.enabled = false;
-            usedRenderer.enabled = true;
-            effectWasApplied = false;
         }
     }
 
@@ -137,18 +133,28 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     void EnableTurn()
     {
-        if (cardBase.manaCost <= cardBase.manaObject.currentMana)
+        if(isPlayingCard)
+        {
+            if (cardBase.manaCost <= cardBase.manaObject.currentMana)
+            {
+                col.enabled = true;
+                myRender.enabled = true;
+                usedRenderer.enabled = false;
+                effectWasApplied = false;
+            }
+            else
+            {
+                col.enabled = false;
+                myRender.enabled = false;
+                usedRenderer.enabled = true;
+                effectWasApplied = false;
+            }
+        }
+        else
         {
             col.enabled = true;
             myRender.enabled = true;
             usedRenderer.enabled = false;
-            effectWasApplied = false;
-        }
-        else
-        {
-            col.enabled = false;
-            myRender.enabled = false;
-            usedRenderer.enabled = true;
             effectWasApplied = false;
         }
     }
