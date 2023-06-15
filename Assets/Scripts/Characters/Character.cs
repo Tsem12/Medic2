@@ -22,6 +22,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
     [SerializeField] protected StatusBarManager _statusBar;
+    [SerializeField] private ParticulesHandeler particuleHandler;
     [SerializeField] protected Transform _gfx;
     [SerializeField] protected PartyMemberEnum charaType;
     [SerializeField] private Animator _animator;
@@ -46,6 +47,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public List<Status> Status { get => status; set => status = value; }
     public CharacterObjets CharacterObj { get => characterObj; set => characterObj = value; }
     public Animator Animator { get => _animator; set => _animator = value; }
+    protected ParticulesHandeler ParticuleHandler { get => particuleHandler; set => particuleHandler = value; }
 
     private List<Status> status = new List<Status>();
 
@@ -76,6 +78,10 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         //Debug.Log(_characterObj);
        
+    }
+    public ParticulesHandeler GetParticulHandeler()
+    {
+        return ParticuleHandler;
     }
     public virtual void StartTurn()
     {
@@ -113,6 +119,13 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} finished his turn");
+        foreach(Status status in Status.ToList())
+        {
+            if(status != null)
+            {
+                ParticuleHandler?.ActiveEffect(status.status);
+            }
+        }
         CheckStatus();
         UpdateBar();
     }
