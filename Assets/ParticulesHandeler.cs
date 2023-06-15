@@ -6,6 +6,14 @@ using UnityEngine;
 
 public class ParticulesHandeler : MonoBehaviour
 {
+    public enum CardEffect
+    {
+        Ressurect,
+        Panacea,
+        Heal
+
+    }
+
     [SerializeField] private ParticleSystem _buff;
     [SerializeField] private ParticleSystem _sleep;
     [SerializeField] private ParticleSystem _fatigue;
@@ -37,6 +45,7 @@ public class ParticulesHandeler : MonoBehaviour
     public void TestShield() => ActiveEffect(Status.StatusEnum.Shielded);
     public void ActiveEffect(Status.StatusEnum status)
     {
+        Debug.Log("dsdffsdfs");
         switch (status)
         {
             case Status.StatusEnum.Shielded:
@@ -80,6 +89,28 @@ public class ParticulesHandeler : MonoBehaviour
                 break;
             case Status.StatusEnum.Taunting:
                 _provoc.Play();
+                break;
+        }
+    }
+
+    public void ActiveEffect(CardEffect status)
+    {
+        switch (status)
+        {
+            case CardEffect.Ressurect:
+                foreach(ParticleSystem particule in _res)
+                {
+                    particule.Play();
+                }
+                break;
+            case CardEffect.Panacea:
+                foreach (ParticleSystem particule in _panacea)
+                {
+                    particule.Play();
+                }
+                break;
+            case CardEffect.Heal:
+                _heal.Play();
                 break;
         }
     }

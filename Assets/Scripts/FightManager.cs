@@ -44,6 +44,7 @@ public class FightManager : MonoBehaviour
 
     public event Action OnTurnBegin;
     public event Action OnTurnEnd;
+    public event Action OnWin;
 
     #region statusSprites
     [Foldout("StatusSprites")]
@@ -297,6 +298,7 @@ public class FightManager : MonoBehaviour
         {
             if (_enableDebug)
                 Debug.Log("Boss defeated");
+            OnWin?.Invoke();
             yield break;
         }
 
