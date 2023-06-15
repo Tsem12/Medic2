@@ -9,14 +9,22 @@ interface IInteractable
     
 }
 
+interface IToolTip
+{
+    public void ShowToolTip(Transform canva);
+}
+
 public class InteractInput : MonoBehaviour
 {
     [SerializeField] InputHandlerObject _inputs;
     [SerializeField] AllReferences refs;
-    [SerializeField] float secondsForToolTip = 2.5f;
-    [SerializeField] float value = 1.8f;
+    [SerializeField] float secondsForToolTip = 2f;
+    [SerializeField] float value = 0.7f;
+    [SerializeField] Transform toolTipCanva;
     Coroutine _dragCoroutine = null;
+    Coroutine _toolTipCoroutine = null;
     GameObject _getObject;
+    bool wasTooltip = false;
 
     private void Start()
     {
@@ -46,6 +54,10 @@ public class InteractInput : MonoBehaviour
                 {
                     _dragCoroutine = StartCoroutine(Drag());
                 }
+                else if(_getObject.CompareTag("ToolTip"))
+                {
+                    _toolTipCoroutine = StartCoroutine(WaitForTooltip());
+                }
             }
         }
     }
@@ -54,16 +66,33 @@ public class InteractInput : MonoBehaviour
     {
         if(_getObject != null) // Check if we got object to interact with
         {
-            if(_getObject.GetComponent<IInteractable>() != null)
+            if(!wasTooltip)
             {
-                _getObject.GetComponent<IInteractable>().Interact();//Interact with object
+                if (_getObject.GetComponent<IInteractable>() != null)
+                {
+                    _getObject.GetComponent<IInteractable>().Interact();//Interact with object
+                }
             }
+            
             if (_dragCoroutine != null)
             {
                 StopCoroutine(_dragCoroutine);
                 _dragCoroutine = null;
             }
+
             _getObject = null;
+        }
+
+        if (_toolTipCoroutine != null)
+        {
+            StopCoroutine(_toolTipCoroutine);
+            _toolTipCoroutine = null;
+        }
+
+        if(wasTooltip)
+        {
+            wasTooltip = false;
+            toolTipCanva.gameObject.SetActive(false);
         }
     }
 
@@ -71,35 +100,36 @@ public class InteractInput : MonoBehaviour
     {
         float time = Time.time;
         float waitTime = time + secondsForToolTip;
-        bool isToolTip = false;
+        bool stopToolTip = false;
         while (true)
         {
-
-            if(Input.touches.Length > 0)
+            if(Input.touches.Length > 0 && _getObject != null)
             {
-                if(!isToolTip)
+                if(!stopToolTip)
                 {
-                    if (time < waitTime)
+                    if (((Vector2)(Camera.main.ScreenToWorldPoint(Input.touches[0].position) - _getObject.transform.position)).magnitude <= value)
                     {
-                        time += Time.deltaTime;
+                        if (time < waitTime)
+                        {
+                            time += Time.deltaTime;
+                        }
+                        else
+                        {
+                            stopToolTip = true;
+                            ToolTip();
+                            CanceledDrop();
+                        }
                     }
                     else
                     {
-                        isToolTip = true;
-                        Debug.Log(((Vector2)(Camera.main.ScreenToWorldPoint(Input.touches[0].rawPosition) - Camera.main.ScreenToWorldPoint(Input.touches[0].position))).magnitude);
-                        if (((Vector2)(Camera.main.ScreenToWorldPoint(Input.touches[0].position) - Camera.main.ScreenToWorldPoint(Input.touches[0].rawPosition))).magnitude <= value)
-                        {
-                            CanceledDrop();
-                            ToolTip();
-                            
-                        }
+                        stopToolTip = true;
                     }
                 }
-
-                if(_getObject != null)
+                else
                 {
                     _getObject.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
                 }
+
             }
             yield return null;
         }
@@ -124,6 +154,22 @@ public class InteractInput : MonoBehaviour
 
     void ToolTip()
     {
-        Debug.Log("ToolTip");
+        wasTooltip = true;
+        toolTipCanva.gameObject.SetActive(true);
+        if(_getObject != null && _getObject.GetComponent<IToolTip>() != null)
+        {
+            _getObject.GetComponent<IToolTip>().ShowToolTip(toolTipCanva);
+        }
+    }
+
+    IEnumerator WaitForTooltip()
+    {
+        wasTooltip = true;
+        yield return new WaitForSeconds(secondsForToolTip);
+        toolTipCanva.gameObject.SetActive(true);
+        if (_getObject != null && _getObject.GetComponent<IToolTip>() != null)
+        {
+            _getObject.GetComponent<IToolTip>().ShowToolTip(toolTipCanva);
+        }
     }
 }

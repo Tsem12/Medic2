@@ -23,6 +23,13 @@ public class SwitchCardButton : MonoBehaviour
         refs.fightManager.OnTurnEnd += HideButton;
     }
 
+    private void OnDestroy()
+    {
+        refs.fightManager.OnTurnEnd -= Hide;
+        refs.fightManager.OnTurnBegin -= ShowButton;
+        refs.fightManager.OnTurnEnd -= HideButton;
+    }
+
     public void Show()
     {
         foreach (var item in colToHide)

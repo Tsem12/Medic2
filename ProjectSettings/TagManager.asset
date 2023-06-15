@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grabbable
   - PartyMember
+  - ToolTip
   layers:
   - Default
   - TransparentFX

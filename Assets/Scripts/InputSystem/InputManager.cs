@@ -29,6 +29,12 @@ public class InputManager : MonoBehaviour
         _touchPress.action.canceled -= UnPress;
     }
 
+    private void OnDestroy()
+    {
+        _touchPress.action.performed -= Press;
+        _touchPress.action.canceled -= UnPress;
+    }
+
     void Press(InputAction.CallbackContext ctx)
     {
         inputHandlerObj?.PressEvent();

@@ -35,6 +35,7 @@ public class CardBase : ScriptableObject
     public int dataIndex;
     public CardBehaviour cardBehaviour;
     public string cardName;
+    public string description;
     public Sprite cardSprite;
     public int manaCost;
 

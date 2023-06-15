@@ -54,14 +54,14 @@ public class CardManager : MonoBehaviour
             }
             else
             {
-                cardsHiden[i].carBase = removeDeck[i];
+                cardsHiden[i].cardBase = removeDeck[i];
                 cardsHiden[i].Init();
             }
         }
 
         for (int i = 0; i < cardsGame.Count; i++)
         {
-            cardsGame[i].carBase = deckBuilder.deck[i];
+            cardsGame[i].cardBase = deckBuilder.deck[i];
             cardsGame[i].Init();
         }
     }
@@ -75,13 +75,13 @@ public class CardManager : MonoBehaviour
         {
             if(item.gameObject.activeSelf)
             {
-                current.Add(item.carBase);
+                current.Add(item.cardBase);
             }
         }
 
         foreach (var item in cardsGame)
         {
-           current.Add(item.carBase);
+           current.Add(item.cardBase);
         }
 
         System.Random rand = new System.Random();
@@ -97,14 +97,14 @@ public class CardManager : MonoBehaviour
         {
             if (item.gameObject.activeSelf)
             {
-                item.carBase = temp.Pop();
+                item.cardBase = temp.Pop();
                 item.UpdateCard();
             }
         }
 
         foreach (var item in cardsGame)
         {
-            item.carBase = temp.Pop();
+            item.cardBase = temp.Pop();
             item.UpdateCard();
         }
     }
