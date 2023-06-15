@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TestAchievement : MonoBehaviour
 {
-    [SerializeField] Achievement obj;
+    //[SerializeField] Achievement obj;
     // Start is called before the first frame update
-    void Start()
-    {
-        obj.Init();
-    }
+    //void Start()
+    //{
+    //    obj.Init();
+    //}
 
 }
