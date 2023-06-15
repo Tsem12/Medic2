@@ -9,6 +9,7 @@ public class ManaBar : MonoBehaviour
 {
     [SerializeField] ManaObject manaEventHandler;
     [SerializeField] Image manaSlider;
+    [SerializeField] Image manaSliderPrevise;
     [SerializeField] float manaPerSeconds = 2;
     [SerializeField] AnimationCurve curve;
     Coroutine updateRoutine;
