@@ -11,16 +11,16 @@ interface IInteractable
 
 interface IToolTip
 {
-    public void ShowToolTip(Transform canva);
+    public void ShowToolTip(ToolTip tooltip);
 }
 
 public class InteractInput : MonoBehaviour
 {
     [SerializeField] InputHandlerObject _inputs;
     [SerializeField] AllReferences refs;
-    [SerializeField] float secondsForToolTip = 2f;
+    [SerializeField] float secondsForToolTip = 1f;
     [SerializeField] float value = 0.7f;
-    [SerializeField] Transform toolTipCanva;
+    [SerializeField] ToolTip toolTipCanva;
     Coroutine _dragCoroutine = null;
     Coroutine _toolTipCoroutine = null;
     GameObject _getObject;

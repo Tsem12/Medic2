@@ -112,13 +112,13 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         }
         else
         {
-            transform.tag = "Untagged";
+            transform.tag = "ToolTip";
         }
     }
 
     void EndInteractable()
     {
-        transform.tag = "Untagged";
+        transform.tag = "ToolTip";
     }
 
     public void Cancel()
@@ -186,8 +186,8 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         {
             myRender.sprite = cardBase.cardSprite;
             myRender.color = Color.white;
-            usedRenderer.sprite = cardBase.cardSprite;
-            usedRenderer.color = Color.grey;
+            usedRenderer.sprite = cardBase.cardSpriteGrey;
+            usedRenderer.color = Color.white;
             tmpro.SetText(cardBase.manaCost.ToString());
         }
         else
@@ -195,7 +195,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
             EndInteractable();
             myRender.sprite = lockedSprite;
             myRender.color = Color.white;
-            usedRenderer.sprite = lockedSprite;
+            usedRenderer.sprite = cardBase.cardSpriteGrey;
             usedRenderer.color = Color.white;
             tmpro.SetText("");
         }
@@ -208,11 +208,8 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         usedRenderer.enabled = true;
     }
 
-    public void ShowToolTip(Transform canva)
+    public void ShowToolTip(ToolTip tooltip)
     {
-        if(canva.gameObject != null && cardBase != null)
-        {
-            canva.gameObject.GetComponent<ToolTip>().ToolTipInfo(cardBase.cardName, cardBase.description, cardBase.cardSprite);
-        }
+        tooltip.ToolTipInfo(cardBase.cardName, cardBase.description, cardBase.cardSprite);
     }
 }

@@ -21,6 +21,7 @@ MonoBehaviour:
   cardName: MassHeal
   description: Je suis le MassHeal mamamia
   cardSprite: {fileID: 21300000, guid: 4ba936b16c8156440b9880db904d55d8, type: 3}
+  cardSpriteGrey: {fileID: 21300000, guid: cdfb5e1dd51af5846b3419a6de5f43c4, type: 3}
   manaCost: 5
   healthHealed: 1
   turnActive: 0

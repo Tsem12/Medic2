@@ -19,7 +19,9 @@ MonoBehaviour:
   dataIndex: 2
   cardBehaviour: 9
   cardName: 
+  description: 
   cardSprite: {fileID: 21300000, guid: 9a0b954512982c144976fdbb6d26ba49, type: 3}
+  cardSpriteGrey: {fileID: 21300000, guid: 4accc9433888c2044b886a1020b272b7, type: 3}
   manaCost: 3
   healthHealed: 0
   turnActive: 0

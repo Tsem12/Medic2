@@ -38,6 +38,7 @@ public class CardBase : ScriptableObject
     public string cardName;
     public string description;
     public Sprite cardSprite;
+    public Sprite cardSpriteGrey;
     public int manaCost;
 
     bool doHeal

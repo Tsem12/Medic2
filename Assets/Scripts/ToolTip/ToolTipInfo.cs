@@ -7,11 +7,9 @@ public class ToolTipInfo : MonoBehaviour, IToolTip
     [SerializeField] string name;
     [SerializeField] string description;
     [SerializeField] Sprite image;
-    public void ShowToolTip(Transform canva)
+
+    public void ShowToolTip(ToolTip tooltip)
     {
-        if (canva.gameObject != null)
-        {
-            canva.gameObject.GetComponent<ToolTip>().ToolTipInfo(name, description, image);
-        }
+        tooltip.ToolTipInfo(name, description, image);
     }
 }
