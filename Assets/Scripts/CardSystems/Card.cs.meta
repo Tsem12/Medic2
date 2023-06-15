@@ -3,7 +3,17 @@ guid: c5b7e93d2b3e47947a2264d8d18b6f66
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - carBase: {instanceID: 0}
+  - refs: {instanceID: 0}
+  - inputObject: {instanceID: 0}
+  - handlerObject: {instanceID: 0}
+  - col: {instanceID: 0}
+  - myRender: {instanceID: 0}
+  - usedRenderer: {instanceID: 0}
+  - tmpro: {instanceID: 0}
+  - manaObject: {fileID: 11400000, guid: b09daaed8bc84614c9000d7999050bca, type: 2}
+  - lockedSprite: {fileID: 21300000, guid: fd3f9df64a1950c4690f586c984d2082, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

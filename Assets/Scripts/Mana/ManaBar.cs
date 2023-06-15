@@ -26,10 +26,17 @@ public class ManaBar : MonoBehaviour
         manaEventHandler.manaUpdate += StartUpdate;
     }
 
+    private void OnDestroy()
+    {
+        manaEventHandler.manaUpdate -= StartUpdate;
+    }
+
     private void OnDisable()
     {
         manaEventHandler.manaUpdate -= StartUpdate;
     }
+
+
 
     IEnumerator UpdateMana()
     {

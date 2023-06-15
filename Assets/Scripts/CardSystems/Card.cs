@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Card : MonoBehaviour, IInteractable
+public class Card : MonoBehaviour, IInteractable , IToolTip
 {
-    public CardBase carBase;
+    public CardBase cardBase;
     [SerializeField] AllReferences refs;
     [SerializeField] InputHandlerObject inputObject;
     [SerializeField] CardHandlerObject handlerObject;
@@ -18,16 +18,17 @@ public class Card : MonoBehaviour, IInteractable
     [SerializeField] Sprite lockedSprite;
     bool effectWasApplied = false;
 
+
     public void Init()
     {
-        if(carBase != null)
+        if(cardBase != null)
         {
-            CheckIfInteractable();
             UpdateCard();
-            carBase.manaObject.manaAddTurn += CheckIfInteractable;
+            CheckIfInteractable();
+            cardBase.manaObject.manaAddTurn += CheckIfInteractable;
             refs.fightManager.OnTurnEnd += EndInteractable;
             refs.fightManager.OnTurnBegin += EnableTurn;
-            carBase.manaObject.manaUpdate += CheckIfInteractable;
+            cardBase.manaObject.manaUpdate += CheckIfInteractable;
             handlerObject.switchCard += SwitchUpdate;
         }
         else
@@ -43,10 +44,10 @@ public class Card : MonoBehaviour, IInteractable
 
     private void OnDestroy()
     {
-        carBase.manaObject.manaAddTurn -= CheckIfInteractable;
+        cardBase.manaObject.manaAddTurn -= CheckIfInteractable;
         refs.fightManager.OnTurnEnd -= EndInteractable;
         refs.fightManager.OnTurnBegin -= EnableTurn;
-        carBase.manaObject.manaUpdate -= CheckIfInteractable;
+        cardBase.manaObject.manaUpdate -= CheckIfInteractable;
         handlerObject.switchCard -= SwitchUpdate;
     }
 
@@ -62,11 +63,11 @@ public class Card : MonoBehaviour, IInteractable
         col.enabled = true;
         if (collision != null && collision.gameObject.CompareTag("PartyMember"))
         {
-            if (!collision.gameObject.GetComponent<PartyMember>().IsDead() && carBase.cardBehaviour == CardBehaviour.resurection)
+            if (!collision.gameObject.GetComponent<PartyMember>().IsDead() && cardBase.cardBehaviour == CardBehaviour.resurection)
             {
                 return false;
             }
-            if(!carBase.ApplyEffectOfTheCard(collision.gameObject.GetComponent<Character>()))
+            if(!cardBase.ApplyEffectOfTheCard(collision.gameObject.GetComponent<Character>()))
             {
                 return false;
             }
@@ -106,19 +107,27 @@ public class Card : MonoBehaviour, IInteractable
 
     void CheckIfInteractable()
     {
-        if(carBase.manaCost <= carBase.manaObject.currentMana)
+        if(cardBase.manaCost <= cardBase.manaObject.currentMana)
         {
             transform.tag = "Grabbable";
+            col.enabled = true;
+            myRender.enabled = true;
+            usedRenderer.enabled = false;
+            effectWasApplied = false;
         }
         else
         {
-            transform.tag = "Untagged";
+            transform.tag = "ToolTip";
+            col.enabled = false;
+            myRender.enabled = false;
+            usedRenderer.enabled = true;
+            effectWasApplied = false;
         }
     }
 
     void EndInteractable()
     {
-        transform.tag = "Untagged";
+        transform.tag = "ToolTip";
     }
 
     public void Cancel()
@@ -128,10 +137,20 @@ public class Card : MonoBehaviour, IInteractable
 
     void EnableTurn()
     {
-        col.enabled = true;
-        myRender.enabled = true;
-        usedRenderer.enabled = false;
-        effectWasApplied = false;
+        if (cardBase.manaCost <= cardBase.manaObject.currentMana)
+        {
+            col.enabled = true;
+            myRender.enabled = true;
+            usedRenderer.enabled = false;
+            effectWasApplied = false;
+        }
+        else
+        {
+            col.enabled = false;
+            myRender.enabled = false;
+            usedRenderer.enabled = true;
+            effectWasApplied = false;
+        }
     }
 
     void SwitchCard()
@@ -172,9 +191,9 @@ public class Card : MonoBehaviour, IInteractable
 
     public void ExChangeCard(Card card)
     {
-        CardBase myCard = carBase;
-        carBase = card.carBase;
-        card.carBase = myCard;
+        CardBase myCard = cardBase;
+        cardBase = card.cardBase;
+        card.cardBase = myCard;
 
         UpdateCard();
         card.UpdateCard();
@@ -182,20 +201,20 @@ public class Card : MonoBehaviour, IInteractable
 
     public void UpdateCard()
     {
-        if(carBase != null)
+        if(cardBase != null)
         {
-            myRender.sprite = carBase.cardSprite;
+            myRender.sprite = cardBase.cardSprite;
             myRender.color = Color.white;
-            usedRenderer.sprite = carBase.cardSprite;
-            usedRenderer.color = Color.grey;
-            tmpro.SetText(carBase.manaCost.ToString());
+            usedRenderer.sprite = cardBase.cardSpriteGrey;
+            usedRenderer.color = Color.white;
+            tmpro.SetText(cardBase.manaCost.ToString());
         }
         else
         {
             EndInteractable();
             myRender.sprite = lockedSprite;
             myRender.color = Color.white;
-            usedRenderer.sprite = lockedSprite;
+            usedRenderer.sprite = cardBase.cardSpriteGrey;
             usedRenderer.color = Color.white;
             tmpro.SetText("");
         }
@@ -206,5 +225,10 @@ public class Card : MonoBehaviour, IInteractable
         col.enabled = false;
         myRender.enabled = false;
         usedRenderer.enabled = true;
+    }
+
+    public void ShowToolTip(ToolTip tooltip)
+    {
+        tooltip.ToolTipInfo(cardBase.cardName, cardBase.description, cardBase.cardSprite);
     }
 }
