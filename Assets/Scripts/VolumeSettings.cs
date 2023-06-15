@@ -22,41 +22,41 @@ public class VolumeSettings : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        SetMusicVolume();
+    //private void Start()
+    //{
+    //    SetMusicVolume();
 
-    }
+    //}
 
-    public void SetMusicVolume() { 
+    //public void SetMusicVolume() { 
     
-        gameData.musicVolume = !gameData.musicVolume;
-        if (gameData.musicVolume)
-        {
-            myMixer.SetFloat("Music", 80f);
+    //    gameData.musicVolume = !gameData.musicVolume;
+    //    if (gameData.musicVolume)
+    //    {
+    //        myMixer.SetFloat("Music", 80f);
 
-        }
-        else
-        {
-            myMixer.SetFloat("Music", -80f);
-        }
-        SaveSystem.save(gameData);
-    }
+    //    }
+    //    else
+    //    {
+    //        myMixer.SetFloat("Music", -80f);
+    //    }
+    //    SaveSystem.save(gameData);
+    //}
 
 
-    public void SetSfxVolume()
-    {
+    //public void SetSfxVolume()
+    //{
 
-        gameData.musicVolume = !gameData.musicVolume;
-        if (gameData.musicVolume)
-        {
-            myMixer.SetFloat("Sfx", 80f);
+    //    gameData.musicVolume = !gameData.musicVolume;
+    //    if (gameData.musicVolume)
+    //    {
+    //        myMixer.SetFloat("Sfx", 80f);
 
-        }
-        else
-        {
-            myMixer.SetFloat("Sfx", -80f);
+    //    }
+    //    else
+    //    {
+    //        myMixer.SetFloat("Sfx", -80f);
 
-        }
-    }
+    //    }
+    //}
 }

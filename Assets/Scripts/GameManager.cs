@@ -22,21 +22,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void OnEnable()
-    {
-        SceneManager.sceneUnloaded += SceneManagerOnSceneUnloaded;
-    }
-
-    private static void SceneManagerOnSceneUnloaded(Scene scene)
-    {
-    }
-
-    private void OnDisable()
-    {
-        DOTween.KillAll();
-        SceneManager.sceneUnloaded -= SceneManagerOnSceneUnloaded;
-    }
-
     private void Awake()
     {
         gameData = SaveSystem.Load();
