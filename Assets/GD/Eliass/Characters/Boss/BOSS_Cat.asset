@@ -26,25 +26,12 @@ MonoBehaviour:
       selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
-      condition: 4
+      condition: 5
       ConditionalAttack:
       - {fileID: 11400000, guid: 4fa52fa191aa3534ba6225587b5e7f4f, type: 2}
-      percentageValue: 21
-      value: 1
-  - paternName: Fatigue
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
-      attackConditionsMode: 0
-      selfStatus: 0
-      selfStatusDuration: 0
-      attack:
-      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
-      condition: 4
-      ConditionalAttack:
       - {fileID: 11400000, guid: 061ab2ccf91a98748a7e611f8f2ab8be, type: 2}
-      percentageValue: 0
-      value: 1
+      percentageValue: 21
+      value: 3
   - paternName: ATKPhase2
     interuptMode: 0
     attacks:
@@ -59,7 +46,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 061ab2ccf91a98748a7e611f8f2ab8be, type: 2}
       - {fileID: 11400000, guid: 4fa52fa191aa3534ba6225587b5e7f4f, type: 2}
       percentageValue: 0
-      value: 2
+      value: 1
   attacksEvent:
   - attack:
       paternName: 
@@ -88,4 +75,4 @@ MonoBehaviour:
         value: 0
     trigerMode: 0
     HpOccurMode: 0
-    numberHealthBarLeft: 1
+    numberHealthBarLeft: 2

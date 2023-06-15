@@ -89,34 +89,6 @@ MonoBehaviour:
       - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
       percentageValue: 0
       value: 0
-  - paternName: Taunt
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 13
-      selfStatusDuration: 2
-      attack:
-      - {fileID: 11400000, guid: 0f62e0ca7efb2574f90016fc94a59714, type: 2}
-      condition: 0
-      ConditionalAttack:
-      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
-      percentageValue: 0
-      value: 0
-  - paternName: Stun
-    interuptMode: 0
-    attacks:
-    - nrbOfTargets: 1
-      attackConditionsMode: 1
-      selfStatus: 0
-      selfStatusDuration: 0
-      attack:
-      - {fileID: 11400000, guid: bee4728cdfb11b8408e3285a8867f704, type: 2}
-      condition: 0
-      ConditionalAttack:
-      - {fileID: 11400000, guid: ab2b2c7eaf529dd4fa4bf42aa8bde8ce, type: 2}
-      percentageValue: 0
-      value: 0
   - paternName: Basic
     interuptMode: 0
     attacks:
