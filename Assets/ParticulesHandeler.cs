@@ -34,6 +34,8 @@ public class ParticulesHandeler : MonoBehaviour
     [SerializeField] private SpriteRenderer _reflectShieldEffect;
     private Color _reflectShieldColor;
 
+    [SerializeField] private AnimationCurve _breakShield;
+
 
 
     private void Start()
@@ -41,11 +43,9 @@ public class ParticulesHandeler : MonoBehaviour
         _shieldColor = _shield.color;
         _reflectShieldColor = _reflectShield.color;
     }
-    [Button]
-    public void TestShield() => ActiveEffect(Status.StatusEnum.Shielded);
-    public void ActiveEffect(Status.StatusEnum status)
+
+    public void ActiveShield(Status.StatusEnum status)
     {
-        Debug.Log("dsdffsdfs");
         switch (status)
         {
             case Status.StatusEnum.Shielded:
@@ -60,6 +60,14 @@ public class ParticulesHandeler : MonoBehaviour
                 _reflectShield.DOColor(_reflectShieldColor, 0.5f).SetEase(Ease.OutCirc);
                 _reflectShieldEffect.DOColor(Color.white, 0.5f).SetEase(Ease.OutCirc);
                 break;
+        }
+    }
+
+    public void ActiveEffect(Status.StatusEnum status)
+    {
+        Debug.Log("dsdffsdfs");
+        switch (status)
+        {
             case Status.StatusEnum.Strengthened:
                 _buff.Play();
                 break;
@@ -115,23 +123,20 @@ public class ParticulesHandeler : MonoBehaviour
         }
     }
 
-    [Button]
-    public void TestRemoveShield() => DeactiveEffect(Status.StatusEnum.Shielded);
-    public void DeactiveEffect(Status.StatusEnum status)
+    public void DeactiveShield(Status.StatusEnum status)
     {
         switch (status)
         {
             case Status.StatusEnum.Shielded:
                 
-                _shield.color = _shieldColor;
+                //_shield.color = _shieldColor;
                 _shield.DOColor(Vector4.zero, 0.5f).SetEase(Ease.OutCirc).OnComplete(() => _shield.gameObject.SetActive(false));
-                _shieldEffect.DOColor(Vector4.zero, 0.5f).SetEase(Ease.OutCirc);
+                _shieldEffect.DOColor(Vector4.zero, 0.5f).SetEase(Ease.OutCirc).OnComplete(() => _shieldEffect.gameObject.SetActive(false));
                 break;
             case Status.StatusEnum.ShieldedWithReflect:
-                _reflectShield.gameObject.SetActive(true);
-                _reflectShield.color = new Vector4(0, 0, 0, 0);
-                _reflectShield.DOColor(_reflectShieldColor, 0.5f).SetEase(Ease.InElastic).OnComplete(() => _shield.gameObject.SetActive(false));
-                _reflectShieldEffect.DOColor(_reflectShieldColor, 0.5f).SetEase(Ease.InElastic);
+                //_reflectShield.color = _reflectShieldColor;
+                _reflectShield.DOColor(Vector4.zero, 0.5f).SetEase(_breakShield).OnComplete(() => _shield.gameObject.SetActive(false));
+                _reflectShieldEffect.DOColor(Vector4.zero, 0.5f).SetEase(_breakShield).OnComplete(() => _shieldEffect.gameObject.SetActive(false));
                 break;
         }
     }

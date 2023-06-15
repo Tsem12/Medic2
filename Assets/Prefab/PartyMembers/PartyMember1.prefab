@@ -1449,7 +1449,7 @@ MonoBehaviour:
   _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
   _health: {fileID: 3210717112067534259}
   _statusBar: {fileID: 2434622348510379611}
-  _particuleHandler: {fileID: 8018228506763770355}
+  particuleHandler: {fileID: 0}
   _gfx: {fileID: 5104155584426412555}
   charaType: 1
   _animator: {fileID: 0}
@@ -1663,6 +1663,93 @@ MonoBehaviour:
   _shieldEffect: {fileID: 7485436490707402604}
   _reflectShield: {fileID: 4114341117402511976}
   _reflectShieldEffect: {fileID: 7300560105962470424}
+  _breakShield:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.026055323
+      value: 0.9594049
+      inSlope: 5.582027
+      outSlope: 5.582027
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26189858
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.061875343
+      value: 0.9613364
+      inSlope: -3.2829998
+      outSlope: -3.2829998
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1474106
+      value: 0.0066154003
+      inSlope: 0.06895613
+      outSlope: 0.06895613
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.48945388
+    - serializedVersion: 3
+      time: 0.24620819
+      value: 0.99654335
+      inSlope: -0.016362788
+      outSlope: -0.016362788
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.26239812
+      value: 0.9905785
+      inSlope: -1.8526697
+      outSlope: -1.8526697
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4402819
+      value: 0.0032713814
+      inSlope: -0.22824927
+      outSlope: -0.22824927
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.39128858
+      outWeight: 0.24115975
+    - serializedVersion: 3
+      time: 0.4519094
+      value: 0.0066322116
+      inSlope: 1.0902056
+      outSlope: 1.0902056
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.106442444
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2.2167737
+      outSlope: 2.2167737
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09012895
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6981082409314157421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,6 +3940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a5c6f35cc59134ba7cf4fb397f4666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particulesHandeler: {fileID: 0}
 --- !u!1001 &4558542247259352991
 PrefabInstance:
   m_ObjectHideFlags: 0

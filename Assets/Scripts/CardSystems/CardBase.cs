@@ -113,7 +113,7 @@ public class CardBase : ScriptableObject
                     if (item.GetCurrentHealth() < item.GetMaxHealth() && !item.IsDead())
                     {
                         item.GetComponent<IHealable>().Heal(healthHealed);
-                        partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveEffect(ParticulesHandeler.CardEffect.Heal);
+                        partyMember.GetParticulHandeler().ActiveEffect(ParticulesHandeler.CardEffect.Heal);
                     }
                     else
                     {
@@ -139,7 +139,7 @@ public class CardBase : ScriptableObject
 
             case CardBehaviour.spiritShield:
                 partyMember.AddStatus(new Status(Status.StatusEnum.Shielded, 1));
-                partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveEffect(Status.StatusEnum.Shielded);
+                partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveShield(Status.StatusEnum.Shielded);
                 break;
 
             case CardBehaviour.regeneration:
@@ -148,7 +148,7 @@ public class CardBase : ScriptableObject
 
             case CardBehaviour.resonanceShield:
                 partyMember.AddStatus(new Status(Status.StatusEnum.ShieldedWithReflect, turnActive));
-                partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveEffect(Status.StatusEnum.ShieldedWithReflect);
+                partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveShield(Status.StatusEnum.ShieldedWithReflect);
                 break;
 
             case CardBehaviour.initiative:
@@ -158,7 +158,7 @@ public class CardBase : ScriptableObject
 
             case CardBehaviour.blessingOfStrength:
                 partyMember.AddStatus(new Status(Status.StatusEnum.Strengthened,1,damageAdded));
-                Debug.Log(partyMember.GetParticulHandeler());
+                partyMember.GetParticulHandeler().ActiveEffect(Status.StatusEnum.Strengthened);
                 break;
         }
 

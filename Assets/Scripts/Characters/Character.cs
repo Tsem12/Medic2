@@ -47,7 +47,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public List<Status> Status { get => status; set => status = value; }
     public CharacterObjets CharacterObj { get => characterObj; set => characterObj = value; }
     public Animator Animator { get => _animator; set => _animator = value; }
-    protected ParticulesHandeler ParticuleHandler { get => particuleHandler; set => particuleHandler = value; }
+    public ParticulesHandeler ParticuleHandler { get => particuleHandler; set => particuleHandler = value; }
 
     private List<Status> status = new List<Status>();
 
@@ -255,6 +255,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 if (_targetsAttacks[index].isShuffle)
                 {
                     _refs.cardManager.ShuffleObject();
+                    _refs.fightManager.ShuffleParticles.Play();
                 }
             }
             index++;
@@ -325,7 +326,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public void Kill()
     {
-        status.Clear();
+        ClearAllStatus();
         _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
         _isDead = true;
         SpriteRenderer[] sp = GetComponentsInChildren<SpriteRenderer>();
@@ -646,20 +647,29 @@ public abstract class Character : MonoBehaviour, ICharacter
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"The status {status} has been removed from {gameObject.name}");
 
-
-            if (status == global::Status.StatusEnum.Disapeared && !IsDead())
+            switch (status)
             {
-                if(charaType != PartyMemberEnum.Boss)
-                {
-                    _gfx.gameObject.SetActive(true);
-                    transform.DOShakeScale(2).SetEase(Ease.InOutFlash);
-                }
-            }
-            if (status == global::Status.StatusEnum.Taunting)
-            {
-                _refs.fightManager.ResetTargets();
-            }
+                case global::Status.StatusEnum.Shielded:
 
+                    ParticuleHandler.DeactiveShield(status);
+                    break;
+                case global::Status.StatusEnum.Disapeared:
+
+                    if (charaType != PartyMemberEnum.Boss && !IsDead())
+                    {
+                        _gfx.gameObject.SetActive(true);
+                        transform.DOShakeScale(2).SetEase(Ease.InOutFlash);
+                    }
+                    break;
+                case global::Status.StatusEnum.ShieldedWithReflect:
+
+                    ParticuleHandler.DeactiveShield(status);
+                    break;
+                case global::Status.StatusEnum.Taunting:
+
+                    _refs.fightManager.ResetTargets();
+                    break;
+            }
 
             Status.Remove(statu);
             _statusBar.UpdateBar();

@@ -34,7 +34,10 @@ public class PartyMember : Character, IHealable
 
     private void Awake()
     {
-        _arrowForBoss.DOLocalMoveY(0.05f, 0.25f).SetEase(Ease.InOutBounce).SetLoops(-1, LoopType.Yoyo);
+        //_arrowForBoss.DOLocalMoveY(0.05f, 0.25f).SetEase(Ease.InOutBounce).SetLoops(-1, LoopType.Yoyo);
+        Sequence sequence = DOTween.Sequence().SetLoops(-1, LoopType.Yoyo);
+        sequence.Append(_arrowForBoss.DOAnchorPosY(270, 0.5f).SetEase(Ease.OutFlash));
+        sequence.Join(_arrowForBoss.DOScale(Vector3.one * .5f, 0.15f).SetEase(Ease.OutBounce));
     }
 
     public override void AssignValues()
