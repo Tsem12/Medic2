@@ -15,8 +15,11 @@ MonoBehaviour:
   attackName: Attack
   description: 
   attackSpriteOverRide: {fileID: 21300000, guid: 5bbd5f01fabb51a419efb9c7ef476568, type: 3}
+  attackAnimIndex: 0
+  isShuffle: 0
   isLifeSteal: 0
   atkDamage: 1
+  animDuration: 1
   attackEffects: 0
   dotAttacks: 0
   buff: 0

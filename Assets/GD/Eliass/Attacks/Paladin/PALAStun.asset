@@ -15,8 +15,11 @@ MonoBehaviour:
   attackName: Stun
   description: 
   attackSpriteOverRide: {fileID: 21300000, guid: 00a09131533ba064e881c6428838f906, type: 3}
+  attackAnimIndex: 0
+  isShuffle: 0
   isLifeSteal: 0
   atkDamage: 0
+  animDuration: 1
   attackEffects: 3
   dotAttacks: 0
   buff: 0

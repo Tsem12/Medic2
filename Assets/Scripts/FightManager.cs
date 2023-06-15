@@ -20,6 +20,7 @@ public class FightManager : MonoBehaviour
     private FightState _state = FightState.None;
 
     [SerializeField] private bool _enableDebug;
+    [SerializeField] private LevelDataObject _levelData;
 
     [SerializeField] private Enemie _enemie;
     [SerializeField] private PartyMember[] _partyMembers;
@@ -100,6 +101,11 @@ public class FightManager : MonoBehaviour
     private void Start()
     {
         _currentPlayerTimeToPlay = _playerTimeToPlay;
+        if(_levelData.difficulty == LevelDataObject.Difficulty.Easy)
+        {
+            _playerSlider.gameObject.SetActive(false);
+        }
+
 
         ICharacter _enemie = Enemie.GetComponent<ICharacter>();
 
@@ -217,15 +223,21 @@ public class FightManager : MonoBehaviour
 
             // player turn logic
 
-            _currentPlayerTimeToPlay -= Time.deltaTime;
-            if(_playerSlider != null)
+            if (_levelData.difficulty != LevelDataObject.Difficulty.Easy)
+            { 
+                _currentPlayerTimeToPlay -= Time.deltaTime;
+            }
+            if(_playerSlider != null && _levelData.difficulty != LevelDataObject.Difficulty.Easy)
             {
                 _playerSlider.fillAmount = _currentPlayerTimeToPlay / _playerTimeToPlay;
             }
             if (_currentPlayerTimeToPlay <= 0 || _endTurn)
             {
                 _endTurn = false;
-                _currentPlayerTimeToPlay = _playerTimeToPlay;
+                if(_levelData.difficulty != LevelDataObject.Difficulty.Easy)
+                {
+                    _currentPlayerTimeToPlay = _playerTimeToPlay;
+                }
                 _playerSlider.fillAmount = 0;
 
                 if(_enableDebug)

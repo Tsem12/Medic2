@@ -19,6 +19,7 @@ MonoBehaviour:
   isShuffle: 0
   isLifeSteal: 0
   atkDamage: 0
+  animDuration: 3.5
   attackEffects: 1
   dotAttacks: 2
   buff: 0
