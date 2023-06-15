@@ -23,7 +23,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [SerializeField] protected Health _health;
     [SerializeField] protected StatusBarManager _statusBar;
     [SerializeField] protected Transform _gfx;
-    [SerializeField] private PartyMemberEnum charaType;
+    [SerializeField] protected PartyMemberEnum charaType;
     [SerializeField] private Animator _animator;
 
     [Header("Health")]
@@ -267,11 +267,12 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _animator?.SetInteger("AttackIndex", _targetsAttacks[0].attackAnimIndex);
         _animator?.SetTrigger("TriggerAtk");
-        if(charaType == PartyMemberEnum.Boss)
-        {
-            yield return new WaitForSeconds(1f);
-        }
-        yield return new WaitForSeconds(_animator.GetCurrentAnimatorClipInfo(0).Length);
+        //if(charaType == PartyMemberEnum.Boss)
+        //{
+        //    yield return new WaitForSeconds(1.5f);
+        //}
+        //yield return new WaitForSeconds(_animator.GetCurrentAnimatorClipInfo(0).Length);
+        yield return new WaitForSeconds(_targetsAttacks[0].animDuration);
         _isPlaying = false;
         _attackRoutine = null;
     }

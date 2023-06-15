@@ -11,6 +11,7 @@ using Sequence = DG.Tweening.Sequence;
 public class Health : MonoBehaviour
 {
     [SerializeField] private AllReferences _refs;
+    [SerializeField] private ValueIndicator _valueIndicator;
 
     private Character _character;
     private Tweener _tweener;
@@ -71,6 +72,7 @@ public class Health : MonoBehaviour
             Status d = _character.GetStatus(Status.StatusEnum.Stunned);
         }
         TweenTakeDamage(0.1f);
+        _valueIndicator.TakeDamageTween(value);
         int newHealth = _character.GetCurrentHealth() - value;
         if (newHealth <= 0)
         {
@@ -170,7 +172,7 @@ public class Health : MonoBehaviour
             Debug.LogError($"{gameObject.name} is dead he cannot be healed");
             return;
         }
-
+        _valueIndicator.HealTween(value);
         int newHealth = _character.GetCurrentHealth() + value;
         if (newHealth > _character.GetMaxHealth())
         {
@@ -186,12 +188,7 @@ public class Health : MonoBehaviour
             }
             else
             {
-                Sequence sequence1 = DOTween.Sequence();
-                for(int i = _character.GetCurrentHealth(); i < _character.GetMaxHealth(); i++)
-                {
-                    _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
-                    sequence1.Append(_healthPoints[i].ValidHp.rectTransform.DOAnchorPosY(_healthPoints[i].ValidHp.rectTransform.localPosition.y + 300, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
-                }
+                StartCoroutine(HealTweenRoutine());
                 //foreach (HealtPoint hp in _healthPoints)
                 //{
                 //    sequence1.Append(hp.GetComponent<RectTransform>().DOMoveY(0.4f, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
@@ -214,16 +211,33 @@ public class Health : MonoBehaviour
                 _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
             }
         }
-        Sequence sequence = DOTween.Sequence();
-        foreach (HealtPoint hp in list)
-        {
-            sequence.Append(hp.ValidHp.rectTransform.DOAnchorPosY(hp.ValidHp.rectTransform.localPosition.y + 300, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
-
-        }
+        StartCoroutine(HealTweenRoutine(list));
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} have been healed");
 
         _character.SetCurrentHealth(newHealth);
 
+    }
+
+
+    IEnumerator HealTweenRoutine(List<HealtPoint> list)
+    {
+        Sequence sequence = DOTween.Sequence();
+        foreach (HealtPoint hp in list)
+        {
+            sequence.Append(hp.ValidHp.rectTransform.DOAnchorPosY(hp.ValidHp.rectTransform.localPosition.y + 300, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+        }
+        yield return new WaitUntil(() => !sequence.IsPlaying());
+    }
+
+    IEnumerator HealTweenRoutine()
+    {
+        Sequence sequence1 = DOTween.Sequence();
+        for (int i = _character.GetCurrentHealth(); i < _character.GetMaxHealth(); i++)
+        {
+            _healthPoints[i].ValidHp.sprite = _healthPoints[i].Colors[_character.GetMaxHealthBar() - _currentHealthBarAmount];
+            sequence1.Append(_healthPoints[i].ValidHp.rectTransform.DOAnchorPosY(_healthPoints[i].ValidHp.rectTransform.localPosition.y + 300, 0.175f).SetEase(Ease.OutFlash).SetLoops(2, LoopType.Yoyo));
+        }
+        yield return new WaitUntil(() => !sequence1.IsPlaying());
     }
 }

@@ -90,6 +90,8 @@ public class AttacksObject : ScriptableObject
     public bool isLifeSteal;
     [Range(0, 10)]
     public int atkDamage;
+    [Range(1f, 5f)]
+    public float animDuration;
     public AttackEffects attackEffects;
 
 
