@@ -9,6 +9,7 @@ public class ManaBar : MonoBehaviour
 {
     [SerializeField] ManaObject manaEventHandler;
     [SerializeField] Image manaSlider;
+    [SerializeField] Image manaSliderPrevise;
     [SerializeField] float manaPerSeconds = 2;
     [SerializeField] AnimationCurve curve;
     Coroutine updateRoutine;
@@ -26,10 +27,17 @@ public class ManaBar : MonoBehaviour
         manaEventHandler.manaUpdate += StartUpdate;
     }
 
+    private void OnDestroy()
+    {
+        manaEventHandler.manaUpdate -= StartUpdate;
+    }
+
     private void OnDisable()
     {
         manaEventHandler.manaUpdate -= StartUpdate;
     }
+
+
 
     IEnumerator UpdateMana()
     {

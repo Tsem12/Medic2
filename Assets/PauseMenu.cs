@@ -72,6 +72,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             HowToPlayWindow.SetActive(true);
+            optionMenu.SetActive(false);
             Time.timeScale = 0f;
             isHowToPlayToggled = true;
 

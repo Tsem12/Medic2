@@ -7,7 +7,7 @@ public class SwitchCardButton : MonoBehaviour
 {
     [SerializeField] CardHandlerObject cardHandler;
     [SerializeField] AllReferences refs;
-    [SerializeField] Collider2D[] colToHide;
+    [SerializeField] CapsuleCollider2D[] colToHide;
     [SerializeField] GameObject cardsToHide;
     bool wasHit = false;
 
@@ -21,6 +21,13 @@ public class SwitchCardButton : MonoBehaviour
         refs.fightManager.OnTurnEnd += Hide;
         refs.fightManager.OnTurnBegin += ShowButton;
         refs.fightManager.OnTurnEnd += HideButton;
+    }
+
+    private void OnDestroy()
+    {
+        refs.fightManager.OnTurnEnd -= Hide;
+        refs.fightManager.OnTurnBegin -= ShowButton;
+        refs.fightManager.OnTurnEnd -= HideButton;
     }
 
     public void Show()

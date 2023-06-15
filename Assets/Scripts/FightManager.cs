@@ -26,6 +26,7 @@ public class FightManager : MonoBehaviour
     [SerializeField] private PartyMember[] _partyMembers;
     [SerializeField] private Image _playerSlider;
     [SerializeField] private GameObject _endTurnButton;
+    [SerializeField] private ParticleSystem _shuffleParticles;
 
     [SerializeField] private float _playerTimeToPlay;
     private float _currentPlayerTimeToPlay;
@@ -44,6 +45,7 @@ public class FightManager : MonoBehaviour
 
     public event Action OnTurnBegin;
     public event Action OnTurnEnd;
+    public event Action OnWin;
 
     #region statusSprites
     [Foldout("StatusSprites")]
@@ -97,6 +99,7 @@ public class FightManager : MonoBehaviour
     public int CurrentTurn { get => _currentTurn; }
     public List<ICharacter> PartyMembersList { get => _partyMembersList; set => _partyMembersList = value; }
     public List<ICharacter> CharacterList { get => _characterList; set => _characterList = value; }
+    public ParticleSystem ShuffleParticles { get => _shuffleParticles; set => _shuffleParticles = value; }
 
     private void Start()
     {
@@ -297,6 +300,7 @@ public class FightManager : MonoBehaviour
         {
             if (_enableDebug)
                 Debug.Log("Boss defeated");
+            OnWin?.Invoke();
             yield break;
         }
 

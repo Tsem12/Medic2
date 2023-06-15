@@ -18,8 +18,10 @@ MonoBehaviour:
   isUnlocked: 1
   dataIndex: 8
   cardBehaviour: 3
-  cardName: 
+  cardName: 'Resurection : '
+  description: 'Revives the target if dead. '
   cardSprite: {fileID: 21300000, guid: 01a75b0e675fea74fa005127d7032c1c, type: 3}
+  cardSpriteGrey: {fileID: 21300000, guid: 0bb13e613a461a34191242d3278eaa65, type: 3}
   manaCost: 10
   healthHealed: 0
   turnActive: 0

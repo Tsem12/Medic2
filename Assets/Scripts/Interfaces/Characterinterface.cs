@@ -32,5 +32,6 @@ public interface ICharacter
     public void ClearIncomingAttacks();
     public void ClearAllStatus();
     public void UpdateBar();
+    public ParticulesHandeler GetParticulHandeler();
 }
 
