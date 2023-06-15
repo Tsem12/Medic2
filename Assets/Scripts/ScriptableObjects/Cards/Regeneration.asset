@@ -18,8 +18,8 @@ MonoBehaviour:
   isUnlocked: 1
   dataIndex: 6
   cardBehaviour: 2
-  cardName: 
-  description: 
+  cardName: 'Regeneration : '
+  description: Heal 1 HP/turn for 3 turns.
   cardSprite: {fileID: 21300000, guid: 04177e3042490124c86b6819ab0bb2fc, type: 3}
   cardSpriteGrey: {fileID: 21300000, guid: d609230dfaf29c841b84c22385a493bf, type: 3}
   manaCost: 3

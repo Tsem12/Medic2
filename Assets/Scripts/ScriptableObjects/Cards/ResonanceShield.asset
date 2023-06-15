@@ -18,8 +18,8 @@ MonoBehaviour:
   isUnlocked: 1
   dataIndex: 7
   cardBehaviour: 6
-  cardName: 
-  description: 
+  cardName: 'Resonance Shield : '
+  description: Sends back the attack to the attacker.
   cardSprite: {fileID: 21300000, guid: d231bac533f024d4e87f15b8cef0384c, type: 3}
   cardSpriteGrey: {fileID: 21300000, guid: 5cfeca676b8154d4e8e1e29c4d369bbc, type: 3}
   manaCost: 8
