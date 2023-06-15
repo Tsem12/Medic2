@@ -29,6 +29,7 @@ public class PartyMember : Character, IHealable
     {
         _refs.fightManager.OnTurnEnd -= () => _bossIndicator.Clear();
         _refs.fightManager.OnTurnEnd -= () => _arrowForBoss.gameObject.SetActive(false);
+        DOTween.KillAll();
     }
 
     private void Awake()

@@ -12,6 +12,7 @@ public class LevelDataObject : ScriptableObject
         public CharacterObjets boss;
         public GameObject animator;
         public Sprite background;
+        public string themeName;
     }
 
     public enum Difficulty
