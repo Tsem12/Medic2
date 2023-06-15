@@ -13,6 +13,11 @@ public class ManaUpdater : MonoBehaviour
         refs.fightManager.OnTurnBegin += TurnMana;
     }
 
+    private void OnDestroy()
+    {
+        refs.fightManager.OnTurnBegin -= TurnMana;
+    }
+
     void TurnMana()
     {
         manaObejct.AddMana(manaObejct.increaseManaTurn);

@@ -14,6 +14,11 @@ public class ManaNumber : MonoBehaviour
         manaObject.manaUpdate += SetText;
     }
 
+    private void OnDestroy()
+    {
+        manaObject.manaUpdate -= SetText;
+    }
+
     void SetText()
     {
         textMeshProUGUI.text = ((int)manaObject.currentMana).ToString();

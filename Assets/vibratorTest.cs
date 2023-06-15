@@ -7,7 +7,7 @@ public class vibratorTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        VibrationScript.Vibrate(10000);   
+      //  VibrationScript.Vibrate(10000);   
     }
 
 }

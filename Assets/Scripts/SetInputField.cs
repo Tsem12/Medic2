@@ -12,11 +12,11 @@ public class SetInputField : MonoBehaviour
     [SerializeField] TMP_InputField input;
     [SerializeField] TextMeshProUGUI textButton;
 
-    public void Init(CardBase carbase)
+    public void Init(CardBase cardBase)
     {
-        cardBase = carbase;
+        cardBase = cardBase;
         input.text = cardBase.manaCost.ToString();
-        tmpPro.text = carbase.name;
+        tmpPro.text = cardBase.name;
     }
 
     public void Set()
