@@ -80,10 +80,13 @@ public class Enemie : Character
             {
                 for(int i = 0; i < Mathf.Min(_currentAtkClass.nrbOfTargets, _refs.fightManager.PartyMembersList.Count); i++)
                 {
-                    _targets.Add(c);
-                    atkobj = _nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)];
-                    _targetsAttacks.Add(atkobj);
-                    c.SetIncommingAttack(atkobj, i);
+                    if (!_targets.Contains(c))
+                    {
+                        _targets.Add(c);
+                        atkobj = _nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)];
+                        _targetsAttacks.Add(atkobj);
+                        c.SetIncommingAttack(atkobj, i);
+                    }
                 }
                 return;
             }

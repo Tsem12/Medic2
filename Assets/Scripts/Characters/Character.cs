@@ -100,7 +100,6 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} can't attack");
-            EndTurn();
             return;
         }
 
