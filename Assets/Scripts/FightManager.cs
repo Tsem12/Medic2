@@ -21,6 +21,7 @@ public class FightManager : MonoBehaviour
 
     [SerializeField] private bool _enableDebug;
     [SerializeField] private LevelDataObject _levelData;
+    [SerializeField] private AllReferences _refs;
 
     [SerializeField] private Enemie _enemie;
     [SerializeField] private PartyMember[] _partyMembers;
@@ -280,6 +281,8 @@ public class FightManager : MonoBehaviour
                 {
                     if (_enableDebug)
                         Debug.Log("GAME OVER");
+
+                    _refs.gameManager.ToggleMenu(false);
                     _enemie.ClearAllStatus();
                     _state = FightState.None;
                     yield break;
@@ -300,6 +303,7 @@ public class FightManager : MonoBehaviour
         {
             if (_enableDebug)
                 Debug.Log("Boss defeated");
+            _refs.gameManager.ToggleMenu(true);
             OnWin?.Invoke();
             yield break;
         }
@@ -310,7 +314,9 @@ public class FightManager : MonoBehaviour
         }
         else
         {
+            
             Debug.Log("GAMEOVER");
+            _refs.gameManager.ToggleMenu(false);
             _enemie.ClearAllStatus();
         }
     }
