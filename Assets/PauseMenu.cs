@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] AudioManager audioManager;
+
     [SerializeField] GameObject MainMenu;
     [SerializeField] GameObject optionMenu;
     [SerializeField] GameObject pauseMenu;
@@ -18,6 +20,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        audioManager.Play("ButtonPress1");
+
         if (isPaused)
         {
             Resume();
@@ -34,6 +38,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        audioManager.Play("ButtonPress1");
         optionMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -42,17 +47,20 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
+        audioManager.Play("ButtonPress1");
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
     public void Quit()
     {
+        audioManager.Play("ButtonPress1");
         Home();
     }
 
     public void Retry()
     {
+        audioManager.Play("ButtonPress1");
         SceneManager.LoadScene("Game");
     }
 
@@ -63,6 +71,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ToggleHowToPlay()
     {
+        audioManager.Play("ButtonPress1");
+
         if (isHowToPlayToggled)
         {
             HowToPlayWindow.SetActive(false);
@@ -84,6 +94,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ToggleLevelMenu()
     {
+        audioManager.Play("ButtonPress1");
+
         if (isLevelMenuToggled)
         {
             LevelMenu.SetActive(false);

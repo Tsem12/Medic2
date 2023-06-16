@@ -167,6 +167,7 @@ public class Health : MonoBehaviour
     public void TestHeal() => Heal(2);
     internal void Heal(int value, bool IsPartyMember = false)
     {
+        _refs.audioManager.Play("StatusRegen");
         if (_character.IsDead())
         {
             Debug.LogError($"{gameObject.name} is dead he cannot be healed");

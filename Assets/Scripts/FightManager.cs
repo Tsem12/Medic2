@@ -212,6 +212,7 @@ public class FightManager : MonoBehaviour
     {
         if(_state == FightState.PlayerTurn)
         {
+            _refs.audioManager.Play("ButtonPress2");
             _endTurn = true;
         }
     }

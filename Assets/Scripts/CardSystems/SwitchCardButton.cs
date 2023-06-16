@@ -64,10 +64,12 @@ public class SwitchCardButton : MonoBehaviour
 
         if(wasHit)
         {
+            refs.audioManager.Play("ButtonPress1");
             Show();
         }
         else
         {
+            refs.audioManager.Play("ButtonPress2");
             Hide();
         }
     }

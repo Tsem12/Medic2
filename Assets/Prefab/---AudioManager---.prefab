@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
-  _startMusic: 
+  _isMenu: 0
   sounds:
   - name: Menu
     type: 0
@@ -73,6 +73,83 @@ MonoBehaviour:
   - name: LooseJingle
     type: 0
     clip: {fileID: 8300000, guid: fbde09c9bfa670847b39a02f7e3f0a5d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonPress1
+    type: 1
+    clip: {fileID: 8300000, guid: 3b82878b115991844941eecbe8f20547, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonPress2
+    type: 1
+    clip: {fileID: 8300000, guid: 0bbed7cde7e59de45aa7a7aa05ac2508, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusRestrained
+    type: 1
+    clip: {fileID: 8300000, guid: 042a624a834b2af46a2c909a047cef4c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusBurning
+    type: 1
+    clip: {fileID: 8300000, guid: 81a4afbbfab917f47aeb41801ffbe897, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusPoison
+    type: 1
+    clip: {fileID: 8300000, guid: 8a7cba12066b98a4cb9791dd793e55c5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusRegen
+    type: 1
+    clip: {fileID: 8300000, guid: f89c873b1c626c24a80fa886c621fd22, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusShieldBreak
+    type: 1
+    clip: {fileID: 8300000, guid: 170e5cb4e3bf3ba46b71e4e60c5345ab, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusStunned
+    type: 1
+    clip: {fileID: 8300000, guid: e6434143a13c05d4e8a3b1b3361675b4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusSleep
+    type: 1
+    clip: {fileID: 8300000, guid: d26da53be4321ec45bc82b3519113c5c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusStrengthened
+    type: 1
+    clip: {fileID: 8300000, guid: 66eddb263f9138b4998de8b25e0b3add, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StatusShielded
+    type: 1
+    clip: {fileID: 8300000, guid: 1613b358e259e6443ac899c5034a7b9b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
