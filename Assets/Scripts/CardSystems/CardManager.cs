@@ -9,8 +9,8 @@ using UnityEngine;
 public class CardManager : MonoBehaviour
 {
     [SerializeField] CardDeckBuilder deckBuilder;
-    [SerializeField] List<CardBase> cardsBases;
-    [SerializeField] List<Card> cardsHiden;
+    [SerializeField] List<CardBase> cardsBases = new List<CardBase>();
+    [SerializeField] List<Card> cardsHiden = new List<Card>();
     List<Card> cardsGame = new List<Card>();
     [SerializeField] GameObject cardDeck;
 
