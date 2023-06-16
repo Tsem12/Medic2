@@ -22,17 +22,14 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     public void Init()
     {
-        if(cardBase != null)
+        if(cardBase != null && isPlayingCard)
         {
-            CheckIfInteractable();
-            UpdateCard();
-            cardBase.manaObject.manaAddTurn += CheckIfInteractable;
+            manaObject.manaAddTurn += CheckIfInteractable;
             refs.fightManager.OnTurnEnd += EndInteractable;
             refs.fightManager.OnTurnBegin += EnableTurn;
-            cardBase.manaObject.manaUpdate += CheckIfInteractable;
-            cardBase.manaObject.manaUpdate += EnableTurn;
+            manaObject.manaUpdate += CheckIfInteractable;
+            manaObject.manaUpdate += EnableTurn;
             handlerObject.switchCard += SwitchUpdate;
-            Debug.LogError($"{cardBase.name}");
         }
         else
         {
@@ -43,18 +40,23 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
             usedRenderer.color = Color.white;
             tmpro.SetText("");
         }
+        CheckIfInteractable();
+        UpdateCard();
     }
 
     private void OnDestroy()
     {
-        cardBase.manaObject.manaAddTurn -= CheckIfInteractable;
-        refs.fightManager.OnTurnEnd -= EndInteractable;
-        refs.fightManager.OnTurnBegin -= EnableTurn;
-        cardBase.manaObject.manaUpdate -= CheckIfInteractable;
-        cardBase.manaObject.manaUpdate -= EnableTurn;
-        handlerObject.switchCard -= SwitchUpdate;
-        Debug.LogError($"{cardBase.name}");
+        if(isPlayingCard)
+        {
+            manaObject.manaAddTurn -= CheckIfInteractable;
+            refs.fightManager.OnTurnEnd -= EndInteractable;
+            refs.fightManager.OnTurnBegin -= EnableTurn;
+            manaObject.manaUpdate -= CheckIfInteractable;
+            manaObject.manaUpdate -= EnableTurn;
+            handlerObject.switchCard -= SwitchUpdate;
+        }
     }
+
 
 
     public void NotInit()
