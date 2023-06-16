@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AnimatorSetter : MonoBehaviour
 {
     Character chara;
     [SerializeField] private ParticulesHandeler _particulesHandeler;
+
+    public UnityEvent AnimEvent;
     private void Awake()
     {
         chara = GetComponentInParent<Character>();
@@ -23,4 +26,10 @@ public class AnimatorSetter : MonoBehaviour
     {
         chara.Attack();
     }
+
+    public void OnAnimEvent()
+    {
+        AnimEvent?.Invoke();
+    }
+
 }
