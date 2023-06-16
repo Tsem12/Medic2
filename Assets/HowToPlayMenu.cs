@@ -8,6 +8,8 @@ public class HowToPlayMenu : MonoBehaviour
     [SerializeField] GameObject Window_1;
     [SerializeField] GameObject Window_2;
     [SerializeField] GameObject Window_3;
+    [SerializeField] GameObject Window_4;
+    [SerializeField] GameObject Window_5;
 
     private int index = 0;
 
@@ -27,13 +29,13 @@ public class HowToPlayMenu : MonoBehaviour
     }
     public void Rigt()
     {
-        if (index < 3)
+        if (index < 5)
         {
             index++;
         }
         else
         {
-            index = 3;
+            index = 5;
         }
         Debug.Log(index);
         UpdateWindow();
@@ -47,6 +49,8 @@ public class HowToPlayMenu : MonoBehaviour
         Window_1.SetActive(false);
         Window_2.SetActive(false);
         Window_3.SetActive(false);
+        Window_4.SetActive(false);
+        Window_5.SetActive(false);
     }
 
     public void UpdateWindow()
@@ -73,6 +77,15 @@ public class HowToPlayMenu : MonoBehaviour
                 Window_3.SetActive(true);
                 break;
 
+            case 4:
+                WipeWindows();
+                Window_4.SetActive(true);
+                break;
+
+            case 5:
+                WipeWindows();
+                Window_5.SetActive(true);
+                break;
         }
     }
 }

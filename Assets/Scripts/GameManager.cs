@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public ICharacter character;
 
     private GAMESTATE _gameState;
+    [SerializeField] private RectTransform _optionMenu;
+    private Vector3 _optionMenuinitLocation;
 
     public GAMESTATE GameState { get => _gameState; set => _gameState = value; }
 
@@ -25,11 +27,34 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         gameData = SaveSystem.Load();
+        _optionMenuinitLocation = _optionMenu.localPosition;
     }
     
     public void LoadMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void ToggleMenu()
+    {
+        _optionMenu.gameObject.SetActive(!_optionMenu.gameObject.activeSelf);
+    }
+
+    public void ToggleMenu(bool state)
+    {
+        if(state == _optionMenu.gameObject.activeSelf)
+        {
+            return;
+        }
+        else
+        {
+            _optionMenu.gameObject.SetActive(state);
+        }
     }
 
 }
