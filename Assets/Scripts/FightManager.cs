@@ -267,6 +267,7 @@ public class FightManager : MonoBehaviour
             {
                 if (_enableDebug)
                     Debug.Log("Boss defeated");
+                    _refs.gameManager.ToggleMenu(true);
                 yield break;
             }
 
@@ -283,7 +284,7 @@ public class FightManager : MonoBehaviour
                     if (_enableDebug)
                         Debug.Log("GAME OVER");
 
-                    _refs.gameManager.ToggleMenu(false);
+                    _refs.gameManager.ToggleMenu(true);
                     _enemie.ClearAllStatus();
                     _state = FightState.None;
                     yield break;
@@ -317,7 +318,7 @@ public class FightManager : MonoBehaviour
         {
             
             Debug.Log("GAMEOVER");
-            _refs.gameManager.ToggleMenu(false);
+            _refs.gameManager.ToggleMenu(true);
             _enemie.ClearAllStatus();
         }
     }
