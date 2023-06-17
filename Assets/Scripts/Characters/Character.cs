@@ -133,6 +133,24 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         foreach (Status status in Status.ToList())
         {
+            switch(status.status)
+            {
+                case global::Status.StatusEnum.Stunned: 
+                    _refs.audioManager.Play("StatusStunned");
+                    break;
+
+                case global::Status.StatusEnum.Restrained:
+                    _refs.audioManager.Play("StatusRestrained");
+                    break;
+
+                case global::Status.StatusEnum.Sleeped:
+                    _refs.audioManager.Play("StatusSleep");
+                    break;
+                case global::Status.StatusEnum.Strengthened:
+                    _refs.audioManager.Play("StatusStrengthened");
+                    break;
+            }
+
             ApplyEndTurnStatut(status);
             if (!status.isInfinite)
             {
@@ -150,15 +168,20 @@ public abstract class Character : MonoBehaviour, ICharacter
         switch (statut.status)
         {
             case global::Status.StatusEnum.Poisoned:
+                _refs.audioManager.Play("StatusPoison");
                 _health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Fired:
+                print("Fait chaud putain");
+                _refs.audioManager.Play("StatusBurning");
                 _health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Restrained:
+                _refs.audioManager.Play("StatusRestrained");
                 _health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Regenerating:
+                _refs.audioManager.Play("StatusRegen");
                 _health.Heal(statut.value, true);
                 break;
         }
@@ -649,7 +672,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             switch (status)
             {
                 case global::Status.StatusEnum.Shielded:
-
+                    _refs.audioManager.Play("ShieldBreak");
                     ParticuleHandler.DeactiveShield(status);
                     break;
                 case global::Status.StatusEnum.Disapeared:
@@ -661,7 +684,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                     }
                     break;
                 case global::Status.StatusEnum.ShieldedWithReflect:
-
+                    _refs.audioManager.Play("StatusShieldBreak");
                     ParticuleHandler.DeactiveShield(status);
                     break;
                 case global::Status.StatusEnum.Taunting:
@@ -682,13 +705,34 @@ public abstract class Character : MonoBehaviour, ICharacter
         if (status == null)
             return;
 
+        switch(status.status)
+        {
+            case global::Status.StatusEnum.Shielded:
+                _refs.audioManager.Play("StatusShielded");
+                break;
+            case global::Status.StatusEnum.Fatigue:
+                _refs.audioManager.Play("StatusFatigue");
+                break;
+            case global::Status.StatusEnum.Fired:
+                _refs.audioManager.Play("StatusBurning");
+                break;
+            case global::Status.StatusEnum.Poisoned:
+                _refs.audioManager.Play("StatusPoison");
+                break;
+            case global::Status.StatusEnum.Regenerating:
+                _refs.audioManager.Play("StatusRegen");
+                break;
+            case global::Status.StatusEnum.Sleeped:
+                _refs.audioManager.Play("StatusSleep");
+                break;
+        }
+
         Status s = GetStatus(status.status);
         if(s != null)
         {
             switch (s.status)
             {
                 case global::Status.StatusEnum.Fatigue:
-
                     if (_refs.fightManager.EnableDebug)
                         Debug.Log($"the status {status.status} of {gameObject.name} has been applied twice it has turned into {(global::Status.StatusEnum.Sleeped)}");
                     AddStatus(new Status(global::Status.StatusEnum.Sleeped, true));
@@ -698,6 +742,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                     break;
 
                 case global::Status.StatusEnum.Stunned:
+                    _refs.audioManager.Play("StatusStunned");
                     if (_refs.fightManager.EnableDebug)
                         Debug.Log($"{gameObject.name} already got the status: {status.status} it has been reseted");
                     TryRemoveStatus(global::Status.StatusEnum.Sleeped);

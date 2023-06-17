@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class LevelMenu : MonoBehaviour
 {
+    [SerializeField] AudioManager audioManager;
+
     [SerializeField] GameObject easyPannel;
     [SerializeField] GameObject hardPannel;
     [SerializeField] GameObject hardButton;
@@ -20,12 +22,15 @@ public class LevelMenu : MonoBehaviour
     }
     public void OpenLevel()
     {
+        audioManager.Play("ButtonPress1");
         string levelName = "Game";
         SceneManager.LoadScene(levelName);
     }
 
     public void SwitchDifficulty()
     {
+        audioManager.Play("ButtonPress1");
+
         if (!gameData.isHardDifficulty)
         {
             hardPannel.SetActive(false);
