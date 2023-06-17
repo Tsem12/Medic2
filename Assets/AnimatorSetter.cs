@@ -20,6 +20,7 @@ public class AnimatorSetter : MonoBehaviour
             chara.ParticuleHandler = _particulesHandeler;
         }
         chara.Animator = GetComponent<Animator>();
+        chara.CharacterGfx = transform;
     }
 
     public void Attack()

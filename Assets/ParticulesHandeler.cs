@@ -40,7 +40,7 @@ public class ParticulesHandeler : MonoBehaviour
 
     [SerializeField] private AnimationCurve _breakShield;
 
-
+    public ParticleSystem Disapear { get => _disapear; set => _disapear = value; }
 
     private void Start()
     {
@@ -59,7 +59,7 @@ public class ParticulesHandeler : MonoBehaviour
         _provoc.Stop();
         _stun.Stop();
         _heal.Stop();
-        _disapear.Stop();
+        Disapear.Stop();
         foreach(ParticleSystem p in _panacea)
         {
             p.Stop();
@@ -123,9 +123,6 @@ public class ParticulesHandeler : MonoBehaviour
             case Status.StatusEnum.Stunned:
                 _stun.Play();
                 break;
-            case Status.StatusEnum.Disapeared:
-                _disapear.Play();
-                break;
             case Status.StatusEnum.Taunting:
                 _provoc.Play();
                 break;
@@ -153,6 +150,9 @@ public class ParticulesHandeler : MonoBehaviour
                 break;
             case CardEffect.Die:
                 _die.Play();
+                break;
+            case CardEffect.Disapear:
+                Disapear.Play();
                 break;
         }
     }

@@ -25,7 +25,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [SerializeField] protected StatusBarManager _statusBar;
     [SerializeField] private ParticulesHandeler _particuleHandler;
     [SerializeField] protected Transform _gfx;
-    [SerializeField] protected Transform _characterGfx;
+    [SerializeField] private Transform characterGfx;
     [SerializeField] protected PartyMemberEnum charaType;
     [SerializeField] private Animator _animator;
 
@@ -46,12 +46,13 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     [Header("Status")]
     private Status.StatusEnum _statusToApply;
-    public List<Status> Status { get => status; set => status = value; }
+    public List<Status> Status { get => _statusList; set => _statusList = value; }
     public CharacterObjets CharacterObj { get => characterObj; set => characterObj = value; }
     public Animator Animator { get => _animator; set => _animator = value; }
     public ParticulesHandeler ParticuleHandler { get => _particuleHandler; set => _particuleHandler = value; }
+    public Transform CharacterGfx { get => characterGfx; set => characterGfx = value; }
 
-    private List<Status> status = new List<Status>();
+    private List<Status> _statusList = new List<Status>();
 
 
     private bool _isPlaying;
@@ -358,7 +359,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         ClearAllStatus();
         _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
         _isDead = true;
-        _characterGfx.gameObject.SetActive(false);
+        CharacterGfx.gameObject.SetActive(false);
         _particuleHandler.ActiveEffect(ParticulesHandeler.CardEffect.Die);
         _particuleHandler.StopAllParticles();
     }
@@ -379,7 +380,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         _refs.fightManager.OrderCharacters();
         SetPartyMemberAttackPreview(GetNextAttackSprite());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
-        _characterGfx.DOShakeScale(0.25f, 0.05f).SetEase(Ease.InFlash).SetDelay(0.1f).OnPlay(() => _characterGfx.gameObject.SetActive(true));
+        CharacterGfx.DOShakeScale(0.25f, 0.05f).SetEase(Ease.InFlash).SetDelay(0.1f).OnPlay(() => CharacterGfx.gameObject.SetActive(true));
     }
 
     public bool DoesFulFillCondition(AttackClass atk)
@@ -681,10 +682,10 @@ public abstract class Character : MonoBehaviour, ICharacter
                     break;
                 case global::Status.StatusEnum.Disapeared:
 
-                    if (charaType != PartyMemberEnum.Boss && !IsDead())
+                    if (_particuleHandler.Disapear != null && !IsDead())
                     {
-                        _particuleHandler.ActiveEffect(global::Status.StatusEnum.Disapeared);
-                        transform.DOShakeScale(1).SetEase(Ease.InOutFlash).SetDelay(0.75f).OnPlay(() => _characterGfx.gameObject.SetActive(true));
+                        _particuleHandler.ActiveEffect(ParticulesHandeler.CardEffect.Disapear);
+                        transform.DOShakeScale(1).SetEase(Ease.InOutFlash).SetDelay(0.75f).OnPlay(() => CharacterGfx.gameObject.SetActive(true));
                     }
                     break;
                 case global::Status.StatusEnum.ShieldedWithReflect:
@@ -761,10 +762,10 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if(status.status == global::Status.StatusEnum.Disapeared)
         {
-            if(charaType != PartyMemberEnum.Boss)
+            if(_particuleHandler.Disapear != null)
             {
-                transform.DOShakeScale(0.5f).SetEase(Ease.InOutFlash).OnComplete(() => _characterGfx.gameObject.SetActive(false));
-                _particuleHandler.ActiveEffect(global::Status.StatusEnum.Disapeared);
+                transform.DOShakeScale(0.5f).SetEase(Ease.InOutFlash).OnComplete(() => CharacterGfx.gameObject.SetActive(false));
+                _particuleHandler.ActiveEffect(ParticulesHandeler.CardEffect.Disapear);
             }
         }
         Status.Add(status);

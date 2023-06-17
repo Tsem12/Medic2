@@ -177,7 +177,6 @@ public class FightManager : MonoBehaviour
 
     public void OrderCharacters()
     {
-        Debug.LogError("TAMERE");
         _characterQueue.Clear();
         CharacterList.Sort(Compare);
 
