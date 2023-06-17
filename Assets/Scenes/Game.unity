@@ -3404,17 +3404,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &996121548 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8018228506763770355, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
-  m_PrefabInstance: {fileID: 7715908787553683499}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4dbab9786d6a864387d1b5ede91be15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1002803440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6568,10 +6557,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PartyMember1
       objectReference: {fileID: 0}
-    - target: {fileID: 6181456059222422920, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6760306544018071529, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
       propertyPath: _arrowForBoss
       value: 
@@ -6580,10 +6565,6 @@ PrefabInstance:
       propertyPath: _nextAttackImage
       value: 
       objectReference: {fileID: 1217053401}
-    - target: {fileID: 6760306544018071529, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
-      propertyPath: _particuleHandler
-      value: 
-      objectReference: {fileID: 996121548}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

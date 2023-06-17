@@ -59,7 +59,10 @@ public class ParticulesHandeler : MonoBehaviour
         _provoc.Stop();
         _stun.Stop();
         _heal.Stop();
-        Disapear.Stop();
+        if(_disapear != null)
+        {
+            _disapear.Stop();
+        }
         foreach(ParticleSystem p in _panacea)
         {
             p.Stop();

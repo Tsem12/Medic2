@@ -1543,7 +1543,7 @@ MonoBehaviour:
   _statusBar: {fileID: 2434622348510379611}
   _particuleHandler: {fileID: 8018228506763770355}
   _gfx: {fileID: 5104155584426412555}
-  _characterGfx: {fileID: 5293466342482436064}
+  characterGfx: {fileID: 0}
   charaType: 1
   _animator: {fileID: 0}
   _bossAttackImage: {fileID: 0}
@@ -5284,6 +5284,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4925592959758820764}
     m_Modifications:
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.92110705
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.92110705
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.92110705
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.057011
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.406
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9211071
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9211074
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.92110723
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.092989
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.43
+      objectReference: {fileID: 0}
     - target: {fileID: 6788608914681198558, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
       propertyPath: playOnAwake
       value: 0
