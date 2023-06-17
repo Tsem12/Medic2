@@ -1119,11 +1119,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 45
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1177,6 +1177,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1184704959}
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+        m_MethodName: OpenLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
         m_TargetAssemblyTypeName: LevelDataObject, Assembly-CSharp
         m_MethodName: ChooseScene
@@ -1185,18 +1197,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
-        m_TargetAssemblyTypeName: LevelDataObject, Assembly-CSharp
-        m_MethodName: ChooseDifficulty
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5354,10 +5354,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
-        m_TargetAssemblyTypeName: LevelDataObject, Assembly-CSharp
-        m_MethodName: ChooseScene
-        m_Mode: 3
+      - m_Target: {fileID: 1184704959}
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+        m_MethodName: OpenLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5368,7 +5368,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
         m_TargetAssemblyTypeName: LevelDataObject, Assembly-CSharp
-        m_MethodName: ChooseDifficulty
+        m_MethodName: ChooseScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5433,11 +5433,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 45
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5801,6 +5801,7 @@ GameObject:
   - component: {fileID: 777457021}
   - component: {fileID: 777457020}
   - component: {fileID: 777457024}
+  - component: {fileID: 777457025}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -5863,11 +5864,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 45
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5928,7 +5929,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5966,6 +5967,18 @@ CanvasRenderer:
   m_GameObject: {fileID: 777457018}
   m_CullTransparentMesh: 1
 --- !u!114 &777457024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777457018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e907a4af0531a45838c837b149998f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &777457025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8457,11 +8470,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 45
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -8515,6 +8528,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1184704959}
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+        m_MethodName: OpenLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
         m_TargetAssemblyTypeName: LevelDataObject, Assembly-CSharp
         m_MethodName: ChooseScene
@@ -8522,19 +8547,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
-        m_TargetAssemblyTypeName: LevelDataObject, Assembly-CSharp
-        m_MethodName: ChooseDifficulty
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
