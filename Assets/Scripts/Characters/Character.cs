@@ -360,6 +360,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         _isDead = true;
         _characterGfx.gameObject.SetActive(false);
         _particuleHandler.ActiveEffect(ParticulesHandeler.CardEffect.Die);
+        _particuleHandler.StopAllParticles();
     }
 
     public void Revive(float heal)
@@ -378,7 +379,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         _refs.fightManager.OrderCharacters();
         SetPartyMemberAttackPreview(GetNextAttackSprite());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
-        _characterGfx.gameObject.SetActive(true);
+        _characterGfx.DOShakeScale(0.25f, 0.05f).SetEase(Ease.InFlash).SetDelay(0.1f).OnPlay(() => _characterGfx.gameObject.SetActive(true));
     }
 
     public bool DoesFulFillCondition(AttackClass atk)
@@ -682,8 +683,8 @@ public abstract class Character : MonoBehaviour, ICharacter
 
                     if (charaType != PartyMemberEnum.Boss && !IsDead())
                     {
-                        _gfx.gameObject.SetActive(true);
-                        transform.DOShakeScale(2).SetEase(Ease.InOutFlash);
+                        _particuleHandler.ActiveEffect(global::Status.StatusEnum.Disapeared);
+                        transform.DOShakeScale(1).SetEase(Ease.InOutFlash).SetDelay(0.75f).OnPlay(() => _characterGfx.gameObject.SetActive(true));
                     }
                     break;
                 case global::Status.StatusEnum.ShieldedWithReflect:
@@ -762,7 +763,8 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             if(charaType != PartyMemberEnum.Boss)
             {
-                transform.DOShakeScale(2f).SetEase(Ease.InOutFlash).OnComplete(() => _gfx.gameObject.SetActive(false));
+                transform.DOShakeScale(0.5f).SetEase(Ease.InOutFlash).OnComplete(() => _characterGfx.gameObject.SetActive(false));
+                _particuleHandler.ActiveEffect(global::Status.StatusEnum.Disapeared);
             }
         }
         Status.Add(status);

@@ -1666,6 +1666,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5167083981900302306, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: m_Name
+      value: Stun
+      objectReference: {fileID: 0}
     - target: {fileID: 5245619434963657595, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: m_Spacing
       value: 19.55
@@ -2277,7 +2281,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: -5113506013014800453, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
     - {fileID: 2699642984920862796, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 753702015922162773, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8405566153389370331, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       insertIndex: -1
@@ -3869,7 +3874,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 1748c55aa6cf4814d9b65a7f251e2e6b, type: 3}
     - target: {fileID: 3043898100064445761, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: _enableDebug
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3043898100064445761, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: regenerating

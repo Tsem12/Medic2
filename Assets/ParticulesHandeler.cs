@@ -48,6 +48,33 @@ public class ParticulesHandeler : MonoBehaviour
         _reflectShieldColor = _reflectShield.color;
     }
 
+    public void StopAllParticles()
+    {
+        _buff.Stop();
+        _sleep.Stop();
+        _fatigue.Stop();
+        _fire.Stop();
+        _grab.Stop();
+        _poison.Stop();
+        _provoc.Stop();
+        _stun.Stop();
+        _heal.Stop();
+        _disapear.Stop();
+        foreach(ParticleSystem p in _panacea)
+        {
+            p.Stop();
+        }
+        foreach (ParticleSystem p in _res)
+        {
+            p.Stop();
+        }
+        _shield.gameObject.SetActive(false);
+        _shieldEffect.gameObject.SetActive(false);
+        _reflectShield.gameObject.SetActive(false);
+        _shieldEffect.gameObject.SetActive(false);
+
+    }
+
     public void ActiveShield(Status.StatusEnum status)
     {
         switch (status)
@@ -97,7 +124,7 @@ public class ParticulesHandeler : MonoBehaviour
                 _stun.Play();
                 break;
             case Status.StatusEnum.Disapeared:
-                //Add particule
+                _disapear.Play();
                 break;
             case Status.StatusEnum.Taunting:
                 _provoc.Play();
@@ -123,9 +150,6 @@ public class ParticulesHandeler : MonoBehaviour
                 break;
             case CardEffect.Heal:
                 _heal.Play();
-                break;
-            case CardEffect.Disapear:
-                _disapear.Play();
                 break;
             case CardEffect.Die:
                 _die.Play();

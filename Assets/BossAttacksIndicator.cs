@@ -28,7 +28,6 @@ public class BossAttacksIndicator : MonoBehaviour
 
     public void ResetPos()
     {
-        Debug.Log(_transform);
         _transform.localPosition = initPos;
     }
 
