@@ -18,14 +18,14 @@ MonoBehaviour:
   attackAnimIndex: 3
   isShuffle: 0
   isLifeSteal: 0
-  atkDamage: 1
+  atkDamage: 2
   animDuration: 1.5
   attackEffects: 3
   dotAttacks: 0
   buff: 0
   deBuff: 0
   dotValuePerTurn: 0
-  effectTurnDuration: 1
+  effectTurnDuration: 2
   buffValue: 0
   deBuffValue: 0
   chanceToApplyEffect: 100
