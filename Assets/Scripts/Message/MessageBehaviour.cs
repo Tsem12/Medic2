@@ -1,4 +1,5 @@
 using DG.Tweening;
+using NaughtyAttributes;
 using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,13 +15,18 @@ public class MessageBehaviour : MonoBehaviour
         rect = GetComponent<RectTransform>();
         initScale = Vector3.zero;
     }
-    //public void Appear()
-    //{
-    //    rect.DOScale()
-    //}
+    [Button]
+    public void Appear()
+    {
+        rect.localScale = Vector3.zero;
+        rect.DOScale(Vector3.one, 0.5f).SetEase(Ease.InOutCubic);
+    }
 
+    [Button]
     public void Disapear()
     {
+        rect.localScale = Vector3.one;
+        rect.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InOutCubic);
 
     }
 }

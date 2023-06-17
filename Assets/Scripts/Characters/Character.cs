@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using Random = UnityEngine.Random;
 
 public abstract class Character : MonoBehaviour, ICharacter
@@ -22,8 +23,9 @@ public abstract class Character : MonoBehaviour, ICharacter
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
     [SerializeField] protected StatusBarManager _statusBar;
-    [SerializeField] private ParticulesHandeler particuleHandler;
+    [SerializeField] private ParticulesHandeler _particuleHandler;
     [SerializeField] protected Transform _gfx;
+    [SerializeField] protected Transform _characterGfx;
     [SerializeField] protected PartyMemberEnum charaType;
     [SerializeField] private Animator _animator;
 
@@ -47,7 +49,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public List<Status> Status { get => status; set => status = value; }
     public CharacterObjets CharacterObj { get => characterObj; set => characterObj = value; }
     public Animator Animator { get => _animator; set => _animator = value; }
-    public ParticulesHandeler ParticuleHandler { get => particuleHandler; set => particuleHandler = value; }
+    public ParticulesHandeler ParticuleHandler { get => _particuleHandler; set => _particuleHandler = value; }
 
     private List<Status> status = new List<Status>();
 
@@ -116,6 +118,8 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public virtual void EndTurn()
     {
+        if (IsDead())
+            return;
         if (_refs.fightManager.EnableDebug)
             Debug.Log($"{gameObject.name} finished his turn");
         foreach(Status status in Status.ToList())
@@ -288,7 +292,10 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public virtual void SetIncommingAttack(AttacksObject atk, int index = 0)
     {
-        _incomingAttacks.Add(atk);
+        if (!IsDead())
+        {
+            _incomingAttacks.Add(atk);
+        }
     }
 
     public void ClearIncommingAttack()
@@ -351,11 +358,8 @@ public abstract class Character : MonoBehaviour, ICharacter
         ClearAllStatus();
         _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
         _isDead = true;
-        SpriteRenderer[] sp = GetComponentsInChildren<SpriteRenderer>();
-        foreach(SpriteRenderer sp2 in sp)
-        {
-            sp2.color = Color.red;
-        }
+        _characterGfx.gameObject.SetActive(false);
+        _particuleHandler.ActiveEffect(ParticulesHandeler.CardEffect.Die);
     }
 
     public void Revive(float heal)
@@ -370,12 +374,11 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         _isDead = false;
         _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
+        SetTarget();
+        _refs.fightManager.OrderCharacters();
+        SetPartyMemberAttackPreview(GetNextAttackSprite());
         _health.Heal((int) (heal / 100f * _maxHealth), true);
-        SpriteRenderer[] sp = GetComponentsInChildren<SpriteRenderer>();
-        foreach (SpriteRenderer sp2 in sp)
-        {
-            sp2.color = Color.white;
-        }
+        _characterGfx.gameObject.SetActive(true);
     }
 
     public bool DoesFulFillCondition(AttackClass atk)
@@ -688,8 +691,6 @@ public abstract class Character : MonoBehaviour, ICharacter
                     ParticuleHandler.DeactiveShield(status);
                     break;
                 case global::Status.StatusEnum.Taunting:
-
-                    _refs.fightManager.ResetTargets();
                     break;
             }
 
@@ -766,10 +767,6 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
         Status.Add(status);
         _statusBar.UpdateBar();
-        if (status.status == global::Status.StatusEnum.Taunting)
-        {
-            _refs.fightManager.ResetTargets();
-        }
     }
 
     public void UpdateBar()
@@ -805,6 +802,8 @@ public abstract class Character : MonoBehaviour, ICharacter
     public void TestTaunt() 
     {
         AddStatus(new Status(global::Status.StatusEnum.Taunting, 2));
+        _refs.fightManager.ResetTargets();
+
     } 
     [Button]
     public void TestReflectShield() => AddStatus(new Status(global::Status.StatusEnum.ShieldedWithReflect, 2));

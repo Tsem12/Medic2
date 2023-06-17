@@ -10,7 +10,9 @@ public class ParticulesHandeler : MonoBehaviour
     {
         Ressurect,
         Panacea,
-        Heal
+        Heal,
+        Disapear,
+        Die
 
     }
 
@@ -26,6 +28,8 @@ public class ParticulesHandeler : MonoBehaviour
     [SerializeField] private ParticleSystem[] _panacea;
     [SerializeField] private ParticleSystem[] _res;
     [SerializeField] private ParticleSystem _heal;
+    [SerializeField] private ParticleSystem _disapear;
+    [SerializeField] private ParticleSystem _die;
 
     [SerializeField] private SpriteRenderer _shield;
     [SerializeField] private SpriteRenderer _shieldEffect;
@@ -106,7 +110,7 @@ public class ParticulesHandeler : MonoBehaviour
         switch (status)
         {
             case CardEffect.Ressurect:
-                foreach(ParticleSystem particule in _res)
+                foreach (ParticleSystem particule in _res)
                 {
                     particule.Play();
                 }
@@ -119,6 +123,12 @@ public class ParticulesHandeler : MonoBehaviour
                 break;
             case CardEffect.Heal:
                 _heal.Play();
+                break;
+            case CardEffect.Disapear:
+                _disapear.Play();
+                break;
+            case CardEffect.Die:
+                _die.Play();
                 break;
         }
     }

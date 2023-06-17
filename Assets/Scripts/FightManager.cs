@@ -154,6 +154,7 @@ public class FightManager : MonoBehaviour
             character.SetTarget();
             character.SetPartyMemberAttackPreview(character.GetNextAttackSprite());
         }
+        OrderCharacters();
     }
 
     private void PartyMemberTurn()
@@ -176,6 +177,7 @@ public class FightManager : MonoBehaviour
 
     public void OrderCharacters()
     {
+        Debug.LogError("TAMERE");
         _characterQueue.Clear();
         CharacterList.Sort(Compare);
 
@@ -200,12 +202,21 @@ public class FightManager : MonoBehaviour
 
     private bool ArePartyStillAlive()
     {
+        int availableMember = PartyMembersList.Count;
         foreach (ICharacter chara in PartyMembersList)
         {
-            if(CharacterList.Contains(chara))
-                return true;
+            Status s = chara.GetStatus(Status.StatusEnum.Disapeared);
+            if (s != null)
+            {
+                availableMember--;
+                continue;
+            }
+            if (chara.IsDead())
+            {
+                availableMember--;
+            }
         }
-        return false;
+        return availableMember > 0;
     }
 
     public void FinishTurn()

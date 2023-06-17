@@ -76,17 +76,18 @@ public class Enemie : Character
         {
             c.ClearIncommingAttack();
             Status status = c.GetStatus(global::Status.StatusEnum.Taunting);
+
+            if(c.IsDead())
+                break;
+
             if(status != null)
             {
                 for(int i = 0; i < Mathf.Min(_currentAtkClass.nrbOfTargets, _refs.fightManager.PartyMembersList.Count); i++)
                 {
-                    if (!_targets.Contains(c))
-                    {
-                        _targets.Add(c);
-                        atkobj = _nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)];
-                        _targetsAttacks.Add(atkobj);
-                        c.SetIncommingAttack(atkobj, i);
-                    }
+                    _targets.Add(c);
+                    atkobj = _nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)];
+                    _targetsAttacks.Add(atkobj);
+                    c.SetIncommingAttack(atkobj, i);
                 }
                 return;
             }
@@ -94,7 +95,7 @@ public class Enemie : Character
 
         int tempGlobalAgro = _refs.fightManager.GlobalAgro;
 
-        for (int i = 0 ; i < Mathf.Min(_currentAtkClass.nrbOfTargets, _refs.fightManager.PartyMembersList.Count); i++)
+        for (int i = 0 ; i < Mathf.Min(_currentAtkClass.nrbOfTargets, _refs.fightManager.CharacterList.Count - 1); i++)
         {
             int random = Random.Range(0, 101);
             float others = 0f;
