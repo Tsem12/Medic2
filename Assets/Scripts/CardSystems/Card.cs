@@ -22,24 +22,15 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     public void Init()
     {
-        if(cardBase != null && isPlayingCard)
+        if(isPlayingCard)
         {
             manaObject.manaAddTurn += CheckIfInteractable;
             refs.fightManager.OnTurnEnd += EndInteractable;
-            refs.fightManager.OnTurnBegin += EnableTurn;
             manaObject.manaUpdate += CheckIfInteractable;
             manaObject.manaUpdate += EnableTurn;
-            handlerObject.switchCard += SwitchUpdate;
         }
-        else
-        {
-            EndInteractable();
-            myRender.sprite = lockedSprite;
-            myRender.color = Color.white;
-            usedRenderer.sprite = lockedSprite;
-            usedRenderer.color = Color.white;
-            tmpro.SetText("");
-        }
+        refs.fightManager.OnTurnBegin += EnableTurn;
+        handlerObject.switchCard += SwitchUpdate;
         CheckIfInteractable();
         UpdateCard();
     }
@@ -50,11 +41,11 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         {
             manaObject.manaAddTurn -= CheckIfInteractable;
             refs.fightManager.OnTurnEnd -= EndInteractable;
-            refs.fightManager.OnTurnBegin -= EnableTurn;
             manaObject.manaUpdate -= CheckIfInteractable;
             manaObject.manaUpdate -= EnableTurn;
-            handlerObject.switchCard -= SwitchUpdate;
         }
+        refs.fightManager.OnTurnBegin -= EnableTurn;
+        handlerObject.switchCard -= SwitchUpdate;
     }
 
 
