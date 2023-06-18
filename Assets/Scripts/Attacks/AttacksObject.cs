@@ -51,6 +51,7 @@ public class AttacksObject : ScriptableObject
 
     public Sprite attackSpriteOverRide;
     public int attackAnimIndex;
+    public string attackSound;
 
 
     private bool NoTurnDuration
