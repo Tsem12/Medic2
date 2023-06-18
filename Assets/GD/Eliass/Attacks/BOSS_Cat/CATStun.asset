@@ -18,7 +18,7 @@ MonoBehaviour:
   attackAnimIndex: 1
   isShuffle: 0
   isLifeSteal: 0
-  atkDamage: 2
+  atkDamage: 1
   animDuration: 3.5
   attackEffects: 3
   dotAttacks: 0
