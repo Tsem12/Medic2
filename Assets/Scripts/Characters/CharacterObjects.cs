@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterObjects", menuName = "Characters/CharacterObjects")]
 public class CharacterObjets : ScriptableObject
 {
-
+    public string inGameName;
     [Header("Stats")]
     [Space]
 

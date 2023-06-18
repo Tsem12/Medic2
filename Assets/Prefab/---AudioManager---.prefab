@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5086821860906877961
 MonoBehaviour:
@@ -154,6 +154,71 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: LeterFall
+    type: 1
+    clip: {fileID: 8300000, guid: 421ff986ec586074a91aa7c87c889f7e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LeterBigFall
+    type: 1
+    clip: {fileID: 8300000, guid: 421ff986ec586074a91aa7c87c889f7e, type: 3}
+    volume: 1
+    pitch: 1.1
+    loop: 0
+    source: {fileID: 0}
+  testConnerie:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.17233342
+      value: 1.12195
+      inSlope: -8.934267
+      outSlope: -8.934267
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.12266399
+    - serializedVersion: 3
+      time: 0.24760412
+      value: 0.40570047
+      inSlope: 10.967113
+      outSlope: 10.967113
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.12333723
+    - serializedVersion: 3
+      time: 0.6223946
+      value: 0.26461753
+      inSlope: 17.73986
+      outSlope: 17.73986
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.08296687
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1045460423986400126
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: BOSS_Kraqueen
   m_EditorClassIdentifier: 
+  inGameName: Kraqueen
   maxHealth: 20
   numberOfHealthBar: 3
   baseSpeed: 100

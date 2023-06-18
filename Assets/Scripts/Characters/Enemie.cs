@@ -1,23 +1,58 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Enemie : Character
 {
     [SerializeField] private Image _targetIcon;
-
+    [SerializeField] private TextMeshProUGUI _bossName;
 
     [Header("Stats")]
     private int _damage;
     private int _speed;
 
+
     private void Start()
     {
+        _refs.audioManager.Play(_refs.audioManager.StartMusic);
+        _refs.audioManager.Pause(_refs.audioManager.StartMusic);
         AssignValues();
         _currentHealth = _maxHealth;
         //_refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.AllieBuffed);
+
+        _bossName.text = characterObj.inGameName;
+        DOTweenTMPAnimator animator = new DOTweenTMPAnimator(_bossName);
+        Sequence sequence = DOTween.Sequence();
+        for (int i = 0; i < animator.textInfo.characterCount; ++i)
+        {
+            if (!animator.textInfo.characterInfo[i].isVisible) continue;
+            Vector3 currCharOffset = animator.GetCharOffset(i);
+            sequence.Join(animator.DOColorChar(i, Vector4.zero, 0));
+        }
+        for (int i = 0; i < animator.textInfo.characterCount; ++i)
+        {
+            if (!animator.textInfo.characterInfo[i].isVisible) continue;
+            Vector3 currCharOffset = animator.GetCharOffset(i);
+            sequence.Append(animator.DOColorChar(i, Color.black, 0));
+            sequence.Append(animator.DOPunchCharScale(i, 5f, 1f / animator.textInfo.characterCount * 2).OnComplete(() => _refs.audioManager.Play("LeterFall")));
+        }
+        sequence.Append(_bossName.DOScale(10f, 0.3f).SetEase(Ease.InQuart).SetLoops(2, LoopType.Yoyo)).OnComplete(() =>
+        {
+            _refs.audioManager.Play("LeterBigFall");
+            //for (int i = 0; i < animator.textInfo.characterCount; ++i)
+            //{
+            //    if (!animator.textInfo.characterInfo[i].isVisible) continue;
+            //    Vector3 currCharOffset = animator.GetCharOffset(i);
+            //    sequence.Join(animator.DOShakeCharOffset(i, 1f, 5f));
+            //}
+            sequence.Append(_bossName.DOFade(0f, 2f)).SetEase(Ease.Linear).SetDelay(0.1f);
+            _refs.fightManager.StartTurn();
+            _refs.audioManager.UnPause(_refs.audioManager.StartMusic);
+            _refs.audioManager.FadeSound(_refs.audioManager.StartMusic);
+        });
 
     }
     public override void AssignValues()
