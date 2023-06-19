@@ -20,7 +20,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     }
     [Header("Refs")]
     [SerializeField] protected CharacterObjets characterObj;
-    [SerializeField] protected MessageBehaviour _message;
+    [SerializeField] private MessageBehaviour message;
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
     [SerializeField] protected StatusBarManager _statusBar;
@@ -52,6 +52,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public Animator Animator { get => _animator; set => _animator = value; }
     public ParticulesHandeler ParticuleHandler { get => _particuleHandler; set => _particuleHandler = value; }
     public Transform CharacterGfx { get => characterGfx; set => characterGfx = value; }
+    public MessageBehaviour Message { get => message; set => message = value; }
 
     private List<Status> _statusList = new List<Status>();
 
@@ -94,6 +95,12 @@ public abstract class Character : MonoBehaviour, ICharacter
         Status sleep = GetStatus(global::Status.StatusEnum.Sleeped);
         Status disapear = GetStatus(global::Status.StatusEnum.Disapeared);
 
+        List<Status> list = new List<Status>();
+        if(stunned != null ) list.Add(stunned);
+        if(restrained != null ) list.Add(restrained);
+        if(sleep != null ) list.Add(sleep);
+
+
         if(disapear != null && disapear.remainTurn <= 1)
         {
             TryRemoveStatus(global::Status.StatusEnum.Disapeared);
@@ -104,6 +111,23 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} can't attack");
+
+            switch (list[Random.Range(0, list.Count)].status)
+            {
+                case global::Status.StatusEnum.Sleeped:
+                    if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                        Message.DisplayMessage(global::Message.MessageType.Sleeped, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                    break;
+                case global::Status.StatusEnum.Restrained:
+                    if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                        Message.DisplayMessage(global::Message.MessageType.Restrained, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                    break;
+                case global::Status.StatusEnum.Stunned:
+                    if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                        Message.DisplayMessage(global::Message.MessageType.Stunned, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                    break;
+
+            }
             return;
         }
 
@@ -120,7 +144,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public MessageBehaviour GetMessageBehaviour()
     {
-        return _message;
+        return Message;
     }
 
     public virtual void EndTurn()
@@ -180,18 +204,28 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             case global::Status.StatusEnum.Poisoned:
                 _refs.audioManager.Play("StatusPoison");
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Poisoned, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 _health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Fired:
-                print("Fait chaud putain");
+
+                if(Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue +1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Fired, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+
                 _refs.audioManager.Play("StatusBurning");
                 _health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Restrained:
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Restrained, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+
                 _refs.audioManager.Play("StatusRestrained");
                 _health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Regenerating:
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Heal, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 _refs.audioManager.Play("StatusRegen");
                 _health.Heal(statut.value, true);
                 break;
@@ -204,6 +238,10 @@ public abstract class Character : MonoBehaviour, ICharacter
         return _isPlaying;
     }
 
+    public CharacterObjets getCharaObj()
+    {
+        return CharacterObj;
+    }
     public Status GetStatus(Status.StatusEnum status)
     {
         foreach(Status s in Status.ToList())
@@ -270,6 +308,10 @@ public abstract class Character : MonoBehaviour, ICharacter
             if(disapear != null || shield != null)
             {
                 Debug.Log("AttackBloked");
+                if (target.GetMessageBehaviour() != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                {
+                    target.GetMessageBehaviour().DisplayMessage(global::Message.MessageType.Shielded, target.getCharaObj(), _refs.fightManager.Enemie.CharacterObj.bossType);
+                }
                 continue;
             }
             if (s != null)
@@ -365,6 +407,8 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         ClearAllStatus();
         _refs.fightManager.CharacterList.Remove(GetComponent<ICharacter>());
+        if (Message != null)
+            Message.DisplayMessage(global::Message.MessageType.Die, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
         _isDead = true;
         CharacterGfx.gameObject.SetActive(false);
         _particuleHandler.ActiveEffect(ParticulesHandeler.CardEffect.Die);
@@ -383,6 +427,8 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         _isDead = false;
         _refs.fightManager.CharacterList.Add(GetComponent<ICharacter>());
+        if (Message != null)
+            Message.DisplayMessage(global::Message.MessageType.Revive, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
         SetTarget();
         _refs.fightManager.OrderCharacters();
         SetPartyMemberAttackPreview(GetNextAttackSprite());
@@ -715,26 +761,63 @@ public abstract class Character : MonoBehaviour, ICharacter
         if (status == null)
             return;
 
-        switch(status.status)
+        switch (status.status)
         {
             case global::Status.StatusEnum.Shielded:
                 _refs.audioManager.Play("StatusShielded");
+                if(Message!=null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)  
+                    Message.DisplayMessage(global::Message.MessageType.Shielded, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 break;
             case global::Status.StatusEnum.Fatigue:
                 _refs.audioManager.Play("StatusFatigue");
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Fatigue, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 break;
             case global::Status.StatusEnum.Fired:
                 _refs.audioManager.Play("StatusBurning");
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Fired, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 break;
             case global::Status.StatusEnum.Poisoned:
                 _refs.audioManager.Play("StatusPoison");
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Poisoned, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 break;
             case global::Status.StatusEnum.Regenerating:
                 _refs.audioManager.Play("StatusRegen");
+                //_message.DisplayMessage(Message.MessageType.Regenerating, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 break;
             case global::Status.StatusEnum.Sleeped:
                 _refs.audioManager.Play("StatusSleep");
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Sleeped, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 break;
+            case global::Status.StatusEnum.Strengthened:
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Strengthened, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                break;
+            case global::Status.StatusEnum.Initiative:
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Initiative, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                break;
+            case global::Status.StatusEnum.Restrained:
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Restrained, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                break;
+            case global::Status.StatusEnum.Stunned:
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Stunned, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                break;
+            case global::Status.StatusEnum.Disapeared:
+                _refs.audioManager.Play("StatusShielded");
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Disapeared, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                break;
+            case global::Status.StatusEnum.ShieldedWithReflect:
+                if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                    Message.DisplayMessage(global::Message.MessageType.Shielded, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                break;
+     
         }
 
         Status s = GetStatus(status.status);

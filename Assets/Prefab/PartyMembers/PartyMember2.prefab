@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterObj: {fileID: 11400000, guid: 8026f1e9f711ca6449d8c472d1870857, type: 2}
+  message: {fileID: 9171563813555813753}
   _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
   _health: {fileID: 5076555810977487780}
   _statusBar: {fileID: 3497421564324408933}
@@ -1548,7 +1549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7fe92d950cc5d49b937e989d699822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 5124678763622279519}
+  _text: {fileID: 0}
+  _textLocalisation: {fileID: 0}
   _icon: {fileID: 8057728806485939907}
   _gfx: {fileID: 4637246143705487770}
   test: {fileID: 0}

@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 using NaughtyAttributes;
 using System.Linq;
 using static UnityEngine.Rendering.DebugUI;
+using Random = UnityEngine.Random;
 
 public class FightManager : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class FightManager : MonoBehaviour
     [SerializeField] private ParticleSystem _shuffleParticles;
 
     [SerializeField] private float _playerTimeToPlay;
+    [SerializeField] private int _chanceToTriggerDialogue;
     private float _currentPlayerTimeToPlay;
 
     private int _globalAgro;
@@ -101,6 +103,7 @@ public class FightManager : MonoBehaviour
     public List<ICharacter> PartyMembersList { get => _partyMembersList; set => _partyMembersList = value; }
     public List<ICharacter> CharacterList { get => _characterList; set => _characterList = value; }
     public ParticleSystem ShuffleParticles { get => _shuffleParticles; set => _shuffleParticles = value; }
+    public int ChanceToTriggerAfxDialogue { get => _chanceToTriggerDialogue; set => _chanceToTriggerDialogue = value; }
 
     private void Start()
     {
@@ -239,6 +242,19 @@ public class FightManager : MonoBehaviour
 
             // player turn logic
             thinkingTime += Time.deltaTime;
+            if(thinkingTime >= 2f)
+            {
+                thinkingTime = 0;
+                int random = Random.Range(0, ChanceToTriggerAfxDialogue + 1);
+                if(random == 0)
+                {
+                    ICharacter chara = PartyMembersList[Random.Range(0, PartyMembersList.Count)];
+                    if (!chara.IsDead())
+                    {
+                        chara.GetMessageBehaviour().DisplayMessage(Message.MessageType.Afk, chara.getCharaObj(), _enemie.CharacterObj.bossType);
+                    }
+                }
+            }
             if (_levelData.difficulty != LevelDataObject.Difficulty.Easy)
             { 
                 _currentPlayerTimeToPlay -= Time.deltaTime;

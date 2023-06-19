@@ -1,3 +1,4 @@
+using Assets.SimpleLocalization;
 using DG.Tweening;
 using NaughtyAttributes;
 using Newtonsoft.Json.Bson;
@@ -10,7 +11,8 @@ using UnityEngine.UI;
 
 public class MessageBehaviour : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private Text _text;
+    [SerializeField] private LocalizedText _textLocalisation;
     [SerializeField] private Image _icon;
     [SerializeField] private RectTransform _gfx;
     private Character _character;
@@ -44,14 +46,19 @@ public class MessageBehaviour : MonoBehaviour
                 return list[Random.Range(0, list.Count)];
             }
         }
-        throw new System.Exception($"Y'a pas de {messageType} dans la liste");
+        Debug.Log($"Y'a pas de {messageType} dans la liste");
+        return null;
     }
 
     public void DisplayMessage(Message.MessageType messageType, CharacterObjets chara, CharacterObjets.BossType bossType)
     {
         if( _messageCoroutine == null)
         {
-            _messageCoroutine = StartCoroutine(MessageRoutine(GetMessage(messageType, chara, bossType)));
+            MessageBody message = GetMessage(messageType, chara, bossType);
+            if(message != null)
+            {
+                _messageCoroutine = StartCoroutine(MessageRoutine(message));
+            }
         }
         else
         {
@@ -60,7 +67,11 @@ public class MessageBehaviour : MonoBehaviour
             {
                 Disapear();
             }
-            _messageCoroutine = StartCoroutine(MessageRoutine(GetMessage(messageType, chara, bossType)));
+            MessageBody message = GetMessage(messageType, chara, bossType);
+            if (message != null)
+            {
+                _messageCoroutine = StartCoroutine(MessageRoutine(message));
+            }
         }
     }
 
@@ -87,7 +98,8 @@ public class MessageBehaviour : MonoBehaviour
             yield return _disappearTween.WaitForCompletion();
         }
 
-        _text.text = message.message;
+        _textLocalisation.LocalizationKey = message.localizationKey;
+        _textLocalisation.Localize();
         _icon.sprite = message.expression == MessageBody.Expression.Happy ? _character.CharacterObj.happyFace : _character.CharacterObj.angryFace;
 
         Appear();

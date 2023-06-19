@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 using Sequence = DG.Tweening.Sequence;
 
 public class Health : MonoBehaviour
@@ -174,6 +175,10 @@ public class Health : MonoBehaviour
             return;
         }
         _valueIndicator.HealTween(value);
+
+        if(Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+            _character.Message.DisplayMessage(Message.MessageType.Die, _character.CharacterObj, _refs.fightManager.Enemie.CharacterObj.bossType);
+
         int newHealth = _character.GetCurrentHealth() + value;
         if (newHealth > _character.GetMaxHealth())
         {

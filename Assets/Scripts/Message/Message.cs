@@ -7,7 +7,6 @@ public class Message
     {
         Strengthened,
         Initiative,
-        Regenerating,
         Shielded,
         Fatigue,
         Poisoned,
@@ -16,7 +15,6 @@ public class Message
         Restrained,
         Stunned,
         Disapeared,
-        ShieldedWithReflect,
         Taunting,
         Die,
         Revive,
@@ -39,5 +37,5 @@ public class MessageBody
     public CharacterObjets.BossType bossType;
     public Expression expression;
     [TextArea]
-    public string message;
+    public string localizationKey;
 }

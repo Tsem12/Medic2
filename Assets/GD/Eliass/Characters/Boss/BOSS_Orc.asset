@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BOSS_Orc
   m_EditorClassIdentifier: 
   bossType: 1
-  inGameName: Orc de merde
+  inGameName: Orcish WarLord
   happyFace: {fileID: 0}
   angryFace: {fileID: 0}
   messages: []
