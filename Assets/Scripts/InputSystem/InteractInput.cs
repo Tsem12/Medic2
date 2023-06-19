@@ -45,6 +45,7 @@ public class InteractInput : MonoBehaviour
     }
     void Interact()
     {
+        
         if(Input.touchCount > 0)
         {
             Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.touches[0].position), 0.2f);
@@ -66,7 +67,8 @@ public class InteractInput : MonoBehaviour
 
     void Drop()
     {
-        if(_getObject != null) // Check if we got object to interact with
+        
+        if (_getObject != null) // Check if we got object to interact with
         {
             if (!wasTooltip)
             {
@@ -133,6 +135,10 @@ public class InteractInput : MonoBehaviour
                     _getObject.transform.position = Camera.main.ScreenToWorldPoint(Input.touches[0].position) + Vector3.forward * 10f;
                 }
 
+            }
+            else
+            {
+                //CanceledDrop();
             }
             yield return null;
         }
