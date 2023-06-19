@@ -187,6 +187,6 @@ public class AudioManager : MonoBehaviour
         }
         float vol = s.source.volume;
         s.source.volume = 0;
-        s.source.DOFade(vol, 5f).SetEase(Ease.Linear);
+        s.source.DOFade(vol, 2f).SetEase(testConnerie);
     }
 }

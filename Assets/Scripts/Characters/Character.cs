@@ -20,6 +20,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     }
     [Header("Refs")]
     [SerializeField] protected CharacterObjets characterObj;
+    [SerializeField] protected MessageBehaviour _message;
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
     [SerializeField] protected StatusBarManager _statusBar;
@@ -115,6 +116,11 @@ public abstract class Character : MonoBehaviour, ICharacter
     public void SetAttack()
     {
         _nextPossibleAttacks = GetAttack();
+    }
+
+    public MessageBehaviour GetMessageBehaviour()
+    {
+        return _message;
     }
 
     public virtual void EndTurn()

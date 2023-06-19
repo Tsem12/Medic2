@@ -232,11 +232,13 @@ public class FightManager : MonoBehaviour
         _endTurnButton.SetActive(true);
         if (_enableDebug)
             Debug.Log("Player turn start");
+
+        float thinkingTime = 0f;
         while (true)
         {
 
             // player turn logic
-
+            thinkingTime += Time.deltaTime;
             if (_levelData.difficulty != LevelDataObject.Difficulty.Easy)
             { 
                 _currentPlayerTimeToPlay -= Time.deltaTime;
