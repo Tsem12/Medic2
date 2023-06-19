@@ -113,7 +113,7 @@ Has the ability to stun for a single turn, or provoke the enemy, preventing them
 
 Your secondary damage dealer. Has 3 health points does 2 damage per attack.
 Can also send a poisoned arrow, doing a single damage but poisoning the target for two turns.
-","1 : Berserker : Votre principal dégât. Possède 4 points de vie. Inflige un seul point de dégât par attaque, mais chaque point de vie manquant lui confère un dégât supplémentaire.
+","1 : Berserker : Votre principal source dégât. Possède 4 points de vie. Inflige un seul point de dégât par attaque, mais chaque point de vie manquant lui confère un dégât supplémentaire.
 2 : Paladin : Votre tank. Possède 6 points de vie et inflige un seul point de dégât par attaque. Possède la capacité d'étourdir l'ennemi pendant un tour ou de provoquer l'ennemi, l'empêchant d'attaquer quelqu'un d'autre pendant la durée.
 3 : Archer : Votre second dégât. Possède 3 points de vie et inflige 2 points de dégât par attaque. Peut également envoyer une flèche empoisonnée, infligeant un seul point de dégât mais empoisonnant la cible pendant deux tours.","1 : Berserker : Dein Hauptangreifer. Hat 4 Lebenspunkte. Fügt mit jedem Angriff einen Schaden zu, aber für jeden fehlenden Lebenspunkt wird ein zusätzlicher Schaden verursacht.
 2 : Paladin : Dein Tank. Hat 6 Lebenspunkte und fügt mit jedem Angriff einen Schaden zu. Hat die Fähigkeit, den Gegner für einen einzelnen Zug zu betäuben oder ihn zu provozieren, sodass er während der Dauer niemand anderen angreifen kann.
@@ -239,3 +239,5 @@ Fadiga : Reduz o dano de ataque durante a duração. Se aplicado duas vezes, tra
 Без сознания : Предотвращает действия цели до получения урона. Затем оглушается на один ход. Удаляет оглушение и усталость.
 Усталость : Уменьшает урон атаки на протяжении действия. При двукратном применении прев"
 HowToPlayMenu.Window6.Title,Status Effects List : ,Liste des effets de statut : ,Status-Effekte-Liste :,Lista de efectos de estado :,状态效果列表：,ステータス効果リスト：, Lista de efeitos de status :,Список эффектов статуса :
+LoseMenu.Text,You Lose !,Vous avez perdu !,Du hast verloren!,¡Has perdido!,你输了！,負けました！,Você perdeu!,Вы проиграли!
+WinMenu.Text,You Win !, Vous avez gagné !,Du hast gewonnen!,¡Has ganado!,你赢了！,勝ちました！,Você venceu!,Вы победили!

@@ -14,6 +14,7 @@ public class GameData
     public bool musicVolume;
     public bool sfxVolume;
     public string Language;
+    public int index;
     
 
 
@@ -26,6 +27,7 @@ public class GameData
         musicVolume = true;
         sfxVolume = true;
         Language = "Français";
+        index = 0;
     }
     
     

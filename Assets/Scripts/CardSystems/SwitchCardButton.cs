@@ -45,7 +45,8 @@ public class SwitchCardButton : MonoBehaviour
 
     public void Hide()
     {
-        if(wasHit)
+        cardsToHide.SetActive(false);
+        if (wasHit)
         {
             wasHit = false;
         }
@@ -53,7 +54,6 @@ public class SwitchCardButton : MonoBehaviour
         {
             item.enabled = true;
         }
-        cardsToHide.SetActive(false);
         cardHandler.isChaningCards = false;
         cardHandler.SwitchUpdate();
     }
