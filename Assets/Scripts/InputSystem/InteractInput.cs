@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,6 +51,7 @@ public class InteractInput : MonoBehaviour
             if (col != null)
             {
                 _getObject = col.gameObject;
+                _getObject.transform.DOScale(_getObject.transform.localScale * 1.1f, 0.2f);
                 if (_getObject.CompareTag("Grabbable"))//Drag if Grabbable
                 {
                     _dragCoroutine = StartCoroutine(Drag());
@@ -66,7 +68,8 @@ public class InteractInput : MonoBehaviour
     {
         if(_getObject != null) // Check if we got object to interact with
         {
-            if(!wasTooltip)
+            _getObject.transform.DOScale(_getObject.transform.localScale / 1.1f, 0.2f);
+            if (!wasTooltip)
             {
                 if (_getObject.GetComponent<IInteractable>() != null)
                 {
@@ -141,7 +144,8 @@ public class InteractInput : MonoBehaviour
         {
             if (_getObject != null) // Check if we got object to interact with
             {
-                if(_getObject.GetComponent<IInteractable>() != null)
+                _getObject.transform.DOScale(_getObject.transform.localScale / 1.1f, 0.2f);
+                if (_getObject.GetComponent<IInteractable>() != null)
                 {
                     _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
                 }
