@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
     public string StartMusic { get => _startMusic; set => _startMusic = value; }
+    public AnimationCurve testConnerie;
 
     void Awake()
     {
@@ -41,10 +42,6 @@ public class AudioManager : MonoBehaviour
         if(_isMenu)
         {
             Play("Menu");
-        }
-        else
-        {
-            Play(StartMusic);
         }
     }
     //private void OnEnable()
@@ -177,5 +174,19 @@ public class AudioManager : MonoBehaviour
         }
 
         s.source.UnPause();
+    }
+
+    public void FadeSound(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + "not Found");
+            return;
+        }
+        float vol = s.source.volume;
+        s.source.volume = 0;
+        s.source.DOFade(vol, 5f).SetEase(Ease.Linear);
     }
 }

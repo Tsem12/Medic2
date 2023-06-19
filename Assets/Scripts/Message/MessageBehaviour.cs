@@ -3,10 +3,12 @@ using NaughtyAttributes;
 using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MessageBehaviour : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _text;
     private RectTransform rect;
     Vector3 initScale;
 

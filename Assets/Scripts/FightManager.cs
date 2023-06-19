@@ -120,7 +120,6 @@ public class FightManager : MonoBehaviour
             CharacterList.Add(character);
             PartyMembersList.Add(character);
         }
-        StartTurn();
     }
 
     public void TriggerEvent(AttackEvent.SpecialAttacksTrigerMode triger, int value)
@@ -130,7 +129,7 @@ public class FightManager : MonoBehaviour
             chara.TrackSpecialAtkEvents(triger, value);
         }
     }
-    private void StartTurn()
+    public void StartTurn()
     {
         //ReferenceSettersManager.ReconnectAll();
         _currentTurn++;

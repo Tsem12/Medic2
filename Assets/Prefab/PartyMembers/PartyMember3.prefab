@@ -784,7 +784,7 @@ MonoBehaviour:
   _statusBar: {fileID: 8235128780205869788}
   _particuleHandler: {fileID: 3337689711457832755}
   _gfx: {fileID: 3237585439655477508}
-  _characterGfx: {fileID: 5237312167576739147}
+  characterGfx: {fileID: 0}
   charaType: 3
   _animator: {fileID: 0}
   _bossAttackImage: {fileID: 0}
@@ -1008,6 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7fe92d950cc5d49b937e989d699822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 9029944128866535539}
 --- !u!1 &5380415284476018930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1253,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2163,6 +2164,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 256939416561476911}
     m_Modifications:
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8274203
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8274203
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8274203
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0016820133
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811675621055531741, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4643999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.82742035
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8274206
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8274205
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836437293930884962, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.486
+      objectReference: {fileID: 0}
     - target: {fileID: 6788608914681198558, guid: b4a44fbb5d2b19042b6734b535b18882, type: 3}
       propertyPath: playOnAwake
       value: 0

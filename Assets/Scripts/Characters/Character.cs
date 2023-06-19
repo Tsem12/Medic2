@@ -19,7 +19,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         Archer
     }
     [Header("Refs")]
-    [SerializeField] private CharacterObjets characterObj;
+    [SerializeField] protected CharacterObjets characterObj;
     [SerializeField] protected AllReferences _refs;
     [SerializeField] protected Health _health;
     [SerializeField] protected StatusBarManager _statusBar;
@@ -311,6 +311,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         _animator?.SetInteger("AttackIndex", _targetsAttacks[0].attackAnimIndex);
         _animator?.SetTrigger("TriggerAtk");
+        _refs.audioManager.Play(_targetsAttacks[0].attackSound);
         //if(charaType == PartyMemberEnum.Boss)
         //{
         //    yield return new WaitForSeconds(1.5f);
