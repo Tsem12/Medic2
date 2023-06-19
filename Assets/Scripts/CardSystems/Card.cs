@@ -19,6 +19,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     public bool isPlayingCard;
     bool effectWasApplied = false;
     bool isHidden = false;
+    public bool wasSwitched = false;
 
 
     public void Init()
@@ -28,7 +29,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
             manaObject.manaAddTurn += CheckIfInteractable;
             refs.fightManager.OnTurnEnd += DisableTurn;
             manaObject.manaUpdate += CheckIfInteractable;
-            manaObject.manaUpdate += EnableTurn;
+            manaObject.manaUpdate += ManaUpdate;
         }
         else
         {
@@ -47,7 +48,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
             manaObject.manaAddTurn -= CheckIfInteractable;
             refs.fightManager.OnTurnEnd -= DisableTurn;
             manaObject.manaUpdate -= CheckIfInteractable;
-            manaObject.manaUpdate -= EnableTurn;
+            manaObject.manaUpdate -= ManaUpdate;
         }
         refs.fightManager.OnTurnBegin -= EnableTurn;
         handlerObject.switchCard -= SwitchUpdate;
@@ -109,7 +110,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     void CheckIfInteractable()
     {
-        if(cardBase.manaCost <= cardBase.manaObject.currentMana)
+        if(cardBase.manaCost <= cardBase.manaObject.currentMana && !effectWasApplied)
         {
             transform.tag = "Grabbable";
         }
@@ -131,7 +132,10 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     void EnableTurn()
     {
-        if(isPlayingCard)
+        effectWasApplied = false;
+        wasSwitched = false;
+        CheckIfInteractable();
+        if (isPlayingCard)
         {
             if (cardBase.manaCost <= cardBase.manaObject.currentMana)
             {
@@ -166,6 +170,8 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
             ExChangeCard(other);
             other.DisableCard();
             DisableCard();
+            wasSwitched = true;
+            other.wasSwitched = true;
         }
     }
 
@@ -174,7 +180,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         if(handlerObject.isChaningCards)
         {
             transform.tag = "Grabbable";
-            if(!isPlayingCard)
+            if (!isPlayingCard)
             {
                 if(isHidden)
                 {
@@ -185,7 +191,10 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
                     ShowCard();
                 }
             }
-            col.enabled = true;
+            if (!wasSwitched)
+            {
+                col.enabled = true;
+            }
         }
         else
         {
@@ -249,6 +258,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         col.enabled = false;
         myRender.enabled = false;
         usedRenderer.enabled = true;
+        tmpro.enabled = true;
         isHidden = true;
     }
 
@@ -261,5 +271,32 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     {
         HideCard();
         myRender.enabled = true;
+        tmpro.enabled = true;
+    }
+
+    void ManaUpdate()
+    {
+        if(!effectWasApplied)
+        {
+            CheckIfInteractable();
+        }
+        if (isPlayingCard)
+        {
+            if (cardBase.manaCost <= cardBase.manaObject.currentMana && !effectWasApplied)
+            {
+                ShowCard();
+            }
+            else
+            {
+                DisableCard();
+            }
+        }
+        else
+        {
+            if (isHidden)
+            {
+                isHidden = false;
+            }
+        }
     }
 }
