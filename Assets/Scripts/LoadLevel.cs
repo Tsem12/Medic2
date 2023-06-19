@@ -8,6 +8,6 @@ public class LoadLevel : MonoBehaviour
 
     public void LoadCardSelector()
     {
-        SceneManager.LoadScene("CardSelector");
+        SceneManager.LoadSceneAsync("CardSelector");
     }
 }
