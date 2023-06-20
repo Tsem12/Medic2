@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class CardSelector : MonoBehaviour
     [SerializeField] Image image;
     [SerializeField] CardDeckBuilder deck;
     [SerializeField] CardBase card;
+    bool on = false;
 
     private void Start()
     {
@@ -18,11 +20,21 @@ public class CardSelector : MonoBehaviour
     {
         if(deck.deck.Contains(card))
         {
-            image.color = Color.gray;
+            if(!on)
+            {
+                on = true;
+                image.color = Color.white;
+                transform.DOScale(transform.localScale * 1.15f, 0.2f);
+            }
         }
         else
         {
-            image.color = Color.white;
+            if(on)
+            {
+                on = false;
+                image.color = Color.gray;
+                transform.DOScale(transform.localScale / 1.15f, 0.2f);
+            }
         }
     }
 }

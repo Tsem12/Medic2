@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: 887c8d2377094ed4ab9b3216349b263f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "M\xE8che1"
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 2236
+        width: 205
+        height: 153
+      alignment: 9
+      pivot: {x: 0.27388602, y: 0.5550848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fd189dbcd8053489606fab07c137f9
+      internalID: 1268729333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EpauleG
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 2000
+        width: 243
+        height: 544
+      alignment: 9
+      pivot: {x: 0.6387312, y: 0.87956554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f347722fd52af4e93437eea99c2d2a
+      internalID: -512085269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xEAte"
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 2129
+        width: 674
+        height: 626
+      alignment: 9
+      pivot: {x: 0.575026, y: 0.1634229}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5e7fdc5c6c9984fba4183345991496
+      internalID: -717886335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sort
+      rect:
+        serializedVersion: 2
+        x: 2284
+        y: 2218
+        width: 371
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c85ea57181ddb42b5540623205a1b5
+      internalID: -494415889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xE8cheHaut"
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 2012
+        width: 93
+        height: 108
+      alignment: 9
+      pivot: {x: 0.54531074, y: 0.57803684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89547bd0ad607b4bbe26e3df7d8bb7a
+      internalID: 1126125705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TresseD1
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 1799
+        width: 136
+        height: 277
+      alignment: 9
+      pivot: {x: 0.4690157, y: 0.81946945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658006d188ae3b744a296038fe78d2f5
+      internalID: -1238276387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corps
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 1512
+        width: 467
+        height: 512
+      alignment: 9
+      pivot: {x: 0.63535166, y: 0.12963367}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2252a9756715446bbb7a11f794e62b
+      internalID: -509354697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EpauleD
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 1675
+        width: 227
+        height: 448
+      alignment: 9
+      pivot: {x: 0.2772362, y: 0.7915903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313f164233b93cb41be818085f2e6d2f
+      internalID: -1170888332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xE8che2"
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1730
+        width: 134
+        height: 128
+      alignment: 9
+      pivot: {x: 0.16180876, y: 0.63112736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627324f6a0cff5a40843cfb0afcc70c2
+      internalID: -2035456514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrasG
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1748
+        width: 117
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5000011, y: 0.788323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acaaee06ba3a7e64ebb5fb657fc3c24b
+      internalID: -1869987176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xE8che3"
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1478
+        width: 177
+        height: 201
+      alignment: 9
+      pivot: {x: 0.16810703, y: 0.7338108}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18eab3a9f01e15449b0ef40bfbeb116
+      internalID: 563474436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainG
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 1467
+        width: 147
+        height: 167
+      alignment: 9
+      pivot: {x: 0.61466473, y: 0.8027994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2e0e5c8c05be1448d837ef737af35b
+      internalID: 1426115610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TresseD2
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1517
+        width: 100
+        height: 219
+      alignment: 9
+      pivot: {x: 0.4578601, y: 0.80786914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920256bbec49a5f4bac979b44acd72c5
+      internalID: 991202176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrasD
+      rect:
+        serializedVersion: 2
+        x: 2418
+        y: 1450
+        width: 118
+        height: 181
+      alignment: 9
+      pivot: {x: 0.4309413, y: 0.8151424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9bf21c8d12529649b40f29120a74385
+      internalID: -192573642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainD
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 1531
+        width: 120
+        height: 173
+      alignment: 9
+      pivot: {x: 0.5593689, y: 0.7141339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55b170d239debb458417e731cec8c55
+      internalID: -392800026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TresseD3
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1354
+        width: 110
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a254c95cc278ce34499c2cab710d741c
+      internalID: -845523027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xE8che4"
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 1193
+        width: 175
+        height: 153
+      alignment: 9
+      pivot: {x: 0.7877307, y: 0.70843226}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cc459b0ef858a47944459bfbf947a1
+      internalID: -247245898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robe4
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 302
+        width: 370
+        height: 924
+      alignment: 9
+      pivot: {x: 0.73124635, y: 0.9387417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5ab2741024f80478f95c1cc1280f0c
+      internalID: -572409548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robe3
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 212
+        width: 154
+        height: 1026
+      alignment: 9
+      pivot: {x: 0.53968394, y: 0.9646184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63fb92e581c4e84db6320736802d70c
+      internalID: 1721397425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robe2
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 233
+        width: 282
+        height: 1042
+      alignment: 9
+      pivot: {x: 0.34829518, y: 0.9516189}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c69aff28323754392a09fa8512e2f8
+      internalID: -2124798393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sacoche
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 1113
+        width: 189
+        height: 237
+      alignment: 9
+      pivot: {x: 0.51077837, y: 0.89540017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e63be4d0a03894985289b05830a1f2
+      internalID: 163217390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robe1
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 356
+        width: 302
+        height: 1007
+      alignment: 9
+      pivot: {x: 0.27064928, y: 0.9329245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c206f1154bd9cf438fd97f84453b028
+      internalID: -398039646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TresseG1
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 540
+        width: 138
+        height: 338
+      alignment: 9
+      pivot: {x: 0.38190293, y: 0.8797095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f9d797d55ef0241892dea017dac667
+      internalID: 197982855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pendentif
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 700
+        width: 162
+        height: 294
+      alignment: 9
+      pivot: {x: 0.097595215, y: 0.8811037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192db37d43001a1408cbd9648622f686
+      internalID: -215771335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TresseG2
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 51
+        width: 117
+        height: 305
+      alignment: 9
+      pivot: {x: 0.5348234, y: 0.87403816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f3a35dbb7e3de40935920be7cd3228
+      internalID: 229360479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouche
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 142
+        width: 111
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae1473abca8c314ca524782e5207392
+      internalID: -1708014333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Bouche: -1708014333
+      BrasD: -192573642
+      BrasG: -1869987176
+      Corps: -509354697
+      EpauleD: -1170888332
+      EpauleG: -512085269
+      Illustration-sans-titre (19)_17: 476737643
+      Illustration-sans-titre (19)_18: -2137657239
+      Illustration-sans-titre (19)_19: 690927556
+      Illustration-sans-titre (19)_21: 1649835810
+      Illustration-sans-titre (19)_28: -486878293
+      Illustration-sans-titre (19)_3: -592989492
+      Illustration-sans-titre (19)_8: -1301767564
+      MainD: -392800026
+      MainG: 1426115610
+      "M\xE8che1": 1268729333
+      "M\xE8che2": -2035456514
+      "M\xE8che3": 563474436
+      "M\xE8che4": -247245898
+      "M\xE8cheHaut": 1126125705
+      Pendentif: -215771335
+      Robe1: -398039646
+      Robe2: -2124798393
+      Robe3: 1721397425
+      Robe4: -572409548
+      Sacoche: 163217390
+      Sort: -494415889
+      TresseD1: -1238276387
+      TresseD2: 991202176
+      TresseD3: -845523027
+      TresseG1: 197982855
+      TresseG2: 229360479
+      "T\xEAte": -717886335
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

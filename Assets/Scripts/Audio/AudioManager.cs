@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine.Rendering;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using Sequence = DG.Tweening.Sequence;
 
 public class AudioManager : MonoBehaviour
 {
@@ -187,6 +188,44 @@ public class AudioManager : MonoBehaviour
         }
         float vol = s.source.volume;
         s.source.volume = 0;
-        s.source.DOFade(vol, 5f).SetEase(Ease.Linear);
+        s.source.DOFade(vol, 2f).SetEase(testConnerie);
+    }
+
+    public void Fade(string name, string name2)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        Sound s2 = Array.Find(sounds, sound => sound.name == name2);
+
+        if (s == null || s2 == null)
+        {
+            Debug.LogWarning("Sound: " + name + "not Found");
+            return;
+        }
+        float vol = s2.source.volume;
+
+        s.source.DOFade(0f, 2f).SetEase(Ease.OutQuint);
+        Play(name2);
+        s2.source.volume = 0f;
+        s2.source.DOFade(vol, 2f).SetEase(Ease.InQuint).SetDelay(1f);
+    }
+
+    public void FadeToNextMusic(string currentSound, string nextSound)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == currentSound);
+        Sound s2 = Array.Find(sounds, sound => sound.name == nextSound);
+
+        if (s == null || s2 == null)
+        {
+            Debug.LogWarning("Sound: " + name + "not Found");
+            return;
+        }
+
+        Play(nextSound);
+        Pause(nextSound);
+        float vol = s2.source.volume;
+        s2.source.volume = 0f;
+        Debug.LogWarning("qsqsdqsdqs");
+        s.source.DOFade(0f, 1f).SetEase(Ease.OutQuint);
+        s.source.DOFade(vol, 1f).SetEase(Ease.InQuint).SetDelay(0.5f).OnStart(() => UnPause(nextSound));
     }
 }
