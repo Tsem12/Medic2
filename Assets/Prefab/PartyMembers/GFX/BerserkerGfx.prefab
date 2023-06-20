@@ -831,10 +831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a5c6f35cc59134ba7cf4fb397f4666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particulesHandeler: {fileID: 0}
-  AnimEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &4980710669258535949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1076,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566527343
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 3784614220864273766, guid: 811e8d985b1bdbf44a3058d2652fac9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

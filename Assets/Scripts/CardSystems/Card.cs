@@ -16,10 +16,8 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     [SerializeField] TextMeshPro tmpro;
     [SerializeField] ManaObject manaObject;
     [SerializeField] Sprite lockedSprite;
-    public bool isPlayingCard;
+    [SerializeField] bool isPlayingCard;
     bool effectWasApplied = false;
-    bool isHidden = false;
-    public bool wasSwitched = false;
 
 
     public void Init()
@@ -27,13 +25,9 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         if(isPlayingCard)
         {
             manaObject.manaAddTurn += CheckIfInteractable;
-            refs.fightManager.OnTurnEnd += DisableTurn;
+            refs.fightManager.OnTurnEnd += EndInteractable;
             manaObject.manaUpdate += CheckIfInteractable;
-            manaObject.manaUpdate += ManaUpdate;
-        }
-        else
-        {
-            HideCard();
+            manaObject.manaUpdate += EnableTurn;
         }
         refs.fightManager.OnTurnBegin += EnableTurn;
         handlerObject.switchCard += SwitchUpdate;
@@ -46,13 +40,15 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         if(isPlayingCard)
         {
             manaObject.manaAddTurn -= CheckIfInteractable;
-            refs.fightManager.OnTurnEnd -= DisableTurn;
+            refs.fightManager.OnTurnEnd -= EndInteractable;
             manaObject.manaUpdate -= CheckIfInteractable;
-            manaObject.manaUpdate -= ManaUpdate;
+            manaObject.manaUpdate -= EnableTurn;
         }
         refs.fightManager.OnTurnBegin -= EnableTurn;
         handlerObject.switchCard -= SwitchUpdate;
     }
+
+
 
     public void NotInit()
     {
@@ -91,7 +87,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         {
             if(ApplyEffect())
             {
-                DisableCard();
+                HideCard();
             }
             ResetPos();
         }
@@ -110,7 +106,7 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     void CheckIfInteractable()
     {
-        if(cardBase.manaCost <= cardBase.manaObject.currentMana && !effectWasApplied)
+        if(cardBase.manaCost <= cardBase.manaObject.currentMana)
         {
             transform.tag = "Grabbable";
         }
@@ -132,26 +128,29 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
 
     void EnableTurn()
     {
-        effectWasApplied = false;
-        wasSwitched = false;
-        CheckIfInteractable();
-        if (isPlayingCard)
+        if(isPlayingCard)
         {
             if (cardBase.manaCost <= cardBase.manaObject.currentMana)
             {
-                ShowCard();
+                col.enabled = true;
+                myRender.enabled = true;
+                usedRenderer.enabled = false;
+                effectWasApplied = false;
             }
             else
             {
-                DisableCard();
+                col.enabled = false;
+                myRender.enabled = false;
+                usedRenderer.enabled = true;
+                effectWasApplied = false;
             }
         }
         else
         {
-            if(isHidden)
-            {
-                isHidden = false;
-            }
+            col.enabled = true;
+            myRender.enabled = true;
+            usedRenderer.enabled = false;
+            effectWasApplied = false;
         }
     }
 
@@ -167,11 +166,12 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         }
         if (other != null)
         {
-            ExChangeCard(other);
-            other.DisableCard();
-            DisableCard();
-            wasSwitched = true;
-            other.wasSwitched = true;
+            if(!other.effectWasApplied)
+            {
+                ExChangeCard(other);
+                other.HideCard();
+                HideCard();
+            }
         }
     }
 
@@ -179,29 +179,13 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     {
         if(handlerObject.isChaningCards)
         {
-            transform.tag = "Grabbable";
-            if (!isPlayingCard)
+            if(!effectWasApplied)
             {
-                if(isHidden)
-                {
-                    DisableCard();
-                }
-                else
-                {
-                    ShowCard();
-                }
-            }
-            if (!wasSwitched)
-            {
-                col.enabled = true;
+                transform.tag = "Grabbable";
             }
         }
         else
         {
-            if(!isPlayingCard)
-            {
-                HideCard();
-            }
             CheckIfInteractable();
         }
     }
@@ -237,66 +221,15 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
         }
     }
 
-    void ShowCard()
-    {
-        col.enabled = true;
-        myRender.enabled = true;
-        usedRenderer.enabled = false;
-        tmpro.enabled = true;
-    }
-
-    void HideCard()
-    {
-        col.enabled = false;
-        myRender.enabled = false;
-        usedRenderer.enabled = false;
-        tmpro.enabled = false;
-    }
-
-    public void DisableCard()
+    public void HideCard()
     {
         col.enabled = false;
         myRender.enabled = false;
         usedRenderer.enabled = true;
-        tmpro.enabled = true;
-        isHidden = true;
     }
 
     public void ShowToolTip(ToolTip tooltip)
     {
         tooltip.ToolTipInfo(cardBase.cardName, cardBase.description, cardBase.cardSprite);
-    }
-
-    void DisableTurn()
-    {
-        HideCard();
-        myRender.enabled = true;
-        tmpro.enabled = true;
-    }
-
-    void ManaUpdate()
-    {
-        if(!effectWasApplied)
-        {
-            CheckIfInteractable();
-        }
-        if (isPlayingCard)
-        {
-            if (cardBase.manaCost <= cardBase.manaObject.currentMana && !effectWasApplied)
-            {
-                ShowCard();
-            }
-            else
-            {
-                DisableCard();
-            }
-        }
-        else
-        {
-            if (isHidden)
-            {
-                isHidden = false;
-            }
-        }
     }
 }

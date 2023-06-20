@@ -7,21 +7,21 @@ using UnityEngine.Windows;
 
 public class SetInputField : MonoBehaviour
 {
-    CardBase card;
+    CardBase cardBase;
     [SerializeField] TextMeshProUGUI tmpPro;
     [SerializeField] TMP_InputField input;
     [SerializeField] TextMeshProUGUI textButton;
 
     public void Init(CardBase cardBase)
     {
-        card = cardBase;
+        cardBase = cardBase;
         input.text = cardBase.manaCost.ToString();
         tmpPro.text = cardBase.name;
     }
 
     public void Set()
     {
-        card.manaCost = int.Parse(input.text);
+        cardBase.manaCost = int.Parse(input.text);
     }
 
     public void EnableSwitch()

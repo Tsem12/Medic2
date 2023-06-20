@@ -32,12 +32,12 @@ public class GameManager : MonoBehaviour
     
     public void LoadMenu()
     {
-        SceneManager.LoadSceneAsync("Menu");
+        SceneManager.LoadScene("Menu");
     }
 
     public void LoadGame()
     {
-        SceneManager.LoadSceneAsync("Game");
+        SceneManager.LoadScene("Game");
     }
 
     public void ToggleMenu()

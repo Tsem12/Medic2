@@ -26,14 +26,6 @@ public class DataSetter : MonoBehaviour
         }
     }
 
-    public void Reconnectvalue()
-    {
-        foreach(DataType item in _dataTypes)
-        {
-            ConnectValues(item);
-        }
-    }
-
     private void ConnectValues(DataType item)
     {
         switch (item)

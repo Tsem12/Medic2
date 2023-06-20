@@ -16,7 +16,6 @@ MonoBehaviour:
   description: 
   attackSpriteOverRide: {fileID: 21300000, guid: da59d4e10763dda49bd995398a960298, type: 3}
   attackAnimIndex: 2
-  attackSound: AttackCatLanding
   isShuffle: 0
   isLifeSteal: 0
   atkDamage: 0

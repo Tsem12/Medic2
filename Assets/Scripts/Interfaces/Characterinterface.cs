@@ -33,7 +33,5 @@ public interface ICharacter
     public void ClearAllStatus();
     public void UpdateBar();
     public ParticulesHandeler GetParticulHandeler();
-    public CharacterObjets getCharaObj();
-    public MessageBehaviour GetMessageBehaviour();
 }
 

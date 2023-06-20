@@ -244,7 +244,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566527343
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -7948625690457822116, guid: 19ba8ec055d027c4396ebf8c33c13736, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1392,7 +1392,7 @@ Transform:
   - {fileID: 8260932768542737147}
   - {fileID: 2707384439266822425}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8190082613197829903
 Animator:
@@ -1427,10 +1427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a5c6f35cc59134ba7cf4fb397f4666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particulesHandeler: {fileID: 0}
-  AnimEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &7476398653757223564
 GameObject:
   m_ObjectHideFlags: 0

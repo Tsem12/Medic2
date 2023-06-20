@@ -24,7 +24,7 @@ public class LevelMenu : MonoBehaviour
     {
         audioManager.Play("ButtonPress1");
         string levelName = "Game";
-        SceneManager.LoadSceneAsync(levelName);
+        SceneManager.LoadScene(levelName);
     }
 
     public void SwitchDifficulty()

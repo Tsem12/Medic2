@@ -12,23 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: PARTYBerserker
   m_EditorClassIdentifier: 
-  bossType: 0
-  inGameName: 
-  happyFace: {fileID: 0}
-  angryFace: {fileID: 0}
-  messages:
-  - name: 
-    messageType: 15
-    messages:
-    - bossType: 0
-      expression: 0
-      localizationKey: HowToPlayMenu.Window3.Title
-    - bossType: 0
-      expression: 0
-      localizationKey: HowToPlayMenu.Window4.Title
-    - bossType: 0
-      expression: 0
-      localizationKey: HowToPlayMenu.Window2.Title
   maxHealth: 4
   numberOfHealthBar: 1
   baseSpeed: 50
@@ -40,7 +23,6 @@ MonoBehaviour:
     - nrbOfTargets: 1
       attackConditionsMode: 1
       selfStatus: 0
-      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: 8ce9126d1e700e94c91fc90a3b8ec101, type: 2}
       condition: 0

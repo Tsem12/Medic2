@@ -14,13 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: 
   description: 
-  attackSpriteOverRide: {fileID: 0}
-  attackAnimIndex: 0
-  attackSound: AttackBerserker
-  isShuffle: 0
-  isLifeSteal: 0
+  attackSprite: {fileID: 0}
   atkDamage: 4
-  animDuration: 0
   attackEffects: 0
   dotAttacks: 0
   buff: 0

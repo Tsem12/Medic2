@@ -16,12 +16,12 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-
-
         foreach (var item in cardDeck.GetComponentsInChildren<Card>())
         {
             cardsGame.Add(item);
         }
+
+
 
         foreach (var item in cardsBases)
         {
@@ -37,25 +37,25 @@ public class CardManager : MonoBehaviour
             }
         }
 
-        Stack<CardBase> removeDeck = new Stack<CardBase>();
+        List<CardBase> removeDeck = new List<CardBase>();
         foreach (var item in removeLocked)
         {
             if(!deckBuilder.deck.Contains(item))
             {
-                removeDeck.Push(item);
+                removeDeck.Add(item);
             }
         }
 
-        foreach (var item in cardsHiden)
+        for (int i = 0; i < cardsHiden.Count; i++)
         {
-            if(removeDeck.Count > 0)
+            if(i > removeDeck.Count - 1)
             {
-                item.cardBase = removeDeck.Pop();
-                item.Init();
+                cardsHiden[i].NotInit();
             }
             else
             {
-                item.NotInit();
+                cardsHiden[i].cardBase = removeDeck[i];
+                cardsHiden[i].Init();
             }
         }
 

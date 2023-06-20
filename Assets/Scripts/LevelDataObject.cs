@@ -22,7 +22,7 @@ public class LevelDataObject : ScriptableObject
         EndLess
     }
 
-    public int currentSceneIndex { get;  set; }
+    public int currentSceneIndex { get; private set; }
     public LevelData[] levels;
     public Difficulty difficulty;
 

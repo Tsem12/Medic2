@@ -6,19 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterObjects", menuName = "Characters/CharacterObjects")]
 public class CharacterObjets : ScriptableObject
 {
-    public enum BossType
-    {
-        None,
-        Orc,
-        Cat,
-        Kraqueen,
-        Mage
-    }
-    public BossType bossType;
     public string inGameName;
-    public Sprite happyFace;
-    public Sprite angryFace;
-    public Message[] messages;
     [Header("Stats")]
     [Space]
 
@@ -33,5 +21,8 @@ public class CharacterObjets : ScriptableObject
 
     public AttacksPatern[] attacksPatern;
     public AttackEvent[] attacksEvent;
+
+
+
 
 }
