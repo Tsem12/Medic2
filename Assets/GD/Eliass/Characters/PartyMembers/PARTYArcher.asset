@@ -14,28 +14,138 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossType: 0
   inGameName: 
+  happyFace: {fileID: 0}
+  angryFace: {fileID: 0}
   messages:
-  - name: 
+  - name: AFK
     messageType: 13
     messages:
     - bossType: 0
       expression: 0
-      localizationKey: HowToPlayMenu.Window4.Title
+      localizationKey: ArcherAFK.Text1
     - bossType: 0
       expression: 0
-      localizationKey: HowToPlayMenu.Window2.Title
-    - bossType: 0
-      expression: 0
-      localizationKey: HowToPlayMenu.Window3.Title
-  - name: 
+      localizationKey: ArcherAFK.Text2
+  - name: Death
     messageType: 11
     messages:
     - bossType: 0
       expression: 0
-      localizationKey: OptionMenu.Button.Credits
-  happyFace: {fileID: 21300000, guid: 7e3d770d72a1c5344aacd54af4be9fef, type: 3}
-  angryFace: {fileID: 21300000, guid: d4c6b0d430c486c4692e05dd47bb5b27, type: 3}
-  disguestedFace: {fileID: 21300000, guid: 491f9ebc13db84e45a320d7aafd5a4d8, type: 3}
+      localizationKey: ArcherDeath.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherDeath.Text2
+  - name: Revive
+    messageType: 12
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherRevive.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherRevive.Text2
+  - name: Heal
+    messageType: 14
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherHealed.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherHealed.Text2
+  - name: Shielded
+    messageType: 2
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherShield.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherShield.Text2
+  - name: Strengthened
+    messageType: 0
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherStrength.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherStrength.Text2
+  - name: Initiative
+    messageType: 1
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherInitiative.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherInitiative.Text2
+  - name: Poison
+    messageType: 4
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherPoison.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherPoison.Text2
+  - name: Burning
+    messageType: 5
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherBurning.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherBurning.Text2
+  - name: Restrained
+    messageType: 7
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherRestrain.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherRestrain.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherRestrain.Text3
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherRestrain.Text4
+  - name: Disapeared
+    messageType: 9
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherDisappeared.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherDisappeared.Text2
+  - name: Stunned
+    messageType: 8
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherStun.Text1
+  - name: Sleeped
+    messageType: 6
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherSleep.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherSleep.Text2
+  - name: Fatigue
+    messageType: 3
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherFatigue.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: ArcherFatigue.Text2
   maxHealth: 3
   numberOfHealthBar: 1
   baseSpeed: 75

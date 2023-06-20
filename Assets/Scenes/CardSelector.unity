@@ -1118,15 +1118,15 @@ RectTransform:
   m_GameObject: {fileID: 565267842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 375.59286, y: 363.4768, z: 323.09067}
+  m_LocalScale: {x: 375.59302, y: 363.4768, z: 323.09076}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1339147323}
+  m_Father: {fileID: 636224716}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 455, y: 140}
+  m_AnchoredPosition: {x: -111.66675, y: 140}
   m_SizeDelta: {x: 0.342, y: 0.3487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565267844
@@ -1290,15 +1290,15 @@ RectTransform:
   m_GameObject: {fileID: 578109038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 375.59283, y: 363.4768, z: 323.09064}
+  m_LocalScale: {x: 375.59286, y: 363.4768, z: 323.09067}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 636224716}
+  m_Father: {fileID: 1339147323}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -687, y: 122}
+  m_AnchoredPosition: {x: -120.33325, y: 122}
   m_SizeDelta: {x: 0.342, y: 0.3487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578109040
@@ -1468,7 +1468,7 @@ RectTransform:
   m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 578109039}
+  - {fileID: 565267843}
   m_Father: {fileID: 672061946}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1492,7 +1492,7 @@ MonoBehaviour:
   image: {fileID: 636224719}
   deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
   card: {fileID: 11400000, guid: 58eada093cc814c45a2ef0688cb3b1fa, type: 2}
-  text: {fileID: 578109040}
+  text: {fileID: 565267844}
 --- !u!114 &636224718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,7 +1933,7 @@ RectTransform:
   m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1508556704}
+  - {fileID: 810495428}
   m_Father: {fileID: 672061946}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1957,7 +1957,7 @@ MonoBehaviour:
   image: {fileID: 720881249}
   deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
   card: {fileID: 11400000, guid: ea2e299793ff66341a7cd50b64c895ca, type: 2}
-  text: {fileID: 1508556705}
+  text: {fileID: 810495429}
 --- !u!114 &720881248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2149,7 +2149,7 @@ RectTransform:
   m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1537079034}
+  - {fileID: 1508556704}
   m_Father: {fileID: 672061946}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2173,7 +2173,7 @@ MonoBehaviour:
   image: {fileID: 776580294}
   deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
   card: {fileID: 11400000, guid: 7543cb9c7dad2de4987f3cbf260427d8, type: 2}
-  text: {fileID: 1537079035}
+  text: {fileID: 1508556705}
 --- !u!114 &776580293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2359,15 +2359,15 @@ RectTransform:
   m_GameObject: {fileID: 810495427}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 375.5927, y: 363.4768, z: 323.09055}
+  m_LocalScale: {x: 375.59277, y: 363.4768, z: 323.09058}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1808148270}
+  m_Father: {fileID: 720881246}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 453, y: 140}
+  m_AnchoredPosition: {x: -113.66675, y: 140}
   m_SizeDelta: {x: 0.342, y: 0.3487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &810495429
@@ -3110,7 +3110,7 @@ MonoBehaviour:
   image: {fileID: 898137408}
   deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
   card: {fileID: 11400000, guid: 82ad67692f3228e40811fa2077f71c5d, type: 2}
-  text: {fileID: 829877550}
+  text: {fileID: 838072054}
 --- !u!114 &898137407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3667,7 +3667,7 @@ MonoBehaviour:
   image: {fileID: 1323014812}
   deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
   card: {fileID: 11400000, guid: 61b587279f3b46940a3ce666ce301e17, type: 2}
-  text: {fileID: 838072054}
+  text: {fileID: 829877550}
 --- !u!114 &1323014811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3859,7 +3859,7 @@ RectTransform:
   m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 565267843}
+  - {fileID: 578109039}
   m_Father: {fileID: 672061946}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3883,7 +3883,7 @@ MonoBehaviour:
   image: {fileID: 1339147326}
   deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
   card: {fileID: 11400000, guid: 3d62d309dcf860747942befd6f6f6e3a, type: 2}
-  text: {fileID: 565267844}
+  text: {fileID: 578109040}
 --- !u!114 &1339147325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4069,15 +4069,15 @@ RectTransform:
   m_GameObject: {fileID: 1508556703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 375.59277, y: 363.4768, z: 323.09058}
+  m_LocalScale: {x: 375.5928, y: 363.4768, z: 323.0906}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 720881246}
+  m_Father: {fileID: 776580291}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 451, y: 140}
+  m_AnchoredPosition: {x: -115.66675, y: 140}
   m_SizeDelta: {x: 0.342, y: 0.3487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1508556705
@@ -4241,15 +4241,15 @@ RectTransform:
   m_GameObject: {fileID: 1537079033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 375.59268, y: 363.47678, z: 323.0905}
+  m_LocalScale: {x: 375.5927, y: 363.4768, z: 323.09055}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 776580291}
+  m_Father: {fileID: 1808148270}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1248, y: 140}
+  m_AnchoredPosition: {x: -114.666504, y: 140}
   m_SizeDelta: {x: 0.342, y: 0.3487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537079035
@@ -4822,7 +4822,7 @@ RectTransform:
   m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 810495428}
+  - {fileID: 1537079034}
   m_Father: {fileID: 672061946}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4846,7 +4846,7 @@ MonoBehaviour:
   image: {fileID: 1808148273}
   deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
   card: {fileID: 11400000, guid: 1295ef1b0b90a23418b63b863713dc6e, type: 2}
-  text: {fileID: 810495429}
+  text: {fileID: 1537079035}
 --- !u!114 &1808148272
 MonoBehaviour:
   m_ObjectHideFlags: 0

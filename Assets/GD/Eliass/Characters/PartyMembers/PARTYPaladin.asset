@@ -17,18 +17,173 @@ MonoBehaviour:
   happyFace: {fileID: 0}
   angryFace: {fileID: 0}
   messages:
-  - name: 
-    messageType: 15
+  - name: Shield
+    messageType: 2
     messages:
     - bossType: 0
       expression: 0
-      localizationKey: HowToPlayMenu.Window2.Title
+      localizationKey: PaladinShield.Text1
     - bossType: 0
       expression: 0
-      localizationKey: HowToPlayMenu.Window4.Title
+      localizationKey: 'PaladinShield.Text2
+
+'
+  - name: Strength
+    messageType: 0
+    messages:
     - bossType: 0
       expression: 0
-      localizationKey: HowToPlayMenu.Window3.Title
+      localizationKey: PaladinStrength.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: 'PaladinStrength.Text1
+
+'
+  - name: Initiative
+    messageType: 1
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinInitiative.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: 'PaladinInitiative.Text2
+
+'
+  - name: Taunt
+    messageType: 2
+    messages:
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinProvoking.Text1
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinProvoking.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: 'PaladinProvoking.Text3
+
+'
+  - name: Poison
+    messageType: 4
+    messages:
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinPoison.Text1
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinPoison.Text2
+  - name: Burn
+    messageType: 5
+    messages:
+    - bossType: 0
+      expression: 1
+      localizationKey: 'PaladinBurning.Text1
+
+'
+    - bossType: 0
+      expression: 0
+      localizationKey: 'PaladinBurning.Text2
+
+
+'
+  - name: Restrain
+    messageType: 7
+    messages:
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinRestrain.Text1
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinRestrain.Text1
+  - name: Disappeared
+    messageType: 9
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinDisappeared.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: 'PaladinDisappeared.Text2
+
+'
+  - name: Stun
+    messageType: 8
+    messages:
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinStun.Text1
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinStun.Text2
+  - name: Sleep
+    messageType: 6
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinSleep.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinSleep.Text2
+  - name: Fatigue
+    messageType: 3
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinFatigue.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: 'PaladinFatigue.Text2
+
+'
+  - name: AFK
+    messageType: 13
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinAFK.Text1
+    - bossType: 0
+      expression: 1
+      localizationKey: 'PaladinAFK.Text2
+
+'
+    - bossType: 0
+      expression: 1
+      localizationKey: 'PaladinAFK.Text3
+
+'
+  - name: Death
+    messageType: 11
+    messages:
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinDeath.Text1
+    - bossType: 0
+      expression: 1
+      localizationKey: PaladinDeath.Text2
+  - name: Revived
+    messageType: 12
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinRevive.Text1
+    - bossType: 0
+      expression: 1
+      localizationKey: 'PaladinRevive.Text2
+
+
+'
+  - name: Heal
+    messageType: 14
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinHealed.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: 'PaladinHealed.Text2
+
+'
   maxHealth: 6
   numberOfHealthBar: 1
   baseSpeed: 25

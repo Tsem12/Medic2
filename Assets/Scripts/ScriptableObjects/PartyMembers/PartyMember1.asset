@@ -12,6 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: PartyMember1
   m_EditorClassIdentifier: 
+  bossType: 0
+  inGameName: 
+  happyFace: {fileID: 0}
+  angryFace: {fileID: 0}
+  messages:
+  - name: Strengthened
+    messageType: 0
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerStrength.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerStrength.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerStrength.Text3
+  - name: Afk
+    messageType: 13
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerAFK.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerAFK.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerAFK.Text3
   maxHealth: 4
   numberOfHealthBar: 1
   baseSpeed: 15
@@ -23,6 +52,7 @@ MonoBehaviour:
     - nrbOfTargets: 1
       attackConditionsMode: 0
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: 1ee55a77b4a67564a914f6db6e290cb6, type: 2}
       condition: 0

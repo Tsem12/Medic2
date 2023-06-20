@@ -12,6 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: PartyMember3
   m_EditorClassIdentifier: 
+  bossType: 0
+  inGameName: 
+  happyFace: {fileID: 0}
+  angryFace: {fileID: 0}
+  messages:
+  - name: 
+    messageType: 13
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinAFK.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinAFK.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: PaladinAFK.Text3
   maxHealth: 7
   numberOfHealthBar: 1
   baseSpeed: 12
@@ -23,6 +40,7 @@ MonoBehaviour:
     - nrbOfTargets: 1
       attackConditionsMode: 0
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: dadc878999028ed468e0a4ceb6404ad8, type: 2}
       condition: 0
