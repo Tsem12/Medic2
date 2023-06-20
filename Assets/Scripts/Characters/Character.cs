@@ -54,7 +54,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public Transform CharacterGfx { get => characterGfx; set => characterGfx = value; }
     public MessageBehaviour Message { get => message; set => message = value; }
     public Health Health { get => health; set => health = value; }
-    protected List<AttacksObject> IncomingAttacks { get => incomingAttacks; }
+    public List<AttacksObject> IncomingAttacks { get => incomingAttacks; }
 
     private List<Status> _statusList = new List<Status>();
 

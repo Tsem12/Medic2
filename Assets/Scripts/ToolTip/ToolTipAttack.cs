@@ -8,6 +8,13 @@ public class ToolTipAttack : MonoBehaviour, IToolTip
 
     public void ShowToolTip(ToolTip tooltip)
     {
-        character.
+        List <(string name, string desc, Sprite toolTipImage)> list = new List<(string name, string desc, Sprite toolTipImage)>();
+
+        foreach (var item in character.IncomingAttacks)
+        {
+            list.Add((item.attackName,item.description,item.attackSpriteOverRide));
+        }
+        
+        tooltip.ToolTipMultiInfo(list);
     }
 }
