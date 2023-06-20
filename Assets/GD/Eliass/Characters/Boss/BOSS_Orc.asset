@@ -17,7 +17,7 @@ MonoBehaviour:
   happyFace: {fileID: 0}
   angryFace: {fileID: 0}
   messages: []
-  maxHealth: 2
+  maxHealth: 15
   numberOfHealthBar: 3
   baseSpeed: 100
   baseAgroValue: 0
