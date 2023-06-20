@@ -32,7 +32,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     [Header("Health")]
     protected int _maxHealth;
-    protected int _currentHealth;
+    public int _currentHealth;
     protected bool _isDead;
 
     [Header("Attacks")]

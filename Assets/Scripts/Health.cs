@@ -88,6 +88,7 @@ public class Health : MonoBehaviour
                 _healthBars.Add(obj);
             }
         }
+        _character.SetCurrentHealth(_character.GetMaxHealth());
         _currentHealthBarAmount = _character.GetMaxHealthBar();
     }
 
