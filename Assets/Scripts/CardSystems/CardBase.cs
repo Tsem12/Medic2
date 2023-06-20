@@ -54,7 +54,7 @@ public class CardBase : ScriptableObject
     {
         get
         {
-            return cardBehaviour == CardBehaviour.regeneration || cardBehaviour == CardBehaviour.resonanceShield;
+            return cardBehaviour == CardBehaviour.regeneration || cardBehaviour == CardBehaviour.resonanceShield || cardBehaviour == CardBehaviour.blessingOfStrength;
         }
     }
 
@@ -87,7 +87,7 @@ public class CardBase : ScriptableObject
         {
 
             case CardBehaviour.heal:
-                if(partyMember.GetCurrentHealth() == partyMember.GetMaxHealth())
+                if(partyMember.GetCurrentHealth() == partyMember.GetMaxHealth() || !partyMember.IsDead())
                 {
                     return false;
                 }
@@ -158,7 +158,7 @@ public class CardBase : ScriptableObject
                 break;
 
             case CardBehaviour.blessingOfStrength:
-                partyMember.AddStatus(new Status(Status.StatusEnum.Strengthened,1,damageAdded));
+                partyMember.AddStatus(new Status(Status.StatusEnum.Strengthened, turnActive, damageAdded));
                 partyMember.GetParticulHandeler().ActiveEffect(Status.StatusEnum.Strengthened);
                 break;
         }
