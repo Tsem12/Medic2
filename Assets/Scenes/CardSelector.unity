@@ -256,6 +256,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &69053580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: --TooltipCanva--
       objectReference: {fileID: 0}
+    - target: {fileID: 3072399912971131140, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3967370520604205352, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
       propertyPath: m_Camera
       value: 
@@ -468,6 +484,58 @@ PrefabInstance:
     - target: {fileID: 7036435437020074621, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
       propertyPath: m_fontSizeBase
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148310451031465464, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148310451031465464, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148310451031465464, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148310451031465464, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836021859689939390, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836021859689939390, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836021859689939390, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836021859689939390, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480654038746841422, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480654038746841422, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480654038746841422, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480654038746841422, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661793398345902735, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -605.29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -628,6 +696,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 344095708}
           m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -911,6 +991,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &636224719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,7 +1165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1362,6 +1454,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &720881249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1559,6 +1663,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 344095708}
           m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1971,6 +2087,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &898137408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2036,6 +2164,7 @@ GameObject:
   - component: {fileID: 1042561098}
   - component: {fileID: 1042561100}
   - component: {fileID: 1042561099}
+  - component: {fileID: 1042561101}
   m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
@@ -2077,7 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2102,6 +2231,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042561097}
   m_CullTransparentMesh: 1
+--- !u!114 &1042561101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042561097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60d9d6cab020dc40863a7f31a6dc412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1042561099}
+  backButton: {fileID: 647198292}
+  deck: {fileID: 11400000, guid: 0b689dcd8f33af84f8f056bb8aac5b85, type: 2}
 --- !u!1 &1191824060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,6 +2470,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1323014812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2523,6 +2679,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 344095708}
           m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2730,6 +2898,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1710216877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2843,7 +3023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1/4
+  m_text: 0/4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7d2ef42103943e74999853db8caa87a1, type: 2}
   m_sharedMaterial: {fileID: 1549591744609203322, guid: 7d2ef42103943e74999853db8caa87a1, type: 2}
@@ -3114,6 +3294,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 344095708}
           m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1042561101}
+        m_TargetAssemblyTypeName: GreyButton, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
