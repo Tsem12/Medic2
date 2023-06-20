@@ -12,6 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: PARTYArcher
   m_EditorClassIdentifier: 
+  bossType: 0
+  inGameName: 
+  happyFace: {fileID: 0}
+  angryFace: {fileID: 0}
+  messages:
+  - name: 
+    messageType: 13
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: HowToPlayMenu.Window4.Title
+    - bossType: 0
+      expression: 0
+      localizationKey: HowToPlayMenu.Window2.Title
+    - bossType: 0
+      expression: 0
+      localizationKey: HowToPlayMenu.Window3.Title
+  - name: 
+    messageType: 11
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: OptionMenu.Button.Credits
   maxHealth: 3
   numberOfHealthBar: 1
   baseSpeed: 75
@@ -23,6 +46,7 @@ MonoBehaviour:
     - nrbOfTargets: 1
       attackConditionsMode: 1
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
       condition: 0
@@ -33,6 +57,7 @@ MonoBehaviour:
     - nrbOfTargets: 1
       attackConditionsMode: 1
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
       condition: 0
@@ -43,6 +68,7 @@ MonoBehaviour:
     - nrbOfTargets: 1
       attackConditionsMode: 1
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
       condition: 0
@@ -56,6 +82,7 @@ MonoBehaviour:
     - nrbOfTargets: 1
       attackConditionsMode: 1
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: 66f3e02d542fda3468c6618964197d52, type: 2}
       condition: 0
@@ -69,6 +96,7 @@ MonoBehaviour:
     - nrbOfTargets: 1
       attackConditionsMode: 1
       selfStatus: 0
+      selfStatusDuration: 0
       attack:
       - {fileID: 11400000, guid: abcdbf30449cbdb4b8172d6ecb668a6f, type: 2}
       condition: 0

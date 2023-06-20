@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 using NaughtyAttributes;
 using System.Linq;
 using static UnityEngine.Rendering.DebugUI;
+using Random = UnityEngine.Random;
 
 public class FightManager : MonoBehaviour
 {
@@ -26,10 +27,14 @@ public class FightManager : MonoBehaviour
     [SerializeField] private Enemie _enemie;
     [SerializeField] private PartyMember[] _partyMembers;
     [SerializeField] private Image _playerSlider;
+    [SerializeField] private Image _switchCardButton;
     [SerializeField] private GameObject _endTurnButton;
     [SerializeField] private ParticleSystem _shuffleParticles;
+    [SerializeField] private ParticleSystem _switchBossParticles;
+    [SerializeField] private DataSetter[] _dataSetters;
 
     [SerializeField] private float _playerTimeToPlay;
+    [SerializeField] private int _chanceToTriggerDialogue;
     private float _currentPlayerTimeToPlay;
 
     private int _globalAgro;
@@ -101,13 +106,18 @@ public class FightManager : MonoBehaviour
     public List<ICharacter> PartyMembersList { get => _partyMembersList; set => _partyMembersList = value; }
     public List<ICharacter> CharacterList { get => _characterList; set => _characterList = value; }
     public ParticleSystem ShuffleParticles { get => _shuffleParticles; set => _shuffleParticles = value; }
+    public int ChanceToTriggerAfxDialogue { get => _chanceToTriggerDialogue; set => _chanceToTriggerDialogue = value; }
 
     private void Start()
     {
         _currentPlayerTimeToPlay = _playerTimeToPlay;
-        if(_levelData.difficulty == LevelDataObject.Difficulty.Easy)
+        if(_levelData.difficulty == LevelDataObject.Difficulty.Easy || _levelData.difficulty == LevelDataObject.Difficulty.EndLess)
         {
-            _playerSlider.gameObject.SetActive(false);
+            _playerSlider.gameObject.transform.parent.gameObject.SetActive(false);
+        }
+        else if (_levelData.difficulty == LevelDataObject.Difficulty.Hard)
+        {
+            _switchCardButton.gameObject.SetActive(false);
         }
 
 
@@ -232,23 +242,38 @@ public class FightManager : MonoBehaviour
         _endTurnButton.SetActive(true);
         if (_enableDebug)
             Debug.Log("Player turn start");
+
+        float thinkingTime = 0f;
         while (true)
         {
 
             // player turn logic
-
-            if (_levelData.difficulty != LevelDataObject.Difficulty.Easy)
+            thinkingTime += Time.deltaTime;
+            if(thinkingTime >= 2f)
+            {
+                thinkingTime = 0;
+                int random = Random.Range(0, ChanceToTriggerAfxDialogue + 1);
+                if(random == 0)
+                {
+                    ICharacter chara = PartyMembersList[Random.Range(0, PartyMembersList.Count)];
+                    if (!chara.IsDead())
+                    {
+                        chara.GetMessageBehaviour().DisplayMessage(Message.MessageType.Afk, chara.getCharaObj(), _enemie.CharacterObj.bossType);
+                    }
+                }
+            }
+            if (_levelData.difficulty == LevelDataObject.Difficulty.Hard)
             { 
                 _currentPlayerTimeToPlay -= Time.deltaTime;
             }
-            if(_playerSlider != null && _levelData.difficulty != LevelDataObject.Difficulty.Easy)
+            if(_playerSlider != null && _levelData.difficulty != LevelDataObject.Difficulty.Hard)
             {
                 _playerSlider.fillAmount = _currentPlayerTimeToPlay / _playerTimeToPlay;
             }
             if (_currentPlayerTimeToPlay <= 0 || _endTurn)
             {
                 _endTurn = false;
-                if(_levelData.difficulty != LevelDataObject.Difficulty.Easy)
+                if(_levelData.difficulty != LevelDataObject.Difficulty.Hard)
                 {
                     _currentPlayerTimeToPlay = _playerTimeToPlay;
                 }
@@ -276,7 +301,7 @@ public class FightManager : MonoBehaviour
             {
                 if (_enableDebug)
                     Debug.Log("Boss defeated");
-                    _refs.gameManager.ToggleMenu(true);
+                Win();
                 yield break;
             }
 
@@ -314,8 +339,7 @@ public class FightManager : MonoBehaviour
         {
             if (_enableDebug)
                 Debug.Log("Boss defeated");
-            _refs.gameManager.ToggleMenu(true);
-            OnWin?.Invoke();
+            Win();
             yield break;
         }
 
@@ -330,6 +354,41 @@ public class FightManager : MonoBehaviour
             _refs.gameManager.ToggleMenu(true);
             _enemie.ClearAllStatus();
         }
+    }
+
+    private void Win()
+    {
+        if(_levelData.difficulty == LevelDataObject.Difficulty.EndLess)
+        {
+            StartCoroutine(StartNewBossRoutine());
+        }
+        else
+        {
+            _refs.gameManager.ToggleMenu(true);
+        }
+        OnWin?.Invoke();
+    }
+
+    IEnumerator StartNewBossRoutine()
+    {
+        _switchBossParticles.Play();
+
+        string currentMusic = _levelData.levels[_levelData.currentSceneIndex].themeName;
+
+        yield return new WaitForSeconds(0.1f);
+        _levelData.currentSceneIndex = (_levelData.currentSceneIndex + 1) % (_levelData.levels.Length);
+        foreach (DataSetter data in _dataSetters)
+        {
+            data.Reconnectvalue();
+        }
+
+        //_refs.audioManager.FadeToNextMusic(currentMusic, _levelData.levels[_levelData.currentSceneIndex].themeName);
+        _refs.audioManager.Fade(currentMusic, _levelData.levels[_levelData.currentSceneIndex].themeName);
+        _enemie.AssignValues();
+        CharacterList.Add(_enemie.GetComponent<ICharacter>());
+        yield return new WaitForEndOfFrame();
+        _enemie.Health.ResetHealth();
+        StartTurn();
     }
 
     #region sort

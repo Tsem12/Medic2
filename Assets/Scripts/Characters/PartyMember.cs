@@ -117,7 +117,7 @@ public class PartyMember : Character, IHealable
 
     public void Heal(int value)
     {
-        _health.Heal(value, true);
+        Health.Heal(value, true);
     }
 
 
