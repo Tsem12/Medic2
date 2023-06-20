@@ -16,9 +16,11 @@ public class CharacterObjets : ScriptableObject
     }
     public BossType bossType;
     public string inGameName;
+    public Message[] messages;
+    [Header("Icons")]
     public Sprite happyFace;
     public Sprite angryFace;
-    public Message[] messages;
+    public Sprite disguestedFace;
     [Header("Stats")]
     [Space]
 

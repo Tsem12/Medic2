@@ -15,10 +15,13 @@ namespace Assets.SimpleLocalization
         {
             Localize();
             LocalizationManager.LocalizationChanged += Localize;
+        }
+        private void Reset()
+        {
             if(GetComponent<Text>() == null)
             {
                 gameObject.AddComponent<TextMeshProUGUI>();
-            }
+            }            
         }
 
         public void OnDestroy()

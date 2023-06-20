@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class MessageBehaviour : MonoBehaviour
 {
-    [SerializeField] private Text _text;
+    [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private LocalizedText _textLocalisation;
     [SerializeField] private Image _icon;
     [SerializeField] private RectTransform _gfx;
@@ -21,12 +21,13 @@ public class MessageBehaviour : MonoBehaviour
     private Tween _appearTween;
     private Tween _disappearTween;
 
-    public Sprite test;
+    private Vector3 _baseScale;
 
     private void Awake()
     {
         _character = GetComponentInParent<Character>();
         initScale = Vector3.zero;
+        _baseScale = _gfx.localScale;
     }
 
     private MessageBody GetMessage(Message.MessageType messageType, CharacterObjets chara, CharacterObjets.BossType bossType)
@@ -80,13 +81,13 @@ public class MessageBehaviour : MonoBehaviour
     {
         _gfx.gameObject.SetActive(true);
         _gfx.localScale = Vector3.zero;
-        _appearTween = _gfx.DOScale(Vector3.one, 0.5f).SetEase(Ease.InOutCubic);
+        _appearTween = _gfx.DOScale(_baseScale, 0.5f).SetEase(Ease.InOutCubic);
     }
 
     [Button]
     public void Disapear()
     {
-        _gfx.localScale = Vector3.one;
+        _gfx.localScale = _baseScale;
         _disappearTween = _gfx.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InOutCubic).OnComplete(() => _gfx.gameObject.SetActive(false));
 
     }
@@ -100,10 +101,21 @@ public class MessageBehaviour : MonoBehaviour
 
         _textLocalisation.LocalizationKey = message.localizationKey;
         _textLocalisation.Localize();
-        _icon.sprite = message.expression == MessageBody.Expression.Happy ? _character.CharacterObj.happyFace : _character.CharacterObj.angryFace;
+        switch (message.expression)
+        {
+            case MessageBody.Expression.Happy:
+                _icon.sprite = _character.CharacterObj.happyFace;
+                break;
+            case MessageBody.Expression.Angry:
+                _icon.sprite = _character.CharacterObj.angryFace;
+                break;
+            case MessageBody.Expression.Disgusted:
+                _icon.sprite = _character.CharacterObj.disguestedFace;
+                break;
+        }
 
         Appear();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         Disapear();
         _messageCoroutine = null;
     }

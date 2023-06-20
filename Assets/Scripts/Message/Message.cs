@@ -32,7 +32,8 @@ public class MessageBody
     public enum Expression
     {
         Happy,
-        Angry
+        Angry,
+        Disgusted
     }
     public CharacterObjets.BossType bossType;
     public Expression expression;

@@ -14,21 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossType: 0
   inGameName: 
-  happyFace: {fileID: 0}
-  angryFace: {fileID: 0}
   messages:
   - name: 
-    messageType: 15
+    messageType: 13
     messages:
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: HowToPlayMenu.Window3.Title
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: HowToPlayMenu.Window4.Title
     - bossType: 0
       expression: 0
       localizationKey: HowToPlayMenu.Window2.Title
+  happyFace: {fileID: 21300000, guid: 2b5f0d822a952e547acc4a61403e5681, type: 3}
+  angryFace: {fileID: 21300000, guid: 97e803c2e0cf59545927d2d74722b0ba, type: 3}
+  disguestedFace: {fileID: 21300000, guid: 859fcd830058cbf4d8871df5f776a7bc, type: 3}
   maxHealth: 4
   numberOfHealthBar: 1
   baseSpeed: 50
