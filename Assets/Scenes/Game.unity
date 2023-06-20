@@ -1914,7 +1914,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 1748c55aa6cf4814d9b65a7f251e2e6b, type: 3}
     - target: {fileID: 3043898100064445761, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: _enableDebug
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3043898100064445761, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: regenerating

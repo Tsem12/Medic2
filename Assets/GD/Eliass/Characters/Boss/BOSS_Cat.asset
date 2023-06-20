@@ -22,7 +22,7 @@ MonoBehaviour:
     messages:
     - bossType: 0
       expression: 0
-      message: 
+      localizationKey: 
   maxHealth: 15
   numberOfHealthBar: 3
   baseSpeed: 100
