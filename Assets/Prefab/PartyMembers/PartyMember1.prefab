@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 461887206133683786}
   m_Layer: 5
   m_Name: Image (3)
-  m_TagString: Untagged
+  m_TagString: ToolTip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1260,7 +1260,7 @@ GameObject:
   - component: {fileID: 8524094780950076364}
   m_Layer: 5
   m_Name: Image (2)
-  m_TagString: Untagged
+  m_TagString: ToolTip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1486,7 +1486,7 @@ Transform:
   - {fileID: 2693070355484489773}
   - {fileID: 5104155584426412555}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1286403772433257586
 CapsuleCollider2D:
@@ -1545,6 +1545,7 @@ MonoBehaviour:
   characterGfx: {fileID: 0}
   charaType: 1
   _animator: {fileID: 0}
+  _currentHealth: 0
   _bossAttackImage: {fileID: 0}
   _nextAttackImage: {fileID: 0}
   _bossIndicator: {fileID: 5393746174664717171}
@@ -1616,7 +1617,7 @@ GameObject:
   - component: {fileID: 6473540843020569009}
   m_Layer: 5
   m_Name: Image (1)
-  m_TagString: Untagged
+  m_TagString: ToolTip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
