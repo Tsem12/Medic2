@@ -318,7 +318,7 @@ public class FightManager : MonoBehaviour
                     if (_enableDebug)
                         Debug.Log("GAME OVER");
 
-                    _refs.gameManager.ToggleMenu(true);
+                    _refs.gameManager.ToggleWinLooseMenu(false);
                     _enemie.ClearAllStatus();
                     _state = FightState.None;
                     yield break;
@@ -351,7 +351,7 @@ public class FightManager : MonoBehaviour
         {
             
             Debug.Log("GAMEOVER");
-            _refs.gameManager.ToggleMenu(true);
+            _refs.gameManager.ToggleWinLooseMenu(false);
             _enemie.ClearAllStatus();
         }
     }
@@ -364,7 +364,7 @@ public class FightManager : MonoBehaviour
         }
         else
         {
-            _refs.gameManager.ToggleMenu(true);
+            _refs.gameManager.ToggleWinLooseMenu(true);
         }
         OnWin?.Invoke();
     }

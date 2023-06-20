@@ -7,7 +7,6 @@ namespace Assets.SimpleLocalization
 	/// <summary>
 	/// Localize text component.
 	/// </summary>
-    [RequireComponent(typeof(Text))]
     public class LocalizedText : MonoBehaviour
     {
         public string LocalizationKey;
@@ -16,6 +15,10 @@ namespace Assets.SimpleLocalization
         {
             Localize();
             LocalizationManager.LocalizationChanged += Localize;
+            if(GetComponent<Text>() == null)
+            {
+                gameObject.AddComponent<TextMeshProUGUI>();
+            }
         }
 
         public void OnDestroy()
@@ -25,7 +28,14 @@ namespace Assets.SimpleLocalization
 
         public void Localize()
         {
-            GetComponent<Text>().text = LocalizationManager.Localize(LocalizationKey);
+            if(GetComponent<TextMeshProUGUI>() != null)
+            {
+                GetComponent<TextMeshProUGUI>().text = LocalizationManager.Localize(LocalizationKey);
+            }
+            else
+            {
+                GetComponent<Text>().text = LocalizationManager.Localize(LocalizationKey);
+            }
         }
     }
 }

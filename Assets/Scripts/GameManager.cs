@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,13 @@ public class GameManager : MonoBehaviour
     public ICharacter character;
 
     private GAMESTATE _gameState;
-    [SerializeField] private RectTransform _optionMenu;
+    [SerializeField] private LevelDataObject _levelData;
+    [SerializeField] private RectTransform _pauseMenu;
+    [SerializeField] private RectTransform _winMenu;
+    [SerializeField] private RectTransform _looseMenu;
+
+
+    [SerializeField] private RectTransform _nextLevelButton;
     private Vector3 _optionMenuinitLocation;
 
     public GAMESTATE GameState { get => _gameState; set => _gameState = value; }
@@ -27,7 +34,11 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         gameData = SaveSystem.Load();
-        _optionMenuinitLocation = _optionMenu.localPosition;
+        _optionMenuinitLocation = _pauseMenu.localPosition;
+        if(_levelData.currentSceneIndex == _levelData.levels.Length - 1)
+        {
+            _nextLevelButton.gameObject.SetActive(false);
+        }
     }
     
     public void LoadMenu()
@@ -40,20 +51,26 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync("Game");
     }
 
-    public void ToggleMenu()
+    public void TogglePause()
     {
-        _optionMenu.gameObject.SetActive(!_optionMenu.gameObject.activeSelf);
+        _pauseMenu.gameObject.SetActive(!_pauseMenu.gameObject.activeSelf);
     }
 
-    public void ToggleMenu(bool state)
+    public void SetNextLevel()
     {
-        if(state == _optionMenu.gameObject.activeSelf)
+        _levelData.currentSceneIndex++;
+    }
+
+    public void ToggleWinLooseMenu(bool isWin)
+    {
+        _pauseMenu.gameObject.SetActive(false);
+        if(isWin)
         {
-            return;
+            _winMenu.gameObject.SetActive(true);
         }
         else
         {
-            _optionMenu.gameObject.SetActive(state);
+            _looseMenu.gameObject.SetActive(true);
         }
     }
 

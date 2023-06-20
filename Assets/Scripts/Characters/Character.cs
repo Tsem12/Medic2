@@ -167,6 +167,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         }
         CheckStatus();
         UpdateBar();
+        ClearIncomingAttacks();
     }
 
     public void CheckStatus()

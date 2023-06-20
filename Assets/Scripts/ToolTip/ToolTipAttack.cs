@@ -9,6 +9,7 @@ public class ToolTipAttack : MonoBehaviour, IToolTip
     public void ShowToolTip(ToolTip tooltip)
     {
         List <(string name, string desc, Sprite toolTipImage)> list = new List<(string name, string desc, Sprite toolTipImage)>();
+        Debug.LogError($" BALABALBA {character.IncomingAttacks.Count}");
 
         foreach (var item in character.IncomingAttacks)
         {

@@ -7,7 +7,7 @@ public class SwitchCardButton : MonoBehaviour
 {
     [SerializeField] CardHandlerObject cardHandler;
     [SerializeField] AllReferences refs;
-    [SerializeField] CapsuleCollider2D[] colToHide;
+    [SerializeField] Collider2D[] colToHide;
     [SerializeField] GameObject cardsToHide;
     bool wasHit = false;
 

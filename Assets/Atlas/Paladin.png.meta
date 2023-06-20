@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: 658d023fbf423d340b5149206320488b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "T\xEAte"
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 915
+        width: 217
+        height: 271
+      alignment: 9
+      pivot: {x: 0.6941911, y: 0.08759694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7957dd54f0349f74a9a7ba631ec55d3e
+      internalID: 1773950231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xE8che1"
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1061
+        width: 69
+        height: 68
+      alignment: 9
+      pivot: {x: 0.18136509, y: 0.5538869}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f7d73f7b14b594aa119bc383fed81e
+      internalID: -1363610744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xE8che3"
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 1047
+        width: 75
+        height: 90
+      alignment: 9
+      pivot: {x: 0.7442863, y: 0.66285807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1064942225e5a26459540777acf701bd
+      internalID: 1202977860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xE8che2"
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 960
+        width: 53
+        height: 38
+      alignment: 9
+      pivot: {x: 0.3617243, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86821ae0a98f0c841b720a248b88de49
+      internalID: 1932993127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xE8che4"
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 927
+        width: 54
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5678575, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f757d1cee6b0c849b4586bdd13a473f
+      internalID: -821424847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JambeG
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 455
+        width: 149
+        height: 371
+      alignment: 9
+      pivot: {x: 0.5983707, y: 0.8950732}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49eea6a326be5854f90250e71cd84e6c
+      internalID: -1742945732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JambeD
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 498
+        width: 133
+        height: 347
+      alignment: 9
+      pivot: {x: 0.5688784, y: 0.9223979}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a4e017092e1f54580170db85d0f124
+      internalID: -1492603793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 579
+        width: 161
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5227597, y: 0.4035709}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c4b2d8d082afe439c1a5515fbfe9c7
+      internalID: -1766886541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torse
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 119
+        width: 708
+        height: 686
+      alignment: 9
+      pivot: {x: 0.40425205, y: 0.09671307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512d1427c8572c546aa0bfe15926d11d
+      internalID: -613022010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Illustration-sans-titre (23)_9
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 502
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23356a0f16e87f44e938c806292cefb3
+      internalID: -328647633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cuisses
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 178
+        width: 304
+        height: 334
+      alignment: 9
+      pivot: {x: 0.566295, y: 0.8565561}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4c977f1ee882546b6b033a538687b5
+      internalID: 1858888788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiedG
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 61
+        width: 199
+        height: 327
+      alignment: 9
+      pivot: {x: 0.7669969, y: 0.8922037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc05da84dddffca48b20892011a6fbf4
+      internalID: -1210593801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiedD
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 144
+        width: 127
+        height: 296
+      alignment: 9
+      pivot: {x: 0.5144262, y: 0.91470975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69532648167f10c48a4ce58dfa70cd61
+      internalID: 1790047024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cuisses: 1858888788
+      Illustration-sans-titre (23)_9: -328647633
+      JambeD: -1492603793
+      JambeG: -1742945732
+      Main: -1766886541
+      "M\xE8che1": -1363610744
+      "M\xE8che2": 1932993127
+      "M\xE8che3": 1202977860
+      "M\xE8che4": -821424847
+      PiedD: 1790047024
+      PiedG: -1210593801
+      Torse: -613022010
+      "T\xEAte": 1773950231
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

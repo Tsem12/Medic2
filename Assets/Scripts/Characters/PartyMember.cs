@@ -106,7 +106,9 @@ public class PartyMember : Character, IHealable
         _targets.Clear();
         _targetsAttacks.Clear();
         _targets.Add(_refs.fightManager.Enemie.GetComponent<ICharacter>());
-        _targetsAttacks.Add(_nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)]);
+        AttacksObject atk = _nextPossibleAttacks[Random.Range(0, _nextPossibleAttacks.Count)];
+        _targetsAttacks.Add(atk);
+        _refs.fightManager.Enemie.SetIncommingAttack(atk);
 
     }
 
