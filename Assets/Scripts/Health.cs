@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 using Sequence = DG.Tweening.Sequence;
 
 public class Health : MonoBehaviour
@@ -54,10 +55,41 @@ public class Health : MonoBehaviour
                 GameObject obj = Instantiate(_healthBarCount, _layerGroupHealthBar.transform);
                 _healthBars.Add(obj);
             }
-
         }
 
 
+    }
+
+    public void ResetHealth()
+    {
+        foreach(HealtPoint hp in _healthPoints)
+        {
+            DestroyImmediate(hp.gameObject, true);
+        }
+        _healthPoints.Clear();
+        for (int i = 0; i < _character.GetMaxHealth(); i++)
+        {
+            GameObject obj = Instantiate(_healthPoint, _layerGroupHealthpoint.transform);
+            HealtPoint hp = obj.GetComponent<HealtPoint>();
+            _healthPoints.Add(hp);
+        }
+
+        if (_layerGroupHealthBar != null)
+        {
+            foreach(GameObject go in _healthBars)
+            {
+                DestroyImmediate(go, true);
+            }
+            _healthBars.Clear();
+
+            for (int i = 0; i < _character.GetMaxHealthBar(); i++)
+            {
+                GameObject obj = Instantiate(_healthBarCount, _layerGroupHealthBar.transform);
+                _healthBars.Add(obj);
+            }
+        }
+        _character.SetCurrentHealth(_character.GetMaxHealth());
+        _currentHealthBarAmount = _character.GetMaxHealthBar();
     }
 
 
@@ -174,6 +206,10 @@ public class Health : MonoBehaviour
             return;
         }
         _valueIndicator.HealTween(value);
+
+        if(_character.Message != null  && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+            _character.Message.DisplayMessage(Message.MessageType.Heal, _character.CharacterObj, _refs.fightManager.Enemie.CharacterObj.bossType);
+
         int newHealth = _character.GetCurrentHealth() + value;
         if (newHealth > _character.GetMaxHealth())
         {
@@ -202,6 +238,7 @@ public class Health : MonoBehaviour
         List<HealtPoint> list = new List<HealtPoint>();
         for (int i = _character.GetCurrentHealth(); i < newHealth; i++)
         {
+            Debug.Log($"{_character.GetCurrentHealth()}, {newHealth}");
             list.Add(_healthPoints[i]);
             if (IsPartyMember)
             {

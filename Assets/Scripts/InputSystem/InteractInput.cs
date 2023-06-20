@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,6 +45,7 @@ public class InteractInput : MonoBehaviour
     }
     void Interact()
     {
+        
         if(Input.touchCount > 0)
         {
             Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.touches[0].position), 0.2f);
@@ -52,6 +54,7 @@ public class InteractInput : MonoBehaviour
                 _getObject = col.gameObject;
                 if (_getObject.CompareTag("Grabbable"))//Drag if Grabbable
                 {
+                    _getObject.transform.DOScale(_getObject.transform.localScale * 1.15f, 0.2f);
                     _dragCoroutine = StartCoroutine(Drag());
                 }
                 else if(_getObject.CompareTag("ToolTip"))
@@ -64,12 +67,14 @@ public class InteractInput : MonoBehaviour
 
     void Drop()
     {
-        if(_getObject != null) // Check if we got object to interact with
+        
+        if (_getObject != null) // Check if we got object to interact with
         {
-            if(!wasTooltip)
+            if (!wasTooltip)
             {
                 if (_getObject.GetComponent<IInteractable>() != null)
                 {
+                    _getObject.transform.DOScale(_getObject.transform.localScale / 1.15f, 0.2f);
                     _getObject.GetComponent<IInteractable>().Interact();//Interact with object
                 }
             }
@@ -131,6 +136,10 @@ public class InteractInput : MonoBehaviour
                 }
 
             }
+            else
+            {
+                //CanceledDrop();
+            }
             yield return null;
         }
     }
@@ -141,7 +150,8 @@ public class InteractInput : MonoBehaviour
         {
             if (_getObject != null) // Check if we got object to interact with
             {
-                if(_getObject.GetComponent<IInteractable>() != null)
+                _getObject.transform.DOScale(_getObject.transform.localScale / 1.1f, 0.2f);
+                if (_getObject.GetComponent<IInteractable>() != null)
                 {
                     _getObject.GetComponent<IInteractable>().Cancel();//Interact with object
                 }

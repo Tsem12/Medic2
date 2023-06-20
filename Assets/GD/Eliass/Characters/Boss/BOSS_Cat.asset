@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c2bf0b15d3efc4e82d439e7a3d239e, type: 3}
   m_Name: BOSS_Cat
   m_EditorClassIdentifier: 
+  bossType: 2
   inGameName: Gatito
+  happyFace: {fileID: 0}
+  angryFace: {fileID: 0}
+  messages:
+  - name: 
+    messageType: 0
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: 
   maxHealth: 15
   numberOfHealthBar: 3
   baseSpeed: 100
