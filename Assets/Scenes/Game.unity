@@ -795,6 +795,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1846159623}
     m_Modifications:
+    - target: {fileID: 328218438012091953, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: _levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
     - target: {fileID: 1143076064950096211, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -8489,7 +8493,7 @@ RectTransform:
   m_GameObject: {fileID: 1974464456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.81438, y: 1.0790535, z: 0.81438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1517580894}
@@ -8497,8 +8501,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.78341544, y: 0.16013582}
   m_AnchorMax: {x: 0.9708309, y: 0.21872836}
-  m_AnchoredPosition: {x: 22, y: 1224.0009}
-  m_SizeDelta: {x: 5, y: 5.483}
+  m_AnchoredPosition: {x: 9.215698, y: 1216.65}
+  m_SizeDelta: {x: -14.9, y: 19.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974464458
 MonoBehaviour:
