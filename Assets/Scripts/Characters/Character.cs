@@ -40,7 +40,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     protected AttacksPatern _actualPatern;
     protected AttackEvent _latetsAttackEvent;
     protected List<AttacksObject> _nextPossibleAttacks;
-    protected List<AttacksObject> _incomingAttacks = new List<AttacksObject>();
+    private List<AttacksObject> incomingAttacks = new List<AttacksObject>();
     protected List<AttacksObject> _targetsAttacks =  new List<AttacksObject>();
     protected AttacksObject _nextAttack;
     protected AttackClass _currentAtkClass;
@@ -54,6 +54,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public Transform CharacterGfx { get => characterGfx; set => characterGfx = value; }
     public MessageBehaviour Message { get => message; set => message = value; }
     public Health Health { get => health; set => health = value; }
+    protected List<AttacksObject> IncomingAttacks { get => incomingAttacks; }
 
     private List<Status> _statusList = new List<Status>();
 
@@ -347,15 +348,15 @@ public abstract class Character : MonoBehaviour, ICharacter
     {
         if (!IsDead())
         {
-            _incomingAttacks.Add(atk);
+            IncomingAttacks.Add(atk);
         }
     }
 
     public void ClearIncommingAttack()
     {
-        if(_incomingAttacks != null)
+        if(IncomingAttacks != null)
         {
-            _incomingAttacks.Clear();
+            IncomingAttacks.Clear();
         }
     }
 

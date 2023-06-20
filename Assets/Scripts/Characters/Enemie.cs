@@ -9,6 +9,7 @@ public class Enemie : Character
 {
     [SerializeField] private Image _targetIcon;
     [SerializeField] private TextMeshProUGUI _bossName;
+    [SerializeField] private LevelDataObject _levelData;
 
     [Header("Stats")]
     private int _damage;
@@ -23,7 +24,14 @@ public class Enemie : Character
         _currentHealth = _maxHealth;
         //_refs.fightManager.TriggerEvent(AttackEvent.SpecialAttacksTrigerMode.AllieBuffed);
 
-        _bossName.text = characterObj.inGameName;
+        if(_levelData.difficulty == LevelDataObject.Difficulty.EndLess)
+        {
+            _bossName.text = "EndLess";
+        }
+        else
+        {
+            _bossName.text = characterObj.inGameName;
+        }
         DOTweenTMPAnimator animator = new DOTweenTMPAnimator(_bossName);
         Sequence sequence = DOTween.Sequence();
         for (int i = 0; i < animator.textInfo.characterCount; ++i)
