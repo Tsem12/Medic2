@@ -22,7 +22,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [SerializeField] protected CharacterObjets characterObj;
     [SerializeField] private MessageBehaviour message;
     [SerializeField] protected AllReferences _refs;
-    [SerializeField] protected Health _health;
+    [SerializeField] private Health health;
     [SerializeField] protected StatusBarManager _statusBar;
     [SerializeField] private ParticulesHandeler _particuleHandler;
     [SerializeField] protected Transform _gfx;
@@ -37,7 +37,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     [Header("Attacks")]
     private Coroutine _attackRoutine;
-    private AttacksPatern _actualPatern;
+    protected AttacksPatern _actualPatern;
     protected AttackEvent _latetsAttackEvent;
     protected List<AttacksObject> _nextPossibleAttacks;
     protected List<AttacksObject> _incomingAttacks = new List<AttacksObject>();
@@ -53,6 +53,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     public ParticulesHandeler ParticuleHandler { get => _particuleHandler; set => _particuleHandler = value; }
     public Transform CharacterGfx { get => characterGfx; set => characterGfx = value; }
     public MessageBehaviour Message { get => message; set => message = value; }
+    public Health Health { get => health; set => health = value; }
 
     private List<Status> _statusList = new List<Status>();
 
@@ -112,21 +113,24 @@ public abstract class Character : MonoBehaviour, ICharacter
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} can't attack");
 
-            switch (list[Random.Range(0, list.Count)].status)
+            if(list.Count >= 1)
             {
-                case global::Status.StatusEnum.Sleeped:
-                    if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
-                        Message.DisplayMessage(global::Message.MessageType.Sleeped, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
-                    break;
-                case global::Status.StatusEnum.Restrained:
-                    if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
-                        Message.DisplayMessage(global::Message.MessageType.Restrained, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
-                    break;
-                case global::Status.StatusEnum.Stunned:
-                    if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
-                        Message.DisplayMessage(global::Message.MessageType.Stunned, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
-                    break;
+                switch (list[Random.Range(0, list.Count)].status)
+                {
+                    case global::Status.StatusEnum.Sleeped:
+                        if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                            Message.DisplayMessage(global::Message.MessageType.Sleeped, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                        break;
+                    case global::Status.StatusEnum.Restrained:
+                        if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                            Message.DisplayMessage(global::Message.MessageType.Restrained, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                        break;
+                    case global::Status.StatusEnum.Stunned:
+                        if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
+                            Message.DisplayMessage(global::Message.MessageType.Stunned, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
+                        break;
 
+                }
             }
             return;
         }
@@ -206,7 +210,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 _refs.audioManager.Play("StatusPoison");
                 if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
                     Message.DisplayMessage(global::Message.MessageType.Poisoned, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
-                _health.TakeDamage(statut.value);
+                Health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Fired:
 
@@ -214,20 +218,20 @@ public abstract class Character : MonoBehaviour, ICharacter
                     Message.DisplayMessage(global::Message.MessageType.Fired, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
 
                 _refs.audioManager.Play("StatusBurning");
-                _health.TakeDamage(statut.value);
+                Health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Restrained:
                 if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
                     Message.DisplayMessage(global::Message.MessageType.Restrained, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
 
                 _refs.audioManager.Play("StatusRestrained");
-                _health.TakeDamage(statut.value);
+                Health.TakeDamage(statut.value);
                 break;
             case global::Status.StatusEnum.Regenerating:
                 if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
                     Message.DisplayMessage(global::Message.MessageType.Heal, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 _refs.audioManager.Play("StatusRegen");
-                _health.Heal(statut.value, true);
+                Health.Heal(statut.value, true);
                 break;
         }
     }
@@ -325,7 +329,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 target.AddStatus(_targetsAttacks[index].GetStatus());
                 if (_targetsAttacks[index].isLifeSteal)
                 {
-                    _health.Heal(Mathf.Max(_targetsAttacks[index].atkDamage + additionalDamage, 0), charaType != PartyMemberEnum.Boss);
+                    Health.Heal(Mathf.Max(_targetsAttacks[index].atkDamage + additionalDamage, 0), charaType != PartyMemberEnum.Boss);
                 }
                 if (_targetsAttacks[index].isShuffle)
                 {
@@ -390,7 +394,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         if (attack.atkDamage < 0)
             return;
 
-        _health.TakeDamage(Mathf.Max(attack.atkDamage + additionalDamage, 0));
+        Health.TakeDamage(Mathf.Max(attack.atkDamage + additionalDamage, 0));
     }
 
     public bool IsDead()
@@ -432,7 +436,7 @@ public abstract class Character : MonoBehaviour, ICharacter
         SetTarget();
         _refs.fightManager.OrderCharacters();
         SetPartyMemberAttackPreview(GetNextAttackSprite());
-        _health.Heal((int) (heal / 100f * _maxHealth), true);
+        Health.Heal((int) (heal / 100f * _maxHealth), true);
         CharacterGfx.DOShakeScale(0.25f, 0.05f).SetEase(Ease.InFlash).SetDelay(0.1f).OnPlay(() => CharacterGfx.gameObject.SetActive(true));
     }
 
@@ -465,7 +469,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
             case AttackClass.AttackConditions.HpBarLost:
                 //Debug.Log($"{_health.CurrentHealthBarAmount} >= {atk.value}");
-                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value)
+                if (CharacterObj.numberOfHealthBar - Health.CurrentHealthBarAmount >= atk.value)
                 {
                     return true;
                 }
@@ -475,7 +479,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 }
             case AttackClass.AttackConditions.HpBarNotLost:
                 //Debug.Log(_characterObj.numberOfHealthBar - _health.CurrentHealthBarAmount >= atk.value);
-                if (CharacterObj.numberOfHealthBar - _health.CurrentHealthBarAmount > atk.value)
+                if (CharacterObj.numberOfHealthBar - Health.CurrentHealthBarAmount > atk.value)
                 {
                     return false;
                 }
@@ -485,7 +489,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                 }
 
             case AttackClass.AttackConditions.HpBarEqual:
-                if (_health.CurrentHealthBarAmount == atk.value)
+                if (Health.CurrentHealthBarAmount == atk.value)
                 {
                     return true;
                 }
@@ -758,7 +762,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
     public void AddStatus(Status status)
     {
-        if (status == null)
+        if (status == null || IsDead())
             return;
 
         switch (status.status)

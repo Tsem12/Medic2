@@ -59,6 +59,13 @@ public class Enemie : Character
     {
         if(CharacterObj != null)
         {
+            ClearAllStatus();
+            _actualPatern = null;
+            _nextAttack = null;
+            _currentAtkClass = null;
+            _targetsAttacks.Clear();
+            _latetsAttackEvent = null;
+            _isDead = false;
             _maxHealth = CharacterObj.maxHealth;
             _speed = CharacterObj.baseSpeed;
         }

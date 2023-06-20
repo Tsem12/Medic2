@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5086821860906877961
 MonoBehaviour:
@@ -63,9 +63,23 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: OrcTheme
+    type: 1
+    clip: {fileID: 8300000, guid: 956ae4ca6a72c7a4facbd47beab40f80, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   - name: KraqueenTheme
     type: 0
     clip: {fileID: 8300000, guid: a41288dbd8a5154459824ddae46a5ba6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: GatitoTheme
+    type: 1
+    clip: {fileID: 8300000, guid: 1807713073d3fb745ba35059f81556c1, type: 3}
     volume: 1
     pitch: 1
     loop: 1
