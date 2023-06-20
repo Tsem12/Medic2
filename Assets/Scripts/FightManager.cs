@@ -35,6 +35,7 @@ public class FightManager : MonoBehaviour
 
     [SerializeField] private float _playerTimeToPlay;
     [SerializeField] private int _chanceToTriggerDialogue;
+    [SerializeField] private int _chanceIntervalToTriggerDialogue;
     private float _currentPlayerTimeToPlay;
 
     private int _globalAgro;
@@ -249,7 +250,7 @@ public class FightManager : MonoBehaviour
 
             // player turn logic
             thinkingTime += Time.deltaTime;
-            if(thinkingTime >= 2f)
+            if(thinkingTime >= _chanceIntervalToTriggerDialogue)
             {
                 thinkingTime = 0;
                 int random = Random.Range(0, ChanceToTriggerAfxDialogue + 1);
