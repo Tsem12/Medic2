@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BOSS_Chad'O'Wizard
   m_EditorClassIdentifier: 
   bossType: 4
-  inGameName: Chad'O'Wizzard
+  inGameName: Chad'O'Wizard
   happyFace: {fileID: 0}
   angryFace: {fileID: 0}
   messages: []

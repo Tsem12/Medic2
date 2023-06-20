@@ -168,6 +168,90 @@ MonoBehaviour:
     pitch: 1.1
     loop: 0
     source: {fileID: 0}
+  - name: AttackPaladin
+    type: 1
+    clip: {fileID: 8300000, guid: 90a4e773c7da6ea40a4a1bbda23a0308, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackArcher
+    type: 1
+    clip: {fileID: 8300000, guid: cf9ecf0f86d4e3b44a89b47677ec964c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackBerserker
+    type: 1
+    clip: {fileID: 8300000, guid: 25b22e6592bc68c4db373b74539644f1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackOrc
+    type: 1
+    clip: {fileID: 8300000, guid: c11db28f395726b47a81df1673083eab, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackChad1
+    type: 1
+    clip: {fileID: 8300000, guid: 5f5124ec51ac483429a9f0395393d2ab, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackChad2
+    type: 1
+    clip: {fileID: 8300000, guid: 5f5124ec51ac483429a9f0395393d2ab, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackChad3
+    type: 1
+    clip: {fileID: 8300000, guid: 40062160b7f70ee44abb0ac2b34e3783, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackCatKick
+    type: 1
+    clip: {fileID: 8300000, guid: 25f4c5f9bd0d2d548962c87fddae2545, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackCatJump
+    type: 1
+    clip: {fileID: 8300000, guid: 74804121c985c734c8b674de483280f3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackCatLanding
+    type: 1
+    clip: {fileID: 8300000, guid: de7f10c2915382741b8b868571f6d34d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackKraken1
+    type: 1
+    clip: {fileID: 8300000, guid: 92005d4503d763d4db06e26fe6ec789e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackKraken2
+    type: 1
+    clip: {fileID: 8300000, guid: 098d1dfc091080745859e7476a71cb8f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   testConnerie:
     serializedVersion: 2
     m_Curve:
