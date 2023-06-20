@@ -244,6 +244,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 69053583}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &69053580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +324,167 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 4ab618e4e950bb7448005603ddd3272b, type: 2}
+--- !u!1001 &344095706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1186941480347684772, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8da42721155ec0e45af30bc3b9001b74, type: 3}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225153966669887184, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352202597423062005, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1136411
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352202597423062005, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1136411
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352202597423062005, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1136411
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352202597423062005, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352202597423062005, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -578
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072399912971131140, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_Name
+      value: --TooltipCanva--
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967370520604205352, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 854177087}
+    - target: {fileID: 3967370520604205352, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936147843774110035, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_text
+      value: 'Heal :'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036435437020074621, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_text
+      value: Heal target for 2 HP.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036435437020074621, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036435437020074621, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+--- !u!114 &344095708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8932858509185626314, guid: 778c87114d8d69649894b9b96b9c91c5, type: 3}
+  m_PrefabInstance: {fileID: 344095706}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ead9bb39b3bb4c8fd0eb182ed8b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &361450386
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +621,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 361450392}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &361450390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,6 +686,7 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 7de51fe14ed700e4aaa7f4cfa7a7df6f, type: 2}
 --- !u!1 &436692641
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +899,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 636224721}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &636224719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,6 +964,7 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 58eada093cc814c45a2ef0688cb3b1fa, type: 2}
 --- !u!1 &647198289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1350,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 720881251}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &720881249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,6 +1415,7 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: ea2e299793ff66341a7cd50b64c895ca, type: 2}
 --- !u!1 &776580290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1552,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 776580296}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &776580294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,6 +1617,7 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 82ad67692f3228e40811fa2077f71c5d, type: 2}
 --- !u!1 &854177085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1959,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 898137410}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &898137408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,6 +2024,7 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 82ad67692f3228e40811fa2077f71c5d, type: 2}
 --- !u!1 &1042561097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,7 +2061,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1134}
+  m_AnchoredPosition: {x: -252, y: -1134}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1042561099
@@ -2076,6 +2314,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1323014814}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1323014812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,6 +2379,7 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 61b587279f3b46940a3ce666ce301e17, type: 2}
 --- !u!1 &1339147322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2265,6 +2516,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1339147328}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1339147326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2318,6 +2581,7 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 3d62d309dcf860747942befd6f6f6e3a, type: 2}
 --- !u!1 &1710216873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,6 +2718,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1710216879}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1710216877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2507,6 +2783,7 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 86e6cd45ebb4f3644a8a07cf7d9c6aca, type: 2}
 --- !u!1 &1760320454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,7 +2812,7 @@ RectTransform:
   m_GameObject: {fileID: 1760320454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.79671, y: 0.79671, z: 0.79671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 672061946}
@@ -2543,7 +2820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -586}
+  m_AnchoredPosition: {x: 400, y: -1138}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760320456
@@ -2830,6 +3107,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1808148275}
+        m_TargetAssemblyTypeName: ToolTipInfo, Assembly-CSharp
+        m_MethodName: ShowToolTip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 344095708}
+          m_ObjectArgumentAssemblyTypeName: ToolTip, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1808148273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2883,3 +3172,4 @@ MonoBehaviour:
   objectName: Test
   description: Test
   image: {fileID: 21300000, guid: 5df8d3d688c6e6041a2a09588aadde15, type: 3}
+  card: {fileID: 11400000, guid: 1295ef1b0b90a23418b63b863713dc6e, type: 2}
