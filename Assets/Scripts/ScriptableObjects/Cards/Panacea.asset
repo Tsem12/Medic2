@@ -18,8 +18,8 @@ MonoBehaviour:
   isUnlocked: 1
   dataIndex: 5
   cardBehaviour: 4
-  cardName: 'Panacea : '
-  description: Removes all status of target  (positive and negative).
+  cardName: Antidote.Name.Text
+  description: Antidote.Desc.Text
   cardSprite: {fileID: 21300000, guid: fe04ad24e5521894d9e3a876f396e3ec, type: 3}
   cardSpriteGrey: {fileID: 21300000, guid: 758332dcf5c74f34e9e111b165ee5935, type: 3}
   manaCost: 4

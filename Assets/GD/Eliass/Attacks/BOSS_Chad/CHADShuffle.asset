@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f8d1e8efc19604aa27eb5c17f73c56, type: 3}
   m_Name: CHADShuffle
   m_EditorClassIdentifier: 
-  attackName: Shuffle
-  description: 
+  attackName: ChadShuffle.Name.Text
+  description: ChadShuffle.Desc.Text
   attackSpriteOverRide: {fileID: 21300000, guid: f77b96945ee8e214f9528a7dabbd8aff, type: 3}
   attackAnimIndex: 2
   attackSound: AttackChad2
