@@ -94,14 +94,14 @@ MonoBehaviour:
   - name: ButtonPress1
     type: 1
     clip: {fileID: 8300000, guid: 3b82878b115991844941eecbe8f20547, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ButtonPress2
     type: 1
     clip: {fileID: 8300000, guid: 0bbed7cde7e59de45aa7a7aa05ac2508, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}

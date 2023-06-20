@@ -17,18 +17,162 @@ MonoBehaviour:
   happyFace: {fileID: 0}
   angryFace: {fileID: 0}
   messages:
-  - name: 
-    messageType: 15
+  - name: Shielded
+    messageType: 2
     messages:
     - bossType: 0
       expression: 0
-      localizationKey: HowToPlayMenu.Window3.Title
+      localizationKey: BerserkerShield.Text1
     - bossType: 0
       expression: 0
-      localizationKey: HowToPlayMenu.Window4.Title
+      localizationKey: BerserkerShield.Text2
     - bossType: 0
       expression: 0
-      localizationKey: HowToPlayMenu.Window2.Title
+      localizationKey: BerserkerShield.Text3
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerShield.Text4
+  - name: Strengthened
+    messageType: 0
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerStrength.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerStrength.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerStrength.Text3
+  - name: Initiative
+    messageType: 1
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerInitiative.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerInitiative.Text2
+  - name: Poison
+    messageType: 4
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerPoison.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerPoison.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerPoison.Text3
+  - name: Burning
+    messageType: 5
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerBurning.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerBurning.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerBurning.Text3
+  - name: Restrained
+    messageType: 7
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerRestrain.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerRestrain.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerRestrain.Text3
+  - name: Disapeared
+    messageType: 9
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerDisappeared.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerDisappeared.Text2
+  - name: Stunned
+    messageType: 8
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerStun.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerStun.Text2
+  - name: Sleep
+    messageType: 6
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerSleep.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerSleep.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerSleep.Text3
+  - name: Fatigue
+    messageType: 3
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerFatigue.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerFatigue.Text2
+  - name: AFK
+    messageType: 13
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerAFK.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerAFK.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerAFK.Text3
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerAFK.Text4
+  - name: Death
+    messageType: 11
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerDeath.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerDeath.Text2
+  - name: Revive
+    messageType: 12
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerRevive.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerRevive.Text2
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerRevive.Text3
+  - name: Healed
+    messageType: 14
+    messages:
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerHealed.Text1
+    - bossType: 0
+      expression: 0
+      localizationKey: BerserkerHealed.Text2
   maxHealth: 4
   numberOfHealthBar: 1
   baseSpeed: 50
