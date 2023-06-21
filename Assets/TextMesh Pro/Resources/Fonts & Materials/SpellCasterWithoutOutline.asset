@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Spellcaster W03 Regular SDF
+  m_Name: SpellCasterWithoutOutline
   m_EditorClassIdentifier: 
-  hashCode: -307211733
+  hashCode: 1791794168
   material: {fileID: 1016862594404273703}
-  materialHashCode: 931877163
+  materialHashCode: 1524776792
   m_Version: 1.1.0
   m_SourceFontFileGUID: f78001eec9fdc62468d714aa22e011ff
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: f78001eec9fdc62468d714aa22e011ff, type: 3}
@@ -2743,7 +2743,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.469
+    - _OutlineWidth: 0.147
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
@@ -2775,7 +2775,7 @@ Material:
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0, g: 0.010513481, b: 0.122641504, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

@@ -1,3 +1,4 @@
+using Assets.SimpleLocalization;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,16 +12,22 @@ public class ToolTip : MonoBehaviour
     [SerializeField] GameObject one;
     [SerializeField] TextMeshProUGUI toolTipNameOne;
     [SerializeField] TextMeshProUGUI descriptionOne;
+    [SerializeField] LocalizedText ltNameOne;
+    [SerializeField] LocalizedText ltDescOne;
     [SerializeField] UnityEngine.UI.Image imageOne;
 
     [SerializeField] GameObject two;
     [SerializeField] TextMeshProUGUI toolTipNameTwo;
     [SerializeField] TextMeshProUGUI descriptionTwo;
+    [SerializeField] LocalizedText ltNameTwo;
+    [SerializeField] LocalizedText ltDescTwo;
     [SerializeField] UnityEngine.UI.Image imageTwo;
 
     [SerializeField] GameObject three;
     [SerializeField] TextMeshProUGUI toolTipNameThree;
     [SerializeField] TextMeshProUGUI descriptionThree;
+    [SerializeField] LocalizedText ltNameThree;
+    [SerializeField] LocalizedText ltDescThree;
     [SerializeField] UnityEngine.UI.Image imageThree;
 
     public void ToolTipInfo(string name, string desc, Sprite toolTipImage)
@@ -28,8 +35,10 @@ public class ToolTip : MonoBehaviour
         one.SetActive(true);
         two.SetActive(false);
         three.SetActive(false);
-        toolTipNameOne.text = name;
-        descriptionOne.text = desc;
+        ltNameOne.LocalizationKey = name;
+        ltDescOne.LocalizationKey = desc;
+        ltNameOne.Localize();
+        ltDescOne.Localize();
         imageOne.sprite = toolTipImage;
         imageOne.color = Color.white;
     }
@@ -43,9 +52,12 @@ public class ToolTip : MonoBehaviour
         Debug.Log(infoList);
         if (infoList.Count >= 1)
         {
+            Debug.Log($"{infoList[0].name},{infoList[0].desc}, ");
             one.SetActive(true);
-            toolTipNameOne.text = infoList[0].name;
-            descriptionOne.text = infoList[0].desc;
+            ltNameOne.LocalizationKey = infoList[0].name;
+            ltDescOne.LocalizationKey = infoList[0].desc;
+            ltNameOne.Localize();
+            ltDescOne.Localize();
             imageOne.sprite = infoList[0].toolTipImage;
             imageOne.color = Color.white;
         }
@@ -53,8 +65,10 @@ public class ToolTip : MonoBehaviour
         if (infoList.Count >= 2)
         {
             two.SetActive(true);
-            toolTipNameTwo.text = infoList[1].name;
-            descriptionTwo.text = infoList[1].desc;
+            ltNameTwo.LocalizationKey = infoList[1].name;
+            ltDescTwo.LocalizationKey = infoList[1].desc;
+            ltNameTwo.Localize();
+            ltDescTwo.Localize();
             imageTwo.sprite = infoList[1].toolTipImage;
             imageTwo.color = Color.white;
         }
@@ -62,8 +76,10 @@ public class ToolTip : MonoBehaviour
         if (infoList.Count >= 3)
         {
             three.SetActive(true);
-            toolTipNameThree.text = infoList[2].name;
-            descriptionThree.text = infoList[2].desc;
+            ltNameThree.LocalizationKey = infoList[2].name;
+            ltDescThree.LocalizationKey = infoList[2].desc;
+            ltNameThree.Localize();
+            ltDescThree.Localize();
             imageThree.sprite = infoList[2].toolTipImage;
             imageThree.color = Color.white;
         }
