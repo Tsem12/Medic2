@@ -11,12 +11,12 @@ OptionMenu.Button.Music,Music,Musique,Musik,Música,音樂,音楽,Música,Муз
 OptionMenu.Button.Pause,Pause,Pause,Brechen,Romper,休息,壊す,Quebrar,Переры
 OptionMenu.Button.Account,Account,Compte,Konto,Cuenta,账户 ,アカウント ,Conta,Счет
 OptionMenu.Button.HowToPlay,How to Play,Comment Jouer,Wie spielt man,Cómo jugar,如何玩,遊び方 ,Como Jogar, Как играть
-OptionMenu.Button.LeaderBoard,LeaderBoard,LeaderBoard,Bestenliste,Tabla de líderes,排行榜 ,リーダーボード,Tabela de líderes,Таблица лидеров
+OptionMenu.Button.LeaderBoard,Leaderboard,Classement,Bestenliste,Tabla de líderes,排行榜 ,リーダーボード,Tabela de líderes,Таблица лидеров
 OptionMenu.Button.Credits,Credits,Crédits,Credits,Créditos,积分 ,クレジット ,Créditos,Кредиты 
 PauseMenu.EndGame.text,Finish,Fini,,,,,,
 Hud.Button.EndTurn,End Turn,Fin de Tour,"Ende der Runde","fin de turno",回合結束,ターン終了時,Fim do turno,Конец хода
-HowToPlayMenu.Window1,"First, the round begin with playing your turn. After you’ve casted your spells and pressed the “End Turn” button, the boss will attack first (unless you’ve casted the “initiative” spell). Then your allies will attack.
-","Chaque round débute par votre tour jeu, où vous pouvez utiliser vos différents sorts sur vos alliés. Chaque icône comprend également le coût du sort.
+HowToPlayMenu.Window1,"Each round begins by your own turn, where you free to pick spells to use on your allies. Each spell has an assigned mana cost you must pay.
+Once you've finished your actions, you can press the end turn button at the bottom right of your interface.","Chaque round débute par votre tour de jeu, où vous pouvez utiliser vos différents sorts sur vos alliés. Chaque icône comprend également le coût du sort.
 Une fois vos actions terminées, vous pourrez presser le bouton de fin de tour à la droite de votre interface.","Zuerst beginnt die Runde mit deinem Zug. Nachdem du deine Zauber gewirkt und den ""Zug beenden""-Button gedrückt hast, wird der Boss als Erstes angreifen (es sei denn, du hast den Zauber ""Initiative"" gewirkt). Dann werden deine Verbündeten angreifen.","Primero, la ronda comienza jugando tu turno. Después de haber lanzado tus hechizos y presionado el botón ""Terminar turno"", el jefe atacará primero (a menos que hayas lanzado el hechizo de ""iniciativa""). Luego, tus aliados atacarán.",首先，回合开始时轮到你行动。在你施放了法术并按下“结束回合”按钮后，首先是boss会进行攻击（除非你施放了“先发制人”法术）。然后你的盟友会进行攻击。,"最初に、ラウンドが始まります。あなたのターンで呪文を唱え、""ターン終了""ボタンを押した後、ボスが最初に攻撃します（ただし、""先制""呪文を唱えた場合を除く）。その後、仲間が攻撃します。","Primeiro, a rodada começa com o seu turno. Depois de lançar seus feitiços e pressionar o botão ""Fim de Turno"", o chefe atacará primeiro (a menos que você tenha lançado o feitiço de ""iniciativa""). Em seguida, seus aliados atacarão.","Сначала раунд начинается с вашего хода. После того, как вы произнесли свои заклинания и нажали кнопку ""Конец хода"", босс атакует первым (если вы не произнесли заклинание ""инициатива""). Затем атакуют ваши союзники."
 HowToPlayMenu.Window2,"Your spells are located at the bottom of your screen. Drag and drop your spell on the targeted ally to apply the spell’s effect on him.
 ","Pour lancer un sort, pressez l'icône et glissez-la vers votre cible.","Deine Zauber befinden sich am unteren Rand deines Bildschirms. Ziehe deinen Zauber auf den ausgewählten Verbündeten, um den Effekt des Zaubers auf ihn anzuwenden.",Tus hechizos se encuentran en la parte inferior de tu pantalla. Arrastra y suelta tu hechizo sobre el aliado objetivo para aplicar el efecto del hechizo sobre él.,你的法术位于屏幕底部。将法术拖放到目标盟友身上，以施放法术效果。,あなたの呪文は画面の下部にあります。対象の仲間に呪文をドラッグ＆ドロップして、呪文の効果を彼に適用します。,Seus feitiços estão localizados na parte inferior da tela. Arraste e solte seu feitiço no aliado alvo para aplicar o efeito do feitiço nele.," Ваши заклинания расположены внизу экрана. Перетащите ваше заклинание на выбранного союзника, чтобы применить его эффект."
@@ -411,7 +411,7 @@ Panacea.Desc.Text,Heals 1 HP. Removes all status from the target (positive AND n
 SpiritShield.Name.Text,Spirit Shield,,,,,,,
 SpiritShield.Desc.Text,Protects target from all damage for the next turn.,,,,,,,
 ResonanceShield.Name.Text,Resonance Shield,,,,,,,
-ResonanceShield.Desc.Text,Sends back the attack to the attacker. Any effect or status is also applied to the attacker.,,,,,,,
+ResonanceShield.Desc.Text,"Sends back the attack to the attacker, as well as any effect or status.",,,,,,,
 BlessingOfStrength.Name.Text,Blessing of Strength,,,,,,,
 BlessingOfStrength.Desc.Text,Target’s attacks do +1 damage for 3 turns.,,,,,,,
 ManaProfusion.Name.Text,Mana Profusion,,,,,,,
