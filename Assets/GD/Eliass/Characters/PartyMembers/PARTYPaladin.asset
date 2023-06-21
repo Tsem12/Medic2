@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossType: 0
   inGameName: 
-  happyFace: {fileID: 0}
-  angryFace: {fileID: 0}
   messages:
   - name: Shield
     messageType: 2
@@ -25,9 +23,7 @@ MonoBehaviour:
       localizationKey: PaladinShield.Text1
     - bossType: 0
       expression: 0
-      localizationKey: 'PaladinShield.Text2
-
-'
+      localizationKey: PaladinShield.Text2
   - name: Strength
     messageType: 0
     messages:
@@ -133,9 +129,7 @@ MonoBehaviour:
       localizationKey: PaladinFatigue.Text1
     - bossType: 0
       expression: 0
-      localizationKey: 'PaladinFatigue.Text2
-
-'
+      localizationKey: PaladinFatigue.Text2
   - name: AFK
     messageType: 13
     messages:
@@ -144,14 +138,10 @@ MonoBehaviour:
       localizationKey: PaladinAFK.Text1
     - bossType: 0
       expression: 1
-      localizationKey: 'PaladinAFK.Text2
-
-'
+      localizationKey: PaladinAFK.Text2
     - bossType: 0
       expression: 1
-      localizationKey: 'PaladinAFK.Text3
-
-'
+      localizationKey: PaladinAFK.Text3
   - name: Death
     messageType: 11
     messages:
@@ -184,6 +174,9 @@ MonoBehaviour:
       localizationKey: 'PaladinHealed.Text2
 
 '
+  happyFace: {fileID: 21300000, guid: 5e7669268d56f2e449a5ad293d285a34, type: 3}
+  angryFace: {fileID: 21300000, guid: 50ff759a62688ba4ea8338f67cc03b7b, type: 3}
+  disguestedFace: {fileID: 21300000, guid: d8115cc86a25a8540ac309040eb853bd, type: 3}
   maxHealth: 6
   numberOfHealthBar: 1
   baseSpeed: 25

@@ -247,7 +247,6 @@ public class FightManager : MonoBehaviour
         float thinkingTime = 0f;
         while (true)
         {
-
             // player turn logic
             thinkingTime += Time.deltaTime;
             if(thinkingTime >= _chanceIntervalToTriggerDialogue)

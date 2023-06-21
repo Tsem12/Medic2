@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossType: 0
   inGameName: 
-  happyFace: {fileID: 0}
-  angryFace: {fileID: 0}
   messages:
   - name: AFK
     messageType: 13
@@ -146,6 +144,9 @@ MonoBehaviour:
     - bossType: 0
       expression: 0
       localizationKey: ArcherFatigue.Text2
+  happyFace: {fileID: 21300000, guid: 7e3d770d72a1c5344aacd54af4be9fef, type: 3}
+  angryFace: {fileID: 21300000, guid: d4c6b0d430c486c4692e05dd47bb5b27, type: 3}
+  disguestedFace: {fileID: 21300000, guid: 491f9ebc13db84e45a320d7aafd5a4d8, type: 3}
   maxHealth: 3
   numberOfHealthBar: 1
   baseSpeed: 75

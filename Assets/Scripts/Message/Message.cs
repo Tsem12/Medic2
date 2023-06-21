@@ -37,6 +37,5 @@ public class MessageBody
     }
     public CharacterObjets.BossType bossType;
     public Expression expression;
-    [TextArea]
     public string localizationKey;
 }
