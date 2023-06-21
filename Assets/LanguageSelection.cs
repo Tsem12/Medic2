@@ -119,5 +119,6 @@ public class LanguageSelection : MonoBehaviour
                 languageButton.ChangeLanguage("Russe");
                 break;
         }
+        SaveSystem.save(gameData);
     }
 }
