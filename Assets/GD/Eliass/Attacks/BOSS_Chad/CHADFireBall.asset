@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f8d1e8efc19604aa27eb5c17f73c56, type: 3}
   m_Name: CHADFireBall
   m_EditorClassIdentifier: 
-  attackName: FireBall
-  description: 
+  attackName: ChadFireball.Name.Text
+  description: ChadFireball.Desc.Text
   attackSpriteOverRide: {fileID: 21300000, guid: be12d703f052add4280e417cff476b49, type: 3}
   attackAnimIndex: 1
   attackSound: AttackChad1
@@ -26,7 +26,7 @@ MonoBehaviour:
   buff: 0
   deBuff: 0
   dotValuePerTurn: 2
-  effectTurnDuration: 1
+  effectTurnDuration: 2
   buffValue: 0
   deBuffValue: 0
   chanceToApplyEffect: 100
