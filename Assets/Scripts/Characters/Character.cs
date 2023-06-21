@@ -736,7 +736,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             switch (status)
             {
                 case global::Status.StatusEnum.Shielded:
-                    _refs.audioManager.Play("ShieldBreak");
+                    _refs.audioManager.Play("StatusShieldBreak");
                     ParticuleHandler.DeactiveShield(status);
                     break;
                 case global::Status.StatusEnum.Disapeared:
