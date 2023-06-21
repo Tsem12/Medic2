@@ -87,7 +87,7 @@ public class CardBase : ScriptableObject
         {
 
             case CardBehaviour.heal:
-                if(partyMember.GetCurrentHealth() == partyMember.GetMaxHealth() || !partyMember.IsDead())
+                if(partyMember.GetCurrentHealth() != partyMember.GetMaxHealth() && !partyMember.IsDead())
                 {
                     return false;
                 }
