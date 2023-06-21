@@ -4084,7 +4084,7 @@ PrefabInstance:
       objectReference: {fileID: 4110371022508119642}
     - target: {fileID: 3043898100064445761, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: _chanceIntervalToTriggerDialogue
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8738665550594490518, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: m_Name
@@ -11800,6 +11800,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4637458930743953397, guid: b082841d0238bd44ca8e93f9b3c8dff2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8141641
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637458930743953397, guid: b082841d0238bd44ca8e93f9b3c8dff2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2477818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637458930743953397, guid: b082841d0238bd44ca8e93f9b3c8dff2, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.07226961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637458930743953397, guid: b082841d0238bd44ca8e93f9b3c8dff2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.123890765
+      objectReference: {fileID: 0}
     - target: {fileID: 4760755173865132068, guid: b082841d0238bd44ca8e93f9b3c8dff2, type: 3}
       propertyPath: m_Name
       value: PartyMember3
@@ -12037,6 +12053,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5df00c2225d94064c88f770844c3ef18, type: 3}
+    - target: {fileID: 8171220922341917843, guid: 326e5ce7d4602894c98c972523a394ac, type: 3}
+      propertyPath: m_Size.x
+      value: 0.88643354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171220922341917843, guid: 326e5ce7d4602894c98c972523a394ac, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.056783266
+      objectReference: {fileID: 0}
     - target: {fileID: 8261083167203346827, guid: 326e5ce7d4602894c98c972523a394ac, type: 3}
       propertyPath: _arrowForBoss
       value: 
@@ -12113,6 +12137,14 @@ PrefabInstance:
     - target: {fileID: 1236039102071536518, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403772433257586, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.76254267
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403772433257586, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.025810532
       objectReference: {fileID: 0}
     - target: {fileID: 3210717112067534259, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
       propertyPath: _layerGroupHealthpoint

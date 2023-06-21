@@ -87,10 +87,10 @@ public class CardBase : ScriptableObject
         {
 
             case CardBehaviour.heal:
-                if(partyMember.GetCurrentHealth() == partyMember.GetMaxHealth() || !partyMember.IsDead())
-                {
-                    return false;
-                }
+                //if (!(partyMember.GetCurrentHealth() == partyMember.GetMaxHealth()) && !partyMember.IsDead())
+                //{
+                //    return false;
+                //}
                 partyMember.GetComponent<IHealable>().Heal(healthHealed);
                 partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveEffect(ParticulesHandeler.CardEffect.Heal);
                 break;
