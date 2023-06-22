@@ -19,7 +19,7 @@ MonoBehaviour:
     messageType: 2
     messages:
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: BerserkerShield.Text1
     - bossType: 0
       expression: 0
@@ -37,43 +37,43 @@ MonoBehaviour:
       expression: 0
       localizationKey: BerserkerStrength.Text1
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: BerserkerStrength.Text2
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: BerserkerStrength.Text3
   - name: Initiative
     messageType: 1
     messages:
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: BerserkerInitiative.Text1
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: BerserkerInitiative.Text2
   - name: Poison
     messageType: 4
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerPoison.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerPoison.Text2
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerPoison.Text3
   - name: Burning
     messageType: 5
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerBurning.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerBurning.Text2
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerBurning.Text3
   - name: Restrained
     messageType: 7
@@ -91,31 +91,31 @@ MonoBehaviour:
     messageType: 9
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerDisappeared.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerDisappeared.Text2
   - name: Stunned
     messageType: 8
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerStun.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerStun.Text2
   - name: Sleep
     messageType: 6
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerSleep.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerSleep.Text2
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerSleep.Text3
   - name: Fatigue
     messageType: 3
@@ -124,52 +124,49 @@ MonoBehaviour:
       expression: 0
       localizationKey: BerserkerFatigue.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerFatigue.Text2
   - name: AFK
     messageType: 13
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerAFK.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerAFK.Text2
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerAFK.Text3
-    - bossType: 0
-      expression: 0
-      localizationKey: BerserkerAFK.Text4
   - name: Death
     messageType: 11
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerDeath.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerDeath.Text2
   - name: Revive
     messageType: 12
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerRevive.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerRevive.Text2
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerRevive.Text3
   - name: Healed
     messageType: 14
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerHealed.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: BerserkerHealed.Text2
   happyFace: {fileID: 21300000, guid: f63fe5126fa6b6442ac012a2f512126a, type: 3}
   angryFace: {fileID: 21300000, guid: 97e803c2e0cf59545927d2d74722b0ba, type: 3}

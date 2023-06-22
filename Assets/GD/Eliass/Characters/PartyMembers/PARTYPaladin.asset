@@ -22,7 +22,7 @@ MonoBehaviour:
       expression: 0
       localizationKey: PaladinShield.Text1
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: PaladinShield.Text2
   - name: Strength
     messageType: 0
@@ -67,18 +67,18 @@ MonoBehaviour:
       expression: 1
       localizationKey: PaladinPoison.Text1
     - bossType: 0
-      expression: 1
+      expression: 2
       localizationKey: PaladinPoison.Text2
   - name: Burn
     messageType: 5
     messages:
     - bossType: 0
-      expression: 1
+      expression: 2
       localizationKey: 'PaladinBurning.Text1
 
 '
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: 'PaladinBurning.Text2
 
 
@@ -87,7 +87,7 @@ MonoBehaviour:
     messageType: 7
     messages:
     - bossType: 0
-      expression: 1
+      expression: 2
       localizationKey: PaladinRestrain.Text1
     - bossType: 0
       expression: 1
@@ -107,34 +107,34 @@ MonoBehaviour:
     messageType: 8
     messages:
     - bossType: 0
-      expression: 1
+      expression: 2
       localizationKey: PaladinStun.Text1
     - bossType: 0
-      expression: 1
+      expression: 2
       localizationKey: PaladinStun.Text2
   - name: Sleep
     messageType: 6
     messages:
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: PaladinSleep.Text1
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: PaladinSleep.Text2
   - name: Fatigue
     messageType: 3
     messages:
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: PaladinFatigue.Text1
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: PaladinFatigue.Text2
   - name: AFK
     messageType: 13
     messages:
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: PaladinAFK.Text1
     - bossType: 0
       expression: 1
@@ -149,7 +149,7 @@ MonoBehaviour:
       expression: 1
       localizationKey: PaladinDeath.Text1
     - bossType: 0
-      expression: 1
+      expression: 2
       localizationKey: PaladinDeath.Text2
   - name: Revived
     messageType: 12

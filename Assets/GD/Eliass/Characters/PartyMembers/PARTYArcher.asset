@@ -28,10 +28,10 @@ MonoBehaviour:
     messageType: 11
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherDeath.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherDeath.Text2
   - name: Revive
     messageType: 12
@@ -82,16 +82,16 @@ MonoBehaviour:
     messageType: 4
     messages:
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: ArcherPoison.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherPoison.Text2
   - name: Burning
     messageType: 5
     messages:
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: ArcherBurning.Text1
     - bossType: 0
       expression: 0
@@ -103,19 +103,19 @@ MonoBehaviour:
       expression: 0
       localizationKey: ArcherRestrain.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherRestrain.Text2
     - bossType: 0
-      expression: 0
+      expression: 1
       localizationKey: ArcherRestrain.Text3
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherRestrain.Text4
   - name: Disapeared
     messageType: 9
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherDisappeared.Text1
     - bossType: 0
       expression: 0
@@ -124,16 +124,16 @@ MonoBehaviour:
     messageType: 8
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherStun.Text1
   - name: Sleeped
     messageType: 6
     messages:
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherSleep.Text1
     - bossType: 0
-      expression: 0
+      expression: 2
       localizationKey: ArcherSleep.Text2
   - name: Fatigue
     messageType: 3
