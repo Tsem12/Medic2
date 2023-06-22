@@ -10,4 +10,9 @@ public class LoadLevel : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("CardSelector");
     }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadSceneAsync("Menu");
+    }
 }

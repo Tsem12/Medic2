@@ -70,8 +70,9 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
             {
                 return false;
             }
-            if(!cardBase.ApplyEffectOfTheCard(collision.gameObject.GetComponent<Character>()))
+            if (cardBase.ApplyEffectOfTheCard(collision.gameObject.GetComponent<Character>()) == false)
             {
+                refs.audioManager.Play("FailedCast");
                 return false;
             }
             effectWasApplied = true;

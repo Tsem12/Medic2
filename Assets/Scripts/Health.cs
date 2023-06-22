@@ -101,7 +101,6 @@ public class Health : MonoBehaviour
         {
             _character.TryRemoveStatus(Status.StatusEnum.Sleeped);
             _character.AddStatus(new Status(Status.StatusEnum.Stunned, 2));
-            Status d = _character.GetStatus(Status.StatusEnum.Stunned);
         }
         TweenTakeDamage(0.1f);
         _valueIndicator.TakeDamageTween(value);
@@ -114,8 +113,7 @@ public class Health : MonoBehaviour
                 if (_refs.fightManager.EnableDebug)
                     Debug.Log($"{gameObject.name} have been killed");
 
-                foreach (HealtPoint hp in _healthPoints)
-                {
+                foreach (HealtPoint hp in _healthPoints)                {
                     hp.ValidHp.sprite = hp.Colors[hp.Colors.Length - 1];
                 }
                 _character.SetCurrentHealth(0);

@@ -25,6 +25,7 @@ public class LevelDataObject : ScriptableObject
     public int currentSceneIndex { get;  set; }
     public LevelData[] levels;
     public Difficulty difficulty;
+    public Queue<int> indexQueue = new Queue<int>();
 
     public void ChooseScene(int index)
     {
@@ -45,6 +46,27 @@ public class LevelDataObject : ScriptableObject
                 difficulty = Difficulty.EndLess;
                 break;
         }
+    }
+
+    public void FillQueue()
+    {
+        indexQueue.Clear();
+        int easyLevelRandom = Random.Range(0, 2);
+        int HardLevelRandom = Random.Range(0, 2);
+        
+        indexQueue.Enqueue(easyLevelRandom == 0 ? 0 : 1);
+        indexQueue.Enqueue(HardLevelRandom == 0 ? 2 : 3);
+        indexQueue.Enqueue(easyLevelRandom == 0 ? 1 : 0);
+        indexQueue.Enqueue(HardLevelRandom == 0 ? 3 : 2);
+    }
+
+    public void DequeueIndex()
+    {
+        if(indexQueue.Count <= 0)
+        {
+            FillQueue();
+        }
+        currentSceneIndex = indexQueue.Dequeue();
     }
 
 }

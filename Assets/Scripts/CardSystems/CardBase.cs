@@ -76,26 +76,21 @@ public class CardBase : ScriptableObject
 
     public bool ApplyEffectOfTheCard(Character partyMember)
     {
-        manaObject.ReduceMana(manaCost);
-        if (manaObject.manaRestauration)
-        {
-            manaObject.AddMana(manaCost);
-            manaObject.manaRestauration = false;
-        }
 
+        Status s = partyMember.GetStatus(Status.StatusEnum.Disapeared);
         switch (cardBehaviour)
         {
-
+            
             case CardBehaviour.heal:
-                //if (!(partyMember.GetCurrentHealth() == partyMember.GetMaxHealth()) && !partyMember.IsDead())
-                //{
-                //    return false;
-                //}
+                if ((partyMember.GetCurrentHealth() == partyMember.GetMaxHealth()) || partyMember.IsDead() || s != null)
+                {
+                    return false;
+                }
                 partyMember.GetComponent<IHealable>().Heal(healthHealed);
                 partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveEffect(ParticulesHandeler.CardEffect.Heal);
                 break;
             case CardBehaviour.resurection:
-                if(!partyMember.IsDead())
+                if(!partyMember.IsDead() || s !=null)
                 {
                     return false;
                 }
@@ -111,7 +106,7 @@ public class CardBase : ScriptableObject
                 int i = 0;
                 foreach (var item in refs.fightManager.PartyMembers)
                 {
-                    if (item.GetCurrentHealth() < item.GetMaxHealth() && !item.IsDead())
+                    if (item.GetCurrentHealth() < item.GetMaxHealth() && !item.IsDead() && s == null)
                     {
                         item.GetComponent<IHealable>().Heal(healthHealed);
                         item.GetParticulHandeler().ActiveEffect(ParticulesHandeler.CardEffect.Heal);
@@ -127,42 +122,72 @@ public class CardBase : ScriptableObject
                 }
                 break;
             case CardBehaviour.panacea:
-                foreach (var item in partyMember.Status.ToList())
-                {
-                    partyMember.TryRemoveStatus(item.status);
-                }
-                if (partyMember.GetCurrentHealth() < partyMember.GetMaxHealth() && !partyMember.IsDead())
+                if (partyMember.GetCurrentHealth() < partyMember.GetMaxHealth() && !partyMember.IsDead() && s ==null)
                 {
                     partyMember.GetComponent<IHealable>().Heal(healthHealed);
                     partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveEffect(ParticulesHandeler.CardEffect.Panacea);
+                    foreach (var item in partyMember.Status.ToList())
+                    {
+                        partyMember.TryRemoveStatus(item.status);
+                    }
+                }
+                else
+                {
+                    return false;
                 }
                 break;
 
             case CardBehaviour.spiritShield:
+                if (partyMember.IsDead() || s != null)
+                {
+                    return false;
+                }
                 partyMember.AddStatus(new Status(Status.StatusEnum.Shielded, 1));
                 partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveShield(Status.StatusEnum.Shielded);
                 break;
 
             case CardBehaviour.regeneration:
+                if (partyMember.IsDead() || s != null)
+                {
+                    return false;
+                }
                 partyMember.AddStatus(new Status(Status.StatusEnum.Regenerating,turnActive,healthHealed));
                 break;
 
             case CardBehaviour.resonanceShield:
+                if (partyMember.IsDead() || s != null)
+                {
+                    return false;
+                }
                 partyMember.AddStatus(new Status(Status.StatusEnum.ShieldedWithReflect, turnActive));
                 partyMember.GetComponent<ICharacter>().GetParticulHandeler().ActiveShield(Status.StatusEnum.ShieldedWithReflect);
                 break;
 
             case CardBehaviour.initiative:
+                if (partyMember.IsDead() || s != null)
+                {
+                    return false;
+                }
                 partyMember.AddStatus(new Status(Status.StatusEnum.Initiative, 1));
                 refs.fightManager.OrderCharacters();
                 break;
 
             case CardBehaviour.blessingOfStrength:
+                if (partyMember.IsDead() || s != null)
+                {
+                    return false;
+                }
                 partyMember.AddStatus(new Status(Status.StatusEnum.Strengthened, turnActive, damageAdded));
                 partyMember.GetParticulHandeler().ActiveEffect(Status.StatusEnum.Strengthened);
                 break;
         }
 
+        manaObject.ReduceMana(manaCost);
+        if (manaObject.manaRestauration)
+        {
+            manaObject.AddMana(manaCost);
+            manaObject.manaRestauration = false;
+        }
         return true;
     }
 

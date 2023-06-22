@@ -1989,6 +1989,10 @@ PrefabInstance:
       propertyPath: _levelData
       value: 
       objectReference: {fileID: 11400000, guid: d26a20f16b81d0740bf1ed45dd0196d6, type: 2}
+    - target: {fileID: 365682464710339725, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: _spriteNull
+      value: 
+      objectReference: {fileID: 1745086891, guid: 86d20dedcef1e9843a95769127b78f59, type: 3}
     - target: {fileID: 531766877148150089, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: m_LocalScale.x
       value: 8.9444895
@@ -2088,6 +2092,26 @@ PrefabInstance:
     - target: {fileID: 5462061952619340407, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1032.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762307489342696082, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762307489342696082, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5df00c2225d94064c88f770844c3ef18, type: 3}
+    - target: {fileID: 6257982572686969718, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 873.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257982572686969718, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 10.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257982572686969718, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.08
       objectReference: {fileID: 0}
     - target: {fileID: 6710511119726881079, guid: 7b1303c9460255c44bc714bf9c88ffd4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10221,7 +10245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1254902, g: 0.23137257, b: 0.14901961, a: 1}
+  m_Color: {r: 0.3019608, g: 0.454902, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11856,6 +11880,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.2649994
       objectReference: {fileID: 0}
+    - target: {fileID: 8235128780205869788, guid: b082841d0238bd44ca8e93f9b3c8dff2, type: 3}
+      propertyPath: _spriteNull
+      value: 
+      objectReference: {fileID: 1745086891, guid: 86d20dedcef1e9843a95769127b78f59, type: 3}
     - target: {fileID: 8903196968360962646, guid: b082841d0238bd44ca8e93f9b3c8dff2, type: 3}
       propertyPath: m_fontSize
       value: 56.86
@@ -12013,6 +12041,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3497421564324408933, guid: 326e5ce7d4602894c98c972523a394ac, type: 3}
+      propertyPath: _spriteNull
+      value: 
+      objectReference: {fileID: 1745086891, guid: 86d20dedcef1e9843a95769127b78f59, type: 3}
     - target: {fileID: 3904611975224312038, guid: 326e5ce7d4602894c98c972523a394ac, type: 3}
       propertyPath: m_Name
       value: PartyMember2
@@ -12146,6 +12178,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -0.025810532
       objectReference: {fileID: 0}
+    - target: {fileID: 2434622348510379611, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
+      propertyPath: _spriteNull
+      value: 
+      objectReference: {fileID: 1745086891, guid: 86d20dedcef1e9843a95769127b78f59, type: 3}
     - target: {fileID: 3210717112067534259, guid: 68aadc4147d466e4e8d61fbb675b847c, type: 3}
       propertyPath: _layerGroupHealthpoint
       value: 

@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5086821860906877961
 MonoBehaviour:
@@ -262,6 +262,13 @@ MonoBehaviour:
   - name: AttackKraken2
     type: 1
     clip: {fileID: 8300000, guid: 098d1dfc091080745859e7476a71cb8f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FailedCast
+    type: 1
+    clip: {fileID: 8300000, guid: 8a2bdfa5ea1f49a4aa79dc607473f90e, type: 3}
     volume: 1
     pitch: 1
     loop: 0

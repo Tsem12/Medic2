@@ -15,6 +15,8 @@ public class StatusBarManager : MonoBehaviour
     [SerializeField] private AllReferences _refs;
     [SerializeField] private Character _chara;
 
+    [SerializeField] private Sprite _spriteNull;
+
     private RectTransform _timerInitTransform;
 
     private Vector3 _initSize;
@@ -33,11 +35,13 @@ public class StatusBarManager : MonoBehaviour
         {
             if(index > _chara.Status.Count)
                 break;
+            bool isNewStatus = false;
 
             _statusImages[index].gameObject.SetActive(true);
             _statusImages[index].rectTransform.localScale = _initSize;
             if (_statusImages[index].sprite != GetAttackSprite(_refs.fightManager, status.status))
             {
+                isNewStatus = true;
                 _statusImages[index].sprite = GetAttackSprite(_refs.fightManager, status.status);
                 _statusImages[index].rectTransform.DOScale(1.3f, 0.25f).SetEase(Ease.InBounce).SetLoops(2, LoopType.Yoyo);
             }
@@ -47,12 +51,25 @@ public class StatusBarManager : MonoBehaviour
             }
             else
             {
+                Sprite oldSprite = _statusTimerImages[index].sprite;
                 _statusTimerImages[index].sprite = GetTimerSprite(status.remainTurn);
-                TimerTween(index);
+                if(oldSprite != _statusTimerImages[index].sprite || isNewStatus)
+                {
+                    TimerTween(index);
+                }
             }
+
             index++;
         }
 
+        for(int i = index; i < _statusImages.Length - 1; i++)
+        {
+            if(_statusImages[i].gameObject.activeSelf == true)
+            {
+                _statusImages[index].sprite = _spriteNull;
+                RemoveTween(_statusImages[i].rectTransform, i);
+            }
+        }
 
 
         //foreach(Image img in _statusImages)
@@ -62,14 +79,6 @@ public class StatusBarManager : MonoBehaviour
         //        img.rectTransform.DOScale(0f, 0.25f).SetEase(Ease.InBounce).OnComplete(() => img.gameObject.SetActive(false));
         //    }
         //}
-
-        for(int i = index; i < _statusImages.Length - 1; i++)
-        {
-            if(_statusImages[i].gameObject.activeSelf == true)
-            {
-                RemoveTween(_statusImages[i].rectTransform);
-            }
-        }
     }
 
     private void TimerTween(int index)
@@ -80,9 +89,15 @@ public class StatusBarManager : MonoBehaviour
         }
     }
 
-    private void RemoveTween(RectTransform rect)
+    private void RemoveTween(RectTransform rect, int index)
     {
-        rect.DOScale(0.1f, 0.25f).SetEase(Ease.InBounce).OnComplete(() => rect.gameObject.SetActive(false));
+        rect.DOScale(0.1f, 0.25f).SetEase(Ease.InBounce).OnComplete(() => 
+        {
+            if(index+ 1  > _chara.Status.Count)
+            {
+                rect.gameObject.SetActive(false);
+            }
+        });
     }
 
 

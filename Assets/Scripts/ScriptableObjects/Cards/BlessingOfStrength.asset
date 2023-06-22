@@ -18,13 +18,13 @@ MonoBehaviour:
   isUnlocked: 1
   dataIndex: 0
   cardBehaviour: 7
-  cardName: 'Blessing of Strength : '
-  description: "Target\u2019s attacks does +1 damage for 3 turns."
+  cardName: BlessingOfStrength.Name.Text
+  description: BlessingOfStrength.Desc.Text
   cardSprite: {fileID: 21300000, guid: 5b88fcb2eff99f840bff3f8beab193ca, type: 3}
   cardSpriteGrey: {fileID: 21300000, guid: 82947766fef77134faf9e5a289e73fc4, type: 3}
   manaCost: 3
   healthHealed: 0
-  turnActive: 0
+  turnActive: 3
   healthPercentage: 0
   shieldBreakAfter: 0
   damageAdded: 1

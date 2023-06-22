@@ -256,7 +256,8 @@ public class FightManager : MonoBehaviour
                 if(random == 0)
                 {
                     ICharacter chara = PartyMembersList[Random.Range(0, PartyMembersList.Count)];
-                    if (!chara.IsDead())
+                    Status status = chara.GetStatus(Status.StatusEnum.Disapeared);
+                    if (!chara.IsDead() && status == null)
                     {
                         chara.GetMessageBehaviour().DisplayMessage(Message.MessageType.Afk, chara.getCharaObj(), _enemie.CharacterObj.bossType);
                     }
@@ -373,7 +374,8 @@ public class FightManager : MonoBehaviour
         string currentMusic = _levelData.levels[_levelData.currentSceneIndex].themeName;
 
         yield return new WaitForSeconds(0.1f);
-        _levelData.currentSceneIndex = (_levelData.currentSceneIndex + 1) % (_levelData.levels.Length);
+
+        _levelData.DequeueIndex();
         foreach (DataSetter data in _dataSetters)
         {
             data.Reconnectvalue();

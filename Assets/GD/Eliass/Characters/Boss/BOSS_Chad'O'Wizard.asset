@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossType: 4
   inGameName: Chad'O'Wizard
+  messages: []
   happyFace: {fileID: 0}
   angryFace: {fileID: 0}
-  messages: []
+  disguestedFace: {fileID: 0}
   maxHealth: 20
   numberOfHealthBar: 3
   baseSpeed: 100

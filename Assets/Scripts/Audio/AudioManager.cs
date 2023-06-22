@@ -203,7 +203,11 @@ public class AudioManager : MonoBehaviour
         }
         float vol = s2.source.volume;
 
-        s.source.DOFade(0f, 2f).SetEase(Ease.OutQuint);
+        s.source.DOFade(0f, 2f).SetEase(Ease.OutQuint).OnComplete(() =>
+        {
+            Stop(name);
+            s.source.volume = s.volume;
+        });
         Play(name2);
         s2.source.volume = 0f;
         s2.source.DOFade(vol, 2f).SetEase(Ease.InQuint).SetDelay(1f);
@@ -220,12 +224,18 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        //s.source.volume = s.volume;
+        //s2.source.volume = s2.volume;
+
         Play(nextSound);
         Pause(nextSound);
         float vol = s2.source.volume;
         s2.source.volume = 0f;
         Debug.LogWarning("qsqsdqsdqs");
-        s.source.DOFade(0f, 1f).SetEase(Ease.OutQuint);
+        s.source.DOFade(0f, 1f).SetEase(Ease.OutQuint).OnComplete(() => {
+            Stop(currentSound);
+            //s.source.volume = s.volume;
+            });
         s.source.DOFade(vol, 1f).SetEase(Ease.InQuint).SetDelay(0.5f).OnStart(() => UnPause(nextSound));
     }
 }

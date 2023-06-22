@@ -42,6 +42,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     protected List<AttacksObject> _nextPossibleAttacks;
     private List<AttacksObject> incomingAttacks = new List<AttacksObject>();
     protected List<AttacksObject> _targetsAttacks =  new List<AttacksObject>();
+    protected List<Status> _endTurnStatus =  new List<Status>();
     protected AttacksObject _nextAttack;
     protected AttackClass _currentAtkClass;
 
@@ -92,6 +93,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     }
     public virtual void StartTurn()
     {
+        _statusBar.UpdateBar();
         Status stunned = GetStatus(global::Status.StatusEnum.Stunned);
         Status restrained = GetStatus(global::Status.StatusEnum.Restrained);
         Status sleep = GetStatus(global::Status.StatusEnum.Sleeped);
@@ -168,6 +170,11 @@ public abstract class Character : MonoBehaviour, ICharacter
         CheckStatus();
         UpdateBar();
         ClearIncomingAttacks();
+        foreach(Status s in _endTurnStatus)
+        {
+            AddStatus(s);
+        }
+        _endTurnStatus.Clear();
     }
 
     public void CheckStatus()
@@ -323,7 +330,7 @@ public abstract class Character : MonoBehaviour, ICharacter
             if (s != null)
             {
                 TakeDamage(_targetsAttacks[index], additionalDamage);
-                AddStatus(_targetsAttacks[index].GetStatus());
+                _endTurnStatus.Add(_targetsAttacks[index].GetStatus());
             }
             else
             {
@@ -834,10 +841,9 @@ public abstract class Character : MonoBehaviour, ICharacter
                 case global::Status.StatusEnum.Fatigue:
                     if (_refs.fightManager.EnableDebug)
                         Debug.Log($"the status {status.status} of {gameObject.name} has been applied twice it has turned into {(global::Status.StatusEnum.Sleeped)}");
-                    AddStatus(new Status(global::Status.StatusEnum.Sleeped, true));
-                    _statusBar.UpdateBar();
                     TryRemoveStatus(global::Status.StatusEnum.Fatigue);
                     TryRemoveStatus(global::Status.StatusEnum.Stunned);
+                    AddStatus(new Status(global::Status.StatusEnum.Sleeped, true));
                     break;
 
                 case global::Status.StatusEnum.Stunned:
@@ -850,7 +856,6 @@ public abstract class Character : MonoBehaviour, ICharacter
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} already got the status: {status.status} it has been reseted");
             s.ResetStatus();
-            _statusBar.UpdateBar();
             return;
         }
         if (_refs.fightManager.EnableDebug)
@@ -858,6 +863,7 @@ public abstract class Character : MonoBehaviour, ICharacter
 
         if(status.status == global::Status.StatusEnum.Disapeared)
         {
+            ClearAllStatus();
             if(_particuleHandler.Disapear != null)
             {
                 transform.DOShakeScale(0.5f).SetEase(Ease.InOutFlash).OnComplete(() => CharacterGfx.gameObject.SetActive(false));

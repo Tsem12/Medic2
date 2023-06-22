@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadSceneAsync("Game");
+        if(_levelData.difficulty == LevelDataObject.Difficulty.EndLess)
+        {
+            _levelData.FillQueue();
+            _levelData.DequeueIndex();
+        }
     }
 
     public void TogglePause()
