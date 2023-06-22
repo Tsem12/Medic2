@@ -262,18 +262,15 @@ public class FightManager : MonoBehaviour
                     }
                 }
             }
-            if (_levelData.difficulty == LevelDataObject.Difficulty.Hard)
-            { 
-                _currentPlayerTimeToPlay -= Time.deltaTime;
-            }
-            if(_playerSlider != null && _levelData.difficulty != LevelDataObject.Difficulty.Hard)
+            if(_playerSlider != null && _levelData.difficulty == LevelDataObject.Difficulty.Hard)
             {
+                _currentPlayerTimeToPlay -= Time.deltaTime;
                 _playerSlider.fillAmount = _currentPlayerTimeToPlay / _playerTimeToPlay;
             }
             if (_currentPlayerTimeToPlay <= 0 || _endTurn)
             {
                 _endTurn = false;
-                if(_levelData.difficulty != LevelDataObject.Difficulty.Hard)
+                if(_levelData.difficulty == LevelDataObject.Difficulty.Hard)
                 {
                     _currentPlayerTimeToPlay = _playerTimeToPlay;
                 }
