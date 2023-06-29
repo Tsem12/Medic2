@@ -17,11 +17,18 @@ public class ManaObject : ScriptableObject
     [HideInInspector]
     public bool manaRestauration;
     [HideInInspector]
+    public int manaRestaurationTurn;
+    [HideInInspector]
     public bool isManaBoost;
 
     public event Action manaUpdate;
     public event Action manaAddTurn;
 
+    private void Awake()
+    {
+        manaRestaurationTurn = 0;
+        manaRestauration = false;
+    }
     public void AddMana(int amount)
     {
         if (amount > 0f)
@@ -44,10 +51,10 @@ public class ManaObject : ScriptableObject
 
     public void ManaAddTurn()
     {
-        if(manaRestauration)
-        {
-            manaRestauration = false;
-        }
+        //if(manaRestauration)
+        //{
+        //    manaRestauration = false;
+        //}
         manaAddTurn?.Invoke();
     }
 

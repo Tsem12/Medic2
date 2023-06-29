@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -73,7 +74,6 @@ public class CardBase : ScriptableObject
     [ShowIf("cardBehaviour", CardBehaviour.blessingOfStrength)]
     public int damageAdded;
 
-
     public bool ApplyEffectOfTheCard(Character partyMember)
     {
 
@@ -100,6 +100,7 @@ public class CardBase : ScriptableObject
 
             case CardBehaviour.manaProfusion:
                 manaObject.manaRestauration = true;
+                manaObject.manaRestaurationTurn = refs.fightManager.CurrentTurn;
                 break;
 
             case CardBehaviour.massHeal:
@@ -182,8 +183,9 @@ public class CardBase : ScriptableObject
                 break;
         }
 
+            Debug.Log($"{manaObject.manaRestauration} && {manaObject.manaRestaurationTurn} && {refs.fightManager.CurrentTurn}");
         manaObject.ReduceMana(manaCost);
-        if (manaObject.manaRestauration)
+        if (manaObject.manaRestauration && manaObject.manaRestaurationTurn < refs.fightManager.CurrentTurn)
         {
             manaObject.AddMana(manaCost);
             manaObject.manaRestauration = false;
