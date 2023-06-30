@@ -15,4 +15,9 @@ public class LoadLevel : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Menu");
     }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadSceneAsync("Game");
+    }
 }

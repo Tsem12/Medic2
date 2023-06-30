@@ -36,6 +36,7 @@ public class AudioManager : MonoBehaviour
         }
         UpdateSoundsVolume();
         Debug.Log($"{gameData.musicVolume} && {gameData.sfxVolume}");
+        DOTween.KillAll();
     }
 
     private void Start()

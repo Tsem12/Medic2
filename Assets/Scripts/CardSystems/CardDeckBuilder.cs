@@ -29,7 +29,7 @@ public class CardDeckBuilder : ScriptableObject
     {
         if(deck.Count == 4)
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadSceneAsync(sceneName);
         }        
     }
 }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,7 +22,14 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     bool isHidden = false;
     public bool wasSwitched = false;
 
+    private Vector3 _initScale;
+    Tween _interactTween;
+    Tween _dropTween;
 
+    private void Start()
+    {
+        _initScale = transform.localScale;
+    }
     public void Init()
     {
         if(isPlayingCard)
@@ -85,6 +93,8 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
     {
         transform.localPosition = Vector3.zero;
     }
+
+
 
     public void Interact()
     {
@@ -299,5 +309,25 @@ public class Card : MonoBehaviour, IInteractable , IToolTip
                 isHidden = false;
             }
         }
+    }
+
+    public void InteractTween()
+    {
+
+        _interactTween = transform.DOScale(_initScale * 1.15f, 0.2f);
+
+        transform.localScale = _initScale;
+        _interactTween.Play();
+
+
+    }
+
+    public void DropTween()
+    {
+
+        _dropTween = transform.DOScale(_initScale, 0.2f);
+
+        transform.localScale = _initScale *1.15f;
+        _dropTween.Play();
     }
 }

@@ -7,6 +7,9 @@ interface IInteractable
 {
     public void Interact();
     public void Cancel();
+
+    public void InteractTween();
+    public void DropTween();
     
 }
 
@@ -54,7 +57,7 @@ public class InteractInput : MonoBehaviour
                 _getObject = col.gameObject;
                 if (_getObject.CompareTag("Grabbable"))//Drag if Grabbable
                 {
-                    _getObject.transform.DOScale(_getObject.transform.localScale * 1.15f, 0.2f);
+                    _getObject.GetComponent<IInteractable>().InteractTween();
                     _dragCoroutine = StartCoroutine(Drag());
                 }
                 else if(_getObject.CompareTag("ToolTip"))
@@ -74,7 +77,8 @@ public class InteractInput : MonoBehaviour
             {
                 if (_getObject.GetComponent<IInteractable>() != null)
                 {
-                    _getObject.transform.DOScale(_getObject.transform.localScale / 1.15f, 0.2f);
+                    //_getObject.transform.DOScale(_getObject.transform.localScale / 1.15f, 0.2f);
+                    _getObject.GetComponent<IInteractable>().DropTween();
                     _getObject.GetComponent<IInteractable>().Interact();//Interact with object
                 }
             }
@@ -150,7 +154,7 @@ public class InteractInput : MonoBehaviour
         {
             if (_getObject != null) // Check if we got object to interact with
             {
-                _getObject.transform.DOScale(_getObject.transform.localScale / 1.1f, 0.2f);
+                _getObject.GetComponent<IInteractable>().DropTween();
                 if (_getObject.GetComponent<IInteractable>() != null)
                 {
                     _getObject.GetComponent<IInteractable>().Cancel();//Interact with object

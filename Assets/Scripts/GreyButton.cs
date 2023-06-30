@@ -7,6 +7,7 @@ public class GreyButton : MonoBehaviour
 {
     [SerializeField] Image button;
     [SerializeField] Image backButton;
+    [SerializeField] UnityEngine.UI.Button backButtonButton;
     [SerializeField] CardDeckBuilder deck;
 
     public void UpdateColor()
@@ -15,9 +16,11 @@ public class GreyButton : MonoBehaviour
         {
             button.color = Color.grey;
             backButton.color = Color.grey;
+            backButtonButton.interactable = false;
         }
         else
         {
+            backButtonButton.interactable = true;
             button.color = Color.white;
             backButton.color = Color.white;
         }
