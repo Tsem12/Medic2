@@ -20,7 +20,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     }
     [Header("Refs")]
     [SerializeField] protected CharacterObjets characterObj;
-    [SerializeField] private MessageBehaviour message;
+    [SerializeField] protected MessageBehaviour message;
     [SerializeField] protected AllReferences _refs;
     [SerializeField] private Health health;
     [SerializeField] protected StatusBarManager _statusBar;
@@ -115,6 +115,11 @@ public abstract class Character : MonoBehaviour, ICharacter
         {
             if (_refs.fightManager.EnableDebug)
                 Debug.Log($"{gameObject.name} can't attack");
+
+            if (_actualPatern.isEvent)
+            {
+                _actualPatern = null;
+            }
 
             if(list.Count >= 1)
             {
@@ -827,6 +832,7 @@ public abstract class Character : MonoBehaviour, ICharacter
                     Message.DisplayMessage(global::Message.MessageType.Disapeared, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 break;
             case global::Status.StatusEnum.ShieldedWithReflect:
+                _refs.audioManager.Play("StatusShielded");
                 if (Message != null && Random.Range(0, _refs.fightManager.ChanceToTriggerAfxDialogue + 1) == 0)
                     Message.DisplayMessage(global::Message.MessageType.Shielded, CharacterObj, _refs.fightManager.Enemie.characterObj.bossType);
                 break;
@@ -894,7 +900,7 @@ public abstract class Character : MonoBehaviour, ICharacter
     [Button]
     public void TestHeal() => AddStatus(new Status(global::Status.StatusEnum.Regenerating, 2, 1));
     [Button]
-    public void TestStun() => AddStatus(new Status(global::Status.StatusEnum.Stunned, 2));
+    public void TestStun() => AddStatus(new Status(global::Status.StatusEnum.Stunned, 1));
     [Button]
     public void TestSleep() => AddStatus(new Status(global::Status.StatusEnum.Sleeped, true));
     [Button]

@@ -7,7 +7,7 @@ using Assets.SimpleLocalization;
 public class LanguageButton : MonoBehaviour
 {
     public Button[] Buttons;
-    public GameData gameData;
+    private GameData gameData;
 
     public void Awake()
     {
@@ -19,8 +19,9 @@ public class LanguageButton : MonoBehaviour
     public void ChangeLanguage(string Language)
     {
         gameData.Language = Language;
+        Debug.Log(gameData.Language);
         LocalizationManager.Language = gameData.Language;
         SaveSystem.save(gameData);
-        Debug.Log("language changed");
+        Debug.Log($"language changed to {Language} was ");
     }
 }

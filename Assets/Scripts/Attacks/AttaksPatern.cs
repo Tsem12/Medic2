@@ -54,6 +54,7 @@ public class AttacksPatern
     }
 
     public string paternName;
+    public bool isEvent;
     public PaternInteruptMode interuptMode;
     public AttackClass[] attacks;
 

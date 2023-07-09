@@ -15,6 +15,7 @@ public class GameData
     public bool sfxVolume;
     public string Language;
     public int index;
+    public int bossStreak;
     
 
 
@@ -28,6 +29,7 @@ public class GameData
         sfxVolume = true;
         Language = "Français";
         index = 0;
+        bossStreak = 0;
     }
     
     

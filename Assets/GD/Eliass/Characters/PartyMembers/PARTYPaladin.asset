@@ -32,9 +32,7 @@ MonoBehaviour:
       localizationKey: PaladinStrength.Text1
     - bossType: 0
       expression: 0
-      localizationKey: 'PaladinStrength.Text1
-
-'
+      localizationKey: PaladinStrength.Text2
   - name: Initiative
     messageType: 1
     messages:
@@ -43,9 +41,7 @@ MonoBehaviour:
       localizationKey: PaladinInitiative.Text1
     - bossType: 0
       expression: 0
-      localizationKey: 'PaladinInitiative.Text2
-
-'
+      localizationKey: PaladinInitiative.Text2
   - name: Taunt
     messageType: 2
     messages:
@@ -57,9 +53,7 @@ MonoBehaviour:
       localizationKey: PaladinProvoking.Text2
     - bossType: 0
       expression: 0
-      localizationKey: 'PaladinProvoking.Text3
-
-'
+      localizationKey: PaladinProvoking.Text3
   - name: Poison
     messageType: 4
     messages:
@@ -74,15 +68,10 @@ MonoBehaviour:
     messages:
     - bossType: 0
       expression: 2
-      localizationKey: 'PaladinBurning.Text1
-
-'
+      localizationKey: PaladinBurning.Text1
     - bossType: 0
       expression: 2
-      localizationKey: 'PaladinBurning.Text2
-
-
-'
+      localizationKey: PaladinBurning.Text2
   - name: Restrain
     messageType: 7
     messages:
@@ -100,9 +89,7 @@ MonoBehaviour:
       localizationKey: PaladinDisappeared.Text1
     - bossType: 0
       expression: 0
-      localizationKey: 'PaladinDisappeared.Text2
-
-'
+      localizationKey: PaladinDisappeared.Text2
   - name: Stun
     messageType: 8
     messages:
@@ -159,10 +146,7 @@ MonoBehaviour:
       localizationKey: PaladinRevive.Text1
     - bossType: 0
       expression: 1
-      localizationKey: 'PaladinRevive.Text2
-
-
-'
+      localizationKey: PaladinRevive.Text2
   - name: Heal
     messageType: 14
     messages:
@@ -171,9 +155,7 @@ MonoBehaviour:
       localizationKey: PaladinHealed.Text1
     - bossType: 0
       expression: 0
-      localizationKey: 'PaladinHealed.Text2
-
-'
+      localizationKey: PaladinHealed.Text2
   happyFace: {fileID: 21300000, guid: 5e7669268d56f2e449a5ad293d285a34, type: 3}
   angryFace: {fileID: 21300000, guid: 50ff759a62688ba4ea8338f67cc03b7b, type: 3}
   disguestedFace: {fileID: 21300000, guid: d8115cc86a25a8540ac309040eb853bd, type: 3}

@@ -2051,6 +2051,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ab5855611d4e50243a80728f78db2966, type: 3}
   _refs: {fileID: 11400000, guid: 14ee097b01fa9eb498af48cdec4ec687, type: 2}
   _chara: {fileID: 8261083167203346827}
+  _spriteNull: {fileID: 0}
 --- !u!1 &8438256237684900786
 GameObject:
   m_ObjectHideFlags: 0
@@ -4102,6 +4103,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 829135983943532937}
     m_Modifications:
+    - target: {fileID: 8018110479080894468, guid: ba9500dcdf4dbff4bac41b3133f5cd64, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 8134803428646074063, guid: ba9500dcdf4dbff4bac41b3133f5cd64, type: 3}
       propertyPath: m_SortingOrder
       value: 1

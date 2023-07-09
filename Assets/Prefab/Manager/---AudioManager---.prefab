@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5086821860906877961
 MonoBehaviour:
@@ -65,7 +65,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: OrcTheme
     type: 1
-    clip: {fileID: 8300000, guid: c1d283c5ebf4ef44893800531563a010, type: 3}
+    clip: {fileID: 8300000, guid: f7415e6447f41604abc9d9caffe1410f, type: 3}
     volume: 1
     pitch: 1
     loop: 1
@@ -270,6 +270,20 @@ MonoBehaviour:
     type: 1
     clip: {fileID: 8300000, guid: 8a2bdfa5ea1f49a4aa79dc607473f90e, type: 3}
     volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    type: 0
+    clip: {fileID: 8300000, guid: cfaedd67c21fcc14a8e998f3edb3cc2c, type: 3}
+    volume: 5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Loose
+    type: 0
+    clip: {fileID: 8300000, guid: fbde09c9bfa670847b39a02f7e3f0a5d, type: 3}
+    volume: 5
     pitch: 1
     loop: 0
     source: {fileID: 0}

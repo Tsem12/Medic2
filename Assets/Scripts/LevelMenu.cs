@@ -13,7 +13,7 @@ public class LevelMenu : MonoBehaviour
     [SerializeField] GameObject hardButton;
     [SerializeField] GameObject easyButton;
     public Button[] Buttons;
-    public GameData gameData;
+    private GameData gameData;
     private void Awake()
     {
         gameData = SaveSystem.Load();

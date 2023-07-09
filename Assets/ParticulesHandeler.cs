@@ -168,12 +168,12 @@ public class ParticulesHandeler : MonoBehaviour
                 
                 //_shield.color = _shieldColor;
                 _shield.DOColor(Vector4.zero, 0.5f).SetEase(_breakShield).OnComplete(() => _shield.gameObject.SetActive(false));
-                _shieldEffect.DOColor(Vector4.zero, 0.5f).SetEase(_breakShield).OnComplete(() => _shieldEffect.gameObject.SetActive(false));
+                _shieldEffect.DOColor(Vector4.zero, 0.5f).SetEase(_breakShield);
                 break;
             case Status.StatusEnum.ShieldedWithReflect:
                 //_reflectShield.color = _reflectShieldColor;
                 _reflectShield.DOColor(Vector4.zero, 0.5f).SetEase(_breakShield).OnComplete(() => _shield.gameObject.SetActive(false));
-                _reflectShieldEffect.DOColor(Vector4.zero, 0.5f).SetEase(_breakShield).OnComplete(() => _shieldEffect.gameObject.SetActive(false));
+                _reflectShieldEffect.DOColor(Vector4.zero, 0.5f).SetEase(_breakShield);
                 break;
         }
     }

@@ -8,6 +8,7 @@ using NaughtyAttributes;
 using System.Linq;
 using static UnityEngine.Rendering.DebugUI;
 using Random = UnityEngine.Random;
+using UnityEngine.Playables;
 
 public class FightManager : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class FightManager : MonoBehaviour
 
     private int _globalAgro;
     private int _currentTurn;
+    private int _bossSteack;
 
     private Coroutine _playerTurnRoutine;
     private Coroutine _partymembersTurnRoutine;
@@ -52,6 +54,8 @@ public class FightManager : MonoBehaviour
 
     public event Action OnTurnBegin;
     public event Action OnTurnEnd;
+
+    private GameData _gameData;
     public event Action OnWin;
 
     #region statusSprites
@@ -111,6 +115,7 @@ public class FightManager : MonoBehaviour
 
     private void Start()
     {
+        _gameData = SaveSystem.Load();
         _currentPlayerTimeToPlay = _playerTimeToPlay;
         if(_levelData.difficulty == LevelDataObject.Difficulty.Easy || _levelData.difficulty == LevelDataObject.Difficulty.EndLess)
         {
@@ -315,6 +320,8 @@ public class FightManager : MonoBehaviour
                 {
                     if (_enableDebug)
                         Debug.Log("GAME OVER");
+                    _refs.audioManager.Play("Loose");
+                    _refs.audioManager.Stop(_levelData.levels[_levelData.currentSceneIndex].themeName);
 
                     _refs.gameManager.ToggleWinLooseMenu(false);
                     _enemie.ClearAllStatus();
@@ -350,6 +357,8 @@ public class FightManager : MonoBehaviour
             
             Debug.Log("GAMEOVER");
             _refs.gameManager.ToggleWinLooseMenu(false);
+            _refs.audioManager.Play("Loose");
+            _refs.audioManager.Stop(_levelData.levels[_levelData.currentSceneIndex].themeName);
             _enemie.ClearAllStatus();
         }
     }
@@ -359,10 +368,18 @@ public class FightManager : MonoBehaviour
         if(_levelData.difficulty == LevelDataObject.Difficulty.EndLess)
         {
             StartCoroutine(StartNewBossRoutine());
+            _bossSteack++;
+            if(_bossSteack > _gameData.bossStreak)
+            {
+                _gameData.bossStreak = _bossSteack;
+            }
+            SaveSystem.save(_gameData);
         }
         else
         {
             _refs.gameManager.ToggleWinLooseMenu(true);
+            _refs.audioManager.Play("Win");
+            _refs.audioManager.Stop(_levelData.levels[_levelData.currentSceneIndex].themeName);
         }
         OnWin?.Invoke();
     }

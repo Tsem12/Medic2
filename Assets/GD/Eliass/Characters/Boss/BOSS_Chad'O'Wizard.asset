@@ -24,6 +24,7 @@ MonoBehaviour:
   baseAgroValue: 0
   attacksPatern:
   - paternName: Part1
+    isEvent: 0
     interuptMode: 0
     attacks:
     - nrbOfTargets: 2
@@ -42,6 +43,7 @@ MonoBehaviour:
   attacksEvent:
   - attack:
       paternName: TP
+      isEvent: 1
       interuptMode: 0
       attacks:
       - nrbOfTargets: 1
@@ -59,6 +61,7 @@ MonoBehaviour:
     numberHealthBarLeft: 1
   - attack:
       paternName: Shuffle
+      isEvent: 0
       interuptMode: 0
       attacks:
       - nrbOfTargets: 1

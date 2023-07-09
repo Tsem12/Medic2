@@ -44,7 +44,7 @@ public class Enemie : Character
         {
             if (!animator.textInfo.characterInfo[i].isVisible) continue;
             Vector3 currCharOffset = animator.GetCharOffset(i);
-            sequence.Append(animator.DOColorChar(i, Color.black, 0));
+            sequence.Append(animator.DOColorChar(i, Color.white, 0));
             sequence.Append(animator.DOPunchCharScale(i, 5f, 1f / animator.textInfo.characterCount * 2).OnComplete(() => _refs.audioManager.Play("LeterFall")));
         }
         sequence.Append(_bossName.DOScale(10f, 0.3f).SetEase(Ease.InQuart).SetLoops(2, LoopType.Yoyo)).OnComplete(() =>

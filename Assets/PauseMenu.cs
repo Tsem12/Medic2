@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,36 +15,26 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject LevelMenu;
     [SerializeField] GameObject accountWindow;
     [SerializeField] GameObject HowToPlayWindow;
-    private bool isPaused = false;
+    [SerializeField] RectTransform _logo;
+    Vector3 _logoSize;
     private bool isHowToPlayToggled = false;
     private bool isLevelMenuToggled = false;
 
+    private void Start()
+    {
+        if(_logo!= null)
+        {
+            _logoSize = _logo.localScale;
+            _logo.DOScale(_logoSize * 1.05f, 1.5f).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo);
+        }
+    }
     public void Pause()
     {
         audioManager.Play("ButtonPress1");
 
-        if (isPaused)
-        {
-            Resume();
-        }
-        else
-        {
-        optionMenu.SetActive(true);
-        Time.timeScale = 0f;
-            isPaused = true;
-
-        }
-
+        optionMenu.SetActive(!optionMenu.activeSelf);
     }
 
-    public void Resume()
-    {
-        audioManager.Play("ButtonPress1");
-        optionMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-
-    }
 
     public void Home()
     {

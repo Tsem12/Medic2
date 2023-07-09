@@ -1,4 +1,5 @@
 using DG.Tweening;
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -144,6 +145,21 @@ public class PartyMember : Character, IHealable
             case PartyMemberEnum.Archer:
                 _gfx.transform.DOScale(Vector3.one * 1.75f, 0.2f).SetEase(Ease.InBounce).SetLoops(2, LoopType.Yoyo);
                 break;
+        }
+    }
+
+    [Button]
+    private void TestAllMessages() => StartCoroutine(TestAllMessageRoutine());
+    private IEnumerator TestAllMessageRoutine()
+    {
+                Debug.Log("qssdsqd");
+        foreach(Message m in characterObj.messages)
+        {
+            foreach(MessageBody mb in m.messages)
+            {
+                message.StartCoroutine(message.MessageRoutine(mb));
+                yield return new WaitForSeconds(2f);
+            }
         }
     }
 }

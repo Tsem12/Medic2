@@ -92,8 +92,9 @@ public class MessageBehaviour : MonoBehaviour
 
     }
 
-    private IEnumerator MessageRoutine(MessageBody message)
+    public IEnumerator MessageRoutine(MessageBody message)
     {
+        Debug.Log("sdqsdsqd");
         if(_disappearTween != null)
         {
             yield return _disappearTween.WaitForCompletion();

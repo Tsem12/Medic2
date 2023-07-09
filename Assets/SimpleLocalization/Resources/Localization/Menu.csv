@@ -3,33 +3,29 @@ MainMenu.Button.level1,Orcish Warlord,Orcish Warlord,Orcish Warlord,Orcish Warlo
 MainMenu.Button.level2,Worcestershire Cat,Worcestershire Cat,Worcestershire Cat,Worcestershire Cat,Worcestershire Cat,Worcestershire Cat,Worcestershire Cat,Worcestershire Cat
 MainMenu.Button.level3,Kraqueen,Kraqueen,Kraqueen,Kraqueen,Kraqueen,Kraqueen,Kraqueen,Kraqueen
 MainMenu.Button.level4,Chad’O’Wizard,Chad’O’Wizard,Chad’O’Wizard,Chad’O’Wizard,Chad’O’Wizard,Chad’O’Wizard,Chad’O’Wizard,Chad’O’Wizard
-MainMenu.Button.level5,Infinite Level,Infinite Level,Unendliches Level,Nivel Infinito, 无限水平,無限レベル ,Nível Infinito,Бесконечный уровень
-MainMenu.Button.hardMode,Hard Mode,Hard Mode,Schwieriger Modus,Modo Difícil, 困难模式 ,ハードモード,Modo Difícil,Режим Сложности
-MainMenu.Button.easyMode,Easy Mode,Easy Mode,Einfacher Modus,"Modo Fácil",简单模式,イージーモード,Modo Fácil,Легкий режим
-OptionMenu.Button.Sfx,Sfx,Sfx,Soundeffekte,Efectos de sonido,聲音特效,音響効果,Efeitos sonoros,Звуковые эффекты
-OptionMenu.Button.Music,Music,Music,Musik,Música,音樂,音楽,Música,Музыка
+MainMenu.Button.level5,Infinite Level,Niveau Infini,Unendliches Level,Nivel Infinito, 无限水平,無限レベル ,Nível Infinito,Бесконечный уровень
+MainMenu.Button.hardMode,Hard Mode,Mode Difficile,Schwieriger Modus,Modo Difícil, 困难模式 ,ハードモード,Modo Difícil,Режим Сложности
+MainMenu.Button.easyMode,Easy Mode,Mode Facile,Einfacher Modus,"Modo Fácil",简单模式,イージーモード,Modo Fácil,Легкий режим
+OptionMenu.Button.Sfx,Sfx,Effets Sonores,Soundeffekte,Efectos de sonido,聲音特效,音響効果,Efeitos sonoros,Звуковые эффекты
+OptionMenu.Button.Music,Music,Musique,Musik,Música,音樂,音楽,Música,Музыка
 OptionMenu.Button.Pause,Pause,Pause,Brechen,Romper,休息,壊す,Quebrar,Переры
-OptionMenu.Button.Account,Account,Account,Konto,Cuenta,账户 ,アカウント ,Conta,Счет
-OptionMenu.Button.HowToPlay,How to Play,How to Play,Wie spielt man,Cómo jugar,如何玩,遊び方 ,Como Jogar, Как играть
-OptionMenu.Button.LeaderBoard,Leaderboard,Leaderboard,Bestenliste,Tabla de líderes,排行榜 ,リーダーボード,Tabela de líderes,Таблица лидеров
-OptionMenu.Button.Credits,Credits,Credits,Credits,Créditos,积分 ,クレジット ,Créditos,Кредиты 
-PauseMenu.EndGame.text,Finish,Finish,,,,,,
-Hud.Button.EndTurn,End Turn,End Turn,"Ende der Runde","fin de turno",回合結束,ターン終了時,Fim do turno,Конец хода
+OptionMenu.Button.Account,Account,Compte,Konto,Cuenta,账户 ,アカウント ,Conta,Счет
+OptionMenu.Button.HowToPlay,How to Play,Comment Jouer,Wie spielt man,Cómo jugar,如何玩,遊び方 ,Como Jogar, Как играть
+OptionMenu.Button.LeaderBoard,Leaderboard,Classement,Bestenliste,Tabla de líderes,排行榜 ,リーダーボード,Tabela de líderes,Таблица лидеров
+OptionMenu.Button.Credits,Credits,Crédits,Credits,Créditos,积分 ,クレジット ,Créditos,Кредиты 
+PauseMenu.EndGame.text,Finish,Fini,,,,,,
+Hud.Button.EndTurn,End Turn,Fin de Tour,"Ende der Runde","fin de turno",回合結束,ターン終了時,Fim do turno,Конец хода
 HowToPlayMenu.Window1,"Each round begins by your own turn, where you free to pick spells to use on your allies. Each spell has an assigned mana cost you must pay.
-Once you've finished your actions, you can press the end turn button at the bottom right of your interface.","Each round begins by your own turn, where you free to pick spells to use on your allies. Each spell has an assigned mana cost you must pay.
-Once you've finished your actions, you can press the end turn button at the bottom right of your interface.","Zuerst beginnt die Runde mit deinem Zug. Nachdem du deine Zauber gewirkt und den ""Zug beenden""-Button gedrückt hast, wird der Boss als Erstes angreifen (es sei denn, du hast den Zauber ""Initiative"" gewirkt). Dann werden deine Verbündeten angreifen.","Primero, la ronda comienza jugando tu turno. Después de haber lanzado tus hechizos y presionado el botón ""Terminar turno"", el jefe atacará primero (a menos que hayas lanzado el hechizo de ""iniciativa""). Luego, tus aliados atacarán.",首先，回合开始时轮到你行动。在你施放了法术并按下“结束回合”按钮后，首先是boss会进行攻击（除非你施放了“先发制人”法术）。然后你的盟友会进行攻击。,"最初に、ラウンドが始まります。あなたのターンで呪文を唱え、""ターン終了""ボタンを押した後、ボスが最初に攻撃します（ただし、""先制""呪文を唱えた場合を除く）。その後、仲間が攻撃します。","Primeiro, a rodada começa com o seu turno. Depois de lançar seus feitiços e pressionar o botão ""Fim de Turno"", o chefe atacará primeiro (a menos que você tenha lançado o feitiço de ""iniciativa""). Em seguida, seus aliados atacarão.","Сначала раунд начинается с вашего хода. После того, как вы произнесли свои заклинания и нажали кнопку ""Конец хода"", босс атакует первым (если вы не произнесли заклинание ""инициатива""). Затем атакуют ваши союзники."
+Once you've finished your actions, you can press the end turn button at the bottom right of your interface.","Chaque round débute par votre tour de jeu, où vous pouvez utiliser vos différents sorts sur vos alliés. Chaque icône comprend également le coût du sort.
+ Une fois vos actions terminées, vous pourrez presser le bouton de fin de tour à la droite de votre interface.","Zuerst beginnt die Runde mit deinem Zug. Nachdem du deine Zauber gewirkt und den ""Zug beenden""-Button gedrückt hast, wird der Boss als Erstes angreifen (es sei denn, du hast den Zauber ""Initiative"" gewirkt). Dann werden deine Verbündeten angreifen.","Primero, la ronda comienza jugando tu turno. Después de haber lanzado tus hechizos y presionado el botón ""Terminar turno"", el jefe atacará primero (a menos que hayas lanzado el hechizo de ""iniciativa""). Luego, tus aliados atacarán.",首先，回合开始时轮到你行动。在你施放了法术并按下“结束回合”按钮后，首先是boss会进行攻击（除非你施放了“先发制人”法术）。然后你的盟友会进行攻击。,"最初に、ラウンドが始まります。あなたのターンで呪文を唱え、""ターン終了""ボタンを押した後、ボスが最初に攻撃します（ただし、""先制""呪文を唱えた場合を除く）。その後、仲間が攻撃します。","Primeiro, a rodada começa com o seu turno. Depois de lançar seus feitiços e pressionar o botão ""Fim de Turno"", o chefe atacará primeiro (a menos que você tenha lançado o feitiço de ""iniciativa""). Em seguida, seus aliados atacarão.","Сначала раунд начинается с вашего хода. После того, как вы произнесли свои заклинания и нажали кнопку ""Конец хода"", босс атакует первым (если вы не произнесли заклинание ""инициатива""). Затем атакуют ваши союзники."
 HowToPlayMenu.Window2,"Your spells are located at the bottom of your screen. Drag and drop your spell on the targeted ally to apply the spell’s effect on him.
-","Your spells are located at the bottom of your screen. Drag and drop your spell on the targeted ally to apply the spell’s effect on him.
-","Deine Zauber befinden sich am unteren Rand deines Bildschirms. Ziehe deinen Zauber auf den ausgewählten Verbündeten, um den Effekt des Zaubers auf ihn anzuwenden.",Tus hechizos se encuentran en la parte inferior de tu pantalla. Arrastra y suelta tu hechizo sobre el aliado objetivo para aplicar el efecto del hechizo sobre él.,你的法术位于屏幕底部。将法术拖放到目标盟友身上，以施放法术效果。,あなたの呪文は画面の下部にあります。対象の仲間に呪文をドラッグ＆ドロップして、呪文の効果を彼に適用します。,Seus feitiços estão localizados na parte inferior da tela. Arraste e solte seu feitiço no aliado alvo para aplicar o efeito do feitiço nele.," Ваши заклинания расположены внизу экрана. Перетащите ваше заклинание на выбранного союзника, чтобы применить его эффект."
+","Pour lancer un sort, pressez l'icône et glissez-la vers votre cible.","Deine Zauber befinden sich am unteren Rand deines Bildschirms. Ziehe deinen Zauber auf den ausgewählten Verbündeten, um den Effekt des Zaubers auf ihn anzuwenden.",Tus hechizos se encuentran en la parte inferior de tu pantalla. Arrastra y suelta tu hechizo sobre el aliado objetivo para aplicar el efecto del hechizo sobre él.,你的法术位于屏幕底部。将法术拖放到目标盟友身上，以施放法术效果。,あなたの呪文は画面の下部にあります。対象の仲間に呪文をドラッグ＆ドロップして、呪文の効果を彼に適用します。,Seus feitiços estão localizados na parte inferior da tela. Arraste e solte seu feitiço no aliado alvo para aplicar o efeito do feitiço nele.," Ваши заклинания расположены внизу экрана. Перетащите ваше заклинание на выбранного союзника, чтобы применить его эффект."
 HowToPlayMenu.Window2.Title,"How to use spells ?
-","How to use spells ?
-","Wie benutzt man Zauber?",¿Cómo utilizar hechizos?,如何使用法术？,呪文の使い方は？,Como usar feitiços?,Как использовать заклинания? 
+",Comment utiliser les sorts ?,"Wie benutzt man Zauber?",¿Cómo utilizar hechizos?,如何使用法术？,呪文の使い方は？,Como usar feitiços?,Как использовать заклинания? 
 HowToPlayMenu.Window3,"You can open your spellbook by pressing the book button on the upper right corner of the screen. After this, drag and drop the spells you want in your spell bar to replace another spell.
-","You can open your spellbook by pressing the book button on the upper right corner of the screen. After this, drag and drop the spells you want in your spell bar to replace another spell.
-","Du kannst dein Zauberbuch öffnen, indem du den Buch-Button in der oberen rechten Ecke des Bildschirms drückst. Ziehe danach die gewünschten Zauber in deine Zauberleiste und ersetze damit einen anderen Zauber.","Puedes abrir tu libro de hechizos presionando el botón del libro en la esquina superior derecha de la pantalla. Después de esto, arrastra y suelta los hechizos que desees en tu barra de hechizos para reemplazar otro hechizo.",您可以通过点击屏幕右上角的书本按钮来打开您的法术书。然后，将您想要的法术拖放到法术栏中，以替换其他法术。,画面の右上隅にある本のボタンを押すと、呪文書を開くことができます。その後、別の呪文と入れ替えるために、スペルバーに追加したい呪文をドラッグアンドドロップしてください。," Você pode abrir seu grimório pressionando o botão do livro no canto superior direito da tela. Em seguida, arraste e solte os feitiços que você deseja na sua barra de feitiços para substituir outro feitiço.","Вы можете открыть свою книгу заклинаний, нажав кнопку книги в верхнем правом углу экрана. После этого перетащите и бросьте заклинания, которые вы хотите поместить на панель заклинаний, чтобы заменить другое заклинание."
+","Vous pouvez ouvrir votre grimoire en appuyant sur le bouton livre dans le coin supérieur droit de l'écran. Ensuite, faites glisser et déposez les sorts que vous souhaitez dans votre barre de sorts pour remplacer un autre sort.","Du kannst dein Zauberbuch öffnen, indem du den Buch-Button in der oberen rechten Ecke des Bildschirms drückst. Ziehe danach die gewünschten Zauber in deine Zauberleiste und ersetze damit einen anderen Zauber.","Puedes abrir tu libro de hechizos presionando el botón del libro en la esquina superior derecha de la pantalla. Después de esto, arrastra y suelta los hechizos que desees en tu barra de hechizos para reemplazar otro hechizo.",您可以通过点击屏幕右上角的书本按钮来打开您的法术书。然后，将您想要的法术拖放到法术栏中，以替换其他法术。,画面の右上隅にある本のボタンを押すと、呪文書を開くことができます。その後、別の呪文と入れ替えるために、スペルバーに追加したい呪文をドラッグアンドドロップしてください。," Você pode abrir seu grimório pressionando o botão do livro no canto superior direito da tela. Em seguida, arraste e solte os feitiços que você deseja na sua barra de feitiços para substituir outro feitiço.","Вы можете открыть свою книгу заклинаний, нажав кнопку книги в верхнем правом углу экрана. После этого перетащите и бросьте заклинания, которые вы хотите поместить на панель заклинаний, чтобы заменить другое заклинание."
 HowToPlayMenu.Window3.Title,"Swapping spells
-","Swapping spells
-",Zauber austauschen,Intercambio de hechizos,交换法术,呪文の入れ替え,Troca de feitiços,Обмен заклинаниями
+",Changement de sorts,Zauber austauschen,Intercambio de hechizos,交换法术,呪文の入れ替え,Troca de feitiços,Обмен заклинаниями
 HowToPlayMenu.Window4,"-Heal (2) : Heal target for 2 HP
 -Mass Heal (5) : Heal all allies for 2 HP
 -Regeneration (3) : heal 1 HP/turn for 3 turns
@@ -40,17 +36,16 @@ HowToPlayMenu.Window4,"-Heal (2) : Heal target for 2 HP
 -Resonance Shield (8) : Sends back damage done to the target to the attacker (lasts 2 turn)
 -Blessing of Strength (6): Target’s next attack does +2 damage
 -Mana Profusion (4) : Cost of the next spell casted is refunded next turn
--Initiative (3) : Makes the target take their turn first, before the monster","-Heal (2) : Heal target for 2 HP
--Mass Heal (5) : Heal all allies for 2 HP
--Regeneration (3) : heal 1 HP/turn for 3 turns
--Resurrection (10) : Revives the target if dead.
--Antidote (4) : Removes all effects of target 
-(positive and negative)
--Spirit Shield (4) : Shield target of all damage from the next attack they receive (breaks afterwards.)
--Resonance Shield (8) : Sends back damage done to the target to the attacker (lasts 2 turn)
--Blessing of Strength (6): Target’s next attack does +2 damage
--Mana Profusion (4) : Cost of the next spell casted is refunded next turn
--Initiative (3) : Makes the target take their turn first, before the monster","Heal (2) : Heilt das Ziel um 2 TP.
+-Initiative (3) : Makes the target take their turn first, before the monster","Heal (2) : Soigne la cible de 2 PV.
+ Mass Heal (5) : Soigne tous les alliés de 2 PV.
+ Regeneration (3) : Soigne 1 PV par tour pendant 3 tours.
+ Resurrection (10) : Ressuscite la cible si elle est morte.
+ Antidote (4) : Supprime tous les effets de la cible (positifs et négatifs).
+ Spirit Shield (4) : Protège la cible de tous les dégâts de la prochaine attaque qu'elle reçoit (se brise ensuite).
+ Resonance Shield (8) : Renvoie les dégâts infligés à la cible à l'attaquant (dure 2 tours).
+ Blessing of Strength (6) : La prochaine attaque de la cible inflige +2 dégâts.
+ Mana Profusion (4) : Le coût du prochain sort lancé est remboursé au tour suivant.
+ Initiative (3) : Fait prendre son tour en premier à la cible, avant le monstre.","Heal (2) : Heilt das Ziel um 2 TP.
 Mass Heal (5) : Heilt alle Verbündeten um 2 TP.
 Regeneration (3) : Heilt 1 TP pro Runde für 3 Runden.
 Resurrection (10) : Belebt das Ziel wieder, falls tot.
@@ -104,7 +99,7 @@ Resonance Shield (8) : Возвращает урон, нанесенный це�
 Blessing of Strength (6) : Следующая атака цели наносит дополнительно +2 урона.
 Mana Profusion (4) : Стоимость следующего произнесенного заклинания возвращается в следующем ходу.
 Initiative (3) : Позволяет цели ходить первой, перед монстром."
-HowToPlayMenu.Window4.Title,Spell List,Spell List,Zauberliste,"Lista de hechizos",法术列表,呪文リスト,Lista de feitiços, Список заклинаний
+HowToPlayMenu.Window4.Title,Spell List,Liste des sorts,Zauberliste,"Lista de hechizos",法术列表,呪文リスト,Lista de feitiços, Список заклинаний
 HowToPlayMenu.Window5,"1 : Berserker
 
 Your primary damage dealer. Has 4 health points.
@@ -119,21 +114,9 @@ Has the ability to stun for a single turn, or provoke the enemy, preventing them
 
 Your secondary damage dealer. Has 3 health points does 2 damage per attack.
 Can also send a poisoned arrow, doing a single damage but poisoning the target for two turns.
-","1 : Berserker
-
-Your primary damage dealer. Has 4 health points.
-Does a single damage per attack, but each missing health point will provide one additional damage.
-
-2 : Paladin
-
-Your tank. Has 6 health points, and does a single damage per attack.
-Has the ability to stun for a single turn, or provoke the enemy, preventing them from attacking anyone else for the duration.
-
-3 : Archer
-
-Your secondary damage dealer. Has 3 health points does 2 damage per attack.
-Can also send a poisoned arrow, doing a single damage but poisoning the target for two turns.
-","1 : Berserker : Dein Hauptangreifer. Hat 4 Lebenspunkte. Fügt mit jedem Angriff einen Schaden zu, aber für jeden fehlenden Lebenspunkt wird ein zusätzlicher Schaden verursacht.
+","1 : Berserker : Votre principal source dégât. Possède 4 points de vie. Inflige un seul point de dégât par attaque, mais chaque point de vie manquant lui confère un dégât supplémentaire.
+ 2 : Paladin : Votre tank. Possède 6 points de vie et inflige un seul point de dégât par attaque. Possède la capacité d'étourdir l'ennemi pendant un tour ou de provoquer l'ennemi, l'empêchant d'attaquer quelqu'un d'autre pendant la durée.
+ 3 : Archer : Votre second dégât. Possède 3 points de vie et inflige 2 points de dégât par attaque. Peut également envoyer une flèche empoisonnée, infligeant un seul point de dégât mais empoisonnant la cible pendant deux tours.","1 : Berserker : Dein Hauptangreifer. Hat 4 Lebenspunkte. Fügt mit jedem Angriff einen Schaden zu, aber für jeden fehlenden Lebenspunkt wird ein zusätzlicher Schaden verursacht.
 2 : Paladin : Dein Tank. Hat 6 Lebenspunkte und fügt mit jedem Angriff einen Schaden zu. Hat die Fähigkeit, den Gegner für einen einzelnen Zug zu betäuben oder ihn zu provozieren, sodass er während der Dauer niemand anderen angreifen kann.
 3 : Bogenschütze : Dein sekundärer Angreifer. Hat 3 Lebenspunkte und fügt mit jedem Angriff 2 Schaden zu. Kann auch einen vergifteten Pfeil abschießen, der einen einzelnen Schaden verursacht, aber das Ziel für zwei Züge vergiftet.","1 : Berserker : Tu principal cazador de daño. Tiene 4 puntos de salud. Inflige un solo punto de daño por ataque, pero cada punto de salud que le falte proporcionará un daño adicional.
 2 : Paladín : Tu tanque. Tiene 6 puntos de salud e inflige un solo punto de daño por ataque. Tiene la habilidad de aturdir al enemigo durante un turno o provocar al enemigo, impidiendo que ataque a cualquier otra persona durante la duración.
@@ -150,7 +133,7 @@ Can also send a poisoned arrow, doing a single damage but poisoning the target f
 
 
 "
-HowToPlayMenu.Window5.Title,What Each Character does ?,What Each Character does ?,Was macht jeder Charakter?,¿Qué hace cada personaje?,每个角色做什么？,各キャラクターは何をするのですか？,O que cada personagem faz?,Что делает каждый персонаж?
+HowToPlayMenu.Window5.Title,What Each Character does ?,Que fait chaque personnage ?,Was macht jeder Charakter?,¿Qué hace cada personaje?,每个角色做什么？,各キャラクターは何をするのですか？,O que cada personagem faz?,Что делает каждый персонаж?
 HowToPlayMenu.Window6,"Shielded
  : Prevents all? (or 1? 2?) damage and effects from the next attack. Breaks afterward.
 
@@ -191,47 +174,18 @@ Fatigue
  : Reduces attack damage for the duration. If applied twice, transforms into sleep.
 
 
-","Shielded
- : Prevents all? (or 1? 2?) damage and effects from the next attack. Breaks afterward.
-
-
-Strengthened
- : Increases damage for the duration.
-
-
-Regenerating
- : Targets heals 1hp/turn for the duration. 
-
-Initiative
- : Target acts first (before both allies and the boss) for the duration. If multiple allies have it, use base speed to determine who goes first.
-
-Provoking 
-: Character must be the target of the enemy’s next attacks
-
-Poisoned 
-: Targets suffers 1D/turn for the duration.
-
-Burning 
-: Target suffers 2D/turn for the duration.
-
-Restrained
- : Prevents target from taking any action until freed. Targets suffers 1D/turn.
-
-Disappeared 
-: Target is absent from the fight for the duration. Cannot take actions or be targeted.
-
-Stunned
- : Prevents target from taking any action for the duration. Removes sleep.
-
-Unconscious
- : Prevents target from taking any action until it takes damage. Then, gets stunned for a turn.
-Removes stun and fatigue.
-
-Fatigue
- : Reduces attack damage for the duration. If applied twice, transforms into sleep.
-
-
-","Geschützt : Verhindert alle (oder 1, 2?) Schäden und Effekte des nächsten Angriffs. Bricht danach.
+","Shielded : Empêche tous (ou 1, 2 ?) les dégâts et effets de la prochaine attaque. Se brise ensuite.
+ Renforcé : Augmente les dégâts pendant la durée.
+ Régénération : La cible récupère 1 PV par tour pendant la durée.
+ Initiative : La cible agit en premier (avant les alliés et le boss) pendant la durée. Si plusieurs alliés l'ont, la vitesse de base est utilisée pour déterminer qui agit en premier.
+ Provocation : Le personnage doit être la cible des prochaines attaques de l'ennemi.
+ Empoisonné : La cible subit 1 point de dégât par tour pendant la durée.
+ Brûlure : La cible subit 2 points de dégât par tour pendant la durée.
+ Immobilisé : Empêche la cible de prendre toute action jusqu'à sa libération. La cible subit 1 point de dégât par tour.
+ Disparu : La cible est absente du combat pendant la durée. Elle ne peut pas prendre d'action ni être ciblée.
+ Étourdi : Empêche la cible de prendre toute action pendant la durée. Supprime le sommeil.
+ Inconscient : Empêche la cible de prendre toute action jusqu'à ce qu'elle subisse des dégâts. Ensuite, elle est étourdie pendant un tour. Supprime l'étourdissement et la fatigue.
+ Fatigue : Réduit les dégâts d'attaque pendant la durée. S'il est appliqué deux fois, se transforme en sommeil.","Geschützt : Verhindert alle (oder 1, 2?) Schäden und Effekte des nächsten Angriffs. Bricht danach.
 Gestärkt : Erhöht den Schaden für die Dauer.
 Regeneration : Das Ziel heilt 1 TP pro Runde für die Dauer.
 Initiative : Das Ziel handelt zuerst (vor Verbündeten und dem Boss) für die Dauer. Wenn mehrere Verbündete dies haben, wird die Grundgeschwindigkeit verwendet, um zu bestimmen, wer zuerst handelt.
@@ -298,168 +252,168 @@ Fadiga : Reduz o dano de ataque durante a duração. Se aplicado duas vezes, tra
 Оглушение : Предотвращает действия цели на протяжении действия. Удаляет сон.
 Без сознания : Предотвращает действия цели до получения урона. Затем оглушается на один ход. Удаляет оглушение и усталость.
 Усталость : Уменьшает урон атаки на протяжении действия. При двукратном применении прев"
-HowToPlayMenu.Window6.Title,Status Effects List : ,Status Effects List : ,Status-Effekte-Liste :,Lista de efectos de estado :,状态效果列表：,ステータス効果リスト：, Lista de efeitos de status :,Список эффектов статуса :
-LoseMenu.Text,You lose!,You lose!,Du hast verloren!,¡Has perdido!,你输了！,負けました！,Você perdeu!,Вы проиграли!
-WinMenu.Text,You win!,You win!,Du hast gewonnen!,¡Has ganado!,你赢了！,勝ちました！,Você venceu!,Вы победили!
-,,,,,,,,
-BerserkerShield.Text1,"I am *invincible*, hahaha!","I am *invincible*, hahaha!",,,,,,
-BerserkerShield.Text2,Have you seen how I dodged this?!,Have you seen how I dodged this?!,,,,,,
-BerserkerShield.Text3,"Ha, you missed! Loser…","Ha, you missed! Loser…",,,,,,
-BerserkerShield.Text4,It can’t even hit me!,It can’t even hit me!,,,,,,
-BerserkerStrength.Text1,"Damn, my muscles just doubled in size!","Damn, my muscles just doubled in size!",,,,,,
-BerserkerStrength.Text2,*roars*,*roars*,,,,,,
-BerserkerStrength.Text3,I’m all mighty!,I’m all mighty!,,,,,,
-BerserkerInitiative.Text1,I’m gonna end this man's whole career.,I’m gonna end this man's whole career.,,,,,,
-BerserkerInitiative.Text2,Here I go!,Here I go!,,,,,,
-BerserkerPoison.Text1,I don’t feel well…,I don’t feel well…,,,,,,
-BerserkerPoison.Text2,What’s this purple sticky stuff ?,What’s this purple sticky stuff ?,,,,,,
-BerserkerPoison.Text3,"Well, that smells really bad… Or is it just my smell?","Well, that smells really bad… Or is it just my smell?",,,,,,
-BerserkerBurning.Text1,I’M BURNIIIIIIIIIIIIIING (for your eyes ;) ),I’M BURNIIIIIIIIIIIIIING (for your eyes ;) ),,,,,,
-BerserkerBurning.Text2,"HOT, HOT, HOOOOOOT ! (just like you ;) )","HOT, HOT, HOOOOOOT ! (just like you ;) )",,,,,,
-BerserkerBurning.Text3,This fire is out of control!,This fire is out of control!,,,,,,
-BerserkerRestrain.Text1,Hey ;),Hey ;),,,,,,
-BerserkerRestrain.Text2,"Hmm, kinky!","Hmm, kinky!",,,,,,
-BerserkerRestrain.Text3,"A bit weird, but I'm into it!","A bit weird, but I'm into it!",,,,,,
-BerserkerDisappeared.Text1,What is this spe…,What is this spe…,,,,,,
-BerserkerDisappeared.Text2,I’M GOING TO KI…,I’M GOING TO KI…,,,,,,
-BerserkerStun.Text1,*bird sounds*,*imitate bird sounds*,,,,,,
-BerserkerStun.Text2,The stars are spinning very fast…,The stars are spinning very fast…,,,,,,
-BerserkerSleep.Text1,*loud snoring*,*loud snoring*,,,,,,
-BerserkerSleep.Text2,Perfect place for a nap...,Perfect place for a nap...,,,,,,
-BerserkerSleep.Text3,I’ll… just take a break…,I’ll… just take a break…,,,,,,
-BerserkerFatigue.Text1,Tired ? Me ? Naah…,Tired ? Me ? Naah…,,,,,,
-BerserkerFatigue.Text2,It's nothing... *yawns*,It's nothing... *yawns*,,,,,,
-BerserkerAFK.Text1,Ugh… boooring!,Ugh… boooring!,,,,,,
-BerserkerAFK.Text2,What are you waiting for ? I wanna fight!,What are you waiting for ? I wanna fight!,,,,,,
-BerserkerAFK.Text3,Healer's afk as usual…,Nice heal btw…,,,,,,
-BerserkerDeath.Text1,Thanks for the healing btw…,Thanks for the healing btw…,,,,,,
-BerserkerDeath.Text2,Useless support…,Useless support…,,,,,,
-BerserkerRevive.Text1,Guess who’s back…,Guess who’s back…,,,,,,
-BerserkerRevive.Text2,"NOOOOO! Let me die, please!","NOOOOO! Let me die, please!",,,,,,
-BerserkerRevive.Text3,It was so much better over there…,It was so much better over there…,,,,,,
-BerserkerHealed.Text1,You're finally doing something!,You're finally doing something!,,,,,,
-BerserkerHealed.Text2,"Stop healing me, I need my buff!","Stop healing me, I need my buff!",,,,,,
-ArcherShield.Text1,Ooh… shiny!,Ooh… shiny!,,,,,,
-ArcherrShield.Text2,"Oh, it didn’t hit me ? Weird.","Oh, it didn’t hit me ? Weird.",,,,,,
-ArcherStrength.Text1,"Oh, thank you!","Oh, thank you!",,,,,,
-ArcherStrength.Text2,You’re so cute!,You’re so cute!,,,,,,
-ArcherInitiative.Text1,I’ll shoot faster than him!,I’ll shoot faster than him!,,,,,,
-ArcherInitiative.Text2,"Haha, take this!","Haha, take this!",,,,,,
-ArcherPoison.Text1,"Hey, I'm supposed to be the one poisoning you!","Hey, I'm supposed to be the one poisoning you!",,,,,,
-ArcherPoison.Text2,Urg ! That thing is disgusting!,Urg ! That thing is disgusting!,,,,,,
-ArcherBurning.Text1,"Oh no, my hair will be ruined!","Oh no, my hair will be ruined!",,,,,,
-ArcherBurning.Text2,I could use this to make fire arrows…,I could use this to make fire arrows…,,,,,,
+HowToPlayMenu.Window6.Title,Status Effects List : ,Liste des effets de statut :,Status-Effekte-Liste :,Lista de efectos de estado :,状态效果列表：,ステータス効果リスト：, Lista de efeitos de status :,Список эффектов статуса :
+LoseMenu.Text,You lose!,Vous avez perdu !,Du hast verloren!,¡Has perdido!,你输了！,負けました！,Você perdeu!,Вы проиграли!
+WinMenu.Text,You win!,Vous avez gagné !,Du hast gewonnen!,¡Has ganado!,你赢了！,勝ちました！,Você venceu!,Вы победили!
+BestScore.Text,Best score:,Meilleur score:,,,,,,
+BerserkerShield.Text1,"I am *invincible*, hahaha!","Je suis *invincible*, hahaha !",,,,,,
+BerserkerShield.Text2,Have you seen how I dodged this?!,Vous avez vu l'esquive ?!,,,,,,
+BerserkerShield.Text3,"Ha, you missed! Loser…","Ahah, raté ! Loser.",,,,,,
+BerserkerShield.Text4,It can’t even hit me!,Il n'arrive même pas à me toucher.,,,,,,
+BerserkerStrength.Text1,"Damn, my muscles just doubled in size!","Héhé, mes muscles viennent de doubler de volume !",,,,,,
+BerserkerStrength.Text2,*roars*,*rugis*,,,,,,
+BerserkerStrength.Text3,I’m all mighty!,Je suis si puissant !,,,,,,
+BerserkerInitiative.Text1,I’m gonna end this man's whole career.,,,,,,,
+BerserkerInitiative.Text2,Here I go!,J'y vais !,,,,,,
+BerserkerPoison.Text1,I don’t feel well…,Je me sens pas très bien...,,,,,,
+BerserkerPoison.Text2,What’s this purple sticky stuff ?,C'est quoi ce truc violet qui colle ?,,,,,,
+BerserkerPoison.Text3,"Well, that smells really bad… Or is it just my smell?",Ce truc pue... ou c'est juste mon odeur ?,,,,,,
+BerserkerBurning.Text1,I’M BURNIIIIIIIIIIIIIING (for your eyes ;) ),JE BRÛÛÛÛLE (pour vos yeux ;) ),,,,,,
+BerserkerBurning.Text2,"HOT, HOT, HOOOOOOT ! (just like you ;) )","CHAUD, CHAUD, CHAUUUD ! (comme vous ;) )",,,,,,
+BerserkerBurning.Text3,This fire is out of control!,Ce feu est hors de contrôle !,,,,,,
+BerserkerRestrain.Text1,Hey ;),Héhé ;),,,,,,
+BerserkerRestrain.Text2,"Hmm, kinky!","Hmm, coquine!",,,,,,
+BerserkerRestrain.Text3,"A bit weird, but I'm into it!","Un peu bizarre, mais ça me va !",,,,,,
+BerserkerDisappeared.Text1,What is this spe…,C'est quoi ce so...,,,,,,
+BerserkerDisappeared.Text2,I’M GOING TO KI…,JE VAIS LE TU...,,,,,,
+BerserkerStun.Text1,*bird sounds*,*imite des bruits d'oiseau*,,,,,,
+BerserkerStun.Text2,The stars are spinning very fast…,Ces étoiles tournent si vite...,,,,,,
+BerserkerSleep.Text1,*loud snoring*,*ronflement bruyant*,,,,,,
+BerserkerSleep.Text2,Perfect place for a nap...,L'endroit parfait pour une sieste...,,,,,,
+BerserkerSleep.Text3,I’ll… just take a break…,Je... vais juste prendre une pause...,,,,,,
+BerserkerFatigue.Text1,Tired ? Me ? Naah…,Fatigué ? Moi ? Naaan...,,,,,,
+BerserkerFatigue.Text2,It's nothing... *yawns*,C'est rien... *baille*,,,,,,
+BerserkerAFK.Text1,Ugh… boooring!,Ugh... on s'ennuie !,,,,,,
+BerserkerAFK.Text2,What are you waiting for ? I wanna fight!,Qu'est-ce qu'on attend ? Je veux m'battre !,,,,,,
+BerserkerAFK.Text3,Healer's afk as usual…,Super heal au passage...,,,,,,
+BerserkerDeath.Text1,Thanks for the healing btw…,"Merci pour le heal, hein...",,,,,,
+BerserkerDeath.Text2,Useless support…,Support de m***...,,,,,,
+BerserkerRevive.Text1,Guess who’s back…,Devinez qui revient...,,,,,,
+BerserkerRevive.Text2,"NOOOOO! Let me die, please!",NOOOON ! Laissez moi mourir !,,,,,,
+BerserkerRevive.Text3,It was so much better over there…,C'était tellement meilleur de l'autre côté...,,,,,,
+BerserkerHealed.Text1,You're finally doing something!,"Ah, enfin un truc utile !",,,,,,
+BerserkerHealed.Text2,"Stop healing me, I need my buff!","Arrête de me soigner, j'ai besoin de mon buff !",,,,,,
+ArcherShield.Text1,Ooh… shiny!,Ooh... ça brille !,,,,,,
+ArcherShield.Text2,"Oh, it didn’t hit me ? Weird.","Oh, ça ne m'a pas touché ? Bizarre.",,,,,,
+ArcherStrength.Text1,"Oh, thank you!","Oh, merci !",,,,,,
+ArcherStrength.Text2,You’re so cute!,Trop mignon !,,,,,,
+ArcherInitiative.Text1,I’ll shoot faster than him!,Je tirerais plus vite que lui !,,,,,,
+ArcherInitiative.Text2,"Haha, take this!","Haha, prends ça !",,,,,,
+ArcherPoison.Text1,"Hey, I'm supposed to be the one poisoning you!","Hey, c'est moi qui est censée l'empoisonner !",,,,,,
+ArcherPoison.Text2,Urg ! That thing is disgusting!,Urg ! C'est dégoûtant !,,,,,,
+ArcherBurning.Text1,"Oh no, my hair will be ruined!","Oh non, ça va ruiner mes cheveux !",,,,,,
+ArcherBurning.Text2,I could use this to make fire arrows…,Je pourrais utiliser ça pour faire des flèches de feu...,,,,,,
 ArcherRestrain.Text1,( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°),,,,,,
-ArcherRestrain.Text2,"HAAA, WHAT THE HELL, IT'S SLIMY!","HAAA, WHAT THE HELL, IT'S SLIMY!",,,,,,
-ArcherRestrain.Text3,"Pegi 7, btw…","Pegi 7, btw…",,,,,,
-ArcherRestrain.Text4,Eeew…!,Eeew…!,,,,,,
-ArcherDisappeared.Text1,I don't feel so good…,I don't feel so good…,,,,,,
+ArcherRestrain.Text2,"HAAA, WHAT THE HELL, IT'S SLIMY!","HAAA, C'EST QUOI ÇA, C'EST TOUT GLUANT !",,,,,,
+ArcherRestrain.Text3,"Pegi 7, btw…","Pegi 7, hein...",,,,,,
+ArcherRestrain.Text4,Eeew…!,Beurk…!,,,,,,
+ArcherDisappeared.Text1,I don't feel so good…,Je me sens bizarre...,,,,,,
 ArcherDisappeared.Text2,Byeeeee…,Byeeeee…,,,,,,
-ArcherStun.Text1,"My head, it hurts…","My head, it hurts…",,,,,,
-ArcherSleep.Text1,Nap time…,Nap time…,,,,,,
-ArcherSleep.Text2,I’ll… rest for a bit.,I’ll… rest for a bit.,,,,,,
-ArcherFatigue.Text1,I’m feeling sleepy…,I’m feeling sleepy…,,,,,,
-ArcherFatigue.Text2,*yawn*,*yawn*,,,,,,
-ArcherAFK.Text1,"Take your time, sweetheart!","Take your time, sweetheart!",,,,,,
-ArcherAFK.Text2,"Don’t worry, we’ll be fine!","Don’t worry, we’ll be fine!",,,,,,
-ArcherDeath.Text1,"Oh, the misery…","Oh, the misery…",,,,,,
-ArcherDeath.Text2,"Sorry, everyone…","Sorry, everyone…",,,,,,
-ArcherRevive.Text1,"That was a weird dream… oh, hi there!","That was a weird dream… oh, hi there!",,,,,,
-ArcherRevive.Text2,Oh no… please… let me go back there…,Oh no… please… let me go back there…,,,,,,
-ArcherHealed.Text1,Ooooh… It feels good!,Ooooh… It feels good!,,,,,,
-ArcherHealed.Text2,"Thank you, sweetheart!","Thank you, sweetheart!",,,,,,
-PaladinShield.Text1,The hand of justice is protecting me!,The hand of justice is protecting me!,,,,,,
-PaladinShield.Text2,The only shield I need is the strength of my faith!,The only shield I need is the strength of my faith!,,,,,,
-PaladinStrength.Text1,I have the blessing of Mars!,I have the blessing of Mars!,,,,,,
-PaladinStrength.Text2,No one can stop the power of justice!,No one can stop the power of justice!,,,,,,
-PaladinInitiative.Text1,"Leader's first, as it should be. ;)","Leader's first, as it should be. ;)",,,,,,
-PaladinInitiative.Text2,I fear no one… I’ll go first!,I fear no one… I’ll go first!,,,,,,
-PaladinProvoking.Text1,"Face me, if you dare!","Face me, if you dare!",,,,,,
-PaladinProvoking.Text2,"Be afraid of justice's wrath, monster!","Be afraid of justice's wrath, monster!",,,,,,
-PaladinProvoking.Text3,*I* will protect you all!,*I* will protect you all!,,,,,,
-PaladinPoison.Text1,No! Don't get my armor dirty!,No! Don't get my armor dirty!,,,,,,
-PaladinPoison.Text2,"Urg, this will be hard to clean up…","Urg, this will be hard to clean up…",,,,,,
-PaladinBurning.Text1,"NOOO, NOT MY CAPE!","NOOO, NOT MY CAPE!",,,,,,
-PaladinBurning.Text2,My armor is sooo going to be ruined…,My armor is sooo going to be ruined…,,,,,,
-PaladinRestrain.Text1,Get these things off me!,Get these things off me!,,,,,,
-PaladinRestrain.Text2,This is disgusting!,This is disgusting!,,,,,,
-PaladinDisappeared.Text1,Justice is calling me! I’ll be right back!,Justice is calling me! I’ll be right back!,,,,,,
-PaladinDisappeared.Text2,Haha! He missed his spe…,Haha! He missed his spe…,,,,,,
-PaladinStun.Text1,I knew I should have kept my helm on…,I knew I should have kept my helm on…,,,,,,
-PaladinStun.Text2,Ugh… It’s spinning really fast…,Ugh… It’s spinning really fast…,,,,,,
-PaladinSleep.Text1,Justice… never… slee…*zzz*,Justice… never… slee…*zzz*,,,,,,
-PaladinSleep.Text2,Just… wake me up when you see an injustice…,Just… wake me up when you see an injustice…,,,,,,
-PaladinFatigue.Text1,My courage is… unwavering…,My courage is… unwavering…,,,,,,
-PaladinFatigue.Text2,Even justice takes a break sometimes…,Even justice takes a break sometimes…,,,,,,
-PaladinAFK.Text1,True heroes don't hesitate!,True heroes don't hesitate!,,,,,,
-PaladinAFK.Text2,Are you going to let justice die?!,Are you going to let justice die?!,,,,,,
-PaladinAFK.Text3,Do something!,Do something!,,,,,,
-PaladinDeath.Text1,My light will never fade…,My light will never fade…,,,,,,
-PaladinDeath.Text2,My job here is done…,My job here is done…,,,,,,
-PaladinRevive.Text1,Heroes never die!,Heroes never die!,,,,,,
-PaladinRevive.Text2,"NOOOO, DON’T WAKE ME UP!","NOOOO, DON’T WAKE ME UP!",,,,,,
-PaladinHealed.Text1,The gods are healing me!,The gods are healing me!,,,,,,
-PaladinHealed.Text2,Aaah! The sweet kiss of justice.,Aaah! The sweet kiss of justice.,,,,,,
-LevelMenu.Text.title,Levels,Levels,,,,,,
+ArcherStun.Text1,"My head, it hurts…",Ma tête me fait mal...,,,,,,
+ArcherSleep.Text1,Nap time…,C'est l'heure de la sieste...,,,,,,
+ArcherSleep.Text2,I’ll… rest for a bit.,Je... vais me reposer un peu...,,,,,,
+ArcherFatigue.Text1,I’m feeling sleepy…,Je suis fatiguée...,,,,,,
+ArcherFatigue.Text2,*yawn*,*baille*,,,,,,
+ArcherAFK.Text1,"Take your time, sweetheart!","Prends ton temps, chérie !",,,,,,
+ArcherAFK.Text2,"Don’t worry, we’ll be fine!","T'inquiète pas, on s'en sortira !",,,,,,
+ArcherDeath.Text1,"Oh, the misery…","Oh, non...",,,,,,
+ArcherDeath.Text2,"Sorry, everyone…","Désolé, tout le monde...",,,,,,
+ArcherRevive.Text1,"That was a weird dream… oh, hi there!","Quel rêve bizarre, oh salut tout le monde !",,,,,,
+ArcherRevive.Text2,Oh no… please… let me go back there…,"Oh non... pitié, laissez moi retourner là bas...",,,,,,
+ArcherHealed.Text1,Ooooh… It feels good!,Ooooh... ça fait du bien !,,,,,,
+ArcherHealed.Text2,"Thank you, sweetheart!","Merci, chérie !",,,,,,
+PaladinShield.Text1,The hand of justice is protecting me!,La main de la justice me protège !,,,,,,
+PaladinShield.Text2,The only shield I need is the strength of my faith!,Je n'ai pas besoin d'autre bouclier que la force de ma foi !,,,,,,
+PaladinStrength.Text1,I have the blessing of Mars!,J'ai la bénédiction de Mars !,,,,,,
+PaladinStrength.Text2,No one can stop the power of justice!,Personne n'arrête le pouvoir de la justice !,,,,,,
+PaladinInitiative.Text1,"Leader's first, as it should be. ;)","Le chef en premier, comme prévu. ;)",,,,,,
+PaladinInitiative.Text2,I fear no one… I’ll go first!,Je n'ai peur de personne... j'y vais en premier !,,,,,,
+PaladinProvoking.Text1,"Face me, if you dare!","Affronte-moi, si tu l'oses !",,,,,,
+PaladinProvoking.Text2,"Be afraid of justice's wrath, monster!","Crains la colère de la justice, monstre !",,,,,,
+PaladinProvoking.Text3,*I* will protect you all!,*JE* vais vous protéger !,,,,,,
+PaladinPoison.Text1,No! Don't get my armor dirty!,Non ! Enlève ta crasse de mon armure !,,,,,,
+PaladinPoison.Text2,"Urg, this will be hard to clean up…","Urg, ça va être dur à nettoyer...",,,,,,
+PaladinBurning.Text1,"NOOO, NOT MY CAPE!","NOOON, PAS MA CAPE !",,,,,,
+PaladinBurning.Text2,My armor is sooo going to be ruined…,Mon armure va être complètement ruinée...,,,,,,
+PaladinRestrain.Text1,Get these things off me!,Enlevez moi ça !,,,,,,
+PaladinRestrain.Text2,This is disgusting!,C'est dégoûtant !,,,,,,
+PaladinDisappeared.Text1,Justice is calling me! I’ll be right back!,Euh... la justice m'appelle ! Je reviens bientôt !,,,,,,
+PaladinDisappeared.Text2,Haha! He missed his spe…,"Haha, il a manqué son so...",,,,,,
+PaladinStun.Text1,I knew I should have kept my helm on…,J'aurais dû garder mon casque...,,,,,,
+PaladinStun.Text2,Ugh… It’s spinning really fast…,Ug... j'ai la tête qui tourne...,,,,,,
+PaladinSleep.Text1,Justice… never… slee…*zzz*,La justice... ne dort... jam... *zzz*,,,,,,
+PaladinSleep.Text2,Just… wake me up when you see an injustice…,Révéillez moi... quand vous verrez une injustice...,,,,,,
+PaladinFatigue.Text1,My courage is… unwavering…,Mon courage... est inébranlable...,,,,,,
+PaladinFatigue.Text2,Even justice takes a break sometimes…,Même la justice a besoin de pauses...,,,,,,
+PaladinAFK.Text1,True heroes don't hesitate!,Les vrais héros n'hésitent pas !,,,,,,
+PaladinAFK.Text2,Are you going to let justice die?!,Tu comptes laisser la justice mourir ?,,,,,,
+PaladinAFK.Text3,Do something!,Fais quelque chose !,,,,,,
+PaladinDeath.Text1,My light will never fade…,Ma lumière ne s'éteindra jamais...,,,,,,
+PaladinDeath.Text2,My job here is done…,Travail terminé...,,,,,,
+PaladinRevive.Text1,Heroes never die!,Les héros ne meurent jamais !,,,,,,
+PaladinRevive.Text2,"NOOOO, DON’T WAKE ME UP!","NOOOON, NE ME RÉVEILLEZ PAS !",,,,,,
+PaladinHealed.Text1,The gods are healing me!,Les dieux me soignent !,,,,,,
+PaladinHealed.Text2,Aaah! The sweet kiss of justice.,Aaah ! Le doux baiser de la justice !,,,,,,
+LevelMenu.Text.title,Levels,Niveaux,,,,,,
 ,,,,,,,,
 BerserkerAttack.Name.Text,Rage,Rage,,,,,,
-BerserkerAttack.Desc.Text,Deals 1 damage. Does 1 additional damage for each hp lost.,Deals 1 damage. Does 1 additional damage for each hp lost.,,,,,,
-PaladinAttack.Name.Text,Sword slash,Sword slash,,,,,,
-PaladinAttack.Desc.Text,Deals 1 damage to the target.,Deals 1 damage to the target.,,,,,,
-PaladinStun.Name.Text,Stunning blow,Stunning blow,,,,,,
-PaladinStun.Desc.Text,Stuns the target for 1 turn.,Stuns the target for 1 turn.,,,,,,
-PaladinProvoke.Name.Text,Taunt,Taunt,,,,,,
-PaladinProvoke.Desc.Text,"Provokes the target for the next turn, becoming the target of all of their next attacks.","Provokes the target for the next turn, becoming the target of all of their next attacks.",,,,,,
-ArcherAttack.Name.Text,Piercing arrow,Piercing arrow,,,,,,
-ArcherAttack.Desc.Text,Deals 2 damage to the target.,Deals 2 damage to the target.,,,,,,
-ArcherPoison.Name.Text,Poison arrow,Poison arrow,,,,,,
-ArcherPoison.Desc.Text,"Deals 1 damage. Poisons the target for 2 turns, making them suffer 1 damage per turn.","Deals 1 damage. Poisons the target for 2 turns, making them suffer 1 damage per turn.",,,,,,
-KraqueenAttack.Name.Text,Tentacle slap,Tentacle slap,,,,,,
-KraqueenAttack.Desc.Text,Deals 2 damage to the target.,Deals 1 damage to the target.,,,,,,
-KraqueenRestrain.Name.Text,Grapple,Grapple,,,,,,
-KraqueenRestrain.Desc.Text,"Restrains the target for 3 turns, preventing any action until freed.","Restrains the target for 3 turns, preventing any action until freed.",,,,,,
-KraqueenPoison.Name.Text,Venom splash,Venom splash,,,,,,
-KraqueenPoison.Desc.Text,"Poisons the target for 2 turns, making them suffer 1 damage per turn.","Poisons the target for 2 turns, making them suffer 1 damage per turn.",,,,,,
-OrcAttackBasic1.Name.Text,Club blow,Club blow,,,,,,
-OrcAttackBasic1.Desc.Text,Deals 1 damage to the target.,Deals 1 damage to the target.,,,,,,
-OrcAttackBasic2.Name.Text,Improved club blow,Improved club blow, ,,,,,
-OrcAttackBasic2.Desc.Text,Deals 2 damage to the target.,Deals 2 damage to the target.,,,,,,
-OrcStun.Name.Text,Concussion,Concussion,,,,,,
-OrcStun.Desc.Text,Deals 1 damage. Stuns the target for 1 turn.,Deals 1 damage. Stuns the target for 1 turn.,,,,,,
-CatStun.Name.Text,Kung fu master's claw,Kung fu master's claw,,,,,,
-CatStun.Desc.Text,Deals 2 damage. Stuns the target for 1 turn.,Deals 2 damage. Stuns the target for 1 turn.,,,,,,
-CatEventJump.Name.Text,Tactical jump,Tactical jump,,,,,,
-CatEventJump.Dest.Text,Jump into the air to dodge every attacks.,Jump into the air to dodge every attacks.,,,,,,
-CatEventFall.Name.Text,Cat missile incoming!,Cat missile incoming!,,,,,,
-CatEventFall.Desc.Text,"Falls to the ground, doing 2 damage to all allies and stunning them for 2 turns.","Falls to the ground, doing 2 damage to all allies and stunning them for 2 turns.",,,,,,
-CatFatigue.Name.Text,Good night,Good night,,,,,,
-CatFatigue.Desc.Text,Deals 1 damage. Applies fatigue to the target.,Deals 1 damage. Applies fatigue to the target.,,,,,,
-ChadFireball.Name.Text,Fireball,Fireball,,,,,,
-ChadFireball.Desc.Text,"Deals 1 damage. Burns the target for 2 turns, making them suffer 2 damage per turn.","Deals 1 damage. Burns the target for 2 turns, making them suffer 2 damage per turn.",,,,,,
-ChadLifesteal.Name.Text,Life drain,Life drain,,,,,,
-ChadLifesteal.Desc.Text,Deals 1 damage. Heals for 1 hp. Applies fatigue to the target.,Deals 1 damage. Heals for 1 hp. Applies fatigue to the target.,,,,,,
-ChadShuffle.Name.Text,Mage's gambit,Mage's gambit,,,,,,
-ChadShuffle.Desc.Text,"Shuffles your active spells, replacing them by random ones in your spellbook.","Shuffles your active spells, replacing them by random ones in your spellbook.",,,,,,
-ChadTeleport.Name.Text,Teleportation,Teleportation,,,,,,
-ChadTeleport.Desc.Text,"Teleports the target out of the fight, making them disappear for 3 turns.","Teleports the target out of the fight, making them disappear for 3 turns.",,,,,,
+BerserkerAttack.Desc.Text,Deals 1 damage. Does 1 additional damage for each hp lost.,1 de dégât. Fait 1 de dégât en plus pour chaque point de vie perdu.,,,,,,
+PaladinAttack.Name.Text,Sword slash,Coup d'Epée,,,,,,
+PaladinAttack.Desc.Text,Deals 1 damage to the target.,1 de dégât,,,,,,
+PaladinStun.Name.Text,Stunning blow,,,,,,,
+PaladinStun.Desc.Text,Stuns the target for 1 turn.,,,,,,,
+PaladinProvoke.Name.Text,Taunt,,,,,,,
+PaladinProvoke.Desc.Text,"Provokes the target for the next turn, becoming the target of all of their next attacks.",,,,,,,
+ArcherAttack.Name.Text,Piercing arrow,,,,,,,
+ArcherAttack.Desc.Text,Deals 2 damage to the target.,,,,,,,
+ArcherPoison.Name.Text,Poison arrow,,,,,,,
+ArcherPoison.Desc.Text,"Deals 1 damage. Poisons the target for 2 turns, making them suffer 1 damage per turn.",,,,,,,
+KraqueenAttack.Name.Text,Tentacle slap,,,,,,,
+KraqueenAttack.Desc.Text,Deals 2 damage to the target.,,,,,,,
+KraqueenRestrain.Name.Text,Grapple,,,,,,,
+KraqueenRestrain.Desc.Text,"Restrains the target for 3 turns, preventing any action until freed.",,,,,,,
+KraqueenPoison.Name.Text,Venom splash,,,,,,,
+KraqueenPoison.Desc.Text,"Poisons the target for 2 turns, making them suffer 1 damage per turn.",,,,,,,
+OrcAttackBasic1.Name.Text,Club blow,,,,,,,
+OrcAttackBasic1.Desc.Text,Deals 1 damage to the target.,,,,,,,
+OrcAttackBasic2.Name.Text,Improved club blow,, ,,,,,
+OrcAttackBasic2.Desc.Text,Deals 2 damage to the target.,,,,,,,
+OrcStun.Name.Text,Concussion,,,,,,,
+OrcStun.Desc.Text,Deals 1 damage. Stuns the target for 1 turn.,,,,,,,
+CatStun.Name.Text,Kung fu master's claw,,,,,,,
+CatStun.Desc.Text,Deals 2 damage. Stuns the target for 1 turn.,,,,,,,
+CatEventJump.Name.Text,Tactical jump,,,,,,,
+CatEventJump.Dest.Text,Jump into the air to dodge every attacks.,,,,,,,
+CatEventFall.Name.Text,Cat missile incoming!,,,,,,,
+CatEventFall.Desc.Text,"Falls to the ground, doing 2 damage to all allies and stunning them for 2 turns.",,,,,,,
+CatFatigue.Name.Text,Good night,,,,,,,
+CatFatigue.Desc.Text,Deals 1 damage. Applies fatigue to the target.,,,,,,,
+ChadFireball.Name.Text,Fireball,,,,,,,
+ChadFireball.Desc.Text,"Deals 1 damage. Burns the target for 2 turns, making them suffer 2 damage per turn.",,,,,,,
+ChadLifesteal.Name.Text,Life drain,,,,,,,
+ChadLifesteal.Desc.Text,Deals 1 damage. Heals for 1 hp. Applies fatigue to the target.,,,,,,,
+ChadShuffle.Name.Text,Mage's gambit,,,,,,,
+ChadShuffle.Desc.Text,"Shuffles your active spells, replacing them by random ones in your spellbook.",,,,,,,
+ChadTeleport.Name.Text,Teleportation,,,,,,,
+ChadTeleport.Desc.Text,"Teleports the target out of the fight, making them disappear for 3 turns.",,,,,,,
 ,,,,,,,,
-Heal.Name.Text,Heal,Heal,,,,,,
-Heal.Desc.Text,Heals the target for 2 HP.,Heals the target for 2 HP.,,,,,,
-MassHeal.Name.Text,Mass Heal,Mass Heal,,,,,,
-MassHeal.Desc.Text,Heals all allies for 1 HP.,Heals all allies for 1 HP.,,,,,,
-Regeneration.Name.Text,Regeneration,Regeneration,,,,,,
-Regeneration.Desc.Text,Applies regeneration to the target. Heals 1 HP per turn for 3 turns.,Applies regeneration to the target. Heals 1 HP per turn for 3 turns.,,,,,,
-Resurrection.Name.Text,Resurrection,Resurrection,,,,,,
-Resurrection.Desc.Text,"If the target is dead, revives it with half their max health.","If the target is dead, revives it with half their max health.",,,,,,
-Panacea.Name.Text,Panacea,Panacea,,,,,,
-Panacea.Desc.Text,Heals 1 HP. Removes all status from the target (positive AND negative).,Heals 1 HP. Removes all status from the target (positive AND negative).,,,,,,
-SpiritShield.Name.Text,Spirit Shield,Spirit Shield,,,,,,
-SpiritShield.Desc.Text,Protects target from all damage for the next turn.,Protects target from all damage for the next turn.,,,,,,
-ResonanceShield.Name.Text,Resonance Shield,Resonance Shield,,,,,,
-ResonanceShield.Desc.Text,"Sends back the attack to the attacker, as well as any effect or status.","Sends back the attack to the attacker, as well as any effect or status.",,,,,,
-BlessingOfStrength.Name.Text,Blessing of Strength,Blessing of Strength,,,,,,
-BlessingOfStrength.Desc.Text,Target’s attacks do +1 damage for 3 turns.,Target’s attacks do +1 damage for 3 turns.,,,,,,
-ManaProfusion.Name.Text,Mana Profusion,Mana Profusion,,,,,,
-ManaProfusion.Desc.Text,Cost of the next spell casted is refunded.,Cost of the next spell casted is refunded.,,,,,,
-Initiative.Name.Text,Initiative,Initiative,,,,,,
-Initiative.Desc.Text,Makes the target attack before the enemy.,Makes the target attack before the enemy.,,,,,,
+Heal.Name.Text,Heal,,,,,,,
+Heal.Desc.Text,Heals the target for 2 HP.,,,,,,,
+MassHeal.Name.Text,Mass Heal,,,,,,,
+MassHeal.Desc.Text,Heals all allies for 1 HP.,,,,,,,
+Regeneration.Name.Text,Regeneration,,,,,,,
+Regeneration.Desc.Text,Applies regeneration to the target. Heals 1 HP per turn for 3 turns.,,,,,,,
+Resurrection.Name.Text,Resurrection,,,,,,,
+Resurrection.Desc.Text,"If the target is dead, revives it with half their max health.",,,,,,,
+Panacea.Name.Text,Panacea,,,,,,,
+Panacea.Desc.Text,Heals 1 HP. Removes all status from the target (positive AND negative).,,,,,,,
+SpiritShield.Name.Text,Spirit Shield,,,,,,,
+SpiritShield.Desc.Text,Protects target from all damage for the next turn.,,,,,,,
+ResonanceShield.Name.Text,Resonance Shield,,,,,,,
+ResonanceShield.Desc.Text,"Sends back the attack to the attacker, as well as any effect or status.",,,,,,,
+BlessingOfStrength.Name.Text,Blessing of Strength,,,,,,,
+BlessingOfStrength.Desc.Text,Target’s attacks do +1 damage for 3 turns.,,,,,,,
+ManaProfusion.Name.Text,Mana Profusion,,,,,,,
+ManaProfusion.Desc.Text,Cost of the next spell casted is refunded.,,,,,,,
+Initiative.Name.Text,Initiative,,,,,,,
+Initiative.Desc.Text,Makes the target attack before the enemy.,,,,,,,

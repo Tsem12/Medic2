@@ -30,6 +30,7 @@ MonoBehaviour:
   baseAgroValue: 0
   attacksPatern:
   - paternName: Punch
+    isEvent: 0
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
@@ -45,6 +46,7 @@ MonoBehaviour:
       percentageValue: 21
       value: 3
   - paternName: ATKPhase2
+    isEvent: 0
     interuptMode: 0
     attacks:
     - nrbOfTargets: 2
@@ -62,6 +64,7 @@ MonoBehaviour:
   attacksEvent:
   - attack:
       paternName: 
+      isEvent: 1
       interuptMode: 0
       attacks:
       - nrbOfTargets: 3

@@ -24,6 +24,7 @@ MonoBehaviour:
   baseAgroValue: 0
   attacksPatern:
   - paternName: BasicATK
+    isEvent: 0
     interuptMode: 0
     attacks:
     - nrbOfTargets: 1
@@ -40,6 +41,7 @@ MonoBehaviour:
       percentageValue: 0
       value: 3
   - paternName: ATKT2
+    isEvent: 0
     interuptMode: 0
     attacks:
     - nrbOfTargets: 2
@@ -56,6 +58,7 @@ MonoBehaviour:
       percentageValue: 0
       value: 2
   - paternName: ATKT3
+    isEvent: 0
     interuptMode: 0
     attacks:
     - nrbOfTargets: 2

@@ -10,7 +10,7 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private GameObject SfxButton;
     [SerializeField] private GameObject MusicButton;
 
-    public GameData gameData;
+    private GameData gameData;
 
     private Color Greycolor = Color.grey;
     private Color Whitecolor = Color.white;

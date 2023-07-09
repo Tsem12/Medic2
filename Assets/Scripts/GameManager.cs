@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public GAMESTATE GameState { get => _gameState; set => _gameState = value; }
 
-    public GameData gameData;
+    private GameData gameData;
 
     public enum GAMESTATE
     {
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void Awake()
+    private void Start()
     {
         gameData = SaveSystem.Load();
         _optionMenuinitLocation = _pauseMenu.localPosition;
