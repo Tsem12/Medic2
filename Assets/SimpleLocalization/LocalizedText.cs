@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using NaughtyAttributes;
 
 namespace Assets.SimpleLocalization
 {
@@ -10,6 +11,8 @@ namespace Assets.SimpleLocalization
     public class LocalizedText : MonoBehaviour
     {
         public string LocalizationKey;
+        private TMPro.TMP_FontAsset _baseFont;
+        private Font _basebaseFont;
 
         public void Start()
         {
@@ -38,6 +41,33 @@ namespace Assets.SimpleLocalization
             else
             {
                 GetComponent<Text>().text = LocalizationManager.Localize(LocalizationKey);
+            }
+        }
+
+        [Button]
+        private void Test()
+        {
+            if (GetComponent<TextMeshProUGUI>() != null)
+            {
+                if (SaveSystem.Load().Language == "Chinois" || SaveSystem.Load().Language == "Japonais")
+                {
+                    GetComponent<TextMeshProUGUI>().font = null;
+                }
+                else
+                {
+                    GetComponent<TextMeshProUGUI>().font = _baseFont;
+                }
+            }
+            else
+            {
+                if (SaveSystem.Load().Language == "Chinois" || SaveSystem.Load().Language == "Japonais")
+                {
+                    GetComponent<Text>().font = null;
+                }
+                else
+                {
+                    GetComponent<Text>().font = _basebaseFont;
+                }
             }
         }
     }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Score
   m_EditorClassIdentifier: 
-  hashCode: 1791794168
+  hashCode: 99457768
   material: {fileID: 1016862594404273703}
-  materialHashCode: 1524776792
+  materialHashCode: 881693768
   m_Version: 1.1.0
   m_SourceFontFileGUID: f78001eec9fdc62468d714aa22e011ff
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: f78001eec9fdc62468d714aa22e011ff, type: 3}
@@ -2627,7 +2627,8 @@ MonoBehaviour:
   m_FontFeatureTable:
     m_GlyphPairAdjustmentRecords: []
   fallbackFontAssets: []
-  m_FallbackFontAssetTable: []
+  m_FallbackFontAssetTable:
+  - {fileID: 11400000, guid: 4ddeb65f0bc4efc4ab3cc6951b74badf, type: 2}
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: f78001eec9fdc62468d714aa22e011ff
@@ -2743,7 +2744,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.292
+    - _OutlineWidth: 0.182
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333

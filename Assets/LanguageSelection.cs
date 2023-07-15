@@ -19,6 +19,10 @@ public class LanguageSelection : MonoBehaviour
     {
         gameData = SaveSystem.Load();
         index = gameData.index;
+    }
+
+    private void Start()
+    {
         UpdateWindow();
     }
 
@@ -67,6 +71,7 @@ public class LanguageSelection : MonoBehaviour
     }
     void UpdateWindow()
     {
+        gameData = SaveSystem.Load();
         switch (index)
         {
             case 0:

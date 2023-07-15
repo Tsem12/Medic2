@@ -13,6 +13,10 @@ public class GameData
     public bool isHardDifficulty;
     public bool musicVolume;
     public bool sfxVolume;
+
+    public bool isSfxMute;
+    public bool isMusicMute;
+
     public string Language;
     public int index;
     public int bossStreak;
@@ -30,6 +34,8 @@ public class GameData
         Language = "Français";
         index = 0;
         bossStreak = 0;
+        isSfxMute = false;
+        isMusicMute = false;
     }
     
     

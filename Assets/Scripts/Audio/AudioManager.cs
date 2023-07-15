@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     private float musicVolume;
     private GameData gameData;
     private string _startMusic;
+
     [SerializeField] private bool _isMenu;
 
     public Sound[] sounds;
@@ -130,6 +131,20 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Sound: " + name + "not Found");
             return;
+        }
+
+        GameData gd = SaveSystem.Load();
+        switch (s.type)
+        {
+            case Sound.SoundType.Music:
+                if (gd.isMusicMute)
+                    return;
+                break;
+
+            case Sound.SoundType.Sfx:
+                if(gd.isSfxMute)
+                    return;
+                break;
         }
         s.source.Play();
     }

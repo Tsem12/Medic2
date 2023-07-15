@@ -255,165 +255,165 @@ Fadiga : Reduz o dano de ataque durante a duração. Se aplicado duas vezes, tra
 HowToPlayMenu.Window6.Title,Status Effects List : ,Liste des effets de statut :,Status-Effekte-Liste :,Lista de efectos de estado :,状态效果列表：,ステータス効果リスト：, Lista de efeitos de status :,Список эффектов статуса :
 LoseMenu.Text,You lose!,Vous avez perdu !,Du hast verloren!,¡Has perdido!,你输了！,負けました！,Você perdeu!,Вы проиграли!
 WinMenu.Text,You win!,Vous avez gagné !,Du hast gewonnen!,¡Has ganado!,你赢了！,勝ちました！,Você venceu!,Вы победили!
-BestScore.Text,Best score:,Meilleur score:,,,,,,
-BerserkerShield.Text1,"I am *invincible*, hahaha!","Je suis *invincible*, hahaha !",,,,,,
-BerserkerShield.Text2,Have you seen how I dodged this?!,Vous avez vu l'esquive ?!,,,,,,
-BerserkerShield.Text3,"Ha, you missed! Loser…","Ahah, raté ! Loser.",,,,,,
-BerserkerShield.Text4,It can’t even hit me!,Il n'arrive même pas à me toucher.,,,,,,
-BerserkerStrength.Text1,"Damn, my muscles just doubled in size!","Héhé, mes muscles viennent de doubler de volume !",,,,,,
-BerserkerStrength.Text2,*roars*,*rugis*,,,,,,
-BerserkerStrength.Text3,I’m all mighty!,Je suis si puissant !,,,,,,
-BerserkerInitiative.Text1,I’m gonna end this man's whole career.,,,,,,,
-BerserkerInitiative.Text2,Here I go!,J'y vais !,,,,,,
-BerserkerPoison.Text1,I don’t feel well…,Je me sens pas très bien...,,,,,,
-BerserkerPoison.Text2,What’s this purple sticky stuff ?,C'est quoi ce truc violet qui colle ?,,,,,,
-BerserkerPoison.Text3,"Well, that smells really bad… Or is it just my smell?",Ce truc pue... ou c'est juste mon odeur ?,,,,,,
-BerserkerBurning.Text1,I’M BURNIIIIIIIIIIIIIING (for your eyes ;) ),JE BRÛÛÛÛLE (pour vos yeux ;) ),,,,,,
-BerserkerBurning.Text2,"HOT, HOT, HOOOOOOT ! (just like you ;) )","CHAUD, CHAUD, CHAUUUD ! (comme vous ;) )",,,,,,
-BerserkerBurning.Text3,This fire is out of control!,Ce feu est hors de contrôle !,,,,,,
-BerserkerRestrain.Text1,Hey ;),Héhé ;),,,,,,
-BerserkerRestrain.Text2,"Hmm, kinky!","Hmm, coquine!",,,,,,
-BerserkerRestrain.Text3,"A bit weird, but I'm into it!","Un peu bizarre, mais ça me va !",,,,,,
-BerserkerDisappeared.Text1,What is this spe…,C'est quoi ce so...,,,,,,
-BerserkerDisappeared.Text2,I’M GOING TO KI…,JE VAIS LE TU...,,,,,,
-BerserkerStun.Text1,*bird sounds*,*imite des bruits d'oiseau*,,,,,,
-BerserkerStun.Text2,The stars are spinning very fast…,Ces étoiles tournent si vite...,,,,,,
-BerserkerSleep.Text1,*loud snoring*,*ronflement bruyant*,,,,,,
-BerserkerSleep.Text2,Perfect place for a nap...,L'endroit parfait pour une sieste...,,,,,,
-BerserkerSleep.Text3,I’ll… just take a break…,Je... vais juste prendre une pause...,,,,,,
-BerserkerFatigue.Text1,Tired ? Me ? Naah…,Fatigué ? Moi ? Naaan...,,,,,,
-BerserkerFatigue.Text2,It's nothing... *yawns*,C'est rien... *baille*,,,,,,
-BerserkerAFK.Text1,Ugh… boooring!,Ugh... on s'ennuie !,,,,,,
-BerserkerAFK.Text2,What are you waiting for ? I wanna fight!,Qu'est-ce qu'on attend ? Je veux m'battre !,,,,,,
-BerserkerAFK.Text3,Healer's afk as usual…,Super heal au passage...,,,,,,
-BerserkerDeath.Text1,Thanks for the healing btw…,"Merci pour le heal, hein...",,,,,,
-BerserkerDeath.Text2,Useless support…,Support de m***...,,,,,,
-BerserkerRevive.Text1,Guess who’s back…,Devinez qui revient...,,,,,,
-BerserkerRevive.Text2,"NOOOOO! Let me die, please!",NOOOON ! Laissez moi mourir !,,,,,,
-BerserkerRevive.Text3,It was so much better over there…,C'était tellement meilleur de l'autre côté...,,,,,,
-BerserkerHealed.Text1,You're finally doing something!,"Ah, enfin un truc utile !",,,,,,
-BerserkerHealed.Text2,"Stop healing me, I need my buff!","Arrête de me soigner, j'ai besoin de mon buff !",,,,,,
-ArcherShield.Text1,Ooh… shiny!,Ooh... ça brille !,,,,,,
-ArcherShield.Text2,"Oh, it didn’t hit me ? Weird.","Oh, ça ne m'a pas touché ? Bizarre.",,,,,,
-ArcherStrength.Text1,"Oh, thank you!","Oh, merci !",,,,,,
-ArcherStrength.Text2,You’re so cute!,Trop mignon !,,,,,,
-ArcherInitiative.Text1,I’ll shoot faster than him!,Je tirerais plus vite que lui !,,,,,,
-ArcherInitiative.Text2,"Haha, take this!","Haha, prends ça !",,,,,,
-ArcherPoison.Text1,"Hey, I'm supposed to be the one poisoning you!","Hey, c'est moi qui est censée l'empoisonner !",,,,,,
-ArcherPoison.Text2,Urg ! That thing is disgusting!,Urg ! C'est dégoûtant !,,,,,,
-ArcherBurning.Text1,"Oh no, my hair will be ruined!","Oh non, ça va ruiner mes cheveux !",,,,,,
-ArcherBurning.Text2,I could use this to make fire arrows…,Je pourrais utiliser ça pour faire des flèches de feu...,,,,,,
-ArcherRestrain.Text1,( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°),,,,,,
-ArcherRestrain.Text2,"HAAA, WHAT THE HELL, IT'S SLIMY!","HAAA, C'EST QUOI ÇA, C'EST TOUT GLUANT !",,,,,,
-ArcherRestrain.Text3,"Pegi 7, btw…","Pegi 7, hein...",,,,,,
-ArcherRestrain.Text4,Eeew…!,Beurk…!,,,,,,
-ArcherDisappeared.Text1,I don't feel so good…,Je me sens bizarre...,,,,,,
-ArcherDisappeared.Text2,Byeeeee…,Byeeeee…,,,,,,
-ArcherStun.Text1,"My head, it hurts…",Ma tête me fait mal...,,,,,,
-ArcherSleep.Text1,Nap time…,C'est l'heure de la sieste...,,,,,,
-ArcherSleep.Text2,I’ll… rest for a bit.,Je... vais me reposer un peu...,,,,,,
-ArcherFatigue.Text1,I’m feeling sleepy…,Je suis fatiguée...,,,,,,
-ArcherFatigue.Text2,*yawn*,*baille*,,,,,,
-ArcherAFK.Text1,"Take your time, sweetheart!","Prends ton temps, chérie !",,,,,,
-ArcherAFK.Text2,"Don’t worry, we’ll be fine!","T'inquiète pas, on s'en sortira !",,,,,,
-ArcherDeath.Text1,"Oh, the misery…","Oh, non...",,,,,,
-ArcherDeath.Text2,"Sorry, everyone…","Désolé, tout le monde...",,,,,,
-ArcherRevive.Text1,"That was a weird dream… oh, hi there!","Quel rêve bizarre, oh salut tout le monde !",,,,,,
-ArcherRevive.Text2,Oh no… please… let me go back there…,"Oh non... pitié, laissez moi retourner là bas...",,,,,,
-ArcherHealed.Text1,Ooooh… It feels good!,Ooooh... ça fait du bien !,,,,,,
-ArcherHealed.Text2,"Thank you, sweetheart!","Merci, chérie !",,,,,,
-PaladinShield.Text1,The hand of justice is protecting me!,La main de la justice me protège !,,,,,,
-PaladinShield.Text2,The only shield I need is the strength of my faith!,Je n'ai pas besoin d'autre bouclier que la force de ma foi !,,,,,,
-PaladinStrength.Text1,I have the blessing of Mars!,J'ai la bénédiction de Mars !,,,,,,
-PaladinStrength.Text2,No one can stop the power of justice!,Personne n'arrête le pouvoir de la justice !,,,,,,
-PaladinInitiative.Text1,"Leader's first, as it should be. ;)","Le chef en premier, comme prévu. ;)",,,,,,
-PaladinInitiative.Text2,I fear no one… I’ll go first!,Je n'ai peur de personne... j'y vais en premier !,,,,,,
-PaladinProvoking.Text1,"Face me, if you dare!","Affronte-moi, si tu l'oses !",,,,,,
-PaladinProvoking.Text2,"Be afraid of justice's wrath, monster!","Crains la colère de la justice, monstre !",,,,,,
-PaladinProvoking.Text3,*I* will protect you all!,*JE* vais vous protéger !,,,,,,
-PaladinPoison.Text1,No! Don't get my armor dirty!,Non ! Enlève ta crasse de mon armure !,,,,,,
-PaladinPoison.Text2,"Urg, this will be hard to clean up…","Urg, ça va être dur à nettoyer...",,,,,,
-PaladinBurning.Text1,"NOOO, NOT MY CAPE!","NOOON, PAS MA CAPE !",,,,,,
-PaladinBurning.Text2,My armor is sooo going to be ruined…,Mon armure va être complètement ruinée...,,,,,,
-PaladinRestrain.Text1,Get these things off me!,Enlevez moi ça !,,,,,,
-PaladinRestrain.Text2,This is disgusting!,C'est dégoûtant !,,,,,,
-PaladinDisappeared.Text1,Justice is calling me! I’ll be right back!,Euh... la justice m'appelle ! Je reviens bientôt !,,,,,,
-PaladinDisappeared.Text2,Haha! He missed his spe…,"Haha, il a manqué son so...",,,,,,
-PaladinStun.Text1,I knew I should have kept my helm on…,J'aurais dû garder mon casque...,,,,,,
-PaladinStun.Text2,Ugh… It’s spinning really fast…,Ug... j'ai la tête qui tourne...,,,,,,
-PaladinSleep.Text1,Justice… never… slee…*zzz*,La justice... ne dort... jam... *zzz*,,,,,,
-PaladinSleep.Text2,Just… wake me up when you see an injustice…,Révéillez moi... quand vous verrez une injustice...,,,,,,
-PaladinFatigue.Text1,My courage is… unwavering…,Mon courage... est inébranlable...,,,,,,
-PaladinFatigue.Text2,Even justice takes a break sometimes…,Même la justice a besoin de pauses...,,,,,,
-PaladinAFK.Text1,True heroes don't hesitate!,Les vrais héros n'hésitent pas !,,,,,,
-PaladinAFK.Text2,Are you going to let justice die?!,Tu comptes laisser la justice mourir ?,,,,,,
-PaladinAFK.Text3,Do something!,Fais quelque chose !,,,,,,
-PaladinDeath.Text1,My light will never fade…,Ma lumière ne s'éteindra jamais...,,,,,,
-PaladinDeath.Text2,My job here is done…,Travail terminé...,,,,,,
-PaladinRevive.Text1,Heroes never die!,Les héros ne meurent jamais !,,,,,,
-PaladinRevive.Text2,"NOOOO, DON’T WAKE ME UP!","NOOOON, NE ME RÉVEILLEZ PAS !",,,,,,
-PaladinHealed.Text1,The gods are healing me!,Les dieux me soignent !,,,,,,
-PaladinHealed.Text2,Aaah! The sweet kiss of justice.,Aaah ! Le doux baiser de la justice !,,,,,,
-LevelMenu.Text.title,Levels,Niveaux,,,,,,
+BestScore.Text,Best score:,Meilleur score:,Beste Punktzahl,Mejor puntuación,最佳成绩,最高得点,Melhor pontuação,Лучший результат
+BerserkerShield.Text1,"I am *invincible*, hahaha!","Je suis *invincible*, hahaha !",Ich bin *unschlagb,"Soy invencible, jaja!",我是无敌，哈哈哈！,私は無敵だぞ、ははは！,"Sou invencível, haha","Я непобедимый, хаха!"
+BerserkerShield.Text2,Have you seen how I dodged this?!,Vous avez vu l'esquive ?!,Hast du gesehen...,¿Has visto cómo evadí esto?,你看到我怎么躲过了吗？,これ見て、よけたって？,Você viu como eu desviei disso?,"Ты видел, как я уклонился?"
+BerserkerShield.Text3,"Ha, you missed! Loser…","Ahah, raté ! Loser.","Ha, du hast daneb","¡Ja, fallaste! ¡Perdedor!",哈，你错过了！失败者…,ハ、外れた！負け犬…,"Ha, erraste! Perdedor...","Ха, ты промазал! Лузер..."
+BerserkerShield.Text4,It can’t even hit me!,Il n'arrive même pas à me toucher.,Es kann mich nic,¡No puede ni siquiera darme!,它甚至不能打中我！,私にすら当たらない！,Nem mesmo consegue me atingir!,Он даже меня не достает!
+BerserkerStrength.Text1,"Damn, my muscles just doubled in size!","Héhé, mes muscles viennent de doubler de volume !","Verdammt, meine M","¡Maldición, mis músculos se han duplicado!",妈呀，我的肌肉翻倍了！,くそっ、筋肉倍増じゃん！,"Droga, meus músculos dobraram de tamanho!","Черт, мои мышцы удвоились!"
+BerserkerStrength.Text2,*roars*,*rugis*,brüllt,rugidos,咆哮,うなる,rugidos,рычит
+BerserkerStrength.Text3,I’m all mighty!,Je suis si puissant !,Ich bin allmächti,Soy todopoderoso,我是全能的,私は全能だ,Sou todo-poderoso,Я всемогущий
+BerserkerInitiative.Text1,I’m gonna end this man's whole career.,,Ich werde die Kar,Voy a acabar con la carrera de este hombre,我要毁了这个人的整个职业。,この男の人生を終わらせるぞ！,Vou acabar com a carreira desse cara,Я положу конец всей его карьере
+BerserkerInitiative.Text2,Here I go!,J'y vais !,Da gehe ich!,¡Aquí voy!,我来了！,いくぞ！,Aqui vou eu!,Вот иду!
+BerserkerPoison.Text1,I don’t feel well…,Je me sens pas très bien...,Mir geht es nicht,No me siento bien…,我感觉不好…,ちょっと調子悪いな…,Não me sinto bem…,Мне нехорошо…
+BerserkerPoison.Text2,What’s this purple sticky stuff ?,C'est quoi ce truc violet qui colle ?,Was ist das für...,¿Qué es esta sustancia pegajosa morada?,这是什么紫色粘稠物？,これって紫いっぱいの粘着質ってなんだ？,O que é essa coisa pegajosa roxa?,Что это за фиолетовое липкое вещество?
+BerserkerPoison.Text3,"Well, that smells really bad… Or is it just my smell?",Ce truc pue... ou c'est juste mon odeur ?,"Nun, das riecht ...","Bueno, eso huele muy mal… ¿O soy yo?",嗯，这味道真的很糟…或者只是我的味道？,うわ、これすごい臭い…それとも私が臭いのかな？,"Bem, isso cheira muito mal… ou sou eu?","Ну, это действительно пахнет плохо… Или это просто я?"
+BerserkerBurning.Text1,I’M BURNIIIIIIIIIIIIIING (for your eyes ;) ),JE BRÛÛÛÛLE (pour vos yeux ;) ),ICH BRENNNEEE,¡ESTOY ARDIENDO! (para tus ojos ;) ),我着火了！（为了你的眼睛 ;) ）,私は燃えている！（君の目のために ;) ）,ESTOU PEGANDO FOGO! (para seus olhos ;) ),Я ГОРЮ! (для твоих глаз ;) )
+BerserkerBurning.Text2,"HOT, HOT, HOOOOOOT ! (just like you ;) )","CHAUD, CHAUD, CHAUUUD ! (comme vous ;) )","HEISS, HEISS, HOOOOOOT! (genau wie du ;) )","CALIENTE, CALIENTE, ¡FUEGO! (como tú ;) )",热辣辣，热辣辣，火辣辣！（就像你一样 ;) ）,ホット、ホット、アツイ！（君もね ;) ）,"QUENTE, QUENTE, QUENTE! (como você ;) )","ГОРЯЧО, ГОРЯЧО, ГОРЯЧО! (как ты ;) )"
+BerserkerBurning.Text3,This fire is out of control!,Ce feu est hors de contrôle !,Dieses Feuer gerä,Este fuego está fuera de control!,这火失控了！,この火は制御不能だ！,Esse fogo está fora de controle!,Этот огонь вышел из-под контроля!
+BerserkerRestrain.Text1,Hey ;),Héhé ;),Hey ;),¡Hey! ;),嘿 ;),ねえ ;),Ei ;),Привет ;)
+BerserkerRestrain.Text2,"Hmm, kinky!","Hmm, coquine!","Hmm, kinky!","Hmm, ¡peculiar!",嗯，有点奇怪！,うーん、いけてる！,"Hmm, diferente!","Хмм, странно!"
+BerserkerRestrain.Text3,"A bit weird, but I'm into it!","Un peu bizarre, mais ça me va !","Etwas seltsam, ab","Un poco extraño, pero me gusta.",有点奇怪，但我喜欢。,少し変わってるけど、私は好きだ。,"Um pouco estranho,","Немного странно, но мне нравится."
+BerserkerDisappeared.Text1,What is this spe…,C'est quoi ce so...,Was ist das spe...,¿Qué es esto?,这是什么东西？,これは何ですか？,O que é isso?,Что это такое?
+BerserkerDisappeared.Text2,I’M GOING TO KI…,JE VAIS LE TU...,Ich werde dich...,Voy a matarte…,我要杀了你…,あなたを殺すわ…,Eu vou te matar…,Я тебя убью…
+BerserkerStun.Text1,*bird sounds*,*imite des bruits d'oiseau*,Vogelgeräusche,sonidos de pájaros,鸟叫声,鳥の鳴き声,sons de pássaros,звуки птиц
+BerserkerStun.Text2,The stars are spinning very fast…,Ces étoiles tournent si vite...,Die Sterne drehe...,Las estrellas están girando muy rápido…,星星在很快地旋转…,星がめちゃくちゃに旋回している…,As estrelas estão girando muito rápido…,Звезды кружат очень быстро…
+BerserkerSleep.Text1,*loud snoring*,*ronflement bruyant*,lautes Schnarchen,ronquidos fuertes,大声打鼾,大きないびき,roncos altos,громкий храп
+BerserkerSleep.Text2,Perfect place for a nap...,L'endroit parfait pour une sieste...,Perfekter Ort fü...,Lugar perfecto para una siesta…,睡个午觉的完美地方…,ナップにぴったりの場所…,Lugar perfeito para uma soneca…,Идеальное место для дремы…
+BerserkerSleep.Text3,I’ll… just take a break…,Je... vais juste prendre une pause...,Ich mache einfach...,Voy a… tomar un descanso…,我…只是休息一下…,ちょっと…休憩しよう…,Vou… apenas descansar um pouco…,Я просто… отдохну…
+BerserkerFatigue.Text1,Tired ? Me ? Naah…,Fatigué ? Moi ? Naaan...,Müde? Ich? Naah…,¿Cansado? ¿Yo? ¡Ja!…,累了？我？呵呵…,疲れた？私？あはは…,Cansado? Eu? Naah…,Устал? Я? Наах…
+BerserkerFatigue.Text2,It's nothing... *yawns*,C'est rien... *baille*,Es ist nichts.....,No es nada…,没什么…,何でもない…,Não é nada…,Ничего особенного…
+BerserkerAFK.Text1,Ugh… boooring!,Ugh... on s'ennuie !,Ugh… langweilig!,Ugh… aburrido…,Ugh… 无聊…,うーん…つまらない…,Ugh… chato…,Уф… скучно…
+BerserkerAFK.Text2,What are you waiting for ? I wanna fight!,Qu'est-ce qu'on attend ? Je veux m'battre !,Worauf wartest ...,¿Qué estás esperando?,你在等什么？,何を待っているの？,Do que você está esperando?,Чего ты ждешь?
+BerserkerAFK.Text3,Healer's afk as usual…,Super heal au passage...,Der Heiler ist w...,El sanador está AFK como siempre…,治疗师一如既往地AFK...,ヒーラーはいつもAFKだ…,O curandeiro está AFK como sempre…,Хилер как обычно AFK…
+BerserkerDeath.Text1,Thanks for the healing btw…,"Merci pour le heal, hein...",Danke für die He...,"Gracias por la curación, por cierto…",谢谢你的治疗，顺便说一下...,ヒーリングありがとうね…,"Obrigado pela cura, aliás…","Спасибо за лечение, кстати…"
+BerserkerDeath.Text2,Useless support…,Support de m***...,Nutzloser Suppor...,Soporte inútil…,无用的支援…,役に立たないサポート…,Suporte inútil…,Бесполезная поддержка…
+BerserkerRevive.Text1,Guess who’s back…,Devinez qui revient...,"Rate mal, wer zurück ist…",Adivina quién ha vuelto…,猜猜谁回来了…,誰が戻ってきたか当ててみて…,Adivinha quem voltou…,"Угадай, кто вернулся…"
+BerserkerRevive.Text2,"NOOOOO! Let me die, please!",NOOOON ! Laissez moi mourir !,NEIN! Lass mich s...,"¡NOOOO! ¡Déjame morir, por favor!",不要！请让我死！,ノォォォ！死なせてくれ！お願い！,"NÃOOOO! Deixe-me morrer, por favor!","НЕЕЕЕЕТ! Позвольте мне умереть, пожалуйста!"
+BerserkerRevive.Text3,It was so much better over there…,C'était tellement meilleur de l'autre côté...,Es war dort so viel besser…,Allá estaba mucho mejor…,那里好得多…,あそこの方がずっといい場所だった…,Lá era muito melhor…,Там было намного лучше…
+BerserkerHealed.Text1,You're finally doing something!,"Ah, enfin un truc utile !",Du tust endlich etwas!,¡Por fin estás haciendo algo!,你终于做点事了！,やっと何かしてるじゃん！,"Finalmente, você está fazendo alguma coisa!",Ты наконец-то что-то делаешь!
+BerserkerHealed.Text2,"Stop healing me, I need my buff!","Arrête de me soigner, j'ai besoin de mon buff !","Hör auf, mich zu heilen, ich brauche meinen Buff!","Deja de curarme, necesito mi mejora!",停止治疗我，我需要我的增益！,治療をやめてくれ、バフが必要なんだ！,"Pare de me curar, eu preciso do meu buff!","Прекрати лечить меня, мне нужен бафф!"
+ArcherShield.Text1,Ooh… shiny!,Ooh... ça brille !,Ooh… glänzend!,Oh… brillante!,哦…闪闪发亮！,ああ…輝いてる！,Ooh… brilhante!,Ох... блестяще!
+ArcherShield.Text2,"Oh, it didn’t hit me ? Weird.","Oh, ça ne m'a pas touché ? Bizarre.","Oh, es hat mich nicht getroffen? Seltsam.","Oh, no me ha golpeado? ¡Qué raro!",哦，它没有击中我？真奇怪。,あれ？私には当たってない？変だね。,"Oh, não me acertou? Que estranho.","О, он меня не попал? Странно."
+ArcherStrength.Text1,"Oh, thank you!","Oh, merci !","Oh, danke!","¡Oh, gracias!",哦，谢谢！,ああ、ありがとう！,"Oh, obrigado!","Ох, спасибо!"
+ArcherStrength.Text2,You’re so cute!,Trop mignon !,Du bist so süß!,¡Eres tan lindo!,你真可爱！,君はとってもかわいいね！,Você é tão fofo(a)!,Ты такой милый!
+ArcherInitiative.Text1,I’ll shoot faster than him!,Je tirerais plus vite que lui !,Ich werde schneller schießen als er!,¡Voy a disparar más rápido que él!,我会比他射得更快！,彼よりも早く撃つぞ！,Vou atirar mais rápido do que ele!,"Я буду стрелять быстрее, чем он!"
+ArcherInitiative.Text2,"Haha, take this!","Haha, prends ça !","Haha, nimm das!","Jaja, ¡toma eso!",哈哈，接招吧！,はは、これを受けて！,"Haha, toma isso!","Ха-ха, возьми это!"
+ArcherPoison.Text1,"Hey, I'm supposed to be the one poisoning you!","Hey, c'est moi qui est censée l'empoisonner !","Hey, ich sollte eigentlich derjenige sein, der dich vergiftet!","Oye, ¡supuestamente yo debería ser el que te envenena!",嘿，其实应该是我来毒害你的！,おい、私が毒を盛るはずだ！,"Ei, eu deveria ser o único a te envenenar!","Эй, я должен тебя отравить!"
+ArcherPoison.Text2,Urg ! That thing is disgusting!,Urg ! C'est dégoûtant !,Urg! Das Ding ist eklig!,¡Urg! ¡Esa cosa es repugnante!,呃！那玩意真恶心！,うっ！あれはまずい！,Urg! Essa coisa é nojenta!,Ург! Эта штука отвратительная!
+ArcherBurning.Text1,"Oh no, my hair will be ruined!","Oh non, ça va ruiner mes cheveux !","Oh nein, meine Haare werden ruiniert!","¡Oh no, mi cabello se arruinará!",哦不，我的头发要毁了！,ああ、やばい、髪が台無しに！,"Oh não, meu cabelo será arruinado!","О нет, мои волосы испортятся!"
+ArcherBurning.Text2,I could use this to make fire arrows…,Je pourrais utiliser ça pour faire des flèches de feu...,"Ich könnte das benutzen, um Feuerpfeile zu machen…",Podría usar esto para hacer flechas de fuego...,我可以用这个做火箭弓箭…,火矢を作るためにこれを使えるな…,Eu poderia usar isso para fazer flechas de fogo...,"Я мог бы использовать это, чтобы сделать огненные стрелы..."
+ArcherRestrain.Text1,( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°),( ͡° ͜ʖ ͡°)
+ArcherRestrain.Text2,"HAAA, WHAT THE HELL, IT'S SLIMY!","HAAA, C'EST QUOI ÇA, C'EST TOUT GLUANT !","HAAA, WAS ZUM TEUFEL, ES IST SCHLEIMIG!","¡HAAA, ¡QUÉ DIABLOS, ESTÁ PEGAJOSO!",哈哈，这是什么玩意，太黏了！,ハァア、何なんだこれ、ヌルヌルしてる！,"HAAA, O QUE DIABOS, ISSO ESTÁ ESCORREGADIO!","ХААА, ЧТО ЗА ЧЕРТ, ЭТО СЛИЗКО!"
+ArcherRestrain.Text3,"Pegi 7, btw…","Pegi 7, hein...","Pegi 7, übrigens…","Pegi 7, por cierto...",Pegi 7，顺便说一下…,Pegi 7，ところで…,"Pegi 7, aliás…","Pegi 7, кстати..."
+ArcherRestrain.Text4,Eeew…!,Beurk…!,Igitt…!,¡Uuuf…!,呕…！,イヤ…！,Eca…!,Ууу…!
+ArcherDisappeared.Text1,I don't feel so good…,Je me sens bizarre...,Mir geht es nicht gut…,No me siento bien...,我感觉不舒服…,具合が悪い…,Não estou me sentindo bem...,Мне плохо...
+ArcherDisappeared.Text2,Byeeeee…,Byeeeee…,Tschüüüüss…,¡Adiós...!,再见了…,じゃあね…,Tchaaauuu…,Пок-пок...
+ArcherStun.Text1,"My head, it hurts…",Ma tête me fait mal...,"Mein Kopf, es tut weh...",Me duele la cabeza...,我的头，很痛…,頭が痛いよ…,"Minha cabeça, está doendo...",У меня голова болит...
+ArcherSleep.Text1,Nap time…,C'est l'heure de la sieste...,Nickerchen-Zeit...,Hora de la siesta...,小睡时间...,昼寝の時間…,Hora da soneca...,Время снов...
+ArcherSleep.Text2,I’ll… rest for a bit.,Je... vais me reposer un peu...,Ich werde... nur eine Pause machen...,Voy a... descansar un rato...,我只是…稍微休息一下…,ちょっと…休憩しよう…,Eu... vou descansar um pouco...,Я просто... отдохну немного...
+ArcherFatigue.Text1,I’m feeling sleepy…,Je suis fatiguée...,Ich fühle mich schläfrig...,Me siento somnoliento...,我感到困倦…,眠いな…,Estou me sentindo sonolento...,Я чувствую сонливость...
+ArcherFatigue.Text2,*yawn*,*baille*,gähn,bostezo,打哈欠,あくび,bocejo,зевок
+ArcherAFK.Text1,"Take your time, sweetheart!","Prends ton temps, chérie !","Nimm dir Zeit, Schatz!","¡Tómate tu tiempo, cariño!",慢慢来，亲爱的！,ゆっくりしてて、いいよ！,"Fique à vontade, querido(a)!","Не торопись, дорогой!"
+ArcherAFK.Text2,"Don’t worry, we’ll be fine!","T'inquiète pas, on s'en sortira !","Mach dir keine Sorgen, wir werden in Ordnung sein!","¡No te preocupes, estaremos bien!",不用担心，我们会没事的！,心配しないで、大丈夫だよ！,"Não se preocupe, ficaremos bem!","Не волнуйся, нам будет хорошо!"
+ArcherDeath.Text1,"Oh, the misery…","Oh, non...","Oh, das Elend…","¡Oh, la miseria!",哦，痛苦…,ああ、悲惨…,"Oh, a miséria...","Ох, мучение..."
+ArcherDeath.Text2,"Sorry, everyone…","Désolé, tout le monde...",Entschuldigung an alle…,"Lo siento, todos…",对不起，大家…,ごめん、みんな…,"Desculpe, todos…","Извините, все..."
+ArcherRevive.Text1,"That was a weird dream… oh, hi there!","Quel rêve bizarre, oh salut tout le monde !","Das war ein komischer Traum… oh, hi there!","Ese fue un sueño extraño... oh, hola ahí!",那是一个奇怪的梦… 哦，嗨！,変な夢だったな…あ、こんにちは！,"Foi um sonho estranho... oh, oi lá!","Это был странный сон... ой, привет!"
+ArcherRevive.Text2,Oh no… please… let me go back there…,"Oh non... pitié, laissez moi retourner là bas...",Oh nein… bitte… lass mich dorthin zurückkehren…,Oh no… por favor… déjame volver allí…,哦不…请…让我回去那里…,ああ、やめてくれ…戻らせて…,Oh não... por favor... me deixe voltar para lá...,О нет... пожалуйста... позвольте мне вернуться туда...
+ArcherHealed.Text1,Ooooh… It feels good!,Ooooh... ça fait du bien !,Ooooh… Es fühlt sich gut an!,Ooooh... ¡Se siente bien!,噢噢…感觉好极了！,おおお…気持ちいい！,Ooooh... Isso é bom!,Ооох... Это приятно!
+ArcherHealed.Text2,"Thank you, sweetheart!","Merci, chérie !","Danke, Schatz!","¡Gracias, cariño!",谢谢你，亲爱的！,ありがとう、大好き！,"Obrigado(a), querido(a)!","Спасибо, дорогой!"
+PaladinShield.Text1,The hand of justice is protecting me!,La main de la justice me protège !,Die Hand der Gerechtigkeit beschützt mich!,¡La mano de la justicia me protege!,正义在保护我！,正義の手が私を守る！,A mão da justiça está me protegendo!,Правосудие защищает меня!
+PaladinShield.Text2,The only shield I need is the strength of my faith!,Je n'ai pas besoin d'autre bouclier que la force de ma foi !,"Der einzige Schild, den ich brauche, ist die Stärke meines Glaubens!",¡El único escudo que necesito es la fuerza de mi fe!,我只需要的盾牌就是我坚定的信念！,私が必要とするのは、信仰の力だけ！,O único escudo que eu preciso é a força da minha fé!,"Единственный щит, который мне нужен, это сила моей веры!"
+PaladinStrength.Text1,I have the blessing of Mars!,J'ai la bénédiction de Mars !,Ich habe den Segen des Mars!,¡Tengo la bendición de Marte!,我有火星的祝福！,火星の祝福を受けている！,Tenho a bênção de Marte!,У меня есть благословение Марса!
+PaladinStrength.Text2,No one can stop the power of justice!,Personne n'arrête le pouvoir de la justice !,Niemand kann die Macht der Gerechtigkeit stoppen!,¡Nadie puede detener el poder de la justicia!,没有人能阻挡正义的力量！,正義の力を止めることはできない！,Ninguém pode deter o poder da justiça!,Никто не может остановить силу правосудия!
+PaladinInitiative.Text1,"Leader's first, as it should be. ;)","Le chef en premier, comme prévu. ;)","Der Anführer zuerst, wie es sein sollte. ;)","¡Líder primero, como debe ser. ;)",领导者首先，正如应有的。 ;),リーダーはまず先に行動するべき。 ;),"Líder primeiro, como deve ser. ;)","Лидер первый, как и должно быть. ;)"
+PaladinInitiative.Text2,I fear no one… I’ll go first!,Je n'ai peur de personne... j'y vais en premier !,Ich fürchte niemanden... Ich gehe zuerst!,¡No le temo a nadie... ¡Iría primero!,我不怕任何人... 我先走！,誰も恐れない… 私が先に行く！,Eu não temo ninguém... Eu vou primeiro!,Я ни перед кем не боюсь... Я пойду первым!
+PaladinProvoking.Text1,"Face me, if you dare!","Affronte-moi, si tu l'oses !","Stell dich mir, wenn du dich traust!","¡Enfréntame, si te atreves!",如果你敢的话，就来面对我吧！,挑戦する気があるなら、私に立ち向かってみなさい！,"Enfrente-me, se tiver coragem!","Стань передо мной, если смеешь!"
+PaladinProvoking.Text2,"Be afraid of justice's wrath, monster!","Crains la colère de la justice, monstre !","Fürchte den Zorn der Gerechtigkeit, Monster!","¡Teme la ira de la justicia, monstruo!",畏惧正义的愤怒，怪物！,正義の怒りを恐れろ、モンスター！,"Tema a ira da justiça, monstro!","Бойся гнева правосудия, монстр!"
+PaladinProvoking.Text3,*I* will protect you all!,*JE* vais vous protéger !,Ich werde euch alle beschützen!,Yo los protegeré a todos!,我会保护你们所有人！,私が皆を守る！,Eu vou proteger todos vocês!,Я буду защищать всех вас!
+PaladinPoison.Text1,No! Don't get my armor dirty!,Non ! Enlève ta crasse de mon armure !,Nein! Verschmutzt meine Rüstung nicht!,¡No! No ensucies mi armadura!,不要弄脏我的盔甲！,いや！私の鎧を汚すな！,Não! Não suje minha armadura!,Нет! Не пачкай мо
+PaladinPoison.Text2,"Urg, this will be hard to clean up…","Urg, ça va être dur à nettoyer...","Urg, das wird schwer zu reinigen sein...","¡Urg, esto será difícil de limpiar...!",呃，这将很难清洗…,うっ、これは掃除が大変そう…,"Urg, isso será difícil de limpar...!","Ург, это будет трудно почистить...!"
+PaladinBurning.Text1,"NOOO, NOT MY CAPE!","NOOON, PAS MA CAPE !","NEIN, NICHT MEIN UMHANG!","¡NOOO, NO MI CAPA!",不，不是我的披风！,ノォォ、マントじゃない！,"NÃO, NÃO A MINHA CAPELA!","НЕЕЕТ, НЕ МОЙ ПЛАЩ!"
+PaladinBurning.Text2,My armor is sooo going to be ruined…,Mon armure va être complètement ruinée...,Meine Rüstung wird total ruiniert werden...,Mi armadura va a quedar arruinada...,我的盔甲将会被毁坏得彻底…,私の鎧は完全にダメになるだろう…,Minha armadura vai ficar arruinada...,Моя броня будет совершенно испорчена...
+PaladinRestrain.Text1,Get these things off me!,Enlevez moi ça !,Bekommt diese Dinger von mir weg!,¡Quita estas cosas de encima de mí!,把这些东西从我身上拿走！,把这些东西从我身上拿开！,Tirem essas coisas de cima de mim!,Уберите эти вещи с меня!
+PaladinRestrain.Text2,This is disgusting!,C'est dégoûtant !,Das ist ekelhaft!,¡Esto es asqueroso!,这真恶心！,これは嫌だ！,Isso é nojento!,Это отвратительно!
+PaladinDisappeared.Text1,Justice is calling me! I’ll be right back!,Euh... la justice m'appelle ! Je reviens bientôt !,Die Gerechtigkeit ruft nach mir! Ich komme gleich zurück!,¡La justicia me llama! ¡Vuelvo enseguida!,正义在召唤我！我马上回来！,正義が私を呼んでいる！すぐに戻ります！,A justiça está me chamando! Já volto!,Правосудие зовет меня! Я скоро вернусь!
+PaladinDisappeared.Text2,Haha! He missed his spe…,"Haha, il a manqué son so...",Haha! ¡Falló su ataqu...,Haha！他错过了他的攻击…,Haha！彼は彼の攻撃を外した…,ハハ！彼は攻撃を外した...,Haha! Ele errou o golp...,Ха-ха! Он промахнулся с...
+PaladinStun.Text1,I knew I should have kept my helm on…,J'aurais dû garder mon casque...,"Ich wusste, dass ich meinen Helm aufbehalten sollte...",Sabía que debería haber mantenido mi casco puesto...,我知道我应该戴上头盔...,ヘルムを付けておくべきだったとわかっていた…,Sabia que devia ter man...,"Я знал, что должен был ..."
+PaladinStun.Text2,Ugh… It’s spinning really fast…,Ug... j'ai la tête qui tourne...,Uff... Es dreht sich so schnell...,Ugh... Gira realmente rápido...,呃…它旋转得非常快…,うっ…回転速度が本当に速い…,Aff... Está girando muit...,Ух... Оно вращается насто...
+PaladinSleep.Text1,Justice… never… slee…*zzz*,La justice... ne dort... jam... *zzz*,Gerechtigke... niem... schl...zzz,Justi... nun... duer...zzz,正义...从不...睡...嗡嗡嗡,正義...眠...っ...ぐぅぅ,Justi... nunca... dorm...*z...,Правосуди... никогд... не...*...
+PaladinSleep.Text2,Just… wake me up when you see an injustice…,Révéillez moi... quand vous verrez une injustice...,Weck... mich... auf... wenn du... ein... Unrech... siehst...,Solo... desp...érta...me... cuando... veas... una... injus...ticia...,当你看到不公正时... 就叫醒我...,不正義を見つけたら... 起こして...,Apenas... me acorde... quan...do você ve...r uma injus...tiça...,Про...с...ти ме... ког...да увидишь... неспра...вед...ли...вость...
+PaladinFatigue.Text1,My courage is… unwavering…,Mon courage... est inébranlable...,Mein Mut ist... unerschütterlich...,Mi coraje es... inquebrantable...,我的勇气是…坚定的…,私の勇気は…揺るぎない…,Minha coragem é... inabalável...,Моя смелость... непоколебима...
+PaladinFatigue.Text2,Even justice takes a break sometimes…,Même la justice a besoin de pauses...,Selbst die Gerechtigkeit braucht manchmal eine Pause...,Incluso la justicia se toma un descanso a veces...,即使正义有时也需要休息...,正義でも時には休息が必要...,Até a justiça precisa de um descanso às vezes...,Даже у правосудия иногда бывают перерывы...
+PaladinAFK.Text1,True heroes don't hesitate!,Les vrais héros n'hésitent pas !,Wahre Helden zögern nicht!,¡Los verdaderos héroes no dudan!,真正的英雄不犹豫！,本当の英雄は躊躇しない！,Verdadeiros heróis não hesitam!,Настоящие герои не колеблятся!
+PaladinAFK.Text2,Are you going to let justice die?!,Tu comptes laisser la justice mourir ?,Wirst du die Gerechtigkeit sterben lassen?!,¿Vas a dejar morir a la justicia?!,你打算让正义消亡吗？！,正義が消えてしまうのを見逃すのか？！,Você vai deixar a justiça morrer?!,Ты собираешься позволить правосудию погибнуть?!
+PaladinAFK.Text3,Do something!,Fais quelque chose !,Tu etwas!,¡Haz algo!,做些什么！,何かしてください！,Faça algo!,Сделай что-нибудь!
+PaladinDeath.Text1,My light will never fade…,Ma lumière ne s'éteindra jamais...,Mein Licht wird niemals erlöschen...,Mi luz nunca se apagará...,我的光芒永不消失…,私の光は決して消えない…,Minha luz nunca se apagará...,Мой свет никогда не погаснет...
+PaladinDeath.Text2,My job here is done…,Travail terminé...,Meine Arbeit hier ist erledigt...,Mi trabajo aquí está hecho...,我在这里的工作完成了…,私の仕事はここで終わった…,Meu trabalho aqui está feito...,Моя работа здесь закончена...
+PaladinRevive.Text1,Heroes never die!,Les héros ne meurent jamais !,Helden sterben nie!,¡Los héroes nunca mueren!,英雄永不死！,ヒーローは決して死なない！,Heróis nunca morrem!,Герои никогда не умирают!
+PaladinRevive.Text2,"NOOOO, DON’T WAKE ME UP!","NOOOON, NE ME RÉVEILLEZ PAS !","NEIN, NICHT WECKEN!","¡NOOOO, NO ME DESPIERTES!",不，不要叫醒我！,ノォォ、起こさないで！,"NÃOO, NÃO ME ACORDE!","НЕЕЕТ, НЕ БУДИ МЕНЯ!"
+PaladinHealed.Text1,The gods are healing me!,Les dieux me soignent !,Die Götter heilen mich!,¡Los dioses me están curando!,神正在治疗我！,神々が私を癒してくれている！,Os deuses estão me curando!,Боги исцеляют меня!
+PaladinHealed.Text2,Aaah! The sweet kiss of justice.,Aaah ! Le doux baiser de la justice !,Aaah! Der süße Kuss der Gerechtigkeit.,¡Aaah! El dulce beso de la justicia.,啊啊！正义的甜蜜之吻。,ああ！正義の甘いキス。,Aaah! O doce beijo da justiça.,Ааах! Сладкий поцелуй правосудия.
+LevelMenu.Text.title,Levels,Niveaux,Levels,Niveles,等级,レベル,Níveis,Уровни
 ,,,,,,,,
-BerserkerAttack.Name.Text,Rage,Rage,,,,,,
-BerserkerAttack.Desc.Text,Deals 1 damage. Does 1 additional damage for each hp lost.,1 de dégât. Fait 1 de dégât en plus pour chaque point de vie perdu.,,,,,,
-PaladinAttack.Name.Text,Sword slash,Coup d'Epée,,,,,,
-PaladinAttack.Desc.Text,Deals 1 damage to the target.,1 de dégât,,,,,,
-PaladinStun.Name.Text,Stunning blow,,,,,,,
-PaladinStun.Desc.Text,Stuns the target for 1 turn.,,,,,,,
-PaladinProvoke.Name.Text,Taunt,,,,,,,
-PaladinProvoke.Desc.Text,"Provokes the target for the next turn, becoming the target of all of their next attacks.",,,,,,,
-ArcherAttack.Name.Text,Piercing arrow,,,,,,,
-ArcherAttack.Desc.Text,Deals 2 damage to the target.,,,,,,,
-ArcherPoison.Name.Text,Poison arrow,,,,,,,
-ArcherPoison.Desc.Text,"Deals 1 damage. Poisons the target for 2 turns, making them suffer 1 damage per turn.",,,,,,,
-KraqueenAttack.Name.Text,Tentacle slap,,,,,,,
-KraqueenAttack.Desc.Text,Deals 2 damage to the target.,,,,,,,
-KraqueenRestrain.Name.Text,Grapple,,,,,,,
-KraqueenRestrain.Desc.Text,"Restrains the target for 3 turns, preventing any action until freed.",,,,,,,
-KraqueenPoison.Name.Text,Venom splash,,,,,,,
-KraqueenPoison.Desc.Text,"Poisons the target for 2 turns, making them suffer 1 damage per turn.",,,,,,,
-OrcAttackBasic1.Name.Text,Club blow,,,,,,,
-OrcAttackBasic1.Desc.Text,Deals 1 damage to the target.,,,,,,,
-OrcAttackBasic2.Name.Text,Improved club blow,, ,,,,,
-OrcAttackBasic2.Desc.Text,Deals 2 damage to the target.,,,,,,,
-OrcStun.Name.Text,Concussion,,,,,,,
-OrcStun.Desc.Text,Deals 1 damage. Stuns the target for 1 turn.,,,,,,,
-CatStun.Name.Text,Kung fu master's claw,,,,,,,
-CatStun.Desc.Text,Deals 2 damage. Stuns the target for 1 turn.,,,,,,,
-CatEventJump.Name.Text,Tactical jump,,,,,,,
-CatEventJump.Dest.Text,Jump into the air to dodge every attacks.,,,,,,,
-CatEventFall.Name.Text,Cat missile incoming!,,,,,,,
-CatEventFall.Desc.Text,"Falls to the ground, doing 2 damage to all allies and stunning them for 2 turns.",,,,,,,
-CatFatigue.Name.Text,Good night,,,,,,,
-CatFatigue.Desc.Text,Deals 1 damage. Applies fatigue to the target.,,,,,,,
-ChadFireball.Name.Text,Fireball,,,,,,,
-ChadFireball.Desc.Text,"Deals 1 damage. Burns the target for 2 turns, making them suffer 2 damage per turn.",,,,,,,
-ChadLifesteal.Name.Text,Life drain,,,,,,,
-ChadLifesteal.Desc.Text,Deals 1 damage. Heals for 1 hp. Applies fatigue to the target.,,,,,,,
-ChadShuffle.Name.Text,Mage's gambit,,,,,,,
-ChadShuffle.Desc.Text,"Shuffles your active spells, replacing them by random ones in your spellbook.",,,,,,,
-ChadTeleport.Name.Text,Teleportation,,,,,,,
-ChadTeleport.Desc.Text,"Teleports the target out of the fight, making them disappear for 3 turns.",,,,,,,
+BerserkerAttack.Name.Text,Rage,Rage,Wut,Rabia,愤怒,怒り,Fúria,Ярость
+BerserkerAttack.Desc.Text,Deals 1 damage. Does 1 additional damage for each hp lost.,1 de dégât. Fait 1 de dégât en plus pour chaque point de vie perdu.,Fügt 1 Schaden zu. Fügt für jeden verlorenen HP zusätzlichen Schaden zu.,Inflige 1 de daño. Inflige 1 daño adicional por cada HP perdido.,造成1点伤害。每失去1个HP，增加1点额外伤害。,1ダメージを与える。失ったHPごとに追加のダメージを与える。,Causa 1 de dano. Causa 1 dano adicional para cada HP perdido.,Наносит 1 урона. Наносит 1 дополнительный урон за каждый потерянный HP.
+PaladinAttack.Name.Text,Sword slash,Coup d'Epée,Schwertstoß,Corte de espada,剑斩,剣の一撃,Golpe de espada,Мечевой удар
+PaladinAttack.Desc.Text,Deals 1 damage to the target.,Inflige 1 point de dégât.,Fügt dem Ziel 1 Schaden zu.,Inflige 1 de daño al objetivo.,对目标造成1点伤害。,ターゲットに1ダメージを与える。,Causa 1 de dano ao alvo.,Наносит 1 урона цели.
+PaladinStun.Name.Text,Stunning blow,Souffle étourdissant ,Verwirrender Schlag,Golpe aturdidor,惊人一击,スタンニングブロウ,Golpe atordoante,Оглушающий удар
+PaladinStun.Desc.Text,Stuns the target for 1 turn.,Etourdi la cible pendant 1 tour.,Betäubt das Ziel für 1 Runde.,Aturde al objetivo durante 1 turno.,使目标晕眩1回合。,目標を1ターン気絶させる。,Atordoa o alvo por 1 turno.,Оглушает цель на 1 ход.
+PaladinProvoke.Name.Text,Taunt,Provocation,Spott,Burla,嘲讽,侮辱,Provocação,Насмешка
+PaladinProvoke.Desc.Text,"Provokes the target for the next turn, becoming the target of all of their next attacks.","Provoque la cible pendant le prochain tour, il devient ainsi la cible de toutes les futurs attaques.",Proviziert das Ziel für den nächsten Zug und wird zum Ziel aller folgenden Angriffe.,"Provoca al objetivo para el siguiente turno, convirtiéndose en el objetivo de todos sus siguientes ataques.",挑衅目标进入下一回合，成为其所有下一个攻击的目标。,次のターンに目標を挑発し、その次の攻撃の対象となる。,"Provoca o alvo para a próxima rodada, tornando-se o alvo de todos os próximos ataques dele.","Вызывает насмешку цели на следующий ход, становясь объектом всех их следующих атак."
+ArcherAttack.Name.Text,Piercing arrow,Flèche perçante,Durchdringender Pfeil,Flecha perforante,穿透箭,貫通矢,Flecha perfurante,Проникающая стрела
+ArcherAttack.Desc.Text,Deals 2 damage to the target.,Inflige 2 points de dégât.,Fügt dem Ziel 2 Schaden zu.,Inflige 2 de daño al objetivo.,对目标造成2点伤害。,ターゲットに2ダメージを与える。,Causa 2 de dano ao alvo.,Наносит 2 урона цели.
+ArcherPoison.Name.Text,Poison arrow,Flèche empoisonnée,Giftiger Pfeil,Flecha envenenada,毒箭,毒矢,Flecha envenenada,Ядовитая стрела
+ArcherPoison.Desc.Text,"Deals 1 damage. Poisons the target for 2 turns, making them suffer 1 damage per turn.",Inflige 1 point de dégât. Empoisonne la cible pendant 2 tours infligeant ainsi 1 point de dégât par tour.,"Fügt 1 Schaden zu. Vergiftet das Ziel für 2 Runden, sodass es pro Runde 1 Schaden erleidet.","Inflige 1 de daño. Envenena al objetivo durante 2 turnos, haciéndole sufrir 1 de daño por turno.",造成1点伤害。使目标中毒2回合，每回合受到1点伤害。,1ダメージを与える。毒を盛り、2ターン目標に1点のダメージを与える。,"Causa 1 de dano. Envenena o alvo por 2 turnos, fazendo-o sofrer 1 de dano por turno.","Наносит 1 урона. Отравляет цель на 2 хода, нанося 1 урон в ход."
+KraqueenAttack.Name.Text,Tentacle slap,Gifle tentaculaire,Tentakelschlag,Golpe de tentáculo,触手打击,触手スラップ,Tapa de tentáculo,Удар щупальцем
+KraqueenAttack.Desc.Text,Deals 2 damage to the target.,Inflige 2 points de dégât.,Fügt dem Ziel 2 Schaden zu.,Inflige 2 de daño al objetivo.,对目标造成2点伤害。,ターゲットに2ダメージを与える。,Causa 2 de dano ao alvo.,Наносит 2 урона цели.
+KraqueenRestrain.Name.Text,Grapple,Capture,Haltegriff,Agarre,擒拿,格闘の掌打,Agarrão,Схватывание
+KraqueenRestrain.Desc.Text,"Restrains the target for 3 turns, preventing any action until freed.","Bloque la cible pendant 3 tours, l'empêchant ainsi d'attaquer tant qu'elle n'est pas libérée","Fesselt das Ziel für 3 Runden und verhindert jegliche Aktion, bis es befreit wird.","Restringe al objetivo durante 3 turnos, impidiendo cualquier acción hasta que se libere.",将目标束缚3回合，直到解救前无法进行任何行动。,3ターンの間、行動を制限し、解放されるまで何の行動もできなくなる。,"Restringe o alvo por 3 turnos, impedindo qualquer ação até ser liberado.","Ограничивает цель на 3 хода, не позволяя совершать никаких действий до освобождения."
+KraqueenPoison.Name.Text,Venom splash,Eclaboussure empoisonnée,Giftiger Spritzer,Salpicadura venenosa,毒性飞溅,毒の飛沫,Salpicar venenoso,Ядовитое плескание
+KraqueenPoison.Desc.Text,"Poisons the target for 2 turns, making them suffer 1 damage per turn.",Empoisonne la cible pendant 2 tours infligeant ainsi 1 point de dégât par tour.,Vergiftet das Ziel für 2 Runden und verursacht pro Runde 1 Schaden.,"Envenena al objetivo durante 2 turnos, haciéndole sufrir 1 de daño por turno.",使目标中毒2回合，每回合受到1点伤害。,2ターン目標を毒にかけ、1ターンごとに1ダメージを与える。,"Envenena o alvo por 2 turnos, causando 1 de dano por turno.","Отравляет цель на 2 хода, нанося ей 1 урон в ход."
+OrcAttackBasic1.Name.Text,Club blow,Coup de massue,Keulenschlag,Golpe de porra,木棒打击,クラブの一撃,Golpe de clava,Удар дубиной
+OrcAttackBasic1.Desc.Text,Deals 1 damage to the target.,Inflige 1 point de dégât.,Fügt dem Ziel 1 Schaden zu.,Inflige 1 de daño al objetivo.,对目标造成1点伤害。,ターゲットに1ダメージを与える。,Causa 1 de dano ao alvo.,Наносит 1 урона цели.
+OrcAttackBasic2.Name.Text,Improved club blow,Coup de massue amélioré ,Verbesserter Keulenschlag,Golpe mejorado de porra,改进的木棒打击,改良されたクラブの一撃,Golpe de clava melhorado,Улучшенный удар дубиной
+OrcAttackBasic2.Desc.Text,Deals 2 damage to the target.,Inflige 2 points de dégât.,Fügt dem Ziel 2 Schaden zu.,Inflige 2 de daño al objetivo.,对目标造成2点伤害。,ターゲットに2ダメージを与える。,Causa 2 de dano ao alvo.,Наносит 2 урона цели.
+OrcStun.Name.Text,Concussion,Coup de massue étourdissant,Gehirnerschütterung,Conmoción,轻微脑震荡,脳震盪,Concussão,Сотрясение мозга
+OrcStun.Desc.Text,Deals 1 damage. Stuns the target for 2 turn.,Inflige 1 point de dégat. Etourdi la cible pendant 2 tours.,Fügt 1 Schaden zu. Betäubt das Ziel für 2 Runden.,Inflige 1 de daño. Aturde al objetivo durante 2 turnos.,造成1点伤害。使目标晕眩2回合。,1ダメージを与える。2ターン目標をスタンさせる。,Causa 1 de dano. Atordoa o alvo por 2 turnos.,Наносит 1 урона. Оглушает цель на 2 хода.
+CatStun.Name.Text,Kung fu master's claw,Griffe du maître kung-fu,Kung-Fu-Meisterklaue,Garra del maestro de kung fu,功夫师父的爪子,カンフーマスターの爪,Garra do mestre de kung fu,Когти мастера кунг-фу
+CatStun.Desc.Text,Deals 1 damage. Stuns the target for 1 turn.,Inflige 1 point de dégat. Etourdi la cible pendant 1 tour.,Fügt 1 Schaden zu. Betäubt das Ziel für 1 Runde.,Inflige 1 de daño. Aturde al objetivo durante 1 turno.,造成1点伤害。使目标晕眩1回合。,1ダメージを与える。1ターン目標をスタンさせる。,Causa 1 de dano. Atordoa o alvo por 1 turno.,Наносит 1 урона. Оглушает цель на 1 ход.
+CatEventJump.Name.Text,Tactical jump,Saut Tactique,Taktischer Sprung,Salto táctico,战术跳跃,タクティカルジャンプ,Salto tático,Тактический прыжок
+CatEventJump.Dest.Text,Jump into the air to dodge every attacks.,Saute dans les airs et évite toutes les attaques.,"Springe in die Luft, um jedem Angriff auszuweichen.",Salta al aire para esquivar todos los ataques.,跳起来闪避所有攻击。,空中に飛び上がり、すべての攻撃をかわす。,Salte no ar para esquivar todos os ataques.,"Прыгайте в воздухе, чтобы уклониться от всех атак."
+CatEventFall.Name.Text,Cat missile incoming!,Missile félin en approche !,Katzenrakete im Anflug!,¡Misil de gato en camino!,猫导弹即将到来！,猫ミサイル接近中！,Míssil de gato se aproximando!,Приближается кот-ракета!
+CatEventFall.Desc.Text,"Falls to the ground, doing 2 damage to all allies and stunning them for 2 turns.","Attérit au sol, inflige 2 points de dégats à tous les alliés et les étourdits pendant 2 tours.","Fällt auf den Boden und fügt allen Verbündeten 2 Schaden zu, betäubt sie für 2 Runden.","Cae al suelo, inflige 2 de daño a todos los aliados y los aturde durante 2 turnos.",落到地面上，对所有盟友造成2点伤害，并使其晕眩2回合。,地面に落下し、全ての味方に2ダメージを与え、2ターンの間彼らをスタンさせる。,"Cai no chão, causando 2 de dano a todos os aliados e atordoando-os por 2 turnos.","Падает на землю, нанося 2 урона всем союзникам и оглушая их на 2 хода."
+CatFatigue.Name.Text,Good night,Bonne nuit,Gute Nacht,Buenas noches,晚安,おやすみなさい,Boa noite,Спокойной ночи
+CatFatigue.Desc.Text,Deals 1 damage. Applies fatigue to the target.,Inflige 1 points de dégat. Applique fatigue à la cible.,Fügt 1 Schaden zu. Verursacht Ermüdung beim Ziel.,Inflige 1 de daño. Aplica fatiga al objetivo.,造成1点伤害。使目标疲劳。,1ダメージを与える。目標に疲労を与える。,Causa 1 de dano. Aplica fadiga ao alvo.,Наносит 1 урона. Накладывает усталость на цель.
+ChadFireball.Name.Text,Fireball,Boule de feu,Feuerball,Bola de fuego,火球术,ファイアボール,Bola de fogo,Огненный шар
+ChadFireball.Desc.Text,"Burns the target for 2 turns, making them suffer 2 damage per turn.","Brûle la cible pendant 2 tours, lui faisant perdre 2 points de vie par tour.",Verbrennt das Ziel für 2 Runden und lässt es in jedem Zug 2 Schaden erleiden.,"Quema al objetivo durante 2 turnos, haciéndole sufrir 2 de daño por turno.",烧伤目标2回合，每回合使其受到2点伤害。,2ターン目標を燃やし、1ターンごとに2ダメージを受ける。,"Queima o alvo por 2 turnos, fazendo-o sofrer 2 de dano por turno.","Зажигает цель на 2 хода, заставляя ее получать 2 урона за ход."
+ChadLifesteal.Name.Text,Life drain,Drain de vie,Lebensentzug,Drenaje de vida,生命吸取,ライフドレイン,Drenagem de vida,Похищение жизни
+ChadLifesteal.Desc.Text,Deals 1 damage. Heals for 1 hp. Applies fatigue to the target.,Inflige 1 point de dégat. Soigne l'attquant de 1 point de vie. Applique fatigue à la cible.,Fügt 1 Schaden zu. Heilt 1 LP. Verursacht Ermüdung beim Ziel.,Inflige 1 de daño. Cura 1 PV. Aplica fatiga al objetivo.,造成1点伤害。治疗1HP。使目标疲劳。,1ダメージを与える。1HP回復。目標に疲労を与える。,Causa 1 de dano. Cura 1 PV. Aplica fadiga ao alvo.,Наносит 1 урон. Восстанавливает 1 ХП. Накладывает усталость на цель.
+ChadShuffle.Name.Text,Mage's gambit,Tour de passe passe,Magisches Wagnis,Estratagema del mago,法师的计谋,魔法使いの策略,Estratagema do mago,Магический гамбит
+ChadShuffle.Desc.Text,"Shuffles your active spells, replacing them by random ones in your spellbook.",Mélange les sorts actifs avec ceux du livre de sorts.,Mischt deine aktiven Zauber und ersetzt sie durch zufällige aus deinem Zauberbuch.,"Mezcla tus hechizos activos, reemplazándolos por otros aleatorios de tu libro de hechizos.",洗牌你当前的法术，在法术书中随机替换成其他法术。,アクティブなスペルをシャッフルし、スペルブック内のランダムなスペルに置き換えます。,"Embaralha seus feitiços ativos, substituindo-os por outros aleatórios em seu livro de feitiços.","Перемешивает ваши активные заклинания, заменяя их случайными из вашей книги заклинаний."
+ChadTeleport.Name.Text,Teleportation,Téléportation,Teleportation,Teletransporte,传送,テレポート,Teletransporte,Телепортация
+ChadTeleport.Desc.Text,"Teleports the target out of the fight, making them disappear for 3 turns.","Téléporte la cible en dehors du combat, le faisant disparaitre pendant 3 tours.",Teleportiert das Ziel aus dem Kampf und lässt es für 3 Runden verschwinden.,"Teletransporta al objetivo fuera de la pelea, haciéndolo desaparecer durante 3 turnos.",将目标传送出战斗，使其在3个回合内消失。,戦闘から対象をテレポートさせ、3ターン間消えさせます。,"Teleporta o alvo para fora da luta, fazendo-o desaparecer por 3 turnos.","Телепортирует цель вне боя, заставляя ее исчезнуть на 3 хода."
 ,,,,,,,,
-Heal.Name.Text,Heal,,,,,,,
-Heal.Desc.Text,Heals the target for 2 HP.,,,,,,,
-MassHeal.Name.Text,Mass Heal,,,,,,,
-MassHeal.Desc.Text,Heals all allies for 1 HP.,,,,,,,
-Regeneration.Name.Text,Regeneration,,,,,,,
-Regeneration.Desc.Text,Applies regeneration to the target. Heals 1 HP per turn for 3 turns.,,,,,,,
-Resurrection.Name.Text,Resurrection,,,,,,,
-Resurrection.Desc.Text,"If the target is dead, revives it with half their max health.",,,,,,,
-Panacea.Name.Text,Panacea,,,,,,,
-Panacea.Desc.Text,Heals 1 HP. Removes all status from the target (positive AND negative).,,,,,,,
-SpiritShield.Name.Text,Spirit Shield,,,,,,,
-SpiritShield.Desc.Text,Protects target from all damage for the next turn.,,,,,,,
-ResonanceShield.Name.Text,Resonance Shield,,,,,,,
-ResonanceShield.Desc.Text,"Sends back the attack to the attacker, as well as any effect or status.",,,,,,,
-BlessingOfStrength.Name.Text,Blessing of Strength,,,,,,,
-BlessingOfStrength.Desc.Text,Target’s attacks do +1 damage for 3 turns.,,,,,,,
-ManaProfusion.Name.Text,Mana Profusion,,,,,,,
-ManaProfusion.Desc.Text,Cost of the next spell casted is refunded.,,,,,,,
-Initiative.Name.Text,Initiative,,,,,,,
-Initiative.Desc.Text,Makes the target attack before the enemy.,,,,,,,
+Heal.Name.Text,Heal,Soin,Heilung,Curar,治疗,回復,Cura,Исцеление
+Heal.Desc.Text,Heals the target for 2 HP.,Soigne la cible de 2 points de vie.,Heilt das Ziel um 2 LP.,Cura al objetivo por 2 PV.,为目标恢复2点生命。,目標を2HP回復させます。,Cura o alvo em 2 PV.,Исцеляет цель на 2 ХП.
+MassHeal.Name.Text,Mass Heal,Soin de masse,Gruppenheilung,Curación masiva,群体治疗,一斉回復,Cura em massa,Массовое исцеление
+MassHeal.Desc.Text,Heals all allies for 1 HP.,Soigne tous les alliés de 1 point de vie.,Heilt alle Verbündeten um 1 LP.,Cura a todos los aliados por 1 PV.,为所有盟友恢复1点生命。,全ての味方を1HP回復させます。,Cura todos os aliados em 1 PV.,Исцеляет всех союзников на 1 ХП.
+Regeneration.Name.Text,Regeneration,Régénération,Regeneration,Regeneración,再生,再生,Regeneração,Регенерация
+Regeneration.Desc.Text,Applies regeneration to the target. Heals 1 HP per turn for 3 turns.,"Applique régénération à la cible, le soignant de 1 point de vie par tour pendant 3 tours.",Verleiht dem Ziel Regeneration. Heilt 1 LP pro Runde für 3 Runden.,Aplica regeneración al objetivo. Cura 1 PV por turno durante 3 turnos.,为目标施加再生效果。每回合恢复1点生命，持续3回合。,目標に再生を付与します。3ターン間、1HP回復します。,Aplica regeneração ao alvo. Cura 1 PV por turno durante 3 turnos.,Накладывает регенерацию на цель. Исцеляет на 1 ХП в течение 3 ходов.
+Resurrection.Name.Text,Resurrection,Résurection,Wiederbelebung,Resurrección,复活,蘇生,Ressurreição,Воскрешение
+Resurrection.Desc.Text,"If the target is dead, revives it with half their max health.","Si la cible est morte, la ramène à la vie avec la moitié de ses point de vie maximum.","Falls das Ziel tot ist, belebt es mit der Hälfte seiner maximalen Gesundheit wieder.","Si el objetivo está muerto, lo revive con la mitad de su salud máxima.",如果目标已死亡，以其最大生命值的一半复活。,ターゲットが死亡している場合、最大HPの半分で蘇生させます。,"Se o alvo estiver morto, o revive com metade de sua saúde máxima.","Если цель мертва, воскрешает ее со здоровьем, равным половине максимального."
+Panacea.Name.Text,Panacea,Panacée,Panazee,Panacea,万能药,万能薬,Panacéia,Панацея
+Panacea.Desc.Text,Heals 1 HP. Removes all status from the target (positive AND negative).,Soigne 1 point de vie. Retire tous les status de la cible (négatif ET positif).,Heilt 1 LP. Entfernt alle Zustände vom Ziel (positiv UND negativ).,Cura 1 PV. Elimina todos los estados del objetivo (positivos Y negativos).,恢复1点生命。移除目标上的所有状态（包括正面和负面）。,1HP回復。目標からすべての状態を削除します（ポジティブとネガティブ）。,Cura 1 PV. Remove todos os estados do alvo (positivos E negativos).,Исцеляет на 1 ХП. Удаляет все статусы с цели (положительные И отрицательные).
+SpiritShield.Name.Text,Spirit Shield,Bouclier spirituel,Geistschild,Escudo espiritual,精神护盾,スピリットシールド,Escudo espiritual,Духовный щит
+SpiritShield.Desc.Text,Protects target from all damage and status for the next turn.,Protège la cible de tous les dégats et status au prochain tour.,Schützt das Ziel vor jeglichem Schaden für den nächsten Zug.,Protege al objetivo de todo el daño durante el próximo turno.,保护目标免受下一回合的所有伤害。,次のターンまで、ターゲットを全てのダメージから守ります。,Protege o alvo de todo o dano no próximo turno.,Защищает цель от всего урона на следующий ход.
+ResonanceShield.Name.Text,Resonance Shield,Bouclier résonnant ,Resonanzschild,Escudo de resonancia,共鸣护盾,共鳴シールド,Escudo de ressonância,Резонансный щит
+ResonanceShield.Desc.Text,"Sends back the attack to the attacker, as well as any effect or status.",Renvoie l'attaque à l'envoyeur ainsi que les effets de status de celle ci.,Schickt den Angriff zurück zum Angreifer sowie jeglichen Effekt oder Zustand.,"Devuelve el ataque al atacante, así como cualquier efecto o estado.",将攻击反弹给攻击者，并包括任何效果或状态。,攻撃を攻撃者に返し、その攻撃に含まれる効果や状態も返します。,"Retorna o ataque para o atacante, bem como qualquer efeito ou estado.","Отправляет атаку обратно атакующему, а также любые эффекты или статусы."
+BlessingOfStrength.Name.Text,Blessing of Strength,Bénédiction de force,Segen der Stärke,Bendición de Fuerza,力量祝福,強化の祝福,Bênção de Força,Благословение Силы
+BlessingOfStrength.Desc.Text,Target’s attacks do +1 damage for 3 turns.,Augmente les points d'attaque de la cible de 1 pendant 3 tours.,Die Angriffe des Ziels verursachen für 3 Runden +1 Schaden.,Los ataques del objetivo hacen +1 de daño durante 3 turnos.,目标的攻击在3回合内增加1点伤害。,対象の攻撃は3ターン間、ダメージが+1増加します。,Os ataques do alvo causam +1 de dano por 3 turnos.,Атаки цели наносят +1 урона в течение 3 ходов.
+ManaProfusion.Name.Text,Mana Profusion,Profusion de mana,Mana-Überfluss,Profusión de Maná,法力丰盈,マナ豊富,Profusão de Mana,Избыток маны
+ManaProfusion.Desc.Text,Cost of the next spell casted is refunded in the next turn.,Le coût du prochain sort du prochain tour est remboursé.,"Die Kosten des nächsten Zaubers, der gewirkt wird, werden im nächsten Zug zurückerstattet.",El coste del siguiente hechizo lanzado se reembolsa en el siguiente turno.,下次施放的法术的成本将在下回合中退还。,次に行われる呪文のコストは次のターンに返金されます。,O custo do próximo feitiço lançado é reembolsado no próximo turno.,Стоимость следующего произнесенного заклинания возвращается в следующем ходу.
+Initiative.Name.Text,Initiative,Initiative,Initiative,Iniciativa,先攻,先制,Iniciativa,Инициатива
+Initiative.Desc.Text,Makes the target attack before the enemy.,La cible attaquera avant l'ennemi.,Das Ziel greift vor dem Gegner an.,Hace que el objetivo ataque antes que el enemigo.,使目标在敌人之前进行攻击。,ターゲットが敵よりも先に攻撃します。,Faz com que o alvo ataque antes do inimigo.,Позволяет цели атаковать раньше врага.

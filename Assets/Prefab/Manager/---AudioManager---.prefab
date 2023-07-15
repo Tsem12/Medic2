@@ -64,7 +64,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: OrcTheme
-    type: 1
+    type: 0
     clip: {fileID: 8300000, guid: f7415e6447f41604abc9d9caffe1410f, type: 3}
     volume: 1
     pitch: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: GatitoTheme
-    type: 1
+    type: 0
     clip: {fileID: 8300000, guid: 1807713073d3fb745ba35059f81556c1, type: 3}
     volume: 1
     pitch: 1

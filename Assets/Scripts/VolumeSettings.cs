@@ -9,6 +9,7 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private GameObject SfxButton;
     [SerializeField] private GameObject MusicButton;
+    [SerializeField] private AllReferences _refs;
 
     private GameData gameData;
 
@@ -21,6 +22,39 @@ public class VolumeSettings : MonoBehaviour
         gameData = SaveSystem.Load();
 
     }
+    private void Start()
+    {
+        if(SfxButton != null)
+        {
+            SfxButton.GetComponent<Image>().color = gameData.isSfxMute? Greycolor : Whitecolor;
+            MusicButton.GetComponent<Image>().color = gameData.isMusicMute ? Greycolor : Whitecolor;
+        }
+        
+    }
+
+    public void ToggleSfx()
+    {
+        gameData.isSfxMute = !gameData.isSfxMute;
+        SaveSystem.save(gameData);
+
+        SfxButton.GetComponent<Image>().color = gameData.isSfxMute? Greycolor : Whitecolor;
+    }
+
+    public void ToggleMusic()
+    {
+        gameData.isMusicMute = !gameData.isMusicMute;
+        SaveSystem.save(gameData);
+
+        MusicButton.GetComponent<Image>().color = gameData.isMusicMute ? Greycolor : Whitecolor;
+        if (gameData.isMusicMute)
+        {
+            _refs.audioManager.Stop("Menu");
+        }
+        else
+        {
+            _refs.audioManager.Play("Menu");
+        }
+    }
 
     //private void Start()
     //{
@@ -29,7 +63,7 @@ public class VolumeSettings : MonoBehaviour
     //}
 
     //public void SetMusicVolume() { 
-    
+
     //    gameData.musicVolume = !gameData.musicVolume;
     //    if (gameData.musicVolume)
     //    {

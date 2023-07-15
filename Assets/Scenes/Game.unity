@@ -4310,7 +4310,7 @@ PrefabInstance:
       objectReference: {fileID: 4110371022508119642}
     - target: {fileID: 3043898100064445761, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: _chanceIntervalToTriggerDialogue
-      value: 9999999
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8738665550594490518, guid: 4a00a15e28b13c147897397b17dee46f, type: 3}
       propertyPath: m_Name
