@@ -36,8 +36,9 @@ public class LanguageSelection : MonoBehaviour
         {
             index = 7;
         }
-        gameData.index = index;
         UpdateWindow();
+        gameData = SaveSystem.Load();
+        gameData.index = index;
         SaveSystem.save(gameData);
     }
 
@@ -53,8 +54,9 @@ public class LanguageSelection : MonoBehaviour
         {
             index = 0;
         }
-        gameData.index = index;
         UpdateWindow();
+        gameData = SaveSystem.Load();
+        gameData.index = index;
         SaveSystem.save(gameData);
     }
 
@@ -71,7 +73,6 @@ public class LanguageSelection : MonoBehaviour
     }
     void UpdateWindow()
     {
-        gameData = SaveSystem.Load();
         switch (index)
         {
             case 0:
@@ -124,6 +125,5 @@ public class LanguageSelection : MonoBehaviour
                 languageButton.ChangeLanguage("Russe");
                 break;
         }
-        SaveSystem.save(gameData);
     }
 }

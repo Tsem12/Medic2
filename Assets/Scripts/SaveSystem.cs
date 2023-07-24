@@ -12,6 +12,7 @@ public static class SaveSystem
         FileStream fs = new FileStream(path, FileMode.Create);
         formatter.Serialize(fs, data);
         fs.Close();
+        Debug.LogError($"Saved {data.Language}");
     }
 
     public static GameData Load()

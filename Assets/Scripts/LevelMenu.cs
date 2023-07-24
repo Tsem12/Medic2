@@ -19,6 +19,7 @@ public class LevelMenu : MonoBehaviour
         gameData = SaveSystem.Load();
         gameData.isHardDifficulty = false;
         SwitchDifficulty();
+        SaveSystem.save(gameData);
     }
     public void OpenLevel()
     {
@@ -45,6 +46,7 @@ public class LevelMenu : MonoBehaviour
             easyButton.SetActive(false);
             hardButton.SetActive(true);
         }
+        gameData = SaveSystem.Load();
         gameData.isHardDifficulty = !gameData.isHardDifficulty;
         SaveSystem.save(gameData);
         

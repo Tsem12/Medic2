@@ -9,20 +9,21 @@ public class MultiLanguage : MonoBehaviour
 {
     private GameData gameData;
 
-    public GameData GameData { get => gameData; set => gameData = value; }
+    
 
     public void Awake()
     {
-        GameData = SaveSystem.Load();
+        gameData = SaveSystem.Load();
+        Debug.Log($"langage is :  + {gameData.Language}, {gameData.index}");
         FIXTHELANGUAGE();
-        Debug.Log($"langage is :  + {GameData.Language}, {GameData.index}");
         LocalizationManager.Read();
-        LocalizationManager.Language = GameData.Language;
-        SaveSystem.save(GameData);
+        LocalizationManager.Language = gameData.Language;
+        SaveSystem.save(gameData);
     }
 
     private void FIXTHELANGUAGE()
     {
+        gameData = SaveSystem.Load();
         switch (gameData.index)
         {
             case 0:
@@ -61,5 +62,5 @@ public class MultiLanguage : MonoBehaviour
     }
 
     [Button]
-    private void DisplayLanguauge() => Debug.Log(GameData.Language);
+    private void DisplayLanguauge() => Debug.Log(gameData.Language);
 }
