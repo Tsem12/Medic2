@@ -117,11 +117,11 @@ public class FightManager : MonoBehaviour
     {
         _gameData = SaveSystem.Load();
         _currentPlayerTimeToPlay = _playerTimeToPlay;
-        if(_levelData.difficulty == LevelDataObject.Difficulty.Easy || _levelData.difficulty == LevelDataObject.Difficulty.EndLess)
+        if(_levelData.difficulty == LevelDataObject.Difficulty.Easy)
         {
             _playerSlider.gameObject.transform.parent.gameObject.SetActive(false);
         }
-        else if (_levelData.difficulty == LevelDataObject.Difficulty.Hard)
+        else if (_levelData.difficulty == LevelDataObject.Difficulty.Hard || _levelData.difficulty == LevelDataObject.Difficulty.EndLess)
         {
             _switchCardButton.gameObject.SetActive(false);
         }
@@ -268,7 +268,7 @@ public class FightManager : MonoBehaviour
                     }
                 }
             }
-            if(_playerSlider != null && _levelData.difficulty == LevelDataObject.Difficulty.Hard)
+            if(_playerSlider != null && _levelData.difficulty == LevelDataObject.Difficulty.Hard || _playerSlider != null &&  _levelData.difficulty == LevelDataObject.Difficulty.EndLess)
             {
                 _currentPlayerTimeToPlay -= Time.deltaTime;
                 _playerSlider.fillAmount = _currentPlayerTimeToPlay / _playerTimeToPlay;
@@ -276,7 +276,7 @@ public class FightManager : MonoBehaviour
             if (_currentPlayerTimeToPlay <= 0 || _endTurn)
             {
                 _endTurn = false;
-                if(_levelData.difficulty == LevelDataObject.Difficulty.Hard)
+                if(_levelData.difficulty == LevelDataObject.Difficulty.Hard || _levelData.difficulty == LevelDataObject.Difficulty.EndLess)
                 {
                     _currentPlayerTimeToPlay = _playerTimeToPlay;
                 }
